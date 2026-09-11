@@ -1,0 +1,35 @@
+{
+  "episode_id": "ep_vertical_slice_002_env1_attack",
+  "timestamp": "2026-09-11T20:12:43.004953Z",
+  "human_intent": "make the attack faster",
+  "candidate_operation": {
+    "target": "Env1.Attack",
+    "operation": null,
+    "source_hypothesis_id": "hyp_000037",
+    "source_knowledge_item_id": "ki_ext_000147",
+    "source_confidence": 0.95
+  },
+  "semantic_target": "Env1.Attack",
+  "admission_status": "ADMITTED",
+  "admission_reason": "Env1.Attack has CAUSAL_VERIFIED capability",
+  "serum_readback_before": 0.12559431791305542,
+  "serum_mutation_value": 0.6,
+  "serum_readback_after": 0.6000000238418579,
+  "audio_baseline": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.7662358276643991,
+    "valid": true
+  },
+  "audio_treatment": {
+    "peak": 0.16837432980537415,
+    "nonzero_fraction": 0.7662358276643991,
+    "valid": true
+  },
+  "measurement_metric": "rms_db",
+  "measurement_baseline": -20.054929131203785,
+  "measurement_treatment": -29.20805300220916,
+  "measurement_delta": -9.153123871005374,
+  "restoration_value": 0.12559431791305542,
+  "restoration_readback": 0.12559431791305542,
+  "notes": ""
+}

@@ -1,0 +1,35 @@
+{
+  "episode_id": "ep_vertical_slice_003_osc1_octave",
+  "timestamp": "2026-09-11T20:13:24.441430Z",
+  "human_intent": "make the oscillator one octave higher",
+  "candidate_operation": {
+    "target": "OSC1.Octave",
+    "operation": null,
+    "source_hypothesis_id": "hyp_000001",
+    "source_knowledge_item_id": "ki_ext_000311",
+    "source_confidence": 0.95
+  },
+  "semantic_target": "OSC1.Octave",
+  "admission_status": "ADMITTED",
+  "admission_reason": "OSC1.Octave has CAUSAL_VERIFIED capability",
+  "serum_readback_before": 0.5,
+  "serum_mutation_value": 0.625,
+  "serum_readback_after": 0.625,
+  "audio_baseline": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.7662358276643991,
+    "valid": true
+  },
+  "audio_treatment": {
+    "peak": 0.2799425423145294,
+    "nonzero_fraction": 0.7604308390022676,
+    "valid": true
+  },
+  "measurement_metric": "pitch_shift_semitones",
+  "measurement_baseline": 0.0,
+  "measurement_treatment": 12.016543088206404,
+  "measurement_delta": 12.016543088206404,
+  "restoration_value": 0.5,
+  "restoration_readback": 0.5,
+  "notes": ""
+}

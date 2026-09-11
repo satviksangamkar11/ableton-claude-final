@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from serum2 import bridge
 from serum2.evidence.measure import METRICS
 from serum2.qualification.vertical_slice_executor import ExecutionRecord
-from serum2.knowledge.intent_bridge import resolve_intent_to_candidates
+from serum2.knowledge.semantic_intent_resolver import resolve_semantic_intent
 
 # Constants from existing code
 from serum2.evidence import epoch as epoch_mod
@@ -97,30 +97,28 @@ def execute_producer_episode(
     print(f"PRODUCER EXECUTION: {semantic_target}")
     print("=" * 80)
 
-    # Step 1: Resolve intent
+    # Step 1: Resolve intent using semantic resolver
     print("\n[1/6] Resolving intent...")
-    resolution = resolve_intent_to_candidates(
+    resolution = resolve_semantic_intent(
         human_intent,
         "serum2/knowledge/yt_f507169bd7cb_hypotheses.json",
         "serum2/knowledge/yt_f507169bd7cb_target_resolution.json",
     )
 
-    if not resolution.candidate_operations:
-        return None, f"No candidate operations for intent: {human_intent}"
+    # Check if resolution matches the semantic target
+    if resolution.resolution_status != "RESOLVED":
+        return None, f"Intent '{human_intent}' did not resolve (status: {resolution.resolution_status})"
 
-    # Find matching candidate (may not be first)
-    candidate_op = None
-    for op in resolution.candidate_operations:
-        if op.target == semantic_target:
-            candidate_op = op
-            break
+    if resolution.semantic_target != semantic_target:
+        return None, f"Intent resolved to {resolution.semantic_target}, not {semantic_target}"
 
-    if not candidate_op:
-        return None, f"Intent did not resolve to {semantic_target}"
+    if not resolution.hypothesis_ids:
+        return None, f"No hypotheses for {semantic_target}"
 
     print(f"  Intent: {human_intent}")
-    print(f"  Target: {candidate_op.target}")
-    print(f"  Hypothesis: {candidate_op.source_hypothesis_id}")
+    print(f"  Target: {resolution.semantic_target}")
+    print(f"  Hypotheses: {len(resolution.hypothesis_ids)}")
+    print(f"  First hypothesis: {resolution.hypothesis_ids[0]}")
 
     # Step 2: Check admission
     from serum2.compiler.targets import SEMANTIC_TARGETS
@@ -208,16 +206,33 @@ def execute_producer_episode(
 
     # Step 6: Measure
     print("\n[5/6] Measuring with metric...")
-    if measurement_metric not in METRICS:
-        return None, f"Measurement metric '{measurement_metric}' not in METRICS"
 
-    measurement_baseline = METRICS[measurement_metric](audio_baseline)
-    measurement_treatment = METRICS[measurement_metric](audio_treatment)
-    measurement_delta = measurement_treatment - measurement_baseline
+    # Handle pitch_shift_semitones as a derived metric
+    if measurement_metric == "pitch_shift_semitones":
+        if "fundamental_frequency_hz" not in METRICS:
+            return None, "fundamental_frequency_hz metric not available"
+        # Calculate pitch shift from fundamental frequency ratio
+        f0_baseline = METRICS["fundamental_frequency_hz"](audio_baseline)
+        f0_treatment = METRICS["fundamental_frequency_hz"](audio_treatment)
+        import math
+        measurement_baseline = 0.0  # Reference is 0 semitones
+        measurement_treatment = 12.0 * math.log2(f0_treatment / f0_baseline) if f0_baseline > 0 else 0.0
+        measurement_delta = measurement_treatment - measurement_baseline
+        print(f"  F0 baseline: {f0_baseline:.1f} Hz")
+        print(f"  F0 treatment: {f0_treatment:.1f} Hz")
+        print(f"  pitch_shift_semitones treatment: {measurement_treatment:.3f}")
+        print(f"  Delta: {measurement_delta:.3f}")
+    else:
+        if measurement_metric not in METRICS:
+            return None, f"Measurement metric '{measurement_metric}' not in METRICS"
 
-    print(f"  {measurement_metric} baseline: {measurement_baseline}")
-    print(f"  {measurement_metric} treatment: {measurement_treatment}")
-    print(f"  Delta: {measurement_delta}")
+        measurement_baseline = METRICS[measurement_metric](audio_baseline)
+        measurement_treatment = METRICS[measurement_metric](audio_treatment)
+        measurement_delta = measurement_treatment - measurement_baseline
+
+        print(f"  {measurement_metric} baseline: {measurement_baseline}")
+        print(f"  {measurement_metric} treatment: {measurement_treatment}")
+        print(f"  Delta: {measurement_delta}")
 
     # Step 7: Restore
     print("\n[6/6] Restoring...")
@@ -237,11 +252,11 @@ def execute_producer_episode(
         timestamp=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         human_intent=human_intent,
         candidate_operation={
-            "target": candidate_op.target,
-            "operation": candidate_op.operation,
-            "source_hypothesis_id": candidate_op.source_hypothesis_id,
-            "source_knowledge_item_id": candidate_op.source_knowledge_item_id,
-            "source_confidence": candidate_op.source_confidence,
+            "target": resolution.semantic_target,
+            "operation": None,
+            "source_hypothesis_id": resolution.hypothesis_ids[0] if resolution.hypothesis_ids else None,
+            "source_knowledge_item_id": resolution.knowledge_item_ids[0] if resolution.knowledge_item_ids else None,
+            "source_confidence": resolution.confidence,
         },
         semantic_target=semantic_target,
         admission_status="ADMITTED",
