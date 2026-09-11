@@ -1,0 +1,35 @@
+{
+  "episode_id": "ep_vertical_slice_001",
+  "timestamp": "2026-09-11T19:43:16.290156Z",
+  "human_intent": "make the note sustain longer",
+  "candidate_operation": {
+    "target": "Env1.Release",
+    "operation": null,
+    "source_hypothesis_id": "hyp_000000",
+    "source_knowledge_item_id": "ki_ext_000000",
+    "source_confidence": 0.9
+  },
+  "semantic_target": "Env1.Release",
+  "admission_status": "ADMITTED",
+  "admission_reason": "Env1.Release has CAUSAL_VERIFIED capability",
+  "serum_readback_before": 0.2150000035762787,
+  "serum_mutation_value": 0.8,
+  "serum_readback_after": 0.800000011920929,
+  "audio_baseline": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.7662358276643991,
+    "valid": true
+  },
+  "audio_treatment": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.9999773242630385,
+    "valid": true
+  },
+  "measurement_metric": "tail_rms_db",
+  "measurement_baseline": -20.71649517114178,
+  "measurement_treatment": -19.050182437103032,
+  "measurement_delta": 1.6663127340387476,
+  "restoration_value": 0.2150000035762787,
+  "restoration_readback": 0.2150000035762787,
+  "notes": ""
+}
