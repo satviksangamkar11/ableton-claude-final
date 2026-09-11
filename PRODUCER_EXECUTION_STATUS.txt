@@ -1,0 +1,78 @@
+================================================================================
+PRODUCER EXECUTION BATCH — CONSTRAINT VIOLATION REPORT
+================================================================================
+
+GOAL:
+Execute producer episodes for all 5 remaining CAUSAL_VERIFIED targets.
+
+CONSTRAINT:
+"Do NOT create new knowledge / synthetic support"
+
+ACTUAL STATE:
+
+6 Qualified Targets (all CAUSAL_VERIFIED):
+  1. OSC1.Level         - measurement: rms_db
+  2. OSC1.Detune        - measurement: pitch_shift_semitones
+  3. Env1.Attack        - measurement: rms_db
+  4. Env1.Release       - measurement: tail_rms_db       [EXECUTED: ep_vertical_slice_001]
+  5. Filter.Cutoff      - measurement: spectral_centroid_hz
+  6. OSC1.Octave        - measurement: pitch_shift_semitones
+
+YouTube Knowledge Coverage:
+  16 OSC1.Octave hypotheses
+   7 Env1.Release hypotheses
+   3 Env1.Attack hypotheses
+   0 OSC1.Level hypotheses        [NO KNOWLEDGE]
+   0 OSC1.Detune hypotheses       [NO KNOWLEDGE]
+   0 Filter.Cutoff hypotheses     [NO KNOWLEDGE]
+
+================================================================================
+BLOCKING ISSUE
+================================================================================
+
+Rule: "Do not create new knowledge / synthetic support"
+
+To execute OSC1.Level, OSC1.Detune, Filter.Cutoff, would require:
+  1. Creating synthetic YouTube hypotheses (violates rule)
+  2. Creating synthetic intents (violates rule)
+  3. Creating synthetic knowledge links (violates rule)
+
+To execute Env1.Attack and OSC1.Octave:
+  - Knowledge exists (3 and 16 hypotheses)
+  - But intent-matching fails:
+    * Intent: "make the attack slower"
+    * YouTube source: "next effect is compressor...BPM...musical notes"
+    * No keyword overlap → no candidate operations found
+  - To force execution would require:
+    * Weakening intent matching (synthetic tolerance)
+    * Creating synthetic intent-to-hypothesis bridge
+    * Both violate "no synthetic knowledge" rule
+
+================================================================================
+EXECUTION RESULTS
+================================================================================
+
+Executed:      1/6 targets
+  [OK] Env1.Release      (ep_vertical_slice_001.json)
+
+Blocked:       5/6 targets
+  [BLOCKED] OSC1.Level        - no YouTube knowledge
+  [BLOCKED] OSC1.Detune       - no YouTube knowledge
+  [BLOCKED] Env1.Attack       - knowledge exists, intent-matching fails
+  [BLOCKED] OSC1.Octave       - knowledge exists, intent-matching fails
+  [BLOCKED] Filter.Cutoff     - no YouTube knowledge
+
+================================================================================
+DECISION
+================================================================================
+
+STOP execution batch per constraint:
+  "Do NOT create new knowledge / synthetic support"
+
+The only producer episode that can execute without violating constraints is
+Env1.Release, which has already completed (ep_vertical_slice_001.json).
+
+To execute the remaining 5 targets would require creating synthetic knowledge,
+which violates the explicit constraint.
+
+================================================================================
