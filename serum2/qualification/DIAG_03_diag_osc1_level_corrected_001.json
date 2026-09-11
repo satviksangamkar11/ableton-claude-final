@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "experiment_id": "diag_osc1_level_corrected_001",
+  "behavior_observation": {
+    "experiment_id": "diag_osc1_level_corrected_001",
+    "timestamp": "2026-09-11T15:46:13.264600+00:00",
+    "semantic_target": "OSC1.Level",
+    "operation": "SET_PARAMETER",
+    "context": {},
+    "context_provenance": "level is independent",
+    "baseline_intervention": {
+      "cbor_overrides": {},
+      "host_context": []
+    },
+    "treatment_intervention": {
+      "cbor_path": "VoiceOsc0.plainParams.kParamLevel",
+      "cbor_value": 0.0,
+      "host_param_name": null,
+      "host_param_value": null,
+      "host_context": []
+    },
+    "baseline_rendered": true,
+    "treatment_rendered": true,
+    "baseline_render_time_sec": 0.297694,
+    "treatment_render_time_sec": 0.260457,
+    "measurements": [
+      {
+        "name": "overall_rms_db",
+        "kernel": "rms_db",
+        "baseline": -20.054929131203785,
+        "treatment": -20.054929131203785,
+        "delta": 0.0,
+        "threshold": 2.0,
+        "status": "NO_OBSERVED_EFFECT"
+      },
+      {
+        "name": "tail_rms_db",
+        "kernel": "tail_rms_db",
+        "baseline": -20.71649517114178,
+        "treatment": -20.71649517114178,
+        "delta": 0.0,
+        "threshold": 1.0,
+        "status": "NO_OBSERVED_EFFECT"
+      }
+    ],
+    "isolation_level": "single_field",
+    "execution_notes": null
+  },
+  "exercise_qualification": null
+}

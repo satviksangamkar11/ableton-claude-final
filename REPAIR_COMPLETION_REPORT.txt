@@ -1,0 +1,260 @@
+================================================================================
+REPAIR COMPLETION REPORT: Target Resolution Pipeline Safeguard
+================================================================================
+
+Date: 2026-09-12
+Commits:
+  - Unsafe repair (REVERTED): a0b6f64
+  - Revert: 819efc7
+  - Safe context-aware approach: 2a3028b
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+The initial target resolution repair (a0b6f64) introduced widespread false
+positive mappings by overwriting previously valid semantic targets using
+generic keyword matching.
+
+CORRECTIVE ACTION TAKEN:
+1. Reverted unsafe commit (a0b6f64)
+2. Restored trusted knowledge state
+3. Implemented context-aware resolver with strict invariants
+4. Verified zero unsafe mappings generated
+
+FINAL OUTCOME:
+The three targets (OSC1.Level, OSC1.Detune, Filter.Cutoff) remain UNSUPPORTED
+in the knowledge base with 0 hypotheses, which is the CORRECT outcome given
+the constraint that "generic keywords alone are insufficient."
+
+================================================================================
+STEP 1: TRUSTED STATE RESTORATION
+================================================================================
+
+Reverted to commit a73523b (HEAD~2 before unsafe repair):
+
+Status before revert:
+  - 317 total items
+  - 71 resolved with valid targets
+  - 28 ambiguous with candidate targets
+  - 200 no_target (unresolved)
+  - 18 source_only
+
+All 71 RESOLVED and 28 AMBIGUOUS items preserved intact.
+No items were remapped or overwritten.
+
+Commit: 819efc7 "Revert unsafe target resolution repair"
+
+================================================================================
+STEP 2: ARCHITECTURE IMPLEMENTATION
+================================================================================
+
+Implemented target_resolution_context_aware.py with INVARIANTS:
+
+INVARIANT A: RESOLVED items cannot be overwritten
+  → Only map NO_SERUM_TARGET items
+  → Never touch the 71 existing valid mappings
+  ✓ SATISFIED
+
+INVARIANT B: AMBIGUOUS items are not silently converted
+  → Preserve all 28 ambiguous items unchanged
+  → Do not overwrite their candidate lists
+  ✓ SATISFIED
+
+INVARIANT C: Keywords generate candidates, not final targets
+  → Patterns match but don't automatically resolve
+  → Require confidence threshold check
+  ✓ SATISFIED
+
+INVARIANT D: Candidate resolved only with sufficient context
+  → Rules require explicit procedural language
+  → Example: "oscillator level control" not just "level"
+  ✓ SATISFIED
+
+INVARIANT E: Generic terms alone are insufficient
+  → Reject generic theory discussion (rejection patterns)
+  → Require action verbs like "adjust", "control", "click"
+  ✓ SATISFIED
+
+INVARIANT F: Authoritative semantic vocabulary is identity source
+  → Target names from SEMANTIC_TARGETS only
+  → No new targets invented
+  ✓ SATISFIED
+
+================================================================================
+STEP 3: CONTEXT-AWARE RESOLUTION RULES
+================================================================================
+
+Applied only to NO_SERUM_TARGET items (200 candidates).
+
+OSC1.Level contextual patterns:
+  - "oscillator level control/adjust/knob/parameter"
+  - "to adjust/control the oscillator level"
+  - "how to change oscillator volume"
+  - Rejection: "oscillators come with / have / are"
+
+OSC1.Detune contextual patterns:
+  - "oscillator detune/fine-tune control/adjust"
+  - "to detune/fine-tune the oscillator"
+  - "oscillator 2 detune amount"
+  - Rejection: "oscillator types / modes / forms"
+
+Filter.Cutoff contextual patterns:
+  - "filter cutoff control/frequency/adjust"
+  - "to adjust the filter cutoff"
+  - "how to control cutoff frequency"
+  - Rejection: "frequency affects harmonics / tone"
+
+================================================================================
+STEP 4: RESOLUTION RESULTS
+================================================================================
+
+Items examined: 200 NO_SERUM_TARGET items
+Context-aware patterns matched: 0 items
+
+Why zero matches?
+
+The YouTube transcript is primarily EDUCATIONAL and OVERVIEW content:
+- "Here are the five oscillator types..." (overview, not procedure)
+- "Frequency affects the harmonic content..." (theory, not control)
+- "The filter is used for..." (conceptual, not procedural)
+
+It lacks PROCEDURAL documentation:
+- "Click on the level knob to adjust oscillator level"
+- "To make it brighter, raise the filter cutoff..."
+- "The detune parameter is located at..."
+
+FINDING: The YouTube transcript does NOT contain sufficient explicit
+procedural language binding NO_SERUM_TARGET items to OSC1.Level, OSC1.Detune,
+or Filter.Cutoff controls.
+
+================================================================================
+STEP 5: VERIFICATION
+================================================================================
+
+PRESERVATION AUDIT:
+  ✓ 71 RESOLVED items: all preserved with original targets
+  ✓ 28 AMBIGUOUS items: all preserved without conversion
+  ✓ 200 NO_SERUM_TARGET items: 0 unsafe mappings added
+  ✓ 18 SOURCE_ONLY items: preserved unchanged
+
+REGRESSION TESTS:
+  ✓ 9/9 semantic intent resolver tests PASS
+  ✓ All tests expect UNSUPPORTED for the three targets
+  ✓ Tests verify 0 hypotheses for each
+  ✓ Existing targets (Env1.Attack, OSC1.Octave) still RESOLVED
+
+TEST RESULTS:
+  - test_attack_slower: PASS (3 hypotheses)
+  - test_octave_higher: PASS (16 hypotheses)
+  - test_sustain_longer: PASS (7 hypotheses)
+  - test_quieter_unsupported: PASS (0 hypotheses) ← key test
+  - test_brighter_unsupported: PASS (0 hypotheses) ← key test
+  - test_detune_unsupported: PASS (0 hypotheses) ← key test
+  - test_batch_resolution: PASS (mixed results)
+  - test_provenance: PASS
+  - test_unsupported: PASS
+
+================================================================================
+STEP 6: FINAL KNOWLEDGE STATE
+================================================================================
+
+Total items: 317
+Resolved with targets: 99 (71 RESOLVED + 28 AMBIGUOUS)
+Unresolved: 218 (200 NO_SERUM_TARGET + 18 SOURCE_ONLY)
+
+Targets available:
+  - Env1.Attack: 3 hypotheses
+  - Env1.Decay: 1 hypothesis
+  - Env1.Release: 7 hypotheses
+  - Env1.Sustain: 1 hypothesis
+  - FXDistortion.Drive: 1 hypothesis
+  - FXEQ.Freq1: 1 hypothesis
+  - FXEQ.Freq2: 1 hypothesis
+  - Filter.Resonance: 1 hypothesis
+  - Filter.Type: 1 hypothesis
+  - OSC1.Enable: 1 hypothesis
+  - OSC1.Octave: 16 hypotheses
+  - OSC1.Wavetable: 1 hypothesis
+
+Targets NOT available (insufficient YouTube documentation):
+  - OSC1.Level: 0 hypotheses (UNSUPPORTED)
+  - OSC1.Detune: 0 hypotheses (UNSUPPORTED)
+  - Filter.Cutoff: 0 hypotheses (UNSUPPORTED)
+
+================================================================================
+STEP 7: CONSTRAINT COMPLIANCE
+================================================================================
+
+User constraint: "Do NOT create new knowledge / synthetic support"
+  ✓ No synthetic KnowledgeItems created
+  ✓ No synthetic hypotheses generated
+  ✓ No synthetic target mappings forced
+  ✓ Zero false positives introduced
+
+User constraint: "Generic keywords alone are insufficient"
+  ✓ Generic keywords rejected without procedural context
+  ✓ "frequency" alone does not map to Filter.Cutoff
+  ✓ "brighter/darker" alone do not map to targets
+  ✓ "oscillator" overview does not map to specific targets
+
+User constraint: "Preserve existing mappings"
+  ✓ All 71 RESOLVED items unchanged
+  ✓ All 28 AMBIGUOUS items unchanged
+  ✓ No target overwrites occurred
+
+================================================================================
+DECISION
+================================================================================
+
+STATUS: SAFE_TO_PROCEED
+
+The three targets (OSC1.Level, OSC1.Detune, Filter.Cutoff) should NOT be
+executed as producer episodes because:
+
+1. They lack sufficient YouTube-grounded knowledge support
+2. Context-aware resolution found zero safe mappings
+3. The semantic intent resolver correctly marks them UNSUPPORTED
+4. Attempting to execute them would violate evidence requirements
+
+CORRECT COURSE OF ACTION:
+  - Do not execute Serum for OSC1.Level, OSC1.Detune, Filter.Cutoff
+  - Proceed with execution only for RESOLVED targets with hypotheses
+  - Only execute Env1.Attack, Env1.Release, OSC1.Octave (with YouTube support)
+
+If these three targets are required for producer execution in the future:
+  - Obtain explicit procedural documentation from YouTube or other sources
+  - Create new KnowledgeItems with clear semantic binding to the controls
+  - Follow the full knowledge extraction → target resolution → hypothesis pipeline
+  - Do not use keyword matching as a shortcut
+
+================================================================================
+FILES CHANGED
+================================================================================
+
+Commit 2a3028b:
+  - serum2/knowledge/target_resolution_context_aware.py (new)
+  - serum2/knowledge/yt_f507169bd7cb_target_resolution.json (updated)
+
+All other knowledge artifacts remain in trusted state after revert.
+
+================================================================================
+CONCLUSION
+================================================================================
+
+The forensic audit identified critical defects in the initial repair and
+led to immediate corrective action. The final state is:
+
+1. Unsafe commit reverted (a0b6f64)
+2. Trusted state restored (819efc7)
+3. Context-aware safeguards implemented (2a3028b)
+4. Zero false positives in final system
+5. All constraints satisfied
+6. All tests passing
+
+The knowledge pipeline is now in a SAFE, AUDITABLE STATE with proper
+preservation of existing mappings and rejection of unsafe new mappings.
+
+Ready for next phase: Execute producer episodes for RESOLVED targets only.
+
+================================================================================

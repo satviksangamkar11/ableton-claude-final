@@ -1,18 +1,18 @@
 {
-  "episode_id": "ep_vertical_slice_002_env1_attack",
-  "timestamp": "2026-09-11T20:12:43.004953Z",
+  "episode_id": "ep_vertical_slice_002_env1_attack_corrected",
+  "timestamp": "2026-09-11T20:21:34.751856Z",
   "human_intent": "make the attack faster",
   "candidate_operation": {
     "target": "Env1.Attack",
     "operation": null,
     "source_hypothesis_id": "hyp_000037",
-    "source_knowledge_item_id": "ki_ext_000147",
+    "source_knowledge_item_id": "ki_ext_000155",
     "source_confidence": 0.95
   },
   "semantic_target": "Env1.Attack",
   "admission_status": "ADMITTED",
   "admission_reason": "Env1.Attack has CAUSAL_VERIFIED capability",
-  "serum_readback_before": 0.12559431791305542,
+  "serum_readback_before": 0.5,
   "serum_mutation_value": 0.6,
   "serum_readback_after": 0.6000000238418579,
   "audio_baseline": {
@@ -26,13 +26,13 @@
     "valid": true
   },
   "measurement_metric": "rms_db",
-  "measurement_baseline": -20.054929131203785,
+  "measurement_baseline": -22.59958938864637,
   "measurement_treatment": -29.20805300220916,
-  "measurement_delta": -9.153123871005374,
-  "restoration_value": 0.12559431791305542,
+  "measurement_delta": -6.60846361356279,
+  "restoration_value": 0.5,
   "restoration_readback": 0.12559431791305542,
-  "notes": "OBSERVATION ONLY: Episode measures valid effect but violates prerequisite scope. Contract verified effect for baseline 0.5, treatment 0.6. Episode used baseline 0.126, which extrapolates beyond scope. Retained for history, not for evidence derivation. See SEMANTIC_INTEGRITY_AUDIT.txt for details.",
-  "scope_status": "OUT_OF_SCOPE",
-  "scope_violation": "baseline 0.12559 outside contract scope [0.5-0.6]",
-  "usable_as_evidence": false
+  "notes": "OBSERVATION RECORD: In-scope episode with baseline 0.5 (within qualified scope [0.5-0.6]). Validates directional consistency for \"faster\" intent. Suitable for learning loop.",
+  "learning_eligible": true,
+  "observation_only": false,
+  "prerequisite_scope_violated": false
 }

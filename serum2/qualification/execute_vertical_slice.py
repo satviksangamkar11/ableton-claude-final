@@ -22,6 +22,147 @@ from serum2.knowledge.semantic_intent_resolver import resolve_semantic_intent
 # Constants from existing code
 from serum2.evidence import epoch as epoch_mod
 
+
+def validate_semantic_direction(intent: str, target: str, baseline: float, mutation: float) -> tuple:
+    """
+    Validate that the mutation direction matches the capability's semantic direction.
+    Returns: (is_valid: bool, error_message: str or None)
+    """
+    # Load capability contracts
+    try:
+        with open('serum2/knowledge/step_b_evidence_to_capability_integration.json') as f:
+            contracts_data = json.load(f)
+    except Exception as e:
+        return False, f"Could not load capability contracts: {e}"
+
+    # Find the contract for this target
+    contract = None
+    for c in contracts_data.get('capability_contracts', []):
+        if c.get('target') == target:
+            contract = c
+            break
+
+    if not contract:
+        return False, f"No capability contract found for {target}"
+
+    # Find the behavior claim
+    behavior_claim = None
+    for claim in contracts_data.get('behavior_claims', []):
+        if claim.get('semantic_target') == target:
+            behavior_claim = claim
+            break
+
+    if not behavior_claim:
+        return False, f"No behavior claim found for {target}"
+
+    # Infer expected direction based on intent and predicate
+    predicate = behavior_claim.get('predicate', '')
+    semantic_object = behavior_claim.get('semantic_object', '')
+
+    # Parse intent to infer desired direction
+    intent_lower = intent.lower()
+
+    # Heuristic mappings for common intents
+    direction_keywords = {
+        'faster': -1,  # decrease time
+        'slower': 1,   # increase time
+        'higher': 1,   # increase value
+        'lower': -1,   # decrease value
+        'shorter': -1,
+        'longer': 1,
+        'more': 1,
+        'less': -1,
+        'louder': 1,
+        'quieter': -1,
+        'brighter': 1,
+        'darker': -1,
+    }
+
+    desired_effect = None
+    for keyword, effect in direction_keywords.items():
+        if keyword in intent_lower:
+            desired_effect = effect
+            break
+
+    if desired_effect is None:
+        return False, f"Could not infer desired direction from intent: '{intent}'"
+
+    # Determine what the predicate says about parameter increase
+    # "reduces attack_time" means: increasing param reduces time (desired_effect=-1 -> param increase)
+    predicate_effect = None
+    if 'reduce' in predicate.lower():
+        predicate_effect = -1  # predicate says increasing param reduces the object
+    elif 'increase' in predicate.lower() or 'extends' in predicate.lower():
+        predicate_effect = 1   # predicate says increasing param increases the object
+    else:
+        # Generic handling: assume "reduces" is the inverse
+        predicate_effect = -1
+
+    # Calculate required parameter direction
+    # If desired_effect = -1 (want to reduce) and predicate_effect = -1 (increase param reduces it)
+    # then we need to INCREASE the parameter
+    required_param_direction = desired_effect / predicate_effect if predicate_effect != 0 else 0
+
+    # Check actual mutation direction
+    actual_direction = 1 if mutation > baseline else (-1 if mutation < baseline else 0)
+
+    if actual_direction == 0:
+        return False, f"Mutation is unchanged (baseline={baseline}, mutation={mutation})"
+
+    if actual_direction != required_param_direction:
+        return False, (
+            f"Semantic directional mismatch: intent '{intent}' (desired: {int(desired_effect):+d}) "
+            f"with predicate '{predicate}' requires parameter {int(required_param_direction):+d}, "
+            f"but mutation is {int(actual_direction):+d} ({baseline} -> {mutation})"
+        )
+
+    return True, None
+
+
+def validate_scope_prerequisite(target: str, baseline: float) -> tuple:
+    """
+    Validate that the baseline lies within the capability contract's scope.
+    Returns: (is_valid: bool, error_message: str or None, scope_info: dict or None)
+    """
+    try:
+        with open('serum2/knowledge/step_b_evidence_to_capability_integration.json') as f:
+            contracts_data = json.load(f)
+    except Exception as e:
+        return False, f"Could not load capability contracts: {e}", None
+
+    contract = None
+    for c in contracts_data.get('capability_contracts', []):
+        if c.get('target') == target:
+            contract = c
+            break
+
+    if not contract:
+        return False, f"No capability contract found for {target}", None
+
+    scope_limitation = contract.get('scope', {}).get('limitation', '')
+
+    # Parse scope limitation to extract baseline and treatment ranges
+    # Format: "Tested only Env 1 Attack [0.5 → 0.6] (shorter envelope onset)"
+    import re
+    # Match decimal numbers in brackets, handling any characters between them
+    match = re.search(r'\[([0-9]+\.[0-9]+)[^\]]*([0-9]+\.[0-9]+)\]', scope_limitation)
+    if not match:
+        # No scope limitation found, assume unrestricted
+        return True, None, {'limitation': scope_limitation, 'scope_min': None, 'scope_max': None}
+
+    scope_min = float(match.group(1))
+    scope_max = float(match.group(2))
+
+    # Check if baseline is within scope
+    if baseline < scope_min or baseline > scope_max:
+        return False, (
+            f"Baseline {baseline} outside qualified scope [{scope_min}, {scope_max}]. "
+            f"Scope: {scope_limitation}"
+        ), {'limitation': scope_limitation, 'scope_min': scope_min, 'scope_max': scope_max, 'baseline': baseline}
+
+    return True, None, {'limitation': scope_limitation, 'scope_min': scope_min, 'scope_max': scope_max, 'baseline': baseline}
+
+
 SR = 44100
 BLOCK = 512
 VST3 = epoch_mod.SERUM_VST3
@@ -39,9 +180,15 @@ def is_valid_signal(audio: np.ndarray) -> dict:
     return {"peak": peak, "nonzero_fraction": nonzero_fraction, "valid": valid}
 
 
-def render_arm(meta: dict, body: dict, extra_host_context: list = None) -> tuple:
+def render_arm(meta: dict, body: dict, extra_host_context: list = None, baseline_override_param: tuple = None) -> tuple:
     """
-    Render one arm with optional host param context.
+    Render one arm with optional host param context and baseline override.
+
+    Args:
+        meta: skeleton metadata
+        body: skeleton body (CBOR)
+        extra_host_context: list of (param_name, param_value) tuples
+        baseline_override_param: tuple of (param_name, param_value) to set baseline
 
     Returns: (audio_array, error_message)
     """
@@ -59,6 +206,14 @@ def render_arm(meta: dict, body: dict, extra_host_context: list = None) -> tuple
         finally:
             if os.path.exists(tmp):
                 os.remove(tmp)
+
+        # Apply baseline override (if any)
+        if baseline_override_param:
+            params = synth.get_parameters_description()
+            by_name = {p["name"]: p["index"] for p in params}
+            param_name, param_value = baseline_override_param
+            if param_name in by_name:
+                synth.set_parameter(by_name[param_name], float(param_value))
 
         # Apply host context (if any)
         if extra_host_context:
@@ -87,6 +242,7 @@ def execute_producer_episode(
     mutation_value: float,
     measurement_metric: str,
     episode_id: str,
+    baseline_override: float = None,
 ) -> tuple:
     """
     Generic producer execution: intent → target → mutate → render → measure → restore → persist
@@ -140,16 +296,60 @@ def execute_producer_episode(
 
     print("  Status: ADMITTED")
 
-    # Step 3: Load skeleton
-    print("\n[2/6] Loading Serum skeleton...")
+    # Step 2: Load skeleton and validate prerequisites
+    print("\n[2/6] Loading Serum and validating prerequisites...")
     skeleton = bridge.capture_v8_skeleton(VST3)
     meta = skeleton[0]
     body = skeleton[1]
     print("  Skeleton loaded")
 
-    # Step 4: Render baseline
+    # Read baseline parameter to validate scope/direction
+    engine_baseline = daw.RenderEngine(SR, BLOCK)
+    synth_baseline = engine_baseline.make_plugin_processor("serum", VST3)
+    params = synth_baseline.get_parameters_description()
+    by_name = {p["name"]: p["index"] for p in params}
+
+    if host_param_name not in by_name:
+        return None, f"Parameter '{host_param_name}' not found"
+
+    param_idx = by_name[host_param_name]
+
+    fd, tmp = tempfile.mkstemp(suffix=".bin")
+    os.close(fd)
+    bridge.write_state_file(tmp, meta, body)
+    synth_baseline.load_state(tmp)
+    os.remove(tmp)
+
+    # If baseline override provided, validate and prepare for rendering
+    if baseline_override is not None:
+        synth_baseline.set_parameter(param_idx, float(baseline_override))
+        readback_baseline = synth_baseline.get_parameter(param_idx)
+        print(f"  {host_param_name} set to override: {baseline_override}")
+        print(f"  {host_param_name} baseline readback: {readback_baseline}")
+    else:
+        readback_baseline = synth_baseline.get_parameter(param_idx)
+        print(f"  {host_param_name} baseline readback: {readback_baseline}")
+
+    # Validate scope prerequisite
+    scope_valid, scope_error, scope_info = validate_scope_prerequisite(semantic_target, readback_baseline)
+    if not scope_valid:
+        return None, f"Scope prerequisite violation: {scope_error}"
+    print(f"  Scope validation: OK (baseline {readback_baseline} within scope)")
+
+    # Validate semantic direction
+    direction_valid, direction_error = validate_semantic_direction(
+        human_intent, semantic_target, readback_baseline, mutation_value
+    )
+    if not direction_valid:
+        return None, f"Semantic direction mismatch: {direction_error}"
+    print(f"  Direction validation: OK")
+
+    # Step 3: Render baseline
     print("\n[3/6] Rendering baseline audio...")
-    audio_baseline, baseline_err = render_arm(meta, body)
+    baseline_override_param = None
+    if baseline_override is not None:
+        baseline_override_param = (host_param_name, baseline_override)
+    audio_baseline, baseline_err = render_arm(meta, body, baseline_override_param=baseline_override_param)
     if audio_baseline is None:
         return None, f"Baseline render failed: {baseline_err}"
 
@@ -247,6 +447,8 @@ def execute_producer_episode(
 
     # Step 8: Persist
     print("\n[PERSISTENCE] Creating episode artifact...")
+    # Use readback_baseline if override was applied, else use readback_before
+    recorded_baseline = readback_baseline if baseline_override is not None else readback_before
     episode = ExecutionRecord(
         episode_id=episode_id,
         timestamp=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -261,7 +463,7 @@ def execute_producer_episode(
         semantic_target=semantic_target,
         admission_status="ADMITTED",
         admission_reason=f"{semantic_target} has CAUSAL_VERIFIED capability",
-        serum_readback_before=float(readback_before),
+        serum_readback_before=float(recorded_baseline),
         serum_mutation_value=float(mutation_value),
         serum_readback_after=float(readback_after_mutation),
         audio_baseline=baseline_validity,
@@ -270,7 +472,7 @@ def execute_producer_episode(
         measurement_baseline=float(measurement_baseline),
         measurement_treatment=float(measurement_treatment),
         measurement_delta=float(measurement_delta),
-        restoration_value=float(readback_before),
+        restoration_value=float(recorded_baseline),
         restoration_readback=float(readback_restored),
     )
 

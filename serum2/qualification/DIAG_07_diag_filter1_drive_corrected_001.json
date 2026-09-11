@@ -1,0 +1,52 @@
+{
+  "success": true,
+  "experiment_id": "diag_filter1_drive_corrected_001",
+  "behavior_observation": {
+    "experiment_id": "diag_filter1_drive_corrected_001",
+    "timestamp": "2026-09-11T15:46:17.820564+00:00",
+    "semantic_target": "Filter1.Drive",
+    "operation": "SET_PARAMETER",
+    "context": {
+      "Filter 1 On": 1.0
+    },
+    "context_provenance": "filter must be active to apply drive",
+    "baseline_intervention": {
+      "cbor_overrides": {},
+      "host_context": []
+    },
+    "treatment_intervention": {
+      "cbor_path": "VoiceFilter0.plainParams.kParamDrive",
+      "cbor_value": 0.0,
+      "host_param_name": null,
+      "host_param_value": null,
+      "host_context": []
+    },
+    "baseline_rendered": true,
+    "treatment_rendered": true,
+    "baseline_render_time_sec": 0.307523,
+    "treatment_render_time_sec": 0.276369,
+    "measurements": [
+      {
+        "name": "overall_rms_db",
+        "kernel": "rms_db",
+        "baseline": -23.653763650437888,
+        "treatment": -23.653763650437888,
+        "delta": 0.0,
+        "threshold": 1.0,
+        "status": "NO_OBSERVED_EFFECT"
+      },
+      {
+        "name": "spectral_centroid_hz",
+        "kernel": "spectral_centroid_hz",
+        "baseline": 463.08984236285244,
+        "treatment": 463.08984236285244,
+        "delta": 0.0,
+        "threshold": 200.0,
+        "status": "NO_OBSERVED_EFFECT"
+      }
+    ],
+    "isolation_level": "single_field",
+    "execution_notes": null
+  },
+  "exercise_qualification": null
+}

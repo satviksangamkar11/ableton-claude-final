@@ -1,0 +1,556 @@
+{
+  "seed_batch_execution": {
+    "execution_date": "2026-09-11T15:35:22.042378+00:00",
+    "total_experiments": 11,
+    "completed": 10,
+    "failed": 1,
+    "experiments": [
+      {
+        "experiment_id": "seed_filter1_resonance_001",
+        "semantic_target": "Filter1.Resonance",
+        "expected_outcome": "EFFECT_OBSERVED",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_02_seed_filter1_resonance_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_filter1_resonance_001",
+          "timestamp": "2026-09-11T15:35:12.222696+00:00",
+          "semantic_target": "Filter1.Resonance",
+          "operation": "SET_PARAMETER",
+          "context": {
+            "Filter 1 On": 1.0
+          },
+          "context_provenance": "filter must be active; resonance affects tone only when filter is processing",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceFilter0.plainParams.kParamReso",
+            "cbor_value": 0.9,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.280767,
+          "treatment_render_time_sec": 0.256628,
+          "measurements": [
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": 463.08984236285244,
+              "treatment": 476.872746796769,
+              "delta": 13.782904433916542,
+              "threshold": 100.0,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -23.653763650437888,
+              "treatment": -24.50955280904504,
+              "delta": -0.855789158607152,
+              "threshold": 1.0,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_filter2_cutoff_001",
+        "semantic_target": "Filter2.Cutoff",
+        "expected_outcome": "EFFECT_OBSERVED",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_03_seed_filter2_cutoff_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_filter2_cutoff_001",
+          "timestamp": "2026-09-11T15:35:13.285945+00:00",
+          "semantic_target": "Filter2.Cutoff",
+          "operation": "SET_PARAMETER",
+          "context": {
+            "Filter 2 On": 1.0
+          },
+          "context_provenance": "filter must be active to exercise cutoff parameter",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceFilter1.plainParams.kParamFreq",
+            "cbor_value": 0.9,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.276919,
+          "treatment_render_time_sec": 0.25908,
+          "measurements": [
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": 4378.134622380464,
+              "treatment": 4378.134622380464,
+              "delta": 0.0,
+              "threshold": 200.0,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -20.054929131203785,
+              "treatment": -20.054929131203785,
+              "delta": 0.0,
+              "threshold": 0.5,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_osc1_level_001",
+        "semantic_target": "OSC1.Level",
+        "expected_outcome": "EFFECT_OBSERVED",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_04_seed_osc1_level_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_osc1_level_001",
+          "timestamp": "2026-09-11T15:35:14.313049+00:00",
+          "semantic_target": "OSC1.Level",
+          "operation": "SET_PARAMETER",
+          "context": {},
+          "context_provenance": "level is independent (no prerequisites)",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceOsc0.plainParams.kParamLevel",
+            "cbor_value": 1.0,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.262157,
+          "treatment_render_time_sec": 0.236375,
+          "measurements": [
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -20.054929131203785,
+              "treatment": -20.054929131203785,
+              "delta": 0.0,
+              "threshold": 2.0,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "tail_rms_db",
+              "kernel": "tail_rms_db",
+              "baseline": -20.71649517114178,
+              "treatment": -20.71649517114178,
+              "delta": 0.0,
+              "threshold": 1.0,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_osc1_detune_001",
+        "semantic_target": "OSC1.Detune",
+        "expected_outcome": "EFFECT_OBSERVED",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_05_seed_osc1_detune_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_osc1_detune_001",
+          "timestamp": "2026-09-11T15:35:15.324189+00:00",
+          "semantic_target": "OSC1.Detune",
+          "operation": "SET_PARAMETER",
+          "context": {},
+          "context_provenance": "detune works independently",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceOsc0.plainParams.kParamDetune",
+            "cbor_value": 0.5,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.256705,
+          "treatment_render_time_sec": 0.227661,
+          "measurements": [
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": 4378.134622380464,
+              "treatment": 4378.134622380464,
+              "delta": 0.0,
+              "threshold": 50.0,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -20.054929131203785,
+              "treatment": -20.054929131203785,
+              "delta": 0.0,
+              "threshold": 1.0,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_osc2_detune_001",
+        "semantic_target": "OSC2.Detune",
+        "expected_outcome": "EFFECT_OBSERVED",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_06_seed_osc2_detune_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_osc2_detune_001",
+          "timestamp": "2026-09-11T15:35:16.338470+00:00",
+          "semantic_target": "OSC2.Detune",
+          "operation": "SET_PARAMETER",
+          "context": {},
+          "context_provenance": "detune works independently",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceOsc1.plainParams.kParamDetune",
+            "cbor_value": 0.5,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.258017,
+          "treatment_render_time_sec": 0.228963,
+          "measurements": [
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": 4378.134622380464,
+              "treatment": 4378.134622380464,
+              "delta": 0.0,
+              "threshold": 50.0,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -20.054929131203785,
+              "treatment": -20.054929131203785,
+              "delta": 0.0,
+              "threshold": 1.0,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_env1_attack_001",
+        "semantic_target": "Env1.Attack",
+        "expected_outcome": "CONDITIONAL",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_07_seed_env1_attack_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_env1_attack_001",
+          "timestamp": "2026-09-11T15:35:17.366606+00:00",
+          "semantic_target": "Env1.Attack",
+          "operation": "SET_PARAMETER",
+          "context": {},
+          "context_provenance": "envelope attack is independent; onset affects rendered audio only if note duration covers attack phase",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceEnv0.plainParams.kParamAttackTime",
+            "cbor_value": 0.1,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.259885,
+          "treatment_render_time_sec": 0.231541,
+          "measurements": [
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -20.054929131203785,
+              "treatment": -20.054929131203785,
+              "delta": 0.0,
+              "threshold": 1.0,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": 4378.134622380464,
+              "treatment": 4378.134622380464,
+              "delta": 0.0,
+              "threshold": 100.0,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_env1_release_001",
+        "semantic_target": "Env1.Release",
+        "expected_outcome": "CONDITIONAL",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_08_seed_env1_release_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_env1_release_001",
+          "timestamp": "2026-09-11T15:35:18.382304+00:00",
+          "semantic_target": "Env1.Release",
+          "operation": "SET_PARAMETER",
+          "context": {},
+          "context_provenance": "envelope release is independent; tail occurs after note ends, may not affect the rendered window",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceEnv0.plainParams.kParamReleaseTime",
+            "cbor_value": 0.1,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.256347,
+          "treatment_render_time_sec": 0.230968,
+          "measurements": [
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -20.054929131203785,
+              "treatment": -20.054929131203785,
+              "delta": 0.0,
+              "threshold": 0.5,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": 4378.134622380464,
+              "treatment": 4378.134622380464,
+              "delta": 0.0,
+              "threshold": 100.0,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_lfo1_rate_no_destination_001",
+        "semantic_target": "LFO1.Rate",
+        "expected_outcome": "NO_OBSERVED_EFFECT",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_09_seed_lfo1_rate_no_destination_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_lfo1_rate_no_destination_001",
+          "timestamp": "2026-09-11T15:35:19.414159+00:00",
+          "semantic_target": "LFO1.Rate",
+          "operation": "SET_PARAMETER",
+          "context": {},
+          "context_provenance": "LFO1 with no modulation destination produces no audible effect; confirms control isolation",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceModulation0.plainParams.kParamRate",
+            "cbor_value": 0.5,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.259074,
+          "treatment_render_time_sec": 0.227575,
+          "measurements": [
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -20.054929131203785,
+              "treatment": -20.054929131203785,
+              "delta": 0.0,
+              "threshold": 0.5,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": 4378.134622380464,
+              "treatment": 4378.134622380464,
+              "delta": 0.0,
+              "threshold": 50.0,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_lfo1_rate_filter_modulation_001",
+        "semantic_target": "LFO1.Rate",
+        "expected_outcome": "EFFECT_OBSERVED",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_10_seed_lfo1_rate_filter_modulation_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_lfo1_rate_filter_modulation_001",
+          "timestamp": "2026-09-11T15:35:20.404236+00:00",
+          "semantic_target": "LFO1.Rate",
+          "operation": "SET_PARAMETER",
+          "context": {
+            "LFO1 Mod Dest": "Filter1.Cutoff",
+            "Filter 1 On": 1.0
+          },
+          "context_provenance": "LFO1 modulating Filter1.Cutoff; rate change affects how fast cutoff is swept",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceModulation0.plainParams.kParamRate",
+            "cbor_value": 0.5,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": false,
+          "treatment_rendered": false,
+          "baseline_render_time_sec": 0.249781,
+          "treatment_render_time_sec": 0.225059,
+          "measurements": [
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": null,
+              "treatment": null,
+              "delta": null,
+              "threshold": 200.0,
+              "status": "NOT_RUN"
+            },
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": null,
+              "treatment": null,
+              "delta": null,
+              "threshold": 1.0,
+              "status": "NOT_RUN"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_filter1_drive_001",
+        "semantic_target": "Filter1.Drive",
+        "expected_outcome": "EFFECT_OBSERVED",
+        "success": true,
+        "evidence_file": "serum2/qualification/A_SEED_EXPERIMENT_11_seed_filter1_drive_001_EVIDENCE.json",
+        "behavior_observation": {
+          "experiment_id": "seed_filter1_drive_001",
+          "timestamp": "2026-09-11T15:35:21.478141+00:00",
+          "semantic_target": "Filter1.Drive",
+          "operation": "SET_PARAMETER",
+          "context": {
+            "Filter 1 On": 1.0
+          },
+          "context_provenance": "filter must be active to apply drive",
+          "baseline_intervention": {
+            "cbor_overrides": {},
+            "host_context": []
+          },
+          "treatment_intervention": {
+            "cbor_path": "VoiceFilter0.plainParams.kParamDrive",
+            "cbor_value": 1.0,
+            "host_param_name": null,
+            "host_param_value": null,
+            "host_context": []
+          },
+          "baseline_rendered": true,
+          "treatment_rendered": true,
+          "baseline_render_time_sec": 0.285885,
+          "treatment_render_time_sec": 0.255404,
+          "measurements": [
+            {
+              "name": "overall_rms_db",
+              "kernel": "rms_db",
+              "baseline": -23.653763650437888,
+              "treatment": -23.309379288037924,
+              "delta": 0.34438436239996406,
+              "threshold": 1.0,
+              "status": "NO_OBSERVED_EFFECT"
+            },
+            {
+              "name": "spectral_centroid_hz",
+              "kernel": "spectral_centroid_hz",
+              "baseline": 463.08984236285244,
+              "treatment": 463.06009917954395,
+              "delta": -0.029743183308482912,
+              "threshold": 200.0,
+              "status": "NO_OBSERVED_EFFECT"
+            }
+          ],
+          "isolation_level": "single_field",
+          "execution_notes": null
+        },
+        "exercise_qualification": null
+      },
+      {
+        "experiment_id": "seed_fxeq_freq1_001",
+        "semantic_target": "FXEQ.Freq1",
+        "expected_outcome": "EFFECT_OBSERVED",
+        "success": false,
+        "error": "path segment '0' looks like a list index but the current node is a dict, not a list"
+      }
+    ]
+  }
+}

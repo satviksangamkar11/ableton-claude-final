@@ -53,17 +53,7 @@
       "render_verified": true
     },
     "ableton_tempo": {
-      "baseline_from_live": 120.0,
-      "mutation_target": 128.0,
-      "set_result": "Set tempo to 128.0 BPM",
-      "readback_after_set": 128.0,
-      "restore_result": "Set tempo to 120.0 BPM",
-      "readback_after_restore": 120.0,
-      "set_verified": true,
-      "readback_verified": true,
-      "restore_verified": true,
-      "mcp_tool": "mcp__AbletonMCP__set_tempo + mcp__AbletonMCP__get_session_info",
-      "live_version": "12.3"
+      "note": "Populated from actual Ableton MCP calls \u2014 see mcp_tempo section"
     }
   },
   "errors": [],
@@ -75,7 +65,6 @@
     "serum_pitch_restore_verified": true,
     "modulation_cycle_verified": true,
     "render_verified": true,
-    "ableton_tempo_verified": true,
-    "all_gates_pass": true
+    "ableton_tempo_verified": false
   }
 }

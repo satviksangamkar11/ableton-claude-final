@@ -1,0 +1,74 @@
+{
+  "pilot": "Filter1.Cutoff Revised Architecture Execution",
+  "status": "REVISED_ARCHITECTURE",
+  "comparison_with": "A_FILTER_CUTOFF_PILOT_EVIDENCE.json",
+  "exercise_qualification": {
+    "target_semantic_id": "Filter1.Cutoff",
+    "target_cbor_path": "VoiceFilter0.plainParams.kParamFreq",
+    "frozen_context": {
+      "Filter 1 On": 1.0
+    },
+    "mutation_value": 0.9,
+    "causal_measurement": {
+      "metric": "spectral_centroid_hz",
+      "baseline": 463.08984236285244,
+      "treatment": 3147.4317714223102,
+      "delta": 2684.341929059458,
+      "expected_direction": "increase",
+      "observed_direction": "increase",
+      "threshold": 200.0,
+      "status": "EFFECT_OBSERVED"
+    },
+    "isolation_level": "single_field",
+    "scope": "single_run_non_reusable",
+    "experiment_id": "filter_cutoff_revised_001",
+    "is_valid": true
+  },
+  "behavior_observation": {
+    "experiment_id": "filter_cutoff_revised_001",
+    "timestamp": "2026-09-11T15:27:35.895947+00:00",
+    "semantic_target": "Filter1.Cutoff",
+    "operation": "SET_PARAMETER",
+    "context": {
+      "Filter 1 On": 1.0
+    },
+    "context_provenance": "filter must be active to exercise cutoff parameter",
+    "baseline_intervention": {
+      "cbor_overrides": {},
+      "host_context": []
+    },
+    "treatment_intervention": {
+      "cbor_path": "VoiceFilter0.plainParams.kParamFreq",
+      "cbor_value": 0.9,
+      "host_param_name": null,
+      "host_param_value": null,
+      "host_context": []
+    },
+    "baseline_rendered": true,
+    "treatment_rendered": true,
+    "baseline_render_time_sec": 0.278422,
+    "treatment_render_time_sec": 0.276994,
+    "measurements": [
+      {
+        "name": "spectral_centroid_hz",
+        "kernel": "spectral_centroid_hz",
+        "baseline": 463.08984236285244,
+        "treatment": 3147.4317714223102,
+        "delta": 2684.341929059458,
+        "threshold": 200.0,
+        "status": "EFFECT_OBSERVED"
+      },
+      {
+        "name": "overall_rms_db",
+        "kernel": "rms_db",
+        "baseline": -23.653763650437888,
+        "treatment": -22.959379630182074,
+        "delta": 0.6943840202558142,
+        "threshold": 0.5,
+        "status": "EFFECT_OBSERVED"
+      }
+    ],
+    "isolation_level": "single_field",
+    "execution_notes": null
+  }
+}

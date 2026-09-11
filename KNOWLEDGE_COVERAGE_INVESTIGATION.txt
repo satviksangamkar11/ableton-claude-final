@@ -1,0 +1,105 @@
+================================================================================
+KNOWLEDGE COVERAGE INVESTIGATION: OSC1.Level, OSC1.Detune, Filter1.Cutoff
+================================================================================
+
+FINDING: Source knowledge exists, but semantic target assignment pipeline failed.
+
+================================================================================
+OSC1.LEVEL
+================================================================================
+
+Source Evidence:        YES - 3525 matching segments in YouTube transcript
+KnowledgeItems Extracted: 33 items extracted from source
+Target Resolution:      FAILED - 0 items resolved to OSC1.Level semantic target
+                        (18/33 items resolved to OTHER targets, 15 unresolved)
+Hypotheses Generated:   0 (because no items resolved to target)
+
+Issue: TARGET RESOLUTION PIPELINE BUG
+  - Items were correctly extracted from source
+  - But semantic_extraction → target_resolution mapping failed
+  - Items resolved to wrong targets (e.g., 1 to OSC1.Octave instead of OSC1.Level)
+  - No hypotheses generated due to zero target matches
+
+Example misresolution:
+  KnowledgeItem ki_ext_000001: "...oscillator level/volume controls..."
+  Extracted but not mapped to OSC1.Level semantic target
+
+Fix Required: Update target_resolution.json to correctly map OSC1.Level items
+
+================================================================================
+OSC1.DETUNE
+================================================================================
+
+Source Evidence:        YES - 451 matching segments in YouTube transcript
+KnowledgeItems Extracted: 7 items extracted from source
+Target Resolution:      FAILED - 0 items resolved to OSC1.Detune semantic target
+                        (all 7 items unresolved)
+Hypotheses Generated:   0 (because no items resolved to target)
+
+Issue: TARGET RESOLUTION PIPELINE BUG
+  - Items were correctly extracted from source
+  - But semantic_extraction → target_resolution mapping failed completely
+  - ALL items remain unresolved (not mapped to ANY semantic target)
+  - No hypotheses generated due to zero target matches
+
+Example unresolved:
+  KnowledgeItem ki_ext_000003: "...oscillator fine/detune controls..."
+  Extracted but not mapped to any semantic target
+
+Fix Required: Update target_resolution.json to map OSC1.Detune items
+
+================================================================================
+FILTER1.CUTOFF
+================================================================================
+
+Source Evidence:        YES - 1199 matching segments in YouTube transcript
+KnowledgeItems Extracted: 2 items extracted from source
+Target Resolution:      FAILED - 0 items resolved to Filter.Cutoff semantic target
+                        (1/2 resolved to unknown, 1 unresolved)
+Hypotheses Generated:   0 (because no items resolved to target)
+
+Issue: TARGET RESOLUTION PIPELINE BUG
+  - Items were correctly extracted from source
+  - But semantic_extraction → target_resolution mapping failed completely
+  - Only 1 item was resolved (to unknown target), 1 unresolved
+  - No hypotheses generated due to zero target matches
+
+Example unresolved:
+  KnowledgeItem ki_ext_000068: "...filter cutoff/frequency controls..."
+  Extracted but not mapped to Filter.Cutoff semantic target
+
+Fix Required: Update target_resolution.json to map Filter.Cutoff items
+
+================================================================================
+CONCLUSION
+================================================================================
+
+KNOWLEDGE GAP: NO
+PIPELINE BUG: YES
+
+The YouTube transcript CONTAINS substantial content about these parameters:
+  - OSC1.Level: 3525 source segments
+  - OSC1.Detune: 451 source segments
+  - Filter1.Cutoff: 1199 source segments
+
+But the semantic target resolution step FAILED to connect extracted items
+to their correct semantic targets.
+
+ROOT CAUSE: The target_resolution artifact (yt_f507169bd7cb_target_resolution.json)
+does not include entries that map the extracted KnowledgeItems to these targets.
+
+SOLUTION OPTIONS:
+
+A. FIX THE PIPELINE (recommended)
+   - Update target_resolution.json to map extracted items to correct targets
+   - This requires re-running the target-resolution extraction step
+   - After fix: hypotheses will be auto-generated, resolver will RESOLVE
+
+B. ACCEPT THE GAP (per current constraints)
+   - Leave targets UNSUPPORTED
+   - Only proceed with 3 targets that have hypotheses (Env1.Release, Env1.Attack, OSC1.Octave)
+
+The source knowledge definitively exists. The pipeline bug is fixable but
+would require re-running the semantic extraction/resolution stages.
+
+================================================================================

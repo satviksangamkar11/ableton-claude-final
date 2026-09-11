@@ -35,6 +35,9 @@ class ExecutionRecord:
     restoration_value: Optional[float]
     restoration_readback: Optional[float]
     notes: str = ""
+    learning_eligible: bool = True  # True if suitable for learning loop, False if observation-only
+    observation_only: bool = False  # True if recorded but not for evidence derivation
+    prerequisite_scope_violated: bool = False  # True if baseline outside contract scope
 
     def to_dict(self) -> dict:
         return asdict(self)

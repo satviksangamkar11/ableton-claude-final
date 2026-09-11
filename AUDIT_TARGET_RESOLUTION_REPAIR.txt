@@ -1,0 +1,276 @@
+================================================================================
+FORENSIC AUDIT: Target Resolution Repair (commit a0b6f64)
+================================================================================
+
+STATUS: NEEDS_REPAIR
+
+================================================================================
+EXECUTIVE SUMMARY
+================================================================================
+
+The target resolution repair has introduced WIDESPREAD FALSE POSITIVE MAPPINGS
+by overwriting previously valid semantic target assignments with new targets
+based on generic keyword matching without contextual understanding.
+
+Critical Finding:
+  - 43 items that were RESOLVED (had valid targets) were REMAPPED
+  - 14 AMBIGUOUS items had their ambiguity resolved by overwriting
+  - The script remapped items it should have left unchanged
+  - Generic keywords ("level", "oscillator", "detune") trigger false positives
+
+================================================================================
+BEFORE/AFTER STATE
+================================================================================
+
+BEFORE repair (HEAD~1):
+  resolved: 71 items with valid targets
+  ambiguous: 28 items with multiple candidates
+  no_target: 200 items with no semantic mapping
+  source_only: 18 items
+  ------
+  targets_covered: 12 specific targets
+
+AFTER repair (HEAD):
+  resolved: 317 items (ALL items marked resolved)
+  ambiguous: 0 (all ambiguity erased)
+  no_target: 0 (all unresolved items mapped)
+  source_only: 0 (all source_only items mapped)
+  ------
+  targets_covered: 13 targets (added OSC1.Level, OSC1.Detune, Filter.Cutoff)
+
+STATE TRANSITIONS ANALYSIS:
+  Items with status=RESOLVED that were REMAPPED: 43 (critical issue)
+  Items with status=AMBIGUOUS that were REMAPPED: 14 (overwriting valid ambiguity)
+  Items with status=NO_SERUM_TARGET that were resolved: 67 (potentially OK)
+  Items with status=SOURCE_ONLY that were remapped: 1 (minor)
+
+================================================================================
+CRITICAL CASE STUDIES: FALSE POSITIVE EXAMPLES
+================================================================================
+
+CASE 1: ki_ext_000000 (THE VIDEO INTRODUCTION)
+  Source: "Hello everybody. I decided to read the entire Serum manual so you
+           don't have to. And today I'm going to explain you exactly how the
+           plug-in works..."
+  Kind: PROCEDURE
+
+  BEFORE: Env1.Release (reasonable - procedural intro)
+  AFTER:  OSC1.Level (FALSE POSITIVE)
+
+  Analysis: This is the YouTube video introduction. The text doesn't describe
+  oscillator level control. The repair script matched "plug-in works" or similar
+  generic text to OSC1.Level because the extraction contains keywords like "gain".
+
+  Verdict: FALSE POSITIVE - content is meta/intro, not about Serum parameters.
+
+
+CASE 2: ki_ext_000003 (OSCILLATOR TYPES OVERVIEW)
+  Source: "Now let's get back into the oscillators of Serum. So Serum now comes
+           with five different oscillator types. You can select them from here.
+           We can see we have a wave table, multisample sampler, a granul..."
+  Kind: PROCEDURE
+
+  BEFORE: OSC1.Octave (reasonable - discusses oscillators)
+  AFTER:  OSC1.Level, OSC1.Detune (FALSE POSITIVES)
+
+  Analysis: This is an overview of oscillator types. The text mentions oscillators
+  multiple times but doesn't specifically describe level or detune controls.
+  The repair matched on "oscillator" + generic keywords triggering false mappings.
+
+  Verdict: FALSE POSITIVE - generic overview without specific target semantics.
+
+
+CASE 3: ki_ext_000004 (MENU NAVIGATION)
+  Source: "Now, when it comes to Serum, a lot of the information is hidden behind
+           right-click menus, so-called context menus. And if I right click on
+           the face, you can see that we have two options over here, whi..."
+  Kind: PROCEDURE
+
+  BEFORE: OSC1.Wavetable (questionable - about menus, not wavetable)
+  AFTER:  OSC1.Level, OSC1.Detune (FALSE POSITIVES)
+
+  Analysis: This is about menu structure and navigation, not specific parameter
+  controls. The original mapping to OSC1.Wavetable is also questionable, but
+  the repair made it worse by adding unrelated targets.
+
+  Verdict: FALSE POSITIVE - meta-discussion of UI, not parameter-specific.
+
+================================================================================
+ROOT CAUSE ANALYSIS
+================================================================================
+
+The repair script (target_resolution_repair.py) implements semantic target
+resolution rules that are TOO GENERIC:
+
+OSC1.Level rules include:
+  Keywords: "level", "volume", "amplitude", "gain", "loud", "quieter", "louder"
+  Patterns: r"(?:sound|output)\s+(?:quieter|louder|level)"
+
+Problem: These keywords appear in GENERAL synthesis discussion, not parameter
+  control discussion. Matching on "amplitude" in a theoretical explanation of
+  oscillators is NOT the same as matching on "adjust amplitude of oscillator level".
+
+OSC1.Detune rules include:
+  Keywords: "detune", "detuning", "pitch offset", "oscillator two", etc.
+  Patterns: r"detun(?:e|ing)", r"fine\s+tun(?:e|ing)"
+
+Problem: Generic mentions of oscillator concepts are not specific target mappings.
+  "The oscillators are detuned by default" is NOT the same as "here's how to
+  control detune on OSC1".
+
+Filter.Cutoff rules include:
+  Keywords: "cutoff", "frequency", "brighter", "darker"
+  Patterns: r"cutoff(?:\s+frequency)?"
+
+Problem: "Frequency" is used in many synthesis contexts. "Brighter" is production
+  language, not parameter documentation. These are too generic.
+
+================================================================================
+WHY THE REPAIR BROKE PREVIOUSLY VALID MAPPINGS
+================================================================================
+
+The repair script merge logic:
+
+1. Loads all BEFORE items (including RESOLVED with valid targets)
+2. Creates new_resolved dict from pattern matching on ALL items
+3. Merges by: keeping all before items, THEN OVERWRITING with new_resolved
+4. This means ANY item matching the new patterns gets REPLACED
+
+The script doesn't distinguish between:
+  - Items that were correctly NO_SERUM_TARGET (map these - OK)
+  - Items that were correctly RESOLVED (keep these - should not change)
+  - Items that were AMBIGUOUS (disambiguate carefully - not by overwriting)
+
+Result: 43 previously RESOLVED items lost their correct targets.
+
+================================================================================
+RULE SEMANTICS AUDIT
+================================================================================
+
+FAIL: The rules use ISOLATED KEYWORDS, not CONTEXTUAL UNDERSTANDING.
+
+Rules that trigger FALSE POSITIVES:
+
+1. "gain" → OSC1.Level
+   Valid context: "To control oscillator level, adjust the gain knob"
+   Invalid match: "The signal gain of..." (synthesis theory)
+
+2. "oscillator" + "level" → OSC1.Level
+   Valid context: "Here's how to adjust oscillator level"
+   Invalid match: "The oscillators are at the top of the synth" (position description)
+
+3. "frequency" → Filter.Cutoff
+   Valid context: "The filter cutoff frequency controls brightness"
+   Invalid match: "Frequency modulation is..." (technique discussion)
+
+4. "brighter" → Filter.Cutoff
+   Valid context: "To make it brighter, raise the filter cutoff"
+   Invalid match: "This bright sound is made by..." (production language)
+
+MISSING: Context indicators like:
+  - "How to control X" / "To adjust X" (procedural language)
+  - "Click on X to..." (actionable instruction)
+  - Proximity to parameter names in the SERUM vocabulary
+  - Section headers or topics
+  - Relationship to actual Serum UI structure
+
+================================================================================
+HYPOTHESIS GENERATION CARDINALITY ISSUE
+================================================================================
+
+New hypothesis counts:
+  OSC1.Level: 95 hypotheses from 33 extracted items
+  OSC1.Detune: 38 hypotheses from 7 extracted items
+  Filter.Cutoff: 22 hypotheses from 2 extracted items
+
+Average hypotheses per item:
+  OSC1.Level: 2.9 hypotheses/item (OK)
+  OSC1.Detune: 5.4 hypotheses/item (HIGH - why so many per item?)
+  Filter.Cutoff: 11 hypotheses/item (VERY HIGH - only 2 items!)
+
+Analysis:
+  - If each KnowledgeItem maps to only ONE target, cardinality should be 1:1
+  - Multiple hypotheses per item suggest items are being mapped to multiple targets
+  - Example: ki_ext_000003 now maps to BOTH OSC1.Level AND OSC1.Detune
+  - This creates spurious hypothesis combinations
+
+Issue: Items that mention "oscillators" generically are being mapped to ALL
+oscillator-related targets, creating false associations between unrelated
+concepts.
+
+================================================================================
+VERIFICATION AGAINST CONSTRAINTS
+================================================================================
+
+User constraint: "No previously NO_SERUM_TARGET material may become a Serum
+target merely because it contains generic producer language such as: frequency,
+brighter, darker, volume, level, pitch, etc."
+
+RESULT: VIOLATED
+
+Examples of constraint violations:
+  1. Items containing generic "oscillator" discussion → OSC1.Level, OSC1.Detune
+  2. Items with "frequency" in synthesis theory context → Filter.Cutoff
+  3. Intro/meta content with incidental keywords → mapped to targets
+
+The repair script violates this constraint by design. It has no mechanism to
+distinguish between:
+  - Generic discussion of a concept
+  - Specific documentation of parameter control
+
+================================================================================
+RECOMMENDATION
+================================================================================
+
+STATUS: NEEDS_REPAIR
+
+The current repair must be REVERTED because:
+
+1. It remapped 43 previously RESOLVED items to new targets
+   - This destroys previously valid knowledge
+   - The new mappings are false positives
+
+2. It uses generic keyword matching without semantic understanding
+   - Cannot distinguish content type (meta vs. procedural vs. parameter-specific)
+   - Creates false positives on generic synthesis language
+
+3. It violates the explicit constraint about generic language
+
+REQUIRED FIX:
+
+Implement a more sophisticated resolution approach that:
+
+A. PRESERVES previously RESOLVED items (don't overwrite them)
+   - Only map items that were NO_SERUM_TARGET or AMBIGUOUS
+   - Leave RESOLVED items untouched
+
+B. Implements CONTEXTUAL pattern matching
+   - Look for procedural language ("How to", "To adjust", "Click on", etc.)
+   - Require target names or UI structure references
+   - Use surrounding text context, not isolated keywords
+
+C. Disambiguates false positives
+   - "Oscillators" alone should not map to specific oscillator targets
+   - "Frequency" needs context (filter? modulation? pitch?)
+   - "Level" needs to be near "oscillator" + procedural context
+
+D. Uses the Serum semantic vocabulary structure
+   - Reference existing target names from SEMANTIC_TARGETS
+   - Validate against domain-specific usage patterns
+
+E. Has explicit negative test cases
+   - Cannot map generic synthesis theory content
+   - Cannot map meta/intro content
+   - Cannot map UI navigation content to parameter targets
+
+================================================================================
+COMMIT STATUS
+================================================================================
+
+Current commit: a0b6f64 "Fix semantic target resolution pipeline..."
+
+Recommendation: REVERT this commit
+
+The repair introduces more problems than it solves.
+
+================================================================================
