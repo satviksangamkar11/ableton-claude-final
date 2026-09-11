@@ -1,0 +1,69 @@
+{
+  "episode_id": "ep_producer_feedback_001",
+  "timestamp": "2026-09-11T20:26:48.638425Z",
+  "human_intent": "make the note sustain longer",
+  "candidate_operation": {
+    "target": "Env1.Release",
+    "operation": null,
+    "source_hypothesis_id": null,
+    "source_knowledge_item_id": null,
+    "source_confidence": 0.9
+  },
+  "semantic_target": "Env1.Release",
+  "admission_status": "ADMITTED",
+  "admission_reason": "Producer feedback loop",
+  "serum_readback_before": 0.5,
+  "serum_mutation_value": 0.55,
+  "serum_readback_after": 0.55,
+  "audio_baseline": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.9999773242630385,
+    "valid": true
+  },
+  "audio_treatment": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.9999773242630385,
+    "valid": true
+  },
+  "measurement_metric": "tail_rms_db",
+  "measurement_baseline": -20.12628701196546,
+  "measurement_treatment": -19.86046937652191,
+  "measurement_delta": 0.2658176354435504,
+  "restoration_value": 0.5,
+  "restoration_readback": 0.5,
+  "notes": "Producer feedback loop episode (in-scope baseline)",
+  "learning_eligible": false,
+  "observation_only": true,
+  "prerequisite_scope_violated": false,
+  "diagnosis": {
+    "goal": {
+      "intent": "make the note sustain longer",
+      "semantic_target": "Env1.Release",
+      "measurement_metric": "tail_rms_db",
+      "metric_direction": "higher"
+    },
+    "current_state": {
+      "serum_readback": 0.5,
+      "measurement_value": -20.12628701196546,
+      "audio_peak": 0.28331682085990906,
+      "audio_valid": true
+    },
+    "candidate_targets": [
+      "Env1.Release"
+    ],
+    "selected_target": "Env1.Release",
+    "mutation_direction": 1,
+    "mutation_magnitude": 0.05,
+    "reason": "Selected Env1.Release to make the note sustain longer",
+    "confidence": 0.9
+  },
+  "decision": {
+    "accepted": true,
+    "reason": "Improvement observed",
+    "baseline_measurement": -20.12628701196546,
+    "treatment_measurement": -19.86046937652191,
+    "delta": 0.2658176354435504,
+    "metric_direction": "higher"
+  },
+  "restoration_status": "accepted"
+}
