@@ -51,44 +51,47 @@ class TestIntentResolution:
         assert len(resolution.hypothesis_ids) == 7  # 7 Env1.Release hypotheses
         assert resolution.measurement_metric == "tail_rms_db"
 
-    def test_quieter_unsupported_no_knowledge(self):
-        """Intent 'make the sound quieter' → OSC1.Level UNSUPPORTED (no YouTube hypotheses)."""
+    def test_quieter_resolves_to_osc1_level(self):
+        """Intent 'make the sound quieter' → OSC1.Level (95 YouTube hypotheses)."""
         resolution = resolve_semantic_intent(
             "make the sound quieter",
             "serum2/knowledge/yt_f507169bd7cb_hypotheses.json",
             "serum2/knowledge/yt_f507169bd7cb_target_resolution.json",
         )
 
-        # Semantic mapping exists, but target has no YouTube knowledge
-        assert resolution.resolution_status == "UNSUPPORTED"
+        # OSC1.Level now has YouTube knowledge
+        assert resolution.resolution_status == "RESOLVED"
         assert resolution.semantic_target == "OSC1.Level"
-        assert len(resolution.hypothesis_ids) == 0
+        assert len(resolution.hypothesis_ids) == 95  # 95 OSC1.Level hypotheses
+        assert resolution.measurement_metric == "rms_db"
 
-    def test_brighter_unsupported_no_knowledge(self):
-        """Intent 'make the sound brighter' → Filter.Cutoff UNSUPPORTED (no YouTube hypotheses)."""
+    def test_brighter_resolves_to_filter_cutoff(self):
+        """Intent 'make the sound brighter' → Filter.Cutoff (22 YouTube hypotheses)."""
         resolution = resolve_semantic_intent(
             "make the sound brighter",
             "serum2/knowledge/yt_f507169bd7cb_hypotheses.json",
             "serum2/knowledge/yt_f507169bd7cb_target_resolution.json",
         )
 
-        # Semantic mapping exists, but target has no YouTube knowledge
-        assert resolution.resolution_status == "UNSUPPORTED"
+        # Filter.Cutoff now has YouTube knowledge
+        assert resolution.resolution_status == "RESOLVED"
         assert resolution.semantic_target == "Filter.Cutoff"
-        assert len(resolution.hypothesis_ids) == 0
+        assert len(resolution.hypothesis_ids) == 22  # 22 Filter.Cutoff hypotheses
+        assert resolution.measurement_metric == "spectral_centroid_hz"
 
-    def test_detune_unsupported_no_knowledge(self):
-        """Intent 'slightly detune the oscillator' → OSC1.Detune UNSUPPORTED (no YouTube hypotheses)."""
+    def test_detune_resolves_to_osc1_detune(self):
+        """Intent 'slightly detune the oscillator' → OSC1.Detune (38 YouTube hypotheses)."""
         resolution = resolve_semantic_intent(
             "slightly detune the oscillator",
             "serum2/knowledge/yt_f507169bd7cb_hypotheses.json",
             "serum2/knowledge/yt_f507169bd7cb_target_resolution.json",
         )
 
-        # Semantic mapping exists, but target has no YouTube knowledge
-        assert resolution.resolution_status == "UNSUPPORTED"
+        # OSC1.Detune now has YouTube knowledge
+        assert resolution.resolution_status == "RESOLVED"
         assert resolution.semantic_target == "OSC1.Detune"
-        assert len(resolution.hypothesis_ids) == 0
+        assert len(resolution.hypothesis_ids) == 38  # 38 OSC1.Detune hypotheses
+        assert resolution.measurement_metric == "pitch_shift_semitones"
 
     def test_unsupported_intent_returns_unsupported(self):
         """Intent that doesn't match known patterns → UNSUPPORTED."""
@@ -134,7 +137,7 @@ class TestIntentResolution:
         assert len(resolutions) == 4
         assert resolutions[0].resolution_status == "RESOLVED"  # attack slower (3 hypotheses)
         assert resolutions[1].resolution_status == "RESOLVED"  # octave higher (16 hypotheses)
-        assert resolutions[2].resolution_status == "UNSUPPORTED"  # quieter (no hypotheses)
+        assert resolutions[2].resolution_status == "RESOLVED"  # quieter (95 hypotheses now)
         assert resolutions[3].resolution_status == "UNSUPPORTED"  # purple (no pattern match)
 
 

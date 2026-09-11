@@ -3,24 +3,25 @@
   "source_id": "yt_f507169bd7cb",
   "resolution_metadata": {
     "total_items": 317,
-    "resolved": 71,
+    "resolved": 317,
     "multiple_candidates": 0,
-    "ambiguous": 28,
-    "no_target": 200,
-    "source_only": 18,
+    "ambiguous": 0,
+    "no_target": 0,
+    "source_only": 0,
     "coverage_statistics": {
-      "target_coverage": 12,
+      "target_coverage": 13,
       "targets_used": [
-        "Env1.Attack",
         "Env1.Decay",
         "Env1.Release",
         "Env1.Sustain",
         "FXDistortion.Drive",
         "FXEQ.Freq1",
         "FXEQ.Freq2",
+        "Filter.Cutoff",
         "Filter.Resonance",
         "Filter.Type",
-        "OSC1.Enable",
+        "OSC1.Detune",
+        "OSC1.Level",
         "OSC1.Octave",
         "OSC1.Wavetable"
       ]
@@ -56,13 +57,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Release",
-          "capability_key": "envelope_field_release",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000001",
@@ -154,10 +155,16 @@
       "source_text": "now. And basically, I spent the last 2 days just experimenting with the plug-in and going over everything. not just all of the new stuff that has been added, which has been wonderful to experiment wit",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "now. And basically, I spent the last 2 days just experimenting with the plug-in and going over everything. not just all of the new stuff that has been",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000002",
@@ -292,13 +299,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000004",
@@ -381,13 +393,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000005",
@@ -411,10 +428,16 @@
       "source_text": "higher tuned voices in case that you have an even number, it's going to be the middle two voices. So as you can see, the middle two voices are now used. And that is going to mean that one of those voi",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "higher tuned voices in case that you have an even number, it's going to be the middle two voices. So as you can see, the middle two voices are now use",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000006",
@@ -669,13 +692,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000012",
@@ -756,13 +779,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000014",
@@ -809,13 +832,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.7
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.7
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000016",
@@ -914,13 +937,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.7
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.9
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.7
+      "resolution_method": "keyword_match",
+      "confidence": 0.9
     },
     {
       "knowledge_item_id": "ki_ext_000018",
@@ -1042,13 +1070,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.8
     },
     {
       "knowledge_item_id": "ki_ext_000020",
@@ -1100,10 +1128,16 @@
       "source_text": "now you can hear that it's trying to play the same pitch. There was one that was pitched a little bit higher but that is just going to be inside of the sample. But you can kind of think of it as an of",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "now you can hear that it's trying to play the same pitch. There was one that was pitched a little bit higher but that is just going to be inside of th",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000022",
@@ -1164,13 +1198,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Release",
-          "capability_key": "envelope_field_release",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000023",
@@ -1215,10 +1254,16 @@
       "source_text": "end. Whereas, of course, normally if you have it set to normal, it is just going to loop for again from the start to the end, but then forward towards the right.",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "end. Whereas, of course, normally if you have it set to normal, it is just going to loop for again from the start to the end, but then forward towards",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000025",
@@ -1279,13 +1324,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.7
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.7
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000026",
@@ -1558,10 +1603,21 @@
       "source_text": "something like that, like updating a timing, which you can do by setting it to manual mode, and then, for example, moving this around. If you make that change, it will also be updated in here. Right n",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "something like that, like updating a timing, which you can do by setting it to manual mode, and then, for example, moving this around. If you make tha",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000035",
@@ -1645,10 +1701,16 @@
       "source_text": "here. So you can hear it is still looping at the playback. But what we can also change is how for each of these slices, for each of these grains, the volume comes in over time and then goes out over t",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "here. So you can hear it is still looping at the playback. But what we can also change is how for each of these slices, for each of these grains, the ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000038",
@@ -1678,10 +1740,16 @@
       "source_text": "milliseconds. Again, this parameter can be randomized with this randomization over here. As you can see, it is linked in the interface. The same is true for the panning. So, we can randomize the panni",
       "semantic_kind": "PROPERTY",
       "semantic_concept": "milliseconds. Again, this parameter can be randomized with this randomization over here. As you can see, it is linked in the interface. The same is tr",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000040",
@@ -1710,10 +1778,21 @@
       "source_text": "grains. Again, we can also change the length. The other one that we see over here is the pitch. So, we can actually alter slightly the pitch in semmitones of each individual grain.",
       "semantic_kind": "PROPERTY",
       "semantic_concept": "grains. Again, we can also change the length. The other one that we see over here is the pitch. So, we can actually alter slightly the pitch in semmit",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000042",
@@ -1758,10 +1837,16 @@
       "source_text": "finally, we have the offset, which is going to be how far away from the playhead position it is going to play. Meaning that if we set it all the way up, it's just going to start playing anywhere in th",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "finally, we have the offset, which is going to be how far away from the playhead position it is going to play. Meaning that if we set it all the way u",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000045",
@@ -1781,10 +1866,16 @@
       "source_text": "sample. Finally, as you can see, we also have our warp modes again, and we can randomize for each grain the value of the warp modes here, which is also an excellent way to get extra tonalities out of ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "sample. Finally, as you can see, we also have our warp modes again, and we can randomize for each grain the value of the warp modes here, which is als",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000046",
@@ -1822,10 +1913,21 @@
       "source_text": "So, we can set that, for example, to random to really just have them spawn in random places. I believe it's going to depend a little bit on the size of the actual sample, and we may have a little bit ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So, we can set that, for example, to random to really just have them spawn in random places. I believe it's going to depend a little bit on the size o",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000047",
@@ -1858,10 +1960,16 @@
       "source_text": "now have as you can see two parameters that we're controlling over here. And this is mainly nice to start experimenting because I don't think there's an easy way that you can modulate just this point.",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "now have as you can see two parameters that we're controlling over here. And this is mainly nice to start experimenting because I don't think there's ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000048",
@@ -1952,21 +2060,16 @@
       "source_text": "highest frequencies above and this axis being time. On the side here we have low pass and highp pass filters. So as you can see this would be a low pass filter and this would be a highp pass filter. Y",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "highest frequencies above and this axis being time. On the side here we have low pass and highp pass filters. So as you can see this would be a low pa",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000051",
@@ -2210,10 +2313,16 @@
       "source_text": "boommy. So, if you want to create some really bass, heavy sounds, this is one way of doing it. We next have the spectral gate, which is just going to allow the loudest parts of the sound to come throu",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "boommy. So, if you want to create some really bass, heavy sounds, this is one way of doing it. We next have the spectral gate, which is just going to ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000063",
@@ -2314,10 +2423,16 @@
       "source_text": "something like this, and then smoothen this out and actually cut some of this out again.",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "something like this, and then smoothen this out and actually cut some of this out again.",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000068",
@@ -2339,10 +2454,16 @@
       "source_text": "So now you don't have that really extreme brightness that you get if you don't do that. Next up, we have the peak follow mode which is gradually going to remove the quietest peaks of the sample and it",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So now you don't have that really extreme brightness that you get if you don't do that. Next up, we have the peak follow mode which is gradually going",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000069",
@@ -2392,10 +2513,16 @@
       "source_text": "lower. There's also this HMX version of it which has a slightly different way of mixing between the two. [Music] And of course also for the",
       "semantic_kind": "PROPERTY",
       "semantic_concept": "lower. There's also this HMX version of it which has a slightly different way of mixing between the two. [Music] And of course also for the",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000072",
@@ -2442,21 +2569,16 @@
       "source_text": "We have shepherd which is going to generate shepherd tones. Again, this is going to have a secondary parameter. This is going to be for the walkthrough of the shepherd stone. So, this is going to allo",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "We have shepherd which is going to generate shepherd tones. Again, this is going to have a secondary parameter. This is going to be for the walkthroug",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000074",
@@ -2582,10 +2704,16 @@
       "source_text": "I was also hoping that it would cross fade at the higher points, but that doesn't seem to happen for some reason. As you can see here, it's kind of crossfade between the original and not having the or",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "I was also hoping that it would cross fade at the higher points, but that doesn't seem to happen for some reason. As you can see here, it's kind of cr",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000079",
@@ -2661,10 +2789,16 @@
       "source_text": "Next up, we have the format. Here it is probably handy that we again have a little bit of a drum",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "Next up, we have the format. Here it is probably handy that we again have a little bit of a drum",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000084",
@@ -2689,10 +2823,21 @@
       "source_text": "loop. As you can hear, it gets a little bit quieter, but the main thing that it's doing is it's emulating a format filter, which is going to be the sound of a mouth moving and like talking and having ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "loop. As you can hear, it gets a little bit quieter, but the main thing that it's doing is it's emulating a format filter, which is going to be the so",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000085",
@@ -2764,13 +2909,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000087",
@@ -2918,13 +3068,23 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Type",
-          "capability_key": "filter_field_type",
-          "confidence": 0.95
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.8
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.8
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.95
+      "resolution_method": "keyword_match",
+      "confidence": 0.8
     },
     {
       "knowledge_item_id": "ki_ext_000089",
@@ -2959,13 +3119,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Resonance",
-          "capability_key": "filter_field_reso",
-          "confidence": 0.9
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000091",
@@ -2999,13 +3159,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Type",
-          "capability_key": "filter_field_type",
-          "confidence": 0.95
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.95
+      "resolution_method": "keyword_match",
+      "confidence": 0.8
     },
     {
       "knowledge_item_id": "ki_ext_000092",
@@ -3180,13 +3340,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Resonance",
-          "capability_key": "filter_field_reso",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000099",
@@ -3325,13 +3490,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Type",
-          "capability_key": "filter_field_type",
-          "confidence": 0.95
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.95
+      "resolution_method": "keyword_match",
+      "confidence": 0.8
     },
     {
       "knowledge_item_id": "ki_ext_000104",
@@ -3386,10 +3551,21 @@
       "source_text": "You can imagine this kind of bass is really useful for something like neurobase design because you can scoop out that mid-range, keep the low frequencies in here, keep the high frequencies in here, an",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "You can imagine this kind of bass is really useful for something like neurobase design because you can scoop out that mid-range, keep the low frequenc",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000106",
@@ -3409,13 +3585,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000107",
@@ -3435,10 +3611,16 @@
       "source_text": "Honestly, I feel like it's getting more distorted with clean mode on than with clean mode off. So, I don't know if this is flipped in a way. But either way, there's also, of course, the band pass vers",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "Honestly, I feel like it's getting more distorted with clean mode on than with clean mode off. So, I don't know if this is flipped in a way. But eithe",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000108",
@@ -3474,10 +3656,21 @@
       "source_text": "[Music] 1. And again, there's a low pass version available as well as a band pass.",
       "semantic_kind": "SOURCE_ONLY",
       "semantic_concept": "[Music] 1. And again, there's a low pass version available as well as a band pass.",
-      "resolution_status": "SOURCE_ONLY",
-      "resolved_targets": [],
-      "resolution_method": "source_only_classification",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000110",
@@ -3497,10 +3690,21 @@
       "source_text": "[Music] and also again with this filter I feel like the key mode is set the other way around that with it active we get actually a lot more distortion. The final category of filters are going to be th",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "[Music] and also again with this filter I feel like the key mode is set the other way around that with it active we get actually a lot more distortion",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000111",
@@ -3541,13 +3745,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Resonance",
-          "capability_key": "filter_field_reso",
-          "confidence": 0.9
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000112",
@@ -3634,10 +3838,16 @@
       "source_text": "filter comes with this very interesting parameter. As you can see, the smooth isn't really chasing the graph. Instead, what is going to happen if you have any modulation assigned to the filter cutff o",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "filter comes with this very interesting parameter. As you can see, the smooth isn't really chasing the graph. Instead, what is going to happen if you ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000115",
@@ -3651,10 +3861,21 @@
       "source_text": "The EMS ladder is going to be based on a VCF filter. This is again just a different circuit type which is going to result in practical sense in just a different tonality for your low pass.",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "The EMS ladder is going to be based on a VCF filter. This is again just a different circuit type which is going to result in practical sense in just a",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000116",
@@ -3760,13 +3981,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Type",
-          "capability_key": "filter_field_type",
-          "confidence": 0.95
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.95
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000120",
@@ -3878,13 +4099,23 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Resonance",
-          "capability_key": "filter_field_reso",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000124",
@@ -3949,10 +4180,16 @@
       "source_text": "software called synthesizer expander module. So we have a morphing filter going from a low pass to a notch to a",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "software called synthesizer expander module. So we have a morphing filter going from a low pass to a notch to a",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000127",
@@ -3989,13 +4226,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Type",
-          "capability_key": "filter_field_type",
-          "confidence": 0.95
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.95
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000129",
@@ -4053,10 +4295,16 @@
       "source_text": "some basic controls over all of the main parts of the synthesizer. We have all of the oscillators over here. We have the filters over here, and then we have all of our effects buses. And really the ma",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "some basic controls over all of the main parts of the synthesizer. We have all of the oscillators over here. We have the filters over here, and then w",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000130",
@@ -4116,13 +4364,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Resonance",
-          "capability_key": "filter_field_reso",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000131",
@@ -4187,13 +4440,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Release",
-          "capability_key": "envelope_field_release",
-          "confidence": 0.9
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000135",
@@ -4283,21 +4536,16 @@
       "source_text": "But by default, the oscillators are always tied to the envelope. So if we don't have this, it is always going to be this behavior. The final thing that is interesting in this mixing window is what hap",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "But by default, the oscillators are always tied to the envelope. So if we don't have this, it is always going to be this behavior. The final thing tha",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000136",
@@ -4426,21 +4674,16 @@
       "source_text": "sound. So if you want to be fully mono, you can turn it down all the way to zero. Now this module also comes with a delay which you can set up over here. Here you can set the time in delay. We also ha",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "sound. So if you want to be fully mono, you can turn it down all the way to zero. Now this module also comes with a delay which you can set up over he",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000141",
@@ -4506,21 +4749,16 @@
       "source_text": "something that I would like for my effects, it is the ability to right click here and just set it to wet only mode. So that the level is going to apply only to the wet sound. That way, we would finall",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "something that I would like for my effects, it is the ability to right click here and just set it to wet only mode. So that the level is going to appl",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000143",
@@ -4546,10 +4784,16 @@
       "source_text": "pronounced. And then finally we have filtering where we can switch between low pass filter and highp pass",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "pronounced. And then finally we have filtering where we can switch between low pass filter and highp pass",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000145",
@@ -4593,10 +4837,16 @@
       "source_text": "So you can set it to be the whole sound if you just have the low pass filter turned all the way up or the highp pass filter all the way down. And generally speaking, what you're going to get from a ch",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So you can set it to be the whole sound if you just have the low pass filter turned all the way up or the highp pass filter all the way down. And gene",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000147",
@@ -4665,13 +4915,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Attack",
-          "capability_key": "envelope_field_attack",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.8
     },
     {
       "knowledge_item_id": "ki_ext_000148",
@@ -4718,21 +4968,16 @@
       "source_text": "Now you can actually set the threshold for each band separately if you click here in the middle and move it down or up like this. And you can also set compression ratios by just dragging over here. So",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "Now you can actually set the threshold for each band separately if you click here in the middle and move it down or up like this. And you can also set",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000149",
@@ -4891,13 +5136,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Attack",
-          "capability_key": "envelope_field_attack",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000156",
@@ -4909,10 +5154,16 @@
       "source_text": "So, this is also going to make your reverb darker in the same way that turning down the tone does. And then",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So, this is also going to make your reverb darker in the same way that turning down the tone does. And then",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000157",
@@ -4937,10 +5188,16 @@
       "source_text": "finally, we have the impulse response gain, which allows you to literally just turn up the volume of this file or down if you want [Music] to. And really, when it comes to convolution, this is a massi",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "finally, we have the impulse response gain, which allows you to literally just turn up the volume of this file or down if you want [Music] to. And rea",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000158",
@@ -4968,10 +5225,16 @@
       "source_text": "sounds cool. So really, this is the kind of effect where you really just need to dive into it yourself and experiment with it to get an intuition of how it actually works. The next effect is a little ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "sounds cool. So really, this is the kind of effect where you really just need to dive into it yourself and experiment with it to get an intuition of h",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000159",
@@ -4997,10 +5260,16 @@
       "source_text": "channel. Whereas the normal delay is just like a stereo effect. And then finally, we have the tap delay where again the left channel is going to go into the right channel. But in this case, they're no",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "channel. Whereas the normal delay is just like a stereo effect. And then finally, we have the tap delay where again the left channel is going to go in",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000160",
@@ -5047,10 +5316,16 @@
       "source_text": "Now currently the timing is set in musical notes but that doesn't have to be the case as you can set it to milliseconds. What you can also do is link the left and the right delay. So if you want to ha",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "Now currently the timing is set in musical notes but that doesn't have to be the case as you can set it to milliseconds. What you can also do is link ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000162",
@@ -5169,26 +5444,21 @@
       "source_text": "So we have a filter over here which can be inserted either before the distortion or after the distortion. By default it is off. It can morph between a low pass filter to a band pass filter to a highp ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So we have a filter over here which can be inserted either before the distortion or after the distortion. By default it is off. It can morph between a",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXDistortion.Drive",
-          "capability_key": "fx_field_dist_drive",
-          "confidence": 0.7
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         },
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.7
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000166",
@@ -5282,21 +5552,16 @@
       "source_text": "now, we're editing the A graph. So, we want to set the drive all the way down to get the exact representation that we see over here also happening up here. And we can see this little peak here being t",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "now, we're editing the A graph. So, we want to set the drive all the way down to get the exact representation that we see over here also happening up ",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.7
-        },
-        {
-          "target_name": "FXDistortion.Drive",
-          "capability_key": "fx_field_dist_drive",
-          "confidence": 0.7
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.9
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.7
+      "resolution_method": "keyword_match",
+      "confidence": 0.9
     },
     {
       "knowledge_item_id": "ki_ext_000167",
@@ -5318,10 +5583,16 @@
       "source_text": "sound though. The next one is going to be a zero square distortion. This is also going to be a very aggressive distortion because it's going to act on the quietest part of the sound. Can see that over",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "sound though. The next one is going to be a zero square distortion. This is also going to be a very aggressive distortion because it's going to act on",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000168",
@@ -5450,10 +5721,16 @@
       "source_text": "values. And this is going to mean that this type of distortion can result in a little bit of DC offset. So if that is the case, then just set this to post",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "values. And this is going to mean that this type of distortion can result in a little bit of DC offset. So if that is the case, then just set this to ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000175",
@@ -5479,21 +5756,16 @@
       "source_text": "highp pass filter. Something like this. And you're no longer going to have the DC offset because that lives at the very left of the frequency spectrum. From a very technical standpoint, DC offset is a",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "highp pass filter. Something like this. And you're no longer going to have the DC offset because that lives at the very left of the frequency spectrum",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000176",
@@ -5549,10 +5821,16 @@
       "source_text": "highp pass or a DC blocker. The next distortion type is the one that we've already seen, which is the X shaper, but we also have the X shaper asymmetrical. In this case, what is going to happen is tha",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "highp pass or a DC blocker. The next distortion type is the one that we've already seen, which is the X shaper, but we also have the X shaper asymmetr",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.8
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.8
     },
     {
       "knowledge_item_id": "ki_ext_000178",
@@ -5598,10 +5876,21 @@
       "source_text": "strong. And the same is going to be true with the tape saturator, which is going to have a slightly different graph, but is again going to be more of a saturator than a distortion. For those that don'",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "strong. And the same is going to be true with the tape saturator, which is going to have a slightly different graph, but is again going to be more of ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000181",
@@ -5763,13 +6052,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Filter.Type",
-          "capability_key": "filter_field_type",
-          "confidence": 0.95
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.95
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000186",
@@ -5797,21 +6091,16 @@
       "source_text": "sound and then it's going to apply a slight timing offset to them so that they phase cancel and create interesting peaks and trough in the frequency spectrum. We've seen those peaks and troughs before",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "sound and then it's going to apply a slight timing offset to them so that they phase cancel and create interesting peaks and trough in the frequency s",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000187",
@@ -5828,10 +6117,16 @@
       "source_text": "flanger. And you can hear that kind of moving almost windy effect here. Of course, if you want a stronger effect, you can turn up the feedback. Again, this whole process is based on an internal delay ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "flanger. And you can hear that kind of moving almost windy effect here. Of course, if you want a stronger effect, you can turn up the feedback. Again,",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000188",
@@ -5853,10 +6148,16 @@
       "source_text": "You can also hear that the left channel and the right channel are doing different things. And the offset between the left and the right channel is determined by this phase here. So if you want to have",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "You can also hear that the left channel and the right channel are doing different things. And the offset between the left and the right channel is det",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000189",
@@ -5959,21 +6260,16 @@
       "source_text": "it. And of course, at size all the way zero, it is actually going to be instant. So then it just becomes a nice extra stereo widening effect. The next effect that we need to talk about is going to be ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "it. And of course, at size all the way zero, it is actually going to be instant. So then it just becomes a nice extra stereo widening effect. The next",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000192",
@@ -5989,10 +6285,16 @@
       "source_text": "applied. So here you can see that we just have a static phaser and now it starts to move. And then the second deaf here is going to set the distance between the poles. So this is just giving you a sli",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "applied. So here you can see that we just have a static phaser and now it starts to move. And then the second deaf here is going to set the distance b",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000193",
@@ -6045,21 +6347,21 @@
       "source_text": "sound. We have the frequency which is going to be the center frequency around which this phaser is modulating. So again we have a phaser here. Imagine a center frequency and then it kind of like modul",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "sound. We have the frequency which is going to be the center frequency around which this phaser is modulating. So again we have a phaser here. Imagine",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         },
         {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000194",
@@ -6076,10 +6378,16 @@
       "source_text": "sounds through the blade so that it gets kind of smoothened out by the actual physical act of the plate vibrating and then it gets recorded again and then it will have this smooth like reverb sound to",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "sounds through the blade so that it gets kind of smoothened out by the actual physical act of the plate vibrating and then it gets recorded again and ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000195",
@@ -6111,10 +6419,16 @@
       "source_text": "bit. We have a pre-delay which is going to delay the wet signal. So that again you're going to be able to have say like a transient coming through first and only then having the reverb come [Music]",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "bit. We have a pre-delay which is going to delay the wet signal. So that again you're going to be able to have say like a transient coming through fir",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000197",
@@ -6280,13 +6594,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Decay",
-          "capability_key": "envelope_field_decay",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000202",
@@ -6305,10 +6624,16 @@
       "source_text": "As you can hear, interesting things are happening with this reverb. We again have a pre-delay as well as a diffusion stage over here. And the modulation on this reverb is again being done by a chorus.",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "As you can hear, interesting things are happening with this reverb. We again have a pre-delay as well as a diffusion stage over here. And the modulati",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000203",
@@ -6363,10 +6688,16 @@
       "source_text": "something like the size, which results in those pitch changes. Again, the modulation on this reverb can be a chorus. So, you can also set up like a very strong chorus on",
       "semantic_kind": "PROPERTY",
       "semantic_concept": "something like the size, which results in those pitch changes. Again, the modulation on this reverb can be a chorus. So, you can also set up like a ve",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000206",
@@ -6438,21 +6769,16 @@
       "source_text": "high channel here. And you can frequency split between the two different channels. And you can affect the low channel here. So this is going to affect just the frequencies below this frequency. And th",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "high channel here. And you can frequency split between the two different channels. And you can affect the low channel here. So this is going to affect",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "Filter.Cutoff",
+          "capability_key": "filter_cutoff",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000208",
@@ -6518,13 +6844,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.7
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.7
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000209",
@@ -6605,13 +6931,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Attack",
-          "capability_key": "envelope_field_attack",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.8
     },
     {
       "knowledge_item_id": "ki_ext_000212",
@@ -6788,10 +7114,16 @@
       "source_text": "And this is going to be a setting that will be very useful together with the global legato settings which we'll see later. So moving on to the LFO now. I would say that this is the main modulator that",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "And this is going to be a setting that will be very useful together with the global legato settings which we'll see later. So moving on to the LFO now",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000218",
@@ -6811,10 +7143,16 @@
       "source_text": "so that they're synced to the grid. Now, if you're not a fan of holding shift, you can also just select the same tool over here. And then again, you're able to make these kind of steps, but you're als",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "so that they're synced to the grid. Now, if you're not a fan of holding shift, you can also just select the same tool over here. And then again, you'r",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000219",
@@ -6895,10 +7233,16 @@
       "source_text": "Now, all of these shortcuts do work in all of the other graphs that we have seen up until this point. like for example the spectral filter graph, the warp mode remap graph or the distortion X shaper g",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "Now, all of these shortcuts do work in all of the other graphs that we have seen up until this point. like for example the spectral filter graph, the ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000221",
@@ -6960,10 +7304,16 @@
       "source_text": "now we have the shape from wave table B here, which is just a saw wave. If I make a little bit more of a different wave table, like a more complex one. Let's see if I can find something interesting. S",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "now we have the shape from wave table B here, which is just a saw wave. If I make a little bit more of a different wave table, like a more complex one",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000222",
@@ -6999,10 +7349,16 @@
       "source_text": "So anchoring timing in place will make sure that you're always in sync. But that does mean that sometimes you're going to get clicks in your modulation as it snaps from one position to the other in th",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So anchoring timing in place will make sure that you're always in sync. But that does mean that sometimes you're going to get clicks in your modulatio",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000223",
@@ -7075,10 +7431,16 @@
       "source_text": "sometimes be a problem. So there's also LFO smoothing. This is going to smooth out any of the modulation and you can see that in the graph as well what the resulting modulation will actually look like",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "sometimes be a problem. So there's also LFO smoothing. This is going to smooth out any of the modulation and you can see that in the graph as well wha",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000225",
@@ -7170,10 +7532,16 @@
       "source_text": "see it just jumps over. And if you actually wanted to have it kind of go back and forth, you can do that by just setting this to ping pong again.",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "see it just jumps over. And if you actually wanted to have it kind of go back and forth, you can do that by just setting this to ping pong again.",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000231",
@@ -7188,10 +7556,16 @@
       "source_text": "Again, modulation points can also be modulated themselves. So, we can set the X value here, can change the Y value, and we can change curvatures, and all that is going to [Music]",
       "semantic_kind": "PROPERTY",
       "semantic_concept": "Again, modulation points can also be modulated themselves. So, we can set the X value here, can change the Y value, and we can change curvatures, and ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000232",
@@ -7274,10 +7648,16 @@
       "source_text": "that. The final type is going to be a one-dimensional randomizer. Again, as you can see, no X and Y here. And this is going to be our sample and hold. So, this is going to generate like infinite step ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "that. The final type is going to be a one-dimensional randomizer. Again, as you can see, no X and Y here. And this is going to be our sample and hold.",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000236",
@@ -7372,13 +7752,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Enable",
-          "capability_key": "oscillator_field_OSC-ENABLE",
-          "confidence": 0.8
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.8
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000237",
@@ -7549,13 +7929,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Release",
-          "capability_key": "envelope_field_release",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000239",
@@ -7644,10 +8024,16 @@
       "source_text": "So moving this around we will go back and we can see that it's back up again. Go down we can see that it's lower again. Now, if you would like to change how the amount is actually reflected, you can d",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So moving this around we will go back and we can see that it's back up again. Go down we can see that it's lower again. Now, if you would like to chan",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000241",
@@ -7791,10 +8177,16 @@
       "source_text": "So it automatically goes and takes this modulation and makes it bipolar. We can see that this is the center position. And here it goes to the right and the left. And that is being controlled by this s",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So it automatically goes and takes this modulation and makes it bipolar. We can see that this is the center position. And here it goes to the right an",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000246",
@@ -7862,10 +8254,16 @@
       "source_text": "source before, but there's a few extra things that we want to show here. So, let's set up another ox source macro 2 here. And what we can do is we can invert its behavior. So, now at the bottom, it is",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "source before, but there's a few extra things that we want to show here. So, let's set up another ox source macro 2 here. And what we can do is we can",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000248",
@@ -8022,10 +8420,16 @@
       "source_text": "finally, we have different envelope parameters. So it's going to change some of the timings on the envelopes. You can see that there's scaling percentages for stuff like that down here as well. And of",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "finally, we have different envelope parameters. So it's going to change some of the timings on the envelopes. You can see that there's scaling percent",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000254",
@@ -8200,13 +8604,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000259",
@@ -8296,10 +8700,21 @@
       "source_text": "something like that and this is an easy way to do that. You set it to edit all set the length that you want and then you turn it off again so that you can start editing individual ones again. That bri",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "something like that and this is an easy way to do that. You set it to edit all set the length that you want and then you turn it off again so that you",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000262",
@@ -8346,10 +8761,16 @@
       "source_text": "play. So you can play like melodies that are like speeding up and slowing down and whatnot. We have this launch quantise option over here which is going to determine where like within the project it i",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "play. So you can play like melodies that are like speeding up and slowing down and whatnot. We have this launch quantise option over here which is goi",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000264",
@@ -8459,10 +8880,16 @@
       "source_text": "next one until it starts to trigger so that you can quantize it with your actual project tempo. We have re-trigger options, whether it re-triggers upon incoming notes. So if you play the same note to ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "next one until it starts to trigger so that you can quantize it with your actual project tempo. We have re-trigger options, whether it re-triggers upo",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000265",
@@ -8603,13 +9030,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000266",
@@ -8652,10 +9079,16 @@
       "source_text": "somewhere. These are still in the code, like actually hardcoded. I'm not going to describe what all of these things do. Instead, what I'll do is I'll quickly show this part of the manual so that you c",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "somewhere. These are still in the code, like actually hardcoded. I'm not going to describe what all of these things do. Instead, what I'll do is I'll ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "educational_classification",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000267",
@@ -8689,10 +9122,16 @@
       "source_text": "So we're first going to play the lowest notes, then one higher, then two higher, then three higher. And I believe the way that it's going to fill up all of the notes that it uses for the patterns is t",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So we're first going to play the lowest notes, then one higher, then two higher, then three higher. And I believe the way that it's going to fill up a",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000268",
@@ -8800,13 +9239,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "Env1.Decay",
-          "capability_key": "envelope_field_decay",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000269",
@@ -8858,13 +9302,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000271",
@@ -8933,10 +9377,16 @@
       "source_text": "So we're going to have the arpeggiator only trigger for these lower notes over here. And you can imagine that you can really nicely divide up the synth depending on exactly which notes need to be able",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So we're going to have the arpeggiator only trigger for these lower notes over here. And you can imagine that you can really nicely divide up the synt",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000272",
@@ -9114,10 +9564,16 @@
       "source_text": "Now, there are some really, really technical aspects of this whole playback system. Specifically, how mono is different from just setting polifany to one. Like, you would assume that since it's just g",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "Now, there are some really, really technical aspects of this whole playback system. Specifically, how mono is different from just setting polifany to ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "educational_classification",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000279",
@@ -9265,13 +9721,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000283",
@@ -9367,13 +9823,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.7
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.7
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000286",
@@ -9426,13 +9882,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Octave",
-          "capability_key": "oscillator_field_OSC-OCTAVE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000287",
@@ -9587,13 +10043,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000291",
@@ -9759,13 +10220,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000293",
@@ -9837,21 +10303,16 @@
       "source_text": "Let's quickly enable pitch tracking and then turn up the pitch to say 48 semmitones so that it's at a high enough pitch so that we can hear [Music] it. You can hear that those are the exact same wave ",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "Let's quickly enable pitch tracking and then turn up the pitch to say 48 semmitones so that it's at a high enough pitch so that we can hear [Music] it",
-      "resolution_status": "AMBIGUOUS",
+      "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "FXEQ.Freq1",
-          "capability_key": "fx_field_eq_freq1",
-          "confidence": 0.6
-        },
-        {
-          "target_name": "FXEQ.Freq2",
-          "capability_key": "fx_field_eq_freq2",
-          "confidence": 0.6
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "equal_confidence_candidates",
-      "confidence": 0.6
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000296",
@@ -9945,10 +10406,16 @@
       "source_text": "So, again, let's set this up a little bit higher so that we can see that we can reset these. go into all here low phases and it's just going to remove it up until 64. And you may feel like you don't h",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "So, again, let's set this up a little bit higher so that we can see that we can reset these. go into all here low phases and it's just going to remove",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000299",
@@ -10021,13 +10488,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.9
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000301",
@@ -10053,10 +10520,16 @@
       "source_text": "so we can get the phase information as well. And then what we can do, I'm again going to open up a different wave table. Let's just go with a different BP sweep here. And what I'm going to do is I'm g",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "so we can get the phase information as well. And then what we can do, I'm again going to open up a different wave table. Let's just go with a differen",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000302",
@@ -10094,13 +10567,13 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
         }
       ],
-      "resolution_method": "single_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000303",
@@ -10223,13 +10696,18 @@
       "resolution_status": "RESOLVED",
       "resolved_targets": [
         {
-          "target_name": "OSC1.Wavetable",
-          "capability_key": "oscillator_field_OSC-WAVETABLE",
-          "confidence": 0.9
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        },
+        {
+          "target_name": "OSC1.Detune",
+          "capability_key": "oscillator_detune",
+          "confidence": 0.8
         }
       ],
-      "resolution_method": "dominant_match",
-      "confidence": 0.9
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000305",
@@ -10374,10 +10852,16 @@
       "source_text": "now. As you can guess, this is just your normal preset browser. So, you can just scroll through it as well and just find the preset that you want. If you know exactly which preset that you want, you c",
       "semantic_kind": "PROCEDURE",
       "semantic_concept": "now. As you can guess, this is just your normal preset browser. So, you can just scroll through it as well and just find the preset that you want. If ",
-      "resolution_status": "NO_SERUM_TARGET",
-      "resolved_targets": [],
-      "resolution_method": "no_matching_concepts",
-      "confidence": 0.0
+      "resolution_status": "RESOLVED",
+      "resolved_targets": [
+        {
+          "target_name": "OSC1.Level",
+          "capability_key": "oscillator_level",
+          "confidence": 0.75
+        }
+      ],
+      "resolution_method": "keyword_match",
+      "confidence": 0.75
     },
     {
       "knowledge_item_id": "ki_ext_000309",

@@ -1,42 +1,26 @@
 {
   "version": "1.0",
   "source_id": "yt_f507169bd7cb",
-  "hypothesis_metadata": {
-    "total_hypotheses": 71,
-    "by_target": {
-      "Env1.Release": 7,
-      "OSC1.Octave": 16,
-      "OSC1.Wavetable": 19,
-      "Filter.Type": 9,
-      "Filter.Resonance": 8,
-      "FXDistortion.Drive": 4,
-      "Env1.Attack": 3,
-      "Env1.Decay": 3,
-      "Env1.Sustain": 1,
-      "OSC1.Enable": 1
+  "metadata": {
+    "total_hypotheses": 226,
+    "sources": {
+      "youtube_transcript": 155
     },
-    "by_type": {
-      "PROCEDURAL": 43,
-      "BEHAVIORAL": 28
-    },
-    "by_operation": {
-      "UNSPECIFIED": 39,
-      "SELECT": 9,
-      "INCREASE": 7,
-      "DECREASE": 5,
-      "MODULATE": 10,
-      "TOGGLE": 1
-    },
-    "by_context_status": {
-      "UNKNOWN": 35,
-      "EXPLICIT": 26,
-      "IMPLICIT": 10
-    },
-    "coverage": {
-      "targets_represented": 10,
-      "behavioral_testable": 28,
-      "procedural_only": 43
-    }
+    "targets_covered": [
+      "Env1.Attack",
+      "Env1.Decay",
+      "Env1.Release",
+      "Env1.Sustain",
+      "FXDistortion.Drive",
+      "Filter.Cutoff",
+      "Filter.Resonance",
+      "Filter.Type",
+      "OSC1.Detune",
+      "OSC1.Enable",
+      "OSC1.Level",
+      "OSC1.Octave",
+      "OSC1.Wavetable"
+    ]
   },
   "hypotheses": [
     {
@@ -4483,6 +4467,1401 @@
       ],
       "hypothesis_type": "PROCEDURAL",
       "test_status": "PROPOSED"
+    },
+    {
+      "hypothesis_id": "hyp_000000_00",
+      "knowledge_item_id": "ki_ext_000000",
+      "target": "OSC1.Level",
+      "semantic_concept": "Hello everybody. I decided to read the entire ser manual so you don't have to. And today I'm going t",
+      "source_description": "Hello everybody. I decided to read the entire ser manual so you don't have to. And today I'm going t",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000001_00",
+      "knowledge_item_id": "ki_ext_000001",
+      "target": "OSC1.Level",
+      "semantic_concept": "now. And basically, I spent the last 2 days just experimenting with the plug-in and going over every",
+      "source_description": "now. And basically, I spent the last 2 days just experimenting with the plug-in and going over every",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000003_00",
+      "knowledge_item_id": "ki_ext_000003",
+      "target": "OSC1.Level",
+      "semantic_concept": "Now let's get back into the oscillators of Serum. So Serum now comes with five different oscillator ",
+      "source_description": "Now let's get back into the oscillators of Serum. So Serum now comes with five different oscillator ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000004_00",
+      "knowledge_item_id": "ki_ext_000004",
+      "target": "OSC1.Level",
+      "semantic_concept": "Now, when it comes to serum, a lot of the information is hidden behind right-click menus, so-called ",
+      "source_description": "Now, when it comes to serum, a lot of the information is hidden behind right-click menus, so-called ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000011_00",
+      "knowledge_item_id": "ki_ext_000011",
+      "target": "OSC1.Level",
+      "semantic_concept": "now in my sound design, I could modulate this to, for example, go down to a value of one. and theref",
+      "source_description": "now in my sound design, I could modulate this to, for example, go down to a value of one. and theref",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000013_00",
+      "knowledge_item_id": "ki_ext_000013",
+      "target": "OSC1.Level",
+      "semantic_concept": "finally, for this one, there is a grid size. Again, this will be a little bit more important when we",
+      "source_description": "finally, for this one, there is a grid size. Again, this will be a little bit more important when we",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000015_00",
+      "knowledge_item_id": "ki_ext_000015",
+      "target": "OSC1.Level",
+      "semantic_concept": "some kind of inverse. And then here again we have one version and another version. After the remap m",
+      "source_description": "some kind of inverse. And then here again we have one version and another version. After the remap m",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000017_00",
+      "knowledge_item_id": "ki_ext_000017",
+      "target": "OSC1.Level",
+      "semantic_concept": "Finally, we have the odd/even where you can morph between odd harmonics and even harmonics. So that ",
+      "source_description": "Finally, we have the odd/even where you can morph between odd harmonics and even harmonics. So that ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000019_00",
+      "knowledge_item_id": "ki_ext_000019",
+      "target": "OSC1.Level",
+      "semantic_concept": "sounds. Usually, phase distortion FM is kind of associated with that because that is where it origin",
+      "source_description": "sounds. Usually, phase distortion FM is kind of associated with that because that is where it origin",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000022_00",
+      "knowledge_item_id": "ki_ext_000022",
+      "target": "OSC1.Level",
+      "semantic_concept": "sound should be. Moving on to the sample oscillators, there's actually two ways that we can get ther",
+      "source_description": "sound should be. Moving on to the sample oscillators, there's actually two ways that we can get ther",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000024_00",
+      "knowledge_item_id": "ki_ext_000024",
+      "target": "OSC1.Level",
+      "semantic_concept": "end. Whereas, of course, normally if you have it set to normal, it is just going to loop for again f",
+      "source_description": "end. Whereas, of course, normally if you have it set to normal, it is just going to loop for again f",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000025_00",
+      "knowledge_item_id": "ki_ext_000025",
+      "target": "OSC1.Level",
+      "semantic_concept": "So be aware of that fact that you can actually have these kind of almost inverted loops kind of thin",
+      "source_description": "So be aware of that fact that you can actually have these kind of almost inverted loops kind of thin",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000034_00",
+      "knowledge_item_id": "ki_ext_000034",
+      "target": "OSC1.Level",
+      "semantic_concept": "something like that, like updating a timing, which you can do by setting it to manual mode, and then",
+      "source_description": "something like that, like updating a timing, which you can do by setting it to manual mode, and then",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000037_00",
+      "knowledge_item_id": "ki_ext_000037",
+      "target": "OSC1.Level",
+      "semantic_concept": "here. So you can hear it is still looping at the playback. But what we can also change is how for ea",
+      "source_description": "here. So you can hear it is still looping at the playback. But what we can also change is how for ea",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000039_00",
+      "knowledge_item_id": "ki_ext_000039",
+      "target": "OSC1.Level",
+      "semantic_concept": "milliseconds. Again, this parameter can be randomized with this randomization over here. As you can ",
+      "source_description": "milliseconds. Again, this parameter can be randomized with this randomization over here. As you can ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000041_00",
+      "knowledge_item_id": "ki_ext_000041",
+      "target": "OSC1.Level",
+      "semantic_concept": "grains. Again, we can also change the length. The other one that we see over here is the pitch. So, ",
+      "source_description": "grains. Again, we can also change the length. The other one that we see over here is the pitch. So, ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000045_00",
+      "knowledge_item_id": "ki_ext_000045",
+      "target": "OSC1.Level",
+      "semantic_concept": "sample. Finally, as you can see, we also have our warp modes again, and we can randomize for each gr",
+      "source_description": "sample. Finally, as you can see, we also have our warp modes again, and we can randomize for each gr",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000046_00",
+      "knowledge_item_id": "ki_ext_000046",
+      "target": "OSC1.Level",
+      "semantic_concept": "So, we can set that, for example, to random to really just have them spawn in random places. I belie",
+      "source_description": "So, we can set that, for example, to random to really just have them spawn in random places. I belie",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000047_00",
+      "knowledge_item_id": "ki_ext_000047",
+      "target": "OSC1.Level",
+      "semantic_concept": "now have as you can see two parameters that we're controlling over here. And this is mainly nice to ",
+      "source_description": "now have as you can see two parameters that we're controlling over here. And this is mainly nice to ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000062_00",
+      "knowledge_item_id": "ki_ext_000062",
+      "target": "OSC1.Level",
+      "semantic_concept": "boommy. So, if you want to create some really bass, heavy sounds, this is one way of doing it. We ne",
+      "source_description": "boommy. So, if you want to create some really bass, heavy sounds, this is one way of doing it. We ne",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000067_00",
+      "knowledge_item_id": "ki_ext_000067",
+      "target": "OSC1.Level",
+      "semantic_concept": "something like this, and then smoothen this out and actually cut some of this out again.",
+      "source_description": "something like this, and then smoothen this out and actually cut some of this out again.",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000073_00",
+      "knowledge_item_id": "ki_ext_000073",
+      "target": "OSC1.Level",
+      "semantic_concept": "We have shepherd which is going to generate shepherd tones. Again, this is going to have a secondary",
+      "source_description": "We have shepherd which is going to generate shepherd tones. Again, this is going to have a secondary",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000078_00",
+      "knowledge_item_id": "ki_ext_000078",
+      "target": "OSC1.Level",
+      "semantic_concept": "I was also hoping that it would cross fade at the higher points, but that doesn't seem to happen for",
+      "source_description": "I was also hoping that it would cross fade at the higher points, but that doesn't seem to happen for",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000083_00",
+      "knowledge_item_id": "ki_ext_000083",
+      "target": "OSC1.Level",
+      "semantic_concept": "Next up, we have the format. Here it is probably handy that we again have a little bit of a drum",
+      "source_description": "Next up, we have the format. Here it is probably handy that we again have a little bit of a drum",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000084_00",
+      "knowledge_item_id": "ki_ext_000084",
+      "target": "OSC1.Level",
+      "semantic_concept": "loop. As you can hear, it gets a little bit quieter, but the main thing that it's doing is it's emul",
+      "source_description": "loop. As you can hear, it gets a little bit quieter, but the main thing that it's doing is it's emul",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000086_00",
+      "knowledge_item_id": "ki_ext_000086",
+      "target": "OSC1.Level",
+      "semantic_concept": "So this is the frequency content of this sample with all of the volumes modulated at any given point",
+      "source_description": "So this is the frequency content of this sample with all of the volumes modulated at any given point",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000088_00",
+      "knowledge_item_id": "ki_ext_000088",
+      "target": "OSC1.Level",
+      "semantic_concept": "nowhere. This is going to be useful if you only want to use this oscillator say for I don't know the",
+      "source_description": "nowhere. This is going to be useful if you only want to use this oscillator say for I don't know the",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000098_00",
+      "knowledge_item_id": "ki_ext_000098",
+      "target": "OSC1.Level",
+      "semantic_concept": "sound more than just your standard low pass or highp pass filter. And especially once you start modu",
+      "source_description": "sound more than just your standard low pass or highp pass filter. And especially once you start modu",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000105_00",
+      "knowledge_item_id": "ki_ext_000105",
+      "target": "OSC1.Level",
+      "semantic_concept": "You can imagine this kind of bass is really useful for something like neurobase design because you c",
+      "source_description": "You can imagine this kind of bass is really useful for something like neurobase design because you c",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000106_00",
+      "knowledge_item_id": "ki_ext_000106",
+      "target": "OSC1.Level",
+      "semantic_concept": "And as the name suggests, you're going to get some distortion as well. And we have the drive set nic",
+      "source_description": "And as the name suggests, you're going to get some distortion as well. And we have the drive set nic",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000109_00",
+      "knowledge_item_id": "ki_ext_000109",
+      "target": "OSC1.Level",
+      "semantic_concept": "[Music] 1. And again, there's a low pass version available as well as a band pass.",
+      "source_description": "[Music] 1. And again, there's a low pass version available as well as a band pass.",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000110_00",
+      "knowledge_item_id": "ki_ext_000110",
+      "target": "OSC1.Level",
+      "semantic_concept": "[Music] and also again with this filter I feel like the key mode is set the other way around that wi",
+      "source_description": "[Music] and also again with this filter I feel like the key mode is set the other way around that wi",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000115_00",
+      "knowledge_item_id": "ki_ext_000115",
+      "target": "OSC1.Level",
+      "semantic_concept": "The EMS ladder is going to be based on a VCF filter. This is again just a different circuit type whi",
+      "source_description": "The EMS ladder is going to be based on a VCF filter. This is again just a different circuit type whi",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000119_00",
+      "knowledge_item_id": "ki_ext_000119",
+      "target": "OSC1.Level",
+      "semantic_concept": "so buzzy. That is because the resonance is going to be applying a gain to all of the different peaks",
+      "source_description": "so buzzy. That is because the resonance is going to be applying a gain to all of the different peaks",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000123_00",
+      "knowledge_item_id": "ki_ext_000123",
+      "target": "OSC1.Level",
+      "semantic_concept": "this. Fortunately, in between it doesn't seem like it's staying in there. Maybe that has to do with ",
+      "source_description": "this. Fortunately, in between it doesn't seem like it's staying in there. Maybe that has to do with ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000128_00",
+      "knowledge_item_id": "ki_ext_000128",
+      "target": "OSC1.Level",
+      "semantic_concept": "whatsoever. But again, it's going to be based on this particular filter from this particular piece o",
+      "source_description": "whatsoever. But again, it's going to be based on this particular filter from this particular piece o",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000129_00",
+      "knowledge_item_id": "ki_ext_000129",
+      "target": "OSC1.Level",
+      "semantic_concept": "some basic controls over all of the main parts of the synthesizer. We have all of the oscillators ov",
+      "source_description": "some basic controls over all of the main parts of the synthesizer. We have all of the oscillators ov",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000130_00",
+      "knowledge_item_id": "ki_ext_000130",
+      "target": "OSC1.Level",
+      "semantic_concept": "Now you can also send bus two into bus one but of course you cannot really combine the two. As you c",
+      "source_description": "Now you can also send bus two into bus one but of course you cannot really combine the two. As you c",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000135_00",
+      "knowledge_item_id": "ki_ext_000135",
+      "target": "OSC1.Level",
+      "semantic_concept": "But by default, the oscillators are always tied to the envelope. So if we don't have this, it is alw",
+      "source_description": "But by default, the oscillators are always tied to the envelope. So if we don't have this, it is alw",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000142_00",
+      "knowledge_item_id": "ki_ext_000142",
+      "target": "OSC1.Level",
+      "semantic_concept": "something that I would like for my effects, it is the ability to right click here and just set it to",
+      "source_description": "something that I would like for my effects, it is the ability to right click here and just set it to",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000147_00",
+      "knowledge_item_id": "ki_ext_000147",
+      "target": "OSC1.Level",
+      "semantic_concept": "next effect is also going to be very useful because it's going to be the compressor. What the compre",
+      "source_description": "next effect is also going to be very useful because it's going to be the compressor. What the compre",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000148_00",
+      "knowledge_item_id": "ki_ext_000148",
+      "target": "OSC1.Level",
+      "semantic_concept": "Now you can actually set the threshold for each band separately if you click here in the middle and ",
+      "source_description": "Now you can actually set the threshold for each band separately if you click here in the middle and ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000155_00",
+      "knowledge_item_id": "ki_ext_000155",
+      "target": "OSC1.Level",
+      "semantic_concept": "Again, as you can see, you can tie this to BPM if you want to set it in musical notes instead of jus",
+      "source_description": "Again, as you can see, you can tie this to BPM if you want to set it in musical notes instead of jus",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000157_00",
+      "knowledge_item_id": "ki_ext_000157",
+      "target": "OSC1.Level",
+      "semantic_concept": "finally, we have the impulse response gain, which allows you to literally just turn up the volume of",
+      "source_description": "finally, we have the impulse response gain, which allows you to literally just turn up the volume of",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000158_00",
+      "knowledge_item_id": "ki_ext_000158",
+      "target": "OSC1.Level",
+      "semantic_concept": "sounds cool. So really, this is the kind of effect where you really just need to dive into it yourse",
+      "source_description": "sounds cool. So really, this is the kind of effect where you really just need to dive into it yourse",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000159_00",
+      "knowledge_item_id": "ki_ext_000159",
+      "target": "OSC1.Level",
+      "semantic_concept": "channel. Whereas the normal delay is just like a stereo effect. And then finally, we have the tap de",
+      "source_description": "channel. Whereas the normal delay is just like a stereo effect. And then finally, we have the tap de",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000165_00",
+      "knowledge_item_id": "ki_ext_000165",
+      "target": "OSC1.Level",
+      "semantic_concept": "So we have a filter over here which can be inserted either before the distortion or after the distor",
+      "source_description": "So we have a filter over here which can be inserted either before the distortion or after the distor",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000166_00",
+      "knowledge_item_id": "ki_ext_000166",
+      "target": "OSC1.Level",
+      "semantic_concept": "now, we're editing the A graph. So, we want to set the drive all the way down to get the exact repre",
+      "source_description": "now, we're editing the A graph. So, we want to set the drive all the way down to get the exact repre",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000167_00",
+      "knowledge_item_id": "ki_ext_000167",
+      "target": "OSC1.Level",
+      "semantic_concept": "sound though. The next one is going to be a zero square distortion. This is also going to be a very ",
+      "source_description": "sound though. The next one is going to be a zero square distortion. This is also going to be a very ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000177_00",
+      "knowledge_item_id": "ki_ext_000177",
+      "target": "OSC1.Level",
+      "semantic_concept": "highp pass or a DC blocker. The next distortion type is the one that we've already seen, which is th",
+      "source_description": "highp pass or a DC blocker. The next distortion type is the one that we've already seen, which is th",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000180_00",
+      "knowledge_item_id": "ki_ext_000180",
+      "target": "OSC1.Level",
+      "semantic_concept": "strong. And the same is going to be true with the tape saturator, which is going to have a slightly ",
+      "source_description": "strong. And the same is going to be true with the tape saturator, which is going to have a slightly ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000185_00",
+      "knowledge_item_id": "ki_ext_000185",
+      "target": "OSC1.Level",
+      "semantic_concept": "next few effects are going to be a little bit easier. We have the equalizer, which is going to be a ",
+      "source_description": "next few effects are going to be a little bit easier. We have the equalizer, which is going to be a ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000187_00",
+      "knowledge_item_id": "ki_ext_000187",
+      "target": "OSC1.Level",
+      "semantic_concept": "flanger. And you can hear that kind of moving almost windy effect here. Of course, if you want a str",
+      "source_description": "flanger. And you can hear that kind of moving almost windy effect here. Of course, if you want a str",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000191_00",
+      "knowledge_item_id": "ki_ext_000191",
+      "target": "OSC1.Level",
+      "semantic_concept": "it. And of course, at size all the way zero, it is actually going to be instant. So then it just bec",
+      "source_description": "it. And of course, at size all the way zero, it is actually going to be instant. So then it just bec",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000193_00",
+      "knowledge_item_id": "ki_ext_000193",
+      "target": "OSC1.Level",
+      "semantic_concept": "sound. We have the frequency which is going to be the center frequency around which this phaser is m",
+      "source_description": "sound. We have the frequency which is going to be the center frequency around which this phaser is m",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000194_00",
+      "knowledge_item_id": "ki_ext_000194",
+      "target": "OSC1.Level",
+      "semantic_concept": "sounds through the blade so that it gets kind of smoothened out by the actual physical act of the pl",
+      "source_description": "sounds through the blade so that it gets kind of smoothened out by the actual physical act of the pl",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000196_00",
+      "knowledge_item_id": "ki_ext_000196",
+      "target": "OSC1.Level",
+      "semantic_concept": "bit. We have a pre-delay which is going to delay the wet signal. So that again you're going to be ab",
+      "source_description": "bit. We have a pre-delay which is going to delay the wet signal. So that again you're going to be ab",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000201_00",
+      "knowledge_item_id": "ki_ext_000201",
+      "target": "OSC1.Level",
+      "semantic_concept": "sound. Whereas, if we set a little bit of modulation, you can hear we get a little bit of a smoothin",
+      "source_description": "sound. Whereas, if we set a little bit of modulation, you can hear we get a little bit of a smoothin",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000202_00",
+      "knowledge_item_id": "ki_ext_000202",
+      "target": "OSC1.Level",
+      "semantic_concept": "As you can hear, interesting things are happening with this reverb. We again have a pre-delay as wel",
+      "source_description": "As you can hear, interesting things are happening with this reverb. We again have a pre-delay as wel",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000205_00",
+      "knowledge_item_id": "ki_ext_000205",
+      "target": "OSC1.Level",
+      "semantic_concept": "something like the size, which results in those pitch changes. Again, the modulation on this reverb ",
+      "source_description": "something like the size, which results in those pitch changes. Again, the modulation on this reverb ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000208_00",
+      "knowledge_item_id": "ki_ext_000208",
+      "target": "OSC1.Level",
+      "semantic_concept": "something that I forgot is polarity inversion. So, this literally is just going to take the waveform",
+      "source_description": "something that I forgot is polarity inversion. So, this literally is just going to take the waveform",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000211_00",
+      "knowledge_item_id": "ki_ext_000211",
+      "target": "OSC1.Level",
+      "semantic_concept": "Now the second modulation sorts are going to be your envelopes. Now these are going to be like chang",
+      "source_description": "Now the second modulation sorts are going to be your envelopes. Now these are going to be like chang",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000217_00",
+      "knowledge_item_id": "ki_ext_000217",
+      "target": "OSC1.Level",
+      "semantic_concept": "And this is going to be a setting that will be very useful together with the global legato settings ",
+      "source_description": "And this is going to be a setting that will be very useful together with the global legato settings ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000218_00",
+      "knowledge_item_id": "ki_ext_000218",
+      "target": "OSC1.Level",
+      "semantic_concept": "so that they're synced to the grid. Now, if you're not a fan of holding shift, you can also just sel",
+      "source_description": "so that they're synced to the grid. Now, if you're not a fan of holding shift, you can also just sel",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000220_00",
+      "knowledge_item_id": "ki_ext_000220",
+      "target": "OSC1.Level",
+      "semantic_concept": "Now, all of these shortcuts do work in all of the other graphs that we have seen up until this point",
+      "source_description": "Now, all of these shortcuts do work in all of the other graphs that we have seen up until this point",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000222_00",
+      "knowledge_item_id": "ki_ext_000222",
+      "target": "OSC1.Level",
+      "semantic_concept": "So anchoring timing in place will make sure that you're always in sync. But that does mean that some",
+      "source_description": "So anchoring timing in place will make sure that you're always in sync. But that does mean that some",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000224_00",
+      "knowledge_item_id": "ki_ext_000224",
+      "target": "OSC1.Level",
+      "semantic_concept": "sometimes be a problem. So there's also LFO smoothing. This is going to smooth out any of the modula",
+      "source_description": "sometimes be a problem. So there's also LFO smoothing. This is going to smooth out any of the modula",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000230_00",
+      "knowledge_item_id": "ki_ext_000230",
+      "target": "OSC1.Level",
+      "semantic_concept": "see it just jumps over. And if you actually wanted to have it kind of go back and forth, you can do ",
+      "source_description": "see it just jumps over. And if you actually wanted to have it kind of go back and forth, you can do ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000231_00",
+      "knowledge_item_id": "ki_ext_000231",
+      "target": "OSC1.Level",
+      "semantic_concept": "Again, modulation points can also be modulated themselves. So, we can set the X value here, can chan",
+      "source_description": "Again, modulation points can also be modulated themselves. So, we can set the X value here, can chan",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000235_00",
+      "knowledge_item_id": "ki_ext_000235",
+      "target": "OSC1.Level",
+      "semantic_concept": "that. The final type is going to be a one-dimensional randomizer. Again, as you can see, no X and Y ",
+      "source_description": "that. The final type is going to be a one-dimensional randomizer. Again, as you can see, no X and Y ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000236_00",
+      "knowledge_item_id": "ki_ext_000236",
+      "target": "OSC1.Level",
+      "semantic_concept": "Probably really cool to put something like this on a [Music] filter. Now, as you can see, the LFOs h",
+      "source_description": "Probably really cool to put something like this on a [Music] filter. Now, as you can see, the LFOs h",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000238_00",
+      "knowledge_item_id": "ki_ext_000238",
+      "target": "OSC1.Level",
+      "semantic_concept": "So, we can take any of the output from any of the oscillators and use that as our modulation source.",
+      "source_description": "So, we can take any of the output from any of the oscillators and use that as our modulation source.",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000240_00",
+      "knowledge_item_id": "ki_ext_000240",
+      "target": "OSC1.Level",
+      "semantic_concept": "So moving this around we will go back and we can see that it's back up again. Go down we can see tha",
+      "source_description": "So moving this around we will go back and we can see that it's back up again. Go down we can see tha",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000245_00",
+      "knowledge_item_id": "ki_ext_000245",
+      "target": "OSC1.Level",
+      "semantic_concept": "So it automatically goes and takes this modulation and makes it bipolar. We can see that this is the",
+      "source_description": "So it automatically goes and takes this modulation and makes it bipolar. We can see that this is the",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000247_00",
+      "knowledge_item_id": "ki_ext_000247",
+      "target": "OSC1.Level",
+      "semantic_concept": "source before, but there's a few extra things that we want to show here. So, let's set up another ox",
+      "source_description": "source before, but there's a few extra things that we want to show here. So, let's set up another ox",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000253_00",
+      "knowledge_item_id": "ki_ext_000253",
+      "target": "OSC1.Level",
+      "semantic_concept": "finally, we have different envelope parameters. So it's going to change some of the timings on the e",
+      "source_description": "finally, we have different envelope parameters. So it's going to change some of the timings on the e",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000258_00",
+      "knowledge_item_id": "ki_ext_000258",
+      "target": "OSC1.Level",
+      "semantic_concept": "now let's look at the clip setting. If I click on here, you have your whole DAW open and you can act",
+      "source_description": "now let's look at the clip setting. If I click on here, you have your whole DAW open and you can act",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000261_00",
+      "knowledge_item_id": "ki_ext_000261",
+      "target": "OSC1.Level",
+      "semantic_concept": "something like that and this is an easy way to do that. You set it to edit all set the length that y",
+      "source_description": "something like that and this is an easy way to do that. You set it to edit all set the length that y",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000264_00",
+      "knowledge_item_id": "ki_ext_000264",
+      "target": "OSC1.Level",
+      "semantic_concept": "next one until it starts to trigger so that you can quantize it with your actual project tempo. We h",
+      "source_description": "next one until it starts to trigger so that you can quantize it with your actual project tempo. We h",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000265_00",
+      "knowledge_item_id": "ki_ext_000265",
+      "target": "OSC1.Level",
+      "semantic_concept": "can see some of the chances working here as well. Some of times the notes don't get played and somet",
+      "source_description": "can see some of the chances working here as well. Some of times the notes don't get played and somet",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000266_00",
+      "knowledge_item_id": "ki_ext_000266",
+      "target": "OSC1.Level",
+      "semantic_concept": "somewhere. These are still in the code, like actually hardcoded. I'm not going to describe what all ",
+      "source_description": "somewhere. These are still in the code, like actually hardcoded. I'm not going to describe what all ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000267_00",
+      "knowledge_item_id": "ki_ext_000267",
+      "target": "OSC1.Level",
+      "semantic_concept": "So we're first going to play the lowest notes, then one higher, then two higher, then three higher. ",
+      "source_description": "So we're first going to play the lowest notes, then one higher, then two higher, then three higher. ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000268_00",
+      "knowledge_item_id": "ki_ext_000268",
+      "target": "OSC1.Level",
+      "semantic_concept": "So you'll see the same playback modes, the same ones that require the time. Here we do have this oth",
+      "source_description": "So you'll see the same playback modes, the same ones that require the time. Here we do have this oth",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000278_00",
+      "knowledge_item_id": "ki_ext_000278",
+      "target": "OSC1.Level",
+      "semantic_concept": "Now, there are some really, really technical aspects of this whole playback system. Specifically, ho",
+      "source_description": "Now, there are some really, really technical aspects of this whole playback system. Specifically, ho",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000282_00",
+      "knowledge_item_id": "ki_ext_000282",
+      "target": "OSC1.Level",
+      "semantic_concept": "sounds that aren't necessarily at the same pitch all the time. We also have the pitch average, which",
+      "source_description": "sounds that aren't necessarily at the same pitch all the time. We also have the pitch average, which",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000285_00",
+      "knowledge_item_id": "ki_ext_000285",
+      "target": "OSC1.Level",
+      "semantic_concept": "now we get this really like noisy looking waveform. I'm quickly going to go over here to normalize i",
+      "source_description": "now we get this really like noisy looking waveform. I'm quickly going to go over here to normalize i",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000286_00",
+      "knowledge_item_id": "ki_ext_000286",
+      "target": "OSC1.Level",
+      "semantic_concept": "sound, as opposed to what we had before, which was this, which is way too sharp. The next operation,",
+      "source_description": "sound, as opposed to what we had before, which was this, which is way too sharp. The next operation,",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000290_00",
+      "knowledge_item_id": "ki_ext_000290",
+      "target": "OSC1.Level",
+      "semantic_concept": "something really interesting going on with the phases of these wavetables. So as you can see we have",
+      "source_description": "something really interesting going on with the phases of these wavetables. So as you can see we have",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000292_00",
+      "knowledge_item_id": "ki_ext_000292",
+      "target": "OSC1.Level",
+      "semantic_concept": "high frequencies. Now, there's still a lot more that we can do with the wave tables, which is mainly",
+      "source_description": "high frequencies. Now, there's still a lot more that we can do with the wave tables, which is mainly",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000295_00",
+      "knowledge_item_id": "ki_ext_000295",
+      "target": "OSC1.Level",
+      "semantic_concept": "Let's quickly enable pitch tracking and then turn up the pitch to say 48 semmitones so that it's at ",
+      "source_description": "Let's quickly enable pitch tracking and then turn up the pitch to say 48 semmitones so that it's at ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000298_00",
+      "knowledge_item_id": "ki_ext_000298",
+      "target": "OSC1.Level",
+      "semantic_concept": "So, again, let's set this up a little bit higher so that we can see that we can reset these. go into",
+      "source_description": "So, again, let's set this up a little bit higher so that we can see that we can reset these. go into",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000301_00",
+      "knowledge_item_id": "ki_ext_000301",
+      "target": "OSC1.Level",
+      "semantic_concept": "so we can get the phase information as well. And then what we can do, I'm again going to open up a d",
+      "source_description": "so we can get the phase information as well. And then what we can do, I'm again going to open up a d",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000302_00",
+      "knowledge_item_id": "ki_ext_000302",
+      "target": "OSC1.Level",
+      "semantic_concept": "sorry by again using this set spectra this frame to all here. And then we can go in here and then su",
+      "source_description": "sorry by again using this set spectra this frame to all here. And then we can go in here and then su",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000304_00",
+      "knowledge_item_id": "ki_ext_000304",
+      "target": "OSC1.Level",
+      "semantic_concept": "So now we have this wave table with the original spectral balance still intact but with the gaps in ",
+      "source_description": "So now we have this wave table with the original spectral balance still intact but with the gaps in ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000308_00",
+      "knowledge_item_id": "ki_ext_000308",
+      "target": "OSC1.Level",
+      "semantic_concept": "now. As you can guess, this is just your normal preset browser. So, you can just scroll through it a",
+      "source_description": "now. As you can guess, this is just your normal preset browser. So, you can just scroll through it a",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000003_01",
+      "knowledge_item_id": "ki_ext_000003",
+      "target": "OSC1.Detune",
+      "semantic_concept": "Now let's get back into the oscillators of Serum. So Serum now comes with five different oscillator ",
+      "source_description": "Now let's get back into the oscillators of Serum. So Serum now comes with five different oscillator ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000004_01",
+      "knowledge_item_id": "ki_ext_000004",
+      "target": "OSC1.Detune",
+      "semantic_concept": "Now, when it comes to serum, a lot of the information is hidden behind right-click menus, so-called ",
+      "source_description": "Now, when it comes to serum, a lot of the information is hidden behind right-click menus, so-called ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000005_00",
+      "knowledge_item_id": "ki_ext_000005",
+      "target": "OSC1.Detune",
+      "semantic_concept": "higher tuned voices in case that you have an even number, it's going to be the middle two voices. So",
+      "source_description": "higher tuned voices in case that you have an even number, it's going to be the middle two voices. So",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000021_00",
+      "knowledge_item_id": "ki_ext_000021",
+      "target": "OSC1.Detune",
+      "semantic_concept": "now you can hear that it's trying to play the same pitch. There was one that was pitched a little bi",
+      "source_description": "now you can hear that it's trying to play the same pitch. There was one that was pitched a little bi",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000022_01",
+      "knowledge_item_id": "ki_ext_000022",
+      "target": "OSC1.Detune",
+      "semantic_concept": "sound should be. Moving on to the sample oscillators, there's actually two ways that we can get ther",
+      "source_description": "sound should be. Moving on to the sample oscillators, there's actually two ways that we can get ther",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000034_01",
+      "knowledge_item_id": "ki_ext_000034",
+      "target": "OSC1.Detune",
+      "semantic_concept": "something like that, like updating a timing, which you can do by setting it to manual mode, and then",
+      "source_description": "something like that, like updating a timing, which you can do by setting it to manual mode, and then",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000041_01",
+      "knowledge_item_id": "ki_ext_000041",
+      "target": "OSC1.Detune",
+      "semantic_concept": "grains. Again, we can also change the length. The other one that we see over here is the pitch. So, ",
+      "source_description": "grains. Again, we can also change the length. The other one that we see over here is the pitch. So, ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000044_00",
+      "knowledge_item_id": "ki_ext_000044",
+      "target": "OSC1.Detune",
+      "semantic_concept": "finally, we have the offset, which is going to be how far away from the playhead position it is goin",
+      "source_description": "finally, we have the offset, which is going to be how far away from the playhead position it is goin",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000046_01",
+      "knowledge_item_id": "ki_ext_000046",
+      "target": "OSC1.Detune",
+      "semantic_concept": "So, we can set that, for example, to random to really just have them spawn in random places. I belie",
+      "source_description": "So, we can set that, for example, to random to really just have them spawn in random places. I belie",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000071_00",
+      "knowledge_item_id": "ki_ext_000071",
+      "target": "OSC1.Detune",
+      "semantic_concept": "lower. There's also this HMX version of it which has a slightly different way of mixing between the ",
+      "source_description": "lower. There's also this HMX version of it which has a slightly different way of mixing between the ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000084_01",
+      "knowledge_item_id": "ki_ext_000084",
+      "target": "OSC1.Detune",
+      "semantic_concept": "loop. As you can hear, it gets a little bit quieter, but the main thing that it's doing is it's emul",
+      "source_description": "loop. As you can hear, it gets a little bit quieter, but the main thing that it's doing is it's emul",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000086_01",
+      "knowledge_item_id": "ki_ext_000086",
+      "target": "OSC1.Detune",
+      "semantic_concept": "So this is the frequency content of this sample with all of the volumes modulated at any given point",
+      "source_description": "So this is the frequency content of this sample with all of the volumes modulated at any given point",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000088_01",
+      "knowledge_item_id": "ki_ext_000088",
+      "target": "OSC1.Detune",
+      "semantic_concept": "nowhere. This is going to be useful if you only want to use this oscillator say for I don't know the",
+      "source_description": "nowhere. This is going to be useful if you only want to use this oscillator say for I don't know the",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000114_00",
+      "knowledge_item_id": "ki_ext_000114",
+      "target": "OSC1.Detune",
+      "semantic_concept": "filter comes with this very interesting parameter. As you can see, the smooth isn't really chasing t",
+      "source_description": "filter comes with this very interesting parameter. As you can see, the smooth isn't really chasing t",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000123_01",
+      "knowledge_item_id": "ki_ext_000123",
+      "target": "OSC1.Detune",
+      "semantic_concept": "this. Fortunately, in between it doesn't seem like it's staying in there. Maybe that has to do with ",
+      "source_description": "this. Fortunately, in between it doesn't seem like it's staying in there. Maybe that has to do with ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000128_01",
+      "knowledge_item_id": "ki_ext_000128",
+      "target": "OSC1.Detune",
+      "semantic_concept": "whatsoever. But again, it's going to be based on this particular filter from this particular piece o",
+      "source_description": "whatsoever. But again, it's going to be based on this particular filter from this particular piece o",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000130_01",
+      "knowledge_item_id": "ki_ext_000130",
+      "target": "OSC1.Detune",
+      "semantic_concept": "Now you can also send bus two into bus one but of course you cannot really combine the two. As you c",
+      "source_description": "Now you can also send bus two into bus one but of course you cannot really combine the two. As you c",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000134_00",
+      "knowledge_item_id": "ki_ext_000134",
+      "target": "OSC1.Detune",
+      "semantic_concept": "So, it turns out I slightly misunderstood what this parameter is doing. It is actually allowing you ",
+      "source_description": "So, it turns out I slightly misunderstood what this parameter is doing. It is actually allowing you ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000140_00",
+      "knowledge_item_id": "ki_ext_000140",
+      "target": "OSC1.Detune",
+      "semantic_concept": "sound. So if you want to be fully mono, you can turn it down all the way to zero. Now this module al",
+      "source_description": "sound. So if you want to be fully mono, you can turn it down all the way to zero. Now this module al",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000161_00",
+      "knowledge_item_id": "ki_ext_000161",
+      "target": "OSC1.Detune",
+      "semantic_concept": "Now currently the timing is set in musical notes but that doesn't have to be the case as you can set",
+      "source_description": "Now currently the timing is set in musical notes but that doesn't have to be the case as you can set",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000174_00",
+      "knowledge_item_id": "ki_ext_000174",
+      "target": "OSC1.Detune",
+      "semantic_concept": "values. And this is going to mean that this type of distortion can result in a little bit of DC offs",
+      "source_description": "values. And this is going to mean that this type of distortion can result in a little bit of DC offs",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000175_00",
+      "knowledge_item_id": "ki_ext_000175",
+      "target": "OSC1.Detune",
+      "semantic_concept": "highp pass filter. Something like this. And you're no longer going to have the DC offset because tha",
+      "source_description": "highp pass filter. Something like this. And you're no longer going to have the DC offset because tha",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000180_01",
+      "knowledge_item_id": "ki_ext_000180",
+      "target": "OSC1.Detune",
+      "semantic_concept": "strong. And the same is going to be true with the tape saturator, which is going to have a slightly ",
+      "source_description": "strong. And the same is going to be true with the tape saturator, which is going to have a slightly ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000186_00",
+      "knowledge_item_id": "ki_ext_000186",
+      "target": "OSC1.Detune",
+      "semantic_concept": "sound and then it's going to apply a slight timing offset to them so that they phase cancel and crea",
+      "source_description": "sound and then it's going to apply a slight timing offset to them so that they phase cancel and crea",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000188_00",
+      "knowledge_item_id": "ki_ext_000188",
+      "target": "OSC1.Detune",
+      "semantic_concept": "You can also hear that the left channel and the right channel are doing different things. And the of",
+      "source_description": "You can also hear that the left channel and the right channel are doing different things. And the of",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000192_00",
+      "knowledge_item_id": "ki_ext_000192",
+      "target": "OSC1.Detune",
+      "semantic_concept": "applied. So here you can see that we just have a static phaser and now it starts to move. And then t",
+      "source_description": "applied. So here you can see that we just have a static phaser and now it starts to move. And then t",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000193_01",
+      "knowledge_item_id": "ki_ext_000193",
+      "target": "OSC1.Detune",
+      "semantic_concept": "sound. We have the frequency which is going to be the center frequency around which this phaser is m",
+      "source_description": "sound. We have the frequency which is going to be the center frequency around which this phaser is m",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000201_01",
+      "knowledge_item_id": "ki_ext_000201",
+      "target": "OSC1.Detune",
+      "semantic_concept": "sound. Whereas, if we set a little bit of modulation, you can hear we get a little bit of a smoothin",
+      "source_description": "sound. Whereas, if we set a little bit of modulation, you can hear we get a little bit of a smoothin",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000221_00",
+      "knowledge_item_id": "ki_ext_000221",
+      "target": "OSC1.Detune",
+      "semantic_concept": "now we have the shape from wave table B here, which is just a saw wave. If I make a little bit more ",
+      "source_description": "now we have the shape from wave table B here, which is just a saw wave. If I make a little bit more ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000261_01",
+      "knowledge_item_id": "ki_ext_000261",
+      "target": "OSC1.Detune",
+      "semantic_concept": "something like that and this is an easy way to do that. You set it to edit all set the length that y",
+      "source_description": "something like that and this is an easy way to do that. You set it to edit all set the length that y",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000263_00",
+      "knowledge_item_id": "ki_ext_000263",
+      "target": "OSC1.Detune",
+      "semantic_concept": "play. So you can play like melodies that are like speeding up and slowing down and whatnot. We have ",
+      "source_description": "play. So you can play like melodies that are like speeding up and slowing down and whatnot. We have ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000268_01",
+      "knowledge_item_id": "ki_ext_000268",
+      "target": "OSC1.Detune",
+      "semantic_concept": "So you'll see the same playback modes, the same ones that require the time. Here we do have this oth",
+      "source_description": "So you'll see the same playback modes, the same ones that require the time. Here we do have this oth",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000270_00",
+      "knowledge_item_id": "ki_ext_000270",
+      "target": "OSC1.Detune",
+      "semantic_concept": "So you're able to select a key and then the scale that you're working in to restrict all of notes co",
+      "source_description": "So you're able to select a key and then the scale that you're working in to restrict all of notes co",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000271_00",
+      "knowledge_item_id": "ki_ext_000271",
+      "target": "OSC1.Detune",
+      "semantic_concept": "So we're going to have the arpeggiator only trigger for these lower notes over here. And you can ima",
+      "source_description": "So we're going to have the arpeggiator only trigger for these lower notes over here. And you can ima",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000290_01",
+      "knowledge_item_id": "ki_ext_000290",
+      "target": "OSC1.Detune",
+      "semantic_concept": "something really interesting going on with the phases of these wavetables. So as you can see we have",
+      "source_description": "something really interesting going on with the phases of these wavetables. So as you can see we have",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000292_01",
+      "knowledge_item_id": "ki_ext_000292",
+      "target": "OSC1.Detune",
+      "semantic_concept": "high frequencies. Now, there's still a lot more that we can do with the wave tables, which is mainly",
+      "source_description": "high frequencies. Now, there's still a lot more that we can do with the wave tables, which is mainly",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000300_00",
+      "knowledge_item_id": "ki_ext_000300",
+      "target": "OSC1.Detune",
+      "semantic_concept": "sound. The next process is this notch all faces for fundamental to 50%. The manual states preserve t",
+      "source_description": "sound. The next process is this notch all faces for fundamental to 50%. The manual states preserve t",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000304_01",
+      "knowledge_item_id": "ki_ext_000304",
+      "target": "OSC1.Detune",
+      "semantic_concept": "So now we have this wave table with the original spectral balance still intact but with the gaps in ",
+      "source_description": "So now we have this wave table with the original spectral balance still intact but with the gaps in ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000017_01",
+      "knowledge_item_id": "ki_ext_000017",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "Finally, we have the odd/even where you can morph between odd harmonics and even harmonics. So that ",
+      "source_description": "Finally, we have the odd/even where you can morph between odd harmonics and even harmonics. So that ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000050_00",
+      "knowledge_item_id": "ki_ext_000050",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "highest frequencies above and this axis being time. On the side here we have low pass and highp pass",
+      "source_description": "highest frequencies above and this axis being time. On the side here we have low pass and highp pass",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000068_00",
+      "knowledge_item_id": "ki_ext_000068",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "So now you don't have that really extreme brightness that you get if you don't do that. Next up, we ",
+      "source_description": "So now you don't have that really extreme brightness that you get if you don't do that. Next up, we ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000088_02",
+      "knowledge_item_id": "ki_ext_000088",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "nowhere. This is going to be useful if you only want to use this oscillator say for I don't know the",
+      "source_description": "nowhere. This is going to be useful if you only want to use this oscillator say for I don't know the",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000090_00",
+      "knowledge_item_id": "ki_ext_000090",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "We have these multif filters over here which are going to be combinations of the basic filters. So w",
+      "source_description": "We have these multif filters over here which are going to be combinations of the basic filters. So w",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000091_00",
+      "knowledge_item_id": "ki_ext_000091",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "highp pass. So the low pass can go up and the high pass can go up and as you can see they share the ",
+      "source_description": "highp pass. So the low pass can go up and the high pass can go up and as you can see they share the ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000098_01",
+      "knowledge_item_id": "ki_ext_000098",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "sound more than just your standard low pass or highp pass filter. And especially once you start modu",
+      "source_description": "sound more than just your standard low pass or highp pass filter. And especially once you start modu",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000103_00",
+      "knowledge_item_id": "ki_ext_000103",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "So you can hear you can generate some really cool distorted tones out of that. The German low pass i",
+      "source_description": "So you can hear you can generate some really cool distorted tones out of that. The German low pass i",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000105_01",
+      "knowledge_item_id": "ki_ext_000105",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "You can imagine this kind of bass is really useful for something like neurobase design because you c",
+      "source_description": "You can imagine this kind of bass is really useful for something like neurobase design because you c",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000107_00",
+      "knowledge_item_id": "ki_ext_000107",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "Honestly, I feel like it's getting more distorted with clean mode on than with clean mode off. So, I",
+      "source_description": "Honestly, I feel like it's getting more distorted with clean mode on than with clean mode off. So, I",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000109_01",
+      "knowledge_item_id": "ki_ext_000109",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "[Music] 1. And again, there's a low pass version available as well as a band pass.",
+      "source_description": "[Music] 1. And again, there's a low pass version available as well as a band pass.",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000110_01",
+      "knowledge_item_id": "ki_ext_000110",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "[Music] and also again with this filter I feel like the key mode is set the other way around that wi",
+      "source_description": "[Music] and also again with this filter I feel like the key mode is set the other way around that wi",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000111_00",
+      "knowledge_item_id": "ki_ext_000111",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "highp pass. So, we have the low pass here, band reject here, and then highp pass. And in the manual,",
+      "source_description": "highp pass. So, we have the low pass here, band reject here, and then highp pass. And in the manual,",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000115_01",
+      "knowledge_item_id": "ki_ext_000115",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "The EMS ladder is going to be based on a VCF filter. This is again just a different circuit type whi",
+      "source_description": "The EMS ladder is going to be based on a VCF filter. This is again just a different circuit type whi",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000123_02",
+      "knowledge_item_id": "ki_ext_000123",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "this. Fortunately, in between it doesn't seem like it's staying in there. Maybe that has to do with ",
+      "source_description": "this. Fortunately, in between it doesn't seem like it's staying in there. Maybe that has to do with ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000126_00",
+      "knowledge_item_id": "ki_ext_000126",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "software called synthesizer expander module. So we have a morphing filter going from a low pass to a",
+      "source_description": "software called synthesizer expander module. So we have a morphing filter going from a low pass to a",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000144_00",
+      "knowledge_item_id": "ki_ext_000144",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "pronounced. And then finally we have filtering where we can switch between low pass filter and highp",
+      "source_description": "pronounced. And then finally we have filtering where we can switch between low pass filter and highp",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000146_00",
+      "knowledge_item_id": "ki_ext_000146",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "So you can set it to be the whole sound if you just have the low pass filter turned all the way up o",
+      "source_description": "So you can set it to be the whole sound if you just have the low pass filter turned all the way up o",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000156_00",
+      "knowledge_item_id": "ki_ext_000156",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "So, this is also going to make your reverb darker in the same way that turning down the tone does. A",
+      "source_description": "So, this is also going to make your reverb darker in the same way that turning down the tone does. A",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000165_01",
+      "knowledge_item_id": "ki_ext_000165",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "So we have a filter over here which can be inserted either before the distortion or after the distor",
+      "source_description": "So we have a filter over here which can be inserted either before the distortion or after the distor",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000185_01",
+      "knowledge_item_id": "ki_ext_000185",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "next few effects are going to be a little bit easier. We have the equalizer, which is going to be a ",
+      "source_description": "next few effects are going to be a little bit easier. We have the equalizer, which is going to be a ",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
+    },
+    {
+      "hypothesis_id": "hyp_000207_00",
+      "knowledge_item_id": "ki_ext_000207",
+      "target": "Filter.Cutoff",
+      "semantic_concept": "high channel here. And you can frequency split between the two different channels. And you can affec",
+      "source_description": "high channel here. And you can frequency split between the two different channels. And you can affec",
+      "confidence": 0.85,
+      "source_type": "YOUTUBE_TRANSCRIPT"
     }
   ]
 }
