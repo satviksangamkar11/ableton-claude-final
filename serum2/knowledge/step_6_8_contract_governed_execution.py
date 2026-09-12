@@ -148,11 +148,22 @@ class ContractGovernedExecutor:
             return None
 
         # Build authority from contract ONLY
+        # prerequisites may be a list of dicts or a dict; normalize to dict
+        prereq_dict = {}
+        if contract.prerequisites:
+            if isinstance(contract.prerequisites, dict):
+                prereq_dict = contract.prerequisites
+            elif isinstance(contract.prerequisites, (list, tuple)):
+                # Each item is likely a dict with field_path key
+                for p in contract.prerequisites:
+                    if isinstance(p, dict) and "field_path" in p:
+                        prereq_dict[p["field_path"]] = p
+
         authority = ExecutionAuthority(
             contract_id=admission_result.contract_id,
             allowed_operation=contract.allowed_operation,
             target=contract.target,
-            prerequisites=dict(contract.prerequisites) if contract.prerequisites else {},
+            prerequisites=prereq_dict,
             measurement_definition_id=admission_result.measurement_definition_id,
             scope=contract.scope if hasattr(contract, 'scope') else None,
             limitations=list(contract.limitations) if hasattr(contract, 'limitations') else [],

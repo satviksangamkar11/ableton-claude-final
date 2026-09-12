@@ -1,0 +1,334 @@
+{
+  "run_utc": "2026-09-12T19:07:44.532571+00:00",
+  "environment": {
+    "serum_vst3_path": "C:\\Program Files\\Common Files\\VST3\\Serum2.vst3",
+    "serum_binary_sha256": "7978c9be5b2107e985c24c174000faee87e11483ec989d81dc61b5829b45ed70",
+    "execution_epoch_id": "9948a8fae251494e",
+    "dependency_lock": {
+      "dawdreamer": "0.9.0",
+      "cbor2": "unknown",
+      "zstandard": "0.25.0",
+      "numpy": "2.4.4",
+      "python": "3.14.3"
+    },
+    "environment_fingerprint": {
+      "platform": "Windows-11-10.0.26200-SP0",
+      "machine": "AMD64",
+      "processor": "AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD",
+      "python_build": "tags/v3.14.3:323c59a Feb  3 2026 16:04:56",
+      "sample_rate": 44100,
+      "block_size": 512
+    },
+    "contract_status": "CAUSAL_VERIFIED",
+    "contract_measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+    "serum_product": "Serum2",
+    "serum_product_version": "2.0.21"
+  },
+  "positive": {
+    "resolution_diagnostic": {
+      "current_context_supplied": {
+        "body:Env0.plainParams.kParamDecay": 0.02
+      },
+      "resolution_status": "resolved",
+      "prerequisite_status": "unknown",
+      "scope_match": true,
+      "operation_compatibility": "compatible",
+      "refusal_reason": null
+    },
+    "reasoning_chain": {
+      "original_user_request": "Make the note sustain longer.",
+      "universal_intent": {
+        "target_concept": "note-release",
+        "semantic_direction": "longer",
+        "musical_objective": "Extend the audible tail after note-off"
+      },
+      "knowledge_ids": [
+        "k_envelope_release_tail",
+        "k_tail_rms_measurement"
+      ],
+      "knowledge_notes": {
+        "k_envelope_release_tail": {
+          "concept": "envelope release governs post-note-off decay",
+          "epistemic_status": "HYPOTHESIS",
+          "provenance": "general synthesis knowledge (not Serum-measured)",
+          "contribution": "suggested note-release as the candidate concept"
+        },
+        "k_tail_rms_measurement": {
+          "concept": "tail energy is observable after the note ends",
+          "epistemic_status": "HYPOTHESIS",
+          "provenance": "general synthesis knowledge",
+          "contribution": "supported tail-window reasoning (NOT measurement authority)"
+        }
+      },
+      "prior_episode_ids": [
+        "ep_ex_live_001"
+      ],
+      "candidate_ids": [
+        "c_release_longer"
+      ],
+      "advisory_decision": {
+        "decision_id": "adv_live_001",
+        "selected_candidate_id": "c_release_longer",
+        "confidence": 0.8,
+        "status": "decided"
+      },
+      "capability_resolution": {
+        "resolution_id": "res_1774078378400_1774078379072",
+        "status": "resolved",
+        "semantic_target": "envelope_field_release",
+        "capability_contract_id": "envelope_field_release"
+      }
+    },
+    "authority_chain": {
+      "prerequisites_verified_by_caller": {
+        "body:Env0.plainParams.kParamDecay": 0.02
+      },
+      "admission_result": {
+        "admitted": true,
+        "reason": "ADMITTED",
+        "detail": "target 'envelope_field_release' admitted: status=CAUSAL_VERIFIED, allowed_operation=mutate_numeric_value",
+        "contract_id": "envelope_field_release",
+        "contract_status": "CAUSAL_VERIFIED",
+        "measurement_definition_id": "tail_rms_db:c6a68e551ef9"
+      },
+      "execution_pathway": "admitted",
+      "execution_authority": {
+        "contract_id": "envelope_field_release",
+        "allowed_operation": "mutate_numeric_value",
+        "target": "envelope_field_release",
+        "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+        "scope": {
+          "tested_context_only": true,
+          "condition_signature_hash": "2ad6168671cfac32",
+          "mutation_target_path": "Env0.plainParams.kParamRelease",
+          "mutation_value_used": 1.0,
+          "mutation_value_semantics": "ABSOLUTE_PARAMETER_VALUE"
+        },
+        "prerequisites": {
+          "body:Env0.plainParams.kParamDecay": {
+            "field_path": "body:Env0.plainParams.kParamDecay",
+            "declared_value": 0.02,
+            "must_hold_identical": true
+          }
+        },
+        "limitations": [
+          "Tested only with Release parameter = 1.0 (absolute value); generalization to other Release values not established",
+          "Tested only with Decay parameter = 0.02 (baseline_overrides context); generalization to other Decay contexts not established",
+          "Single-field isolated mutation (N=1 witness); multi-field interactions not tested"
+        ]
+      }
+    },
+    "parameter_readback_proof": {
+      "vst3_parameter_index": 228,
+      "vst3_parameter_name": "Env 1 Release",
+      "body_path_mutated": "Env0.plainParams.kParamRelease",
+      "mutation_value_used_plain": 1.0,
+      "default_display_text": "15 ms",
+      "treatment_display_text": "1.00 s",
+      "note": "get_parameter() returns VST3-normalized [0,1]; Serum's own currentValText is the authoritative human-readable confirmation that the body-state plain value actually changed the loaded instance's release time."
+    },
+    "mutation_proof": {
+      "treatment_mutation_count": 1,
+      "treatment_mutations": [
+        [
+          "Env0.plainParams.kParamRelease",
+          1.0
+        ]
+      ],
+      "shared_context_overrides_both_arms": [
+        [
+          "Env0.plainParams.kParamDecay",
+          0.02
+        ]
+      ],
+      "isolation_level": "single_field",
+      "experiment_condition_signature": {
+        "prerequisites": [],
+        "baseline_overrides": [
+          [
+            "Env0.plainParams.kParamDecay",
+            "0.02"
+          ]
+        ],
+        "hash": "2ad6168671cfac32"
+      }
+    },
+    "render_evidence": {
+      "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+      "metric": "tail_rms_db",
+      "baseline_measurement": -240.0000000347071,
+      "treatment_measurement": -35.52270704083783,
+      "delta": 204.4772929938693,
+      "threshold": 1.0,
+      "expected_direction": "increase",
+      "observed_direction": "increase",
+      "harness_status": "EFFECT_OBSERVED",
+      "gate_completeness": {
+        "generation": "PASS",
+        "load": "PASS",
+        "render": "PASS",
+        "causal": "PASS",
+        "persistence": "PASS",
+        "exercise": "NOT_RUN"
+      },
+      "persistence_observation": {
+        "status": "PASS",
+        "checked": true,
+        "exact_match": true,
+        "detail": {
+          "Env0.plainParams.kParamRelease": true
+        }
+      }
+    },
+    "measurement_authority_proof": {
+      "contract_measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+      "admission_propagated_mdid": "tail_rms_db:c6a68e551ef9",
+      "execution_authority_mdid": "tail_rms_db:c6a68e551ef9",
+      "actual_measured_mdid": "tail_rms_db:c6a68e551ef9",
+      "match": true
+    },
+    "diagnosis": {
+      "metric": "tail_rms_db",
+      "observed_delta": 204.4772929938693,
+      "observed_direction": "increase",
+      "contract_expected_direction": "increase",
+      "interpretation": "tail energy increased, consistent with a longer release",
+      "authority": "NONE \u2014 interpretation only"
+    },
+    "outcome_attribution": {
+      "outcome_status": "unexpected_change",
+      "causal_status": "consistent_with_treatment",
+      "attribution_confidence": 0.3,
+      "baseline_value": -240.0000000347071,
+      "treatment_value": -35.52270704083783,
+      "change_magnitude": 204.4772929938693,
+      "change_direction": "increase",
+      "expected_direction": null,
+      "confounds_detected": [],
+      "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+      "reasoning": "Observation consistent with treatment, but causality not strongly established",
+      "provenance": {
+        "contract_id": "envelope_field_release",
+        "execution_id": "ex_live_001",
+        "intent_id": "intent_live_001",
+        "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+        "validity_checks": {
+          "passed": [
+            "baseline_exists",
+            "treatment_exists",
+            "contract_admitted"
+          ],
+          "failed": []
+        }
+      }
+    },
+    "episode": {
+      "episode_id": "ep_ex_live_001",
+      "execution_status": "executed",
+      "learning_eligible": true,
+      "learning_eligibility_status": "learning_eligible",
+      "eligibility_reasons": [
+        "all_checks_passed"
+      ],
+      "admitted_contract_id": "envelope_field_release",
+      "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+      "observed_delta": 204.4772929938693,
+      "attribution_confidence": 0.3,
+      "persistence_path": "D:\\ableton claude\\serum2\\qualification\\ep_ex_live_001.json",
+      "retrieved_back": true,
+      "retrieved_record": {
+        "episode_id": "ep_ex_live_001",
+        "execution_id": "ex_live_001",
+        "creation_timestamp": "2026-09-13T00:37:46.730449",
+        "original_user_request": "Make the note sustain longer.",
+        "semantic_target": "envelope_field_release",
+        "semantic_direction": "longer",
+        "musical_objective": "Extend the audible tail after note-off",
+        "knowledge_item_ids": [
+          "k_envelope_release_tail",
+          "k_tail_rms_measurement"
+        ],
+        "procedure_ids": [],
+        "prior_episode_ids": [
+          "ep_ex_live_001"
+        ],
+        "advisory_decision_id": "adv_live_001",
+        "capability_resolution_id": "res_1774078378400_1774078379072",
+        "selected_candidate_id": "c_release_longer",
+        "admission_handoff_id": "adm_1774078380080",
+        "admitted_contract_id": "envelope_field_release",
+        "contract_status": "CAUSAL_VERIFIED",
+        "execution_pathway": "admitted",
+        "admission_allowed": true,
+        "execution_status": "executed",
+        "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+        "outcome_status": "unexpected_change",
+        "causal_attribution_status": "consistent_with_treatment",
+        "observed_delta": 204.4772929938693,
+        "attribution_confidence": 0.3,
+        "confounds_detected": [],
+        "learning_eligible": true,
+        "learning_eligibility_status": "learning_eligible",
+        "eligibility_reasons": [
+          "all_checks_passed"
+        ],
+        "provenance_chain": {
+          "authority_chain": {
+            "execution_pathway": "admitted",
+            "admission_granted": true,
+            "contract_id": "envelope_field_release"
+          },
+          "outcome_chain": {
+            "outcome_status": "unexpected_change",
+            "causal_status": "consistent_with_treatment",
+            "attribution_confidence": 0.3,
+            "confounds": []
+          }
+        },
+        "schema_version": "6.10.0",
+        "notes": null,
+        "human_intent": "Make the note sustain longer."
+      }
+    },
+    "result": "LIVE_EXECUTED"
+  },
+  "negative": {
+    "capability_resolution_status": "resolved",
+    "capability_found": true,
+    "capability_contract_id": "envelope_field_release",
+    "note": "6.6 RESOLVED normally (same context as positive run); admission independently refused due to withheld prerequisite confirmation. Proves RESOLVED != ADMITTED.",
+    "prerequisites_verified_by_caller": {
+      "body:Env0.plainParams.kParamDecay": false
+    },
+    "admission_result": {
+      "admitted": false,
+      "reason": "prerequisite_unverified",
+      "detail": "target 'envelope_field_release' requires prerequisite(s) ['body:Env0.plainParams.kParamDecay'] to be verified in the PROPOSED execution context; caller did not confirm: ['body:Env0.plainParams.kParamDecay']"
+    },
+    "execution_pathway": "refused",
+    "execution_authority": null,
+    "treatment_mutation_count": 0,
+    "treatment_render_count": 0,
+    "treatment_measurement_count": 0,
+    "harness_invoked": false,
+    "outcome_status": "invalid_observation",
+    "causal_status": "insufficient_evidence",
+    "episode_learning_eligible": false,
+    "episode_learning_status": "refused_execution",
+    "episode_eligibility_reasons": [
+      "admission_not_granted"
+    ],
+    "result": "REFUSED_AT_ADMISSION_BOUNDARY"
+  },
+  "parameter_identity_proof": {
+    "ui_semantic_label": "Env 1 Release",
+    "universal_concept": "note-release",
+    "capability_mapping_target": "envelope_field_release",
+    "contract_target": "envelope_field_release",
+    "contract_body_path": "Env0.plainParams.kParamRelease",
+    "vst3_parameter_found": true,
+    "vst3_parameter_index": 228,
+    "vst3_parameter_name": "Env 1 Release",
+    "internal_body_index_convention": "Env0 (0-indexed body state) == UI 'Env 1' (1-indexed display)"
+  }
+}

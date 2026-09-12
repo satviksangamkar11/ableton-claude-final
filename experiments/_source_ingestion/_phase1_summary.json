@@ -1,0 +1,47 @@
+{
+  "phase": 1,
+  "video_id": "ItRL3FNpd-8",
+  "title": "I read the entire Serum 2 manual so you don't have to... (Full Serum 2 Guide!)",
+  "channel": "Projektor",
+  "duration_seconds": 12600,
+  "focal_timestamp": 316,
+  "focal_timestamp_human": "5:16",
+  "focal_section": "Wavetable Oscillator",
+  "source_url": "https://www.youtube.com/watch?v=ItRL3FNpd-8",
+  "video_chapters": [
+    {
+      "title": "Intro",
+      "timestamp": 0
+    },
+    {
+      "title": "Interface",
+      "timestamp": 74
+    },
+    {
+      "title": "Oscilators",
+      "timestamp": 193
+    },
+    {
+      "title": "Wavetable Oscilator",
+      "timestamp": 270
+    },
+    {
+      "title": "Multisample Oscilator",
+      "timestamp": 1246
+    },
+    {
+      "title": "Sample Oscilator",
+      "timestamp": 1358
+    },
+    {
+      "title": "Granular Oscilator",
+      "timestamp": 1843
+    },
+    {
+      "title": "Spectral Oscilator",
+      "timestamp": 2183
+    }
+  ],
+  "transcript_status": "FALLBACK_REQUIRED",
+  "notes": "Full transcript not yet retrieved; proceeding with video chapter analysis and focal section observation"
+}

@@ -1,0 +1,10 @@
+{
+  "ingestion_phase": 1,
+  "source_url": "https://www.youtube.com/watch?v=ItRL3FNpd-8&t=316s",
+  "video_id": "ItRL3FNpd-8",
+  "timestamp_focal_point": 316,
+  "timestamp_focal_human": "5:16",
+  "retrieval_timestamp": "2026-09-12T19:23:39.880066Z",
+  "instruction": "ingest full video (not just timestamped segment)",
+  "status": "PHASE 1 INIT"
+}
