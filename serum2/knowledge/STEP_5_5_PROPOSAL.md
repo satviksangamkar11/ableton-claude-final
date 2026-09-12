@@ -558,18 +558,21 @@ These changes violate the normalization boundary and must trigger REJECTION:
 - [ ] `original_text` matches source artifact exactly
 - [ ] `source_segment_ids` are continuous and valid
 - [ ] `normalized_text` (if changed) preserves meaning
-- [ ] `type` matches a valid KnowledgeType enum
-- [ ] If `type == AMBIGUOUS`, `candidate_interpretations` is not empty
+- [ ] `knowledge_type` matches one of 9 frozen KnowledgeType enum values
+- [ ] If `epistemic_status == UNKNOWN`, `ambiguity` field explains why
+- [ ] If `epistemic_status == UNKNOWN`, `notes` field contains candidate_classes
+- [ ] `extraction_confidence` is LOW (0.4–0.6) when `epistemic_status == UNKNOWN`
 - [ ] No forbidden transformations detected (causal upgrade, backend injection, etc.)
-- [ ] Provenance is complete (source_id, proposition_id, segments, timestamps)
+- [ ] Provenance is complete (source_id, segment_ids, timestamps)
 
 ### 13.2 Artifact-Level Validation
-- [ ] All 36 non-UNKNOWN propositions appear in output (as NORMALIZED, UNCHANGED, or REJECTED)
-- [ ] All 5 UNKNOWN propositions appear as type AMBIGUOUS
-- [ ] Ledger counts match (36 + 5 = 41 total items processed)
+- [ ] All 36 classified propositions appear in output (as NORMALIZED, UNCHANGED, or REJECTED)
+- [ ] All 5 UNKNOWN propositions appear with `epistemic_status == UNKNOWN` (not forced into a single class)
+- [ ] Ledger counts match (36 classified + 5 UNKNOWN = 41 total items processed)
 - [ ] No knowledge_ids collide (hash-based IDs are deterministic)
 - [ ] No FILLER items in canonical storage
-- [ ] Epistemic statuses match source (no upgrades)
+- [ ] Epistemic statuses preserved (no SOURCE_REPORTED→SOURCE_RECOMMENDED upgrades)
+- [ ] All 9 KnowledgeType values used only from frozen 5.2 enum
 
 ---
 
@@ -580,13 +583,15 @@ These changes violate the normalization boundary and must trigger REJECTION:
 - `test_normalization_preserves_meaning`: Verify normalized text means same as original
 - `test_normalization_rejects_causal_upgrade`: Verify "try X" doesn't become "use X"
 - `test_normalization_rejects_backend_binding`: Verify no Serum-specific mappings injected
-- `test_unknown_not_forced`: Verify UNKNOWN items remain AMBIGUOUS, not forced
+- `test_unknown_uses_epistemic_status`: Verify UNKNOWN items use EpistemicStatus.UNKNOWN (not invented type)
+- `test_unknown_extraction_confidence_low`: Verify epistemic_status=UNKNOWN always has extraction_confidence 0.4-0.6
 
 ### 14.2 Integration Tests
-- `test_full_extraction_to_normalized_pipeline`: 36+5 propositions → KnowledgeItems
-- `test_ledger_completeness`: All 41 items in ledger, no gaps
+- `test_full_extraction_to_normalized_pipeline`: 31 classified + 5 UNKNOWN propositions → KnowledgeItems
+- `test_unknown_preserved_with_candidates`: Verify 5 UNKNOWN items preserved with candidate_classes in notes
+- `test_ledger_completeness`: All 36 items in ledger, no gaps
 - `test_provenance_immutable`: Original text unchanged, segment IDs preserved
-- `test_filler_excluded`: No FILLER items in canonical output
+- `test_filler_excluded`: No FILLER items in canonical storage
 
 ### 14.3 Acceptance Criteria
 - [ ] All unit tests PASS
