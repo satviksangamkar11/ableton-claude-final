@@ -1,0 +1,408 @@
+{
+  "version": "1.0",
+  "phase": "5.5",
+  "source_id": "yt_74ab96e1f377",
+  "timestamp": "2026-09-12T22:28:19.262985Z",
+  "total_items": 36,
+  "ledger": [
+    {
+      "proposition_id": "prop_000000",
+      "knowledge_id": "ki_a9a19acf6f9c8df9",
+      "classification_from_5_4": "PROCEDURE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.85,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000001",
+      "knowledge_id": "ki_396f41bd06197fe0",
+      "classification_from_5_4": "PRINCIPLE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000002",
+      "knowledge_id": "ki_0c67c0ecf814a203",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000003",
+      "knowledge_id": "ki_7dbe82d96ed53443",
+      "classification_from_5_4": "UNKNOWN",
+      "status": "UNRESOLVED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.5,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000004",
+      "knowledge_id": "ki_f699ae1d7125935b",
+      "classification_from_5_4": "UNKNOWN",
+      "status": "UNRESOLVED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.5,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000005",
+      "knowledge_id": "ki_afa19dc4fbb2e7fc",
+      "classification_from_5_4": "UNKNOWN",
+      "status": "UNRESOLVED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.5,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000006",
+      "knowledge_id": "ki_54a221ee45be9de6",
+      "classification_from_5_4": "UNKNOWN",
+      "status": "UNRESOLVED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.5,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000007",
+      "knowledge_id": "ki_ac8dae19f8f660ca",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000008",
+      "knowledge_id": "ki_9354378a8d8f5469",
+      "classification_from_5_4": "PRINCIPLE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000009",
+      "knowledge_id": "ki_86a1ecbd6619b724",
+      "classification_from_5_4": "PROCEDURE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.85,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000010",
+      "knowledge_id": "ki_2639c5858b308783",
+      "classification_from_5_4": "PRINCIPLE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000011",
+      "knowledge_id": "ki_fbb5c3e77555c19f",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000012",
+      "knowledge_id": "ki_2d2e41e7e2d0eb86",
+      "classification_from_5_4": "OBSERVATION",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000013",
+      "knowledge_id": "ki_c482ef81284e4a73",
+      "classification_from_5_4": "OBSERVATION",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000014",
+      "knowledge_id": "ki_77f5a7ee3da6723f",
+      "classification_from_5_4": "CONTEXT",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.85,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000015",
+      "knowledge_id": "ki_e618045397a79884",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000016",
+      "knowledge_id": "ki_787e009d597e10f1",
+      "classification_from_5_4": "PROCEDURE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.85,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000017",
+      "knowledge_id": "ki_c5c163ae27492dcf",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000018",
+      "knowledge_id": "ki_05a132817bf3bdef",
+      "classification_from_5_4": "OBSERVATION",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000019",
+      "knowledge_id": "ki_add91b6625f08615",
+      "classification_from_5_4": "CONCEPT",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000020",
+      "knowledge_id": "ki_757d7eae09331c5d",
+      "classification_from_5_4": "OBSERVATION",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000021",
+      "knowledge_id": "ki_a07bd773f8b597d0",
+      "classification_from_5_4": "PRINCIPLE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000022",
+      "knowledge_id": "ki_f3881eee68c3c123",
+      "classification_from_5_4": "PRINCIPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000023",
+      "knowledge_id": "ki_26edd24bdd66637a",
+      "classification_from_5_4": "PRINCIPLE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000024",
+      "knowledge_id": "ki_dd249baeb14578f3",
+      "classification_from_5_4": "OBSERVATION",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000025",
+      "knowledge_id": "ki_b8abcbb26f073b53",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000026",
+      "knowledge_id": "ki_e15c9aeaf295359d",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000027",
+      "knowledge_id": "ki_657ec6f0112ae972",
+      "classification_from_5_4": "CONCEPT",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000028",
+      "knowledge_id": "ki_bd51b1174e6027bb",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000029",
+      "knowledge_id": "ki_c0ed03b6bdfc8220",
+      "classification_from_5_4": "UNKNOWN",
+      "status": "UNRESOLVED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.5,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000030",
+      "knowledge_id": "ki_6d0619481efefbe6",
+      "classification_from_5_4": "CONCEPT",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.8,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000031",
+      "knowledge_id": "ki_2b3d6cdb2b1a3bf3",
+      "classification_from_5_4": "OBSERVATION",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000032",
+      "knowledge_id": "ki_e62a8dc9abe07942",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000033",
+      "knowledge_id": "ki_a5da16985bbd88a8",
+      "classification_from_5_4": "CONTEXT",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.85,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000034",
+      "knowledge_id": "ki_afc4669811bb5865",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "NORMALIZED",
+      "rejection_reason": null,
+      "transformations_applied": [
+        "artifact_removal",
+        "whitespace_collapsing"
+      ],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    },
+    {
+      "proposition_id": "prop_000035",
+      "knowledge_id": "ki_63742d35b46097bc",
+      "classification_from_5_4": "EXAMPLE",
+      "status": "UNCHANGED",
+      "rejection_reason": null,
+      "transformations_applied": [],
+      "extraction_confidence": 0.75,
+      "notes": "Normalized from 5.4 proposition"
+    }
+  ]
+}
