@@ -13,18 +13,25 @@
 
 ### Input
 - **Source:** `yt_74ab96e1f377_proposition_extraction_5_4_q_repaired.json`
-- **Count breakdown (CRITICAL CLARIFICATION):**
+- **Exact count breakdown from 5.4-Q artifact:**
   ```
-  36 total propositions retained from 5.4-Q
-  ├── 31 propositions classified into 9 KnowledgeTypes:
-  │   ├── CONCEPT: 3
-  │   ├── CONTEXT: 2
-  │   ├── EXAMPLE: 11
-  │   ├── OBSERVATION: 6
-  │   ├── PRINCIPLE: 6
-  │   ├── PROCEDURE: 3
-  │   └── (RECOMMENDATION, CONDITION, LIMITATION: included in counts above)
-  └── 5 propositions classified as UNKNOWN (unresolved semantic function)
+  36 total propositions retained
+  
+  CONCEPT        = 3
+  PROCEDURE      = 3
+  PRINCIPLE      = 6
+  OBSERVATION    = 6
+  RECOMMENDATION = 0
+  CONDITION      = 0
+  EXAMPLE        = 11
+  CONTEXT        = 2
+  LIMITATION     = 0
+  ────────────────────
+  Classified     = 31
+  
+  UNKNOWN        = 5 (unresolved semantic function)
+  ────────────────────
+  TOTAL          = 36
   ```
 - **Each proposition contains:**
   - `proposition_id`: Unique identifier
@@ -293,34 +300,70 @@ These changes violate the normalization boundary and must trigger REJECTION:
 ### 5.1 UNKNOWN Handling — Use 5.2 EpistemicStatus.UNKNOWN
 - **Do NOT invent new KnowledgeType.** Use the frozen 5.2 schema
 - **For UNKNOWN propositions from 5.4:**
-  1. Pick the best-candidate KnowledgeType from the classifier's candidate_classes (or a neutral default)
+  1. Pick the best-candidate KnowledgeType from the classifier's candidate_classes
   2. Set `epistemic_status` to `UNKNOWN` (not `SOURCE_REPORTED`)
   3. Set `ambiguity` field to explain why semantic function is unresolved
-  4. Preserve `candidate_classes` information in `notes` field (unstructured for audit trail)
-- **Example (using frozen 5.2 schema):**
-  ```json
+  4. Preserve `candidate_classes` information in `notes` field (audit trail)
+  5. Set `extraction_confidence` LOW (0.4–0.6) to signal uncertainty
+
+- **Real example from 5.4-Q (prop_000003):**
+  ```
+  Source text: "now all you need to know is that these make up the building 
+               blocks of our sound"
+  Candidates: [OBSERVATION, PRINCIPLE, PROCEDURE]
+  
+  Normalized KnowledgeItem (using frozen 5.2 schema only):
   {
-    "knowledge_item_id": "ki_...",
-    "source_reference": { "source_id": "yt_74ab96e1f377", "segment_ids": ["seg_0003"], ... },
+    "knowledge_item_id": "ki_a7f3e2b1c4d5e6f8",
+    "source_reference": {
+      "source_id": "yt_74ab96e1f377",
+      "source_type": "YOUTUBE_VIDEO",
+      "segment_ids": ["seg_0003", "seg_0004"],
+      "start_time_sec": 5.2,
+      "end_time_sec": 8.7
+    },
     "original_proposition": "now all you need to know is that these make up the building blocks of our sound",
-    "knowledge_type": "OBSERVATION",  // BEST GUESS, not certain
-    "epistemic_status": "UNKNOWN",     // NOT SOURCE_REPORTED
+    "knowledge_type": "OBSERVATION",      // BEST GUESS from candidates
+    "epistemic_status": "UNKNOWN",         // EXPLICIT UNRESOLVED FLAG
     "normalized_proposition": null,
     "semantic_bindings": [],
-    "extraction_confidence": 0.5,     // LOW: reflects ambiguity
-    "ambiguity": "semantic function unclear — could be OBSERVATION (describing architecture), PRINCIPLE (explaining relationships), or PROCEDURE (mental model instruction)",
-    "notes": "Candidates: [OBSERVATION, PRINCIPLE, PROCEDURE]. Classifier could not determine semantic function from text alone.",
+    "extraction_confidence": 0.5,         // LOW confidence signals ambiguity
+    "ambiguity": "semantic function unclear — could be describing architecture (OBSERVATION), explaining relationships (PRINCIPLE), or prescribing mental model (PROCEDURE)",
+    "notes": "Candidates from classifier: [OBSERVATION, PRINCIPLE, PROCEDURE]. No clear semantic function markers in text. Best guess: OBSERVATION (neutral).",
     "conditions": [],
-    "limitations": []
+    "limitations": [],
+    "extraction_metadata": {
+      "extraction_timestamp": "2026-09-12T20:35:00Z",
+      "extraction_method": "semantic_classification_5_4_q",
+      "extraction_confidence": 0.5,
+      "raw_extraction_status": "EXTRACTED"
+    }
   }
   ```
 
+- **Why this is valid 5.2 conformance:**
+  - Uses one of 9 frozen KnowledgeType values (OBSERVATION, not invented AMBIGUOUS)
+  - Uses EpistemicStatus.UNKNOWN from frozen 5.2 enum
+  - Uses existing `ambiguity` field (5.2 schema supports it)
+  - Uses existing `notes` field for audit trail
+  - Sets extraction_confidence LOW to signal uncertainty
+  - No new fields; no schema modification
+
 ### 5.2 Assigning Best-Guess KnowledgeType for UNKNOWN
-- **Rule:** When 5.4 gives candidates `[A, B, C]`, normalization picks one:
-  - If one candidate has significantly higher mention in source, prefer it
-  - If tied, prefer: OBSERVATION > PRINCIPLE > PROCEDURE (preserves information without claiming causality)
-  - Set `extraction_confidence` LOW (0.4–0.6) to signal uncertainty
-  - Set `epistemic_status` to UNKNOWN (NOT SOURCE_REPORTED)
+- **Deterministic rule:** When 5.4 gives candidates `[A, B, C]`, normalization picks ONE:
+  1. If one candidate appears clearly dominant in text, choose it
+  2. If tied or unclear, apply priority order (lowest risk first):
+     - OBSERVATION (safest: just describes, no causal claim)
+     - PRINCIPLE (moderate: explains relationships)
+     - PROCEDURE (higher risk: implies action/imperative)
+     - Never pick CONCEPT, RECOMMENDATION, CONDITION, LIMITATION, EXAMPLE, CONTEXT as defaults
+  3. Set `extraction_confidence` = 0.4–0.6 (always LOW for UNKNOWN)
+  4. Set `epistemic_status` = UNKNOWN (not SOURCE_REPORTED, not SOURCE_RECOMMENDED)
+  5. Set `ambiguity` = exact reason for unresolved status
+  
+- **Example:** Candidates [OBSERVATION, PRINCIPLE, PROCEDURE] → Pick OBSERVATION (safest)
+- **Example:** Candidates [PRINCIPLE, PROCEDURE] → Pick PRINCIPLE (avoids implied action)
+- **Invariant:** `extraction_confidence` stays LOW; never upgrade to 0.7+ for UNKNOWN items
 
 ### 5.3 Context-Based Disambiguation (limited)
 - If source provides immediate contextual clues (in adjacent segments), may attempt disambiguation
