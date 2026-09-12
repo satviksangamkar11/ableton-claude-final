@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "acquisition_phase": "5.3",
+  "source": {
+    "source_id": "yt_dfd7d28bfae7",
+    "source_type": "YOUTUBE_VIDEO",
+    "url": "https://www.youtube.com/watch?v=l-mW-WiBdqk",
+    "video_id": "l-mW-WiBdqk",
+    "title": "UNKNOWN",
+    "channel": "UNKNOWN",
+    "duration_seconds": null,
+    "upload_date": null,
+    "retrieval_timestamp": "2026-09-12T14:51:30.282532Z",
+    "metadata_available": false,
+    "transcript_available": false,
+    "transcript_segment_count": 0
+  },
+  "transcript_segments": [],
+  "knowledge_items": [],
+  "validation": {
+    "transcript_exists": false,
+    "timestamps_ordered": true,
+    "source_id_stable": true,
+    "every_segment_has_provenance": true,
+    "original_text_recoverable": true
+  }
+}
