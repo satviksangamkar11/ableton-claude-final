@@ -638,11 +638,16 @@ def _is_principle(text: str) -> bool:
         # "An LFO is a low-frequency oscillator..." = CONCEPT, not PRINCIPLE
         return False
 
-    # Check for comparative/contrastive principle (LFOs vs envelopes)
+    # Check for comparative/contrastive principle (X vs Y pattern)
+    # Detect "X does Y; Z does W" structural contrast
     if any(word in text_lower for word in ["repeat", "cyclical", "once per"]):
-        if ";" in text_lower or "envelopes" in text_lower:
-            # "LFOs repeat... envelopes play once per note"
+        # Semicolon indicates explicit contrast (e.g., "A repeats; B plays once")
+        if ";" in text_lower:
             return True
+        # Also detect common contrasting connectors without hardcoding specific terms
+        if any(connector in text_lower for connector in [" while ", " whereas ", " but ", " unlike "]):
+            if len(text_lower.split()) > 10:  # Ensure substantive comparison
+                return True
 
     # Simple mechanism statements (short sentences about what something does)
     # e.g., "Filters remove frequencies to shape tone."

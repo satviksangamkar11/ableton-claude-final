@@ -157,7 +157,12 @@
       "epistemic_status": "SOURCE_REPORTED",
       "extraction_confidence": 0.5,
       "semantic_classifier_rationale": "unable to classify with confidence",
-      "ambiguity": "semantic function unclear"
+      "ambiguity": "semantic function unclear",
+      "candidate_classes": [
+        "OBSERVATION",
+        "PRINCIPLE",
+        "PROCEDURE"
+      ]
     },
     {
       "proposition_id": "prop_000004",
@@ -175,7 +180,12 @@
       "epistemic_status": "SOURCE_REPORTED",
       "extraction_confidence": 0.5,
       "semantic_classifier_rationale": "unable to classify with confidence",
-      "ambiguity": "semantic function unclear"
+      "ambiguity": "semantic function unclear",
+      "candidate_classes": [
+        "OBSERVATION",
+        "PRINCIPLE",
+        "PROCEDURE"
+      ]
     },
     {
       "proposition_id": "prop_000005",
@@ -192,7 +202,12 @@
       "epistemic_status": "SOURCE_REPORTED",
       "extraction_confidence": 0.5,
       "semantic_classifier_rationale": "unable to classify with confidence",
-      "ambiguity": "semantic function unclear"
+      "ambiguity": "semantic function unclear",
+      "candidate_classes": [
+        "OBSERVATION",
+        "PRINCIPLE",
+        "PROCEDURE"
+      ]
     },
     {
       "proposition_id": "prop_000006",
@@ -209,7 +224,12 @@
       "epistemic_status": "SOURCE_REPORTED",
       "extraction_confidence": 0.5,
       "semantic_classifier_rationale": "unable to classify with confidence",
-      "ambiguity": "semantic function unclear"
+      "ambiguity": "semantic function unclear",
+      "candidate_classes": [
+        "OBSERVATION",
+        "PRINCIPLE",
+        "PROCEDURE"
+      ]
     },
     {
       "proposition_id": "prop_000007",
@@ -796,7 +816,12 @@
       "epistemic_status": "SOURCE_REPORTED",
       "extraction_confidence": 0.5,
       "semantic_classifier_rationale": "unable to classify with confidence",
-      "ambiguity": "semantic function unclear"
+      "ambiguity": "semantic function unclear",
+      "candidate_classes": [
+        "OBSERVATION",
+        "PRINCIPLE",
+        "PROCEDURE"
+      ]
     },
     {
       "proposition_id": "prop_000030",
