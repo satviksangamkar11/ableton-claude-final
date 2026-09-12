@@ -1,0 +1,1473 @@
+{
+  "version": "1.0",
+  "schema_version": "5.2",
+  "created_timestamp": "2026-09-12T22:34:11.191989Z",
+  "last_modified": "2026-09-12T22:34:11.266156Z",
+  "total_items": 36,
+  "items": {
+    "ki_a9a19acf6f9c8df9": {
+      "knowledge_item_id": "ki_a9a19acf6f9c8df9",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0000",
+          "seg_0001",
+          "seg_0002",
+          "seg_0003",
+          "seg_0004",
+          "seg_0005",
+          "seg_0006",
+          "seg_0007",
+          "seg_0008",
+          "seg_0009",
+          "seg_0010",
+          "seg_0011",
+          "seg_0012",
+          "seg_0013",
+          "seg_0014",
+          "seg_0015",
+          "seg_0016",
+          "seg_0017"
+        ],
+        "start_time_sec": 0.16,
+        "end_time_sec": 44.36
+      },
+      "original_proposition": "So, after teaching Serum for over 10 years now, and being one of the sound designers who worked on Serum 2's factory patches, I've decided to create a full free course on it. There's obviously a lot to cover, so this course is going to be split across many videos with each one being an in-depth look at a different part of Serum 2. If you do find these videos helpful and you want to support future content, feel free to check out my presets over at synthe.com. But without further ado, let's start with a basic overview of Serum's UI and signal flow so we can all feel a little less overwhelmed. When you first open Serum 2, it helps to mentally split it into four sections. There's navigation,",
+      "knowledge_type": "PROCEDURE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.85,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260874Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.85,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_396f41bd06197fe0": {
+      "knowledge_item_id": "ki_396f41bd06197fe0",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0018",
+          "seg_0019",
+          "seg_0020",
+          "seg_0021",
+          "seg_0022",
+          "seg_0023",
+          "seg_0024",
+          "seg_0025",
+          "seg_0026",
+          "seg_0027",
+          "seg_0028",
+          "seg_0029",
+          "seg_0030",
+          "seg_0031",
+          "seg_0032",
+          "seg_0033",
+          "seg_0034",
+          "seg_0035"
+        ],
+        "start_time_sec": 41.36,
+        "end_time_sec": 83.36
+      },
+      "original_proposition": "sound generators, filters, and modulation. There's a little bit more to it, of course, but these are the areas we'll be spending the most time for now. Starting at the top, if we click the Serum 2 logo, we can rescale the UI. And if you hover your mouse to the left, there's a hidden option that lets you drag an audio render of the last note you played into your door. We can navigate to the other main pages of Serum, the mixer, effects, modulation matrix, and global controls. We can cycle through presets with the arrows or using the drop- down menu. There's also a dedicated preset browser which gives you a clearer view of your preset library as well as audio",
+      "knowledge_type": "PRINCIPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260911Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_0c67c0ecf814a203": {
+      "knowledge_item_id": "ki_0c67c0ecf814a203",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0036",
+          "seg_0037",
+          "seg_0038",
+          "seg_0039",
+          "seg_0040",
+          "seg_0041",
+          "seg_0042",
+          "seg_0043",
+          "seg_0044",
+          "seg_0045",
+          "seg_0046",
+          "seg_0047",
+          "seg_0048",
+          "seg_0049",
+          "seg_0050",
+          "seg_0051",
+          "seg_0052",
+          "seg_0053",
+          "seg_0054",
+          "seg_0055",
+          "seg_0056",
+          "seg_0057",
+          "seg_0058",
+          "seg_0059",
+          "seg_0060",
+          "seg_0061",
+          "seg_0062",
+          "seg_0063",
+          "seg_0064",
+          "seg_0065",
+          "seg_0066",
+          "seg_0067",
+          "seg_0068",
+          "seg_0069",
+          "seg_0070",
+          "seg_0071"
+        ],
+        "start_time_sec": 89.08,
+        "end_time_sec": 178.8
+      },
+      "original_proposition": "previews. There's a save icon which you can also alt or optionclick to quick save if the preset has already been saved before. Of course, there's the main menu, which lets us have quick access to the amazing manual, check for updates, start a new preset from scratch, import a third-p party preset pack, like one of mine, for instance, and quick access to the Serum 2 preset folders. Finally, we can easily undo or redo using the buttons, as well as control Serum's master volume. The next main section, and a little bit more exciting, is Serum's sound generators, where our signal flow begins. From left to right, we have the [Music] subosscillator. This is mainly useful for adding a subbase layer to a patch, but also has some other use cases we'll go over in the future. Where you'll be spending most of your time, however, is in the three main oscillators. These are all identical and have five different types of sound generator including wavetable [Music] granular sampler multi-sampler and finally spectral. [Music] The final sound generator is the noise oscillator which can be either used as an additional sampler or simple noise",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "previews. There's a save icon which you can also alt or optionclick to quick save if the preset has already been saved before. Of course, there's the main menu, which lets us have quick access to the amazing manual, check for updates, start a new preset from scratch, import a third-p party preset pack, like one of mine, for instance, and quick access to the Serum 2 preset folders. Finally, we can easily undo or redo using the buttons, as well as control Serum's master volume. The next main section, and a little bit more exciting, is Serum's sound generators, where our signal flow begins. From left to right, we have the subosscillator. This is mainly useful for adding a subbase layer to a patch, but also has some other use cases we'll go over in the future. Where you'll be spending most of your time, however, is in the three main oscillators. These are all identical and have five different types of sound generator including wavetable granular sampler multi-sampler and finally spectral. The final sound generator is the noise oscillator which can be either used as an additional sampler or simple noise",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260935Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_7dbe82d96ed53443": {
+      "knowledge_item_id": "ki_7dbe82d96ed53443",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0074",
+          "seg_0075"
+        ],
+        "start_time_sec": 186.0,
+        "end_time_sec": 191.92000000000002
+      },
+      "original_proposition": "now all you need to know is that these make up the building blocks of our",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "UNKNOWN",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.5,
+      "ambiguity": "semantic function unclear",
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260944Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.5,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": "Candidates: ['OBSERVATION', 'PRINCIPLE', 'PROCEDURE']. Classifier could not determine semantic function."
+    },
+    "ki_f699ae1d7125935b": {
+      "knowledge_item_id": "ki_f699ae1d7125935b",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0076",
+          "seg_0077",
+          "seg_0078"
+        ],
+        "start_time_sec": 190.159,
+        "end_time_sec": 197.76
+      },
+      "original_proposition": "sound. Once we're happy with this, however, we might still want a bit more control over the frequencies in our",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "UNKNOWN",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.5,
+      "ambiguity": "semantic function unclear",
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260955Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.5,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": "Candidates: ['OBSERVATION', 'PRINCIPLE', 'PROCEDURE']. Classifier could not determine semantic function."
+    },
+    "ki_afa19dc4fbb2e7fc": {
+      "knowledge_item_id": "ki_afa19dc4fbb2e7fc",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0079",
+          "seg_0080"
+        ],
+        "start_time_sec": 195.92,
+        "end_time_sec": 202.39999999999998
+      },
+      "original_proposition": "sound, which brings us on to the next part of the signal flow, the filters.",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "UNKNOWN",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.5,
+      "ambiguity": "semantic function unclear",
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260963Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.5,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": "Candidates: ['OBSERVATION', 'PRINCIPLE', 'PROCEDURE']. Classifier could not determine semantic function."
+    },
+    "ki_54a221ee45be9de6": {
+      "knowledge_item_id": "ki_54a221ee45be9de6",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0081",
+          "seg_0082"
+        ],
+        "start_time_sec": 200.0,
+        "end_time_sec": 208.159
+      },
+      "original_proposition": "Let's keep things simple and use a wave table sound generator with a saw wave.",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "UNKNOWN",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.5,
+      "ambiguity": "semantic function unclear",
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260968Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.5,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": "Candidates: ['OBSERVATION', 'PRINCIPLE', 'PROCEDURE']. Classifier could not determine semantic function."
+    },
+    "ki_ac8dae19f8f660ca": {
+      "knowledge_item_id": "ki_ac8dae19f8f660ca",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0083",
+          "seg_0084",
+          "seg_0085",
+          "seg_0086",
+          "seg_0087",
+          "seg_0088"
+        ],
+        "start_time_sec": 205.84,
+        "end_time_sec": 222.959
+      },
+      "original_proposition": "Let's say we want to use a lowass filter to roll off some of the high frequencies. First, we have to make sure the audio from our wavetable oscillator is being sent to our filter. Either from the filter itself by clicking a button,",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260974Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_9354378a8d8f5469": {
+      "knowledge_item_id": "ki_9354378a8d8f5469",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0089",
+          "seg_0090",
+          "seg_0091",
+          "seg_0092",
+          "seg_0093",
+          "seg_0094",
+          "seg_0095",
+          "seg_0096",
+          "seg_0097",
+          "seg_0098",
+          "seg_0099",
+          "seg_0100",
+          "seg_0101",
+          "seg_0102",
+          "seg_0103",
+          "seg_0104",
+          "seg_0105"
+        ],
+        "start_time_sec": 219.2,
+        "end_time_sec": 269.32
+      },
+      "original_proposition": "in this case, A for oscillator A or from the oscillator itself by clicking the routting button in the top right and selecting filter. It's worth noting that these controls can also be found in Serum 2's mixer view. In Serum 2, we actually have two main filters available to use. Let's set our second filter to the opposite of filter one and instead use a highpass filter, which rolls off lower frequencies. Using the routin tab in our oscillator, we can now send our signal to filter 2 instead or blend between the two by choosing how much of the signal gets rooted to either filter",
+      "knowledge_type": "PRINCIPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260981Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_86a1ecbd6619b724": {
+      "knowledge_item_id": "ki_86a1ecbd6619b724",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0106",
+          "seg_0107",
+          "seg_0108",
+          "seg_0109",
+          "seg_0110",
+          "seg_0111",
+          "seg_0112",
+          "seg_0113",
+          "seg_0114",
+          "seg_0115"
+        ],
+        "start_time_sec": 272.479,
+        "end_time_sec": 297.24
+      },
+      "original_proposition": "In this example, we're effectively splitting the signal into two, meaning our filters are acting on the signal in parallel with one another. In some cases, however, we might want to first send the signal entirely to one filter, and then use the filter routin tab to send this filter's output to filter two. This means our filters are now acting in series.",
+      "knowledge_type": "PROCEDURE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.85,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.260987Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.85,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_2639c5858b308783": {
+      "knowledge_item_id": "ki_2639c5858b308783",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0116",
+          "seg_0117",
+          "seg_0118",
+          "seg_0119",
+          "seg_0120",
+          "seg_0121",
+          "seg_0122",
+          "seg_0123",
+          "seg_0124",
+          "seg_0125",
+          "seg_0126",
+          "seg_0127",
+          "seg_0128",
+          "seg_0129",
+          "seg_0130",
+          "seg_0131"
+        ],
+        "start_time_sec": 304.72,
+        "end_time_sec": 344.24
+      },
+      "original_proposition": "As well as being simple frequency carving tools, Serum 2 also has plenty of more interesting filter types that can sometimes be a big part of the sound design. We'll no doubt be exploring these in future videos, but just to complete our signal chain, we'll briefly touch on effects. One of the routting options you'll see for oscillators and filters is main. What this is referring to is actually the main effects group, the last part of our signal flow before being sent out of our synth and into our door. Serum 2 comes with a huge amount of effect modules that can either be used to add some final polish to a",
+      "knowledge_type": "PRINCIPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261000Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_fbb5c3e77555c19f": {
+      "knowledge_item_id": "ki_fbb5c3e77555c19f",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0132",
+          "seg_0133",
+          "seg_0134",
+          "seg_0135",
+          "seg_0136",
+          "seg_0137"
+        ],
+        "start_time_sec": 342.24,
+        "end_time_sec": 362.009
+      },
+      "original_proposition": "sound, such as a simple delay and reverb, for [Music] example. Or they can become a big part of the sound design itself. [Applause]",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "sound, such as a simple delay and reverb, for example. Or they can become a big part of the sound design itself. [Applause]",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261008Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_2d2e41e7e2d0eb86": {
+      "knowledge_item_id": "ki_2d2e41e7e2d0eb86",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0138",
+          "seg_0139",
+          "seg_0140",
+          "seg_0141",
+          "seg_0142",
+          "seg_0143",
+          "seg_0144",
+          "seg_0145",
+          "seg_0146",
+          "seg_0147",
+          "seg_0148"
+        ],
+        "start_time_sec": 366.08,
+        "end_time_sec": 396.56
+      },
+      "original_proposition": "There's a lot to cover here in future videos, but a few things to mention are that you can add new effects with the plus icon in the top left or by right-clicking anywhere in the effects page. Temporarily bypass an effect using the icon either on the effects panel or the effect itself. Most effects also have a mix control, which is a balance between the dry signal versus entirely the effect",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261013Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_c482ef81284e4a73": {
+      "knowledge_item_id": "ki_c482ef81284e4a73",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0149",
+          "seg_0150",
+          "seg_0151",
+          "seg_0152",
+          "seg_0153",
+          "seg_0154",
+          "seg_0155"
+        ],
+        "start_time_sec": 401.24,
+        "end_time_sec": 426.319
+      },
+      "original_proposition": "itself. You can also reorder the effects signal chain by clicking and dragging, which can drastically change the sound in some cases. And finally, we can load or save presets for individual effects or the effects chain as a whole. [Music]",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "itself. You can also reorder the effects signal chain by clicking and dragging, which can drastically change the sound in some cases. And finally, we can load or save presets for individual effects or the effects chain as a whole.",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261022Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_77f5a7ee3da6723f": {
+      "knowledge_item_id": "ki_77f5a7ee3da6723f",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0156"
+        ],
+        "start_time_sec": 423.919,
+        "end_time_sec": 429.08
+      },
+      "original_proposition": "So to summarize our signal flow, the",
+      "knowledge_type": "CONTEXT",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.85,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261027Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.85,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_e618045397a79884": {
+      "knowledge_item_id": "ki_e618045397a79884",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0157",
+          "seg_0158",
+          "seg_0159",
+          "seg_0160",
+          "seg_0161",
+          "seg_0162",
+          "seg_0163",
+          "seg_0164",
+          "seg_0165",
+          "seg_0166",
+          "seg_0167",
+          "seg_0168",
+          "seg_0169",
+          "seg_0170",
+          "seg_0171",
+          "seg_0172",
+          "seg_0173",
+          "seg_0174",
+          "seg_0175",
+          "seg_0176",
+          "seg_0177",
+          "seg_0178",
+          "seg_0179",
+          "seg_0180"
+        ],
+        "start_time_sec": 426.319,
+        "end_time_sec": 489.479
+      },
+      "original_proposition": "sound begins in our sound generators. It's then sent to our filters, then out of the filters into the effects before finally being sent out of the synth. There are some exceptions. For example, we could make one or all of our oscillators bypass the filters and go straight to the effects. Or maybe we want an oscillator or filter to skip the effects entirely and send it directly out of the synth by using the direct routting option. A common example of this would be if we want a clean subbase layer, for example. There are some more advanced routting options too, such as using effect buses, which we'll be covering in a future video. Along our signal flow, we can obviously make changes to certain parameters to shape the sound. The filter cutff, for example, which is the frequency at which our filter starts to act.",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261034Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_787e009d597e10f1": {
+      "knowledge_item_id": "ki_787e009d597e10f1",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0181",
+          "seg_0182",
+          "seg_0183",
+          "seg_0184",
+          "seg_0185",
+          "seg_0186",
+          "seg_0187",
+          "seg_0188",
+          "seg_0189"
+        ],
+        "start_time_sec": 491.84,
+        "end_time_sec": 516.279
+      },
+      "original_proposition": "Whatever changes we make, however, when we hold down a note, the sound stays the same for the whole duration, which is kind of boring. This is where our final main section modulation comes in. Starting from the left, we first have macros. These can be assigned to control any parameter in Serum, either by drag and drop or in the modulation matrix.",
+      "knowledge_type": "PROCEDURE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.85,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261038Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.85,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_c5c163ae27492dcf": {
+      "knowledge_item_id": "ki_c5c163ae27492dcf",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0190",
+          "seg_0191",
+          "seg_0192",
+          "seg_0193",
+          "seg_0194",
+          "seg_0195",
+          "seg_0196",
+          "seg_0197",
+          "seg_0198",
+          "seg_0199",
+          "seg_0200",
+          "seg_0201",
+          "seg_0202",
+          "seg_0203",
+          "seg_0204",
+          "seg_0205",
+          "seg_0206",
+          "seg_0207",
+          "seg_0208",
+          "seg_0209",
+          "seg_0210",
+          "seg_0211",
+          "seg_0212",
+          "seg_0213"
+        ],
+        "start_time_sec": 521.68,
+        "end_time_sec": 593.6
+      },
+      "original_proposition": "We can toggle whether the modulation is centered around the current value or not by shift alt or shift option clicking. We can control the range and direction of the modulation by dragging on it directly or in the mod matrix. Any modulation source can also be bypassed or unassigned at any time by right-clicking the mod source or the parameter being modulated. Macros have two main functions. Firstly, they can be used to give you a convenient way to control multiple parameters at the same time. Like in this bass patch, for example, where we have a macro affecting eight different [Music] controls. This could then be something you'd want to automate. They can also be a convenient way for sound designers like me to point you towards the parameters you might want to think about tweaking to customize your sound. [Music]",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "We can toggle whether the modulation is centered around the current value or not by shift alt or shift option clicking. We can control the range and direction of the modulation by dragging on it directly or in the mod matrix. Any modulation source can also be bypassed or unassigned at any time by right-clicking the mod source or the parameter being modulated. Macros have two main functions. Firstly, they can be used to give you a convenient way to control multiple parameters at the same time. Like in this bass patch, for example, where we have a macro affecting eight different controls. This could then be something you'd want to automate. They can also be a convenient way for sound designers like me to point you towards the parameters you might want to think about tweaking to customize your sound.",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261050Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_05a132817bf3bdef": {
+      "knowledge_item_id": "ki_05a132817bf3bdef",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0214",
+          "seg_0215",
+          "seg_0216",
+          "seg_0217",
+          "seg_0218",
+          "seg_0219",
+          "seg_0220",
+          "seg_0221",
+          "seg_0222",
+          "seg_0223",
+          "seg_0224",
+          "seg_0225",
+          "seg_0226",
+          "seg_0227",
+          "seg_0228",
+          "seg_0229",
+          "seg_0230",
+          "seg_0231"
+        ],
+        "start_time_sec": 596.88,
+        "end_time_sec": 644.0
+      },
+      "original_proposition": "It's worth mentioning you can also adjust these macros from the preset browser as well as in the clips view which we'll cover soon. Although very useful for quickly adjusting parameters without automation, the parameters being modulated are still static. And this is where envelopes and LFOs come in. Envelopes are triggered any time Serum detects a new note. There are four envelopes available with envelope one by default always being assigned to the amplitude of our sound. We can adjust the envelope using either the ADSR parameters along the bottom or by directly clicking and dragging the envelope itself. Attack is the amount of time it takes a note to reach its",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261056Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_add91b6625f08615": {
+      "knowledge_item_id": "ki_add91b6625f08615",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0232",
+          "seg_0233",
+          "seg_0234",
+          "seg_0235",
+          "seg_0236",
+          "seg_0237",
+          "seg_0238",
+          "seg_0239",
+          "seg_0240",
+          "seg_0241",
+          "seg_0242"
+        ],
+        "start_time_sec": 640.88,
+        "end_time_sec": 675.9590000000001
+      },
+      "original_proposition": "highest amplitude. [Music] after this peak. Decay is the amount of time it takes the amplitude to reach the sustain level, which is how much amplitude the envelope has while we're holding a [Music] note. Release is the amount of time it takes the amplitude to reach zero after the note ends.",
+      "knowledge_type": "CONCEPT",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "highest amplitude. after this peak. Decay is the amount of time it takes the amplitude to reach the sustain level, which is how much amplitude the envelope has while we're holding a note. Release is the amount of time it takes the amplitude to reach zero after the note ends.",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261063Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_757d7eae09331c5d": {
+      "knowledge_item_id": "ki_757d7eae09331c5d",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0243",
+          "seg_0244",
+          "seg_0245",
+          "seg_0246",
+          "seg_0247"
+        ],
+        "start_time_sec": 678.72,
+        "end_time_sec": 692.1600000000001
+      },
+      "original_proposition": "Finally, there's also a hold option, which is how much time the envelope stays at full amplitude before starting to decay. Although this is generally less used than the other",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261071Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_a07bd773f8b597d0": {
+      "knowledge_item_id": "ki_a07bd773f8b597d0",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0248",
+          "seg_0249"
+        ],
+        "start_time_sec": 694.76,
+        "end_time_sec": 702.279
+      },
+      "original_proposition": "controls, we can also adjust the envelope curves directly from the UI.",
+      "knowledge_type": "PRINCIPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261075Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_f3881eee68c3c123": {
+      "knowledge_item_id": "ki_f3881eee68c3c123",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0250",
+          "seg_0251",
+          "seg_0252",
+          "seg_0253",
+          "seg_0254"
+        ],
+        "start_time_sec": 706.0,
+        "end_time_sec": 731.46
+      },
+      "original_proposition": "Envelopes behave exactly the same way when we use them to modulate other parameters. Again, using our filter cutff example [Music]",
+      "knowledge_type": "PRINCIPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "Envelopes behave exactly the same way when we use them to modulate other parameters. Again, using our filter cutff example",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261080Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_26edd24bdd66637a": {
+      "knowledge_item_id": "ki_26edd24bdd66637a",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0255",
+          "seg_0256",
+          "seg_0257",
+          "seg_0258",
+          "seg_0259",
+          "seg_0260"
+        ],
+        "start_time_sec": 734.399,
+        "end_time_sec": 752.5600000000001
+      },
+      "original_proposition": "Envelopes are most useful when we want linear modulation to occur once per note. If however we want modulation that is continuous and repeating, this is where LFOs can be incredibly useful. LFOs can either be quite",
+      "knowledge_type": "PRINCIPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261086Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_dd249baeb14578f3": {
+      "knowledge_item_id": "ki_dd249baeb14578f3",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0265",
+          "seg_0266",
+          "seg_0267"
+        ],
+        "start_time_sec": 766.56,
+        "end_time_sec": 774.04
+      },
+      "original_proposition": "some basics to be aware of is that they can be shaped similar to envelopes by clicking and dragging.",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261090Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_b8abcbb26f073b53": {
+      "knowledge_item_id": "ki_b8abcbb26f073b53",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0268",
+          "seg_0269",
+          "seg_0270",
+          "seg_0271",
+          "seg_0272",
+          "seg_0273",
+          "seg_0274",
+          "seg_0275",
+          "seg_0276",
+          "seg_0277",
+          "seg_0278",
+          "seg_0279",
+          "seg_0280",
+          "seg_0281",
+          "seg_0282",
+          "seg_0283"
+        ],
+        "start_time_sec": 777.12,
+        "end_time_sec": 832.5189999999999
+      },
+      "original_proposition": "You can also create new points by double clicking or even using the shape tools. There's a rate control that controls how fast the LFO repeats, which by default is synced to your host [Music] BPM, but can also be switched to the unsynced frequency mode. LFOs have three different modes. Retrig, the default, which restarts the LFO every time a new note is played. Free, which ignores incoming notes and just follows your door. And envelope mode, which means like an envelope, the LFO will only trigger once per note.",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "You can also create new points by double clicking or even using the shape tools. There's a rate control that controls how fast the LFO repeats, which by default is synced to your host BPM, but can also be switched to the unsynced frequency mode. LFOs have three different modes. Retrig, the default, which restarts the LFO every time a new note is played. Free, which ignores incoming notes and just follows your door. And envelope mode, which means like an envelope, the LFO will only trigger once per note.",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261100Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_e15c9aeaf295359d": {
+      "knowledge_item_id": "ki_e15c9aeaf295359d",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0284",
+          "seg_0285",
+          "seg_0286",
+          "seg_0287",
+          "seg_0288",
+          "seg_0289",
+          "seg_0290"
+        ],
+        "start_time_sec": 835.04,
+        "end_time_sec": 857.519
+      },
+      "original_proposition": "Finally, it's also worth mentioning you can save and load LFO [Music] presets. In Serum, we also have velocity modulation, which lets you use your notes velocity, how hard a keyboard is pressed, for example, as a modulation",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "Finally, it's also worth mentioning you can save and load LFO presets. In Serum, we also have velocity modulation, which lets you use your notes velocity, how hard a keyboard is pressed, for example, as a modulation",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261106Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_657ec6f0112ae972": {
+      "knowledge_item_id": "ki_657ec6f0112ae972",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0291",
+          "seg_0292",
+          "seg_0293",
+          "seg_0294",
+          "seg_0295",
+          "seg_0296",
+          "seg_0297",
+          "seg_0298"
+        ],
+        "start_time_sec": 855.36,
+        "end_time_sec": 883.5999999999999
+      },
+      "original_proposition": "source. Especially useful for presets you want to behave more similar to real instruments when [Music] played. And finally, note modulation, which outputs different modulation values based on what note is played. Modulation is one of the main tools",
+      "knowledge_type": "CONCEPT",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "source. Especially useful for presets you want to behave more similar to real instruments when played. And finally, note modulation, which outputs different modulation values based on what note is played. Modulation is one of the main tools",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261114Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_bd51b1174e6027bb": {
+      "knowledge_item_id": "ki_bd51b1174e6027bb",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0299",
+          "seg_0300",
+          "seg_0301",
+          "seg_0302",
+          "seg_0303",
+          "seg_0304",
+          "seg_0305",
+          "seg_0306",
+          "seg_0307",
+          "seg_0308",
+          "seg_0309",
+          "seg_0310",
+          "seg_0311",
+          "seg_0312",
+          "seg_0313",
+          "seg_0314",
+          "seg_0315",
+          "seg_0316",
+          "seg_0317",
+          "seg_0318",
+          "seg_0319",
+          "seg_0320",
+          "seg_0321",
+          "seg_0322",
+          "seg_0323",
+          "seg_0324"
+        ],
+        "start_time_sec": 881.76,
+        "end_time_sec": 945.9
+      },
+      "original_proposition": "sound designers use to create interesting and dynamic sounding patches. If you ever like the sound of a preset and want to figure out why, taking a glance at the modulation matrix, which displays all currently active modulation, can give you a lot of insight. It's also worth mentioning that there are some modulation sources and destinations that are only available in the mod matrix. This is definitely one of the more intimidating facets of any synth and we will be dedicating an entire video to it, but generally Serum does a really good job of displaying everything in clear view without having to menu dive. Okay, so we've covered the main sections and signal flow of Serum 2. Let's do a quick run through of some additional UI elements and hotkeys you need to know. In the bottom left of the main page, we have the pitch wheel with a customizable [Music] range as well as a mod wheel modulation [Music]",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "sound designers use to create interesting and dynamic sounding patches. If you ever like the sound of a preset and want to figure out why, taking a glance at the modulation matrix, which displays all currently active modulation, can give you a lot of insight. It's also worth mentioning that there are some modulation sources and destinations that are only available in the mod matrix. This is definitely one of the more intimidating facets of any synth and we will be dedicating an entire video to it, but generally Serum does a really good job of displaying everything in clear view without having to menu dive. Okay, so we've covered the main sections and signal flow of Serum 2. Let's do a quick run through of some additional UI elements and hotkeys you need to know. In the bottom left of the main page, we have the pitch wheel with a customizable range as well as a mod wheel modulation",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261127Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_c0ed03b6bdfc8220": {
+      "knowledge_item_id": "ki_c0ed03b6bdfc8220",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0325",
+          "seg_0326",
+          "seg_0327",
+          "seg_0328"
+        ],
+        "start_time_sec": 949.0,
+        "end_time_sec": 960.6389999999999
+      },
+      "original_proposition": "source. Both of these being especially useful if you have a hardware MIDI controller. We also have the clip view, which is Serum's dedicated piano",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "UNKNOWN",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.5,
+      "ambiguity": "semantic function unclear",
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261132Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.5,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": "Candidates: ['OBSERVATION', 'PRINCIPLE', 'PROCEDURE']. Classifier could not determine semantic function."
+    },
+    "ki_6d0619481efefbe6": {
+      "knowledge_item_id": "ki_6d0619481efefbe6",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0329",
+          "seg_0330",
+          "seg_0331"
+        ],
+        "start_time_sec": 965.8,
+        "end_time_sec": 974.44
+      },
+      "original_proposition": "roll, as well as the arpeggiator, which takes chords and sequences them into melodies.",
+      "knowledge_type": "CONCEPT",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.8,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261141Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.8,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_2b3d6cdb2b1a3bf3": {
+      "knowledge_item_id": "ki_2b3d6cdb2b1a3bf3",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0332",
+          "seg_0333",
+          "seg_0334",
+          "seg_0335"
+        ],
+        "start_time_sec": 980.0,
+        "end_time_sec": 992.899
+      },
+      "original_proposition": "Next, we have Serum's keyboard, which shows incoming notes as well as giving transposition, scale, and swing [Music]",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "Next, we have Serum's keyboard, which shows incoming notes as well as giving transposition, scale, and swing",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261147Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_e62a8dc9abe07942": {
+      "knowledge_item_id": "ki_e62a8dc9abe07942",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0336",
+          "seg_0337",
+          "seg_0338",
+          "seg_0339",
+          "seg_0340",
+          "seg_0341",
+          "seg_0342",
+          "seg_0343",
+          "seg_0344",
+          "seg_0345",
+          "seg_0346",
+          "seg_0347",
+          "seg_0348",
+          "seg_0349",
+          "seg_0350",
+          "seg_0351"
+        ],
+        "start_time_sec": 997.93,
+        "end_time_sec": 1041.39
+      },
+      "original_proposition": "[Music] controls. In the bottom right, we have voicing, which if set to mono, only allows one note to be played at a time. useful for bass sounds, for example, when we don't want overlapping notes. When mono is switched off, our synth is polyonic, and the maximum number of notes we can play is customizable. If you're having issues with Serum demanding too much of your CPU, limiting this voice number can be a useful way to remedy this. Finally, we have Portimento, which lets us control pitch glide from note to note. [Music]",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "controls. In the bottom right, we have voicing, which if set to mono, only allows one note to be played at a time. useful for bass sounds, for example, when we don't want overlapping notes. When mono is switched off, our synth is polyonic, and the maximum number of notes we can play is customizable. If you're having issues with Serum demanding too much of your CPU, limiting this voice number can be a useful way to remedy this. Finally, we have Portimento, which lets us control pitch glide from note to note.",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261155Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_a5da16985bbd88a8": {
+      "knowledge_item_id": "ki_a5da16985bbd88a8",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0352",
+          "seg_0353",
+          "seg_0354",
+          "seg_0355",
+          "seg_0356"
+        ],
+        "start_time_sec": 1042.559,
+        "end_time_sec": 1057.16
+      },
+      "original_proposition": "So far when adjusting parameters, we've just been clicking and dragging. But there are two other options to be aware of. Firstly, we can hold down shift, click, and drag for finer control.",
+      "knowledge_type": "CONTEXT",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.85,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261161Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.85,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_afc4669811bb5865": {
+      "knowledge_item_id": "ki_afc4669811bb5865",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0357",
+          "seg_0358",
+          "seg_0359",
+          "seg_0360",
+          "seg_0361",
+          "seg_0362",
+          "seg_0363",
+          "seg_0364",
+          "seg_0365",
+          "seg_0366",
+          "seg_0367"
+        ],
+        "start_time_sec": 1059.19,
+        "end_time_sec": 1090.24
+      },
+      "original_proposition": "[Music] We can also doubleclick to enter values manually. Useful for pitch, for example. Some elements of the UI can be configured in the global tab, including turning on tool tips, which can be very handy for explaining what things do when you hover over them, as well as if there's something modulating them. This global tab also gives you access to Serum's advanced voicing controls.",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": "We can also doubleclick to enter values manually. Useful for pitch, for example. Some elements of the UI can be configured in the global tab, including turning on tool tips, which can be very handy for explaining what things do when you hover over them, as well as if there's something modulating them. This global tab also gives you access to Serum's advanced voicing controls.",
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261168Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    },
+    "ki_63742d35b46097bc": {
+      "knowledge_item_id": "ki_63742d35b46097bc",
+      "source_reference": {
+        "source_id": "yt_74ab96e1f377",
+        "source_type": "YOUTUBE_VIDEO",
+        "source_url": null,
+        "source_title": "Serum 2 for Absolute Beginners (Guide)",
+        "segment_ids": [
+          "seg_0368",
+          "seg_0369",
+          "seg_0370",
+          "seg_0371",
+          "seg_0372",
+          "seg_0373",
+          "seg_0374",
+          "seg_0375",
+          "seg_0376",
+          "seg_0377",
+          "seg_0378",
+          "seg_0379",
+          "seg_0380",
+          "seg_0381",
+          "seg_0382",
+          "seg_0383",
+          "seg_0384",
+          "seg_0385",
+          "seg_0386",
+          "seg_0387",
+          "seg_0388",
+          "seg_0389"
+        ],
+        "start_time_sec": 1088.4,
+        "end_time_sec": 1133.76
+      },
+      "original_proposition": "Finally, it's worth noting that while Serum 2's UI does a pretty good job of making its important controls accessible, there are some quite useful features in Serum 2 that are hidden behind right-click menus, such as resetting a control to default or locking a parameter, such as Serum's master volume while you cycle through presets. So, it's definitely worth clicking around a bit. And that concludes our basic introduction to Serum 2. Let me know what you thought of this video down below. I would love some feedback for future videos. If you want to stay up to date with those, you can subscribe. And of course, if you feel like going the extra step, checking out my presets over at syntheta.com is a great way to support my content. So yeah, I hope you find it helpful and thanks for watching.",
+      "knowledge_type": "EXAMPLE",
+      "epistemic_status": "SOURCE_REPORTED",
+      "normalized_proposition": null,
+      "semantic_bindings": [],
+      "extraction_confidence": 0.75,
+      "ambiguity": null,
+      "conditions": [],
+      "limitations": [],
+      "extraction_metadata": {
+        "extraction_timestamp": "2026-09-12T22:28:19.261174Z",
+        "extraction_method": "semantic_classification_5_4_q",
+        "extraction_confidence": 0.75,
+        "raw_extraction_status": "EXTRACTED",
+        "original_segments_count": null
+      },
+      "notes": null
+    }
+  }
+}
