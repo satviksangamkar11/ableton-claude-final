@@ -1,0 +1,55 @@
+{
+  "episode_id": "release_qualified_complete_001_PASS",
+  "timestamp": "2026-09-12T12:52:13.288344+00:00",
+  "human_intent": "make the note sustain longer",
+  "semantic_target": "Env1.Release",
+  "admission_status": "ADMITTED",
+  "admission_reason": "ADMITTED",
+  "admission_detail": "target 'envelope_field_release' admitted: status=CAUSAL_VERIFIED, allowed_operation=mutate_numeric_value",
+  "context_verification": {
+    "prerequisite_field": "body:Env0.plainParams.kParamDecay",
+    "declared_value": 0.02,
+    "actual_readback": 0.019999999999999987,
+    "verification_passed": true
+  },
+  "contract_store": "_capability_contracts_4_1.pkl",
+  "contract_status": "CAUSAL_VERIFIED",
+  "execution_blocked": false,
+  "candidate_generation": [
+    {
+      "target": "envelope_field_release",
+      "mutation_target_path": "Env0.plainParams.kParamRelease",
+      "mutation_value": 1.0,
+      "mutation_value_semantics": "ABSOLUTE_PARAMETER_VALUE",
+      "rationale": "authority-tested value from CapabilityContract.scope",
+      "source": "capability_contract"
+    }
+  ],
+  "selected_candidate": {
+    "target": "envelope_field_release",
+    "mutation_target_path": "Env0.plainParams.kParamRelease",
+    "mutation_value": 1.0,
+    "mutation_value_semantics": "ABSOLUTE_PARAMETER_VALUE",
+    "rationale": "authority-tested value from CapabilityContract.scope",
+    "source": "capability_contract"
+  },
+  "serum_readback_before": null,
+  "serum_readback_after": 1.0,
+  "audio_baseline": {
+    "peak": 0.28331682085990906,
+    "valid": true
+  },
+  "audio_treatment": {
+    "peak": 0.28331682085990906,
+    "valid": true
+  },
+  "measurement_metric": "tail_rms_db",
+  "measurement_baseline": -240.0000000347071,
+  "measurement_treatment": -35.52270704083783,
+  "measurement_delta": 204.4772929938693,
+  "decision": {
+    "accepted": true,
+    "reason": "measured effect consistent with authority-tested direction"
+  },
+  "notes": "4.1 authority substrate PASS demonstration: fresh CAUSAL_VERIFIED contract admitted a live-verified context, generic candidate generation produced the sole authority-tested value, execution and measurement completed for real via DawDreamer/Serum."
+}

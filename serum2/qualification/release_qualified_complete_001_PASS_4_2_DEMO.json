@@ -1,0 +1,13 @@
+{
+  "episode_id": "release_qualified_complete_001_PASS_4_2_DEMO",
+  "timestamp": "2026-09-12T13:10:41.952057+00:00",
+  "semantic_target": "envelope_field_release",
+  "admission_status": "ADMITTED",
+  "contract_status": "CAUSAL_VERIFIED",
+  "execution_blocked": false,
+  "measurement_delta": 204.4772929938693,
+  "measurement_baseline": -240.0000000347071,
+  "measurement_treatment": -35.52270704083783,
+  "readback_after": 1.0,
+  "notes": "4.2 target-independence proof: executed via generic production pathway with zero target-specific code branches."
+}

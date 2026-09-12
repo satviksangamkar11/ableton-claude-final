@@ -1,0 +1,32 @@
+{
+  "episode_id": "release_qualified_complete_001_BLOCKED",
+  "timestamp": "2026-09-12T12:52:14.310098+00:00",
+  "human_intent": "make the note sustain longer",
+  "semantic_target": "Env1.Release",
+  "admission_status": "REFUSED",
+  "admission_reason": "prerequisite_unverified",
+  "admission_detail": "target 'envelope_field_release' requires prerequisite(s) ['body:Env0.plainParams.kParamDecay'] to be verified in the PROPOSED execution context; caller did not confirm: ['body:Env0.plainParams.kParamDecay']",
+  "context_verification": {
+    "prerequisite_field": "body:Env0.plainParams.kParamDecay",
+    "declared_value": 0.02,
+    "actual_readback": 0.2999999999999998,
+    "verification_passed": false,
+    "reason": "readback value 0.2999999999999998 != declared 0.02"
+  },
+  "contract_store": "_capability_contracts_4_1.pkl",
+  "contract_status": "CAUSAL_VERIFIED",
+  "execution_blocked": true,
+  "serum_readback_before": null,
+  "serum_readback_after": null,
+  "audio_baseline": null,
+  "audio_treatment": null,
+  "measurement_metric": null,
+  "measurement_baseline": null,
+  "measurement_treatment": null,
+  "measurement_delta": null,
+  "decision": {
+    "accepted": false,
+    "reason": "admission_refused"
+  },
+  "notes": "4.1 authority substrate BLOCKED demonstration: Decay deliberately set to 0.3 (!= declared 0.02) and verified via live Serum readback; admission correctly refused; no mutation, no render, no measurement occurred."
+}
