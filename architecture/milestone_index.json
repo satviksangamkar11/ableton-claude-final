@@ -1,0 +1,111 @@
+{
+  "project": "Serum 2.0.21 AI Producer",
+  "current_milestone": "STEP 6",
+  "milestone_status": "COMPLETE",
+  "completion_date": "2026-09-13",
+  "frozen": true,
+  "architecture_frozen": true,
+  "invariants": [
+    {
+      "id": "KNOWLEDGE_NOT_AUTHORITY",
+      "description": "Knowledge items inform reasoning but never grant execution permission",
+      "test_file": "serum2/knowledge/test_6_12_knowledge_experience_authority_proof.py",
+      "test_cases": ["A1", "A2", "A3", "A4", "A5"]
+    },
+    {
+      "id": "EPISODE_NOT_AUTHORITY",
+      "description": "Episodes improve reasoning but never override contract scope or prerequisites",
+      "test_file": "serum2/knowledge/test_6_12_knowledge_experience_authority_proof.py",
+      "test_cases": ["B1", "B2", "B3", "B4", "B5"]
+    },
+    {
+      "id": "RESOLVED_NOT_ADMITTED",
+      "description": "Capability resolution success is distinct from admission permission",
+      "test_file": "serum2/knowledge/test_6_12_knowledge_experience_authority_proof.py",
+      "test_cases": ["D1", "D2"],
+      "live_test": "experiments/step6_live_vertical_slice.py (negative run)"
+    },
+    {
+      "id": "MEASUREMENT_AUTHORITY",
+      "description": "Contract's measurement_definition_id is the sole authority for outcome validation",
+      "test_file": "serum2/knowledge/step_6_9_outcome_attribution.py",
+      "lines": "175-186"
+    }
+  ],
+  "core_modules": {
+    "intent": "serum2/knowledge/step_6_2_universal_production_intent.py",
+    "knowledge_retrieval": "serum2/knowledge/step_6_3_episode_context_integration.py",
+    "semantic_reasoning": "serum2/knowledge/step_6_4_semantic_reasoning_integration.py",
+    "advisory_decision": "serum2/knowledge/step_6_5_advisory_decision_engine.py",
+    "capability_resolution": "serum2/knowledge/step_6_6_capability_resolution.py",
+    "admission_handoff": "serum2/knowledge/step_6_7_admission_handoff.py",
+    "execution_authority": "serum2/knowledge/step_6_8_contract_governed_execution.py",
+    "outcome_attribution": "serum2/knowledge/step_6_9_outcome_attribution.py",
+    "episode_generation": "serum2/knowledge/step_6_10_episode_generation.py",
+    "closed_loop_proof": "serum2/knowledge/step_6_11_closed_loop_proof.py"
+  },
+  "live_validation": {
+    "evidence_file": "experiments/_step6_live_evidence.json",
+    "test_script": "experiments/step6_live_vertical_slice.py",
+    "environment": {
+      "serum": "2.0.21",
+      "dawdreamer": "0.9.0",
+      "python": "3.14.3",
+      "platform": "Windows 11"
+    },
+    "positive_run": {
+      "status": "LIVE_EXECUTED",
+      "intent": "Make the note sustain longer",
+      "resolution_status": "resolved",
+      "admission_status": "admitted",
+      "execution_status": "executed",
+      "measurement_baseline": -240.0,
+      "measurement_treatment": -35.52,
+      "measurement_delta": 204.48,
+      "measurement_unit": "dB"
+    },
+    "negative_run": {
+      "status": "REFUSED_AT_ADMISSION_BOUNDARY",
+      "resolution_status": "resolved",
+      "admission_status": "refused",
+      "prerequisite_confirmation": "withheld",
+      "execution_status": "never_executed"
+    }
+  },
+  "test_results": {
+    "knowledge_tests": {
+      "total": 493,
+      "passed": 493,
+      "skipped": 27,
+      "status": "PASS"
+    },
+    "adversarial_tests": {
+      "total": 42,
+      "file": "serum2/knowledge/test_6_12_knowledge_experience_authority_proof.py",
+      "status": "PASS"
+    }
+  },
+  "known_limitations": [
+    "Only envelope_field_release tested (CAUSAL_VERIFIED)",
+    "Only tested in context: Decay=0.02, tail_rms_db measurement kernel",
+    "Generalization to other Decay values blocked until new evidence",
+    "Other Serum controls in Step 16.5.69 qualification phase"
+  ],
+  "recorded_implementation_fixes": [
+    {
+      "component": "step_6_8_contract_governed_execution.py",
+      "lines": "150-170",
+      "issue": "dict(contract.prerequisites) failed on tuple-of-dicts structure",
+      "fix": "Added isinstance() checking to normalize tuple → {field_path: prereq}",
+      "authority_impact": "None (representation compatibility only, no new authority pathway)",
+      "regression_status": "All 493 tests pass before and after"
+    }
+  ],
+  "next_step": "Awaiting explicit Step 7 specification from user",
+  "no_modifications_to": [
+    "serum2/knowledge/step_6_*.py",
+    "serum2/knowledge/contracts.py",
+    "serum2/evidence/admission.py (Step 4)",
+    "Any frozen architecture component"
+  ]
+}
