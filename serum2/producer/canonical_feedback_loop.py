@@ -11,6 +11,7 @@ import json
 import sys
 import tempfile
 import os
+import copy
 from pathlib import Path
 from datetime import datetime, timezone
 from typing import Optional, Tuple
@@ -20,9 +21,9 @@ import dawdreamer as daw
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from serum2 import bridge
+from serum2 import bridge, pathmerge
 from serum2.evidence.measure import METRICS
-from serum2.evidence import epoch as epoch_mod
+from serum2.evidence import epoch as epoch_mod, admission as admission_mod
 from serum2.qualification.vertical_slice_executor import ExecutionRecord
 from serum2.qualification.execute_vertical_slice import (
     is_valid_signal,
@@ -37,6 +38,7 @@ from serum2.producer.diagnosis import (
     diagnose_goal,
     ProducerDecision,
 )
+from serum2.producer.contract_registry import ContractRegistry
 from serum2.compiler.targets import SEMANTIC_TARGETS
 
 SR = 44100
@@ -216,15 +218,36 @@ def execute_producer_from_intent(
     return episode
 
 
-def load_qualified_targets() -> dict:
-    """Load all qualified capability contracts."""
-    try:
-        with open('serum2/knowledge/step_b_evidence_to_capability_integration.json') as f:
-            data = json.load(f)
-            return {c['target']: c for c in data.get('capability_contracts', [])}
-    except Exception as e:
-        print(f"Error loading qualified targets: {e}")
-        return {}
+def live_readback_prerequisite(meta: dict, body: dict, field_path: str) -> float:
+    """Live Serum readback of a prerequisite field value.
+
+    Loads body into Serum, asks Serum to save state back out, decodes it,
+    and reads the field value. This is what Serum actually holds, not
+    merely what our dict says we sent it.
+
+    Args:
+        meta: Serum metadata
+        body: Serum state body
+        field_path: Path like "Env0.plainParams.kParamDecay"
+
+    Returns:
+        The actual runtime value from Serum's readback
+    """
+    from serum2.evidence import harness as harness_mod
+
+    _, resaved_body = harness_mod.resave_state(meta, body, spec=None)
+    return pathmerge.read_path_value(resaved_body, field_path)
+
+
+def verify_prerequisite_for_admission(readback_value: float, declared_value: float) -> bool:
+    """Verify prerequisite tolerance-aware (matching 4.Q.4 implementation).
+
+    Returns True if within 1e-6 tolerance, otherwise False.
+    """
+    FLOAT_TOLERANCE = 1e-6
+    if isinstance(declared_value, float) and isinstance(readback_value, (int, float)):
+        return abs(float(readback_value) - float(declared_value)) < FLOAT_TOLERANCE
+    return False
 
 
 def render_and_measure(
@@ -281,9 +304,14 @@ def execute_producer_feedback_episode(
     print("=" * 80)
     print()
 
-    qualified_targets = load_qualified_targets()
-    if not qualified_targets:
-        print("ERROR: No qualified targets loaded")
+    # Load fresh CapabilityContracts from 4.Q.4 qualifications
+    print("[0/10] Loading contract registry...")
+    contract_registry = ContractRegistry()
+    contracts_dict = contract_registry.get_contracts_dict()
+    print(f"  Loaded {len(contract_registry.contracts)} contract(s): {contract_registry.all_targets()}")
+
+    if not contracts_dict:
+        print("ERROR: No fresh contracts available in ContractRegistry")
         return None
 
     # Load Serum skeleton
@@ -337,7 +365,7 @@ def execute_producer_feedback_episode(
         audio_valid=baseline_validity['valid'],
     )
 
-    diagnosis = diagnose_goal(goal, current_state, qualified_targets)
+    diagnosis = diagnose_goal(goal, current_state, contracts_dict)
     if not diagnosis:
         print("ERROR: Could not diagnose")
         return None
@@ -345,6 +373,76 @@ def execute_producer_feedback_episode(
     print(f"  Target: {diagnosis.selected_target}")
     print(f"  Direction: {diagnosis.mutation_direction:+d}")
     print(f"  Reason: {diagnosis.reason}")
+
+    # ---- CRITICAL: Authority admission gate (NEW) ----
+    print("\n[3.5/10] Authority admission gate...")
+    contract = contract_registry.get(diagnosis.selected_target)
+    if contract is None:
+        print(f"ERROR: No contract found for target {diagnosis.selected_target}")
+        return None
+
+    # Verify prerequisites via live Serum readback
+    verified_prerequisites = {}
+    for p in contract.prerequisites:
+        field_path = p["field_path"]
+        declared_value = p.get("declared_value")
+        # Live readback: load into Serum, resave, read the actual value
+        body_for_readback = copy.deepcopy(body)
+        prerequisite_field = field_path.replace("body:", "")
+        readback = live_readback_prerequisite(meta, body_for_readback, prerequisite_field)
+        verified = verify_prerequisite_for_admission(readback, declared_value)
+        verified_prerequisites[field_path] = True if verified else readback
+        print(f"  Prerequisite {prerequisite_field}: declared={declared_value} readback={readback:.6f} verified={verified}")
+
+    # Call real admission gate
+    admission_result = admission_mod.admit(
+        contracts=contracts_dict,
+        target=diagnosis.selected_target,
+        required_causal=True,
+        proposed_prerequisites_verified=verified_prerequisites if contract.prerequisites else {},
+        required_measurement_definition_id=contract.measurement["measurement_definition_id"],
+    )
+
+    print(f"  Admission: {admission_result.reason}")
+    if not admission_result.admitted:
+        print(f"  Detail: {admission_result.detail}")
+        # REFUSE: do not proceed to execution
+        print(f"  BLOCKED: admission refused, no mutation/render/measure")
+        # Return episode with refusal status
+        episode = ExecutionRecord(
+            episode_id=episode_id,
+            timestamp=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+            human_intent=goal.intent,
+            candidate_operation={
+                "target": diagnosis.selected_target,
+                "operation": None,
+                "source_hypothesis_id": None,
+                "source_knowledge_item_id": None,
+                "source_confidence": diagnosis.confidence,
+            },
+            semantic_target=diagnosis.selected_target,
+            admission_status=admission_result.reason,
+            admission_reason=admission_result.reason,
+            admission_detail=admission_result.detail,
+            serum_readback_before=baseline_param,
+            serum_mutation_value=None,
+            serum_readback_after=None,
+            audio_baseline=None,
+            audio_treatment=None,
+            measurement_metric=None,
+            measurement_baseline=None,
+            measurement_treatment=None,
+            measurement_delta=None,
+            restoration_value=None,
+            restoration_readback=None,
+            notes=f"Authority admission refused: {admission_result.reason}",
+            learning_eligible=False,
+            observation_only=True,
+            prerequisite_scope_violated=not admission_result.admitted,
+        )
+        episode_dict = episode.to_dict()
+        episode_dict['diagnosis'] = diagnosis.to_dict()
+        return episode_dict
 
     # Validate scope and direction
     print("\n[4/10] Validating scope prerequisite...")
@@ -441,8 +539,9 @@ def execute_producer_feedback_episode(
             "source_confidence": diagnosis.confidence,
         },
         semantic_target=diagnosis.selected_target,
-        admission_status="ADMITTED",
-        admission_reason="Producer feedback loop execution",
+        admission_status=admission_result.reason,  # Real AdmissionResult, not hard-coded
+        admission_reason=admission_result.reason,
+        admission_detail=admission_result.detail,  # Full explanation for audit
         serum_readback_before=baseline_param,
         serum_mutation_value=mutation_value,
         serum_readback_after=mutation_value,
@@ -454,7 +553,7 @@ def execute_producer_feedback_episode(
         measurement_delta=delta,
         restoration_value=baseline_param,
         restoration_readback=readback_restored,
-        notes="Canonical producer feedback loop episode - deterministic target selection + mutation planning",
+        notes="Canonical producer feedback loop with real authority admission gate (4.Q.4-C integration)",
         learning_eligible=learning_eligible_value,  # True if in-scope (both accepted and rejected episodes teach)
         observation_only=True,  # Cannot alter authoritative capability state
         prerequisite_scope_violated=not scope_valid,
