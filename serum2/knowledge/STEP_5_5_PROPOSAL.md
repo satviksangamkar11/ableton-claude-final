@@ -379,6 +379,70 @@ These changes violate the normalization boundary and must trigger REJECTION:
 
 ---
 
+## 5.5 PROVISIONAL TYPE SEMANTICS (CRITICAL FOR UNKNOWN ITEMS)
+
+**This section clarifies semantics to prevent misinterpretation of UNKNOWN items.**
+
+### 5.5.1 What Provisional Type Means
+When an UNKNOWN item is normalized with:
+```json
+{
+  "type": "OBSERVATION",          // ← PROVISIONAL, not resolved truth
+  "epistemic_status": "UNKNOWN",
+  "extraction_confidence": 0.5,
+  "ambiguity": "semantic function unclear — could be OBSERVATION, PRINCIPLE, or PROCEDURE"
+}
+```
+
+**This does NOT mean:** "This proposition is definitely an observation."
+
+**This DOES mean:** "The normalization pipeline provisionally assigns OBSERVATION as the best-guess representation because the frozen 5.2 schema requires a type field, while the actual semantic function remains unresolved."
+
+### 5.5.2 Mandatory Fields for Provisional Types
+Every UNKNOWN item MUST have:
+- `type`: One of 9 frozen KnowledgeTypes (best guess from candidates)
+- `epistemic_status`: UNKNOWN (not SOURCE_REPORTED, not SOURCE_RECOMMENDED)
+- `extraction_confidence`: LOW (0.4–0.6) — signals provisional nature
+- `ambiguity`: Explains unresolved status
+- `notes`: Contains `candidate_types` list from classifier
+
+If ANY of these fields are missing, the item fails validation.
+
+### 5.5.3 System Interpretation Rule
+When consuming a normalized KnowledgeItem where `epistemic_status == UNKNOWN`:
+- Treat `type` as provisional working hypothesis, not fact
+- Always check `ambiguity` field before using the item
+- Consult `candidate_types` (in notes) for alternative interpretations
+- Never assert this as resolved knowledge without additional evidence
+- Do NOT use this item to satisfy a contract that requires non-UNKNOWN epistemic status
+
+### 5.5.4 Example — Correct Interpretation
+Ledger entry:
+```json
+{
+  "proposition_id": "prop_000003",
+  "classification_from_5_4": "UNKNOWN",
+  "status": "UNRESOLVED"
+}
+```
+
+Corresponding KnowledgeItem:
+```json
+{
+  "knowledge_type": "OBSERVATION",
+  "epistemic_status": "UNKNOWN",
+  "extraction_confidence": 0.5,
+  "ambiguity": "semantic function unclear",
+  "notes": "Candidates: [OBSERVATION, PRINCIPLE, PROCEDURE]"
+}
+```
+
+**Correct interpretation:** "We provisionally represent this as OBSERVATION pending resolution; other interpretations are equally plausible."
+
+**Incorrect interpretation:** "This is an observation."
+
+---
+
 ## 6. MULTI-SEGMENT POLICY
 
 ### 6.1 Definition
@@ -528,27 +592,31 @@ These changes violate the normalization boundary and must trigger REJECTION:
 
 ## 12. NORMALIZATION LEDGER
 
-### 12.1 Format
+### 12.1 Format & Cardinality
 - JSON file: `yt_74ab96e1f377_normalization_ledger_5_5.json`
+- **CRITICAL: Ledger contains exactly 36 items** (31 classified + 5 UNKNOWN)
+  - Do NOT confuse with "36 + 5 = 41" (incorrect earlier thinking)
+  - Input is 36 propositions; ledger has 36 records; output has 36 KnowledgeItems
 - Each entry records:
   ```json
   {
     "proposition_id": "prop_000000",
     "knowledge_id": "know_000000 OR null if rejected",
+    "classification_from_5_4": "CONCEPT | PROCEDURE | ... | UNKNOWN",
     "status": "NORMALIZED | UNCHANGED | REJECTED | UNRESOLVED",
     "rejection_reason": null or "INVENTS_FACT" / "FILLER" / "BACKEND_SPECIFIC" / etc.",
     "transformations_applied": ["format_normalization", "artifact_removal"],
-    "confidence": 0.85,
+    "extraction_confidence": 0.85,
     "notes": "..."
   }
   ```
 
 ### 12.2 Audit
 - Ledger enables verification that:
-  - Every proposition was processed
+  - All 36 propositions were processed (31 classified + 5 UNKNOWN)
   - Rejections have documented reasons
   - Transformations are traceable
-  - No silent discards
+  - No silent discards or missing items
 
 ---
 
@@ -566,9 +634,12 @@ These changes violate the normalization boundary and must trigger REJECTION:
 - [ ] Provenance is complete (source_id, segment_ids, timestamps)
 
 ### 13.2 Artifact-Level Validation
-- [ ] All 36 classified propositions appear in output (as NORMALIZED, UNCHANGED, or REJECTED)
-- [ ] All 5 UNKNOWN propositions appear with `epistemic_status == UNKNOWN` (not forced into a single class)
-- [ ] Ledger counts match (36 classified + 5 UNKNOWN = 41 total items processed)
+- [ ] All 36 input propositions processed (31 classified + 5 UNKNOWN)
+- [ ] All 36 appear in ledger with status (NORMALIZED, UNCHANGED, REJECTED, or UNRESOLVED)
+- [ ] All 31 classified propositions appear in canonical storage
+- [ ] All 5 UNKNOWN propositions appear with `epistemic_status == UNKNOWN` (provisional type, not resolved)
+- [ ] All 5 UNKNOWN items have `ambiguity` field + `candidate_types` in notes
+- [ ] All 5 UNKNOWN items have LOW `extraction_confidence` (0.4–0.6)
 - [ ] No knowledge_ids collide (hash-based IDs are deterministic)
 - [ ] No FILLER items in canonical storage
 - [ ] Epistemic statuses preserved (no SOURCE_REPORTED→SOURCE_RECOMMENDED upgrades)
@@ -619,10 +690,11 @@ These changes violate the normalization boundary and must trigger REJECTION:
 - [ ] Ledger format finalized
 
 ### Gate 5.5-3: Normalization Completeness
-- [ ] All 36 classified propositions normalized
-- [ ] All 5 UNKNOWN preserved as AMBIGUOUS
-- [ ] Normalization ledger complete (41 items, no gaps)
-- [ ] Zero FILLER in canonical output
+- [ ] All 31 classified propositions normalized (NORMALIZED, UNCHANGED, or REJECTED)
+- [ ] All 5 UNKNOWN preserved with epistemic_status=UNKNOWN (provisional type + ambiguity)
+- [ ] Normalization ledger complete (36 items: 31 classified + 5 UNKNOWN, no gaps)
+- [ ] Zero FILLER in canonical storage
+- [ ] All UNKNOWN items have low extraction_confidence + ambiguity + candidate_types
 
 ### Gate 5.5-4: Validation
 - [ ] All 13.1 per-item validations PASS
