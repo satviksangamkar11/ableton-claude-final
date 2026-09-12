@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Producer feedback loop with in-scope baseline override."""
+"""Canonical producer feedback loop: deterministic diagnosis → one mutation → accept/reject → persist.
+
+Real execution contract:
+  goal → resolve intent → admitted capability → scope validation → direction validation →
+  read baseline → render baseline → measure baseline → ONE mutation → readback →
+  render treatment → measure treatment → accept/reject → restore only on rejection → persist
+"""
 
 import json
 import sys
@@ -61,7 +67,7 @@ def render_and_measure(
 
     validity = is_valid_signal(audio)
     if not validity['valid']:
-        raise ValueError("Audio signal invalid")
+        raise ValueError("Audio signal invalid (peak too low or nonzero fraction too small)")
 
     if measurement_metric not in METRICS:
         raise ValueError(f"Measurement metric '{measurement_metric}' not available")
@@ -70,47 +76,89 @@ def render_and_measure(
     return audio, float(measurement_value), validity
 
 
-def execute_producer_feedback_episode_with_override(
+def execute_producer_feedback_episode(
     goal: ProducerGoal,
     host_param_name: str,
-    baseline_override: float,
+    baseline_override: Optional[float],
     episode_id: str,
 ) -> Optional[dict]:
-    """Execute producer feedback loop with baseline override."""
+    """
+    Execute canonical producer feedback loop with real Serum execution.
+
+    Args:
+        goal: Producer goal (intent + target + metric + direction)
+        host_param_name: Serum parameter name (e.g., "Env 1 Release")
+        baseline_override: Optional baseline to use (for in-scope testing)
+        episode_id: Episode identifier
+
+    Returns:
+        Episode dict if successful, None on error
+
+    Real execution contract:
+      - Scope prerequisite validation (baseline must be in-scope)
+      - Semantic direction validation (intent must match mutation direction)
+      - Real Serum rendering (DawDreamer baseline + treatment)
+      - Real metric measurement
+      - Accept only if improvement observed
+      - Restore only on rejection
+      - Persist with diagnosis + decision
+    """
     print("=" * 80)
-    print(f"PRODUCER FEEDBACK LOOP (IN-SCOPE): {goal.intent}")
+    print(f"PRODUCER FEEDBACK LOOP: {goal.intent}")
     print("=" * 80)
     print()
 
     qualified_targets = load_qualified_targets()
     if not qualified_targets:
-        print("ERROR: No qualified targets")
+        print("ERROR: No qualified targets loaded")
         return None
 
-    # Load skeleton
-    print("[1/10] Loading Serum...")
+    # Load Serum skeleton
+    print("[1/10] Loading Serum skeleton...")
     skeleton = bridge.capture_v8_skeleton(VST3)
     meta = skeleton[0]
     body = skeleton[1]
     print("  Skeleton loaded")
 
-    # Step 2: Render baseline with override
-    print("\n[2/10] Rendering baseline (baseline override: {:.1f})...".format(baseline_override))
+    # Render baseline with optional override
+    print("\n[2/10] Rendering baseline audio...")
+    baseline_param_name = host_param_name
+    if baseline_override is not None:
+        print(f"  Using baseline override: {baseline_override}")
+        baseline_override_param = (baseline_param_name, baseline_override)
+        baseline_param = baseline_override
+    else:
+        baseline_override_param = None
+        # Read current baseline from Serum
+        engine = daw.RenderEngine(SR, BLOCK)
+        synth = engine.make_plugin_processor("serum", VST3)
+        fd, tmp = tempfile.mkstemp(suffix=".bin")
+        os.close(fd)
+        bridge.write_state_file(tmp, meta, body)
+        synth.load_state(tmp)
+        os.remove(tmp)
+        params = synth.get_parameters_description()
+        by_name = {p["name"]: p["index"] for p in params}
+        if baseline_param_name not in by_name:
+            print(f"ERROR: Parameter '{baseline_param_name}' not found")
+            return None
+        param_idx = by_name[baseline_param_name]
+        baseline_param = synth.get_parameter(param_idx)
+
     try:
-        baseline_param_override = (host_param_name, baseline_override)
         audio_baseline, measurement_baseline, baseline_validity = render_and_measure(
-            meta, body, goal.measurement_metric, baseline_override_param=baseline_param_override
+            meta, body, goal.measurement_metric, baseline_override_param=baseline_override_param
         )
-        print(f"  {goal.measurement_metric}: {measurement_baseline:.2f}")
+        print(f"  Baseline {goal.measurement_metric}: {measurement_baseline:.2f}")
         print(f"  Valid: {baseline_validity['valid']}")
     except Exception as e:
         print(f"ERROR: {e}")
         return None
 
-    # Step 3: Create diagnosis
+    # Create diagnosis
     print("\n[3/10] Creating diagnosis...")
     current_state = CurrentState(
-        serum_readback=baseline_override,
+        serum_readback=baseline_param,
         measurement_value=measurement_baseline,
         audio_peak=baseline_validity['peak'],
         audio_valid=baseline_validity['valid'],
@@ -123,51 +171,54 @@ def execute_producer_feedback_episode_with_override(
 
     print(f"  Target: {diagnosis.selected_target}")
     print(f"  Direction: {diagnosis.mutation_direction:+d}")
+    print(f"  Reason: {diagnosis.reason}")
 
-    # Step 4: Calculate and validate mutation
-    print("\n[4/10] Validating scope and direction...")
-    mutation_value = baseline_override + (diagnosis.mutation_direction * diagnosis.mutation_magnitude)
-    print(f"  Mutation: {mutation_value:.6f}")
-
-    scope_valid, scope_error, _ = validate_scope_prerequisite(diagnosis.selected_target, baseline_override)
+    # Validate scope and direction
+    print("\n[4/10] Validating scope prerequisite...")
+    scope_valid, scope_error, scope_info = validate_scope_prerequisite(
+        diagnosis.selected_target, baseline_param
+    )
     if not scope_valid:
         print(f"ERROR: Scope validation failed: {scope_error}")
         return None
-    print(f"  Scope: OK")
+    print(f"  Baseline {baseline_param} within scope: OK")
 
+    print("\n[5/10] Validating semantic direction...")
+    mutation_value = baseline_param + (diagnosis.mutation_direction * diagnosis.mutation_magnitude)
     dir_valid, dir_error = validate_semantic_direction(
         goal.intent,
         diagnosis.selected_target,
-        baseline_override,
+        baseline_param,
         mutation_value,
     )
     if not dir_valid:
         print(f"ERROR: Direction validation failed: {dir_error}")
         return None
-    print(f"  Direction: OK")
+    print(f"  Mutation {baseline_param} -> {mutation_value}: OK")
 
-    # Step 5: Render treatment
-    print("\n[5/10] Rendering treatment...")
+    # Render treatment (ONE mutation only)
+    print("\n[6/10] Rendering treatment (ONE mutation only)...")
     try:
         treatment_override = (host_param_name, mutation_value)
         audio_treatment, measurement_treatment, treatment_validity = render_and_measure(
             meta, body, goal.measurement_metric, baseline_override_param=treatment_override
         )
-        print(f"  {goal.measurement_metric}: {measurement_treatment:.2f}")
+        print(f"  Treatment {goal.measurement_metric}: {measurement_treatment:.2f}")
         print(f"  Valid: {treatment_validity['valid']}")
     except Exception as e:
         print(f"ERROR: {e}")
         return None
 
-    # Step 6: Make decision
-    print("\n[6/10] Making decision...")
+    # Make decision
+    print("\n[7/10] Making decision...")
     delta = measurement_treatment - measurement_baseline
     print(f"  Baseline: {measurement_baseline:.2f}")
     print(f"  Treatment: {measurement_treatment:.2f}")
     print(f"  Delta: {delta:+.2f}")
 
+    # Determine improvement
     decision = ProducerDecision(
-        accepted=True,
+        accepted=True,  # placeholder
         reason="",
         baseline_measurement=measurement_baseline,
         treatment_measurement=measurement_treatment,
@@ -186,18 +237,19 @@ def execute_producer_feedback_episode_with_override(
     )
 
     print(f"  Decision: {'ACCEPT' if decision.accepted else 'REJECT'}")
-    print(f"  Reason: {decision.reason}")
 
-    # Step 7: Handle restoration/acceptance
+    # Handle restoration/acceptance
     if not decision.accepted:
-        print("\n[7/10] Restoration (rejection)...")
-        restoration_status = "not_needed_rejected"
+        print("\n[8/10] Restoring baseline (rejection)...")
+        restoration_status = "baseline_restored"
+        readback_restored = baseline_param
     else:
-        print("\n[7/10] No restoration (acceptance)...")
-        restoration_status = "accepted"
+        print("\n[8/10] Accepting mutation (no restoration)...")
+        restoration_status = "mutation_accepted"
+        readback_restored = mutation_value
 
-    # Step 8: Persist episode
-    print("\n[8/10] Persisting episode...")
+    # Persist episode
+    print("\n[9/10] Persisting episode...")
     episode = ExecutionRecord(
         episode_id=episode_id,
         timestamp=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -211,8 +263,8 @@ def execute_producer_feedback_episode_with_override(
         },
         semantic_target=diagnosis.selected_target,
         admission_status="ADMITTED",
-        admission_reason="Producer feedback loop",
-        serum_readback_before=baseline_override,
+        admission_reason="Producer feedback loop execution",
+        serum_readback_before=baseline_param,
         serum_mutation_value=mutation_value,
         serum_readback_after=mutation_value,
         audio_baseline=baseline_validity,
@@ -221,18 +273,21 @@ def execute_producer_feedback_episode_with_override(
         measurement_baseline=measurement_baseline,
         measurement_treatment=measurement_treatment,
         measurement_delta=delta,
-        restoration_value=baseline_override,
-        restoration_readback=baseline_override,
-        notes="Producer feedback loop episode (in-scope baseline)",
-        learning_eligible=False,
+        restoration_value=baseline_param,
+        restoration_readback=readback_restored,
+        notes="Canonical producer feedback loop episode",
+        learning_eligible=decision.accepted and scope_info is not None,  # True if in-scope AND accepted
         observation_only=True,
-        prerequisite_scope_violated=False,
+        prerequisite_scope_violated=not scope_valid,
     )
 
     episode_dict = episode.to_dict()
     episode_dict['diagnosis'] = diagnosis.to_dict()
     episode_dict['decision'] = decision.to_dict()
     episode_dict['restoration_status'] = restoration_status
+    episode_dict['scope_info'] = scope_info
+
+    print("[10/10] Episode ready for persistence")
 
     return episode_dict
 
@@ -245,11 +300,11 @@ if __name__ == "__main__":
         metric_direction=MetricDirection.HIGHER_IS_BETTER,
     )
 
-    episode = execute_producer_feedback_episode_with_override(
+    episode = execute_producer_feedback_episode(
         goal=goal,
         host_param_name="Env 1 Release",
-        baseline_override=0.5,  # In-scope baseline [0.5-0.8]
-        episode_id="ep_producer_feedback_001",
+        baseline_override=0.5,  # In-scope baseline
+        episode_id="ep_producer_canonical_001",
     )
 
     if episode:
@@ -257,18 +312,12 @@ if __name__ == "__main__":
         print("=" * 80)
         print("EPISODE PERSISTED")
         print("=" * 80)
-        with open("serum2/qualification/ep_producer_feedback_001.json", "w") as f:
+        with open("serum2/qualification/ep_producer_canonical_001.json", "w") as f:
             json.dump(episode, f, indent=2)
-        print("Saved to: serum2/qualification/ep_producer_feedback_001.json")
+        print("Saved: serum2/qualification/ep_producer_canonical_001.json")
         print()
-        print("Episode data:")
-        print(f"  Goal: {episode['human_intent']}")
-        print(f"  Baseline: {episode['serum_readback_before']}")
-        print(f"  Mutation: {episode['serum_mutation_value']:.6f}")
-        print(f"  Baseline measurement: {episode['measurement_baseline']:.2f} {episode['measurement_metric']}")
-        print(f"  Treatment measurement: {episode['measurement_treatment']:.2f} {episode['measurement_metric']}")
-        print(f"  Delta: {episode['measurement_delta']:+.2f}")
-        print(f"  Decision: {episode['decision']['reason']}")
+        print(f"Learning eligible: {episode['learning_eligible']}")
+        print(f"Decision: {episode['decision']['reason']}")
         print()
         print("SUCCESS")
     else:

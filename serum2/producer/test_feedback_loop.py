@@ -185,12 +185,13 @@ class TestEpisodePersistence:
 
     def test_episode_file_created(self):
         """Episode file should exist after execution."""
-        episode_path = "serum2/qualification/ep_producer_feedback_001.json"
-        assert os.path.exists(episode_path), "Episode file was not created"
+        # Check for canonical episode
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
+        assert os.path.exists(episode_path), "Canonical episode file was not created"
 
     def test_episode_contains_diagnosis(self):
         """Episode should contain diagnosis data."""
-        episode_path = "serum2/qualification/ep_producer_feedback_001.json"
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
         with open(episode_path) as f:
             episode = json.load(f)
 
@@ -201,7 +202,7 @@ class TestEpisodePersistence:
 
     def test_episode_contains_decision(self):
         """Episode should contain decision data."""
-        episode_path = "serum2/qualification/ep_producer_feedback_001.json"
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
         with open(episode_path) as f:
             episode = json.load(f)
 
@@ -211,16 +212,26 @@ class TestEpisodePersistence:
 
     def test_episode_marked_observation_only(self):
         """Episode should be marked as observation_only."""
-        episode_path = "serum2/qualification/ep_producer_feedback_001.json"
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
         with open(episode_path) as f:
             episode = json.load(f)
 
         assert episode['observation_only'] is True
-        assert episode['learning_eligible'] is False
+
+    def test_episode_in_scope_learning_eligible_true(self):
+        """Valid in-scope accepted episode should have learning_eligible=true."""
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
+        with open(episode_path) as f:
+            episode = json.load(f)
+
+        # In-scope baseline (0.5) with improvement → learning_eligible=true
+        assert episode['serum_readback_before'] == 0.5
+        assert episode['prerequisite_scope_violated'] is False
+        assert episode['learning_eligible'] is True, "Valid in-scope episode should be learning_eligible"
 
     def test_episode_has_real_measurements(self):
         """Episode should contain real Serum measurements."""
-        episode_path = "serum2/qualification/ep_producer_feedback_001.json"
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
         with open(episode_path) as f:
             episode = json.load(f)
 
@@ -232,14 +243,14 @@ class TestEpisodePersistence:
 
     def test_episode_improvement_accepted(self):
         """Episode decision should be ACCEPT due to improvement."""
-        episode_path = "serum2/qualification/ep_producer_feedback_001.json"
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
         with open(episode_path) as f:
             episode = json.load(f)
 
         # For tail_rms_db (higher is better), treatment > baseline means improvement
         assert episode['measurement_treatment'] > episode['measurement_baseline']
         assert episode['decision']['accepted'] is True
-        assert episode['restoration_status'] == 'accepted'
+        assert episode['restoration_status'] == 'mutation_accepted'
 
 
 class TestProducerConstraints:
@@ -247,7 +258,7 @@ class TestProducerConstraints:
 
     def test_single_mutation_per_episode(self):
         """Episode should have exactly one mutation per baseline."""
-        episode_path = "serum2/qualification/ep_producer_feedback_001.json"
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
         with open(episode_path) as f:
             episode = json.load(f)
 
@@ -280,13 +291,50 @@ class TestProducerConstraints:
 
     def test_in_scope_baseline(self):
         """Producer loop should use in-scope baseline."""
-        episode_path = "serum2/qualification/ep_producer_feedback_001.json"
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
         with open(episode_path) as f:
             episode = json.load(f)
 
         baseline = episode['serum_readback_before']
         # Env1.Release scope is [0.5, 0.8]
         assert 0.5 <= baseline <= 0.8, f"Baseline {baseline} outside scope [0.5, 0.8]"
+
+    def test_accepted_mutation_remains_active(self):
+        """Accepted mutation should remain as current state (no auto-restoration)."""
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
+        with open(episode_path) as f:
+            episode = json.load(f)
+
+        # Episode shows acceptance
+        assert episode['decision']['accepted'] is True
+        # Restoration status should indicate mutation accepted
+        assert episode['restoration_status'] == 'mutation_accepted'
+        # Readback restored should show mutation value (not baseline)
+        assert episode['restoration_readback'] == episode['serum_mutation_value']
+
+    def test_episode_preserves_diagnosis_and_decision(self):
+        """Episode must preserve full diagnosis and decision for traceability."""
+        episode_path = "serum2/qualification/ep_producer_canonical_001.json"
+        with open(episode_path) as f:
+            episode = json.load(f)
+
+        # Diagnosis preserved
+        diagnosis = episode['diagnosis']
+        assert diagnosis['goal']['intent'] == "make the note sustain longer"
+        assert diagnosis['selected_target'] == 'Env1.Release'
+        assert diagnosis['mutation_direction'] in [-1, 1]
+        assert diagnosis['mutation_magnitude'] > 0
+        assert diagnosis['reason'] is not None
+        assert diagnosis['confidence'] > 0
+
+        # Decision preserved
+        decision = episode['decision']
+        assert 'accepted' in decision
+        assert 'reason' in decision
+        assert 'metric_direction' in decision
+        assert decision['baseline_measurement'] is not None
+        assert decision['treatment_measurement'] is not None
+        assert decision['delta'] is not None
 
 
 if __name__ == "__main__":
