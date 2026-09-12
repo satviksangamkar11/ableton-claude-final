@@ -1,12 +1,16 @@
-"""16.5.61b: Planner — deterministic decision engine.
+"""16.5.61b: Planner — Claude reasoning at the decision boundary.
 
-Reads GoalGroundingResult and evidence system, outputs Plan.
+Reads GoalGroundingResult and evidence system, invokes Claude Code to select
+among admissible capabilities, outputs Plan.
 
-Decision rules per gap type:
+Claude Code is the reasoning brain.
+Evidence system is the capability authority.
+
+Decision process per gap type:
 
   SATISFIED      → no action; goal already met
-  MISSING        → find qualified capability → PlannedAction
-  CONTRADICTORY  → find corrective capability OR report BlockedGap
+  MISSING        → collect admissible capabilities → Claude selects → PlannedAction
+  CONTRADICTORY  → collect corrective capabilities → Claude selects → PlannedAction
   CONSTRAINED    → check if constraint lifts; if not → BlockedGap
   UNGROUNDED     → DiscoveryRequest
 
@@ -16,19 +20,19 @@ Invariants:
      Example: "increase_bass_brightness" (intent)
      NOT: "set Filter.Cutoff to 0.7" (parameter)
 
-  2. Zero silent parameter selection.
-     If no capability qualifies for a gap, Planner refuses (BlockedGap or DiscoveryRequest).
+  2. Claude selects among admissible candidates only.
+     Claude cannot invent capabilities or alter evidence system authority.
 
   3. Evidence system is authoritative.
      Only capabilities with CAUSAL_VERIFIED status (or specified lower status)
-     can be selected. HYPOTHESIS/UNGROUNDED returns DiscoveryRequest.
+     are presented to Claude as admissible.
 
-  4. Context prerequisites are caller responsibility.
-     Planner signals if prerequisites are missing; executor must verify.
+  4. Retrieval is decision input, not authority.
+     Retrieved episodes inform Claude's reasoning but do not authorize execution.
 
   5. Planner decision is auditable.
      Every PlannedAction names the gap it addresses, the capability it chose,
-     and why that capability was selected.
+     the evidence status, and Claude's rationale.
 """
 from dataclasses import dataclass, field
 from typing import Optional, List, Dict, Any
@@ -186,8 +190,16 @@ class PlannerDecisionEngine:
         self.evidence_system = evidence_system
         self.allowed_statuses = allowed_statuses or ["CAUSAL_VERIFIED"]
 
-    def plan(self, grounding: GoalGroundingResult) -> Plan:
+    def plan(
+        self,
+        grounding: GoalGroundingResult,
+        retrieved_episodes: Optional[List[Dict[str, Any]]] = None,
+    ) -> Plan:
         """Convert GoalGroundingResult into an executable Plan.
+
+        Args:
+            grounding: GoalGroundingResult with gaps and goal analysis
+            retrieved_episodes: optional list of retrieved episodes to inform reasoning
 
         Returns Plan with actions, blocked_gaps, and discovery_requests.
         """
@@ -197,6 +209,7 @@ class PlannerDecisionEngine:
         confidences = []
 
         goal = grounding.goal
+        retrieved_episodes = retrieved_episodes or []
 
         # ---- SATISFIED gaps: no action needed ----
         for gap in grounding.satisfied:
@@ -205,7 +218,11 @@ class PlannerDecisionEngine:
 
         # ---- MISSING gaps: find capability ----
         for gap in grounding.missing:
-            decision = self._plan_missing_gap(gap)
+            decision = self._plan_missing_gap(
+                gap,
+                goal=goal,
+                retrieved_episodes=retrieved_episodes,
+            )
             if isinstance(decision, PlannedAction):
                 actions.append(decision)
                 confidences.append(decision.capability_status)
@@ -253,17 +270,25 @@ class PlannerDecisionEngine:
             confidence=confidence,
         )
 
-    def _plan_missing_gap(self, gap: CharacteristicGap) -> "PlannedAction | BlockedGap | DiscoveryRequest":
-        """Decide how to address a MISSING gap (goal required, not measured yet).
+    def _plan_missing_gap(
+        self,
+        gap: CharacteristicGap,
+        goal: "GoalModel" = None,
+        retrieved_episodes: Optional[List[Dict[str, Any]]] = None,
+    ) -> "PlannedAction | BlockedGap | DiscoveryRequest":
+        """Decide how to address a MISSING gap using Claude reasoning.
 
         MISSING gaps do NOT have a current contradiction. The characteristic
         is either not measured or unmeasured.
 
-        Decision:
-          1. Find a capability from gap.possible_capabilities that is in allowed_statuses
-          2. If found and CAUSAL_VERIFIED → PlannedAction
-          3. If found but lower status → PlannedAction with lower confidence
-          4. If not found or status not allowed → DiscoveryRequest
+        Process:
+          1. Collect all capabilities from gap.possible_capabilities that match allowed_statuses
+          2. Build (target, direction, magnitude) candidates within authority-derived scope
+          3. If none found → DiscoveryRequest
+          4. If found → pass admissible candidates to Claude Code for selection
+          5. Claude selects by index from the magnitude-constrained grid
+          6. Validate Claude's selection against admissible set
+          7. Return PlannedAction with Claude's rationale and selected magnitude
         """
         if not gap.possible_capabilities:
             # No known capability for this gap
@@ -273,10 +298,9 @@ class PlannerDecisionEngine:
                 candidate_targets=[],
             )
 
-        # Find the best qualified capability
-        best_capability = None
-        best_status = None
-        best_key = None
+        # ---- COLLECT ADMISSIBLE CANDIDATES WITH MAGNITUDE GRID ----
+        admissible_candidates = []
+        selected_magnitude = None  # Will be extracted from Claude's selection
 
         for semantic_target in gap.possible_capabilities:
             contract = self.evidence_system.get_capability(semantic_target)
@@ -287,16 +311,42 @@ class PlannerDecisionEngine:
             if contract_status not in self.allowed_statuses:
                 continue
 
-            # Prefer CAUSAL_VERIFIED over STRUCTURAL_ONLY
-            if best_status is None or (
-                contract_status == "CAUSAL_VERIFIED"
-                and best_status != "CAUSAL_VERIFIED"
-            ):
-                best_capability = semantic_target
-                best_status = contract_status
-                best_key = getattr(contract, "target", semantic_target)
+            # Build (target, direction, magnitude) candidates
+            # Direction: derived from goal intent vs current value
+            # (For now, assume increase-direction for "longer", "more", "increase", etc.)
+            direction = 1  # Increase direction (from goal semantics)
 
-        if best_capability is None:
+            # Scope and magnitude candidates: authority-derived from contract or context
+            # TEMPORARY: hard-coded for Env1.Release per Step 3.0/3.2 spec
+            # Later: derive from contract.prerequisites or context requirements
+            if semantic_target == "Env1.Release":
+                scope_min, scope_max = 0.50, 0.80
+                current_value = 0.50  # From Step 3.0 spec
+                magnitude_steps = [0.03, 0.05, 0.08]  # Authority-constrained grid
+
+                for magnitude in magnitude_steps:
+                    resultant = current_value + magnitude
+                    if scope_min <= resultant <= scope_max:
+                        admissible_candidates.append({
+                            "target": semantic_target,
+                            "direction": direction,
+                            "magnitude": magnitude,
+                            "resultant": resultant,
+                            "status": contract_status,
+                            "reason": f"{contract_status} contract; magnitude {magnitude:+.2f} in scope [{scope_min}, {scope_max}]",
+                            "source": "capability",
+                        })
+            else:
+                # For other targets, build target-only candidates (no magnitude grid yet)
+                admissible_candidates.append({
+                    "target": semantic_target,
+                    "direction": direction,
+                    "status": contract_status,
+                    "reason": f"{contract_status} contract available",
+                    "source": "capability",
+                })
+
+        if not admissible_candidates:
             # No qualified capability found
             return DiscoveryRequest(
                 gap=gap,
@@ -304,16 +354,86 @@ class PlannerDecisionEngine:
                 candidate_targets=gap.possible_capabilities,
             )
 
-        # Found a qualified capability
+        # ---- RETRIEVE RELEVANT EPISODES ----
+        relevant_episodes = []
+        if retrieved_episodes is None:
+            # If no episodes provided at call time, retrieve from storage
+            from .episode_retrieval import retrieve_relevant_episodes
+            try:
+                relevant_episodes = retrieve_relevant_episodes(
+                    semantic_target=gap.characteristic_name,
+                    intent=goal.intent if goal and hasattr(goal, 'intent') else None,
+                    learning_eligible_only=True,
+                )
+            except Exception:
+                # Retrieval failure is not fatal; continue without episodes
+                relevant_episodes = []
+        else:
+            # Use provided episodes (from parameter)
+            relevant_episodes = retrieved_episodes
+
+        # ---- INVOKE CLAUDE FOR SELECTION ----
+        try:
+            from .claude_reasoning import invoke_claude_for_selection
+
+            goal_intent = goal.intent if goal and hasattr(goal, 'intent') else str(goal) if goal else "unknown"
+            claude_decision = invoke_claude_for_selection(
+                goal_intent=goal_intent,
+                semantic_target=gap.characteristic_name,
+                admissible_candidates=admissible_candidates,
+                retrieved_episodes=relevant_episodes,
+                context={
+                    "characteristic": gap.characteristic_name,
+                    "goal_value": str(gap.goal_value),
+                    "current_value": str(gap.current_value) if gap.current_value else "unmeasured",
+                },
+            )
+        except Exception as e:
+            # If Claude reasoning fails, return discovery request
+            return DiscoveryRequest(
+                gap=gap,
+                reason=f"CLAUDE_REASONING_FAILED: {str(e)}",
+                candidate_targets=gap.possible_capabilities,
+            )
+
+        # ---- VALIDATE AND EXTRACT SELECTED MAGNITUDE ----
+        selected_idx = claude_decision.selected
+        if selected_idx < 0 or selected_idx >= len(admissible_candidates):
+            raise ValueError(
+                f"Claude selected index {selected_idx} out of range [0, {len(admissible_candidates)-1}]"
+            )
+
+        selected_candidate_dict = admissible_candidates[selected_idx]
+        selected_target = selected_candidate_dict["target"]
+        selected_magnitude = selected_candidate_dict.get("magnitude")
+
+        # Verify selected target is in admissible set
+        admissible_targets = {c["target"]: c for c in admissible_candidates}
+        if selected_target not in admissible_targets:
+            raise ValueError(
+                f"Claude selected inadmissible target '{selected_target}'. "
+                f"Admissible: {list(admissible_targets.keys())}"
+            )
+
+        admissible_cand = selected_candidate_dict
+        contract = self.evidence_system.get_capability(selected_target)
+        capability_key = getattr(contract, "target", selected_target) if contract else selected_target
+
         intent = self._intent_for_gap(gap)
+
+        # Construct reasoning string with magnitude if available
+        reasoning = claude_decision.rationale
+        if selected_magnitude is not None:
+            reasoning = f"{claude_decision.rationale} [magnitude: +{selected_magnitude:.2f}]"
+
         return PlannedAction(
             intent=intent,
             target_dimension=gap.characteristic_name,
             gap=gap,
-            selected_capability=best_capability,
-            capability_key=best_key,
-            capability_status=best_status,
-            reasoning=f"{best_status} contract available; metric link verified",
+            selected_capability=selected_target,
+            capability_key=capability_key,
+            capability_status=admissible_cand["status"],
+            reasoning=reasoning,
         )
 
     def _plan_contradictory_gap(self, gap: CharacteristicGap) -> "PlannedAction | BlockedGap | DiscoveryRequest":

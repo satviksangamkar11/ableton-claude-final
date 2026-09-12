@@ -1,0 +1,38 @@
+{
+  "step": "3.3",
+  "timestamp": "2026-09-12T07:51:33.324790Z",
+  "control_execution_conditions": {
+    "target": "Env1.Release",
+    "magnitude": 0.05,
+    "resultant_value": 0.55,
+    "baseline_value": 0.5,
+    "measurement_metric": "tail_rms_db"
+  },
+  "memory_informed_execution_conditions": {
+    "target": "Env1.Release",
+    "magnitude": 0.08,
+    "resultant_value": 0.58,
+    "baseline_value": 0.5,
+    "measurement_metric": "tail_rms_db"
+  },
+  "control_measurement": {
+    "baseline_measurement": -20.12628701196546,
+    "treatment_measurement": -19.86046937652191,
+    "delta": 0.2658176354435504
+  },
+  "memory_informed_measurement": {
+    "baseline_measurement": -20.12628701196546,
+    "treatment_measurement": -19.705787320160738,
+    "delta": 0.42049969180472146
+  },
+  "control_delta": 0.2658176354435504,
+  "memory_informed_delta": 0.42049969180472146,
+  "delta_difference": 0.15468205636117105,
+  "signal_validity": {
+    "control_valid": true,
+    "memory_informed_valid": true
+  },
+  "status": "PASS",
+  "classification": "MEMORY_INFORMED_BETTER",
+  "methodological_note": "The 0.05 dB comparison threshold used to declare PASS was set by the implementer while writing this script, not pre-registered in a separate experiment specification before execution. The defensible claim is the measured fact: under frozen, comparable execution conditions (identical baselines, both signals valid), the memory-informed decision (+0.08) produced a +0.1547 dB larger tail_rms_db improvement than the control decision (+0.05). Whether +0.1547 dB constitutes 'significant' by some independent criterion was not established in advance."
+}

@@ -1,6 +1,6 @@
 {
-  "episode_id": "ep_producer_canonical_001",
-  "timestamp": "2026-09-12T06:41:15.347224Z",
+  "episode_id": "retrieval_positive_control_release_001",
+  "timestamp": "2026-09-12T12:40:00.000000Z",
   "human_intent": "make the note sustain longer",
   "candidate_operation": {
     "target": "Env1.Release",
@@ -11,27 +11,27 @@
   },
   "semantic_target": "Env1.Release",
   "admission_status": "ADMITTED",
-  "admission_reason": "Producer feedback loop execution",
+  "admission_reason": "Positive control for retrieval fidelity testing",
   "serum_readback_before": 0.5,
   "serum_mutation_value": 0.55,
   "serum_readback_after": 0.55,
   "audio_baseline": {
-    "peak": 0.28331682085990906,
-    "nonzero_fraction": 0.9999773242630385,
+    "peak": 0.283,
+    "nonzero_fraction": 0.9999,
     "valid": true
   },
   "audio_treatment": {
-    "peak": 0.28331682085990906,
-    "nonzero_fraction": 0.9999773242630385,
+    "peak": 0.283,
+    "nonzero_fraction": 0.9999,
     "valid": true
   },
   "measurement_metric": "tail_rms_db",
-  "measurement_baseline": -20.12628701196546,
-  "measurement_treatment": -19.86046937652191,
-  "measurement_delta": 0.2658176354435504,
+  "measurement_baseline": -20.126,
+  "measurement_treatment": -20.176,
+  "measurement_delta": -0.05,
   "restoration_value": 0.5,
   "restoration_readback": 0.55,
-  "notes": "Canonical producer feedback loop episode - deterministic target selection + mutation planning",
+  "notes": "Positive control episode for Step 3.1 retrieval fidelity testing. Decision is REJECT (negative improvement) to distinguish from canonical episode.",
   "learning_eligible": true,
   "observation_only": true,
   "prerequisite_scope_violated": false,
@@ -44,8 +44,8 @@
     },
     "current_state": {
       "serum_readback": 0.5,
-      "measurement_value": -20.12628701196546,
-      "audio_peak": 0.28331682085990906,
+      "measurement_value": -20.126,
+      "audio_peak": 0.283,
       "audio_valid": true
     },
     "candidate_targets": [
@@ -58,16 +58,16 @@
     "confidence": 0.9
   },
   "decision": {
-    "accepted": true,
-    "reason": "Improvement observed",
-    "baseline_measurement": -20.12628701196546,
-    "treatment_measurement": -19.86046937652191,
-    "delta": 0.2658176354435504,
+    "accepted": false,
+    "reason": "No improvement observed",
+    "baseline_measurement": -20.126,
+    "treatment_measurement": -20.176,
+    "delta": -0.05,
     "metric_direction": "higher"
   },
-  "restoration_status": "mutation_accepted",
+  "restoration_status": "mutation_rejected",
   "scope_info": {
-    "limitation": "Tested only Env 1 Release [0.5 \u00e2\u2020\u2019 0.8] (longer sustain). Effect observable via tail RMS increase. Generalization across full release time range not yet verified.",
+    "limitation": "Tested Env1.Release [0.5 to 0.8]. Mutation did not improve tail RMS.",
     "scope_min": 0.5,
     "scope_max": 0.8,
     "baseline": 0.5

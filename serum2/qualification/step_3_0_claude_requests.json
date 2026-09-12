@@ -1,0 +1,217 @@
+[
+  {
+    "run_id": 1,
+    "admissible_candidates": [
+      {
+        "target": "Env1.Release",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      },
+      {
+        "target": "Env1.Attack",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      }
+    ],
+    "claude_request": {
+      "goal_intent": "make the note sustain longer",
+      "semantic_target": "sustain_length",
+      "admissible_candidates": [
+        {
+          "target": "Env1.Release",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        },
+        {
+          "target": "Env1.Attack",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        }
+      ],
+      "retrieved_episodes": [],
+      "context": {
+        "characteristic": "sustain_length",
+        "goal_value": "longer",
+        "current_value": "normal"
+      }
+    },
+    "selected_candidate": null,
+    "rationale": null
+  },
+  {
+    "run_id": 2,
+    "admissible_candidates": [
+      {
+        "target": "Env1.Release",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      },
+      {
+        "target": "Env1.Attack",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      }
+    ],
+    "claude_request": {
+      "goal_intent": "make the note sustain longer",
+      "semantic_target": "sustain_length",
+      "admissible_candidates": [
+        {
+          "target": "Env1.Release",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        },
+        {
+          "target": "Env1.Attack",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        }
+      ],
+      "retrieved_episodes": [],
+      "context": {
+        "characteristic": "sustain_length",
+        "goal_value": "longer",
+        "current_value": "normal"
+      }
+    },
+    "selected_candidate": null,
+    "rationale": null
+  },
+  {
+    "run_id": 3,
+    "admissible_candidates": [
+      {
+        "target": "Env1.Release",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      },
+      {
+        "target": "Env1.Attack",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      }
+    ],
+    "claude_request": {
+      "goal_intent": "make the note sustain longer",
+      "semantic_target": "sustain_length",
+      "admissible_candidates": [
+        {
+          "target": "Env1.Release",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        },
+        {
+          "target": "Env1.Attack",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        }
+      ],
+      "retrieved_episodes": [],
+      "context": {
+        "characteristic": "sustain_length",
+        "goal_value": "longer",
+        "current_value": "normal"
+      }
+    },
+    "selected_candidate": null,
+    "rationale": null
+  },
+  {
+    "run_id": 4,
+    "admissible_candidates": [
+      {
+        "target": "Env1.Release",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      },
+      {
+        "target": "Env1.Attack",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      }
+    ],
+    "claude_request": {
+      "goal_intent": "make the note sustain longer",
+      "semantic_target": "sustain_length",
+      "admissible_candidates": [
+        {
+          "target": "Env1.Release",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        },
+        {
+          "target": "Env1.Attack",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        }
+      ],
+      "retrieved_episodes": [],
+      "context": {
+        "characteristic": "sustain_length",
+        "goal_value": "longer",
+        "current_value": "normal"
+      }
+    },
+    "selected_candidate": null,
+    "rationale": null
+  },
+  {
+    "run_id": 5,
+    "admissible_candidates": [
+      {
+        "target": "Env1.Release",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      },
+      {
+        "target": "Env1.Attack",
+        "status": "CAUSAL_VERIFIED",
+        "reason": "CAUSAL_VERIFIED contract available",
+        "source": "capability"
+      }
+    ],
+    "claude_request": {
+      "goal_intent": "make the note sustain longer",
+      "semantic_target": "sustain_length",
+      "admissible_candidates": [
+        {
+          "target": "Env1.Release",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        },
+        {
+          "target": "Env1.Attack",
+          "status": "CAUSAL_VERIFIED",
+          "reason": "CAUSAL_VERIFIED contract available",
+          "source": "capability"
+        }
+      ],
+      "retrieved_episodes": [],
+      "context": {
+        "characteristic": "sustain_length",
+        "goal_value": "longer",
+        "current_value": "normal"
+      }
+    },
+    "selected_candidate": null,
+    "rationale": null
+  }
+]

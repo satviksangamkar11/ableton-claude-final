@@ -1,0 +1,56 @@
+{
+  "step": "3.0",
+  "status": "PASS",
+  "intent": "make the note sustain longer",
+  "semantic_target": "Env1.Release",
+  "n": 5,
+  "threshold_acceptable_variance": 0.5,
+  "observed_std_dev": 0.0,
+  "runs": [
+    {
+      "run_id": "baseline_variance_run_01",
+      "semantic_target": "Env1.Release",
+      "baseline_measurement": -20.12628701196546,
+      "treatment_measurement": -19.86046937652191,
+      "delta": 0.2658176354435504,
+      "decision": true,
+      "learning_eligible": true
+    },
+    {
+      "run_id": "baseline_variance_run_02",
+      "semantic_target": "Env1.Release",
+      "baseline_measurement": -20.12628701196546,
+      "treatment_measurement": -19.86046937652191,
+      "delta": 0.2658176354435504,
+      "decision": true,
+      "learning_eligible": true
+    },
+    {
+      "run_id": "baseline_variance_run_03",
+      "semantic_target": "Env1.Release",
+      "baseline_measurement": -20.12628701196546,
+      "treatment_measurement": -19.86046937652191,
+      "delta": 0.2658176354435504,
+      "decision": true,
+      "learning_eligible": true
+    },
+    {
+      "run_id": "baseline_variance_run_04",
+      "semantic_target": "Env1.Release",
+      "baseline_measurement": -20.12628701196546,
+      "treatment_measurement": -19.86046937652191,
+      "delta": 0.2658176354435504,
+      "decision": true,
+      "learning_eligible": true
+    },
+    {
+      "run_id": "baseline_variance_run_05",
+      "semantic_target": "Env1.Release",
+      "baseline_measurement": -20.12628701196546,
+      "treatment_measurement": -19.86046937652191,
+      "delta": 0.2658176354435504,
+      "decision": true,
+      "learning_eligible": true
+    }
+  ]
+}
