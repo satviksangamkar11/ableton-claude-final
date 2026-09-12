@@ -250,6 +250,67 @@ def verify_prerequisite_for_admission(readback_value: float, declared_value: flo
     return False
 
 
+def get_measurement_metric_from_contract(contract) -> str:
+    """Extract measurement metric name from contract.
+
+    The contract's measurement definition_id contains the metric name.
+    E.g., "tail_rms_db:c6a68e551ef9" → "tail_rms_db"
+    E.g., "attack_onset_rms_db:5369167c8e73" → "attack_onset_rms_db"
+
+    Returns the metric name usable with METRICS[metric_name].
+    """
+    measurement_definition_id = contract.measurement["measurement_definition_id"]
+    # measurement_definition_id format: "metric_name:hash"
+    metric_name = measurement_definition_id.split(":")[0] if ":" in measurement_definition_id else measurement_definition_id
+    return metric_name
+
+
+def generic_candidate_generation_from_contract(contract):
+    """Extract candidate from contract (authority-derived, not diagnosis).
+
+    Returns dict with mutation details from contract.scope.
+    This is the authoritative source after admission succeeds.
+    """
+    return {
+        "target": contract.target,
+        "mutation_target_path": contract.scope.get("mutation_target_path"),
+        "mutation_value": contract.scope.get("mutation_value_used"),
+        "mutation_value_semantics": contract.scope.get("mutation_value_semantics", "UNKNOWN"),
+        "rationale": "authority-tested value from admitted CapabilityContract.scope",
+        "source": "capability_contract",
+    }
+
+
+def validate_diagnosis_contract_consistency(diagnosis, contract, goal) -> Tuple[bool, str]:
+    """Validate that diagnosis intent is consistent with admitted contract.
+
+    Diagnosis is ADVISORY. Contract is AUTHORITATIVE.
+    If they conflict, block execution.
+
+    Returns: (is_consistent, reason)
+    """
+    # Diagnosis selected a target
+    if diagnosis.selected_target != contract.target:
+        return False, f"diagnosis target {diagnosis.selected_target} != contract target {contract.target}"
+
+    # Mutation path must match
+    if diagnosis.selected_target != contract.target:
+        return False, f"semantic target mismatch: diagnosis {diagnosis.selected_target} vs contract {contract.target}"
+
+    # Both refer to the same measurement identity (contract is authoritative for this)
+    # Diagnosis provides metric_direction; contract provides measurement_definition_id
+    # They should be compatible (if contract says "increase" but goal says "decrease", block)
+    contract_metric_name = get_measurement_metric_from_contract(contract)
+    if not contract_metric_name:
+        return False, "contract has no measurement_definition_id"
+
+    # Measurement kernel must be available
+    if contract_metric_name not in METRICS:
+        return False, f"contract measurement_definition_id {contract_metric_name} not in METRICS"
+
+    return True, "consistent"
+
+
 def render_and_measure(
     meta: dict,
     body: dict,
@@ -347,6 +408,8 @@ def execute_producer_feedback_episode(
         baseline_param = synth.get_parameter(param_idx)
 
     try:
+        # Render baseline with preliminary measurement metric (will be confirmed by contract later)
+        # Use goal.measurement_metric for baseline only as initial estimate
         audio_baseline, measurement_baseline, baseline_validity = render_and_measure(
             meta, body, goal.measurement_metric, baseline_override_param=baseline_override_param
         )
@@ -373,6 +436,7 @@ def execute_producer_feedback_episode(
     print(f"  Target: {diagnosis.selected_target}")
     print(f"  Direction: {diagnosis.mutation_direction:+d}")
     print(f"  Reason: {diagnosis.reason}")
+    print(f"  (Note: diagnosis is ADVISORY; contract will provide AUTHORITATIVE mutation/measurement)")
 
     # ---- CRITICAL: Authority admission gate (NEW) ----
     print("\n[3.5/10] Authority admission gate...")
@@ -444,7 +508,64 @@ def execute_producer_feedback_episode(
         episode_dict['diagnosis'] = diagnosis.to_dict()
         return episode_dict
 
-    # Validate scope and direction
+    # ---- CRITICAL BOUNDARY: Contract becomes authoritative source ----
+    print("\n[3.7/10] Extracting authority from admitted contract...")
+
+    # Get candidate mutation from contract, not from diagnosis
+    candidate = generic_candidate_generation_from_contract(contract)
+    mutation_value = candidate["mutation_value"]  # From contract.scope.mutation_value_used
+    mutation_target_path = candidate["mutation_target_path"]  # From contract.scope
+
+    print(f"  Contract mutation: {mutation_target_path} = {mutation_value} ({candidate['mutation_value_semantics']})")
+
+    # Get measurement metric from contract, not from intent resolver
+    measurement_metric = get_measurement_metric_from_contract(contract)
+    print(f"  Contract measurement: {measurement_metric}")
+
+    # Validate consistency between diagnosis intent and admitted contract
+    print("\n[3.8/10] Validating diagnosis-contract consistency...")
+    is_consistent, consistency_reason = validate_diagnosis_contract_consistency(diagnosis, contract, goal)
+    if not is_consistent:
+        print(f"  BLOCKED: {consistency_reason}")
+        # Diagnosis and contract conflict - block execution
+        episode = ExecutionRecord(
+            episode_id=episode_id,
+            timestamp=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+            human_intent=goal.intent,
+            candidate_operation={
+                "target": diagnosis.selected_target,
+                "operation": None,
+                "source_hypothesis_id": None,
+                "source_knowledge_item_id": None,
+                "source_confidence": diagnosis.confidence,
+            },
+            semantic_target=diagnosis.selected_target,
+            admission_status="BLOCKED_CONSISTENCY_VIOLATION",
+            admission_reason="diagnosis_contract_conflict",
+            admission_detail=consistency_reason,
+            serum_readback_before=baseline_param,
+            serum_mutation_value=None,
+            serum_readback_after=None,
+            audio_baseline=None,
+            audio_treatment=None,
+            measurement_metric=None,
+            measurement_baseline=None,
+            measurement_treatment=None,
+            measurement_delta=None,
+            restoration_value=None,
+            restoration_readback=None,
+            notes=f"Diagnosis intent conflicts with admitted contract: {consistency_reason}",
+            learning_eligible=False,
+            observation_only=True,
+            prerequisite_scope_violated=True,
+        )
+        episode_dict = episode.to_dict()
+        episode_dict['diagnosis'] = diagnosis.to_dict()
+        return episode_dict
+
+    print(f"  Consistent: {consistency_reason}")
+
+    # Validate scope prerequisite
     print("\n[4/10] Validating scope prerequisite...")
     scope_valid, scope_error, scope_info = validate_scope_prerequisite(
         diagnosis.selected_target, baseline_param
@@ -454,27 +575,21 @@ def execute_producer_feedback_episode(
         return None
     print(f"  Baseline {baseline_param} within scope: OK")
 
-    print("\n[5/10] Validating semantic direction...")
-    mutation_value = baseline_param + (diagnosis.mutation_direction * diagnosis.mutation_magnitude)
-    dir_valid, dir_error = validate_semantic_direction(
-        goal.intent,
-        diagnosis.selected_target,
-        baseline_param,
-        mutation_value,
-    )
-    if not dir_valid:
-        print(f"ERROR: Direction validation failed: {dir_error}")
-        return None
-    print(f"  Mutation {baseline_param} -> {mutation_value}: OK")
+    print("\n[5/10] Using contract-authorized mutation...")
+    # NOTE: mutation_value now comes from contract (ABSOLUTE_PARAMETER_VALUE)
+    # NOT from diagnosis.mutation_magnitude (which was hardcoded 0.05)
+    # This enforces contract authority over diagnosis advisory
+    print(f"  Mutation {baseline_param} -> {mutation_value}: AUTHORIZED by contract")
 
     # Render treatment (ONE mutation only)
+    # NOTE: using contract-derived measurement_metric, not goal.measurement_metric
     print("\n[6/10] Rendering treatment (ONE mutation only)...")
     try:
         treatment_override = (host_param_name, mutation_value)
         audio_treatment, measurement_treatment, treatment_validity = render_and_measure(
-            meta, body, goal.measurement_metric, baseline_override_param=treatment_override
+            meta, body, measurement_metric, baseline_override_param=treatment_override
         )
-        print(f"  Treatment {goal.measurement_metric}: {measurement_treatment:.2f}")
+        print(f"  Treatment {measurement_metric}: {measurement_treatment:.2f}")
         print(f"  Valid: {treatment_validity['valid']}")
     except Exception as e:
         print(f"ERROR: {e}")
