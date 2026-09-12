@@ -1,10 +1,11 @@
 # STEP 5.5 — KNOWLEDGE NORMALIZATION
 
 **Phase:** Design (no implementation yet)  
-**Status:** Proposal  
-**Input:** 36 retained propositions from 5.4-Q (36 retained + 5 UNKNOWN)  
+**Status:** Proposal (REVISION 1 — addresses 5.2 schema conformance)  
+**Input:** 36 retained propositions from 5.4-Q (31 classified + 5 UNKNOWN)  
 **Output:** Canonical KnowledgeItem instances ready for persistence (5.6)  
 **Constraint:** Preserve meaning rather than improve interpretation  
+**Schema:** Use frozen 5.2 KnowledgeItem structure (no modifications)  
 
 ---
 
@@ -12,56 +13,48 @@
 
 ### Input
 - **Source:** `yt_74ab96e1f377_proposition_extraction_5_4_q_repaired.json`
-- **Count:** 36 classified propositions + 5 explicitly UNKNOWN
+- **Count breakdown (CRITICAL CLARIFICATION):**
+  ```
+  36 total propositions retained from 5.4-Q
+  ├── 31 propositions classified into 9 KnowledgeTypes:
+  │   ├── CONCEPT: 3
+  │   ├── CONTEXT: 2
+  │   ├── EXAMPLE: 11
+  │   ├── OBSERVATION: 6
+  │   ├── PRINCIPLE: 6
+  │   ├── PROCEDURE: 3
+  │   └── (RECOMMENDATION, CONDITION, LIMITATION: included in counts above)
+  └── 5 propositions classified as UNKNOWN (unresolved semantic function)
+  ```
 - **Each proposition contains:**
   - `proposition_id`: Unique identifier
   - `original_text`: Exact source text (immutable)
-  - `kind`: Semantic classification (CONCEPT, PROCEDURE, PRINCIPLE, etc.)
+  - `kind`: Semantic classification (CONCEPT, PROCEDURE, PRINCIPLE, OBSERVATION, RECOMMENDATION, CONDITION, EXAMPLE, CONTEXT, LIMITATION, or UNKNOWN)
   - `source_segment_ids`: Exact transcript segments
   - `epistemic_status`: SOURCE_REPORTED, SOURCE_RECOMMENDED, or SOURCE_OBSERVED
   - `ambiguity`: Null or "semantic function unclear"
-  - `candidate_classes`: For UNKNOWN, list of candidate interpretations
+  - `candidate_classes`: For UNKNOWN items only, list of candidate interpretations
   - `semantic_classifier_rationale`: How classifier arrived at decision
 
 ### Output
-- **Format:** List of `KnowledgeItem` instances (JSON)
+- **Format:** List of `KnowledgeItem` instances (JSON), conforming to 5.2 schema
 - **File:** `yt_74ab96e1f377_knowledge_normalized_5_5.json`
-- **Each KnowledgeItem contains:**
-  ```json
-  {
-    "identity": {
-      "knowledge_id": "know_000000",
-      "source_id": "yt_74ab96e1f377",
-      "created_phase": "5.5"
-    },
-    "source_reference": {
-      "proposition_id": "prop_000000",
-      "source_segment_ids": [...],
-      "original_text": "...",
-      "start_time_sec": 0.16,
-      "end_time_sec": 44.36
-    },
-    "original_proposition": {
-      "raw_text": "...",
-      "classification": "CONTEXT"
-    },
-    "normalized_proposition": {
-      "text": "...",
-      "transformations_applied": [...]
-    },
-    "type": "CONTEXT",
-    "semantic_bindings": [...],
-    "confidence": 0.85,
-    "epistemic_status": "SOURCE_REPORTED",
-    "ambiguity": null,
-    "conditions": [],
-    "limitations": [],
-    "extraction_metadata": {
-      "normalization_status": "NORMALIZED",
-      "refusal_reason": null
-    }
-  }
-  ```
+- **Uses frozen 5.2 KnowledgeItem structure:**
+  - `knowledge_item_id`: Deterministic stable ID (hash of source_id + segment_ids)
+  - `source_reference`: SourceReference (source_id, source_type, segment_ids, start_time_sec, end_time_sec)
+  - `original_proposition`: Original text (NEVER modified)
+  - `knowledge_type`: One of 9 KnowledgeTypes (CONCEPT, PROCEDURE, PRINCIPLE, OBSERVATION, RECOMMENDATION, CONDITION, EXAMPLE, CONTEXT, LIMITATION)
+  - `epistemic_status`: EpistemicStatus enum (SOURCE_REPORTED, SOURCE_RECOMMENDED, SOURCE_OBSERVED, or UNKNOWN for unresolved)
+  - `normalized_proposition`: Optional clearer restatement (null if original is clear)
+  - `semantic_bindings`: List of SemanticBinding instances (dimension, value, confidence, ambiguity)
+  - `extraction_confidence`: 0.0-1.0 (from 5.4 classifier)
+  - `ambiguity`: Null or explanation string
+  - `conditions`: List of scope constraints
+  - `limitations`: List of boundaries
+  - `extraction_metadata`: ExtractionMetadata (timestamp, method, confidence, status)
+  - `notes`: Optional transformation audit trail
+
+**CRITICAL:** Do NOT add new fields or modify the 5.2 schema during 5.5 normalization.
 
 ---
 
@@ -79,8 +72,8 @@ These preservations and light reformattings are acceptable:
 - Generate `knowledge_id` from hash of (source_id + proposition_id)
 - Ensures reproducibility without inventing meaning
 
-### 2.3 Classification → KnowledgeType Mapping
-- Map 5.4 semantic classification to KnowledgeType enum:
+### 2.3 Classification → KnowledgeType Mapping (Frozen 5.2 Schema)
+- Map 5.4 semantic classification to the 9 frozen KnowledgeType enum values:
   ```
   CONCEPT      → KnowledgeType.CONCEPT (definition)
   PROCEDURE    → KnowledgeType.PROCEDURE (instruction)
@@ -91,8 +84,9 @@ These preservations and light reformattings are acceptable:
   EXAMPLE      → KnowledgeType.EXAMPLE (illustration)
   CONTEXT      → KnowledgeType.CONTEXT (framing)
   LIMITATION   → KnowledgeType.LIMITATION (boundary)
-  UNKNOWN      → KnowledgeType.AMBIGUOUS (unresolved)
+  UNKNOWN      → Pick best-guess from candidates; use epistemic_status=UNKNOWN (see section 5)
   ```
+- Do NOT add new KnowledgeType values; use frozen 5.2 enum only
 
 ### 2.4 Provenance Transfer
 - Copy source_segment_ids, original_text, timestamps exactly
@@ -248,11 +242,17 @@ These changes violate the normalization boundary and must trigger REJECTION:
 - **Semantic function:** Background, framing, credentials, or organizational information
 - **Normalization rules:**
   - Preserve biographical/credentials language ("after teaching", "being one of")
-  - Preserve transitions ("next", "so to summarize", "in this section")
-  - **Filler rule:** CONTEXT that is purely organizational (no knowledge value) should NOT be persisted to canonical storage
-  - Example: `"After teaching Serum for ten years..."` → Normalize
-  - Example: `"We'll cover this in a dedicated video"` → REJECT (filler, not knowledge)
-- **Rejection trigger:** Context that is pure filler/scope navigation
+  - Preserve transitions that frame knowledge scope ("next", "so to summarize", "in this section")
+  - **CRITICAL BOUNDARY (issue #4):** CONTEXT vs course/video metadata
+    - **CONTEXT (retain):** Information that orients the learner's understanding of the music/production knowledge itself
+      - Example: `"After teaching Serum for ten years, I've learned..."` (credentials for expertise)
+      - Example: `"In this section, we'll explore how filters affect tone"` (scopes knowledge to filters)
+    - **NOT CONTEXT / FILLER (reject):** Information about the course structure, video production, or platform navigation
+      - Example: `"We'll cover this in a dedicated video"` (meta-commentary about video production)
+      - Example: `"Click the link below for more content"` (platform/social navigation)
+      - Example: `"I'll make a separate video about effects"` (course planning, not music knowledge)
+  - **Decision rule:** Ask: "Does this help me understand the music/production knowledge, or does it describe the course/video/platform?" If the latter, it's filler/not-knowledge.
+- **Rejection trigger:** Course/video metadata or navigation statements
 
 ### 4.9 LIMITATION
 - **Semantic function:** Restriction, exception, boundary, or statement about what does not apply
@@ -263,54 +263,76 @@ These changes violate the normalization boundary and must trigger REJECTION:
 - **Rejection trigger:** Limitation invented without source basis
   - Example: "Can't use more than 8 effect slots" (not mentioned) → REJECT
 
-### 4.10 AMBIGUOUS (from UNKNOWN)
+### 4.10 Handling UNKNOWN from 5.4 (Uses 5.2 EpistemicStatus.UNKNOWN)
 - **Semantic function:** Unresolved semantic function (multiple interpretations equally valid)
-- **Normalization rules:**
-  - Do NOT force into a class
-  - Preserve original text verbatim
-  - Enumerate candidate_interpretations (from classifier output)
-  - Add resolution_attempt: Brief description of why classification failed
+- **Normalization rules (see section 5 for details):**
+  - Do NOT force into a final class
+  - Pick best-guess KnowledgeType from classifier's candidates
+  - Set `epistemic_status` to UNKNOWN (5.2 enum value)
+  - Set `ambiguity` field to explain why classification failed
+  - Set `extraction_confidence` LOW (0.4–0.6)
+  - Preserve candidate_interpretations in `notes` field
   - Example:
     ```json
     {
-      "type": "AMBIGUOUS",
-      "original_text": "now all you need to know is that these make up the building blocks of our sound",
-      "candidate_interpretations": ["OBSERVATION", "PRINCIPLE", "PROCEDURE"],
-      "resolution_attempt": "Could describe existing architecture (OBSERVATION), explain how components relate (PRINCIPLE), or prescribe mental model (PROCEDURE)",
-      "normalization_status": "UNRESOLVED"
+      "knowledge_item_id": "ki_...",
+      "knowledge_type": "OBSERVATION",  // best guess
+      "epistemic_status": "UNKNOWN",    // signals unresolved
+      "original_proposition": "now all you need to know is that these make up the building blocks of our sound",
+      "ambiguity": "Could describe existing architecture (OBSERVATION), explain how components relate (PRINCIPLE), or prescribe mental model (PROCEDURE)",
+      "notes": "Candidates: [OBSERVATION, PRINCIPLE, PROCEDURE]. Classifier could not determine semantic function.",
+      "extraction_confidence": 0.5
     }
     ```
-- **Rejection trigger:** None — ambiguous items must be preserved and explicitly marked
+- **Rejection trigger:** None — unresolved items must be preserved and explicitly marked
 
 ---
 
-## 5. AMBIGUITY POLICY
+## 5. AMBIGUITY POLICY (ISSUE #6 FIX)
 
-### 5.1 UNKNOWN Handling
-- **Do NOT force classification.** Preserve as `type: AMBIGUOUS`
-- **Record candidate_interpretations** from classifier output
-- **Add resolution_attempt** explaining why disambiguation failed
-- **Example:**
+### 5.1 UNKNOWN Handling — Use 5.2 EpistemicStatus.UNKNOWN
+- **Do NOT invent new KnowledgeType.** Use the frozen 5.2 schema
+- **For UNKNOWN propositions from 5.4:**
+  1. Pick the best-candidate KnowledgeType from the classifier's candidate_classes (or a neutral default)
+  2. Set `epistemic_status` to `UNKNOWN` (not `SOURCE_REPORTED`)
+  3. Set `ambiguity` field to explain why semantic function is unresolved
+  4. Preserve `candidate_classes` information in `notes` field (unstructured for audit trail)
+- **Example (using frozen 5.2 schema):**
   ```json
   {
-    "proposition_id": "prop_000003",
-    "type": "AMBIGUOUS",
-    "original_text": "now all you need to know is that these make up the building blocks of our sound",
-    "candidate_classes": ["OBSERVATION", "PRINCIPLE", "PROCEDURE"],
-    "ambiguity_reason": "semantic function unclear — could be describing architecture, explaining relationships, or prescribing mental model",
-    "normalization_status": "UNRESOLVED"
+    "knowledge_item_id": "ki_...",
+    "source_reference": { "source_id": "yt_74ab96e1f377", "segment_ids": ["seg_0003"], ... },
+    "original_proposition": "now all you need to know is that these make up the building blocks of our sound",
+    "knowledge_type": "OBSERVATION",  // BEST GUESS, not certain
+    "epistemic_status": "UNKNOWN",     // NOT SOURCE_REPORTED
+    "normalized_proposition": null,
+    "semantic_bindings": [],
+    "extraction_confidence": 0.5,     // LOW: reflects ambiguity
+    "ambiguity": "semantic function unclear — could be OBSERVATION (describing architecture), PRINCIPLE (explaining relationships), or PROCEDURE (mental model instruction)",
+    "notes": "Candidates: [OBSERVATION, PRINCIPLE, PROCEDURE]. Classifier could not determine semantic function from text alone.",
+    "conditions": [],
+    "limitations": []
   }
   ```
 
-### 5.2 Context-Based Disambiguation (limited)
+### 5.2 Assigning Best-Guess KnowledgeType for UNKNOWN
+- **Rule:** When 5.4 gives candidates `[A, B, C]`, normalization picks one:
+  - If one candidate has significantly higher mention in source, prefer it
+  - If tied, prefer: OBSERVATION > PRINCIPLE > PROCEDURE (preserves information without claiming causality)
+  - Set `extraction_confidence` LOW (0.4–0.6) to signal uncertainty
+  - Set `epistemic_status` to UNKNOWN (NOT SOURCE_REPORTED)
+
+### 5.3 Context-Based Disambiguation (limited)
 - If source provides immediate contextual clues (in adjacent segments), may attempt disambiguation
 - **Only if:** The context is within the same source and explicitly resolves ambiguity
-- **Example:** If preceding segment says "to understand signal flow", then ambiguous item becomes PRINCIPLE (contextually resolved)
+- **Example:** If preceding segment says "to understand signal flow", then ambiguous item clarifies as PRINCIPLE (contextually resolved)
+- **If disambiguated:** Upgrade `epistemic_status` to `SOURCE_REPORTED`, set `ambiguity` to null, raise `extraction_confidence`
 - **Not allowed:** Importing context from Serum manual, other videos, or external knowledge
 
-### 5.3 Ambiguity Preservation in Ledger
+### 5.4 Ambiguity Preservation in Ledger
 - Keep unresolved items in the normalization ledger with status "UNRESOLVED"
-- These items are candidates for manual review or future refinement, not automatic forcing
+- Record best-guess KnowledgeType and confidence in ledger for audit
+- These items are candidates for manual review or future refinement
 
 ---
 
@@ -320,15 +342,29 @@ These changes violate the normalization boundary and must trigger REJECTION:
 - A proposition may span multiple transcript segments (e.g., prop spans seg_0100–seg_0115)
 - Normalization must preserve all segment IDs and reconstruct meaning from concatenated source
 
-### 6.2 Handling
-- **Preserve segment structure:** Store full list of segment IDs
-- **Do NOT split:** Multi-segment items stay as single KnowledgeItem (not broken into per-segment items)
-- **Do NOT merge:** Separate propositions with separate segment lists remain separate
-- **Example:** A 5-segment definition stays as one CONCEPT KnowledgeItem with 5 segment IDs
+### 6.2 Core Invariant (REPLACES "don't split/merge")
+- **Meaning preservation rule:** Do not change proposition identity or meaning merely for normalization convenience
+- Implications:
+  - A multi-segment proposition remains one KnowledgeItem (don't split into per-segment items)
+  - Separate propositions with distinct segment lists remain separate (don't merge for deduplication)
+  - However, if 5.4 extraction accidentally grouped two independent propositions into one semantic unit, normalization MAY separate them if doing so clarifies meaning without inventing content
 
-### 6.3 Concatenation Rule
+### 6.3 When to Separate (Issue #7)
+- **Signal:** Original text contains explicit breaks in thought (e.g., "First... Second..." or "; " + semantic shift)
+- **Example OK to separate:**
+  - Extracted as one: `"Decay is the sustain transition time. For bright tone, shorten release."`
+  - Two independent ideas: CONCEPT (decay definition) + RECOMMENDATION (bright tone advice)
+  - Action: Create two KnowledgeItems, each with their own segment references
+  - Ledger entry: "SEPARATED — two independent propositions detected in single extraction unit"
+- **Example DO NOT separate:**
+  - Extracted as one: `"Decay is the time from peak to sustain level, measured in milliseconds."`
+  - Single continuous definition (no independent break)
+  - Action: Keep as one CONCEPT KnowledgeItem
+
+### 6.4 Concatenation Rule
 - If source text spans segments: Join with single space, preserve order
 - Remove transcript artifacts ("[Music]", "[Pause]") when joining
+- If separation occurs, preserve exact segment IDs for each resulting KnowledgeItem
 
 ---
 
@@ -397,20 +433,37 @@ These changes violate the normalization boundary and must trigger REJECTION:
 
 ## 10. SEMANTIC-BINDING POLICY
 
-### 10.1 Definition
-- Semantic binding: Explicit connection between source text and a supported ontology term
-- Examples:
-  - Text mentions "oscillator" → binding: { type: "device_class", value: "oscillator" }
-  - Text mentions "modulation" → binding: { type: "concept", value: "modulation" }
+### 10.1 Use Frozen 5.2 SemanticBinding Structure
+- Normalization uses the canonical SemanticBinding from 5.2 schema:
+  ```python
+  @dataclass
+  class SemanticBinding:
+    dimension: str         # e.g., "device_class", "concept", "technique"
+    value: str            # e.g., "oscillator", "modulation"
+    confidence: float     # 0.0-1.0
+    ambiguity: Optional[str]  # Preserve unresolved ambiguity per binding
+  ```
+- Do NOT invent new dimensions or fields
 
 ### 10.2 Allowed Bindings
-- Only bindings explicitly supported by the schema (to be defined in 5.5 implementation)
+- Only extract explicit mentions from source text
+- Examples:
+  - Text mentions "oscillator" → binding: `{ dimension: "device_reference", value: "oscillator", confidence: 0.95, ambiguity: null }`
+  - Text mentions "filter modulation" → binding: `{ dimension: "technique", value: "filter_modulation", confidence: 0.85, ambiguity: null }`
 - **Not allowed:** Inventing bindings for backend systems (e.g., mapping to Serum MATRIX if not mentioned)
+- **Not allowed:** Creating new dimension names not in 5.2 schema
 
 ### 10.3 Example
 - Source: "An arpeggiator takes chords and sequences them into melodies"
-- Binding: `{ type: "device_class", value: "arpeggiator" }` (explicit mention)
+- Binding: `{ dimension: "device_class", value: "arpeggiator", confidence: 1.0, ambiguity: null }`
 - **Not:** Mapping to "serum_arpeggiator" or adding backend-specific behavior
+
+### 10.4 Ambiguity in Bindings
+- If a binding's value is ambiguous (multiple interpretations), use the `ambiguity` field:
+  ```json
+  { "dimension": "technique", "value": "resonance_shaping", 
+    "confidence": 0.6, "ambiguity": "could mean peak emphasis or frequency carving" }
+  ```
 
 ---
 
@@ -539,31 +592,40 @@ These changes violate the normalization boundary and must trigger REJECTION:
 
 ## 16. UNRESOLVED DESIGN QUESTIONS
 
-### 16.1 Semantic Bindings Schema
-- **Open:** What is the complete set of supported semantic binding types?
-- **Dependency:** 5.2 KnowledgeItem schema must be consulted
-- **Action:** Extract from 5.2 schema; if not defined there, defer binding layer to 5.6
+### 16.1 Semantic Binding Dimensions (Issue #3)
+- **Status:** RESOLVED — 5.2 schema defines SemanticBinding structure
+- **Answer:** Use frozen 5.2 fields: (dimension, value, confidence, ambiguity)
+- **Action:** Identify valid dimensions during implementation; do not invent new ones
 
-### 16.2 Ambiguity Resolution Criteria
-- **Open:** If context from adjacent segments can disambiguate UNKNOWN, should normalization attempt it?
-- **Current:** Limited — only if context is in source and unambiguous
-- **Action:** Freeze this rule; allow future refinement based on implementation experience
+### 16.2 Ambiguity Resolution Criteria (Issue #6)
+- **Status:** RESOLVED — Use 5.2 EpistemicStatus.UNKNOWN
+- **Answer:** Pick best-guess KnowledgeType; set epistemic_status=UNKNOWN
+- **Action:** Implement context-based disambiguation only if source clarifies
 
-### 16.3 CONTEXT Filler Boundary
-- **Open:** Is "In this section, we'll explore X" knowledge or organizational filler?
-- **Current:** Treated as CONTEXT (knowledge), not filler
-- **Rationale:** Provides frame for understanding scope; not purely promotional
-- **Action:** Accept current boundary; audit borderline cases during implementation
+### 16.3 CONTEXT vs Course/Video Metadata (Issue #4)
+- **Status:** RESOLVED — Added explicit boundary rule in section 4.8
+- **Answer:** CONTEXT helps understand the knowledge; metadata describes the course structure
+- **Action:** Apply decision rule: "Does this help me understand the music/production knowledge, or the course?"
 
-### 16.4 Deduplication Strategy
+### 16.4 Multi-Segment Handling (Issue #5)
+- **Status:** RESOLVED — Meaning-preservation rule replaces "don't split/merge"
+- **Answer:** Allow separation if 5.4 grouped independent propositions; preserve segment IDs
+- **Action:** Implement separation detection (explicit breaks in thought, semantic shifts)
+
+### 16.5 Improperly Grouped Propositions (Issue #7)
+- **Status:** RESOLVED — Section 6 defines separation criteria
+- **Answer:** If original unit contains two independent ideas, create separate KnowledgeItems
+- **Action:** Document in ledger as "SEPARATED — independent propositions detected"
+
+### 16.6 Cross-Source Deduplication (future design question)
 - **Open:** How should cross-source deduplication work (when multiple videos mention same fact)?
 - **Current:** Deferred — preserve source boundaries in 5.5, handle in later design
 - **Action:** Document for 5.5.1 or 5.6
 
-### 16.5 Multi-Backend Support
+### 16.7 Multi-Backend Support (future design question)
 - **Open:** Should normalization anticipate future backends (Live, Bitwig, etc.)?
 - **Current:** No — remain backend-independent and universal
-- **Action:** Design binding layer (16.6+) to handle backend-specific mappings separately
+- **Action:** Design binding layer (future phase) to handle backend-specific mappings separately
 
 ---
 
