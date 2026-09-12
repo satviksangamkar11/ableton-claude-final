@@ -250,6 +250,12 @@ def execute_producer_feedback_episode(
 
     # Persist episode
     print("\n[9/10] Persisting episode...")
+    # Learning eligibility: episode can teach if in-scope (both accepted AND rejected are valuable)
+    # Accepted = positive experience (what worked)
+    # Rejected = negative experience (what didn't work, avoid repeating)
+    # Separate: capability_promotion_eligible (requires Evidence → Claim → Capability machinery)
+    learning_eligible_value = scope_valid  # True if in-scope (regardless of accept/reject)
+
     episode = ExecutionRecord(
         episode_id=episode_id,
         timestamp=datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -275,9 +281,9 @@ def execute_producer_feedback_episode(
         measurement_delta=delta,
         restoration_value=baseline_param,
         restoration_readback=readback_restored,
-        notes="Canonical producer feedback loop episode",
-        learning_eligible=decision.accepted and scope_info is not None,  # True if in-scope AND accepted
-        observation_only=True,
+        notes="Canonical producer feedback loop episode - deterministic target selection + mutation planning",
+        learning_eligible=learning_eligible_value,  # True if in-scope (both accepted and rejected episodes teach)
+        observation_only=True,  # Cannot alter authoritative capability state
         prerequisite_scope_violated=not scope_valid,
     )
 
