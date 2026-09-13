@@ -581,9 +581,16 @@ class ProducerBrain:
     ) -> Dict[str, Any]:
         """Compile MCP intent → structured execution plan.
 
-        Returns a plan dict. The actual MCP tool calls (get_device_parameters,
-        set_device_parameter, readback) are performed by the caller (Claude Code
-        environment) — the Python process cannot invoke MCP tools natively.
+        ARCHITECTURE BOUNDARY:
+        The brain's responsibility ends at plan production. Execution of actual
+        Ableton MCP tools happens in the orchestrating runtime (Claude Code).
+        This is correct per CLAUDE.md control-route architecture: the brain is
+        advisory; only real, measured execution counts. The caller must:
+          1. Execute each tool per execution_steps
+          2. Capture tool outputs (before, after, readback)
+          3. Call finalize_mcp_execution(tool_calls, before, after, readback_verified)
+
+        Only then does the result become EXECUTED (not PLAN_READY).
 
         When semantic_target is a pre-resolved MCP target name (e.g. "OSC1.Volume"),
         the intent parser is bypassed and the value is derived from the raw intent text
@@ -788,12 +795,37 @@ class ProducerBrain:
 
         try:
             # ---- source URL ingestion (STEP 6) ----
+            ingested_source_id = None
             if request.source_url:
                 ingest_result = self._ingest_source_url(request.source_url)
+                ingested_source_id = ingest_result.get("source_id")
+                ingest_status = ingest_result.get("status")
+
+                # Verify ingestion completed and canonical store is available
+                if ingest_status in ("INGESTED", "ALREADY_INGESTED"):
+                    # Wait for canonical store to be available before proceeding
+                    knowledge_dir = Path(__file__).parent.parent / "knowledge"
+                    canonical_store = knowledge_dir / (
+                        "%s_canonical_knowledge_store_5_6.json" % ingested_source_id
+                    )
+                    if not canonical_store.exists():
+                        result.error = (
+                            "Source ingestion completed but canonical store %s "
+                            "not found. Ingestion pipeline may have failed." % canonical_store.name
+                        )
+                        result.execution_status = "INGESTION_STORE_MISSING"
+                        return result
+                else:
+                    result.error = (
+                        "Source ingestion failed with status %r. "
+                        "Details: %s" % (ingest_status, ingest_result.get("error", "unknown"))
+                    )
+                    result.execution_status = "INGESTION_FAILED"
+                    return result
+
                 result.advisory_rationale = (
-                    "source_url ingestion: status=%s source_id=%s" % (
-                        ingest_result.get("status"),
-                        ingest_result.get("source_id"),
+                    "source_url ingestion: status=%s source_id=%s verified_store=yes" % (
+                        ingest_status, ingested_source_id
                     )
                 )
 
