@@ -3,19 +3,17 @@
 PROVEN OPERATIONS (implemented):
 - FX add/remove/replace via array mutation primitives (Phase FX-FULL)
 - Clear entire FX rack (Phase FX-FULL)
+- FX bypass/unbypass via plainParams mutation (Phase FX-FULL, Step 16 discovery)
 
-UNRESOLVED OPERATIONS (bypass mechanism unknown, marked UNRESOLVED):
-- FX enable/bypass/disable (Phase FX-2) — requires flex field investigation
+DISCOVERED BYPASS MECHANISM (Step 16):
+- ACTIVE: FXRack0.FX[i].<FXType>.plainParams = "default" (string)
+- BYPASSED: FXRack0.FX[i].<FXType>.plainParams = {"kParamEnable": 0.0} (dict)
+- Confirmed on Distortion (type=0) and Delay (type=4)
+- Preserves FX slot, array topology, and all other state
+
+UNRESOLVED OPERATIONS (future phases):
 - Move effect between buses (Phase FX-2)
-
-After authoritative investigation, FX bypass mechanism was not found in:
-  - plainParams.kParamEnable
-  - plainParams.kParamBypass
-  - VST3 parameter enumeration
-  - type discriminant field
-
-The flex field remains unexplored and is the most likely location.
-Next investigation: differential state analysis (active vs bypassed vs removed).
+- Advanced modulation routing (Phase FX-3)
 
 These operations work with the three-bus model (MAIN/BUS1/BUS2) and
 support all 14 effect types.
@@ -42,14 +40,14 @@ from serum2 import pathmerge
 
 class FXStructuralOperation(Enum):
     """FX topology/slot operations."""
-    ENABLE = "enable"
-    DISABLE = "disable"
     ADD = "add"
     REMOVE = "remove"
     REPLACE = "replace"
     REORDER = "reorder"
     MOVE_BETWEEN_BUSES = "move_between_buses"
     CLEAR_RACK = "clear_rack"
+    BYPASS = "bypass"
+    UNBYPASS = "unbypass"
 
 
 class Bus(Enum):
@@ -96,34 +94,6 @@ class FXStructuralCompiler:
     def __init__(self):
         pass
 
-    def disable_effect(
-        self,
-        operation: SerumOperation,
-        bus: Bus,
-        slot_index: int,
-    ) -> OperationResult:
-        """Disable (remove) an effect at a slot.
-
-        Uses array_remove to remove element at slot_index.
-        Subsequent elements shift down.
-        """
-        location = FXSlotLocation(bus, slot_index)
-        fx_array_path = location.fx_array_path
-
-        # Create a pseudo-mutation that encodes the array operation
-        # This is represented as a special mutation type understood by harness
-        mutation = Mutation(
-            target_path=fx_array_path,
-            value={"__array_op__": "remove", "index": slot_index},
-            provenance=f"SerumOperation.{operation.operation_id}",
-        )
-
-        return OperationResult(
-            operation_id=operation.operation_id,
-            success=True,
-            compiled_mutations=[mutation],
-            mutation_description=f"FX disable: Remove effect at {location.rack_path}[{slot_index}]",
-        )
 
     def add_effect(
         self,
@@ -208,6 +178,82 @@ class FXStructuralCompiler:
             mutation_description=f"FX clear: Remove all effects from {location.rack_path}",
         )
 
+    def bypass_effect(
+        self,
+        operation: SerumOperation,
+        bus: Bus,
+        slot_index: int,
+    ) -> OperationResult:
+        """Bypass an effect at a slot (proven mechanism, Step 16).
+
+        Mutates plainParams from "default" to {"kParamEnable": 0.0}.
+        Preserves FX slot, array topology, and all other state.
+
+        ACTIVE: FXRack0.FX[i].<FXType>.plainParams = "default"
+        BYPASSED: FXRack0.FX[i].<FXType>.plainParams = {"kParamEnable": 0.0}
+
+        Confirmed on Distortion (type=0) and Delay (type=4).
+        """
+        location = FXSlotLocation(bus, slot_index)
+        slot_path = location.slot_path
+
+        # Read current slot to get FX type name (FXDistortion, FXDelay, etc.)
+        # The plainParams path is: FXRack<N>.FX.<slot_index>.<FXType>.plainParams
+        # We need to construct the path dynamically based on the current state
+        # For now, we'll use a path expression that works generically:
+        # FXRack<N>.FX.<slot_index>.<first_key_that_starts_with_FX>.plainParams
+
+        # Create mutation for plainParams field
+        # The path will be applied at execution time when the full state is known
+        plainparams_path = f"{slot_path}.*.plainParams"  # * = first FX-prefixed key
+
+        mutation = Mutation(
+            target_path=plainparams_path,
+            value={"kParamEnable": 0.0},
+            provenance=f"SerumOperation.{operation.operation_id}",
+        )
+
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=True,
+            compiled_mutations=[mutation],
+            mutation_description=f"FX bypass: Bypass effect at {location.rack_path}[{slot_index}]",
+        )
+
+    def unbypass_effect(
+        self,
+        operation: SerumOperation,
+        bus: Bus,
+        slot_index: int,
+    ) -> OperationResult:
+        """Unbypass (activate) an effect at a slot (proven mechanism, Step 16).
+
+        Mutates plainParams from {"kParamEnable": 0.0} to "default".
+        Preserves FX slot, array topology, and all other state.
+
+        BYPASSED: FXRack0.FX[i].<FXType>.plainParams = {"kParamEnable": 0.0}
+        ACTIVE: FXRack0.FX[i].<FXType>.plainParams = "default"
+
+        Confirmed on Distortion (type=0) and Delay (type=4).
+        """
+        location = FXSlotLocation(bus, slot_index)
+        slot_path = location.slot_path
+
+        plainparams_path = f"{slot_path}.*.plainParams"  # * = first FX-prefixed key
+
+        mutation = Mutation(
+            target_path=plainparams_path,
+            value="default",
+            provenance=f"SerumOperation.{operation.operation_id}",
+        )
+
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=True,
+            compiled_mutations=[mutation],
+            mutation_description=f"FX unbypass: Unbypass effect at {location.rack_path}[{slot_index}]",
+        )
+
 
 def build_fx_structural_operations(registry: OperationRegistry) -> None:
     """Register FX structural operations.
@@ -217,27 +263,23 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
     - REMOVE: implemented via array_remove primitive
     - ADD: implemented via array_insert primitive
     - REPLACE: implemented via array_replace_element primitive
+    - BYPASS: implemented via plainParams mutation (Step 16 discovery)
+    - UNBYPASS: implemented via plainParams mutation (Step 16 discovery)
 
-    UNRESOLVED OPERATIONS (NOT registered):
-    - ENABLE: unresolved (bypass mechanism unknown)
-    - DISABLE: unresolved (bypass mechanism unknown, NOT array_remove)
-    - BYPASS: unresolved (bypass mechanism unknown)
-    - UNBYPASS: unresolved (bypass mechanism unknown)
+    BYPASS MECHANISM (Step 16 discovery):
+    Active FX: FXRack0.FX[i].<FXType>.plainParams = "default"
+    Bypassed FX: FXRack0.FX[i].<FXType>.plainParams = {"kParamEnable": 0.0}
 
-    REASON FOR UNRESOLVED:
-    After authoritative investigation, FX bypass mechanism was NOT found in:
-      - plainParams.kParamEnable
-      - plainParams.kParamBypass
-      - VST3 parameter enumeration (2623 params)
-      - type discriminant field
+    Confirmed on:
+      - Distortion (type=0)
+      - Delay (type=4)
 
-    The FXRack0.FX[i].flex field remains structurally present but semantically
-    unexplored. This is the most likely location for bypass state.
+    Preserves:
+      - FX slot position
+      - FX array topology
+      - All other FX state and parameters
 
-    NEXT INVESTIGATION:
-    Differential state analysis: capture and compare three authoritative states
-    (active FX vs bypassed FX vs removed FX) at the v8 serialization level to
-    identify which field(s) differ between active↔bypassed vs bypassed↔removed.
+    Distinct from REMOVE (topology change).
     """
     compiler = FXStructuralCompiler()
 
@@ -250,7 +292,7 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
         definition = OperationDefinition(
             operation_id=operation_id,
             semantic_name=semantic_name,
-            kind=OperationKind.STRUCTURAL,
+            kind=OperationKind.TOPOLOGY,
             parameters=[],
             measurement_metric=None,
             expected_direction=None,
@@ -269,6 +311,80 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
             return clear_compiler
 
         registry.register_compiler(operation_id, make_clear_compiler(bus))
+
+    # Register BYPASS operations for each bus (PROVEN - Step 16)
+    for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
+        bus_name = bus.name
+        operation_id = f"fx_struct_bypass_{bus_name}"
+        semantic_name = f"Bypass FX {bus_name}"
+
+        definition = OperationDefinition(
+            operation_id=operation_id,
+            semantic_name=semantic_name,
+            kind=OperationKind.TOPOLOGY,
+            parameters=[
+                OperationParameter(
+                    name="slot_index",
+                    value=None,
+                    required=True,
+                    description="Index of FX slot to bypass",
+                )
+            ],
+            measurement_metric=None,
+            expected_direction=None,
+            description=f"Bypass an effect in {bus_name} FX rack",
+        )
+
+        registry.register(definition)
+
+        # Register compiler
+        def make_bypass_compiler(target_bus: Bus) -> callable:
+            def bypass_compiler(
+                operation: SerumOperation, ctx: OperationContext
+            ) -> OperationResult:
+                slot_idx = operation.parameters[0].value if operation.parameters else 0
+                return compiler.bypass_effect(operation, target_bus, slot_idx)
+
+            return bypass_compiler
+
+        registry.register_compiler(operation_id, make_bypass_compiler(bus))
+
+    # Register UNBYPASS operations for each bus (PROVEN - Step 16)
+    for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
+        bus_name = bus.name
+        operation_id = f"fx_struct_unbypass_{bus_name}"
+        semantic_name = f"Unbypass FX {bus_name}"
+
+        definition = OperationDefinition(
+            operation_id=operation_id,
+            semantic_name=semantic_name,
+            kind=OperationKind.TOPOLOGY,
+            parameters=[
+                OperationParameter(
+                    name="slot_index",
+                    value=None,
+                    required=True,
+                    description="Index of FX slot to unbypass",
+                )
+            ],
+            measurement_metric=None,
+            expected_direction=None,
+            description=f"Unbypass an effect in {bus_name} FX rack",
+        )
+
+        registry.register(definition)
+
+        # Register compiler
+        def make_unbypass_compiler(target_bus: Bus) -> callable:
+            def unbypass_compiler(
+                operation: SerumOperation, ctx: OperationContext
+            ) -> OperationResult:
+                slot_idx = operation.parameters[0].value if operation.parameters else 0
+                return compiler.unbypass_effect(operation, target_bus, slot_idx)
+
+            return unbypass_compiler
+
+        registry.register_compiler(operation_id, make_unbypass_compiler(bus))
 
 
 def register_fx_structural_operations() -> None:
