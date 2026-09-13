@@ -36,6 +36,18 @@ PHASE_9B_STRUCTURAL_PATHS = {
     "global_field_pitch_tracking": "Oscillator0.plainParams.kParamPitchTrack",
     "arp_field_ENABLE": "Arp0.plainParams.kParamEnabled",
 
+    # STEP 20A-20B: OSC MIX controls (persistent via plainParams) — parametric pattern
+    "osc1_plain_param_pan": "Oscillator0.plainParams.kParamPan",
+    "osc1_plain_param_level": "Oscillator0.plainParams.kParamVolume",
+    "osc2_plain_param_pan": "Oscillator1.plainParams.kParamPan",
+    "osc2_plain_param_level": "Oscillator1.plainParams.kParamVolume",
+    "osc3_plain_param_pan": "Oscillator2.plainParams.kParamPan",
+    "osc3_plain_param_level": "Oscillator2.plainParams.kParamVolume",
+    "sub_plain_param_pan": "Oscillator3.plainParams.kParamPan",
+    "sub_plain_param_level": "Oscillator3.plainParams.kParamVolume",
+    "noise_plain_param_pan": "Oscillator4.plainParams.kParamPan",
+    "noise_plain_param_level": "Oscillator4.plainParams.kParamVolume",
+
     # Phase FX-FULL: Complete FX parameter paths (corpus-verified)
     # BODE parameters
     "fx_field_bode_shift": "FXRack{R}.FX.{N}.FXBode.plainParams.kParamShift",
