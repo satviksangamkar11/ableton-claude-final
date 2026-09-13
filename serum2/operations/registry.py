@@ -122,11 +122,75 @@ def get_registry() -> OperationRegistry:
 
 
 def _populate_builtin_operations(registry: OperationRegistry) -> None:
-    """Populate the registry with built-in scalar/state operations.
+    """Populate the registry with built-in operations.
 
-    This is called once at module initialization.
-    Structured operations are registered separately.
+    Called once at module initialization.
+    Phase 2: scalar operations from SEMANTIC_TARGETS
+    Phase 3: compound operations (modulation, macro)
     """
     # Phase 2: auto-generate scalar operations from SEMANTIC_TARGETS
     from .scalar_operations import build_scalar_operations_from_targets
     build_scalar_operations_from_targets(registry)
+
+    # Phase 3: compound operations
+    from .compound_operations import (
+        compiler_create_modulation_route,
+        compiler_delete_modulation_route,
+        compiler_set_macro_value,
+        compiler_rename_macro,
+    )
+
+    # Modulation route creation
+    registry.register(OperationDefinition(
+        operation_id="compound_create_modulation_route",
+        semantic_name="Create Modulation Route",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("source_id", None, True, "LFO or modulation source ID"),
+            OperationParameter("destination_param", None, True, "Destination semantic target"),
+            OperationParameter("amount", None, True, "Modulation amount (0.0-1.0)"),
+            OperationParameter("modslot_index", None, False, "ModSlot index (0-63); auto if not specified"),
+        ],
+        description="Create a new modulation route from source to destination",
+    ))
+    registry.register_compiler("compound_create_modulation_route", compiler_create_modulation_route)
+
+    # Modulation route deletion
+    registry.register(OperationDefinition(
+        operation_id="compound_delete_modulation_route",
+        semantic_name="Delete Modulation Route",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("modslot_index", None, False, "ModSlot index (0-63) to delete"),
+            OperationParameter("source_id", None, False, "LFO source ID (if searching by route)"),
+            OperationParameter("destination_param", None, False, "Destination (if searching by route)"),
+        ],
+        description="Delete an existing modulation route",
+    ))
+    registry.register_compiler("compound_delete_modulation_route", compiler_delete_modulation_route)
+
+    # Macro value
+    registry.register(OperationDefinition(
+        operation_id="compound_set_macro_value",
+        semantic_name="Set Macro Value",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("macro_id", None, True, "Macro index (0-7)"),
+            OperationParameter("value", None, True, "Macro value (0.0-1.0)"),
+        ],
+        description="Set the value of a macro",
+    ))
+    registry.register_compiler("compound_set_macro_value", compiler_set_macro_value)
+
+    # Macro rename
+    registry.register(OperationDefinition(
+        operation_id="compound_rename_macro",
+        semantic_name="Rename Macro",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("macro_id", None, True, "Macro index (0-7)"),
+            OperationParameter("name", None, True, "New name for the macro"),
+        ],
+        description="Rename a macro",
+    ))
+    registry.register_compiler("compound_rename_macro", compiler_rename_macro)
