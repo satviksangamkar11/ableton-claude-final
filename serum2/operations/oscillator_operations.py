@@ -264,15 +264,18 @@ def compiler_load_wavetable(
 
     Parameters:
       - oscillator (int): Oscillator index (0, 1, 2, ...)
-      - path (str): Relative path to wavetable file
+      - resource (str): Resource identifier (name, path, or canonical ID)
 
     Returns:
-      OperationResult with RESOURCE kind (not executed yet; Phase 6 will handle).
+      OperationResult with Mutation for wavetable resource path.
     """
+    from .resource_resolver import ResourceResolver
+    from .resource_model import ResourceAvailability
+
     params_dict = {p.name: p.value for p in operation.parameters}
 
     osc_index = params_dict.get("oscillator")
-    path = params_dict.get("path")
+    resource_id = params_dict.get("resource")
 
     if osc_index is None:
         return OperationResult(
@@ -282,12 +285,12 @@ def compiler_load_wavetable(
             error_detail="load_wavetable requires oscillator index",
         )
 
-    if path is None:
+    if resource_id is None:
         return OperationResult(
             operation_id=operation.operation_id,
             success=False,
-            compilation_error="MISSING_PATH",
-            error_detail="load_wavetable requires resource path",
+            compilation_error="MISSING_RESOURCE",
+            error_detail="load_wavetable requires resource identifier",
         )
 
     try:
@@ -300,13 +303,33 @@ def compiler_load_wavetable(
             error_detail=f"Oscillator index must be integer, got {osc_index}",
         )
 
-    # For now, return a RESOURCE placeholder
-    # Phase 6 will implement actual resource loading
-    mutation_path = f"Oscillator{osc_idx}.WTOsc{osc_idx}.relativePathToWT"
+    if osc_idx < 0:
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="NEGATIVE_OSCILLATOR_INDEX",
+            error_detail=f"Oscillator index must be >= 0, got {osc_idx}",
+        )
+
+    # Resolve resource
+    resolver = ResourceResolver()
+    resolution = resolver.resolve_wavetable(str(resource_id))
+
+    if not resolution.success():
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error=f"RESOURCE_{resolution.availability.name}",
+            error_detail=resolution.failed_reason(),
+            notes=f"Searched: {', '.join(resolution.search_roots)}",
+        )
+
+    resource = resolution.resource
+    mutation_path = resolver.resource_to_state_path(resource, osc_idx)
 
     mutation = Mutation(
         target_path=mutation_path,
-        value=str(path),
+        value=resource.serum_relative_path,
         provenance=f"SerumOperation.{operation.operation_id}",
     )
 
@@ -314,8 +337,8 @@ def compiler_load_wavetable(
         operation_id=operation.operation_id,
         success=True,
         compiled_mutations=[mutation],
-        mutation_description=f"Load wavetable: Oscillator{osc_idx} ← {path}",
-        notes=f"RESOURCE: Phase 6 will validate file existence and load. Path: {mutation_path}",
+        mutation_description=f"Load wavetable: Oscillator{osc_idx} ← {resource.display_name}",
+        notes=f"Resource: {resource.canonical_id} (hash: {resource.file_hash}). Path: {mutation_path} = {resource.serum_relative_path}",
     )
 
 
@@ -327,15 +350,18 @@ def compiler_load_sample(
 
     Parameters:
       - oscillator (int): Oscillator index
-      - path (str): Relative path to sample file
+      - resource (str): Resource identifier (name, path, or canonical ID)
 
     Returns:
-      OperationResult with RESOURCE placeholder.
+      OperationResult with Mutation for sample resource path.
     """
+    from .resource_resolver import ResourceResolver
+    from .resource_model import ResourceAvailability
+
     params_dict = {p.name: p.value for p in operation.parameters}
 
     osc_index = params_dict.get("oscillator")
-    path = params_dict.get("path")
+    resource_id = params_dict.get("resource")
 
     if osc_index is None:
         return OperationResult(
@@ -345,12 +371,12 @@ def compiler_load_sample(
             error_detail="load_sample requires oscillator index",
         )
 
-    if path is None:
+    if resource_id is None:
         return OperationResult(
             operation_id=operation.operation_id,
             success=False,
-            compilation_error="MISSING_PATH",
-            error_detail="load_sample requires resource path",
+            compilation_error="MISSING_RESOURCE",
+            error_detail="load_sample requires resource identifier",
         )
 
     try:
@@ -363,11 +389,33 @@ def compiler_load_sample(
             error_detail=f"Oscillator index must be integer, got {osc_index}",
         )
 
-    mutation_path = f"Oscillator{osc_idx}.SampleOsc{osc_idx}.relativePathToSample"
+    if osc_idx < 0:
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="NEGATIVE_OSCILLATOR_INDEX",
+            error_detail=f"Oscillator index must be >= 0, got {osc_idx}",
+        )
+
+    # Resolve resource
+    resolver = ResourceResolver()
+    resolution = resolver.resolve_sample(str(resource_id))
+
+    if not resolution.success():
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error=f"RESOURCE_{resolution.availability.name}",
+            error_detail=resolution.failed_reason(),
+            notes=f"Searched: {', '.join(resolution.search_roots)}",
+        )
+
+    resource = resolution.resource
+    mutation_path = resolver.resource_to_state_path(resource, osc_idx)
 
     mutation = Mutation(
         target_path=mutation_path,
-        value=str(path),
+        value=resource.serum_relative_path,
         provenance=f"SerumOperation.{operation.operation_id}",
     )
 
@@ -375,6 +423,6 @@ def compiler_load_sample(
         operation_id=operation.operation_id,
         success=True,
         compiled_mutations=[mutation],
-        mutation_description=f"Load sample: Oscillator{osc_idx} ← {path}",
-        notes=f"RESOURCE: Phase 6 will validate file existence and load. Path: {mutation_path}",
+        mutation_description=f"Load sample: Oscillator{osc_idx} ← {resource.display_name}",
+        notes=f"Resource: {resource.canonical_id} (hash: {resource.file_hash}). Path: {mutation_path} = {resource.serum_relative_path}",
     )

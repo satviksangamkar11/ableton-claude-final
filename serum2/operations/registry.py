@@ -257,10 +257,10 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         kind=OperationKind.RESOURCE,
         parameters=[
             OperationParameter("oscillator", None, True, "Oscillator index"),
-            OperationParameter("path", None, True, "Relative path to wavetable file"),
+            OperationParameter("resource", None, True, "Resource identifier (name, path, or canonical ID)"),
         ],
         resource_kind="wavetable",
-        description="Load wavetable into oscillator (Phase 6: resource validation)",
+        description="Load wavetable into oscillator (Phase 6: resource resolution)",
     ))
     registry.register_compiler("osc_load_wavetable", compiler_load_wavetable)
 
@@ -271,9 +271,9 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         kind=OperationKind.RESOURCE,
         parameters=[
             OperationParameter("oscillator", None, True, "Oscillator index"),
-            OperationParameter("path", None, True, "Relative path to sample file"),
+            OperationParameter("resource", None, True, "Resource identifier (name, path, or canonical ID)"),
         ],
         resource_kind="sample",
-        description="Load sample into oscillator (Phase 6: resource validation)",
+        description="Load sample into oscillator (Phase 6: resource resolution)",
     ))
     registry.register_compiler("osc_load_sample", compiler_load_sample)

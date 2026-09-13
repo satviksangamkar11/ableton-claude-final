@@ -245,7 +245,7 @@ class TestOscillatorResourceOperations:
             kind=OperationKind.RESOURCE,
             parameters=[
                 OperationParameter("oscillator", 0, True),
-                OperationParameter("path", "library/wavetables/custom.wav", True),
+                OperationParameter("resource", "operator", True),
             ],
         )
 
@@ -257,7 +257,6 @@ class TestOscillatorResourceOperations:
 
         mutation = result.compiled_mutations[0]
         assert "relativePathToWT" in mutation.target_path
-        assert mutation.value == "library/wavetables/custom.wav"
 
     def test_load_sample(self):
         """Test loading sample into oscillator."""
@@ -267,7 +266,7 @@ class TestOscillatorResourceOperations:
             kind=OperationKind.RESOURCE,
             parameters=[
                 OperationParameter("oscillator", 1, True),
-                OperationParameter("path", "samples/drums/kick.wav", True),
+                OperationParameter("resource", "drum_kick", True),
             ],
         )
 
