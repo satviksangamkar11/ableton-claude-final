@@ -140,6 +140,9 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         compiler_rename_macro,
     )
 
+    # Phase 4: FX operations
+    from .fx_operations import compiler_set_fx_parameter
+
     # Modulation route creation
     registry.register(OperationDefinition(
         operation_id="compound_create_modulation_route",
@@ -194,3 +197,19 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         description="Rename a macro",
     ))
     registry.register_compiler("compound_rename_macro", compiler_rename_macro)
+
+    # Phase 4: FX operations
+    registry.register(OperationDefinition(
+        operation_id="fx_set_parameter",
+        semantic_name="Set FX Parameter",
+        kind=OperationKind.STATE,
+        parameters=[
+            OperationParameter("rack", None, True, "FX rack index (0-2)"),
+            OperationParameter("slot", None, True, "FX slot index within rack"),
+            OperationParameter("effect", None, True, "Effect type (Distortion, EQ, Delay, etc.)"),
+            OperationParameter("parameter", None, True, "Parameter name (Drive, Freq1, etc.)"),
+            OperationParameter("value", None, True, "Parameter value"),
+        ],
+        description="Set FX parameter value",
+    ))
+    registry.register_compiler("fx_set_parameter", compiler_set_fx_parameter)
