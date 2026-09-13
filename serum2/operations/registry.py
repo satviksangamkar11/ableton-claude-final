@@ -138,6 +138,11 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         compiler_delete_modulation_route,
         compiler_set_macro_value,
         compiler_rename_macro,
+        compiler_set_modulation_curve,
+        compiler_set_modulation_bipolar,
+        compiler_set_modulation_aux_source,
+        compiler_bypass_modulation_route,
+        compiler_set_modulation_macro_depth,
     )
 
     # Phase 4: FX operations
@@ -205,6 +210,73 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         description="Rename a macro",
     ))
     registry.register_compiler("compound_rename_macro", compiler_rename_macro)
+
+    # Phase 8B: Matrix / Modulation operations
+    # Set modulation curve
+    registry.register(OperationDefinition(
+        operation_id="mod_set_curve",
+        semantic_name="Set Modulation Curve",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("modslot_index", None, True, "ModSlot index (0-63)"),
+            OperationParameter("curve_type", None, True, "Curve shape (linear, exponential, logarithmic, etc.)"),
+        ],
+        description="Set modulation route curve shape",
+    ))
+    registry.register_compiler("mod_set_curve", compiler_set_modulation_curve)
+
+    # Set modulation bipolar/unipolar
+    registry.register(OperationDefinition(
+        operation_id="mod_set_bipolar",
+        semantic_name="Set Modulation Bipolar",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("modslot_index", None, True, "ModSlot index (0-63)"),
+            OperationParameter("bipolar", None, True, "True for bipolar, False for unipolar"),
+        ],
+        description="Set modulation route to bipolar or unipolar mode",
+    ))
+    registry.register_compiler("mod_set_bipolar", compiler_set_modulation_bipolar)
+
+    # Set modulation auxiliary source
+    registry.register(OperationDefinition(
+        operation_id="mod_set_aux_source",
+        semantic_name="Set Modulation Auxiliary Source",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("modslot_index", None, True, "ModSlot index (0-63)"),
+            OperationParameter("aux_source_id", None, True, "Auxiliary source ID"),
+        ],
+        description="Set modulation route auxiliary source",
+    ))
+    registry.register_compiler("mod_set_aux_source", compiler_set_modulation_aux_source)
+
+    # Bypass modulation route
+    registry.register(OperationDefinition(
+        operation_id="mod_bypass",
+        semantic_name="Bypass Modulation Route",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("modslot_index", None, True, "ModSlot index (0-63)"),
+            OperationParameter("bypass", None, True, "True to bypass, False to enable"),
+        ],
+        description="Enable or bypass a modulation route",
+    ))
+    registry.register_compiler("mod_bypass", compiler_bypass_modulation_route)
+
+    # Set modulation macro depth
+    registry.register(OperationDefinition(
+        operation_id="mod_set_macro_depth",
+        semantic_name="Set Modulation Macro Depth",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("modslot_index", None, True, "ModSlot index (0-63)"),
+            OperationParameter("macro_id", None, True, "Macro index (0-7)"),
+            OperationParameter("depth", None, True, "Modulation depth (0.0-1.0)"),
+        ],
+        description="Set modulation route macro depth for macro modulation",
+    ))
+    registry.register_compiler("mod_set_macro_depth", compiler_set_modulation_macro_depth)
 
     # Phase 4: FX operations
     registry.register(OperationDefinition(

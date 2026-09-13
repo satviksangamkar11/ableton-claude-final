@@ -296,3 +296,265 @@ def _find_modslot_by_route(
     # TODO: resolve dest_param semantic target to destModuleID/destModuleParamID
     # then search ModSlot0-63 for a route matching both source and destination
     return None
+
+
+# ============================================================================
+# Phase 8B: Matrix / Modulation Operations
+# ============================================================================
+
+def compiler_set_modulation_curve(
+    operation: SerumOperation,
+    ctx: OperationContext,
+) -> OperationResult:
+    """Compile set_modulation_curve() to Mutation[].
+
+    Parameters:
+      - modslot_index (int): which ModSlot (0-63)
+      - curve_type (str): curve shape ("linear", "exponential", "logarithmic", etc.)
+
+    Returns:
+      OperationResult with single Mutation(ModSlot{N}.curve, curve_type)
+    """
+    params_dict = {p.name: p.value for p in operation.parameters}
+
+    modslot_index = params_dict.get("modslot_index")
+    curve_type = params_dict.get("curve_type")
+
+    if modslot_index is None or curve_type is None:
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="MISSING_PARAMETERS",
+            error_detail="set_modulation_curve requires modslot_index and curve_type",
+        )
+
+    if not (0 <= modslot_index <= 63):
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="INVALID_MODSLOT",
+            error_detail=f"modslot_index must be 0-63, got {modslot_index}",
+        )
+
+    mutation = Mutation(
+        target_path=f"ModSlot{int(modslot_index)}.curve",
+        value=str(curve_type),
+        provenance=f"SerumOperation.{operation.operation_id}",
+    )
+
+    return OperationResult(
+        operation_id=operation.operation_id,
+        success=True,
+        compiled_mutations=[mutation],
+        mutation_description=f"Set ModSlot{modslot_index} curve to {curve_type}",
+    )
+
+
+def compiler_set_modulation_bipolar(
+    operation: SerumOperation,
+    ctx: OperationContext,
+) -> OperationResult:
+    """Compile set_modulation_bipolar() to Mutation[].
+
+    Parameters:
+      - modslot_index (int): which ModSlot (0-63)
+      - bipolar (bool): true for bipolar, false for unipolar
+
+    Returns:
+      OperationResult with single Mutation(ModSlot{N}.bipolar, bool)
+    """
+    params_dict = {p.name: p.value for p in operation.parameters}
+
+    modslot_index = params_dict.get("modslot_index")
+    bipolar = params_dict.get("bipolar")
+
+    if modslot_index is None or bipolar is None:
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="MISSING_PARAMETERS",
+            error_detail="set_modulation_bipolar requires modslot_index and bipolar",
+        )
+
+    if not (0 <= modslot_index <= 63):
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="INVALID_MODSLOT",
+            error_detail=f"modslot_index must be 0-63, got {modslot_index}",
+        )
+
+    mutation = Mutation(
+        target_path=f"ModSlot{int(modslot_index)}.bipolar",
+        value=bool(bipolar),
+        provenance=f"SerumOperation.{operation.operation_id}",
+    )
+
+    return OperationResult(
+        operation_id=operation.operation_id,
+        success=True,
+        compiled_mutations=[mutation],
+        mutation_description=f"Set ModSlot{modslot_index} to {'bipolar' if bipolar else 'unipolar'}",
+    )
+
+
+def compiler_set_modulation_aux_source(
+    operation: SerumOperation,
+    ctx: OperationContext,
+) -> OperationResult:
+    """Compile set_modulation_aux_source() to Mutation[].
+
+    Parameters:
+      - modslot_index (int): which ModSlot (0-63)
+      - aux_source_id (int): auxiliary modulation source ID
+
+    Returns:
+      OperationResult with single Mutation(ModSlot{N}.auxSource, source_id)
+    """
+    params_dict = {p.name: p.value for p in operation.parameters}
+
+    modslot_index = params_dict.get("modslot_index")
+    aux_source_id = params_dict.get("aux_source_id")
+
+    if modslot_index is None or aux_source_id is None:
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="MISSING_PARAMETERS",
+            error_detail="set_modulation_aux_source requires modslot_index and aux_source_id",
+        )
+
+    if not (0 <= modslot_index <= 63):
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="INVALID_MODSLOT",
+            error_detail=f"modslot_index must be 0-63, got {modslot_index}",
+        )
+
+    mutation = Mutation(
+        target_path=f"ModSlot{int(modslot_index)}.auxSource",
+        value=int(aux_source_id),
+        provenance=f"SerumOperation.{operation.operation_id}",
+    )
+
+    return OperationResult(
+        operation_id=operation.operation_id,
+        success=True,
+        compiled_mutations=[mutation],
+        mutation_description=f"Set ModSlot{modslot_index} auxiliary source to {aux_source_id}",
+    )
+
+
+def compiler_bypass_modulation_route(
+    operation: SerumOperation,
+    ctx: OperationContext,
+) -> OperationResult:
+    """Compile bypass_modulation_route() to Mutation[].
+
+    Parameters:
+      - modslot_index (int): which ModSlot (0-63)
+      - bypass (bool): true to bypass, false to enable
+
+    Returns:
+      OperationResult with single Mutation(ModSlot{N}.bypass, bool)
+    """
+    params_dict = {p.name: p.value for p in operation.parameters}
+
+    modslot_index = params_dict.get("modslot_index")
+    bypass = params_dict.get("bypass")
+
+    if modslot_index is None or bypass is None:
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="MISSING_PARAMETERS",
+            error_detail="bypass_modulation_route requires modslot_index and bypass",
+        )
+
+    if not (0 <= modslot_index <= 63):
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="INVALID_MODSLOT",
+            error_detail=f"modslot_index must be 0-63, got {modslot_index}",
+        )
+
+    mutation = Mutation(
+        target_path=f"ModSlot{int(modslot_index)}.bypass",
+        value=bool(bypass),
+        provenance=f"SerumOperation.{operation.operation_id}",
+    )
+
+    return OperationResult(
+        operation_id=operation.operation_id,
+        success=True,
+        compiled_mutations=[mutation],
+        mutation_description=f"{'Bypass' if bypass else 'Enable'} ModSlot{modslot_index}",
+    )
+
+
+def compiler_set_modulation_macro_depth(
+    operation: SerumOperation,
+    ctx: OperationContext,
+) -> OperationResult:
+    """Compile set_modulation_macro_depth() to Mutation[].
+
+    Parameters:
+      - modslot_index (int): which ModSlot (0-63)
+      - macro_id (int): macro index (0-7)
+      - depth (float): modulation depth (0.0-1.0)
+
+    Returns:
+      OperationResult with single Mutation(ModSlot{N}.macroDepth, depth)
+    """
+    params_dict = {p.name: p.value for p in operation.parameters}
+
+    modslot_index = params_dict.get("modslot_index")
+    macro_id = params_dict.get("macro_id")
+    depth = params_dict.get("depth")
+
+    if modslot_index is None or macro_id is None or depth is None:
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="MISSING_PARAMETERS",
+            error_detail="set_modulation_macro_depth requires modslot_index, macro_id, and depth",
+        )
+
+    if not (0 <= modslot_index <= 63):
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="INVALID_MODSLOT",
+            error_detail=f"modslot_index must be 0-63, got {modslot_index}",
+        )
+
+    if not (0 <= macro_id <= 7):
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="INVALID_MACRO_ID",
+            error_detail=f"macro_id must be 0-7, got {macro_id}",
+        )
+
+    if not (0.0 <= depth <= 1.0):
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="DEPTH_OUT_OF_RANGE",
+            error_detail=f"depth must be 0.0-1.0, got {depth}",
+        )
+
+    mutation = Mutation(
+        target_path=f"ModSlot{int(modslot_index)}.macroDepth[{int(macro_id)}]",
+        value=float(depth),
+        provenance=f"SerumOperation.{operation.operation_id}",
+    )
+
+    return OperationResult(
+        operation_id=operation.operation_id,
+        success=True,
+        compiled_mutations=[mutation],
+        mutation_description=f"Set ModSlot{modslot_index} macro{macro_id} depth to {depth}",
+    )

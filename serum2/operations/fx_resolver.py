@@ -162,7 +162,7 @@ _FX_PARAMETERS: Dict[Tuple[str, str], Tuple[str, str, Optional[float], Optional[
         1000.0,
     ),
 
-    # Chorus (if represented in state)
+    # Chorus
     ("Chorus", "Rate"): (
         "FXRack{R}.FX.{N}.FXChorus.plainParams.kParamRate",
         "float",
@@ -177,6 +177,212 @@ _FX_PARAMETERS: Dict[Tuple[str, str], Tuple[str, str, Optional[float], Optional[
     ),
     ("Chorus", "Mix"): (
         "FXRack{R}.FX.{N}.FXChorus.plainParams.kParamMix",
+        "float",
+        0.0,
+        100.0,
+    ),
+
+    # BODE (Frequency Shifter)
+    ("BODE", "Frequency"): (
+        "FXRack{R}.FX.{N}.FXBODE.plainParams.kParamFrequency",
+        "float",
+        0.0,
+        10000.0,
+    ),
+    ("BODE", "Range"): (
+        "FXRack{R}.FX.{N}.FXBODE.plainParams.kParamRange",
+        "float",
+        0.0,
+        100.0,
+    ),
+    ("BODE", "Direction"): (
+        "FXRack{R}.FX.{N}.FXBODE.plainParams.kParamDirection",
+        "int",
+        0,
+        1,
+    ),
+    ("BODE", "Mix"): (
+        "FXRack{R}.FX.{N}.FXBODE.plainParams.kParamMix",
+        "float",
+        0.0,
+        100.0,
+    ),
+
+    # Flanger
+    ("Flanger", "Rate"): (
+        "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamRate",
+        "float",
+        0.1,
+        10.0,
+    ),
+    ("Flanger", "Depth"): (
+        "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamDepth",
+        "float",
+        0.0,
+        100.0,
+    ),
+    ("Flanger", "Feedback"): (
+        "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamFeedback",
+        "float",
+        -100.0,
+        100.0,
+    ),
+    ("Flanger", "Phase"): (
+        "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamPhase",
+        "float",
+        0.0,
+        360.0,
+    ),
+    ("Flanger", "Mix"): (
+        "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamMix",
+        "float",
+        0.0,
+        100.0,
+    ),
+
+    # Phaser
+    ("Phaser", "Frequency"): (
+        "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamFrequency",
+        "float",
+        20.0,
+        20000.0,
+    ),
+    ("Phaser", "Feedback"): (
+        "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamFeedback",
+        "float",
+        -100.0,
+        100.0,
+    ),
+    ("Phaser", "Phase"): (
+        "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamPhase",
+        "float",
+        0.0,
+        360.0,
+    ),
+    ("Phaser", "Mix"): (
+        "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamMix",
+        "float",
+        0.0,
+        100.0,
+    ),
+
+    # Utility
+    ("Utility", "Gain"): (
+        "FXRack{R}.FX.{N}.FXUtility.plainParams.kParamGain",
+        "float",
+        -100.0,
+        100.0,
+    ),
+    ("Utility", "Phase"): (
+        "FXRack{R}.FX.{N}.FXUtility.plainParams.kParamPhase",
+        "float",
+        0.0,
+        1.0,
+    ),
+    ("Utility", "Mono"): (
+        "FXRack{R}.FX.{N}.FXUtility.plainParams.kParamMono",
+        "int",
+        0,
+        1,
+    ),
+    ("Utility", "Mix"): (
+        "FXRack{R}.FX.{N}.FXUtility.plainParams.kParamMix",
+        "float",
+        0.0,
+        100.0,
+    ),
+
+    # Convolve (Convolution Reverb)
+    ("Convolve", "IR"): (
+        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamIR",
+        "string",
+        None,
+        None,
+    ),
+    ("Convolve", "IRGain"): (
+        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamIRGain",
+        "float",
+        -100.0,
+        100.0,
+    ),
+    ("Convolve", "Attack"): (
+        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamAttack",
+        "float",
+        0.0,
+        1000.0,
+    ),
+    ("Convolve", "Decay"): (
+        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamDecay",
+        "float",
+        0.0,
+        10000.0,
+    ),
+    ("Convolve", "Damping"): (
+        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamDamping",
+        "float",
+        0.0,
+        100.0,
+    ),
+    ("Convolve", "Mix"): (
+        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamMix",
+        "float",
+        0.0,
+        100.0,
+    ),
+
+    # Hyper (Dimension)
+    ("Hyper", "Rate"): (
+        "FXRack{R}.FX.{N}.FXHyper.plainParams.kParamRate",
+        "float",
+        0.1,
+        10.0,
+    ),
+    ("Hyper", "Unison"): (
+        "FXRack{R}.FX.{N}.FXHyper.plainParams.kParamUnison",
+        "int",
+        1,
+        7,
+    ),
+    ("Hyper", "Detune"): (
+        "FXRack{R}.FX.{N}.FXHyper.plainParams.kParamDetune",
+        "float",
+        0.0,
+        100.0,
+    ),
+    ("Hyper", "Mix"): (
+        "FXRack{R}.FX.{N}.FXHyper.plainParams.kParamMix",
+        "float",
+        0.0,
+        100.0,
+    ),
+
+    # Filter (as FX)
+    ("FilterFX", "Type"): (
+        "FXRack{R}.FX.{N}.FXFilterFX.plainParams.kParamType",
+        "int",
+        0,
+        10,
+    ),
+    ("FilterFX", "Cutoff"): (
+        "FXRack{R}.FX.{N}.FXFilterFX.plainParams.kParamCutoff",
+        "float",
+        20.0,
+        20000.0,
+    ),
+    ("FilterFX", "Resonance"): (
+        "FXRack{R}.FX.{N}.FXFilterFX.plainParams.kParamResonance",
+        "float",
+        0.0,
+        100.0,
+    ),
+    ("FilterFX", "Drive"): (
+        "FXRack{R}.FX.{N}.FXFilterFX.plainParams.kParamDrive",
+        "float",
+        0.0,
+        100.0,
+    ),
+    ("FilterFX", "Mix"): (
+        "FXRack{R}.FX.{N}.FXFilterFX.plainParams.kParamMix",
         "float",
         0.0,
         100.0,
