@@ -197,3 +197,96 @@ def tolerant_equal(a, b, tol=1e-6):
             return False
         return all(tolerant_equal(x, y, tol) for x, y in zip(a, b))
     return a == b
+
+
+# ---------------------------------------------------------------------------
+# Phase FX-FULL: Array mutation primitives for FX slot operations
+#
+# These functions implement safe array operations for FX management:
+# - array_remove: Remove element at index
+# - array_insert: Insert element at index
+# - array_remove_by_match: Remove first element matching criteria
+#
+# All operations validate index/type safety before mutation.
+# ---------------------------------------------------------------------------
+
+def array_remove(body: dict, array_path: str, index: int) -> None:
+    """Remove element at index from array at array_path.
+
+    Mutates body in place. Raises PathError if:
+    - array_path doesn't exist
+    - target is not a list
+    - index out of range
+    """
+    arr = read_path_value(body, array_path)
+    if not isinstance(arr, list):
+        raise PathError(f"Array path {array_path} does not resolve to a list")
+    if index < 0 or index >= len(arr):
+        raise PathError(f"Array index {index} out of range (length {len(arr)})")
+
+    # Remove element
+    arr.pop(index)
+
+    # Write back the modified array
+    apply_path_value(body, array_path, arr)
+
+
+def array_insert(body: dict, array_path: str, index: int, value) -> None:
+    """Insert element at index in array at array_path.
+
+    Mutates body in place. Raises PathError if:
+    - array_path doesn't exist
+    - target is not a list
+    - index out of range (must be 0 <= index <= len)
+    """
+    arr = read_path_value(body, array_path)
+    if not isinstance(arr, list):
+        raise PathError(f"Array path {array_path} does not resolve to a list")
+    if index < 0 or index > len(arr):
+        raise PathError(f"Array index {index} out of range (length {len(arr)})")
+
+    # Insert element
+    arr.insert(index, value)
+
+    # Write back the modified array
+    apply_path_value(body, array_path, arr)
+
+
+def array_remove_by_type(body: dict, array_path: str, type_key: str) -> None:
+    """Remove first array element matching a type identifier.
+
+    Useful for FX operations: finds first effect of given type and removes it.
+
+    Example: Remove first FXDistortion from FXRack0.FX
+      array_remove_by_type(body, "FXRack0.FX", "FXDistortion")
+
+    Raises PathError if array doesn't exist or type not found.
+    """
+    arr = read_path_value(body, array_path)
+    if not isinstance(arr, list):
+        raise PathError(f"Array path {array_path} does not resolve to a list")
+
+    # Find first element with matching type
+    for i, element in enumerate(arr):
+        if isinstance(element, dict) and type_key in element:
+            arr.pop(i)
+            apply_path_value(body, array_path, arr)
+            return
+
+    raise PathError(f"No element of type {type_key} found in array {array_path}")
+
+
+def array_replace_element(body: dict, array_path: str, index: int, new_value) -> None:
+    """Replace element at index with new value.
+
+    This is semantically the same as apply_path_value for list elements,
+    but more explicit for FX operations (swap effect types).
+    """
+    arr = read_path_value(body, array_path)
+    if not isinstance(arr, list):
+        raise PathError(f"Array path {array_path} does not resolve to a list")
+    if index < 0 or index >= len(arr):
+        raise PathError(f"Array index {index} out of range (length {len(arr)})")
+
+    arr[index] = new_value
+    apply_path_value(body, array_path, arr)

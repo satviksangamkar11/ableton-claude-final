@@ -242,6 +242,122 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "NOISE.Fine":          SemanticTargetRef("NOISE.Fine",          "oscillator_field_NOISE-FINE"),
     # Phase 9B: ARP control
     "ARP.Enable":          SemanticTargetRef("ARP.Enable",          "arp_field_ENABLE"),
+
+    # =========================================================================
+    # PHASE FX-FULL: Complete FX parameter coverage (14 effect types)
+    # =========================================================================
+
+    # BODE (Frequency Shifter)
+    "FXBODE.Shift":        SemanticTargetRef("FXBODE.Shift",        "fx_field_bode_shift"),
+    "FXBODE.Range":        SemanticTargetRef("FXBODE.Range",        "fx_field_bode_range"),
+    "FXBODE.Direction":    SemanticTargetRef("FXBODE.Direction",    "fx_field_bode_direction"),
+    "FXBODE.LevelOut":     SemanticTargetRef("FXBODE.LevelOut",     "fx_field_bode_level_out"),
+    "FXBODE.MixOrGain":    SemanticTargetRef("FXBODE.MixOrGain",    "fx_field_bode_mix_or_gain"),
+
+    # CHORUS
+    "FXChorus.Rate":       SemanticTargetRef("FXChorus.Rate",       "fx_field_chorus_rate"),
+    "FXChorus.Depth":      SemanticTargetRef("FXChorus.Depth",      "fx_field_chorus_depth"),
+    "FXChorus.Feedback":   SemanticTargetRef("FXChorus.Feedback",   "fx_field_chorus_feedback"),
+    "FXChorus.Phase":      SemanticTargetRef("FXChorus.Phase",      "fx_field_chorus_phase"),
+    "FXChorus.MixOrGain":  SemanticTargetRef("FXChorus.MixOrGain",  "fx_field_chorus_mix_or_gain"),
+
+    # COMPRESSOR
+    "FXCompressor.Threshold": SemanticTargetRef("FXCompressor.Threshold", "fx_field_comp_threshold"),
+    "FXCompressor.Ratio":  SemanticTargetRef("FXCompressor.Ratio",  "fx_field_comp_ratio"),
+    "FXCompressor.Attack": SemanticTargetRef("FXCompressor.Attack", "fx_field_comp_attack"),
+    "FXCompressor.Release": SemanticTargetRef("FXCompressor.Release", "fx_field_comp_release"),
+    "FXCompressor.Gain":   SemanticTargetRef("FXCompressor.Gain",   "fx_field_comp_gain"),
+    "FXCompressor.MixOrGain": SemanticTargetRef("FXCompressor.MixOrGain", "fx_field_comp_mix_or_gain"),
+
+    # CONVOLVE (Convolution Reverb)
+    "FXConvolve.IRGain":   SemanticTargetRef("FXConvolve.IRGain",   "fx_field_convolve_ir_gain"),
+    "FXConvolve.Attack":   SemanticTargetRef("FXConvolve.Attack",   "fx_field_convolve_attack"),
+    "FXConvolve.Decay":    SemanticTargetRef("FXConvolve.Decay",    "fx_field_convolve_decay"),
+    "FXConvolve.Damping":  SemanticTargetRef("FXConvolve.Damping",  "fx_field_convolve_damping"),
+    "FXConvolve.MixOrGain": SemanticTargetRef("FXConvolve.MixOrGain", "fx_field_convolve_mix_or_gain"),
+    "FXConvolve.IRPath":   SemanticTargetRef("FXConvolve.IRPath",   "fx_field_convolve_ir_path"),
+
+    # DELAY
+    "FXDelay.Mode":        SemanticTargetRef("FXDelay.Mode",        "fx_field_delay_mode"),
+    "FXDelay.TimeL":       SemanticTargetRef("FXDelay.TimeL",       "fx_field_delay_time_l"),
+    "FXDelay.TimeR":       SemanticTargetRef("FXDelay.TimeR",       "fx_field_delay_time_r"),
+    "FXDelay.OffsetL":     SemanticTargetRef("FXDelay.OffsetL",     "fx_field_delay_offset_l"),
+    "FXDelay.OffsetR":     SemanticTargetRef("FXDelay.OffsetR",     "fx_field_delay_offset_r"),
+    "FXDelay.Feedback":    SemanticTargetRef("FXDelay.Feedback",    "fx_field_delay_feedback"),
+    "FXDelay.MixOrGain":   SemanticTargetRef("FXDelay.MixOrGain",   "fx_field_delay_mix_or_gain"),
+    "FXDelay.BW":          SemanticTargetRef("FXDelay.BW",          "fx_field_delay_bw"),
+
+    # DISTORTION (extended)
+    "FXDistortion.Mode":   SemanticTargetRef("FXDistortion.Mode",   "fx_field_dist_mode"),
+    "FXDistortion.Drive":  SemanticTargetRef("FXDistortion.Drive",  "fx_field_dist_drive"),
+    "FXDistortion.Freq":   SemanticTargetRef("FXDistortion.Freq",   "fx_field_dist_freq"),
+    "FXDistortion.LPHP":   SemanticTargetRef("FXDistortion.LPHP",   "fx_field_dist_lphp"),
+    "FXDistortion.PrePost": SemanticTargetRef("FXDistortion.PrePost", "fx_field_dist_prepost"),
+    "FXDistortion.MixOrGain": SemanticTargetRef("FXDistortion.MixOrGain", "fx_field_dist_mix_or_gain"),
+    "FXDistortion.BW":     SemanticTargetRef("FXDistortion.BW",     "fx_field_dist_bw"),
+
+    # EQUALIZER (extended with type controls)
+    "FXEQ.Type1":          SemanticTargetRef("FXEQ.Type1",          "fx_field_eq_type1"),
+    "FXEQ.Freq1":          SemanticTargetRef("FXEQ.Freq1",          "fx_field_eq_freq1"),
+    "FXEQ.Reso1":          SemanticTargetRef("FXEQ.Reso1",          "fx_field_eq_reso1"),
+    "FXEQ.Gain1":          SemanticTargetRef("FXEQ.Gain1",          "fx_field_eq_gain1"),
+    "FXEQ.Type2":          SemanticTargetRef("FXEQ.Type2",          "fx_field_eq_type2"),
+    "FXEQ.Freq2":          SemanticTargetRef("FXEQ.Freq2",          "fx_field_eq_freq2"),
+    "FXEQ.Reso2":          SemanticTargetRef("FXEQ.Reso2",          "fx_field_eq_reso2"),
+    "FXEQ.Gain2":          SemanticTargetRef("FXEQ.Gain2",          "fx_field_eq_gain2"),
+    "FXEQ.LevelOut":       SemanticTargetRef("FXEQ.LevelOut",       "fx_field_eq_level_out"),
+
+    # FILTER (as FX module)
+    "FXFilter.Type":       SemanticTargetRef("FXFilter.Type",       "fx_field_filter_type"),
+    "FXFilter.Cutoff":     SemanticTargetRef("FXFilter.Cutoff",     "fx_field_filter_cutoff"),
+    "FXFilter.Resonance":  SemanticTargetRef("FXFilter.Resonance",  "fx_field_filter_resonance"),
+    "FXFilter.Drive":      SemanticTargetRef("FXFilter.Drive",      "fx_field_filter_drive"),
+    "FXFilter.MixOrGain":  SemanticTargetRef("FXFilter.MixOrGain",  "fx_field_filter_mix_or_gain"),
+
+    # FLANGER (extended)
+    "FXFlanger.Rate":      SemanticTargetRef("FXFlanger.Rate",      "fx_field_flanger_rate"),
+    "FXFlanger.Depth":     SemanticTargetRef("FXFlanger.Depth",     "fx_field_flanger_depth"),
+    "FXFlanger.Feedback":  SemanticTargetRef("FXFlanger.Feedback",  "fx_field_flanger_feedback"),
+    "FXFlanger.Phase":     SemanticTargetRef("FXFlanger.Phase",     "fx_field_flanger_phase"),
+    "FXFlanger.MixOrGain": SemanticTargetRef("FXFlanger.MixOrGain", "fx_field_flanger_mix_or_gain"),
+
+    # HYPER/DIMENSION (extended with retrigger)
+    "FXHyper.Rate":        SemanticTargetRef("FXHyper.Rate",        "fx_field_hyper_rate"),
+    "FXHyper.Unison":      SemanticTargetRef("FXHyper.Unison",      "fx_field_hyper_unison"),
+    "FXHyper.Detune":      SemanticTargetRef("FXHyper.Detune",      "fx_field_hyper_detune"),
+    "FXHyper.MixOrGain":   SemanticTargetRef("FXHyper.MixOrGain",   "fx_field_hyper_mix_or_gain"),
+    "FXHyper.Retrigger":   SemanticTargetRef("FXHyper.Retrigger",   "fx_field_hyper_retrigger"),
+
+    # PHASER (extended)
+    "FXPhaser.Frequency":  SemanticTargetRef("FXPhaser.Frequency",  "fx_field_phaser_frequency"),
+    "FXPhaser.Feedback":   SemanticTargetRef("FXPhaser.Feedback",   "fx_field_phaser_feedback"),
+    "FXPhaser.Phase":      SemanticTargetRef("FXPhaser.Phase",      "fx_field_phaser_phase"),
+    "FXPhaser.MixOrGain":  SemanticTargetRef("FXPhaser.MixOrGain",  "fx_field_phaser_mix_or_gain"),
+
+    # REVERB (extended)
+    "FXReverb.Size":       SemanticTargetRef("FXReverb.Size",       "fx_field_reverb_size"),
+    "FXReverb.Damping":    SemanticTargetRef("FXReverb.Damping",    "fx_field_reverb_damping"),
+    "FXReverb.MixOrGain":  SemanticTargetRef("FXReverb.MixOrGain",  "fx_field_reverb_mix_or_gain"),
+
+    # SPLITTER (Frequency Splitter)
+    "FXSplitter.BandCount": SemanticTargetRef("FXSplitter.BandCount", "fx_field_splitter_band_count"),
+    "FXSplitter.Crossover1": SemanticTargetRef("FXSplitter.Crossover1", "fx_field_splitter_crossover1"),
+    "FXSplitter.Crossover2": SemanticTargetRef("FXSplitter.Crossover2", "fx_field_splitter_crossover2"),
+    "FXSplitter.Crossover3": SemanticTargetRef("FXSplitter.Crossover3", "fx_field_splitter_crossover3"),
+
+    # UTILITY (extended)
+    "FXUtility.Gain":      SemanticTargetRef("FXUtility.Gain",      "fx_field_utility_gain"),
+    "FXUtility.Phase":     SemanticTargetRef("FXUtility.Phase",     "fx_field_utility_phase"),
+    "FXUtility.Mono":      SemanticTargetRef("FXUtility.Mono",      "fx_field_utility_mono"),
+    "FXUtility.MixOrGain": SemanticTargetRef("FXUtility.MixOrGain", "fx_field_utility_mix_or_gain"),
+
+    # FX Structural Operations (3 buses × enable/disable/add/remove/replace/reorder)
+    "FX.EnableMain":       SemanticTargetRef("FX.EnableMain",       "fx_struct_enable_main"),
+    "FX.EnableBus1":       SemanticTargetRef("FX.EnableBus1",       "fx_struct_enable_bus1"),
+    "FX.EnableBus2":       SemanticTargetRef("FX.EnableBus2",       "fx_struct_enable_bus2"),
+    "FX.DisableMain":      SemanticTargetRef("FX.DisableMain",      "fx_struct_disable_main"),
+    "FX.DisableBus1":      SemanticTargetRef("FX.DisableBus1",      "fx_struct_disable_bus1"),
+    "FX.DisableBus2":      SemanticTargetRef("FX.DisableBus2",      "fx_struct_disable_bus2"),
 }
 
 

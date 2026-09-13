@@ -25,8 +25,9 @@ from .model import (
 from .registry import OperationRegistry, OperationDefinition
 from serum2.evidence.spec import Mutation
 
-# Phase 9B: Direct path mappings for new structural controls (corpus-verified, no contracts yet)
+# Phase 9B/FX-FULL: Direct path mappings for new structural controls (corpus-verified, no contracts yet)
 PHASE_9B_STRUCTURAL_PATHS = {
+    # Phase 9B original
     "oscillator_field_OSC2-ENABLE": "Oscillator1.plainParams.kParamEnable",
     "oscillator_field_OSC3-ENABLE": "Oscillator2.plainParams.kParamEnable",
     "filter_field_ENABLE": "VoiceFilter0.plainParams.kParamEnable",
@@ -34,6 +35,111 @@ PHASE_9B_STRUCTURAL_PATHS = {
     "oscillator_field_NOISE-FINE": "Oscillator3.plainParams.kParamFine",
     "global_field_pitch_tracking": "Oscillator0.plainParams.kParamPitchTrack",
     "arp_field_ENABLE": "Arp0.plainParams.kParamEnabled",
+
+    # Phase FX-FULL: Complete FX parameter paths (corpus-verified)
+    # BODE parameters
+    "fx_field_bode_shift": "FXRack{R}.FX.{N}.FXBode.plainParams.kParamShift",
+    "fx_field_bode_range": "FXRack{R}.FX.{N}.FXBode.plainParams.kParamRange",
+    "fx_field_bode_direction": "FXRack{R}.FX.{N}.FXBode.plainParams.kParamDirection",
+    "fx_field_bode_level_out": "FXRack{R}.FX.{N}.FXBode.plainParams.kParamLevelOut",
+    "fx_field_bode_mix_or_gain": "FXRack{R}.FX.{N}.FXBode.plainParams.kParamMixOrGain",
+
+    # CHORUS parameters
+    "fx_field_chorus_rate": "FXRack{R}.FX.{N}.FXChorus.plainParams.kParamRate",
+    "fx_field_chorus_depth": "FXRack{R}.FX.{N}.FXChorus.plainParams.kParamDepth",
+    "fx_field_chorus_feedback": "FXRack{R}.FX.{N}.FXChorus.plainParams.kParamFeedback",
+    "fx_field_chorus_phase": "FXRack{R}.FX.{N}.FXChorus.plainParams.kParamPhase",
+    "fx_field_chorus_mix_or_gain": "FXRack{R}.FX.{N}.FXChorus.plainParams.kParamMixOrGain",
+
+    # COMPRESSOR parameters
+    "fx_field_comp_threshold": "FXRack{R}.FX.{N}.FXComp.plainParams.kParamThreshold",
+    "fx_field_comp_ratio": "FXRack{R}.FX.{N}.FXComp.plainParams.kParamRatio",
+    "fx_field_comp_attack": "FXRack{R}.FX.{N}.FXComp.plainParams.kParamAttack",
+    "fx_field_comp_release": "FXRack{R}.FX.{N}.FXComp.plainParams.kParamRelease",
+    "fx_field_comp_gain": "FXRack{R}.FX.{N}.FXComp.plainParams.kParamGain",
+    "fx_field_comp_mix_or_gain": "FXRack{R}.FX.{N}.FXComp.plainParams.kParamMixOrGain",
+
+    # CONVOLVE parameters
+    "fx_field_convolve_ir_gain": "FXRack{R}.FX.{N}.FXConv.plainParams.kParamIRGain",
+    "fx_field_convolve_attack": "FXRack{R}.FX.{N}.FXConv.plainParams.kParamAttack",
+    "fx_field_convolve_decay": "FXRack{R}.FX.{N}.FXConv.plainParams.kParamDecay",
+    "fx_field_convolve_damping": "FXRack{R}.FX.{N}.FXConv.plainParams.kParamDamping",
+    "fx_field_convolve_mix_or_gain": "FXRack{R}.FX.{N}.FXConv.plainParams.kParamMixOrGain",
+    "fx_field_convolve_ir_path": "FXRack{R}.FX.{N}.FXConv.relativePathToIR",
+
+    # DELAY parameters
+    "fx_field_delay_mode": "FXRack{R}.FX.{N}.FXDelay.plainParams.kParamMode",
+    "fx_field_delay_time_l": "FXRack{R}.FX.{N}.FXDelay.plainParams.kParamTimeL",
+    "fx_field_delay_time_r": "FXRack{R}.FX.{N}.FXDelay.plainParams.kParamTimeR",
+    "fx_field_delay_offset_l": "FXRack{R}.FX.{N}.FXDelay.plainParams.kParamOffsetL",
+    "fx_field_delay_offset_r": "FXRack{R}.FX.{N}.FXDelay.plainParams.kParamOffsetR",
+    "fx_field_delay_feedback": "FXRack{R}.FX.{N}.FXDelay.plainParams.kParamFeedback",
+    "fx_field_delay_mix_or_gain": "FXRack{R}.FX.{N}.FXDelay.plainParams.kParamMixOrGain",
+    "fx_field_delay_bw": "FXRack{R}.FX.{N}.FXDelay.plainParams.kParamBW",
+
+    # DISTORTION parameters
+    "fx_field_dist_mode": "FXRack{R}.FX.{N}.FXDistortion.plainParams.kParamMode",
+    "fx_field_dist_drive": "FXRack{R}.FX.{N}.FXDistortion.plainParams.kParamDrive",
+    "fx_field_dist_freq": "FXRack{R}.FX.{N}.FXDistortion.plainParams.kParamFreq",
+    "fx_field_dist_lphp": "FXRack{R}.FX.{N}.FXDistortion.plainParams.kParamLPHP",
+    "fx_field_dist_prepost": "FXRack{R}.FX.{N}.FXDistortion.plainParams.kParamPrePost",
+    "fx_field_dist_mix_or_gain": "FXRack{R}.FX.{N}.FXDistortion.plainParams.kParamMixOrGain",
+    "fx_field_dist_bw": "FXRack{R}.FX.{N}.FXDistortion.plainParams.kParamBW",
+
+    # EQUALIZER parameters
+    "fx_field_eq_type1": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamType1",
+    "fx_field_eq_freq1": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamFreq1",
+    "fx_field_eq_reso1": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamReso1",
+    "fx_field_eq_gain1": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamGain1",
+    "fx_field_eq_type2": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamType2",
+    "fx_field_eq_freq2": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamFreq2",
+    "fx_field_eq_reso2": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamReso2",
+    "fx_field_eq_gain2": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamGain2",
+    "fx_field_eq_level_out": "FXRack{R}.FX.{N}.FXEQ.plainParams.kParamLevelOut",
+
+    # FILTER (as FX) parameters
+    "fx_field_filter_type": "FXRack{R}.FX.{N}.FXFilter.plainParams.kParamType",
+    "fx_field_filter_cutoff": "FXRack{R}.FX.{N}.FXFilter.plainParams.kParamCutoff",
+    "fx_field_filter_resonance": "FXRack{R}.FX.{N}.FXFilter.plainParams.kParamResonance",
+    "fx_field_filter_drive": "FXRack{R}.FX.{N}.FXFilter.plainParams.kParamDrive",
+    "fx_field_filter_mix_or_gain": "FXRack{R}.FX.{N}.FXFilter.plainParams.kParamMixOrGain",
+
+    # FLANGER parameters
+    "fx_field_flanger_rate": "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamRate",
+    "fx_field_flanger_depth": "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamDepth",
+    "fx_field_flanger_feedback": "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamFeedback",
+    "fx_field_flanger_phase": "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamPhase",
+    "fx_field_flanger_mix_or_gain": "FXRack{R}.FX.{N}.FXFlanger.plainParams.kParamMixOrGain",
+
+    # HYPER/DIMENSION parameters
+    "fx_field_hyper_rate": "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamRate",
+    "fx_field_hyper_unison": "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamUnison",
+    "fx_field_hyper_detune": "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamDetune",
+    "fx_field_hyper_mix_or_gain": "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamMixOrGain",
+    "fx_field_hyper_retrigger": "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamRetrigger",
+
+    # PHASER parameters
+    "fx_field_phaser_frequency": "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamFrequency",
+    "fx_field_phaser_feedback": "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamFeedback",
+    "fx_field_phaser_phase": "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamPhase",
+    "fx_field_phaser_mix_or_gain": "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamMixOrGain",
+
+    # REVERB parameters
+    "fx_field_reverb_size": "FXRack{R}.FX.{N}.FXReverb.plainParams.kParamSize",
+    "fx_field_reverb_damping": "FXRack{R}.FX.{N}.FXReverb.plainParams.kParamDamping",
+    "fx_field_reverb_mix_or_gain": "FXRack{R}.FX.{N}.FXReverb.plainParams.kParamMixOrGain",
+
+    # SPLITTER parameters
+    "fx_field_splitter_band_count": "FXRack{R}.FX.{N}.FXSplit.plainParams.kParamBandCount",
+    "fx_field_splitter_crossover1": "FXRack{R}.FX.{N}.FXSplit.plainParams.kParamCrossover1",
+    "fx_field_splitter_crossover2": "FXRack{R}.FX.{N}.FXSplit.plainParams.kParamCrossover2",
+    "fx_field_splitter_crossover3": "FXRack{R}.FX.{N}.FXSplit.plainParams.kParamCrossover3",
+
+    # UTILITY parameters
+    "fx_field_utility_gain": "FXRack{R}.FX.{N}.FXUtils.plainParams.kParamGain",
+    "fx_field_utility_phase": "FXRack{R}.FX.{N}.FXUtils.plainParams.kParamPhase",
+    "fx_field_utility_mono": "FXRack{R}.FX.{N}.FXUtils.plainParams.kParamMono",
+    "fx_field_utility_mix_or_gain": "FXRack{R}.FX.{N}.FXUtils.plainParams.kParamMixOrGain",
 }
 
 
