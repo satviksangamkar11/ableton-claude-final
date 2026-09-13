@@ -351,13 +351,9 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "FXUtility.Mono":      SemanticTargetRef("FXUtility.Mono",      "fx_field_utility_mono"),
     "FXUtility.MixOrGain": SemanticTargetRef("FXUtility.MixOrGain", "fx_field_utility_mix_or_gain"),
 
-    # FX Structural Operations (3 buses × enable/disable/add/remove/replace/reorder)
-    "FX.EnableMain":       SemanticTargetRef("FX.EnableMain",       "fx_struct_enable_main"),
-    "FX.EnableBus1":       SemanticTargetRef("FX.EnableBus1",       "fx_struct_enable_bus1"),
-    "FX.EnableBus2":       SemanticTargetRef("FX.EnableBus2",       "fx_struct_enable_bus2"),
-    "FX.DisableMain":      SemanticTargetRef("FX.DisableMain",      "fx_struct_disable_main"),
-    "FX.DisableBus1":      SemanticTargetRef("FX.DisableBus1",      "fx_struct_disable_bus1"),
-    "FX.DisableBus2":      SemanticTargetRef("FX.DisableBus2",      "fx_struct_disable_bus2"),
+    # FX Structural Operations (3 buses)
+    # PROVEN: clear_rack, remove, add, replace
+    # UNRESOLVED: enable/disable/bypass (flex field mechanism unknown, see memory/fx_bypass_mechanism_unknown.md)
 }
 
 

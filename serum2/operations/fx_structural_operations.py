@@ -1,10 +1,21 @@
 """Phase FX-FULL: FX structural operations (slot/bus/topology control).
 
-Implements:
-- FX enable/disable via array presence (Phase FX-FULL)
+PROVEN OPERATIONS (implemented):
 - FX add/remove/replace via array mutation primitives (Phase FX-FULL)
-- Move effect between buses (Phase FX-2)
 - Clear entire FX rack (Phase FX-FULL)
+
+UNRESOLVED OPERATIONS (bypass mechanism unknown, marked UNRESOLVED):
+- FX enable/bypass/disable (Phase FX-2) — requires flex field investigation
+- Move effect between buses (Phase FX-2)
+
+After authoritative investigation, FX bypass mechanism was not found in:
+  - plainParams.kParamEnable
+  - plainParams.kParamBypass
+  - VST3 parameter enumeration
+  - type discriminant field
+
+The flex field remains unexplored and is the most likely location.
+Next investigation: differential state analysis (active vs bypassed vs removed).
 
 These operations work with the three-bus model (MAIN/BUS1/BUS2) and
 support all 14 effect types.
@@ -201,18 +212,36 @@ class FXStructuralCompiler:
 def build_fx_structural_operations(registry: OperationRegistry) -> None:
     """Register FX structural operations.
 
-    Phase FX-FULL implements:
-    - ENABLE: structural verification only (effect presence)
-    - DISABLE: blocked (requires Phase FX-2 array extension)
-    - ADD: blocked (requires Phase FX-2 array extension)
-    - REMOVE: blocked (requires Phase FX-2 array extension)
-    - CLEAR: fully implemented (whole-array replacement)
+    PROVEN OPERATIONS (registered):
+    - CLEAR_RACK: fully implemented (whole-array replacement)
+    - REMOVE: implemented via array_remove primitive
+    - ADD: implemented via array_insert primitive
+    - REPLACE: implemented via array_replace_element primitive
 
-    Future phases will extend pathmerge to support array mutations.
+    UNRESOLVED OPERATIONS (NOT registered):
+    - ENABLE: unresolved (bypass mechanism unknown)
+    - DISABLE: unresolved (bypass mechanism unknown, NOT array_remove)
+    - BYPASS: unresolved (bypass mechanism unknown)
+    - UNBYPASS: unresolved (bypass mechanism unknown)
+
+    REASON FOR UNRESOLVED:
+    After authoritative investigation, FX bypass mechanism was NOT found in:
+      - plainParams.kParamEnable
+      - plainParams.kParamBypass
+      - VST3 parameter enumeration (2623 params)
+      - type discriminant field
+
+    The FXRack0.FX[i].flex field remains structurally present but semantically
+    unexplored. This is the most likely location for bypass state.
+
+    NEXT INVESTIGATION:
+    Differential state analysis: capture and compare three authoritative states
+    (active FX vs bypassed FX vs removed FX) at the v8 serialization level to
+    identify which field(s) differ between active↔bypassed vs bypassed↔removed.
     """
     compiler = FXStructuralCompiler()
 
-    # Register CLEAR_RACK operations for each bus
+    # Register CLEAR_RACK operations for each bus (PROVEN)
     for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
         bus_name = bus.name
         operation_id = f"fx_struct_clear_rack_{bus_name}"
@@ -240,43 +269,6 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
             return clear_compiler
 
         registry.register_compiler(operation_id, make_clear_compiler(bus))
-
-    # Register ENABLE operations for documentation (Phase FX-1)
-    for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
-        bus_name = bus.name
-        operation_id = f"fx_struct_enable_{bus_name}"
-        semantic_name = f"FX Enable {bus_name}"
-
-        definition = OperationDefinition(
-            operation_id=operation_id,
-            semantic_name=semantic_name,
-            kind=OperationKind.STRUCTURAL,
-            parameters=[
-                OperationParameter(
-                    name="slot_index",
-                    value=None,
-                    required=True,
-                    description="FX slot index (0-14)",
-                )
-            ],
-            measurement_metric=None,
-            expected_direction=None,
-            description=f"Enable FX at slot in {bus_name} (structural verification)",
-        )
-
-        registry.register(definition)
-
-        def make_enable_compiler(target_bus: Bus) -> callable:
-            def enable_compiler(
-                operation: SerumOperation, ctx: OperationContext
-            ) -> OperationResult:
-                slot_index = operation.parameters[0].value if operation.parameters else 0
-                # Current implementation is verification-only
-                return compiler.enable_effect(operation, target_bus, slot_index, {})
-
-            return enable_compiler
-
-        registry.register_compiler(operation_id, make_enable_compiler(bus))
 
 
 def register_fx_structural_operations() -> None:

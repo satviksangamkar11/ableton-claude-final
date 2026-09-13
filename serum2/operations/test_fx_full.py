@@ -306,11 +306,19 @@ class TestA_B_C_Framework:
         assert len(effects) == 14, f"Expected 14 effects, got {len(effects)}"
 
     def test_b_execution_path_scalar_operations(self):
-        """B: Scalar operations can execute via Phase 2 auto-generation."""
-        # Phase 2 auto-gen takes semantic targets → scalar operations
-        # All FX targets should be in SEMANTIC_TARGETS → auto-gen will create ops
+        """B: Scalar operations can execute via Phase 2 auto-generation.
+
+        Note: FX enable/bypass/disable operations are UNRESOLVED (6 targets removed).
+        Bypass mechanism unknown after investigation; flex field unexplored.
+        See memory/fx_bypass_mechanism_unknown.md for details.
+
+        Current count: 96 FX parameter targets (14 effects × 6-7 params each).
+        - PROVEN: 76 parameter controls + 4 structural (clear/remove/add/replace)
+        - UNRESOLVED: 6 enable/disable operations pending flex field investigation
+        """
         fx_targets = {k: v for k, v in SEMANTIC_TARGETS.items() if k.startswith("FX")}
-        assert len(fx_targets) > 100, f"Expected >100 FX targets, got {len(fx_targets)}"
+        # 96 targets = 14 effects × ~6-7 params each + proven structural ops
+        assert len(fx_targets) >= 96, f"Expected >=96 FX targets, got {len(fx_targets)}"
 
     def test_c_state_persistence_pathmerge_fallback(self):
         """C: State mutations can persist via pathmerge fallback paths.
