@@ -219,15 +219,122 @@ class TestTopologyThreeBus:
     # TEST H: OPERATION SUCCESS CODES
     # =========================================================================
 
+    # =========================================================================
+    # TEST J: REMOVE OPERATION
+    # =========================================================================
+
+    @pytest.mark.parametrize("bus", [Bus.MAIN, Bus.BUS1, Bus.BUS2])
+    def test_remove_targets_correct_rack(self, bus):
+        """Remove operation targets only the specified bus rack."""
+        operation = SerumOperation(
+            operation_id=f"test_remove_{bus.name}",
+            semantic_name=f"Test Remove {bus.name}",
+            kind=OperationKind.TOPOLOGY,
+        )
+
+        result = self.compiler.remove_effect(operation, bus, 1)
+
+        assert result.success
+        assert len(result.compiled_mutations) == 1
+
+        mutation = result.compiled_mutations[0]
+        expected_path = f"FXRack{bus.value}.FX"
+        assert mutation.target_path == expected_path
+        # Remove operation encoded as special dict
+        assert isinstance(mutation.value, dict)
+        assert mutation.value.get("__array_op__") == "remove"
+        assert mutation.value.get("index") == 1
+
+    @pytest.mark.parametrize("slot_idx", [0, 1, 5, 10])
+    def test_remove_different_slots(self, slot_idx):
+        """Remove can target different slot indices."""
+        operation = SerumOperation(
+            operation_id=f"test_remove_{slot_idx}",
+            semantic_name=f"Test Remove Slot {slot_idx}",
+            kind=OperationKind.TOPOLOGY,
+        )
+
+        result = self.compiler.remove_effect(operation, Bus.MAIN, slot_idx)
+
+        assert result.success
+        mutation = result.compiled_mutations[0]
+        assert mutation.value.get("index") == slot_idx
+
+    @pytest.mark.parametrize("bus", [Bus.MAIN, Bus.BUS1, Bus.BUS2])
+    def test_remove_changes_topology(self, bus):
+        """Remove operation CHANGES array topology (changes length)."""
+        operation = SerumOperation(
+            operation_id=f"test_remove_{bus.name}",
+            semantic_name=f"Test Remove {bus.name}",
+            kind=OperationKind.TOPOLOGY,
+        )
+
+        result = self.compiler.remove_effect(operation, bus, 2)
+
+        assert result.success
+        # Should have exactly 1 mutation (array operation)
+        assert len(result.compiled_mutations) == 1
+
+        mutation = result.compiled_mutations[0]
+        # Verify it's an array operation, NOT a plainParams mutation
+        assert "__array_op__" in mutation.value
+        assert mutation.value["__array_op__"] == "remove"
+
+    @pytest.mark.parametrize("bus", [Bus.MAIN, Bus.BUS1, Bus.BUS2])
+    def test_bus_isolation_remove(self, bus):
+        """Removing effect on one bus doesn't affect others."""
+        main_result = self.compiler.remove_effect(
+            SerumOperation("test_main", "Test", OperationKind.TOPOLOGY),
+            Bus.MAIN, 0
+        )
+        bus1_result = self.compiler.remove_effect(
+            SerumOperation("test_bus1", "Test", OperationKind.TOPOLOGY),
+            Bus.BUS1, 0
+        )
+        bus2_result = self.compiler.remove_effect(
+            SerumOperation("test_bus2", "Test", OperationKind.TOPOLOGY),
+            Bus.BUS2, 0
+        )
+
+        assert main_result.success
+        assert bus1_result.success
+        assert bus2_result.success
+
+        assert "FXRack0.FX" in main_result.compiled_mutations[0].target_path
+        assert "FXRack1.FX" in bus1_result.compiled_mutations[0].target_path
+        assert "FXRack2.FX" in bus2_result.compiled_mutations[0].target_path
+
+    def test_multiple_removes_different_slots(self):
+        """Multiple removes on same bus target different slots correctly."""
+        results = [
+            self.compiler.remove_effect(
+                SerumOperation(f"remove_{i}", "Remove", OperationKind.TOPOLOGY),
+                Bus.MAIN, i
+            )
+            for i in range(3)
+        ]
+
+        assert all(r.success for r in results)
+        # All should target same path but different indices
+        paths = [r.compiled_mutations[0].target_path for r in results]
+        assert all(p == "FXRack0.FX" for p in paths)
+
+        indices = [r.compiled_mutations[0].value.get("index") for r in results]
+        assert indices == [0, 1, 2]
+
     @pytest.mark.parametrize("bus", [Bus.MAIN, Bus.BUS1, Bus.BUS2])
     def test_all_operations_succeed(self, bus):
-        """All 8 structural operations succeed for each bus."""
+        """All structural operations succeed for each bus."""
         operations = [
             ("bypass", lambda: self.compiler.bypass_effect(
                 SerumOperation("op", "Op", OperationKind.TOPOLOGY),
                 bus, 0
             )),
             ("unbypass", lambda: self.compiler.unbypass_effect(
+                SerumOperation("op", "Op", OperationKind.TOPOLOGY),
+                bus, 0
+            )),
+            ("remove", lambda: self.compiler.remove_effect(
                 SerumOperation("op", "Op", OperationKind.TOPOLOGY),
                 bus, 0
             )),
@@ -260,6 +367,12 @@ class TestTopologyThreeBus:
             bus, 0
         )
         assert len(unbypass_result.compiled_mutations) == 1
+
+        remove_result = self.compiler.remove_effect(
+            SerumOperation("op", "Op", OperationKind.TOPOLOGY),
+            bus, 0
+        )
+        assert len(remove_result.compiled_mutations) == 1
 
         clear_result = self.compiler.clear_rack(
             SerumOperation("op", "Op", OperationKind.TOPOLOGY),

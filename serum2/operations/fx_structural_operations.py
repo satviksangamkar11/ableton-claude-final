@@ -152,6 +152,34 @@ class FXStructuralCompiler:
             mutation_description=f"FX replace: Replace effect at {slot_path}",
         )
 
+    def remove_effect(
+        self,
+        operation: SerumOperation,
+        bus: Bus,
+        slot_index: int,
+    ) -> OperationResult:
+        """Remove (delete) an effect from a rack at a specific slot.
+
+        Uses array_remove to remove the element at slot_index.
+        Subsequent elements shift down. Array topology changes.
+        """
+        location = FXSlotLocation(bus, slot_index)
+        fx_array_path = location.fx_array_path
+
+        # Encode array removal operation
+        mutation = Mutation(
+            target_path=fx_array_path,
+            value={"__array_op__": "remove", "index": slot_index},
+            provenance=f"SerumOperation.{operation.operation_id}",
+        )
+
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=True,
+            compiled_mutations=[mutation],
+            mutation_description=f"FX remove: Remove effect from {location.rack_path}[{slot_index}]",
+        )
+
     def clear_rack(
         self,
         operation: SerumOperation,
@@ -260,7 +288,7 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
 
     PROVEN OPERATIONS (registered):
     - CLEAR_RACK: fully implemented (whole-array replacement)
-    - REMOVE: implemented via array_remove primitive
+    - REMOVE: implemented via array_remove primitive (STEP 19)
     - ADD: implemented via array_insert primitive
     - REPLACE: implemented via array_replace_element primitive
     - BYPASS: implemented via plainParams mutation (Step 16 discovery)
@@ -279,9 +307,46 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
       - FX array topology
       - All other FX state and parameters
 
-    Distinct from REMOVE (topology change).
+    REMOVE (Step 19): Distinct from BYPASS; removes FX entirely, changes array topology.
     """
     compiler = FXStructuralCompiler()
+
+    # Register REMOVE operations for each bus (PROVEN - Step 19)
+    for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
+        bus_name = bus.name
+        operation_id = f"fx_struct_remove_{bus_name}"
+        semantic_name = f"Remove FX {bus_name}"
+
+        definition = OperationDefinition(
+            operation_id=operation_id,
+            semantic_name=semantic_name,
+            kind=OperationKind.TOPOLOGY,
+            parameters=[
+                OperationParameter(
+                    name="slot_index",
+                    value=None,
+                    required=True,
+                    description="Index of FX slot to remove",
+                )
+            ],
+            measurement_metric=None,
+            expected_direction=None,
+            description=f"Remove an effect from {bus_name} FX rack",
+        )
+
+        registry.register(definition)
+
+        # Register compiler
+        def make_remove_compiler(target_bus: Bus) -> callable:
+            def remove_compiler(
+                operation: SerumOperation, ctx: OperationContext
+            ) -> OperationResult:
+                slot_idx = operation.parameters[0].value if operation.parameters else 0
+                return compiler.remove_effect(operation, target_bus, slot_idx)
+
+            return remove_compiler
+
+        registry.register_compiler(operation_id, make_remove_compiler(bus))
 
     # Register CLEAR_RACK operations for each bus (PROVEN)
     for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:

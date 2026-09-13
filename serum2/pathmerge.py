@@ -59,7 +59,22 @@ def _descend_for_write(node, part):
 
 
 def apply_path_value(body: dict, dotted_path: str, value) -> None:
-    """Mutates body in place."""
+    """Mutates body in place.
+
+    Supports special array operations via __array_op__ encoding:
+    - {"__array_op__": "remove", "index": N}: removes element at index N
+    - {"__array_op__": "insert", "index": N, "element": E}: inserts E at index N
+    """
+    # Handle special array operations
+    if isinstance(value, dict) and "__array_op__" in value:
+        op = value["__array_op__"]
+        if op == "remove":
+            array_remove(body, dotted_path, value["index"])
+            return
+        elif op == "insert":
+            array_insert(body, dotted_path, value["index"], value["element"])
+            return
+
     parts = dotted_path.split(".")
     if len(parts) == 1:
         body[parts[0]] = value
