@@ -54,13 +54,33 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "FXEQ.Gain2":        SemanticTargetRef("FXEQ.Gain2",        "fx_field_eq_gain2"),
     "FXEQ.LevelOut":     SemanticTargetRef("FXEQ.LevelOut",     "fx_field_eq_level_out"),
     "FXDistortion.Drive": SemanticTargetRef("FXDistortion.Drive", "fx_field_dist_drive"),
-    # Oscillator
-    "OSC1.Enable":        SemanticTargetRef("OSC1.Enable",        "oscillator_field_OSC-ENABLE"),
-    "OSC1.Octave":        SemanticTargetRef("OSC1.Octave",        "oscillator_field_OSC-OCTAVE"),
-    "OSC1.Volume":        SemanticTargetRef("OSC1.Volume",        "oscillator_field_OSC-VOLUME"),
-    "OSC1.Level":         SemanticTargetRef("OSC1.Level",         "oscillator_field_OSC-VOLUME"),
-    "OSC1.Detune":        SemanticTargetRef("OSC1.Detune",        "oscillator_field_OSC-DETUNE"),
-    "OSC1.Wavetable":     SemanticTargetRef("OSC1.Wavetable",     "oscillator_field_OSC-WAVETABLE"),
+    # Oscillator (OSC1/OSC2/OSC3 + SUB)
+    "SUB.Enable":         SemanticTargetRef("SUB.Enable",         "oscillator_field_SUB-ENABLE"),
+    "SUB.Octave":         SemanticTargetRef("SUB.Octave",         "oscillator_field_SUB-OCTAVE"),
+    "SUB.Volume":         SemanticTargetRef("SUB.Volume",         "oscillator_field_SUB-VOLUME"),
+    "SUB.Detune":         SemanticTargetRef("SUB.Detune",         "oscillator_field_SUB-DETUNE"),
+    "SUB.Warp":           SemanticTargetRef("SUB.Warp",           "oscillator_field_SUB-WARP"),
+
+    "OSC1.Enable":        SemanticTargetRef("OSC1.Enable",        "oscillator_field_OSC1-ENABLE"),
+    "OSC1.Octave":        SemanticTargetRef("OSC1.Octave",        "oscillator_field_OSC1-OCTAVE"),
+    "OSC1.Volume":        SemanticTargetRef("OSC1.Volume",        "oscillator_field_OSC1-VOLUME"),
+    "OSC1.Level":         SemanticTargetRef("OSC1.Level",         "oscillator_field_OSC1-VOLUME"),
+    "OSC1.Detune":        SemanticTargetRef("OSC1.Detune",        "oscillator_field_OSC1-DETUNE"),
+    "OSC1.Wavetable":     SemanticTargetRef("OSC1.Wavetable",     "oscillator_field_OSC1-WAVETABLE"),
+    "OSC1.Warp":          SemanticTargetRef("OSC1.Warp",          "oscillator_field_OSC1-WARP"),
+
+    "OSC2.Octave":        SemanticTargetRef("OSC2.Octave",        "oscillator_field_OSC2-OCTAVE"),
+    "OSC2.Volume":        SemanticTargetRef("OSC2.Volume",        "oscillator_field_OSC2-VOLUME"),
+    "OSC2.Detune":        SemanticTargetRef("OSC2.Detune",        "oscillator_field_OSC2-DETUNE"),
+    "OSC2.Warp":          SemanticTargetRef("OSC2.Warp",          "oscillator_field_OSC2-WARP"),
+
+    "OSC3.Octave":        SemanticTargetRef("OSC3.Octave",        "oscillator_field_OSC3-OCTAVE"),
+    "OSC3.Volume":        SemanticTargetRef("OSC3.Volume",        "oscillator_field_OSC3-VOLUME"),
+    "OSC3.Detune":        SemanticTargetRef("OSC3.Detune",        "oscillator_field_OSC3-DETUNE"),
+    "OSC3.Warp":          SemanticTargetRef("OSC3.Warp",          "oscillator_field_OSC3-WARP"),
+
+    "NOISE.Volume":       SemanticTargetRef("NOISE.Volume",       "oscillator_field_NOISE-VOLUME"),
+    "NOISE.Warp":         SemanticTargetRef("NOISE.Warp",         "oscillator_field_NOISE-WARP"),
     # Filter
     "Filter.Resonance":   SemanticTargetRef("Filter.Resonance",   "filter_field_reso"),
     "Filter.Type":        SemanticTargetRef("Filter.Type",        "filter_field_type"),
@@ -71,8 +91,34 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "Env1.Sustain":       SemanticTargetRef("Env1.Sustain",       "envelope_field_sustain"),
     # Filter (extended)
     "Filter.Cutoff":       SemanticTargetRef("Filter.Cutoff",       "filter_field_cutoff"),
-    # Global
+    "Filter.Drive":        SemanticTargetRef("Filter.Drive",        "filter_field_drive"),
+    "Filter.Q":            SemanticTargetRef("Filter.Q",            "filter_field_q"),
+    "Filter2.Cutoff":      SemanticTargetRef("Filter2.Cutoff",      "filter2_field_cutoff"),
+    "Filter2.Resonance":   SemanticTargetRef("Filter2.Resonance",   "filter2_field_reso"),
+    "Filter2.Type":        SemanticTargetRef("Filter2.Type",        "filter2_field_type"),
+    "Filter2.Drive":       SemanticTargetRef("Filter2.Drive",       "filter2_field_drive"),
+    "Filter2.Q":           SemanticTargetRef("Filter2.Q",           "filter2_field_q"),
+    # Envelope (extended)
+    "Env2.Attack":         SemanticTargetRef("Env2.Attack",         "envelope2_field_attack"),
+    "Env2.Decay":          SemanticTargetRef("Env2.Decay",          "envelope2_field_decay"),
+    "Env2.Sustain":        SemanticTargetRef("Env2.Sustain",        "envelope2_field_sustain"),
+    "Env2.Release":        SemanticTargetRef("Env2.Release",        "envelope2_field_release"),
+    "Env3.Attack":         SemanticTargetRef("Env3.Attack",         "envelope3_field_attack"),
+    "Env3.Decay":          SemanticTargetRef("Env3.Decay",          "envelope3_field_decay"),
+    "Env3.Sustain":        SemanticTargetRef("Env3.Sustain",        "envelope3_field_sustain"),
+    "Env3.Release":        SemanticTargetRef("Env3.Release",        "envelope3_field_release"),
+    "Env4.Attack":         SemanticTargetRef("Env4.Attack",         "envelope4_field_attack"),
+    "Env4.Decay":          SemanticTargetRef("Env4.Decay",          "envelope4_field_decay"),
+    "Env4.Sustain":        SemanticTargetRef("Env4.Sustain",        "envelope4_field_sustain"),
+    "Env4.Release":        SemanticTargetRef("Env4.Release",        "envelope4_field_release"),
+    # Global (extended)
     "Global.MasterVolume": SemanticTargetRef("Global.MasterVolume", "global_field_mastervolume"),
+    "Global.Transpose":    SemanticTargetRef("Global.Transpose",    "global_field_transpose"),
+    "Global.Tuning":       SemanticTargetRef("Global.Tuning",       "global_field_tuning"),
+    "Global.Quality":      SemanticTargetRef("Global.Quality",      "global_field_quality"),
+    "Global.Swing":        SemanticTargetRef("Global.Swing",        "global_field_swing"),
+    "Global.Scale":        SemanticTargetRef("Global.Scale",        "global_field_scale"),
+    "Global.Key":          SemanticTargetRef("Global.Key",          "global_field_key"),
 }
 
 
