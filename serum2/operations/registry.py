@@ -294,6 +294,10 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
     ))
     registry.register_compiler("fx_set_parameter", compiler_set_fx_parameter)
 
+    # Phase FX-FULL: FX structural operations (Step 19 REMOVE, Step 17 BYPASS/UNBYPASS)
+    from .fx_structural_operations import register_fx_structural_operations
+    register_fx_structural_operations()
+
     # Phase 5: Oscillator operations
     # Set oscillator type
     registry.register(OperationDefinition(
