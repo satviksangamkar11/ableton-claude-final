@@ -127,7 +127,6 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
     This is called once at module initialization.
     Structured operations are registered separately.
     """
-    # This function will be expanded in Phase 2 to auto-generate
-    # scalar operation definitions from SEMANTIC_TARGETS.
-    # For now, it's a placeholder.
-    pass
+    # Phase 2: auto-generate scalar operations from SEMANTIC_TARGETS
+    from .scalar_operations import build_scalar_operations_from_targets
+    build_scalar_operations_from_targets(registry)
