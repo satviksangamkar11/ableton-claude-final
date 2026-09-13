@@ -1,0 +1,82 @@
+{
+  "episode_id": "ep_yt_53c01562cd08_serum_recreation",
+  "source": {
+    "source_id": "yt_53c01562cd08",
+    "url": "https://www.youtube.com/shorts/QqYlEc_6E6A",
+    "transcript_engine": "fallback (faster-whisper)",
+    "knowledge_items": 2
+  },
+  "reference": {
+    "technique": "ninth_chord_arpeggiation",
+    "synth": "Serum 2",
+    "source_wavetable": "FAC3 plucked (unavailable)",
+    "source_sample": "Telecaster LE (unavailable)",
+    "source_effects": "Chorus/Delay/Reverb (unavailable)",
+    "tempo": 100
+  },
+  "serum_execution": {
+    "adapter": "serum_harness_adapter (integrated)",
+    "harness": "existing proven harness",
+    "vst3_path": "C:\\Program Files\\Common Files\\VST3\\Serum2.vst3",
+    "tests_executed": 3,
+    "tests_successful": 3,
+    "audio_effective_mutations": 1
+  },
+  "mutations_tested": [
+    {
+      "operation": "Envelope Attack (short attack for pluck)",
+      "path": "Env0.plainParams.kParamAttack",
+      "value": 0.05,
+      "baseline_db": -19.26,
+      "treatment_db": -19.34,
+      "delta_db": -0.08,
+      "audio_changed": false
+    },
+    {
+      "operation": "Envelope Release (longer sustain)",
+      "path": "Env0.plainParams.kParamRelease",
+      "value": 0.8,
+      "baseline_db": -20.23,
+      "treatment_db": -19.98,
+      "delta_db": 0.25,
+      "audio_changed": true,
+      "measurement_id": "overall_rms_db:7cb07b3c6a54"
+    },
+    {
+      "operation": "Filter Resonance (plucked emphasis)",
+      "path": "Filter0.plainParams.kParamResonance",
+      "value": 0.65,
+      "baseline_db": -19.26,
+      "treatment_db": -19.26,
+      "delta_db": 0.0,
+      "audio_changed": false
+    }
+  ],
+  "ableton_mcp": {
+    "track_created": true,
+    "track_index": 4,
+    "track_name": "5-MIDI",
+    "clip_created": true,
+    "clip_index": 0,
+    "clip_length_beats": 16,
+    "midi_notes_added": 13,
+    "note_range": "C4-D5 (ninth chords)",
+    "tempo_set": 100,
+    "mcp_readback_verified": true
+  },
+  "unsupported_operations": [
+    "wavetable_selection (FAC3)",
+    "sample_selection (Telecaster LE)",
+    "effect_chain (Chorus/Delay/Reverb)"
+  ],
+  "reconstruction_summary": {
+    "status": "PARTIALLY_RECREATED",
+    "completion_percent": 60,
+    "midi_structure": "COMPLETE",
+    "serum_sound_design": "PARTIAL (1 of 3 mutations audio-effective)",
+    "ableton_session": "VERIFIED",
+    "audio_render": "COMPLETE",
+    "measurement": "COMPLETE"
+  },
+  "episode_notes": "Integration adapter successfully bridges producer requests to proven Serum harness. Envelope release mutation changed audio (+0.25 dB). Attack and resonance mutations executed but produced no measurable audio change. Reference contains unavailable controls (wavetable/sample/effects) but partial reconstruction completed with admitted operations."
+}
