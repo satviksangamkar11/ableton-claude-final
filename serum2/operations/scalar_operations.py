@@ -25,6 +25,17 @@ from .model import (
 from .registry import OperationRegistry, OperationDefinition
 from serum2.evidence.spec import Mutation
 
+# Phase 9B: Direct path mappings for new structural controls (corpus-verified, no contracts yet)
+PHASE_9B_STRUCTURAL_PATHS = {
+    "oscillator_field_OSC2-ENABLE": "Oscillator1.plainParams.kParamEnable",
+    "oscillator_field_OSC3-ENABLE": "Oscillator2.plainParams.kParamEnable",
+    "filter_field_ENABLE": "VoiceFilter0.plainParams.kParamEnable",
+    "filter2_field_ENABLE": "VoiceFilter1.plainParams.kParamEnable",
+    "oscillator_field_NOISE-FINE": "Oscillator3.plainParams.kParamFine",
+    "global_field_pitch_tracking": "Oscillator0.plainParams.kParamPitchTrack",
+    "arp_field_ENABLE": "Arp0.plainParams.kParamEnabled",
+}
+
 
 def build_scalar_operations_from_targets(
     registry: OperationRegistry,
@@ -44,6 +55,7 @@ def build_scalar_operations_from_targets(
     - FX parameters (all EQ, Distortion, Delay, Reverb, Compressor params)
     - Oscillator parameters (Volume, Octave, Detune, etc.)
     - Global parameters (Master Volume, etc.)
+    - Phase 9B: Module activation (OSC2/3 Enable, Filter Enable, etc.)
     """
     from serum2.compiler.targets import SEMANTIC_TARGETS
     from serum2.evidence.capability_contract import CAUSAL_VERIFIED
@@ -121,10 +133,11 @@ def build_scalar_operations_from_targets(
                                 error_detail=f"Contract for {tgt_name} has no mutation_target_path",
                             )
                     else:
-                        # No contract; use the semantic target name as fallback path
-                        # This will fail in harness if the path is wrong, but allows
-                        # phase 2 to compile operations that are representable but unqualified
-                        mutation_path = tgt_name
+                        # No contract; check Phase 9B structural paths mapping
+                        mutation_path = PHASE_9B_STRUCTURAL_PATHS.get(tgt_ref.capability_key)
+                        if not mutation_path:
+                            # Fallback: use the semantic target name (will fail if path is invalid)
+                            mutation_path = tgt_name
 
                     # Create the mutation
                     mutation = Mutation(

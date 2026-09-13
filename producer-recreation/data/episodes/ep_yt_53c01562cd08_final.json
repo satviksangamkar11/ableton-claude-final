@@ -1,0 +1,18 @@
+{
+  "episode_id": "ep_yt_53c01562cd08_recreation_final",
+  "source": {
+    "source_id": "yt_53c01562cd08",
+    "url": "https://www.youtube.com/shorts/QqYlEc_6E6A",
+    "transcript": "fallback (faster-whisper)",
+    "knowledge": "FAC3 plucked, Telecaster LE, Chorus, Delay, Reverb, ninth chords",
+    "technique": "arpeggiated ninth chord melody",
+    "tempo": 100
+  },
+  "serum_adapter_tests": [
+    {
+      "test": "Envelope Attack (short attack for pluck)",
+      "success": true,
+      "baseline": -19.262403263044547,
+      "treatment": -19.340170205559428,
+      "delta": -0.07776694251488081,
+      "audio_changed": 

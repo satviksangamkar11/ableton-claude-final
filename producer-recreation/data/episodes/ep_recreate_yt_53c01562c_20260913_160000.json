@@ -1,0 +1,84 @@
+{
+  "episode_id": "ep_recreate_yt_53c01562c_20260913_160000",
+  "source_id": "yt_53c01562cd08",
+  "source_url": "https://www.youtube.com/shorts/QqYlEc_6E6A",
+  "mode": "RECREATE",
+  "transcript_available": false,
+  "classification": {
+    "genre": "Electronic/Tutorial",
+    "style": "Serum synthesis demo",
+    "musical_role": "Guitar melody",
+    "sound_role": "Lead/melodic synth"
+  },
+  "serum_patch": {
+    "OSC1": "Wavetable: Analog",
+    "OSC1_Octave": 0,
+    "OSC1_Semitone": 0,
+    "OSC1_Detune": 0.02,
+    "OSC1_Level": 0.8,
+    "OSC2": "Wavetable: Pulse",
+    "OSC2_Octave": 0,
+    "OSC2_Semitone": 7,
+    "OSC2_Level": 0.2,
+    "Env1_Attack": 0.005,
+    "Env1_Decay": 0.05,
+    "Env1_Sustain": 0.7,
+    "Env1_Release": 0.2,
+    "Filter_Type": "Low-pass",
+    "Filter_Cutoff": 2800,
+    "Filter_Resonance": 0.4
+  },
+  "midi_notes": [
+    {
+      "pitch": "E4",
+      "start": "1.1.1",
+      "end": "1.1.3",
+      "velocity": 100
+    },
+    {
+      "pitch": "G4",
+      "start": "1.2.1",
+      "end": "1.2.3",
+      "velocity": 95
+    },
+    {
+      "pitch": "B4",
+      "start": "1.3.1",
+      "end": "1.3.3",
+      "velocity": 90
+    },
+    {
+      "pitch": "E5",
+      "start": "1.4.1",
+      "end": "1.4.4",
+      "velocity": 100
+    },
+    {
+      "pitch": "G4",
+      "start": "2.1.1",
+      "end": "2.1.3",
+      "velocity": 85
+    },
+    {
+      "pitch": "F#4",
+      "start": "2.2.1",
+      "end": "2.2.3",
+      "velocity": 90
+    },
+    {
+      "pitch": "E4",
+      "start": "2.3.1",
+      "end": "2.4.4",
+      "velocity": 95
+    }
+  ],
+  "measurements": {
+    "baseline_db": -Infinity,
+    "treatment_db": -10.5,
+    "peak_db": -6.2,
+    "spectral_centroid_hz": 2850,
+    "rms_db": -10.5
+  },
+  "status": "RECREATED",
+  "timestamp": "2026-09-13T16:00:00Z"
+}

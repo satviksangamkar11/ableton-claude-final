@@ -1,0 +1,51 @@
+{
+  "source_id": "yt_53c01562cd08",
+  "extraction_timestamp": "2026-09-13T10:38:58.784183",
+  "item_count": 2,
+  "knowledge_items": [
+    {
+      "knowledge_item_id": "ki_1fc15a7b80e7d9fd",
+      "source_id": "yt_53c01562cd08",
+      "source_url": "https://www.youtube.com/shorts/QqYlEc_6E6A",
+      "source_segment_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timestamp_start": 0.0,
+      "timestamp_end": 18.0,
+      "original_proposition": "Let's make some good to our melodies inside of serum 2. So firstly, in serum 2, go to the multi-sample drop down here. We're going to go to where it says FAC3, plucked, and let's go to where it says telecaster LE. Let's add some effects to let's go to the effects. Let's add some chorus, some delay. And then you guys can try out different reverbs depending on your style. Okay, so from here, now we're just going to simply play ninth chords, but then spread out.",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "effects"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:38:58.784116"
+    },
+    {
+      "knowledge_item_id": "ki_c8e171b99c3ee8ef",
+      "source_id": "yt_53c01562cd08",
+      "source_url": "https://www.youtube.com/shorts/QqYlEc_6E6A",
+      "source_segment_ids": [
+        8,
+        9
+      ],
+      "timestamp_start": 30.56,
+      "timestamp_end": 38.64,
+      "original_proposition": "Just like that, super secret, super simple as what I meant to say. Alright, try it out, share with a friend piece.",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:38:58.784161"
+    }
+  ]
+}

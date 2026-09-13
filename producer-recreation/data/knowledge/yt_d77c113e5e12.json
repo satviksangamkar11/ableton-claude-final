@@ -1,0 +1,1367 @@
+{
+  "source_id": "yt_d77c113e5e12",
+  "extraction_timestamp": "2026-09-13T10:07:26.818389",
+  "item_count": 55,
+  "knowledge_items": [
+    {
+      "knowledge_item_id": "ki_2e83c4077db39c40",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0000",
+        "seg_0001",
+        "seg_0002",
+        "seg_0003",
+        "seg_0004",
+        "seg_0005",
+        "seg_0006",
+        "seg_0007",
+        "seg_0008"
+      ],
+      "timestamp_start": 0.24,
+      "timestamp_end": 15.599,
+      "original_proposition": "Hello nerds and welcome back to Studio Time with Virtual Riot. I'm sorry for my recent absence. I have been getting my butt kicked by depression and I'm feeling a little bit better today and I want to get back to making videos. So, I'm going to start with some shorter videos. And there's something really pretty I wanted to show you today, which",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "attack"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816472"
+    },
+    {
+      "knowledge_item_id": "ki_19c0389fc5c4826e",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0009",
+        "seg_0010",
+        "seg_0011",
+        "seg_0012",
+        "seg_0013"
+      ],
+      "timestamp_start": 17.359,
+      "timestamp_end": 36.16,
+      "original_proposition": "is how to make really beautiful pads with Serum 2. And we're going to be making stuff like this or this. And I've even arranged some of them to",
+      "knowledge_type": "PROCEDURE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816518"
+    },
+    {
+      "knowledge_item_id": "ki_6dd96e1af6e16068",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0014",
+        "seg_0015",
+        "seg_0016",
+        "seg_0017"
+      ],
+      "timestamp_start": 38.16,
+      "timestamp_end": 51.28,
+      "original_proposition": "this little loop here. [Music] And you might already see the spectral oscillator is the trick here. So, let me",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816545"
+    },
+    {
+      "knowledge_item_id": "ki_b3b65c2b4c997ed4",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0018",
+        "seg_0019",
+        "seg_0020",
+        "seg_0021",
+        "seg_0022",
+        "seg_0023",
+        "seg_0024",
+        "seg_0025",
+        "seg_0026"
+      ],
+      "timestamp_start": 52.96,
+      "timestamp_end": 67.6,
+      "original_proposition": "show you cuz this is very easy and very rewarding. Also, we've got some pretty lighting going on today. This kind of feels like a Venus theory video despite the fact that I do not know how to color grade like that. All right, let's get into it. So, this is really easy to do and if you have a big sample library like me, there are so many samples you",
+      "knowledge_type": "PROCEDURE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816575"
+    },
+    {
+      "knowledge_item_id": "ki_1c0359aad5867934",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0027",
+        "seg_0028",
+        "seg_0029",
+        "seg_0030",
+        "seg_0031",
+        "seg_0032",
+        "seg_0033"
+      ],
+      "timestamp_start": 69.36,
+      "timestamp_end": 83.28,
+      "original_proposition": "can try this out with. The trick is to switch to the spectral oscillator and grab. You can either do a a single note one shot or uh some melodic loop. I'm going to show it to you with a loop first cuz it's a little more impressive. So, here I've got these melodic loops",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator",
+        "pitch"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816605"
+    },
+    {
+      "knowledge_item_id": "ki_0e466bb711c530f7",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0034",
+        "seg_0035",
+        "seg_0036",
+        "seg_0037",
+        "seg_0038",
+        "seg_0039"
+      ],
+      "timestamp_start": 84.72,
+      "timestamp_end": 98.96,
+      "original_proposition": "that are like stacks like song starters. I'm going to pick this one [Music] and drag that into the spectral oscillator. And then instead of one shot over here, you're going to click on that",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator",
+        "attack"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [
+        "select"
+      ],
+      "extraction_timestamp": "2026-09-13T10:07:26.816629"
+    },
+    {
+      "knowledge_item_id": "ki_3b1bf6cd7027b953",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0040",
+        "seg_0041",
+        "seg_0042",
+        "seg_0043",
+        "seg_0044",
+        "seg_0045",
+        "seg_0046"
+      ],
+      "timestamp_start": 100.24,
+      "timestamp_end": 114.159,
+      "original_proposition": "and change it to manual. Now this knob turn into a position knob. And wherever we go, it's going to freeze the audio at that position. Kind of if you know pulse stretch, that like really long stretching program. It kind of feels a little similar to that.",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816654"
+    },
+    {
+      "knowledge_item_id": "ki_dbc56b36414a15ee",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0047",
+        "seg_0048",
+        "seg_0049",
+        "seg_0050",
+        "seg_0051"
+      ],
+      "timestamp_start": 118.64,
+      "timestamp_end": 130.0,
+      "original_proposition": "So now you can scrub through the sample and since there are like a couple different chords in this loop, we can like find a chord that sounds really nice and add some delay and reverb real",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "effects"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816676"
+    },
+    {
+      "knowledge_item_id": "ki_179b5da64ecdc7db",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0052",
+        "seg_0053",
+        "seg_0054",
+        "seg_0055"
+      ],
+      "timestamp_start": 132.239,
+      "timestamp_end": 146.959,
+      "original_proposition": "quick. And maybe before that some compression just in case. There you go. That's a good spot.",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816695"
+    },
+    {
+      "knowledge_item_id": "ki_d1814e0d788a9569",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0056",
+        "seg_0057",
+        "seg_0058",
+        "seg_0059",
+        "seg_0060",
+        "seg_0061"
+      ],
+      "timestamp_start": 148.64,
+      "timestamp_end": 162.64,
+      "original_proposition": "There's a little bit of a really strong low frequency there. Might EQ that out with a spectral filter here. [Music] Nice. Now we can play that at whatever",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "pitch",
+        "filter"
+      ],
+      "candidate_semantic_targets": [
+        "Filter.Cutoff",
+        "Filter.Resonance"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816723"
+    },
+    {
+      "knowledge_item_id": "ki_0665b5158ede72f5",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0062",
+        "seg_0063",
+        "seg_0064",
+        "seg_0065",
+        "seg_0066"
+      ],
+      "timestamp_start": 164.239,
+      "timestamp_end": 178.48,
+      "original_proposition": "key we want. It's like a minor chord pad. And we can add more samples like in the next oscillator. Let's find another one. Why not that one? Okay, change it to",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816743"
+    },
+    {
+      "knowledge_item_id": "ki_f4b2678fdd0c8ccf",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0067",
+        "seg_0068",
+        "seg_0069",
+        "seg_0070"
+      ],
+      "timestamp_start": 180.319,
+      "timestamp_end": 194.72,
+      "original_proposition": "manual. I'm going to turn the first one off for a second here. [Music] There. That sounds nice. Might also want",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816760"
+    },
+    {
+      "knowledge_item_id": "ki_902ab4a9c6177227",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0071",
+        "seg_0072",
+        "seg_0073",
+        "seg_0074",
+        "seg_0075"
+      ],
+      "timestamp_start": 197.36,
+      "timestamp_end": 210.4,
+      "original_proposition": "to filter that a little bit. Maybe we can soften it off a little bit on the tops here. Oh, just got to make sure these are both in the same key. Uh, mix that with the",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "filter"
+      ],
+      "candidate_semantic_targets": [
+        "Filter.Cutoff",
+        "Filter.Resonance"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816782"
+    },
+    {
+      "knowledge_item_id": "ki_15f51c7512131f9c",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0076",
+        "seg_0077",
+        "seg_0078",
+        "seg_0079",
+        "seg_0080",
+        "seg_0081"
+      ],
+      "timestamp_start": 212.64,
+      "timestamp_end": 226.239,
+      "original_proposition": "first oscillator. And then, if this is too static for you, you can grab an LFO and put it on the position knob. Obviously, by default, this is going to sound a little crazy now",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator",
+        "modulation"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816803"
+    },
+    {
+      "knowledge_item_id": "ki_21fed9e2bed7be8c",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0082",
+        "seg_0083",
+        "seg_0084",
+        "seg_0085",
+        "seg_0086",
+        "seg_0087",
+        "seg_0088"
+      ],
+      "timestamp_start": 228.08,
+      "timestamp_end": 241.28,
+      "original_proposition": "cuz it's just going to scrub around in that sample, in that loop. But uh if we change this to let's say a sample and hold LFO and make it smooth and make it kind of fast. So it's just this really jittery random line. It kind of turns into it's almost",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "modulation"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816826"
+    },
+    {
+      "knowledge_item_id": "ki_4fa4eddcfbc08cde",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0089",
+        "seg_0090",
+        "seg_0091",
+        "seg_0092",
+        "seg_0093",
+        "seg_0094"
+      ],
+      "timestamp_start": 243.2,
+      "timestamp_end": 257.199,
+      "original_proposition": "like a mixture of spectral and granular, right? And maybe we can decrease the intensity of this so that there's just like a little tiny bit of motion. And then maybe the same thing for the second oscillator as well.",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [
+        "decrease"
+      ],
+      "extraction_timestamp": "2026-09-13T10:07:26.816847"
+    },
+    {
+      "knowledge_item_id": "ki_ad154bae0a095244",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0095",
+        "seg_0096",
+        "seg_0097",
+        "seg_0098"
+      ],
+      "timestamp_start": 263.199,
+      "timestamp_end": 276.479,
+      "original_proposition": "So, sample and hold smooth all the way up speed up just so there's like a little bit more",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816864"
+    },
+    {
+      "knowledge_item_id": "ki_ee6fdfdfc4470431",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0099",
+        "seg_0100",
+        "seg_0101",
+        "seg_0102",
+        "seg_0103",
+        "seg_0104",
+        "seg_0105",
+        "seg_0106"
+      ],
+      "timestamp_start": 277.919,
+      "timestamp_end": 292.479,
+      "original_proposition": "motion. Nice. We have made a really pretty minor pad. I'm going to save that. And obviously, this is going to go into a folder of presets that you can get on my Patreon. uh link in the description and like all the presets from this episode are going to be in there of course. But",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816892"
+    },
+    {
+      "knowledge_item_id": "ki_27748dd79d88db7c",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0107",
+        "seg_0108",
+        "seg_0109",
+        "seg_0110",
+        "seg_0111",
+        "seg_0112",
+        "seg_0113",
+        "seg_0114"
+      ],
+      "timestamp_start": 294.0,
+      "timestamp_end": 307.68,
+      "original_proposition": "this doesn't just work with chords or like melodic loops or something. Also like just oneshot notes work really well. Uh you can even use stuff that Serum comes with like if we select the spectral oscillator again here and go into factory mode and then there's like a cello note",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator",
+        "pitch",
+        "modulation",
+        "volume"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "Master.Volume",
+        "OSC2.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune"
+      ],
+      "producer_actions": [
+        "select"
+      ],
+      "extraction_timestamp": "2026-09-13T10:07:26.816923"
+    },
+    {
+      "knowledge_item_id": "ki_32d87c900e61d301",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0115",
+        "seg_0116",
+        "seg_0117",
+        "seg_0118",
+        "seg_0119",
+        "seg_0120"
+      ],
+      "timestamp_start": 309.919,
+      "timestamp_end": 323.6,
+      "original_proposition": "something like that. Um we could uh again change it to manual. [Music] I'm going just add delay and reverb just because we always want those because we are making beautiful patty stuff. So,",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "effects",
+        "volume"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "Master.Volume",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816944"
+    },
+    {
+      "knowledge_item_id": "ki_346334498030496b",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0121",
+        "seg_0122",
+        "seg_0123",
+        "seg_0124",
+        "seg_0125"
+      ],
+      "timestamp_start": 327.199,
+      "timestamp_end": 339.52,
+      "original_proposition": "this already like turned this into an kind of interesting synth sound instead of a cello. But we could do something fun here where maybe when we hit a note, it kind of",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "pitch"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816964"
+    },
+    {
+      "knowledge_item_id": "ki_937892b51475fda7",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0126",
+        "seg_0127",
+        "seg_0128",
+        "seg_0129",
+        "seg_0130",
+        "seg_0131"
+      ],
+      "timestamp_start": 342.56,
+      "timestamp_end": 356.46,
+      "original_proposition": "like starts ramping up from the end of the sample towards the start of the sample. So it's kind of like gives us a rise here. [Music] [Applause]",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "attack"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.816983"
+    },
+    {
+      "knowledge_item_id": "ki_3d08432f551787dd",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0132",
+        "seg_0133",
+        "seg_0134",
+        "seg_0135",
+        "seg_0136",
+        "seg_0137",
+        "seg_0138"
+      ],
+      "timestamp_start": 358.24,
+      "timestamp_end": 372.639,
+      "original_proposition": "And then it could also fall back down with the volume envelope here. And then lastly, maybe because once I'm holding a chord and this envelope has reached its top, it does feel a little static overall. So, we might want to add that sample and",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "volume",
+        "envelope"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "Master.Volume",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817008"
+    },
+    {
+      "knowledge_item_id": "ki_f81e9a47d60fc084",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0139",
+        "seg_0140",
+        "seg_0141",
+        "seg_0142",
+        "seg_0143",
+        "seg_0144"
+      ],
+      "timestamp_start": 374.88,
+      "timestamp_end": 394.67,
+      "original_proposition": "hold LFO again just to add a little bit of motion. Maybe this time it can be a little slower but a little stronger in its effect. [Music]",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "effects",
+        "modulation",
+        "volume"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "Master.Volume",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [
+        "decrease"
+      ],
+      "extraction_timestamp": "2026-09-13T10:07:26.817026"
+    },
+    {
+      "knowledge_item_id": "ki_99dfae8e173d3f42",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0145",
+        "seg_0146",
+        "seg_0147",
+        "seg_0148",
+        "seg_0149",
+        "seg_0150"
+      ],
+      "timestamp_start": 398.13,
+      "timestamp_end": 409.919,
+      "original_proposition": "[Applause] [Music] [Applause] Nice. We've made some sort of string synth pad. And of course, you could just go along here with the left and right",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817047"
+    },
+    {
+      "knowledge_item_id": "ki_e61aa23ccd8336d7",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0151",
+        "seg_0152",
+        "seg_0153",
+        "seg_0154",
+        "seg_0155",
+        "seg_0156",
+        "seg_0157"
+      ],
+      "timestamp_start": 412.0,
+      "timestamp_end": 426.639,
+      "original_proposition": "buttons and try out other samples in here. Oh, that one has a weird little thing at the beginning. [Music] [Applause] This is a spooky one,",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817068"
+    },
+    {
+      "knowledge_item_id": "ki_4c8b344892cf3724",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0158",
+        "seg_0159",
+        "seg_0160",
+        "seg_0161",
+        "seg_0162"
+      ],
+      "timestamp_start": 429.76,
+      "timestamp_end": 459.44,
+      "original_proposition": "[Applause] [Music] but kind of interesting. I like it. [Music] Oh, this is a trumpet shot. That kind of",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817086"
+    },
+    {
+      "knowledge_item_id": "ki_1e8e647e6e53daf2",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0163",
+        "seg_0164",
+        "seg_0165"
+      ],
+      "timestamp_start": 461.599,
+      "timestamp_end": 474.72,
+      "original_proposition": "sounds dark and ominous. [Music] For some reason, I'm reminded of Halfife",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817103"
+    },
+    {
+      "knowledge_item_id": "ki_50d65a52ee2f154d",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0166",
+        "seg_0167",
+        "seg_0168"
+      ],
+      "timestamp_start": 476.56,
+      "timestamp_end": 490.319,
+      "original_proposition": "2 music. [Music] And if the sample in here has like a",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817120"
+    },
+    {
+      "knowledge_item_id": "ki_7954397fb8add1ea",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0169",
+        "seg_0170",
+        "seg_0171",
+        "seg_0172",
+        "seg_0173",
+        "seg_0174",
+        "seg_0175",
+        "seg_0176"
+      ],
+      "timestamp_start": 492.96,
+      "timestamp_end": 509.84,
+      "original_proposition": "distinct kind of like start and end where it like starts loud and ends quiet. Let me like grab a piano sound or something. Remove all the modulations for a second. You could also do something like have an LFO maybe uh have it go something like this or something.",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "modulation",
+        "attack"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817146"
+    },
+    {
+      "knowledge_item_id": "ki_8fcb04e3a66b6d49",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0177",
+        "seg_0178",
+        "seg_0179",
+        "seg_0180"
+      ],
+      "timestamp_start": 512.289,
+      "timestamp_end": 526.48,
+      "original_proposition": "[Music] [Applause] [Music] for some interesting motion.",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817162"
+    },
+    {
+      "knowledge_item_id": "ki_d94db8493004714c",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0181",
+        "seg_0182",
+        "seg_0183",
+        "seg_0184",
+        "seg_0185",
+        "seg_0186"
+      ],
+      "timestamp_start": 529.12,
+      "timestamp_end": 543.12,
+      "original_proposition": "Might even I would probably still go in here and filter this a little bit. Again, this piano can get some more brightness, too. It doesn't even sound like a piano. I love it. This almost sounds like flutes.",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "filter",
+        "volume"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "Master.Volume",
+        "Filter.Cutoff",
+        "OSC2.Volume",
+        "Filter.Resonance"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817185"
+    },
+    {
+      "knowledge_item_id": "ki_dcd38436ca3f86fb",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0187",
+        "seg_0188",
+        "seg_0189",
+        "seg_0190",
+        "seg_0191"
+      ],
+      "timestamp_start": 547.76,
+      "timestamp_end": 558.24,
+      "original_proposition": "So yeah, using this technique, I've made like a bunch of different patches that I will give to you through my Patreon like this this kind of like [Applause]",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817206"
+    },
+    {
+      "knowledge_item_id": "ki_2a52afc9ed5e7b04",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0192",
+        "seg_0193",
+        "seg_0194",
+        "seg_0195",
+        "seg_0196"
+      ],
+      "timestamp_start": 560.32,
+      "timestamp_end": 574.88,
+      "original_proposition": "singing voice. Uh, I've also sequenced an entire loop here [Music] where a really slow LFO is changing the position of the in the sample to like",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "modulation"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817226"
+    },
+    {
+      "knowledge_item_id": "ki_d5b77c92374b59e5",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0197",
+        "seg_0198",
+        "seg_0199",
+        "seg_0200",
+        "seg_0201"
+      ],
+      "timestamp_start": 577.36,
+      "timestamp_end": 590.17,
+      "original_proposition": "create a chord progression. [Music] And then this is like a combination of a bunch of different things. This one's a [Music]",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817246"
+    },
+    {
+      "knowledge_item_id": "ki_6c2ba79f6083f4e9",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0202",
+        "seg_0203",
+        "seg_0204",
+        "seg_0205",
+        "seg_0206",
+        "seg_0207"
+      ],
+      "timestamp_start": 591.36,
+      "timestamp_end": 608.8,
+      "original_proposition": "just like a single note type plucky thing. This one's a sad sounding pad. This one over here kind of sounds like flutes as well. [Music] It's not even modulating the volume.",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "modulation",
+        "pitch",
+        "volume"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "Master.Volume",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817266"
+    },
+    {
+      "knowledge_item_id": "ki_5cc489298a0e7577",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0208",
+        "seg_0209",
+        "seg_0210",
+        "seg_0211",
+        "seg_0212",
+        "seg_0213"
+      ],
+      "timestamp_start": 610.399,
+      "timestamp_end": 630.09,
+      "original_proposition": "It's just modulating the position in the sample like this the scrubbing position. And that one's kind of like a cute little piano soundish [Music] [Applause]",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "modulation"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817287"
+    },
+    {
+      "knowledge_item_id": "ki_41daaf97c3e9d6a3",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0214",
+        "seg_0215",
+        "seg_0216",
+        "seg_0217",
+        "seg_0218",
+        "seg_0219",
+        "seg_0220",
+        "seg_0221"
+      ],
+      "timestamp_start": 631.44,
+      "timestamp_end": 646.24,
+      "original_proposition": "turn into this like really nice cinematic thing. Bonus tip, try putting bass noises into the spectral oscillator and setting it to manual as well and then like scrub through the sound. For example, I put this one in there and then we can get some craziness like [Music]",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817314"
+    },
+    {
+      "knowledge_item_id": "ki_a6b7be008f7aa942",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0222",
+        "seg_0223",
+        "seg_0224",
+        "seg_0225",
+        "seg_0226",
+        "seg_0227"
+      ],
+      "timestamp_start": 648.57,
+      "timestamp_end": 661.51,
+      "original_proposition": "[Applause] [Music] And if it sounds a little too washed out for you, uh, right click the position knob and hit face lock. [Music]",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817335"
+    },
+    {
+      "knowledge_item_id": "ki_71830b3c89880bc9",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0228",
+        "seg_0229",
+        "seg_0230",
+        "seg_0231"
+      ],
+      "timestamp_start": 667.839,
+      "timestamp_end": 677.279,
+      "original_proposition": "It should immediately become a lot more crispy. Here's another pretty one that I just made, but I forgot to film it. So maybe we can make one more from",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817354"
+    },
+    {
+      "knowledge_item_id": "ki_74fe01250f49572b",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0232",
+        "seg_0233",
+        "seg_0234",
+        "seg_0235",
+        "seg_0236",
+        "seg_0237"
+      ],
+      "timestamp_start": 679.04,
+      "timestamp_end": 692.48,
+      "original_proposition": "scratch together and then I'm going to let you go for the day. So let's grab another serum spectral oscillator on manual mode and then I'm going to go into random splice samples folder and we got like melodic stacks chord",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator",
+        "modulation"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817378"
+    },
+    {
+      "knowledge_item_id": "ki_953c1da8020b3c22",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0238",
+        "seg_0239",
+        "seg_0240",
+        "seg_0241",
+        "seg_0242"
+      ],
+      "timestamp_start": 693.92,
+      "timestamp_end": 709.12,
+      "original_proposition": "progressions. [Music] I wonder what that would sound like. [Music] I feel like that chord,",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817403"
+    },
+    {
+      "knowledge_item_id": "ki_d857cb7e6ba546c5",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0243",
+        "seg_0244",
+        "seg_0245",
+        "seg_0246",
+        "seg_0247"
+      ],
+      "timestamp_start": 714.64,
+      "timestamp_end": 727.85,
+      "original_proposition": "this chord here can like flutter quite nicely, like up to up to like the end of that. But I want that to flutter randomly. [Music]",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817425"
+    },
+    {
+      "knowledge_item_id": "ki_310c3822f623c8d7",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0248",
+        "seg_0249",
+        "seg_0250",
+        "seg_0251",
+        "seg_0252"
+      ],
+      "timestamp_start": 730.32,
+      "timestamp_end": 747.61,
+      "original_proposition": "Maybe a little slower. Maybe something like this. And let's add a second one. Go into stacks here and see what we got. [Music]",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [
+        "decrease"
+      ],
+      "extraction_timestamp": "2026-09-13T10:07:26.817449"
+    },
+    {
+      "knowledge_item_id": "ki_0a01261a8d6dd099",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0253",
+        "seg_0254",
+        "seg_0255",
+        "seg_0256",
+        "seg_0257"
+      ],
+      "timestamp_start": 749.279,
+      "timestamp_end": 767.279,
+      "original_proposition": "Oh, that sounds like it would be nice if we skip to that chord in the middle here. Just got to adjust for pitch. Let's find a good spot. Maybe somewhere there. This one can",
+      "knowledge_type": "TECHNIQUE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "pitch"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817468"
+    },
+    {
+      "knowledge_item_id": "ki_2e63599053651a90",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0258",
+        "seg_0259",
+        "seg_0260",
+        "seg_0261",
+        "seg_0262"
+      ],
+      "timestamp_start": 769.04,
+      "timestamp_end": 785.68,
+      "original_proposition": "wiggle in a much smaller range, but probably a lot faster. Sometimes it's cool if it does a little bit of that fluttery. kind of sounds like granular almost.",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817490"
+    },
+    {
+      "knowledge_item_id": "ki_1ae6496b9cf5be06",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0263",
+        "seg_0264",
+        "seg_0265",
+        "seg_0266",
+        "seg_0267"
+      ],
+      "timestamp_start": 790.0,
+      "timestamp_end": 801.519,
+      "original_proposition": "And one more. [Music] That one's very cute. Uh, and there's a little bit of a voice in there. I wonder if we can get that. That's very long.",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817511"
+    },
+    {
+      "knowledge_item_id": "ki_bd332f40ec9f7934",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0268",
+        "seg_0269",
+        "seg_0270",
+        "seg_0271",
+        "seg_0272"
+      ],
+      "timestamp_start": 803.6,
+      "timestamp_end": 817.12,
+      "original_proposition": "I'm going cut this in half and like trim. There we go. Gives a little more precision trying to find the sweet spots. And that is D# minor. Yep. See if we can find a good spot.",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817533"
+    },
+    {
+      "knowledge_item_id": "ki_0738534d14c738d6",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0273",
+        "seg_0274",
+        "seg_0275",
+        "seg_0276"
+      ],
+      "timestamp_start": 823.76,
+      "timestamp_end": 835.76,
+      "original_proposition": "Maybe here. Let's try it with a little bit of movement. Sounding a little jerky. This chord by itself kind of sounds",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.817552"
+    },
+    {
+      "knowledge_item_id": "ki_89cd6f1701cb1312",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0277",
+        "seg_0278",
+        "seg_0279",
+        "seg_0280",
+        "seg_0281",
+        "seg_0282",
+        "seg_0283"
+      ],
+      "timestamp_start": 837.76,
+      "timestamp_end": 853.279,
+      "original_proposition": "really nice. Maybe I want to like give this three unison voices. Bring the D-tune down and then stack 12. So it adds one voice that's an octave higher. Kind of like this. And that adds together with this together with that. And then a little",
+      "knowledge_type": "OBSERVATION",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "pitch"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [
+        "increase"
+      ],
+      "extraction_timestamp": "2026-09-13T10:07:26.817577"
+    },
+    {
+      "knowledge_item_id": "ki_4d3e30c57a72c7a3",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0284",
+        "seg_0285",
+        "seg_0286"
+      ],
+      "timestamp_start": 855.519,
+      "timestamp_end": 869.36,
+      "original_proposition": "bit of compression and delay and reverb. And we've got a pretty nice pad that we can play at all kinds of",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "effects"
+      ],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.818246"
+    },
+    {
+      "knowledge_item_id": "ki_2ccca3ca3bf9678f",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0287",
+        "seg_0288",
+        "seg_0289",
+        "seg_0290",
+        "seg_0291",
+        "seg_0292"
+      ],
+      "timestamp_start": 870.8,
+      "timestamp_end": 885.92,
+      "original_proposition": "different pitches. [Applause] Might even be worth going in and like EQing some of these a little bit with a spectral filter. Like that one can get a little more",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "pitch",
+        "filter"
+      ],
+      "candidate_semantic_targets": [
+        "Filter.Cutoff",
+        "Filter.Resonance"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.818272"
+    },
+    {
+      "knowledge_item_id": "ki_3a537c59b2dd455b",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0293",
+        "seg_0294",
+        "seg_0295",
+        "seg_0296",
+        "seg_0297"
+      ],
+      "timestamp_start": 887.44,
+      "timestamp_end": 902.33,
+      "original_proposition": "brightness. That's kind of cool. And this guy maybe two. Kind of like that. [Applause] [Music]",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.818290"
+    },
+    {
+      "knowledge_item_id": "ki_4d0f1dd6d141c29f",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0298",
+        "seg_0299",
+        "seg_0300",
+        "seg_0301",
+        "seg_0302",
+        "seg_0303"
+      ],
+      "timestamp_start": 904.639,
+      "timestamp_end": 917.76,
+      "original_proposition": "Yeah, that sounds a little bigger. Nice. I'm going save this one as well. And that's really all for today. Just how to make like really nice pads in Serum 2 with the spectral oscillator. I hope you're going to have some fun with",
+      "knowledge_type": "PROCEDURE",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [
+        "oscillator"
+      ],
+      "candidate_semantic_targets": [
+        "OSC1.Volume",
+        "OSC1.Octave",
+        "OSC1.Detune",
+        "OSC2.Volume"
+      ],
+      "producer_actions": [],
+      "extraction_timestamp": "2026-09-13T10:07:26.818311"
+    },
+    {
+      "knowledge_item_id": "ki_9e6adc543abeaac9",
+      "source_id": "yt_d77c113e5e12",
+      "source_url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+      "source_segment_ids": [
+        "seg_0304",
+        "seg_0305",
+        "seg_0306",
+        "seg_0307",
+        "seg_0308"
+      ],
+      "timestamp_start": 918.72,
+      "timestamp_end": 925.68,
+      "original_proposition": "that. And don't forget, you can download all the presets from this episode on my Patreon. The link is in the description. Have a good rest of your day and see you soon. Bye-bye.",
+      "knowledge_type": "FACT",
+      "epistemic_status": "SOURCE_DERIVED",
+      "concepts": [],
+      "candidate_semantic_targets": [],
+      "producer_actions": [
+        "select"
+      ],
+      "extraction_timestamp": "2026-09-13T10:07:26.818337"
+    }
+  ]
+}

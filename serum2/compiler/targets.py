@@ -231,6 +231,17 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "ModRoute.AuxSource":  SemanticTargetRef("ModRoute.AuxSource",  "mod_field_route_aux_source"),
     "ModRoute.Bypass":     SemanticTargetRef("ModRoute.Bypass",     "mod_field_route_bypass"),
     "ModRoute.MacroDepth": SemanticTargetRef("ModRoute.MacroDepth", "mod_field_route_macro_depth"),
+    # Phase 9B: Module activation controls
+    "OSC2.Enable":         SemanticTargetRef("OSC2.Enable",         "oscillator_field_OSC2-ENABLE"),
+    "OSC3.Enable":         SemanticTargetRef("OSC3.Enable",         "oscillator_field_OSC3-ENABLE"),
+    "Filter.Enable":       SemanticTargetRef("Filter.Enable",       "filter_field_ENABLE"),
+    "Filter2.Enable":      SemanticTargetRef("Filter2.Enable",      "filter2_field_ENABLE"),
+    # Phase 9B: Global controls
+    "Global.PitchTracking": SemanticTargetRef("Global.PitchTracking", "global_field_pitch_tracking"),
+    # Phase 9B: Oscillator-specific (NOISE fine tuning)
+    "NOISE.Fine":          SemanticTargetRef("NOISE.Fine",          "oscillator_field_NOISE-FINE"),
+    # Phase 9B: ARP control
+    "ARP.Enable":          SemanticTargetRef("ARP.Enable",          "arp_field_ENABLE"),
 }
 
 

@@ -1,0 +1,49 @@
+{
+ "source_id": "yt_d77c113e5e12",
+ "url": "https://www.youtube.com/watch?v=oW4C7txJEgM&t=349s",
+ "video_id": "oW4C7txJEgM",
+ "transcription": {
+  "status": "RATE_LIMITED",
+  "primary_engine": "youtube-transcript-api",
+  "primary_status": "RATE_LIMITED",
+  "attempted_languages": [
+   "en"
+  ],
+  "available_tracks": [
+   {
+    "language": "English (auto-generated)",
+    "language_code": "en",
+    "is_manual": false,
+    "is_generated": true,
+    "is_translatable": true,
+    "translation_languages": [
+     "ar",
+     "zh-Hant",
+     "nl",
+     "fr",
+     "de",
+     "hi",
+     "id",
+     "it",
+     "ja",
+     "ko",
+     "pt",
+     "ru",
+     "es",
+     "th",
+     "uk",
+     "vi"
+    ]
+   }
+  ],
+  "fallback_attempted": false,
+  "fallback_status": "NOT_RUN",
+  "fallback_error": null,
+  "reference_mode": null
+ },
+ "artifacts": {
+  "raw_transcript": null,
+  "structured_knowledge": null
+ },
+ "retrieval_timestamp": "2026-09-13T10:34:59.090637Z"
+}

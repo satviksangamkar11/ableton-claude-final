@@ -1,0 +1,95 @@
+{
+  "episode_id": "ep_yt_53c01562cd08_partial_20260913",
+  "source": {
+    "source_id": "yt_53c01562cd08",
+    "url": "https://www.youtube.com/shorts/QqYlEc_6E6A",
+    "transcript_status": "AVAILABLE",
+    "transcript_engine": "faster-whisper",
+    "knowledge_items": 2
+  },
+  "reference_interpretation": {
+    "synth": "Serum 2",
+    "wavetable": "FAC3 plucked",
+    "sample": "Telecaster LE (guitar-like)",
+    "effects": [
+      "Chorus",
+      "Delay",
+      "Reverb"
+    ],
+    "musical_technique": "ninth chords, spread out",
+    "playing_style": "arpeggiated melody"
+  },
+  "ableton_creation": {
+    "session_tempo": 100,
+    "track_index": 4,
+    "track_name": "5-MIDI",
+    "clip_index": 0,
+    "clip_length_beats": 16,
+    "midi_notes_count": 13,
+    "notes_pitches": [
+      60,
+      64,
+      67,
+      71,
+      74,
+      62,
+      66,
+      69,
+      73,
+      76,
+      67,
+      71,
+      74
+    ],
+    "notes_timing": "beats 0-15 (9th chord arpeggiation: C9, D9, G9)",
+    "velocity_range": [
+      100,
+      100
+    ],
+    "mcp_operations": [
+      "create_midi_track(index=4)",
+      "set_tempo(100)",
+      "create_clip(track=4, clip=0, length=16)",
+      "add_notes_to_clip(13 notes)",
+      "get_track_info(4)",
+      "get_clip_info(4, 0)"
+    ]
+  },
+  "serum_sound_design": {
+    "status": "BLOCKED",
+    "reason": "Serum VST3 not discoverable in Ableton browser; no capability admission for parameter mutations",
+    "required_targets": [
+      "wavetable_selection (FAC3)",
+      "sample_selection (Telecaster LE)",
+      "osc_volume",
+      "filter_cutoff"
+    ],
+    "blockers": [
+      "No load_instrument_or_effect URI available for Serum",
+      "No verified semantic targets for wavetable/sample selection",
+      "DawDreamer integration blocked without explicit parameter contracts"
+    ]
+  },
+  "effects_chain": {
+    "status": "BLOCKED",
+    "required": [
+      "Chorus",
+      "Delay",
+      "Reverb"
+    ],
+    "reason": "No admission for effect parameter control"
+  },
+  "audio_render": {
+    "status": "BLOCKED",
+    "reason": "Serum synth not configured; cannot render MIDI without sound source"
+  },
+  "final_status": "PARTIALLY_RECREATED",
+  "completion_fraction": 0.25,
+  "blockers": [
+    "CAPABILITY_ADMISSION: Serum parameter mutations not admitted",
+    "VST_DISCOVERY: Serum VST3 not in Ableton browser",
+    "SYNTH_CONFIG: Cannot proceed without Serum sound design"
+  ],
+  "notes": "MIDI structure created and verified via Ableton MCP. Melody reflects source guidance (9th chord arpeggiation). Serum sound design and effects blocked by capability system\u2014not fabricated. Episode created for reference.",
+  "timestamp": "2026-09-13T10:42:32.153387Z"
+}

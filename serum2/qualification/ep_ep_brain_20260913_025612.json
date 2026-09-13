@@ -1,0 +1,67 @@
+{
+  "episode_id": "ep_ep_brain_20260913_025612",
+  "execution_id": "ep_brain_20260913_025612",
+  "creation_timestamp": "2026-09-13T08:26:13.647093",
+  "original_user_request": "make the note sustain longer",
+  "semantic_target": "envelope_field_release",
+  "semantic_direction": "longer",
+  "musical_objective": "Producer operation: longer note-release",
+  "knowledge_item_ids": [
+    "ki_252f5cdcf9891123",
+    "ki_c96fd76697ce2ddc",
+    "ki_dc914cbfa8b03730",
+    "ki_d5e9ad61d87dd4fe",
+    "ki_b099166c19230fec",
+    "ki_cf6bd60d926a589d"
+  ],
+  "procedure_ids": [],
+  "prior_episode_ids": [
+    "ep_ep_brain_20260913_025420",
+    "ep_ep_brain_20260913_025421",
+    "ep_ep_brain_20260913_025446",
+    "ep_ep_brain_20260913_025541",
+    "ep_ep_brain_20260913_025542",
+    "ep_ep_brain_20260913_025543",
+    "ep_ep_brain_20260913_025544",
+    "ep_ep_brain_20260913_025545",
+    "ep_ep_brain_20260913_025610",
+    "ep_ep_brain_20260913_025611",
+    "ep_ex_live_001"
+  ],
+  "advisory_decision_id": "adv_20260913_025612",
+  "capability_resolution_id": "res_1797228572016_1797226987216",
+  "selected_candidate_id": "c_note_release_lengthen",
+  "admission_handoff_id": "adm_1797228228880",
+  "admitted_contract_id": "envelope_field_release",
+  "contract_status": "CAUSAL_VERIFIED",
+  "execution_pathway": "admitted",
+  "admission_allowed": true,
+  "execution_status": "executed",
+  "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+  "outcome_status": "unexpected_change",
+  "causal_attribution_status": "consistent_with_treatment",
+  "observed_delta": 204.4772929938693,
+  "attribution_confidence": 0.3,
+  "confounds_detected": [],
+  "learning_eligible": true,
+  "learning_eligibility_status": "learning_eligible",
+  "eligibility_reasons": [
+    "all_checks_passed"
+  ],
+  "provenance_chain": {
+    "authority_chain": {
+      "execution_pathway": "admitted",
+      "admission_granted": true,
+      "contract_id": "envelope_field_release"
+    },
+    "outcome_chain": {
+      "outcome_status": "unexpected_change",
+      "causal_status": "consistent_with_treatment",
+      "attribution_confidence": 0.3,
+      "confounds": []
+    }
+  },
+  "schema_version": "6.10.0",
+  "notes": null,
+  "human_intent": "make the note sustain longer"
+}
