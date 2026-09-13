@@ -48,6 +48,30 @@ PHASE_9B_STRUCTURAL_PATHS = {
     "noise_plain_param_pan": "Oscillator4.plainParams.kParamPan",
     "noise_plain_param_level": "Oscillator4.plainParams.kParamVolume",
 
+    # STEP 20B PART 3: MIX send levels (per-source send to FX Bus 1/2)
+    # RoutingSlot index maps positionally to source channel (proven via real UI +
+    # DawDreamer VST3 host-param correlation: RoutingSlot0=OSC A ... RoutingSlot6=Filter 2).
+    # Scale: CBOR 0..100 (linear) == VST3 host param 0..1 (e.g. 100.0 -> "A>BUS1"=1.0).
+    "routing_slot0_bus1_level": "RoutingSlot0.plainParams.kParamFXBus1Level",
+    "routing_slot0_bus2_level": "RoutingSlot0.plainParams.kParamFXBus2Level",
+    "routing_slot1_bus1_level": "RoutingSlot1.plainParams.kParamFXBus1Level",
+    "routing_slot1_bus2_level": "RoutingSlot1.plainParams.kParamFXBus2Level",
+    "routing_slot2_bus1_level": "RoutingSlot2.plainParams.kParamFXBus1Level",
+    "routing_slot2_bus2_level": "RoutingSlot2.plainParams.kParamFXBus2Level",
+    "routing_slot3_bus1_level": "RoutingSlot3.plainParams.kParamFXBus1Level",
+    "routing_slot3_bus2_level": "RoutingSlot3.plainParams.kParamFXBus2Level",
+    "routing_slot4_bus1_level": "RoutingSlot4.plainParams.kParamFXBus1Level",
+    "routing_slot4_bus2_level": "RoutingSlot4.plainParams.kParamFXBus2Level",
+    "routing_slot5_bus1_level": "RoutingSlot5.plainParams.kParamFXBus1Level",
+    "routing_slot5_bus2_level": "RoutingSlot5.plainParams.kParamFXBus2Level",
+    "routing_slot6_bus1_level": "RoutingSlot6.plainParams.kParamFXBus1Level",
+    "routing_slot6_bus2_level": "RoutingSlot6.plainParams.kParamFXBus2Level",
+
+    # STEP 20B PART 3: FX Bus channel's own overall volume (distinct from per-source sends above)
+    # Scale: kParamFXBus{N}Vol = 0.5 * 10^(dB/20); default 0.5 == 0dB unity.
+    "global_plain_param_fx_bus1_vol": "Global0.plainParams.kParamFXBus1Vol",
+    "global_plain_param_fx_bus2_vol": "Global0.plainParams.kParamFXBus2Vol",
+
     # Phase FX-FULL: Complete FX parameter paths (corpus-verified)
     # BODE parameters
     "fx_field_bode_shift": "FXRack{R}.FX.{N}.FXBode.plainParams.kParamShift",
