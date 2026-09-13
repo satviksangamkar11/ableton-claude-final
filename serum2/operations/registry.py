@@ -143,6 +143,14 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
     # Phase 4: FX operations
     from .fx_operations import compiler_set_fx_parameter
 
+    # Phase 5: Oscillator operations
+    from .oscillator_operations import (
+        compiler_set_oscillator_type,
+        compiler_set_oscillator_parameter,
+        compiler_load_wavetable,
+        compiler_load_sample,
+    )
+
     # Modulation route creation
     registry.register(OperationDefinition(
         operation_id="compound_create_modulation_route",
@@ -213,3 +221,59 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         description="Set FX parameter value",
     ))
     registry.register_compiler("fx_set_parameter", compiler_set_fx_parameter)
+
+    # Phase 5: Oscillator operations
+    # Set oscillator type
+    registry.register(OperationDefinition(
+        operation_id="osc_set_type",
+        semantic_name="Set Oscillator Type",
+        kind=OperationKind.COMPOUND,
+        parameters=[
+            OperationParameter("oscillator", None, True, "Oscillator index (0, 1, 2, ...)"),
+            OperationParameter("type", None, True, "Oscillator type (wavetable, sample, multisample, spectral, granular)"),
+        ],
+        description="Switch oscillator type (wavetable, sample, multisample, spectral, granular)",
+    ))
+    registry.register_compiler("osc_set_type", compiler_set_oscillator_type)
+
+    # Set oscillator parameter
+    registry.register(OperationDefinition(
+        operation_id="osc_set_parameter",
+        semantic_name="Set Oscillator Parameter",
+        kind=OperationKind.STATE,
+        parameters=[
+            OperationParameter("oscillator", None, True, "Oscillator index"),
+            OperationParameter("parameter", None, True, "Parameter name (semitone, fine, detune, level, octave, etc.)"),
+            OperationParameter("value", None, True, "Parameter value"),
+        ],
+        description="Set oscillator parameter (semitone, fine, detune, level, octave, warp, etc.)",
+    ))
+    registry.register_compiler("osc_set_parameter", compiler_set_oscillator_parameter)
+
+    # Load wavetable (resource operation)
+    registry.register(OperationDefinition(
+        operation_id="osc_load_wavetable",
+        semantic_name="Load Wavetable",
+        kind=OperationKind.RESOURCE,
+        parameters=[
+            OperationParameter("oscillator", None, True, "Oscillator index"),
+            OperationParameter("path", None, True, "Relative path to wavetable file"),
+        ],
+        resource_kind="wavetable",
+        description="Load wavetable into oscillator (Phase 6: resource validation)",
+    ))
+    registry.register_compiler("osc_load_wavetable", compiler_load_wavetable)
+
+    # Load sample (resource operation)
+    registry.register(OperationDefinition(
+        operation_id="osc_load_sample",
+        semantic_name="Load Sample",
+        kind=OperationKind.RESOURCE,
+        parameters=[
+            OperationParameter("oscillator", None, True, "Oscillator index"),
+            OperationParameter("path", None, True, "Relative path to sample file"),
+        ],
+        resource_kind="sample",
+        description="Load sample into oscillator (Phase 6: resource validation)",
+    ))
+    registry.register_compiler("osc_load_sample", compiler_load_sample)
