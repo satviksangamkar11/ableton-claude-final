@@ -21,6 +21,19 @@ CBOR decode + DawDreamer VST3 host-param cross-check):
   (unlike Pan/Level from PART 1) and NOT RoutingSlot (unlike sends from
   PART 3). Filter index 0=FILTER1, 1=FILTER2, confirmed via real UI
   right-click parameter-name tooltips ("Filter 1 Wet" / "Filter 2 Wet").
+
+  CONDITIONAL BEHAVIOR (filter type): Serum's own UI tooltip on "Filter 2
+  Wet" states this control "has no function for filter types in the Combs
+  sub-menu". Real UI testing set VoiceFilter1.plainParams.kParamType='Combs'
+  simultaneously with kParamWet=37 and kParamLevelOut — both persisted
+  exactly and both read back identically via VST3 ("Filter 2 Wet"=0.37,
+  "Filter 2 Level"=formula value) whether kParamType is absent (Normal) or
+  'Combs'. The SAME was independently re-verified for VoiceFilter0
+  (FILTER1) via skeleton mutation using the real-UI-proven key name. This
+  proves the tooltip's caveat is a DSP/audio-functional note (the Wet
+  control doesn't audibly change comb-filtered output) — NOT a
+  storage-conditional one. The persistent representation and mutation
+  route are IDENTICAL and UNCONDITIONAL regardless of filter type.
 """
 import os
 import tempfile
@@ -129,26 +142,100 @@ def test_filter1_level_wet_sibling_isolation():
 
 
 def test_isolation_from_other_state():
-    """Filter1 Level/Wet mutation must not alter Filter2, BUS sends, OSC pan/level."""
+    """Filter1 Level/Wet mutation must not alter Filter2, BUS sends, BUS dest,
+    RoutingSlot routing destination, or OSC pan/level (full matrix per PART 4)."""
     body = fresh_skeleton_body()
     pathmerge.apply_path_value(body, "Oscillator0.plainParams.kParamPan", -25.0)
     pathmerge.apply_path_value(body, "Oscillator0.plainParams.kParamVolume", 0.64)
     pathmerge.apply_path_value(body, "RoutingSlot0.plainParams.kParamFXBus1Level", 65.0)
+    pathmerge.apply_path_value(body, "RoutingSlot0.plainParams.kParamFXBus2Level", 40.0)
+    pathmerge.apply_path_value(body, "RoutingSlot0.plainParams.kParamRoutingDest", "kRoutingDestMaster")
+    pathmerge.apply_path_value(body, "RoutingSlot5.plainParams.kParamRoutingDest", "kRoutingDestFilter")
     pathmerge.apply_path_value(body, "VoiceFilter1.plainParams.kParamLevelOut", level_out_from_db(3.0))
     pathmerge.apply_path_value(body, "VoiceFilter1.plainParams.kParamWet", 20.0)
 
     before_osc0 = copy.deepcopy(body["Oscillator0"]["plainParams"])
     before_routing0 = copy.deepcopy(body["RoutingSlot0"]["plainParams"])
+    before_routing5 = copy.deepcopy(body["RoutingSlot5"]["plainParams"])
     before_vf1 = copy.deepcopy(body["VoiceFilter1"]["plainParams"])
 
+    # Mutate Filter1 Level
     pathmerge.apply_path_value(body, "VoiceFilter0.plainParams.kParamLevelOut", level_out_from_db(-6.0))
+    assert body["Oscillator0"]["plainParams"] == before_osc0, "OSC0 pan/level leaked (Level mutation)!"
+    assert body["RoutingSlot0"]["plainParams"] == before_routing0, "BUS sends/dest leaked (Level mutation)!"
+    assert body["RoutingSlot5"]["plainParams"] == before_routing5, "Filter1's own routing dest leaked (Level mutation)!"
+    assert body["VoiceFilter1"]["plainParams"] == before_vf1, "Filter2 leaked (Level mutation)!"
+
+    # Mutate Filter1 Mix/Wet
     pathmerge.apply_path_value(body, "VoiceFilter0.plainParams.kParamWet", 78.0)
+    assert body["Oscillator0"]["plainParams"] == before_osc0, "OSC0 pan/level leaked (Mix mutation)!"
+    assert body["RoutingSlot0"]["plainParams"] == before_routing0, "BUS sends/dest leaked (Mix mutation)!"
+    assert body["RoutingSlot5"]["plainParams"] == before_routing5, "Filter1's own routing dest leaked (Mix mutation)!"
+    assert body["VoiceFilter1"]["plainParams"] == before_vf1, "Filter2 leaked (Mix mutation)!"
 
-    assert body["Oscillator0"]["plainParams"] == before_osc0, "OSC0 pan/level leaked!"
-    assert body["RoutingSlot0"]["plainParams"] == before_routing0, "BUS send leaked!"
-    assert body["VoiceFilter1"]["plainParams"] == before_vf1, "Filter2 leaked!"
+    print("[PASS] Filter1 Level/Mix mutations isolated from OSC pan/level, "
+          "BUS sends, BUS routing dest, Filter1's own routing dest, and Filter2")
 
-    print("[PASS] Filter1 mutation isolated from OSC pan/level, BUS sends, and Filter2")
+
+# ---------------------------------------------------------------------------
+# Conditional behavior: filter type (Combs sub-menu) — proven UNCONDITIONAL
+# at the persistence layer despite Serum's UI tooltip noting no AUDIO effect
+# for Combs-type filters.
+# ---------------------------------------------------------------------------
+
+def test_comb_filter_type_does_not_gate_persistence_filter1():
+    """Real UI proved kParamType='Combs' + kParamWet=37 coexist and persist
+    exactly on VoiceFilter1; this re-verifies the identical mechanism on
+    VoiceFilter0 (FILTER1) using the same real-UI-proven key name."""
+    body = fresh_skeleton_body()
+    pathmerge.apply_path_value(body, "VoiceFilter0.plainParams.kParamType", "Combs")
+    pathmerge.apply_path_value(body, "VoiceFilter0.plainParams.kParamWet", 37.0)
+    pathmerge.apply_path_value(body, "VoiceFilter0.plainParams.kParamLevelOut", level_out_from_db(-8.5))
+
+    engine, synth = load_body(body)
+    assert abs(find_param(synth, "Filter 1 Wet") - 0.37) < 1e-4
+    assert abs(find_param(synth, "Filter 1 Level") - level_out_from_db(-8.5)) < 1e-6
+    del engine
+    print("[PASS] Filter1: kParamType='Combs' does not gate Wet/Level persistence or VST3 readback")
+
+
+def test_comb_filter_type_does_not_gate_persistence_filter2():
+    """Real UI evidence: VoiceFilter1.plainParams.kParamType='Combs' set via
+    the actual Serum type-selector menu, simultaneously with kParamWet=37,
+    both confirmed via native save + CBOR decode (F1COMBWET37.SerumPreset)."""
+    body = fresh_skeleton_body()
+    body["VoiceFilter1"]["plainParams"] = {
+        "kParamType": "Combs",
+        "kParamWet": 37.0,
+        "kParamLevelOut": level_out_from_db(-4.0),
+    }
+    engine, synth = load_body(body)
+    assert abs(find_param(synth, "Filter 2 Wet") - 0.37) < 1e-4
+    assert abs(find_param(synth, "Filter 2 Level") - level_out_from_db(-4.0)) < 1e-6
+    del engine
+    print("[PASS] Filter2: real-UI-confirmed kParamType='Combs' does not gate "
+          "Wet/Level persistence or VST3 readback")
+
+
+def test_filter_type_is_independent_sibling():
+    """kParamType, kParamWet, kParamLevelOut are independent dict-merge
+    siblings within the same VoiceFilter.plainParams — mutating one leaves
+    the others untouched."""
+    body = fresh_skeleton_body()
+    body["VoiceFilter0"]["plainParams"] = {
+        "kParamType": "Combs",
+        "kParamWet": 37.0,
+        "kParamLevelOut": level_out_from_db(-8.5),
+    }
+    before_wet = body["VoiceFilter0"]["plainParams"]["kParamWet"]
+    before_level = body["VoiceFilter0"]["plainParams"]["kParamLevelOut"]
+
+    pathmerge.apply_path_value(body, "VoiceFilter0.plainParams.kParamType", "MgL18")
+    assert body["VoiceFilter0"]["plainParams"]["kParamWet"] == before_wet
+    assert body["VoiceFilter0"]["plainParams"]["kParamLevelOut"] == before_level
+    assert body["VoiceFilter0"]["plainParams"]["kParamType"] == "MgL18"
+
+    print("[PASS] kParamType is an independent sibling of kParamWet/kParamLevelOut")
 
 
 # ---------------------------------------------------------------------------
@@ -269,6 +356,9 @@ if __name__ == "__main__":
         test_filter1_wet_scale_linearity,
         test_filter1_level_wet_sibling_isolation,
         test_isolation_from_other_state,
+        test_comb_filter_type_does_not_gate_persistence_filter1,
+        test_comb_filter_type_does_not_gate_persistence_filter2,
+        test_filter_type_is_independent_sibling,
         test_filter2_level_db_formula,
         test_filter2_persistence_and_host_param,
         test_filter1_filter2_cross_isolation,

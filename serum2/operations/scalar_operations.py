@@ -98,6 +98,14 @@ PHASE_9B_STRUCTURAL_PATHS = {
     #   kParamWet: 0..100 linear percentage, direct 1:1 (/100) to VST3
     #     "Filter {N} Wet". Confirmed independent sibling of kParamLevelOut
     #     (dict-merge isolation) and independent of the other filter's VoiceFilter.
+    #   Filter type (kParamType, e.g. 'Combs', 'MgL18') lives in the SAME
+    #     VoiceFilter{N}.plainParams dict as a further independent sibling.
+    #     Real UI + skeleton-mutation testing confirms kParamWet/kParamLevelOut
+    #     persist and read back via VST3 IDENTICALLY regardless of kParamType
+    #     (including 'Combs') — the persistence layer is unconditional. Serum's
+    #     own UI tooltip notes the Wet control has no AUDIBLE effect for filter
+    #     types in the Combs sub-menu; that is a DSP/audio-functional caveat,
+    #     not a storage-layer one, and does not change the mutation route.
     "voicefilter0_plain_param_level_out": "VoiceFilter0.plainParams.kParamLevelOut",
     "voicefilter0_plain_param_wet": "VoiceFilter0.plainParams.kParamWet",
     "voicefilter1_plain_param_level_out": "VoiceFilter1.plainParams.kParamLevelOut",
