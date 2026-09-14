@@ -108,6 +108,11 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "FILTER1.BUS2Send":   SemanticTargetRef("FILTER1.BUS2Send",   "routing_slot5_bus2_level"),
     "FILTER2.BUS1Send":   SemanticTargetRef("FILTER2.BUS1Send",   "routing_slot6_bus1_level"),
     "FILTER2.BUS2Send":   SemanticTargetRef("FILTER2.BUS2Send",   "routing_slot6_bus2_level"),
+    # STEP 20B PART 4: Filter Level/Mix (VoiceFilter, distinct from Oscillator.plainParams)
+    "FILTER1.Level":      SemanticTargetRef("FILTER1.Level",      "voicefilter0_plain_param_level_out"),
+    "FILTER1.Mix":        SemanticTargetRef("FILTER1.Mix",        "voicefilter0_plain_param_wet"),
+    "FILTER2.Level":      SemanticTargetRef("FILTER2.Level",      "voicefilter1_plain_param_level_out"),
+    "FILTER2.Mix":        SemanticTargetRef("FILTER2.Mix",        "voicefilter1_plain_param_wet"),
     # BUS master volumes (Global0) — the bus channel's own overall level, distinct from per-source sends
     "BUS1.Level":         SemanticTargetRef("BUS1.Level",         "global_plain_param_fx_bus1_vol"),
     "BUS2.Level":         SemanticTargetRef("BUS2.Level",         "global_plain_param_fx_bus2_vol"),

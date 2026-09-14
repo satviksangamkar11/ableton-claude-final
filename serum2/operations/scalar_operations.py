@@ -72,6 +72,21 @@ PHASE_9B_STRUCTURAL_PATHS = {
     "global_plain_param_fx_bus1_vol": "Global0.plainParams.kParamFXBus1Vol",
     "global_plain_param_fx_bus2_vol": "Global0.plainParams.kParamFXBus2Vol",
 
+    # STEP 20B PART 4: Filter Level/Mix — proven via real UI text-entry + native
+    # save + CBOR decode + DawDreamer VST3 host-param cross-check.
+    # Container: VoiceFilter{0,1}.plainParams (Filter1=index0, Filter2=index1) —
+    # NOT Oscillator.plainParams, NOT RoutingSlot.
+    #   kParamLevelOut: dB-scale, formula = 10^((dB-12)/40); default (absent)
+    #     corresponds to ~0dB (VST3 host param default 0.5). Direct 1:1 passthrough
+    #     to VST3 "Filter {N} Level" (no additional transform at that layer).
+    #   kParamWet: 0..100 linear percentage, direct 1:1 (/100) to VST3
+    #     "Filter {N} Wet". Confirmed independent sibling of kParamLevelOut
+    #     (dict-merge isolation) and independent of the other filter's VoiceFilter.
+    "voicefilter0_plain_param_level_out": "VoiceFilter0.plainParams.kParamLevelOut",
+    "voicefilter0_plain_param_wet": "VoiceFilter0.plainParams.kParamWet",
+    "voicefilter1_plain_param_level_out": "VoiceFilter1.plainParams.kParamLevelOut",
+    "voicefilter1_plain_param_wet": "VoiceFilter1.plainParams.kParamWet",
+
     # Phase FX-FULL: Complete FX parameter paths (corpus-verified)
     # BODE parameters
     "fx_field_bode_shift": "FXRack{R}.FX.{N}.FXBode.plainParams.kParamShift",
