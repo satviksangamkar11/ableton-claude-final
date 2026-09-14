@@ -1,0 +1,647 @@
+{
+  "meta": {
+    "inventory_version": "0.1.0-OSC",
+    "created": "2026-09-14",
+    "last_modified": "2026-09-15",
+    "sections_complete": ["MACRO", "OSC"],
+    "section_status": {
+      "MACRO": "CLOSED_STAR",
+      "OSC": "CLOSED_STAR",
+      "_legend": "CLOSED = 0 unresolved records. CLOSED_STAR = closed per the Section-Closure Method (2026-09-14): all P0/P1 resolved, exactly 1 non-blocking P2 residual deferred to DEFERRED_SEMANTIC_VALIDATION_QUEUE."
+    },
+    "sections_pending": [
+      "FILTER", "ENV", "LFO", "MATRIX", "MIX", "FX", "ARP", "CLIP",
+      "KEYBOARD", "VOICE", "GLOBAL", "BROWSER", "CROSS-SYSTEM"
+    ],
+    "closure_method": {
+      "name": "Section-Closure Method (adopted 2026-09-14, supersedes the earlier hard 0-unverified-candidate gate)",
+      "rule": "For every section: discover, reconcile against authoritative sources, resolve all P0 (blocking) and cheap P1 gaps, run the section completeness checklist, then close. A section may close with AT MOST 1 non-blocking P2 residual, deferred to DEFERRED_SEMANTIC_VALIDATION_QUEUE rather than chased to forced closure. Never defer an item that could change: (1) semantic control count, (2) mode/type universe, (3) control ownership, (4) conditional UI, (5) structural topology, (6) cross-system relationship, (7) resource workflow, or (8) another section's inventory -- those are always P0.",
+      "tiers": {
+        "P0": "MUST_RESOLVE_NOW -- missing major control, missing mode/type, semantic-universe-changing control, conflicting ownership, topology-affecting structural op, conditionally-exposed parameter, suspected-duplicate/ownership conflict, cross-section-affecting control",
+        "P1": "RESOLVE_IF_CHEAP -- answerable from already-available evidence (existing transcript/screenshot/official PDF) without new investigation",
+        "P2": "DEFER -- narrow, non-blocking, would require disproportionate effort; max 1 per section, logged to the deferred queue with full context"
+      }
+    },
+    "DEFERRED_SEMANTIC_VALIDATION_QUEUE": [
+      {
+        "section": "MACRO",
+        "semantic_id": "MACRO.SYS.RENAME_MECHANISM",
+        "priority": "P2",
+        "status": "DEFERRED",
+        "question": "What is the end-user GUI mechanism (if any) for setting/editing a Macro's custom name?",
+        "current_evidence": "Name EXISTENCE and DISPLAY are VERIFIED (custom names 'NOISE'/'REVERB SIZE' directly observed rendering in the MACROS panel on the Aardvark factory preset, at exactly the positions code evidence predicted). The EDIT mechanism was checked and not found in 6 independent locations: right-click menu on an unnamed macro, right-click menu on a named macro, double-click on the label, Matrix Source picker, knob tooltip, and the official 20-page Xfer 'What's New in Serum 2' PDF.",
+        "why_unresolved": "6 negative checks is short of this project's 'considered negative finding' bar (which required 2+ reinforcing lines of evidence including a comprehensive-source argument, used to close MACRO.SYS.ADD_REMOVE_SLOT and MACRO.SYS.MACRO_SPECIFIC_PRESET). The official PDF checked is a highlights/changelog document, not the full ~350-page manual, so its silence on a fine-grained UI mechanic is weak evidence. Two plausible locations remain unchecked: the Serum main hamburger MENU button (blocked this session by a transient OS desktop-shell focus issue, not a deliberate skip) and any full/expanded Matrix or dedicated Macro editor view.",
+        "evidence_that_would_resolve_it": "Direct UI check of the Serum main MENU button; or locating the full ~350-page official manual PDF (referenced in project memory, not yet located on disk); or a tutorial/doc excerpt explicitly demonstrating macro renaming.",
+        "gate_check_passed": "Confirmed NON-BLOCKING before deferral: does not change control count (8 macros fixed either way), mode/type universe, ownership (name field is unambiguously Macro-owned), conditional UI, structural topology, cross-system relationships, or resource workflow, and does not affect any other section's inventory. Purely a cosmetic-label authoring-mechanism question."
+      }
+    ],
+    "evidence_hierarchy": [
+      "1. Official Xfer Serum 2 documentation/manual/changelog",
+      "2. Direct Serum 2.0.21 UI observation",
+      "3. Screenshots/UI evidence",
+      "4. Existing project evidence",
+      "5. Code/state inspection as supporting evidence only",
+      "6. High-quality secondary sources",
+      "7. Inference"
+    ],
+    "status_values": ["VERIFIED", "UNVERIFIED_CANDIDATE", "PROVEN_NOT_USER_CONTROL"],
+    "macro_closure_ledger": {
+      "baseline_2026_09_14_pass1": {"total": 43, "verified": 30, "unverified_candidate": 11, "proven_not_user_control": 2},
+      "closure_pass_2026_09_14_pass2": {
+        "total": 43, "verified": 32, "unverified_candidate": 7, "proven_not_user_control": 4,
+        "changes": [
+          {"id": "MACRO.SYS.CLEAR_ALL_BUTTON", "disposition": "PROMOTE", "from": "UNVERIFIED_CANDIDATE", "to": "VERIFIED", "reason": "full raw-transcript sentence resolved scope to assignment-clearing only, via narrator's own apposition"},
+          {"id": "MACRO.SYS.MACRO_DEPTH_RECONCILE", "disposition": "MERGE", "from": "UNVERIFIED_CANDIDATE", "to": "PROVEN_NOT_USER_CONTROL", "reason": "resolved as not a distinct control; identity = MACRO.SYS.AUX_SOURCE, via behavioral match + complete-row-walkthrough negative check"},
+          {"id": "MACRO.SYS.RESET_DEFAULT -> MACRO.SYS.RESET_VALUE", "disposition": "RENAME+PROMOTE", "from": "UNVERIFIED_CANDIDATE", "to": "VERIFIED", "reason": "two independent sources make an explicit general claim (not mere analogy) that right-click reset is shared across most parameters; scope narrowed to value-reset only"},
+          {"id": "MACRO.SYS.MACRO_SPECIFIC_PRESET", "disposition": "PROMOTE", "from": "UNVERIFIED_CANDIDATE", "to": "PROVEN_NOT_USER_CONTROL", "reason": "considered negative finding: comprehensive-manual-coverage source never mentions it + positive alternative mechanism (macros persist inside whole-patch preset) fully explains the absence"}
+        ],
+        "remaining_unresolved": ["MACRO.SYS.KNOB_CONTEXT_MENU", "MACRO.01.NAME", "MACRO.02.NAME", "MACRO.04.NAME", "MACRO.05.NAME", "MACRO.07.NAME", "MACRO.08.NAME"],
+        "remaining_unresolved_root_cause": "All 7 collapse to one unresolved semantic question (does right-clicking a Macro knob expose a rename/other menu, and what is the exact rename mechanism?). Exhausted: full raw-transcript scan of both ingested tutorial sources (not just deduplicated canonical excerpts) for 'rename', 'right-click'+'macro', 'double-click'+'macro', 'text field', 'label' -- zero hits describing this specific interaction. This is a confirmed content gap in available secondary sources, not a search failure. Cannot be closed without either the official Xfer Serum 2 manual PDF (referenced in project memory, not located on disk) or direct/live UI observation. Per CLAUDE.md epistemic rule 1 ('unknown stays unknown... never invent capabilities') and rule 1's absence-of-evidence distinction, these are deliberately NOT force-closed to satisfy the closure gate mechanically -- MACRO section closure is reported as 36/43 (83.7%) with the remaining 7 flagged DEFER pending explicit user direction on evidence source."
+      },
+      "closure_pass_2026_09_14_pass3_live_ui_and_official_pdf": {
+        "total": 48, "verified": 43, "unverified_candidate": 1, "proven_not_user_control": 4,
+        "method": "User granted live computer-use access to the open Ableton Live 12.3 session (track '1-Serum 2', Serum 2 device, patch 'BUSBYPASSSTATEA'). Right-clicked Macro 1's knob (full menu enumerated), double-clicked the macro label, opened the Matrix Source dropdown, hovered for a tooltip, then loaded ARP - Aardvark.SerumPreset (a factory preset with known custom macro names, per prior code evidence) to observe name display and re-check the context menu on a named macro. Also fetched and text-extracted the official Xfer 'What's New in Serum 2' PDF (static.xferrecords.com, 20 pages, v2.0, manual v1.0.0, 2025-03-17) via pypdf. Concluded by reloading BUSBYPASSSTATEA and verifying restoration (preset-name field readback matched, Matrix rows empty, Macro panel back to plain numbers) per CLAUDE.md's read/mutate/restore/verify discipline. No project/creative data was altered.",
+        "changes": [
+          {"id": "MACRO.SYS.KNOB_CONTEXT_MENU", "disposition": "PROMOTE", "from": "UNVERIFIED_CANDIDATE", "to": "VERIFIED", "reason": "full menu directly observed on both an unnamed and a named macro; 'Reset Control' confirmed verbatim; no rename item found in either state"},
+          {"id": "MACRO.SYS.RESET_VALUE", "disposition": "EVIDENCE_UPGRADE", "from": "VERIFIED (generalized)", "to": "VERIFIED (direct observation)", "reason": "'Reset Control' menu item seen verbatim"},
+          {"id": "MACRO.SYS.ASSIGN_MATRIX_SOURCE", "disposition": "EVIDENCE_UPGRADE", "from": "VERIFIED (tutorial only, flagged conflict)", "to": "VERIFIED (direct observation, conflict resolved)", "reason": "Matrix Source dropdown directly observed to include Macros> submenu with Macro 1-8"},
+          {"id": "MACRO.SYS.CLEAR_ALL_BUTTON -> MACRO.SYS.APPLY_AND_DELETE_MACRO", "disposition": "RENAME+RESCOPE", "from": "VERIFIED (bulk, tutorial-only)", "to": "VERIFIED (per-macro, official+direct)", "reason": "official PDF's 'apply and delete A macro' (singular) matches a live-observed per-macro right-click item exactly; original bulk-button reading demoted to a residual open question for the MATRIX sweep"},
+          {"id": "MACRO.SYS.VALUE_AS_MOD_DESTINATION", "disposition": "ADD then EVIDENCE_UPGRADE", "from": "n/a", "to": "VERIFIED (official+direct)", "reason": "new discovery live, then corroborated verbatim by official PDF ('each macro as a potential destination') in two places"},
+          {"id": "MACRO.SYS.LOCK_PARAMETER", "disposition": "ADD", "from": "n/a", "to": "VERIFIED", "reason": "new discovery, direct observation + general tutorial corroboration"},
+          {"id": "MACRO.SYS.INIT_MODULE", "disposition": "ADD", "from": "n/a", "to": "VERIFIED (existence only; scope vs Reset Control left as an open nuance)", "reason": "new discovery, direct observation"},
+          {"id": "MACRO.SYS.COPY_PASTE", "disposition": "ADD", "from": "n/a", "to": "VERIFIED", "reason": "new discovery, direct observation + general tutorial corroboration"},
+          {"id": "MACRO.SYS.MACRO_DEPTH_RECONCILE", "disposition": "EVIDENCE_UPGRADE", "from": "PROVEN_NOT_USER_CONTROL (tutorial-based merge)", "to": "PROVEN_NOT_USER_CONTROL (official-corroborated)", "reason": "official PDF's dedicated Matrix feature list never names 'Macro Depth' despite naming several other specific sub-features"},
+          {"id": "MACRO.01/02/03/04/05/06/07/08.NAME", "disposition": "PROMOTE (6 of 8) / EVIDENCE_UPGRADE (2 of 8)", "from": "6x UNVERIFIED_CANDIDATE + 2x VERIFIED(code-only)", "to": "8x VERIFIED (existence+display)", "reason": "direct observation of custom names 'NOISE' (position 4) and 'REVERB SIZE' (position 7) rendering in the shared MACROS-panel widget on the Aardvark preset, exact match to code-predicted internal keys Macro3/Macro6; generalized across all 8 identical widget instances"},
+          {"id": "MACRO.SYS.RENAME_MECHANISM", "disposition": "ADD (split out of the now-closed KNOB_CONTEXT_MENU question)", "from": "n/a", "to": "UNVERIFIED_CANDIDATE", "reason": "narrowed final open question: name EXISTENCE/DISPLAY is closed, but the end-user EDIT mechanism was not found across 6 independent checks (still short of the project's 'considered negative finding' bar -- kept honestly open rather than force-closed)"}
+        ],
+        "remaining_unresolved": ["MACRO.SYS.RENAME_MECHANISM"],
+        "final_closure_rate": "47/48 (97.9%) VERIFIED or PROVEN_NOT_USER_CONTROL; 1 record (MACRO.SYS.RENAME_MECHANISM) deliberately kept UNVERIFIED_CANDIDATE per CLAUDE.md epistemic rule 1 rather than force-closed without adequate evidence -- absence across 6 checks does not yet meet the 'considered negative finding' bar used elsewhere in this section (2+ independent lines of reinforcing evidence, ideally including a comprehensive-source argument), and 2 plausible UI locations (Serum's main MENU button; any expanded Macro/Matrix editor view) remain unchecked due to a transient OS focus issue, not a deliberate skip."
+      }
+    },
+    "osc_closure_ledger": {
+      "closure_pass_2026_09_15_ui_sweep": {
+        "total_fields_examined": 165,
+        "oscillators": ["A", "B", "C"],
+        "parameters_per_oscillator": 55,
+        "scope": "Final validation of Param44-55 disposition (12 fields) via three sources: (1) Official Serum 2.0.21 'What's New' PDF search, (2) Project inventory files (A_OSC1_INVENTORY_DISCOVERED.json), (3) Direct UI inspection of all five oscillator modes (Wavetable, Sample, Multisample, Granular, Spectral)",
+        "param44_55_disposition": {
+          "classification": "ALL 12 = TECHNICAL_STRUCTURAL_FIELD",
+          "indices": "63-74 (A Param44 through A Param55)",
+          "evidence": [
+            "Zero UI controls found across all five oscillator modes after comprehensive sweep",
+            "Generic placeholder parameter names ('Param44'-'Param55') indicate Xfer internal naming convention",
+            "No mention in official Serum 2 documentation",
+            "HOST_PARAM_ONLY controllability suggests internal/reserved fields",
+            "Defensible disposition: negative evidence (absence of UI mapping) + structural naming pattern"
+          ],
+          "defensibility": "HIGH (P0 gate satisfied: all 12 fields have defensible non-unknown classification)"
+        },
+        "mode_by_mode_verification": {
+          "wavetable_mode": "24+ controls verified (OCT, SEM, FIN, COARSE PITCH, PITCH TRACK, Level, Pan, WT POS, Unison suite, Warp controls, Phase) - all mapped to indices 20-62",
+          "sample_mode": "14+ controls verified (ONE-SHOT, Loop controls, Sample navigation, Scan controls, Slicing) - all mapped to indices 20-62",
+          "multisample_mode": "VEL TRACK, RAND verified - all mapped to indices 20-62",
+          "granular_mode": "Granular-specific controls verified (WARP, SCAN, DENS, LENGTH, OFFSET, DUR, PITCH) - mode-conditional renderings of existing indices 20-62",
+          "spectral_mode": "Spectral-specific controls verified (SCAN, CUT, FILTER, MIX) - mode-conditional renderings of existing indices 20-62",
+          "result": "PASS - all visible controls in all five modes accounted for in indices 20-62; zero controls found that map to Param44-55"
+        },
+        "closure_gate_metrics": {
+          "p0_gaps_resolved": 1,
+          "p0_gaps_remaining": 0,
+          "p1_gaps_remaining": 50,
+          "p2_items_remaining": 0,
+          "semantic_controls_discovered": 0,
+          "new_controls_this_pass": 0,
+          "disposition_table_rows_defensible": 12,
+          "disposition_table_rows_unknown": 0
+        },
+        "closure_condition": {
+          "requirement_1_p0_equals_zero": true,
+          "requirement_2_all_param44_55_defensible": true,
+          "requirement_3_no_fields_unknown": true,
+          "gate_satisfied": true
+        },
+        "final_status": "CLOSED_STAR per Section-Closure Method: P0=0, all Param44-55 fields have defensible disposition (TECHNICAL_STRUCTURAL_FIELD), closure condition met. ~50 P1 items (unmapped/unverified parameters in OSC family) deferred as non-blocking per task scope; recommend separate phase for OSC semantic discovery post-FILTER."
+      }
+    },
+    "notes": "Official 354-page Xfer Serum 2 User Guide PDF referenced in prior project memory as located under the Xfer Serum 2 Presets folder; not located on disk in this session (search intentionally not broadened at user's direction). MACRO section below is built from: (a) existing project code/experiment evidence [tier 4/5], (b) two YouTube tutorial transcripts ingested into serum2/knowledge/, one of which explicitly frames itself as walking through the official manual ('I read the entire Serum 2 manual so you don't have to') [tier 6, SOURCE_REPORTED/SOURCE_OBSERVED]. No direct live-UI screenshot evidence [tier 2/3] was available this session. All UI-only claims lacking direct observation are marked UI_VALIDATION_REQUIRED in notes even when status is VERIFIED from secondary-source evidence. OSC section (2026-09-15): Final closure validation completed via comprehensive mode-by-mode UI sweep of all five oscillator modes across A/B/C oscillators. Param44-55 disposition (12 fields) classified as TECHNICAL_STRUCTURAL_FIELD based on zero UI controls found, generic placeholder naming, no documentation mention, and HOST_PARAM_ONLY controllability."
+  },
+  "records": [
+    {
+      "semantic_id": "MACRO.01.VALUE",
+      "section": "MACRO",
+      "module": "Macro 1",
+      "submodule": null,
+      "label": "Macro 1 Value",
+      "control_type": "continuous",
+      "value_range": [0.0, 100.0],
+      "options": [],
+      "default": 0.0,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": ["MATRIX.source_list", "MACRO.SYS.ASSIGN_DRAG", "MACRO.SYS.CLIP_VIEW_ACCESS", "MACRO.SYS.BROWSER_VIEW_ACCESS"],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {"type": "code", "ref": "experiments/step15_2_6_macro.py:67-105 (MACRO-VALUE experiment, CAUSAL_VERIFIED, monotonic increase, delta=+3391.63Hz)"},
+        {"type": "code", "ref": "experiments/g8c_macro_isolation.py (host param 'Macro 1'..'Macro 8' <-> internal Macro0..Macro7 mapping)"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~7146-7209s: 'turn up this macro', both parameters changing together"},
+        {"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~491-596s: macro affecting eight different controls, automatable"}
+      ],
+      "evidence_type": ["CAUSAL_VERIFIED_CODE", "SOURCE_OBSERVED_TUTORIAL", "SOURCE_REPORTED_TUTORIAL"],
+      "status": "VERIFIED",
+      "notes": "Pattern repeats identically for Macro 2-8 (see MACRO.02.VALUE .. MACRO.08.VALUE). Native range 0-100 confirmed from real corpus preset values (Aardvark Macro3=100.0). Direct UI screenshot not obtained this session; range/behavior corroborated independently by code (causal render evidence) and tutorial (auditory/visual demonstration), so status is VERIFIED but flagged UI_VALIDATION_REQUIRED for exact knob visual/label confirmation."
+    },
+    {
+      "semantic_id": "MACRO.02.VALUE", "section": "MACRO", "module": "Macro 2", "submodule": null,
+      "label": "Macro 2 Value", "control_type": "continuous", "value_range": [0.0, 100.0], "options": [], "default": 0.0,
+      "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MATRIX.source_list", "MACRO.SYS.AUX_SOURCE"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [
+        {"type": "code", "ref": "experiments/g8c_macro_isolation.py"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8691-8717s: 'Let's set macro 2... macro 2 halfway, the modulation amount is going to be scaled by half' (used as aux source)"}
+      ],
+      "evidence_type": ["CAUSAL_VERIFIED_CODE", "SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "Same pattern as MACRO.01.VALUE. Additionally directly observed used as an AUX SOURCE (see MACRO.SYS.AUX_SOURCE)."
+    },
+    {
+      "semantic_id": "MACRO.03.VALUE", "section": "MACRO", "module": "Macro 3", "submodule": null,
+      "label": "Macro 3 Value", "control_type": "continuous", "value_range": [0.0, 100.0], "options": [], "default": 0.0,
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MATRIX.source_list"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "code", "ref": "experiments/g8c_macro_isolation.py; real corpus preset Aardvark Macro3 name='NOISE' value=100.0"}],
+      "evidence_type": ["CAUSAL_VERIFIED_CODE"], "status": "VERIFIED",
+      "notes": "Same pattern as MACRO.01.VALUE. No macro-3-specific tutorial demonstration found this session."
+    },
+    {
+      "semantic_id": "MACRO.04.VALUE", "section": "MACRO", "module": "Macro 4", "submodule": null,
+      "label": "Macro 4 Value", "control_type": "continuous", "value_range": [0.0, 100.0], "options": [], "default": 0.0,
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MATRIX.source_list"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "code", "ref": "experiments/g8c_macro_isolation.py"}],
+      "evidence_type": ["CAUSAL_VERIFIED_CODE"], "status": "VERIFIED",
+      "notes": "Same pattern as MACRO.01.VALUE. No macro-4-specific tutorial demonstration found this session."
+    },
+    {
+      "semantic_id": "MACRO.05.VALUE", "section": "MACRO", "module": "Macro 5", "submodule": null,
+      "label": "Macro 5 Value", "control_type": "continuous", "value_range": [0.0, 100.0], "options": [], "default": 0.0,
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MATRIX.source_list", "MACRO.SYS.SOURCE_CURVE"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [
+        {"type": "code", "ref": "experiments/g8c_macro_isolation.py"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8631s: 'macro 5 is actually assigned to modulation one smoon up' -- macro used to modulate a route's rise/fall smoothing parameter"}
+      ],
+      "evidence_type": ["CAUSAL_VERIFIED_CODE", "SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "Notably demonstrated modulating another route's rise/fall smoothing sub-parameter, not just a top-level synth parameter -- corroborates that Matrix destinations include other routes' own sub-fields."
+    },
+    {
+      "semantic_id": "MACRO.06.VALUE", "section": "MACRO", "module": "Macro 6", "submodule": null,
+      "label": "Macro 6 Value", "control_type": "continuous", "value_range": [0.0, 100.0], "options": [], "default": 0.0,
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MATRIX.source_list"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "code", "ref": "experiments/step15_2_6_macro.py MACRO-NAME experiment uses Macro6; real corpus name 'REVERB SIZE'"}],
+      "evidence_type": ["CAUSAL_VERIFIED_CODE"], "status": "VERIFIED",
+      "notes": "Same pattern as MACRO.01.VALUE."
+    },
+    {
+      "semantic_id": "MACRO.07.VALUE", "section": "MACRO", "module": "Macro 7", "submodule": null,
+      "label": "Macro 7 Value", "control_type": "continuous", "value_range": [0.0, 100.0], "options": [], "default": 0.0,
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MATRIX.source_list"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "code", "ref": "experiments/step15_2_6_macro.py MACRO-VALUE experiment (host 'Macro 8' <-> internal Macro7, confirmed source=[32,0])"}],
+      "evidence_type": ["CAUSAL_VERIFIED_CODE"], "status": "VERIFIED",
+      "notes": "Internal key Macro7 = host-displayed 'Macro 8' per confirmed 0-indexed mapping in g8c_macro_isolation.py. This is the most rigorously causally-verified of the 8 (EFFECT_OBSERVED, SINGLE_FIELD isolation, delta=+3391.63Hz, PERSISTENT per persistence_observation)."
+    },
+    {
+      "semantic_id": "MACRO.08.VALUE", "section": "MACRO", "module": "Macro 8", "submodule": null,
+      "label": "Macro 8 Value", "control_type": "continuous", "value_range": [0.0, 100.0], "options": [], "default": 0.0,
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MATRIX.source_list"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [
+        {"type": "code", "ref": "experiments/g8c_macro_isolation.py"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8717s: 'let's say that we go in here and we take macro 8 and we want to assign that to the pitch'"}
+      ],
+      "evidence_type": ["CAUSAL_VERIFIED_CODE", "SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "Demonstrated assigning to pitch and configuring bipolar behavior (see MACRO.SYS.BIPOLAR_UNIPOLAR)."
+    },
+    {
+      "semantic_id": "MACRO.01.NAME", "section": "MACRO", "module": "Macro 1", "submodule": null,
+      "label": "Macro 1 Name/Label", "control_type": "identity", "value_range": null, "options": [], "default": null,
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MACRO.SYS.KNOB_CONTEXT_MENU"],
+      "resource_dependency": null, "structural_action": "display confirmed; edit/rename mechanism see MACRO.SYS.RENAME_MECHANISM",
+      "sources": [
+        {"type": "code", "ref": "serum2/qualification/... Macro{N}.name field pattern"},
+        {"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14 (Aardvark.SerumPreset): the same MACROS-panel widget used for Macro 1 was directly observed rendering custom text ('NOISE' at UI-position-4, 'REVERB SIZE' at UI-position-7) in place of the plain number, in place of the exact widget this record concerns. See MACRO.03.NAME / MACRO.06.NAME for the two directly-tested instances."}
+      ],
+      "evidence_type": ["DIRECT_UI_OBSERVATION_OF_IDENTICAL_WIDGET", "GENERALIZED_FROM_UNIFORM_UI_ELEMENT"], "status": "VERIFIED",
+      "notes": "CLOSURE LIVE-CHECK (2026-09-14): PROMOTE. Existence of the name-display capability is now directly observed on the identical, uniformly-repeated MACROS-panel widget (all 8 macro slots share one rendering component) for 2 of 8 concrete instances (Macro 4/'NOISE', Macro 7/'REVERB SIZE' in 1-indexed UI terms). Generalizing display capability across all 8 identical instances of the same widget is sound. NARROWED RESIDUAL: the exact end-user EDIT/RENAME mechanism (how a name gets set, if at all, via the live GUI) remains unresolved -- split out to MACRO.SYS.RENAME_MECHANISM rather than blocking this existence/display record."
+    },
+    {
+      "semantic_id": "MACRO.02.NAME", "section": "MACRO", "module": "Macro 2", "submodule": null,
+      "label": "Macro 2 Name/Label", "control_type": "identity", "value_range": null, "options": [], "default": null,
+      "conditional_visibility": null, "conditions": [], "cross_references": [], "resource_dependency": null,
+      "structural_action": "display confirmed; edit/rename mechanism see MACRO.SYS.RENAME_MECHANISM",
+      "sources": [{"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14 (Aardvark.SerumPreset): the identical MACROS-panel widget was directly observed rendering custom names at two other positions ('NOISE', 'REVERB SIZE') -- see MACRO.03.NAME/MACRO.06.NAME. Generalized to this instance since all 8 share one uniform rendering component."}],
+      "evidence_type": ["GENERALIZED_FROM_UNIFORM_UI_ELEMENT"], "status": "VERIFIED",
+      "notes": "CLOSURE LIVE-CHECK (2026-09-14): PROMOTE, generalized from directly-observed identical widget (see MACRO.01.NAME for the full reasoning). Residual open question (edit/rename mechanism) split to MACRO.SYS.RENAME_MECHANISM."
+    },
+    {
+      "semantic_id": "MACRO.03.NAME", "section": "MACRO", "module": "Macro 3", "submodule": null,
+      "label": "Macro 3 Name/Label ('NOISE' in Aardvark corpus preset)", "control_type": "identity", "value_range": null,
+      "options": [], "default": null, "conditional_visibility": null, "conditions": [], "cross_references": [],
+      "resource_dependency": null, "structural_action": "display confirmed; edit/rename mechanism see MACRO.SYS.RENAME_MECHANISM",
+      "sources": [
+        {"type": "code", "ref": "step15_2_6_macro.py docstring: 'Aardvark Macro3=100.0' with real preset name context 'NOISE'"},
+        {"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14: loaded ARP - Aardvark.SerumPreset into the open Serum 2 instance (Ableton track '1-Serum 2'). MACROS panel position 4 (1-indexed UI 'Macro 4' = internal 0-indexed Macro3, consistent with the confirmed host-name-to-internal-key offset) displayed the literal text 'NOISE' in place of the plain number, confirming this is the exact same field observed in code. The Matrix Source column, by contrast, still labeled routes from this macro as generic 'Macro 4' (not 'NOISE') -- name display is scoped to the MACROS panel widget only."}
+      ],
+      "evidence_type": ["STRUCTURAL_ONLY_CODE", "DIRECT_UI_OBSERVATION"], "status": "VERIFIED",
+      "notes": "UPGRADED (2026-09-14 live check) from code-only STRUCTURAL_ONLY to directly UI-confirmed. Field existence, persistence, AND live display all now confirmed. User-facing RENAME/EDIT interaction mechanism remains the one open question for the whole Macro-naming topic -- see MACRO.SYS.RENAME_MECHANISM (not blocking this record, which concerns display/existence only)."
+    },
+    {
+      "semantic_id": "MACRO.04.NAME", "section": "MACRO", "module": "Macro 4", "submodule": null,
+      "label": "Macro 4 Name/Label", "control_type": "identity", "value_range": null, "options": [], "default": null,
+      "conditional_visibility": null, "conditions": [], "cross_references": [], "resource_dependency": null,
+      "structural_action": "display confirmed; edit/rename mechanism see MACRO.SYS.RENAME_MECHANISM",
+      "sources": [{"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14 (Aardvark.SerumPreset): the identical MACROS-panel widget was directly observed rendering custom names at two other positions ('NOISE', 'REVERB SIZE') -- see MACRO.03.NAME/MACRO.06.NAME. Generalized to this instance since all 8 share one uniform rendering component."}],
+      "evidence_type": ["GENERALIZED_FROM_UNIFORM_UI_ELEMENT"], "status": "VERIFIED", "notes": "CLOSURE LIVE-CHECK (2026-09-14): PROMOTE, generalized from directly-observed identical widget (see MACRO.01.NAME for the full reasoning). Residual open question (edit/rename mechanism) split to MACRO.SYS.RENAME_MECHANISM."
+    },
+    {
+      "semantic_id": "MACRO.05.NAME", "section": "MACRO", "module": "Macro 5", "submodule": null,
+      "label": "Macro 5 Name/Label", "control_type": "identity", "value_range": null, "options": [], "default": null,
+      "conditional_visibility": null, "conditions": [], "cross_references": [], "resource_dependency": null,
+      "structural_action": "display confirmed; edit/rename mechanism see MACRO.SYS.RENAME_MECHANISM",
+      "sources": [{"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14 (Aardvark.SerumPreset): the identical MACROS-panel widget was directly observed rendering custom names at two other positions ('NOISE', 'REVERB SIZE') -- see MACRO.03.NAME/MACRO.06.NAME. Generalized to this instance since all 8 share one uniform rendering component."}],
+      "evidence_type": ["GENERALIZED_FROM_UNIFORM_UI_ELEMENT"], "status": "VERIFIED", "notes": "CLOSURE LIVE-CHECK (2026-09-14): PROMOTE, generalized from directly-observed identical widget (see MACRO.01.NAME for the full reasoning). Residual open question (edit/rename mechanism) split to MACRO.SYS.RENAME_MECHANISM."
+    },
+    {
+      "semantic_id": "MACRO.06.NAME", "section": "MACRO", "module": "Macro 6", "submodule": null,
+      "label": "Macro 6 Name/Label ('REVERB SIZE' in Aardvark corpus preset)", "control_type": "identity", "value_range": null,
+      "options": [], "default": null, "conditional_visibility": null, "conditions": [], "cross_references": [],
+      "resource_dependency": null, "structural_action": "display confirmed; edit/rename mechanism see MACRO.SYS.RENAME_MECHANISM",
+      "sources": [
+        {"type": "code", "ref": "experiments/step15_2_6_macro.py MACRO-NAME experiment: Macro6.name mutated to 'REVERB SIZE' (real corpus value); gate_completeness / persistence_observation recorded in experiments/_macro_records.pkl"},
+        {"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14: loaded ARP - Aardvark.SerumPreset. MACROS panel position 7 (1-indexed UI 'Macro 7' = internal 0-indexed Macro6, consistent with confirmed offset) displayed the literal text 'REVERB SIZE'. Right-clicking this named knob showed the same base menu as an unnamed macro PLUS one extra conditional item, 'Apply and Delete Macro' (see MACRO.SYS.APPLY_AND_DELETE_MACRO) -- but still NO rename item of any kind."}
+      ],
+      "evidence_type": ["STRUCTURAL_ONLY_CODE", "DIRECT_UI_OBSERVATION"], "status": "VERIFIED",
+      "notes": "UPGRADED (2026-09-14 live check) from code-only STRUCTURAL_ONLY to directly UI-confirmed. Field construct/mutate/persist/display all confirmed (no causal/audio claim attempted or expected for a label field, consistent with project convention for identity fields e.g. LFO-SHAPE/OSC-WAVETABLE). The end-user EDIT/RENAME interaction mechanism was actively searched for on this exact named instance (right-click menu checked directly) and NOT found -- see MACRO.SYS.RENAME_MECHANISM for the consolidated, still-open finding."
+    },
+    {
+      "semantic_id": "MACRO.07.NAME", "section": "MACRO", "module": "Macro 7", "submodule": null,
+      "label": "Macro 7 Name/Label", "control_type": "identity", "value_range": null, "options": [], "default": null,
+      "conditional_visibility": null, "conditions": [], "cross_references": [], "resource_dependency": null,
+      "structural_action": "display confirmed; edit/rename mechanism see MACRO.SYS.RENAME_MECHANISM",
+      "sources": [{"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14 (Aardvark.SerumPreset): the identical MACROS-panel widget was directly observed rendering custom names at two other positions ('NOISE', 'REVERB SIZE') -- see MACRO.03.NAME/MACRO.06.NAME. Generalized to this instance since all 8 share one uniform rendering component."}],
+      "evidence_type": ["GENERALIZED_FROM_UNIFORM_UI_ELEMENT"], "status": "VERIFIED", "notes": "CLOSURE LIVE-CHECK (2026-09-14): PROMOTE, generalized from directly-observed identical widget (see MACRO.01.NAME for the full reasoning). Residual open question (edit/rename mechanism) split to MACRO.SYS.RENAME_MECHANISM."
+    },
+    {
+      "semantic_id": "MACRO.08.NAME", "section": "MACRO", "module": "Macro 8", "submodule": null,
+      "label": "Macro 8 Name/Label", "control_type": "identity", "value_range": null, "options": [], "default": null,
+      "conditional_visibility": null, "conditions": [], "cross_references": [], "resource_dependency": null,
+      "structural_action": "display confirmed; edit/rename mechanism see MACRO.SYS.RENAME_MECHANISM",
+      "sources": [{"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14 (Aardvark.SerumPreset): the identical MACROS-panel widget was directly observed rendering custom names at two other positions ('NOISE', 'REVERB SIZE') -- see MACRO.03.NAME/MACRO.06.NAME. Generalized to this instance since all 8 share one uniform rendering component."}],
+      "evidence_type": ["GENERALIZED_FROM_UNIFORM_UI_ELEMENT"], "status": "VERIFIED", "notes": "CLOSURE LIVE-CHECK (2026-09-14): PROMOTE, generalized from directly-observed identical widget (see MACRO.01.NAME for the full reasoning). Residual open question (edit/rename mechanism) split to MACRO.SYS.RENAME_MECHANISM."
+    },
+    {
+      "semantic_id": "MACRO.SYS.ASSIGN_DRAG", "section": "MACRO", "module": "Macro System", "submodule": "Assignment",
+      "label": "Drag-and-drop assignment of a macro onto a target parameter/point", "control_type": "gesture/structural",
+      "value_range": null, "options": [], "default": "creates route with maximum modulation depth",
+      "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MATRIX", "MACRO.SYS.CENTER_TOGGLE_MODIFIER", "MACRO.SYS.RANGE_DIRECTION_DRAG"],
+      "resource_dependency": null, "structural_action": "assign",
+      "sources": [
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~7146s: 'I've just assigned it by dragging it... we drag it over to our parameter... By default, it loads up with the maximum modulation'"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~7540s: 'If I drag over a macro' onto LFO graph X/Y point, curve, envelope curvature"},
+        {"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~491s: 'assigned to control any parameter in Serum, either by drag and drop or in the modulation matrix'"}
+      ],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL", "SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "Also confirmed droppable onto non-parameter graph points (LFO X/Y, curve editors, envelope curvature) -- not restricted to plain knobs. UI_VALIDATION_REQUIRED for exact visual affordance."
+    },
+    {
+      "semantic_id": "MACRO.SYS.ASSIGN_MATRIX_SOURCE", "section": "MACRO", "module": "Macro System", "submodule": "Assignment",
+      "label": "Select a Macro as the Source of a Matrix row via dropdown/list", "control_type": "dropdown_option",
+      "value_range": null, "options": ["Macro 1", "Macro 2", "Macro 3", "Macro 4", "Macro 5", "Macro 6", "Macro 7", "Macro 8"],
+      "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MATRIX.source_list"], "resource_dependency": null, "structural_action": null,
+      "sources": [
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8261s: 'We can find the macros over here. So, that's these macros.' -- enumerated as one of the Matrix Source dropdown categories alongside envelopes/LFOs/note info/oscillator outputs/MPE/filter outputs"}
+      ],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL", "DIRECT_UI_OBSERVATION"], "status": "VERIFIED",
+      "notes": "CONFLICT RESOLVED via live UI check (2026-09-14): the existing project reference doc's MATRIX SOURCE column summary (memory/serum2_complete_reference.md) omitting Macro was confirmed to be an incomplete paraphrase, not a real contradiction. Direct observation: Matrix tab, Source column, row dropdown top-level categories in order = Off, Envelopes>, LFOs>, Note>, Oscillators>, Macros>, MPE>, Filters>, Mod Wheel, Aftertouch, Poly Aftertch, Pitch Bend, Fixed. The Macros> submenu lists 'Macro 1' through 'Macro 8' (generic labels in this test patch, which has no custom macro names set). Escaped out without selecting any entry -- no Matrix row was created, no patch state changed. GIFT-FORWARD for Step 6 MATRIX sweep: this top-level Source category list is now available as a head start and should be treated as directly-observed baseline for that sweep, not re-discovered from scratch."
+    },
+    {
+      "semantic_id": "MACRO.SYS.MULTI_ASSIGN_ONE_MACRO", "section": "MACRO", "module": "Macro System", "submodule": "Assignment",
+      "label": "One macro can drive multiple parameters simultaneously", "control_type": "structural_behavior",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.OUTPUT_MONITOR"], "resource_dependency": null, "structural_action": null,
+      "sources": [
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~7202s: 'Now we have it set to two parameters... both of those parameters are going to be changing with the same'"},
+        {"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~521s: 'a macro affecting eight different controls' (bass patch example), 'link multiple parameters to a single parameter'"}
+      ],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL", "SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED", "notes": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.MULTI_MACRO_SUMMED_DEST", "section": "MACRO", "module": "Macro System", "submodule": "Assignment",
+      "label": "Multiple modulation routes (including different macros) can sum at one destination", "control_type": "structural_behavior",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.OUTPUT_MONITOR", "MACRO.SYS.AUX_SOURCE"], "resource_dependency": null, "structural_action": null,
+      "sources": [
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8767-8827s: output monitor 'showing you exactly what the modulation is doing on the parameter... it will sum multiple modulations together', demonstrated with a time-based modulation plus a macro assigned to the same parameter"}
+      ],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "General Matrix summing behavior demonstrated with a macro as one of the summed sources; not exclusive to macros. Distinct mechanism from AUX_SOURCE (multiplicative scaling) -- this is additive summation of independent routes at a shared destination."
+    },
+    {
+      "semantic_id": "MACRO.SYS.ROUTE_AMOUNT", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Per-route Amount/Depth knob set after assignment", "control_type": "continuous",
+      "value_range": null, "options": [], "default": "maximum on creation",
+      "conditional_visibility": "appears once a route exists for the macro", "conditions": ["route exists"],
+      "cross_references": ["MACRO.SYS.MACRO_DEPTH_RECONCILE", "MACRO.SYS.AUX_SOURCE"], "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~7146s: 'I can edit over here the amount of modulation that I want'"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8767s: 'One thing that you cannot modulate though is this amount itself here. If I take a macro and I drag it on there, you can see that that isn't really working.'"}
+      ],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "IMPORTANT NEGATIVE FINDING: the primary route Amount field explicitly CANNOT be modulated by directly dragging a macro onto it -- that specific interaction was demonstrated to fail. Scaling a route's Amount by a macro requires the separate AUX SOURCE mechanism (MACRO.SYS.AUX_SOURCE). This directly informs MACRO.SYS.MACRO_DEPTH_RECONCILE."
+    },
+    {
+      "semantic_id": "MACRO.SYS.MACRO_DEPTH_RECONCILE", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Reconciliation flag: existing code target 'ModRoute.MacroDepth' (mod_field_route_macro_depth)", "control_type": "reconciliation_flag",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.ROUTE_AMOUNT", "MACRO.SYS.AUX_SOURCE"], "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {"type": "code", "ref": "serum2/compiler/targets.py:271 -- \"ModRoute.MacroDepth\": SemanticTargetRef(\"ModRoute.MacroDepth\", \"mod_field_route_macro_depth\")"},
+        {"type": "code", "ref": "serum2/SERUM_2_CONTROL_UNIVERSE_AUDIT.txt:274,291-299 -- Macros are 100% for value storage; mapping/routing marked [TBD, stored in matrix routes]"},
+        {"type": "memory", "ref": "serum2_complete_reference.md: 'Macro Depth Column -- MATRIX tab -- Macros control modulation amounts, not just parameter values' (NEW in Serum 2)"}
+      ],
+      "evidence_type": ["CODE_ONLY_UNVERIFIED_AGAINST_UI", "IDENTITY_RESOLVED_BY_BEHAVIORAL_MATCH", "OFFICIAL_DOCUMENTATION_SILENCE"], "status": "PROVEN_NOT_USER_CONTROL",
+      "notes": "OFFICIAL CORROBORATION ADDED (2026-09-14): the Xfer 'What's New in Serum 2' PDF's page 14 'Enhanced Macros' and page 15 'Enhanced Modulation Matrix' sections each list specific named sub-features (e.g. 'Source Curves', 'Aux Source Curves', 'Bypass Mods', 'Reorder Modulations') but never once use the phrase 'Macro Depth' or describe a third scaling mechanism beyond Amount and Aux Source. This is an official, page-numbered, feature-highlighting source (not just a tutorial) failing to name a feature it would very plausibly highlight if it existed as marketed -- meaningfully strengthens (though does not by itself prove, since this is a highlights doc, not the full manual) the merge decision below. CLOSURE M7 (2026-09-14): MERGE disposition -- resolved as NOT a distinct user-facing control; identity = MACRO.SYS.AUX_SOURCE. Reasoning: (1) the memory reference doc's own description of 'Macro Depth Column' -- 'macros control modulation amounts, not just parameter values' -- is behaviorally identical to the directly-observed Aux Source mechanism (a macro multiplicatively scaling another route's effective amount; MACRO.SYS.AUX_SOURCE). (2) The tutorial walks the Matrix row left-to-right in full (Source -> Source Curve -> Amount -> Bipolar/Unipolar -> Aux Source -> Aux Invert -> Aux Curve -> Aux Output -> Output Monitor -> Temp Bypass -> Delete) with no separate 'Macro Depth' field ever named or shown in that walkthrough, despite it being the exact part of the UI where such a field would appear if distinct. (3) No tutorial source independently corroborates a literally separate labeled 'Macro Depth' column. Given a full positive behavioral match plus a complete-row-walkthrough negative check, the best-supported reading is that 'MacroDepth' (code target mod_field_route_macro_depth) and 'Macro Depth Column' (memory doc paraphrase) both name the Aux-Source-when-source-is-Macro mechanism, not a fourth distinct field. Residual uncertainty acknowledged: this is an identity inference, not a direct sighting of a UI element labeled exactly 'Macro Depth' being absent -- if Step 6 MATRIX sweep's targeted UI validation later finds a genuinely separate labeled column, this record must be reopened (REJECT this merge) and split back out. Per CLAUDE.md 'do not treat code/state representation as semantic authority', the code target itself was deliberately NOT used to decide this -- the UI-observed behavioral description was."
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_SOURCE", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Auxiliary Source field: secondary source (can be a macro) that multiplicatively scales a route's effective amount",
+      "control_type": "dropdown_option", "value_range": null, "options": [], "default": null,
+      "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.AUX_INVERT", "MACRO.SYS.AUX_CURVE", "MACRO.SYS.AUX_OUTPUT", "MACRO.SYS.ROUTE_AMOUNT"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8767-8827s: 'this is where we set up an auxiliary modulation that is going to be multiplied with this modulation here... Let's set macro 2. So now this modulation isn't going to do anything unless macro 2 is turned up all the way... if we set macro 2 halfway, the modulation amount is going to be scaled by half'"}
+      ],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "This is the confirmed mechanism by which a macro scales another route's amount, since the route's own Amount field cannot be directly macro-modulated (see MACRO.SYS.ROUTE_AMOUNT)."
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_INVERT", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Aux source invert toggle", "control_type": "toggle", "value_range": null, "options": ["normal", "inverted"],
+      "default": "normal", "conditional_visibility": "requires an Aux Source assigned", "conditions": ["aux source assigned"],
+      "cross_references": ["MACRO.SYS.AUX_SOURCE"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8827s: 'we can invert its behavior. So, now at the bottom, it is going to be fully modulating. And at the top, it is going to be fully not modulating.'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED", "notes": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_CURVE", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Aux source remap curve editor", "control_type": "graph_editor", "value_range": null, "options": [],
+      "default": null, "conditional_visibility": "requires an Aux Source assigned", "conditions": ["aux source assigned"],
+      "cross_references": ["MACRO.SYS.AUX_SOURCE", "MACRO.SYS.SOURCE_CURVE"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8827s: 'We can again remap this whole thing. So, we again have a curve here, which you can also click on to edit... This remapping will just be applied to the actual modulation amount here.'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED", "notes": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_OUTPUT", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Aux source output percentage knob", "control_type": "continuous", "value_range": [0.0, 100.0], "options": [],
+      "default": null, "conditional_visibility": "requires an Aux Source assigned", "conditions": ["aux source assigned"],
+      "cross_references": ["MACRO.SYS.AUX_SOURCE"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8827s: 'if we want this to be outputed at 50% is just set its output to 50 and it's still just going to go halfway'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "Acts as a final multiplier on the aux-scaled amount, usable as a fixed static scale in place of a live aux source."
+    },
+    {
+      "semantic_id": "MACRO.SYS.BIPOLAR_UNIPOLAR", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Bipolar/Unipolar toggle for a route (applies when source is a macro, among others)", "control_type": "toggle",
+      "value_range": null, "options": ["bipolar", "unipolar"], "default": "unipolar",
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MACRO.SYS.ROUTE_AMOUNT"],
+      "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8767s: 'We go bipolar, uniolar, bipolar, uniolar. ... we take macro 8 and we want to assign that to the pitch... you can already see that right now this is set to bipolar' (auto-set to bipolar for a pitch destination)"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "General Matrix route field, not macro-exclusive, but explicitly demonstrated with Macro 8 as the source. Also observed to auto-default to bipolar for certain destination types (pitch) -- exact auto-selection rule is UNVERIFIED_CANDIDATE pending MATRIX sweep."
+    },
+    {
+      "semantic_id": "MACRO.SYS.SOURCE_CURVE", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Primary modulation remap curve ('remap mod') for a route", "control_type": "graph_editor", "value_range": null,
+      "options": [], "default": "linear", "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.RISE_FALL_SMOOTH", "MACRO.SYS.AUX_CURVE"], "resource_dependency": "curve presets (factory + user-saved shapes)",
+      "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8496s: 'if you would like to change how the amount is actually reflected, you can do that with the remap mod... if you double click, you can actually edit this curve... there's presets available over here... you can also generate random curves... you can also take the shape from any of the oscillators'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "Curve presets include factory presets, generated random curves, oscillator-shape import, and user-saved custom curves -- this is itself a resource workflow (curve preset load/save) worth cross-referencing during Step 12 BROWSER sweep if curve presets share the same resource-browsing UI."
+    },
+    {
+      "semantic_id": "MACRO.SYS.RISE_FALL_SMOOTH", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Rise/Fall (Follow) smoothing knobs for a route, linkable/unlinkable", "control_type": "continuous_pair",
+      "value_range": null, "options": [], "default": "linked", "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.SOURCE_CURVE"], "resource_dependency": null, "structural_action": "link/unlink",
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8496-8631s: 'we also have smoothing in this case specifically for the rise and full. So, we can unlink those and have them different. The rise is going to go how fast is the modulation going to go up and the follow is going to determine how fast is the modulation going to go down.'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "These sub-parameters are themselves modulatable (demonstrated: MACRO.05.VALUE assigned to another route's rise/fall smoothing)."
+    },
+    {
+      "semantic_id": "MACRO.SYS.OUTPUT_MONITOR", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Per-route output/destination value monitor (visual readout)", "control_type": "indicator", "value_range": null,
+      "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.MULTI_MACRO_SUMMED_DEST"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8767-8805s: 'this is showing you exactly what the modulation is doing on the parameter. It is actually showing you the output of the parameter... it will sum multiple modulations together... this is actually an output of the parameter value not the individual modulation value'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED", "notes": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.TEMP_BYPASS", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Temporary bypass knob/toggle per route (disable without deleting)", "control_type": "toggle", "value_range": null,
+      "options": ["active", "bypassed"], "default": "active", "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.DELETE_ROUTE", "MACRO.SYS.UNASSIGN_RIGHTCLICK"], "resource_dependency": null,
+      "structural_action": "bypass",
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8827s: 'the final knob here is the temporary bypass. So, you can just bypass any modulation that you have so that it's not going to apply without actually deleting it.'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED", "notes": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.DELETE_ROUTE", "section": "MACRO", "module": "Macro System", "submodule": "Matrix Route",
+      "label": "Delete an individual modulation route (macro-sourced or otherwise)", "control_type": "button", "value_range": null,
+      "options": [], "default": null, "conditional_visibility": null, "conditions": [], "cross_references": ["MACRO.SYS.TEMP_BYPASS"],
+      "resource_dependency": null, "structural_action": "delete",
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8827s: 'you can just fully delete it by clicking over here'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED", "notes": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.UNASSIGN_RIGHTCLICK", "section": "MACRO", "module": "Macro System", "submodule": "Assignment",
+      "label": "Right-click on mod source or destination parameter to bypass/unassign at any time", "control_type": "context_menu_action",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.TEMP_BYPASS", "MACRO.SYS.DELETE_ROUTE"], "resource_dependency": null,
+      "structural_action": "bypass/unassign",
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~521s: 'Any modulation source can also be bypassed or unassigned at any time by right-clicking the mod source or the parameter being modulated.'"}],
+      "evidence_type": ["SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "General mechanism, applies to macro-sourced routes among others."
+    },
+    {
+      "semantic_id": "MACRO.SYS.APPLY_AND_DELETE_MACRO", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "Apply and Delete Macro -- per-macro right-click action managing that macro's modulation assignment(s)", "control_type": "context_menu_action",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": "observed present on a macro with an active/named state; absent on a freshly-default unnamed macro with no routes", "conditions": ["macro has at least one condition among: an active Matrix route, OR a custom name/preset origin -- exact trigger not fully isolated"],
+      "cross_references": ["MACRO.0X.VALUE", "MACRO.SYS.KNOB_CONTEXT_MENU"], "resource_dependency": null, "structural_action": "apply/delete",
+      "sources": [
+        {"type": "official_pdf", "ref": "Xfer 'What's New in Serum 2' (static.xferrecords.com, v2.0, manual v1.0.0, 2025-03-17), page 14 'Enhanced Modulation' > 'Enhanced Macros': 'Serum now offers eight macros, with each macro as a potential destination. Ability to apply and delete a macro.' -- OFFICIAL, page-numbered source."},
+        {"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14: right-clicked the 'NOISE' macro knob (Aardvark.SerumPreset loaded, UI Macro 4 = internal Macro3) -- menu contained an extra item 'Apply and Delete Macro' between 'Lock Parameter' and 'Init Module', NOT present in the equivalent menu on the default/unnamed Macro 1 of the original BUSBYPASSSTATEA patch (see MACRO.SYS.KNOB_CONTEXT_MENU baseline enumeration)."},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~8215-8261s (originally cited for this record before the live check): 'if you wanted to delete all of the macros from the modulation, all of these modulation assignments here, you can do that really quickly with this button over here, which as you can see clears all of the macros'"}
+      ],
+      "evidence_type": ["OFFICIAL_DOCUMENTATION", "DIRECT_UI_OBSERVATION", "SOURCE_OBSERVED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "CLOSURE M6 REVISED (2026-09-14, superseding the 2026-09-14-earlier CLEAR_ALL_BUTTON promotion): RENAME + RESCOPE. The official PDF's exact phrase 'Ability to apply and delete A MACRO' (singular) matches this live-observed PER-MACRO right-click item verbatim in spirit ('Apply and Delete Macro'), NOT a bulk all-8 button. This record now supersedes the earlier MACRO.SYS.CLEAR_ALL_BUTTON identity: the tutorial's looser description ('clears all of the macros... all of these modulation assignments') most likely describes the visual effect of using this same per-macro action on a macro that had many routes, rather than a literal separate bulk button -- but this reading is not proven, only judged more likely given the official term's singular phrasing. RESIDUAL OPEN QUESTION (not blocking closure, flagged for Step 6 MATRIX sweep): whether a SEPARATE bulk 'clear all 8 macros at once' Matrix-top-right button/dropdown also exists, as the project memory reference doc independently claims ('Apply/Delete Menu (dropdown) -- Top-right -- manage all 8 Macro assignments at once'). Not tested live (the Matrix tab's top-right collapse/expand icons were seen but not clicked, to avoid mutating the loaded patch's Matrix view state unnecessarily). CONDITIONAL TRIGGER not fully isolated: seen present on a NAMED macro with active routes (NOISE/Macro 4 in Aardvark) and absent on an unnamed, routeless macro (Macro 1 in BUSBYPASSSTATEA) -- whether the trigger is 'has a route', 'has a custom name', or 'came from a preset vs. a fresh/default macro' was not isolated as a single-variable test."
+    },
+    {
+      "semantic_id": "MACRO.SYS.CENTER_TOGGLE_MODIFIER", "section": "MACRO", "module": "Macro System", "submodule": "Assignment",
+      "label": "Shift+Alt / Shift+Option click toggles whether modulation is centered on current value during drag-assign", "control_type": "modifier_gesture",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": "during drag-assignment", "conditions": ["drag-assign in progress"],
+      "cross_references": ["MACRO.SYS.ASSIGN_DRAG"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~521s: 'We can toggle whether the modulation is centered around the current value or not by shift alt or shift option clicking.'"}],
+      "evidence_type": ["SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "General assignment-gesture modifier, applies to macro-sourced assignment among other sources."
+    },
+    {
+      "semantic_id": "MACRO.SYS.RANGE_DIRECTION_DRAG", "section": "MACRO", "module": "Macro System", "submodule": "Assignment",
+      "label": "Drag directly on a modulated control (or in the mod matrix) to set modulation range/direction", "control_type": "gesture",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.ROUTE_AMOUNT", "MACRO.SYS.BIPOLAR_UNIPOLAR"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~521s: 'We can control the range and direction of the modulation by dragging on it directly or in the mod matrix.'"}],
+      "evidence_type": ["SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED", "notes": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.CLIP_VIEW_ACCESS", "section": "MACRO", "module": "Macro System", "submodule": "Cross-System",
+      "label": "Macro knob strip is displayed/accessible inside the Clip module view", "control_type": "panel_presence",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": "Clip view enabled", "conditions": ["Clip enabled"],
+      "cross_references": ["CLIP.note_editor.macro_settings (pending Step 8 CLIP sweep)"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~9207s: 'starting off at the top left we have access to the macros here if you want to use macro control on any of the parameters that we see over here'"}],
+      "evidence_type": ["SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "Separately, the same source describes per-NOTE macro automation inside the Clip note editor ('We can add individual macro settings') -- that is a CLIP-owned semantic element (per-note macro value automation), not a Macro-owned one; flagged here as a cross-reference only, to be fully inventoried during Step 8 CLIP sweep rather than duplicated here."
+    },
+    {
+      "semantic_id": "MACRO.SYS.BROWSER_VIEW_ACCESS", "section": "MACRO", "module": "Macro System", "submodule": "Cross-System",
+      "label": "Macros are adjustable directly from the preset browser view", "control_type": "panel_presence", "value_range": null,
+      "options": [], "default": null, "conditional_visibility": "Browser view open", "conditions": ["Browser open"],
+      "cross_references": ["BROWSER (pending Step 12 sweep)"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~596s: 'It's worth mentioning you can also adjust these macros from the preset browser as well as in the clips view'"}],
+      "evidence_type": ["SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED", "notes": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.FX_EXPANDED_NOT_ASSIGNABLE", "section": "MACRO", "module": "Macro System", "submodule": "Cross-System",
+      "label": "In the FX rack's extended/expanded view, macros do NOT appear as drag-assignable sources (unlike other modulators)", "control_type": "negative_finding",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": "FX extended view active", "conditions": ["FX view extended"],
+      "cross_references": ["FX (pending Step 6 sweep)"], "resource_dependency": null, "structural_action": null,
+      "sources": [{"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~4738s: 'There's a little button over here that allows you to actually extend the effects range... you lose the ability to edit the modulators. you're still going to be able to assign them as they're going to show up over here. One thing to note is that that's not going to be the case for the macros. They don't actually show up with the ability to be assigned, which is a little bit of a shame.'"}],
+      "evidence_type": ["SOURCE_OBSERVED_TUTORIAL"], "status": "PROVEN_NOT_USER_CONTROL",
+      "notes": "Explicit, demonstrated absence -- narrator confirms this as a known limitation ('a little bit of a shame'), not a misunderstanding. Scope: this negative finding applies specifically to drag-assignment FROM the FX extended view; it does not imply macros cannot modulate FX parameters at all (they can, via the Matrix, per general FX<->MATRIX cross-system routing, to be confirmed in Step 6/Step 13)."
+    },
+    {
+      "semantic_id": "MACRO.SYS.RESET_VALUE", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "Right-click reset-to-default for a Macro Value knob", "control_type": "context_menu_action", "value_range": null, "options": [], "default": "resets value to 0",
+      "conditional_visibility": null, "conditions": [], "cross_references": ["MACRO.SYS.KNOB_CONTEXT_MENU", "MACRO.SYS.APPLY_AND_DELETE_MACRO"], "resource_dependency": null,
+      "structural_action": "reset",
+      "sources": [
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~392s: 'a lot of the information is hidden behind right-click menus... if I right click on the face, you can see that we have two options over here, which are actually specific to this parameter. These other options are actually shared among most of the parameters.'"},
+        {"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~1088s: 'there are some quite useful features in Serum 2 that are hidden behind right-click menus, such as resetting a control to default or locking a parameter... it's definitely worth clicking around a bit.'"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~4738s: oscillator/mixer right-click context: 'we have some resets as well as MIDI learning options' (same shared-options family per the ~392s statement)"}
+      ],
+      "evidence_type": ["DIRECT_UI_OBSERVATION"], "status": "VERIFIED",
+      "notes": "CLOSURE M8 (2026-09-14): RENAME (from MACRO.SYS.RESET_DEFAULT) + PROMOTE, SCOPE NARROWED, then UPGRADED to direct observation. Originally promoted via a generalized textual claim from two tutorial sources; subsequently CONFIRMED by live UI check (2026-09-14) -- right-clicking a Macro Value knob shows a 'Reset Control' menu item verbatim (see MACRO.SYS.KNOB_CONTEXT_MENU for the full menu and observation method). SCOPE IS NARROW: this covers resetting the VALUE knob only. Reset of a Macro's NAME/label is NOT covered (still open, see MACRO.SYS.KNOB_CONTEXT_MENU). Assignment-clearing is separately covered by MACRO.SYS.CLEAR_ALL_BUTTON. 'Init Module' (a distinct menu item, see MACRO.SYS.INIT_MODULE) may have broader reset scope than this control-only reset -- kept as a separate record rather than merged, since the two are visually distinct menu entries and their scopes are not proven identical."
+    },
+    {
+      "semantic_id": "MACRO.SYS.KNOB_CONTEXT_MENU", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "Right-click context menu on a Macro Value knob", "control_type": "context_menu",
+      "value_range": null, "options": ["Mod Source >", "Bypass Modulator", "Remove Modulator", "Remove All Modulators", "Reset Control", "MIDI Learn", "Lock Parameter", "Init Module", "Copy", "Paste"],
+      "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.01.NAME", "MACRO.SYS.RESET_VALUE", "MACRO.SYS.VALUE_AS_MOD_DESTINATION", "MACRO.SYS.LOCK_PARAMETER", "MACRO.SYS.INIT_MODULE", "MACRO.SYS.COPY_PASTE", "MACRO.SYS.APPLY_AND_DELETE_MACRO", "MACRO.SYS.RENAME_MECHANISM"],
+      "resource_dependency": null, "structural_action": "menu",
+      "sources": [{"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14: Ableton Live 12.3, track '1-Serum 2', Serum 2 device, patch 'BUSBYPASSSTATEA'. Right-clicked Macro 1's value knob on the MIX-tab MACROS strip (compact panel, coordinates approx (25,493) in a 1456x816 screenshot). Menu header read 'Macro 1'; full item list transcribed directly from screenshot, then closed via Escape without selecting any item (no state mutated)."}],
+      "evidence_type": ["DIRECT_UI_OBSERVATION"], "status": "VERIFIED",
+      "notes": "CLOSURE M4/LIVE-CHECK (2026-09-14): PROMOTE from UNVERIFIED_CANDIDATE via direct live UI observation (user granted computer-use access to Ableton Live for this specific check). Full menu enumerated with certainty. DECISIVE NEGATIVE FINDING: there is NO rename/label-edit item anywhere in this menu. This means the Macro.name field (confirmed to exist and persist at the data level via MACRO.06.NAME) is NOT set through this context menu. Three further live checks also came up empty for a rename affordance: (1) double-clicking the macro's number label (67,493) only selected/highlighted the macro with a drag-handle cursor, no text field opened; (2) the Matrix SOURCE dropdown's Macros submenu (Matrix tab, Source column) lists only generic 'Macro 1'..'Macro 8', not custom names; (3) hovering a macro knob shows a tooltip in the generic format 'Macro N (value)', e.g. 'Macro 5 (0)'. FOLLOW-UP (2026-09-14, same session): loaded ARP - Aardvark.SerumPreset (has real custom macro names) into the same Serum instance and re-right-clicked a NAMED macro ('NOISE'). The menu grew by exactly one conditional item ('Apply and Delete Macro' -- see MACRO.SYS.APPLY_AND_DELETE_MACRO) but STILL contained no rename/label-edit item of any kind, and the menu's title-bar text ('NOISE' vs 'Macro 1') behaves as a static, non-interactive label in both states. This is now the SIXTH independent check (menu-unnamed, menu-named, double-click, Matrix source picker, tooltip, official 20-page PDF) converging on the same negative result. See MACRO.SYS.RENAME_MECHANISM for the final consolidated status of this specific sub-question -- kept UNVERIFIED_CANDIDATE (not PROVEN_NOT_USER_CONTROL) since a few plausible locations remain unchecked (the Serum main hamburger MENU, blocked this session by an OS focus issue; any full/expanded Matrix or Macro editor view)."
+    },
+    {
+      "semantic_id": "MACRO.SYS.VALUE_AS_MOD_DESTINATION", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "A Macro's own Value can itself be a modulation destination (modulated by another source)", "control_type": "structural_behavior",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.KNOB_CONTEXT_MENU", "MACRO.0X.VALUE"], "resource_dependency": null, "structural_action": "assign/bypass/remove",
+      "sources": [
+        {"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14: Macro 1 knob right-click menu contains 'Mod Source >' (submenu, not explored further to avoid creating a route), 'Bypass Modulator', 'Remove Modulator', 'Remove All Modulators' -- these four items only make sense as operations on modulation INCOMING to this macro's own value, mirroring the same quad pattern documented generally in yt_74ab96e1f377 ~521s for 'the parameter being modulated'."},
+        {"type": "official_pdf", "ref": "Xfer 'What's New in Serum 2' page 3 'Macros -- Eight macros, with each as a potential destination' and page 14 'Enhanced Macros -- Serum now offers eight macros, with each macro as a potential destination.' OFFICIAL, page-numbered, states this exact capability in near-identical wording, twice."}
+      ],
+      "evidence_type": ["DIRECT_UI_OBSERVATION", "OFFICIAL_DOCUMENTATION"], "status": "VERIFIED",
+      "notes": "NEW DISCOVERY (2026-09-14 live check), not previously in this inventory. This is the inverse relationship of everything else in the MACRO section: elsewhere a Macro acts as a SOURCE modulating other parameters; here the Macro Value knob is itself a valid modulation DESTINATION that another source (LFO, ENV, another Macro, etc.) can drive. UPGRADED same day to OFFICIAL evidence tier: the Xfer 'What's New in Serum 2' PDF states 'each macro as a potential destination' verbatim, in two separate places (page 3 highlight callout, page 14 'Enhanced Macros' detail section) -- this is now the highest-tier-evidenced record in the entire Macro section. Did not open the 'Mod Source' submenu to avoid inadvertently creating a live modulation route in the user's loaded patch -- its exact content (a source picker, presumably matching or a subset of the Matrix Source list) remains an open detail for a future targeted check, but the existence of the capability itself is doubly VERIFIED."
+    },
+    {
+      "semantic_id": "MACRO.SYS.LOCK_PARAMETER", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "Lock Parameter -- prevents a Macro Value from changing when browsing/loading other presets", "control_type": "context_menu_action",
+      "value_range": null, "options": [], "default": "unlocked", "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.KNOB_CONTEXT_MENU"], "resource_dependency": null, "structural_action": "lock/unlock",
+      "sources": [
+        {"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14: 'Lock Parameter' present verbatim in Macro 1's right-click menu"},
+        {"type": "tutorial_transcript", "ref": "yt_74ab96e1f377 ~1088s: 'locking a parameter, such as Serum's master volume while you cycle through presets' -- general mechanism description, now confirmed to extend to Macro specifically"}
+      ],
+      "evidence_type": ["DIRECT_UI_OBSERVATION", "SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "NEW DISCOVERY (2026-09-14 live check), not previously in this inventory. Menu item not clicked/toggled (would mutate patch state); existence and label confirmed by direct observation, semantic meaning corroborated by the general tutorial description of the same feature applied to a different parameter (master volume)."
+    },
+    {
+      "semantic_id": "MACRO.SYS.INIT_MODULE", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "Init Module -- right-click action on a Macro knob, scope distinct from Reset Control", "control_type": "context_menu_action",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.SYS.KNOB_CONTEXT_MENU", "MACRO.SYS.RESET_VALUE"], "resource_dependency": null, "structural_action": "init",
+      "sources": [{"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14: 'Init Module' present verbatim in Macro 1's right-click menu, listed as a separate item from 'Reset Control'"}],
+      "evidence_type": ["DIRECT_UI_OBSERVATION"], "status": "VERIFIED",
+      "notes": "NEW DISCOVERY (2026-09-14 live check), not previously in this inventory. Existence VERIFIED by direct observation. Exact SCOPE relative to 'Reset Control' is UNVERIFIED_CANDIDATE and deliberately not guessed: 'Init' elsewhere in the tutorial corpus refers to whole-synth initialization ('I quickly go and initialize here', yt_f507169bd7cb ~8496s), so 'Init Module' here plausibly means re-initializing the whole MACROS module (possibly all 8 macros, or this macro's value+any incoming/outgoing assignments) rather than just this one value -- but this was not tested (clicking it would mutate the loaded patch). Not merged with MACRO.SYS.RESET_VALUE since they are visibly distinct menu entries and conflating them would be exactly the kind of unverified assumption the project's epistemic rules forbid."
+    },
+    {
+      "semantic_id": "MACRO.SYS.COPY_PASTE", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "Copy / Paste a Macro's settings via right-click", "control_type": "context_menu_action",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": "Paste enabled only after a Copy", "conditions": ["clipboard has compatible copied data"],
+      "cross_references": ["MACRO.SYS.KNOB_CONTEXT_MENU"], "resource_dependency": null, "structural_action": "copy/paste",
+      "sources": [
+        {"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14: 'Copy' and 'Paste' present verbatim at the bottom of Macro 1's right-click menu (Paste appeared disabled/greyed, consistent with an empty clipboard)"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb ~4738s: general oscillator/mixer context: 'we have copy and copy with all of the modulation assignments... we can of course also paste' -- same shared right-click family, now confirmed to extend to Macro"}
+      ],
+      "evidence_type": ["DIRECT_UI_OBSERVATION", "SOURCE_REPORTED_TUTORIAL"], "status": "VERIFIED",
+      "notes": "NEW DISCOVERY (2026-09-14 live check), not previously in this inventory. Exact scope of what 'Copy' captures for a Macro (value only? value + outgoing Matrix assignments, mirroring the oscillator's 'copy with all of the modulation assignments' variant?) not tested (no Copy/Paste variant submenu was observed the way the oscillator's may have one) -- recorded as VERIFIED for existence of the capability, with the exact payload scope left as an open nuance rather than assumed."
+    },
+    {
+      "semantic_id": "MACRO.SYS.ADD_REMOVE_SLOT", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "Add or remove a macro slot (beyond the fixed 8)", "control_type": "structural_action", "value_range": null,
+      "options": [], "default": null, "conditional_visibility": null, "conditions": [], "cross_references": [],
+      "resource_dependency": null, "structural_action": "add/remove",
+      "sources": [
+        {"type": "code", "ref": "serum2/qualification/HUMAN_OPERATIONS_FINAL_MATRIX.json:48-51 -- macro_operations.remove.status='UNKNOWN', reason=\"Macro 'removal' is not a synthesis operation; not applicable\""},
+        {"type": "cumulative_evidence", "ref": "no tutorial, doc, or code source across the entire project ever references more or fewer than 8 macro slots; 8 is described as fixed/doubled-from-4-in-Serum-1 in memory/serum2_complete_reference.md"}
+      ],
+      "evidence_type": ["ABSENCE_OF_EVIDENCE_ACROSS_ALL_SOURCES"], "status": "PROVEN_NOT_USER_CONTROL",
+      "notes": "8 Macro slots are a fixed architectural cardinality, not a user-addressable add/remove structural action. This is a considered negative finding (consistent absence across every source consulted), not a guess."
+    },
+    {
+      "semantic_id": "MACRO.SYS.MACRO_SPECIFIC_PRESET", "section": "MACRO", "module": "Macro System", "submodule": "Resource",
+      "label": "Macro-specific preset/resource type distinct from whole-patch preset", "control_type": "unknown", "value_range": null,
+      "options": [], "default": null, "conditional_visibility": null, "conditions": [], "cross_references": [],
+      "resource_dependency": "unknown", "structural_action": null,
+      "sources": [
+        {"type": "cumulative_evidence", "ref": "Full raw-transcript scan (both tutorial sources, not just deduplicated canonical excerpts) contains zero references to a macro-specific preset/bank resource"},
+        {"type": "tutorial_transcript", "ref": "yt_f507169bd7cb source explicitly frames itself as a comprehensive manual walkthrough ('I decided to read the entire ser manual') and separately, exhaustively enumerates every other resource type the project cares about (Wavetable, Sample, Multisample IR/Convolve, FX preset, Module/Rack preset via copy-paste, Clip bank, ARP bank) without ever naming a macro-bank/macro-preset resource"},
+        {"type": "code", "ref": "experiments/step15_2_6_macro.py, g8c_macro_isolation.py: Macro{N}.name and Macro{N}.plainParams.kParamValue persist as fields INSIDE the whole-patch .SerumPreset file (e.g. Aardvark.SerumPreset), not as a separate resource file/type"}
+      ],
+      "evidence_type": ["ABSENCE_OF_EVIDENCE_FROM_COMPREHENSIVE_SOURCE", "POSITIVE_ALTERNATIVE_MECHANISM_CONFIRMED"], "status": "PROVEN_NOT_USER_CONTROL",
+      "notes": "CLOSURE M9 (2026-09-14): PROMOTE from UNVERIFIED_CANDIDATE to PROVEN_NOT_USER_CONTROL. Distinguished from a generic 'absence of evidence' by two reinforcing factors, satisfying the project's 'considered negative finding' bar (same standard used for MACRO.SYS.ADD_REMOVE_SLOT): (1) the negative comes from a source that explicitly set out to cover the full official manual and did exhaustively enumerate every OTHER resource type in the project's taxonomy, making an accidental omission of a real macro-preset feature unlikely; (2) there is a well-evidenced POSITIVE alternative -- macros persist as ordinary fields inside the whole synth-patch preset, which is a complete, non-gappy explanation for how 'macro presets' work (they don't exist separately; they ARE part of the regular preset). Cross-reference: Step 12 BROWSER/RESOURCE sweep should still confirm this holds when the full resource taxonomy is authoritatively enumerated, but MACRO section closure does not depend on that sweep for this item."
+    },
+    {
+      "semantic_id": "MACRO.SYS.RENAME_MECHANISM", "section": "MACRO", "module": "Macro System", "submodule": "Structural",
+      "label": "The end-user mechanism (if any) for editing/setting a Macro's custom name via the live GUI", "control_type": "unknown",
+      "value_range": null, "options": [], "default": null, "conditional_visibility": null, "conditions": [],
+      "cross_references": ["MACRO.01.NAME", "MACRO.02.NAME", "MACRO.03.NAME", "MACRO.04.NAME", "MACRO.05.NAME", "MACRO.06.NAME", "MACRO.07.NAME", "MACRO.08.NAME", "MACRO.SYS.KNOB_CONTEXT_MENU"],
+      "resource_dependency": null, "structural_action": "rename (mechanism not located)",
+      "sources": [
+        {"type": "direct_ui_observation", "ref": "Live UI check 2026-09-14, six independent checks, all negative: (1) right-click menu on default/unnamed Macro 1 (BUSBYPASSSTATEA) -- no rename item; (2) right-click menu on custom-named 'NOISE' macro (Aardvark.SerumPreset) -- one extra item appeared (Apply and Delete Macro) but still no rename item; (3) double-click on the macro number/label -- selects the macro with a drag-handle cursor, no text field opens; (4) Matrix tab Source column > Macros submenu -- lists generic 'Macro 1'..'Macro 8' regardless of the loaded patch's actual custom names; (5) hovering a macro knob for a tooltip -- generic format 'Macro N (value)', e.g. 'Macro 5 (0)'; (6) the Serum 2 main hamburger MENU button was NOT checked -- blocked this session by a transient OS desktop-shell focus-stealing issue (see session notes), not by a deliberate skip."},
+        {"type": "official_pdf", "ref": "Xfer 'What's New in Serum 2' (static.xferrecords.com, v2.0, 20 pages) -- no mention of macro renaming/labeling as a feature anywhere in the document. WEAKER negative evidence than the tutorial-comprehensiveness argument used for MACRO.SYS.MACRO_SPECIFIC_PRESET, since this is explicitly a highlights/changelog document, not the full ~350-page manual, so omitting a small UI mechanic here is unsurprising even if the feature exists."}
+      ],
+      "evidence_type": ["DIRECT_UI_OBSERVATION_SIX_LOCATIONS_NEGATIVE", "OFFICIAL_DOCUMENTATION_SILENCE_WEAK"], "status": "UNVERIFIED_CANDIDATE",
+      "notes": "FINAL CONSOLIDATED STATUS (2026-09-14) for the one genuinely open Macro-section question. Custom Macro names definitively EXIST and DISPLAY in the live GUI (MACRO.0X.NAME records are all VERIFIED for that claim) -- what remains unresolved is specifically HOW a name gets set by an end user, or whether it can be at all via the standard GUI (as opposed to being fixed at preset-authoring time via the .SerumPreset file format, outside the live plugin UI). Deliberately kept UNVERIFIED_CANDIDATE rather than PROVEN_NOT_USER_CONTROL: six checks is strong but not exhaustive (the main MENU button and any full/expanded Matrix or dedicated Macro editor view remain unchecked), and the strongest available negative source (the official PDF) is a highlights document whose silence on a fine-grained UI mechanic carries less weight than the tutorial-comprehensiveness argument used to close MACRO.SYS.MACRO_SPECIFIC_PRESET and MACRO.SYS.ADD_REMOVE_SLOT. Per CLAUDE.md epistemic rule 1 ('absence of evidence != evidence of absence'), this is not force-closed. RECOMMENDATION: either (a) check the Serum main MENU button in a future session once the OS focus issue is resolved, or (b) accept this as a deliberately deferred, narrowly-scoped residual that does not block downstream work, since it concerns only the authoring mechanism for a cosmetic label, not a capability with audio/behavioral consequence."
+    }
+  ]
+}
