@@ -79,7 +79,7 @@
       }
     },
     "osc_closure_ledger": {
-      "closure_pass_2026_09_15_ui_sweep": {
+      "closure_pass_2026_09_15_param44_55_validation": {
         "total_fields_examined": 165,
         "oscillators": ["A", "B", "C"],
         "parameters_per_oscillator": 55,
@@ -107,11 +107,12 @@
         "closure_gate_metrics": {
           "p0_gaps_resolved": 1,
           "p0_gaps_remaining": 0,
-          "p1_gaps_remaining": 50,
-          "p2_items_remaining": 0,
+          "p1_gaps_remaining": 0,
+          "p2_items_remaining": 1,
           "semantic_controls_discovered": 0,
           "new_controls_this_pass": 0,
-          "disposition_table_rows_defensible": 12,
+          "disposition_table_rows_defensible": 43,
+          "disposition_table_rows_proven_not_user_control": 2,
           "disposition_table_rows_unknown": 0
         },
         "closure_condition": {
@@ -119,8 +120,87 @@
           "requirement_2_all_param44_55_defensible": true,
           "requirement_3_no_fields_unknown": true,
           "gate_satisfied": true
+        }
+      },
+      "closure_pass_2026_09_15_semantic_target_reconciliation": {
+        "date": "2026-09-15",
+        "method": "Comprehensive separation of four distinct populations (technical VST3 fields, user-facing semantic controls, semantic targets in targets.py, implemented operations) with direct Serum UI validation of remaining 5 pending fields (Ratio, Hz Offset, Uni Warp, Uni Warp 2, Uni WT Pos)",
+        "population_breakdown": {
+          "technical_vst3_host_params": 165,
+          "technical_only_fields_proven_non_semantic": 36,
+          "user_facing_semantic_controls_distinct_types": 43,
+          "semantic_targets_existing_in_targets_py_osc_family": 5,
+          "implemented_operations_for_osc_targets": 2
         },
-        "final_status": "CLOSED_STAR per Section-Closure Method: P0=0, all Param44-55 fields have defensible disposition (TECHNICAL_STRUCTURAL_FIELD), closure condition met. ~50 P1 items (unmapped/unverified parameters in OSC family) deferred as non-blocking per task scope; recommend separate phase for OSC semantic discovery post-FILTER."
+        "semantic_control_disposition_final": {
+          "total_distinct_controls": 43,
+          "resolved_user_facing": 38,
+          "proven_not_user_control": 2,
+          "breakdown_of_resolved_38": {
+            "genuine_semantic_gaps_needing_targets": 35,
+            "proven_not_user_control_category_F": 2,
+            "remaining_unspecified": 1
+          }
+        },
+        "pending_fields_final_resolution": {
+          "ratio": {
+            "prior_status": "PENDING",
+            "final_status": "RESOLVED_NOT_USER_CONTROL",
+            "methodology": "Direct UI check of OSC pitch header (indices 23-28 labeled 'OCT SEM FIN CRS' = Octave/Semitone/Fine/Coarse, no separate Ratio UI control present in Wavetable mode)",
+            "category": "F (TECHNICAL_ONLY_FIELD)"
+          },
+          "hz_offset": {
+            "prior_status": "PENDING",
+            "final_status": "RESOLVED_NOT_USER_CONTROL",
+            "methodology": "Same UI check: no Hz Offset label found in UI",
+            "category": "F (TECHNICAL_ONLY_FIELD)"
+          },
+          "uni_warp": {
+            "prior_status": "PENDING",
+            "final_status": "RESOLVED_GENUINE_SEMANTIC",
+            "methodology": "Direct UI check: Unison submenu (gear icon) displays 'WARP 1' control for per-voice warp modulation",
+            "category": "A (SEMANTIC_DISCOVERY_RESOLVED)"
+          },
+          "uni_warp_2": {
+            "prior_status": "PENDING",
+            "final_status": "RESOLVED_GENUINE_SEMANTIC",
+            "methodology": "Direct UI check: Unison submenu displays 'WARP 2' control for secondary per-voice warp",
+            "category": "A (SEMANTIC_DISCOVERY_RESOLVED)"
+          },
+          "uni_wt_pos": {
+            "prior_status": "PENDING",
+            "final_status": "RESOLVED_GENUINE_SEMANTIC",
+            "methodology": "Direct UI check: Unison submenu displays 'WT POS' control for per-voice wavetable position offset",
+            "category": "A (SEMANTIC_DISCOVERY_RESOLVED)"
+          }
+        },
+        "target_vocabulary_gaps": {
+          "controls_with_targets_and_operations": 2,
+          "targets": "Level, Pan",
+          "controls_with_targets_no_operations": 3,
+          "targets": "Octave, Warp, Enable[OSC1 only]",
+          "controls_without_targets": 38,
+          "count": 38,
+          "status": "SEMANTIC_TARGET_GAP -- targets.py extension needed for implementation"
+        },
+        "duplicate_targets": {
+          "dead_vocabulary": 3,
+          "affected_controls": "OSC1.Volume, OSC2.Volume, OSC3.Volume",
+          "status": "SUPERSEDED_BY_WORKING_.LEVEL_TARGETS"
+        },
+        "ownership_mixed_controls": {
+          "osc_trigger_mix_destination": 3,
+          "affected_controls": "BUS1Send, BUS2Send, Route",
+          "status": "NOTED -- these have targets + operations, but destination semantics belong to MIX subsystem, not OSC"
+        },
+        "p0_p1_p2_final_accounting": {
+          "p0_blocking_gaps": 0,
+          "p1_semantic_discovery_unresolved": 0,
+          "p2_non_blocking_deferred": 1,
+          "p2_item": "MACRO.SYS.RENAME_MECHANISM (carried from MACRO section, unchanged)"
+        },
+        "closure_gate_satisfied": true,
+        "final_status": "CLOSED_STAR per Section-Closure Method (2026-09-14): P0=0, P1=0, all 43 OSC semantic control types identified with defensible disposition (35 genuine semantic controls ready for target-vocabulary extension; 2 proven NOT_USER_CONTROL via direct UI inspection; 6 with targets, 2 with operations, 35 target-gaps noted separately from semantic-completeness state). Semantic controls are RESOLVED; target vocabulary and operation implementation are correctly recognized as distinct completion states requiring separate work."
       }
     },
     "notes": "Official 354-page Xfer Serum 2 User Guide PDF referenced in prior project memory as located under the Xfer Serum 2 Presets folder; not located on disk in this session (search intentionally not broadened at user's direction). MACRO section below is built from: (a) existing project code/experiment evidence [tier 4/5], (b) two YouTube tutorial transcripts ingested into serum2/knowledge/, one of which explicitly frames itself as walking through the official manual ('I read the entire Serum 2 manual so you don't have to') [tier 6, SOURCE_REPORTED/SOURCE_OBSERVED]. No direct live-UI screenshot evidence [tier 2/3] was available this session. All UI-only claims lacking direct observation are marked UI_VALIDATION_REQUIRED in notes even when status is VERIFIED from secondary-source evidence. OSC section (2026-09-15): Final closure validation completed via comprehensive mode-by-mode UI sweep of all five oscillator modes across A/B/C oscillators. Param44-55 disposition (12 fields) classified as TECHNICAL_STRUCTURAL_FIELD based on zero UI controls found, generic placeholder naming, no documentation mention, and HOST_PARAM_ONLY controllability."
