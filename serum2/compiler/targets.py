@@ -62,6 +62,7 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "SUB.Pan":            SemanticTargetRef("SUB.Pan",            "sub_plain_param_pan"),
     "SUB.BUS1Send":       SemanticTargetRef("SUB.BUS1Send",       "routing_slot4_bus1_level"),
     "SUB.BUS2Send":       SemanticTargetRef("SUB.BUS2Send",       "routing_slot4_bus2_level"),
+    "SUB.Route":          SemanticTargetRef("SUB.Route",          "routing_slot4_dest"),
     "SUB.Detune":         SemanticTargetRef("SUB.Detune",         "oscillator_field_SUB-DETUNE"),
     "SUB.Warp":           SemanticTargetRef("SUB.Warp",           "oscillator_field_SUB-WARP"),
 
@@ -72,6 +73,7 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "OSC1.Pan":           SemanticTargetRef("OSC1.Pan",           "osc1_plain_param_pan"),
     "OSC1.BUS1Send":      SemanticTargetRef("OSC1.BUS1Send",      "routing_slot0_bus1_level"),
     "OSC1.BUS2Send":      SemanticTargetRef("OSC1.BUS2Send",      "routing_slot0_bus2_level"),
+    "OSC1.Route":         SemanticTargetRef("OSC1.Route",         "routing_slot0_dest"),
     "OSC1.Detune":        SemanticTargetRef("OSC1.Detune",        "oscillator_field_OSC1-DETUNE"),
     "OSC1.Wavetable":     SemanticTargetRef("OSC1.Wavetable",     "oscillator_field_OSC1-WAVETABLE"),
     "OSC1.Warp":          SemanticTargetRef("OSC1.Warp",          "oscillator_field_OSC1-WARP"),
@@ -82,6 +84,7 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "OSC2.Pan":           SemanticTargetRef("OSC2.Pan",           "osc2_plain_param_pan"),
     "OSC2.BUS1Send":      SemanticTargetRef("OSC2.BUS1Send",      "routing_slot1_bus1_level"),
     "OSC2.BUS2Send":      SemanticTargetRef("OSC2.BUS2Send",      "routing_slot1_bus2_level"),
+    "OSC2.Route":         SemanticTargetRef("OSC2.Route",         "routing_slot1_dest"),
     "OSC2.Detune":        SemanticTargetRef("OSC2.Detune",        "oscillator_field_OSC2-DETUNE"),
     "OSC2.Warp":          SemanticTargetRef("OSC2.Warp",          "oscillator_field_OSC2-WARP"),
 
@@ -91,6 +94,7 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "OSC3.Pan":           SemanticTargetRef("OSC3.Pan",           "osc3_plain_param_pan"),
     "OSC3.BUS1Send":      SemanticTargetRef("OSC3.BUS1Send",      "routing_slot2_bus1_level"),
     "OSC3.BUS2Send":      SemanticTargetRef("OSC3.BUS2Send",      "routing_slot2_bus2_level"),
+    "OSC3.Route":         SemanticTargetRef("OSC3.Route",         "routing_slot2_dest"),
     "OSC3.Detune":        SemanticTargetRef("OSC3.Detune",        "oscillator_field_OSC3-DETUNE"),
     "OSC3.Warp":          SemanticTargetRef("OSC3.Warp",          "oscillator_field_OSC3-WARP"),
 
@@ -99,6 +103,7 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "NOISE.Pan":          SemanticTargetRef("NOISE.Pan",          "noise_plain_param_pan"),
     "NOISE.BUS1Send":     SemanticTargetRef("NOISE.BUS1Send",     "routing_slot3_bus1_level"),
     "NOISE.BUS2Send":     SemanticTargetRef("NOISE.BUS2Send",     "routing_slot3_bus2_level"),
+    "NOISE.Route":        SemanticTargetRef("NOISE.Route",        "routing_slot3_dest"),
     "NOISE.Warp":         SemanticTargetRef("NOISE.Warp",         "oscillator_field_NOISE-WARP"),
     "NOISE.Type":         SemanticTargetRef("NOISE.Type",         "oscillator_field_NOISE-TYPE"),
     # Filter
@@ -106,8 +111,10 @@ SEMANTIC_TARGETS: Dict[str, SemanticTargetRef] = {
     "Filter.Type":        SemanticTargetRef("Filter.Type",        "filter_field_type"),
     "FILTER1.BUS1Send":   SemanticTargetRef("FILTER1.BUS1Send",   "routing_slot5_bus1_level"),
     "FILTER1.BUS2Send":   SemanticTargetRef("FILTER1.BUS2Send",   "routing_slot5_bus2_level"),
+    "FILTER1.Route":      SemanticTargetRef("FILTER1.Route",      "routing_slot5_dest"),
     "FILTER2.BUS1Send":   SemanticTargetRef("FILTER2.BUS1Send",   "routing_slot6_bus1_level"),
     "FILTER2.BUS2Send":   SemanticTargetRef("FILTER2.BUS2Send",   "routing_slot6_bus2_level"),
+    "FILTER2.Route":      SemanticTargetRef("FILTER2.Route",      "routing_slot6_dest"),
     # STEP 20B PART 4: Filter Level/Mix (VoiceFilter, distinct from Oscillator.plainParams)
     "FILTER1.Level":      SemanticTargetRef("FILTER1.Level",      "voicefilter0_plain_param_level_out"),
     "FILTER1.Mix":        SemanticTargetRef("FILTER1.Mix",        "voicefilter0_plain_param_wet"),

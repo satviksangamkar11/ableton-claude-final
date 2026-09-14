@@ -67,6 +67,22 @@ PHASE_9B_STRUCTURAL_PATHS = {
     "routing_slot6_bus1_level": "RoutingSlot6.plainParams.kParamFXBus1Level",
     "routing_slot6_bus2_level": "RoutingSlot6.plainParams.kParamFXBus2Level",
 
+    # STEP 20B PART 5: primary routing destination — SAME RoutingSlot container
+    # as the BUS sends above (dict-merge sibling of kParamFXBus1Level/2Level),
+    # proven via real UI dropdown selection + native save + CBOR decode.
+    # Value: enum string among 'kRoutingDestMaster', 'kRoutingDestDirect',
+    # 'kRoutingDestNone', 'kRoutingDestFilter'. Absent key = channel's own
+    # implicit default (Filter for oscillators/SUB/NOISE, Main for Filter1/2).
+    # No corresponding VST3 HOST_PARAM exists (searched all 2623 params) —
+    # this is a structural-only field, persistence-verified via decode only.
+    "routing_slot0_dest": "RoutingSlot0.plainParams.kParamRoutingDest",
+    "routing_slot1_dest": "RoutingSlot1.plainParams.kParamRoutingDest",
+    "routing_slot2_dest": "RoutingSlot2.plainParams.kParamRoutingDest",
+    "routing_slot3_dest": "RoutingSlot3.plainParams.kParamRoutingDest",
+    "routing_slot4_dest": "RoutingSlot4.plainParams.kParamRoutingDest",
+    "routing_slot5_dest": "RoutingSlot5.plainParams.kParamRoutingDest",
+    "routing_slot6_dest": "RoutingSlot6.plainParams.kParamRoutingDest",
+
     # STEP 20B PART 3: FX Bus channel's own overall volume (distinct from per-source sends above)
     # Scale: kParamFXBus{N}Vol = 0.5 * 10^(dB/20); default 0.5 == 0dB unity.
     "global_plain_param_fx_bus1_vol": "Global0.plainParams.kParamFXBus1Vol",
