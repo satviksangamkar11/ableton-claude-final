@@ -1,0 +1,11 @@
+{
+  "phase": "2_subject",
+  "subject": "SUB Level",
+  "vst3_idx": 194,
+  "baseline_vst3": 0.75,
+  "mutated_vst3": 1.0,
+  "vst3_accepted": true,
+  "full_diff_count": 0,
+  "reload_stable": true,
+  "classification": "C (NO OBSERVABLE CHANGE)"
+}

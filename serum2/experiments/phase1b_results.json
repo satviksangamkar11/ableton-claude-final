@@ -1,0 +1,15 @@
+{
+  "phase": "1b_vst3_mapping",
+  "vst3_idx": 21,
+  "cbor_path": "Oscillator0.plainParams.kParamVolume",
+  "baseline_vst3": 0.75,
+  "baseline_cbor": null,
+  "mutated_vst3": 1.0,
+  "mutated_cbor": null,
+  "reloaded_cbor": null,
+  "vst3_accepted": true,
+  "cbor_delta_observed": false,
+  "full_diff_count": 0,
+  "classification": "D (inconclusive)",
+  "phase1b_pass": false
+}

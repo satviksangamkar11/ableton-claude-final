@@ -1,0 +1,14 @@
+{
+  "runtime_before": 0.25,
+  "blob_hash_before": "6537cdfb1f0fc201",
+  "runtime_after": 1.0,
+  "runtime_accepted": true,
+  "blob_hash_after": "6537cdfb1f0fc201",
+  "blob_changed": false,
+  "cbor_changed": false,
+  "runtime_reload": 1.0,
+  "blob_hash_reload": "6537cdfb1f0fc201",
+  "blob_stable": true,
+  "cbor_stable": true,
+  "classification": "A3_runtime_only_no_blob_change"
+}

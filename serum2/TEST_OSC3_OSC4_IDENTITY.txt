@@ -1,0 +1,306 @@
+================================================================================
+TEST PROTOCOL: OSC3/OSC4 IDENTITY RESOLUTION
+================================================================================
+
+OBJECTIVE:
+Establish which Oscillator{3,4} corresponds to SUB and which to NOISE
+by tracing: UI control → CBOR state → persistence → reload → VST3 correspondence
+
+METHODOLOGY:
+Test via real Serum (DawDreamer) with preset save/load/decode cycle
+Multiple fields tested (Enable, Volume, Octave/Pitch) to eliminate coincidence
+
+HYPOTHESIS:
+  H1: Oscillator3 = SUB (despite "NoiseOsc3" container name)
+  H2: Oscillator4 = NOISE (despite "SubOsc4" container name)
+
+================================================================================
+PHASE 1: INITIAL STATE CAPTURE
+================================================================================
+
+ACTION: Load Serum with a known skeleton state
+  - All oscillators at default (all volumes = 0.0 or minimum)
+  - Save as TEST_00_BASELINE.bin
+
+CAPTURE:
+  - Oscillator3.plainParams (baseline)
+  - Oscillator4.plainParams (baseline)
+  - VST3 readback: "Sub Level", "Sub Enable", "Noise Level", "Noise Enable"
+
+================================================================================
+PHASE 2: ACTION A — MANIPULATE SUB
+================================================================================
+
+ACTION: In real Serum UI
+  1. Locate SUB volume control
+  2. Set to MAXIMUM (100%)
+  3. Verify VST3 "Sub Level" parameter shows max
+  4. Save as TEST_01_SUB_MAX.bin
+
+OBSERVE CBOR:
+  Test: Oscillator3.plainParams.kParamVolume = ?
+  Expected (if H1): Oscillator3.kParamVolume ≈ 1.0
+  Expected (if H2): Oscillator4.kParamVolume unchanged
+
+  Test: Oscillator3.plainParams.kParamEnable = ?
+  Expected (if H1): Should still be enabled
+
+  Test: Oscillator4.plainParams.kParamVolume = ?
+  Expected (if H1): Oscillator4 should be unchanged
+
+RECORD:
+  ✓ Oscillator3.plainParams.kParamVolume = [value]
+  ✓ Oscillator3.plainParams.kParamEnable = [value]
+  ✓ Oscillator4.plainParams.kParamVolume = [value]
+  ✓ Oscillator4.plainParams.kParamEnable = [value]
+  ✓ Oscillator4.plainParams.kParamOctave = [value] (or other distinctive field)
+
+RELOAD AND VERIFY:
+  1. Load TEST_01_SUB_MAX.bin back into Serum
+  2. Verify VST3 "Sub Level" still shows maximum
+  3. Verify UI SUB volume slider still at maximum
+  4. Re-save as TEST_01_SUB_MAX_RELOAD.bin
+  5. Decode and compare CBOR to TEST_01_SUB_MAX.bin
+  6. ASSERT: kParamVolume unchanged after reload cycle
+
+================================================================================
+PHASE 3: ACTION B — MANIPULATE NOISE
+================================================================================
+
+ACTION: In real Serum UI
+  1. Locate NOISE volume control
+  2. Set to MAXIMUM (100%)
+  3. Verify VST3 "Noise Level" parameter shows max
+  4. Keep SUB at maximum (from Phase 2)
+  5. Save as TEST_02_SUB_MAX_NOISE_MAX.bin
+
+OBSERVE CBOR:
+  Test: Oscillator3.plainParams.kParamVolume = ?
+  Expected (if H1): Oscillator3 unchanged (still ≈ 1.0 from Phase 2)
+
+  Test: Oscillator4.plainParams.kParamVolume = ?
+  Expected (if H2): Oscillator4.kParamVolume ≈ 1.0
+
+  Test: Oscillator4.plainParams.kParamEnable = ?
+  Expected (if H2): Should be enabled
+
+RECORD:
+  ✓ Oscillator3.plainParams.kParamVolume = [value]
+  ✓ Oscillator3.plainParams.kParamEnable = [value]
+  ✓ Oscillator4.plainParams.kParamVolume = [value]
+  ✓ Oscillator4.plainParams.kParamEnable = [value]
+  ✓ Oscillator4.plainParams.kParamOctave = [value]
+
+RELOAD AND VERIFY:
+  1. Load TEST_02_SUB_MAX_NOISE_MAX.bin back into Serum
+  2. Verify VST3 "Sub Level" still shows maximum
+  3. Verify VST3 "Noise Level" still shows maximum
+  4. Verify both UI sliders at maximum
+  5. Re-save as TEST_02_RELOAD.bin
+  6. Decode and compare
+  7. ASSERT: Both kParamVolume fields persist correctly
+
+================================================================================
+PHASE 4: ACTION C — TOGGLE ENABLE FLAGS
+================================================================================
+
+ACTION: In real Serum UI
+  1. Disable SUB (via Enable checkbox if available, or mute)
+  2. Keep NOISE enabled
+  3. Save as TEST_03_SUB_DISABLED_NOISE_ENABLED.bin
+
+OBSERVE CBOR:
+  Test: Oscillator3.plainParams.kParamEnable = 0.0 (if H1)
+  Test: Oscillator4.plainParams.kParamEnable = 1.0 (if H2)
+
+RECORD:
+  ✓ Oscillator3.plainParams.kParamEnable = [value]
+  ✓ Oscillator4.plainParams.kParamEnable = [value]
+
+RELOAD AND VERIFY:
+  1. Load TEST_03_SUB_DISABLED_NOISE_ENABLED.bin
+  2. Verify SUB disabled in UI
+  3. Verify NOISE enabled in UI
+  4. Re-save and decode
+  5. ASSERT: Enable state persists
+
+================================================================================
+PHASE 5: VST3 CORRESPONDENCE CHECK
+================================================================================
+
+For each test state, record VST3 HOST_PARAM readback:
+
+TEST_01_SUB_MAX state:
+  "Sub Level" → [0.0-1.0 value, should be ≈ 1.0]
+  "Noise Level" → [value, should be ≈ 0.0]
+  "Sub Enable" → [0.0 or 1.0]
+  "Noise Enable" → [0.0 or 1.0]
+
+TEST_02_SUB_MAX_NOISE_MAX state:
+  "Sub Level" → ≈ 1.0
+  "Noise Level" → ≈ 1.0
+  "Sub Enable" → [value]
+  "Noise Enable" → [value]
+
+TEST_03_SUB_DISABLED_NOISE_ENABLED state:
+  "Sub Enable" → 0.0
+  "Noise Enable" → 1.0
+
+================================================================================
+EVIDENCE SYNTHESIS
+================================================================================
+
+HYPOTHESIS EVALUATION:
+
+H1: Oscillator3 = SUB
+  SUPPORT:
+    - SUB volume change → Oscillator3.kParamVolume changes
+    - SUB Enable toggle → Oscillator3.kParamEnable changes
+    - VST3 "Sub" params correlate with Oscillator3 state
+  CONTRADICTION:
+    - Oscillator3 contains "NoiseOsc3" (name mismatch)
+
+H2: Oscillator4 = NOISE
+  SUPPORT:
+    - NOISE volume change → Oscillator4.kParamVolume changes
+    - NOISE Enable toggle → Oscillator4.kParamEnable changes
+    - VST3 "Noise" params correlate with Oscillator4 state
+  CONTRADICTION:
+    - Oscillator4 contains "SubOsc4" (name mismatch)
+
+CONCLUSION:
+  If all tests support H1 and H2 consistently:
+    → CONFIRMED: Oscillator3 = SUB, Oscillator4 = NOISE
+    → Explanation: "NoiseOsc3" and "SubOsc4" are legacy/internal names
+    → Action: Update matrix, proceed with SUB/NOISE controls
+
+  If tests contradict H1/H2:
+    → PROVEN WRONG: Mapping is inverted or more complex
+    → Action: Reverse mapping, investigate further
+
+  If tests are inconsistent:
+    → INCONCLUSIVE: More investigation required
+    → Action: Document contradiction, mark as UNRESOLVED
+
+================================================================================
+THIRD FIELD TEST (OPTIONAL CONFIRMATION)
+================================================================================
+
+If H1 and H2 are strongly supported by Volume+Enable tests:
+
+OPTIONAL ACTION D: Test Octave/Pitch field
+  1. Set SUB Octave to +1
+  2. Set NOISE Pitch to +5 semitones
+  3. Observe Oscillator3 and Oscillator4 octave/pitch fields
+  4. Verify changes correspond to correct oscillator
+
+PURPOSE: Three independent fields agreeing on identity is much stronger proof
+         than two fields
+
+================================================================================
+EXECUTION CHECKLIST
+================================================================================
+
+PHASE 1 (Baseline):
+  [ ] Load Serum skeleton
+  [ ] Capture Oscillator3/4 baseline CBOR
+  [ ] Record VST3 baseline
+  [ ] Save TEST_00_BASELINE.bin
+
+PHASE 2 (SUB to MAX):
+  [ ] Set SUB volume to maximum in UI
+  [ ] Verify VST3 "Sub Level" shows maximum
+  [ ] Save TEST_01_SUB_MAX.bin
+  [ ] Decode and record Oscillator3/4 state
+  [ ] Reload TEST_01_SUB_MAX.bin
+  [ ] Verify UI state persisted
+  [ ] Decode and compare to TEST_01_SUB_MAX.bin
+
+PHASE 3 (NOISE to MAX):
+  [ ] Set NOISE volume to maximum in UI
+  [ ] Verify VST3 "Noise Level" shows maximum
+  [ ] Save TEST_02_SUB_MAX_NOISE_MAX.bin
+  [ ] Decode and record Oscillator3/4 state
+  [ ] Verify SUB still at maximum
+  [ ] Reload and verify both persist
+
+PHASE 4 (Toggle Enable):
+  [ ] Disable SUB, keep NOISE enabled
+  [ ] Save TEST_03_SUB_DISABLED_NOISE_ENABLED.bin
+  [ ] Decode and verify Enable fields
+  [ ] Reload and verify
+
+PHASE 5 (VST3 Correspondence):
+  [ ] Record VST3 params for all test states
+  [ ] Verify "Sub" VST3 params track Oscillator3/4 state
+  [ ] Verify "Noise" VST3 params track Oscillator3/4 state
+
+CONCLUSION:
+  [ ] Evaluate all evidence against H1/H2
+  [ ] Record verdict: CONFIRMED / WRONG / INCONCLUSIVE
+  [ ] Update CONTROL_UNIVERSE_MATRIX.txt
+
+================================================================================
+RESULT RECORDING TEMPLATE
+================================================================================
+
+TEST RESULT: OSC3_OSC4_IDENTITY
+
+Verdict: [CONFIRMED | WRONG | INCONCLUSIVE]
+
+Evidence Summary:
+  - SUB volume change affects: Oscillator[3|4].kParamVolume = [value]
+  - NOISE volume change affects: Oscillator[3|4].kParamVolume = [value]
+  - SUB enable change affects: Oscillator[3|4].kParamEnable = [value]
+  - NOISE enable change affects: Oscillator[3|4].kParamEnable = [value]
+  - [Additional field test if performed]
+
+VST3 Correspondence:
+  - "Sub Level" ↔ Oscillator[3|4].kParamVolume ✓ / ✗
+  - "Noise Level" ↔ Oscillator[3|4].kParamVolume ✓ / ✗
+  - "Sub Enable" ↔ Oscillator[3|4].kParamEnable ✓ / ✗
+  - "Noise Enable" ↔ Oscillator[3|4].kParamEnable ✓ / ✗
+
+Persistence Check:
+  - TEST_01 reload cycle: kParamVolume persisted ✓ / ✗
+  - TEST_02 reload cycle: kParamVolume persisted ✓ / ✗
+  - TEST_03 reload cycle: kParamEnable persisted ✓ / ✗
+
+Container Name Discrepancy:
+  - Oscillator3 contains "NoiseOsc3" but corresponds to SUB (if H1 confirmed)
+    → Explanation: Legacy naming, CBOR paths take precedence
+  - Oscillator4 contains "SubOsc4" but corresponds to NOISE (if H2 confirmed)
+    → Explanation: Legacy naming, CBOR paths take precedence
+
+FINAL CLAIM (if CONFIRMED):
+  Oscillator3 = SUB oscillator (kParamEnable, kParamVolume, kParamOctave, etc.)
+  Oscillator4 = NOISE oscillator (kParamEnable, kParamVolume, kParamPitch, etc.)
+
+  Container naming (NoiseOsc3, SubOsc4) is internal/legacy.
+  Implementation should use VST3 naming and CBOR field mapping, not container names.
+
+================================================================================
+NEXT STEP AFTER TEST
+================================================================================
+
+Once verdict is CONFIRMED:
+
+1. Update CONTROL_UNIVERSE_MATRIX.txt:
+   - Change OSC.SUB.IDENTITY_CONTRADICTION status to PROVEN
+   - Change OSC.NOISE.IDENTITY_CONTRADICTION status to PROVEN
+   - Record the three tested fields in the matrix
+   - Unblock SUB/NOISE control inventory
+
+2. Continue OSC mode audit:
+   - Complete Wavetable mode controls for OSC.A/B/C
+   - Complete Sample mode controls for OSC.A/B/C
+   - Complete Granular mode controls for OSC.A/B/C
+   - Complete Spectral mode controls for OSC.A/B/C
+   - Complete Multisample mode controls for OSC.A/B/C
+   - Enumerate SUB controls
+   - Enumerate NOISE controls
+   - Test representational families across OSC.A/B/C
+
+3. Freeze OSC identity claim and move to PHASE 2: FILTERS
+
+================================================================================

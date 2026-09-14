@@ -1,0 +1,13 @@
+{
+  "control_name": "Sub Enable",
+  "vst3_idx": 193,
+  "baseline": 0.0,
+  "mutation_target": 1.0,
+  "mutation_effective": true,
+  "mutated_runtime": 1.0,
+  "vc2_blobs_differ": false,
+  "cbor_differs": false,
+  "fresh_instance_value": 0.0,
+  "fresh_restores_mutation": false,
+  "classification": "NOT_PERSISTENT"
+}

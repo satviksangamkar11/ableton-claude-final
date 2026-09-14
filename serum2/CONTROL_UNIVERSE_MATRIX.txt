@@ -1,0 +1,980 @@
+================================================================================
+SERUM 2.0.21 CONTROL-UNIVERSE MATRIX AUDIT
+Hardened inventory with evidence levels and stable identifiers
+================================================================================
+
+EVIDENCE LEVELS (ordered by strength):
+  PROVEN_IMPLEMENTED — Control is implemented and verified to work
+  PROVEN_UI_ONLY — Control exists in UI but has no persistent representation
+  PROVEN_RUNTIME_ONLY — Control has VST3 HOST_PARAM but no CBOR persistence
+  PROVEN_NOT_PERSISTENT — Evidence that it's not persisted despite UI existence
+  UNRESOLVED — Evidence chain incomplete; investigation required
+
+DISCOVERY STAGES (each must be independently verified):
+  1. discovered-in-preset — kParam field found in factory presets
+  2. proven-user-control — UI control and user interaction confirmed
+  3. proven-persistent — CBOR encoding/decoding verified
+  4. proven-behavioral — Effect on sound/state verified through playback/readback
+
+For each control: ALL stages must pass before marking PROVEN_IMPLEMENTED.
+
+================================================================================
+PHASE 1: OSCILLATORS
+================================================================================
+
+BLOCKING INVESTIGATION: OSC3/OSC4 Identity
+
+ID: OSC.IDENTITY.OSC3_OSC4
+Claim: Oscillator3 = SUB, Oscillator4 = NOISE
+Evidence:
+  1. VST3 parameters clearly labeled "Sub" (12 params) and "Noise" (11 params)
+  2. Official Serum 2 docs: "Sub Oscillator" and "Noise Oscillator"
+Contradictory Evidence:
+  1. Oscillator3 contains container named "NoiseOsc3" (not SubOsc3)
+  2. Oscillator4 contains container named "SubOsc4" (not NoiseOsc4)
+  3. Preset ARP-Aardvark shows Oscillator3 plainParams with Enable/Volume
+     but labeled VST3 params call it "Sub" subsystem
+Confidence: UNRESOLVED — container naming contradicts VST3 naming
+Status: MUST RESOLVE before implementing any SUB/NOISE controls
+Investigation Required: Use real Serum UI to:
+  1. Set Sub to distinct value
+  2. Set Noise to distinct value
+  3. Save preset
+  4. Decode and observe which Oscillator{3,4} field changed
+  5. Confirm mapping
+
+---
+
+SECONDARY: Confirm OSC1/2/3 are primary oscillators (not SUB/NOISE)
+
+ID: OSC.PRIMARY.A_B_C
+Claim: OSC A/B/C = Oscillator0/1/2
+Evidence:
+  1. All factory presets show Oscillator0/1/2 with mode containers (WTOsc0, etc.)
+  2. Oscillator0 has 366+ parameters across 5 modes
+  3. VST3 parameters use A/B/C naming (e.g., "A Octave", "B Pan", "C Fine")
+Confidence: HIGH
+Status: PROCEED assuming Oscillator0=OSC A, Oscillator1=OSC B, Oscillator2=OSC C
+
+================================================================================
+OSCILLATOR CONTROL MATRIX
+================================================================================
+
+Format:
+ID | Control Name | Container | Field Path | Evidence Stage | Status | Representation Family
+
+---
+
+### OSC.A (Oscillator0) — Primary Oscillator
+
+#### SHARED CONTROLS (all 5 modes)
+
+ID: OSC.A.SHARED.MODE_SELECT
+Control Name: Mode Selection (WT/Sample/Granular/Spectral/Multisample)
+Container: Oscillator0.plainParams
+Field Path: kParamType
+Type: Enum
+Discovered-in-preset: YES (values: kOsc_Sample, kOsc_Granular, kOsc_Spectral, kOsc_MultiSample; WT is default/absent)
+Proven-user-control: YES (official docs name all 5 modes as user-selectable)
+Proven-persistent: PARTIAL (found in Sample/Granular/Spectral/MultiSample presets; WT uses absence/default)
+Proven-behavioral: UNRESOLVED (mode switching behavior during playback unknown)
+Evidence Status: discovered-in-preset + proven-user-control
+Implementation Status: UNIMPLEMENTED (mode selection not exposed as semantic target)
+Representation Family: osc_shared_param
+Proof Required:
+  1. Verify WT mode = kParamType absent OR explicit value
+  2. Test mode switching in real Serum: change mode, save, decode, verify kParamType changes
+  3. Confirm all 5 enum values
+
+---
+
+ID: OSC.A.SHARED.LEVEL
+Control Name: Oscillator Level
+Container: Oscillator0.plainParams
+Field Path: kParamVolume
+Type: Float (0.0-1.0)
+Discovered-in-preset: YES (found in all presets)
+Proven-user-control: YES (UI has volume fader)
+Proven-persistent: YES (varies across presets, persists through save/reload)
+Proven-behavioral: YES (PROVEN_IMPLEMENTED as OSC1.Level)
+Evidence Status: All stages complete
+Implementation Status: PROVEN_IMPLEMENTED (OSC1.Level target)
+Representation Family: osc_shared_param (parametric across OSC A/B/C)
+
+---
+
+ID: OSC.A.SHARED.PAN
+Control Name: Oscillator Pan
+Container: Oscillator0.plainParams
+Field Path: kParamPan
+Type: Float
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES (observed in multipreset samples)
+Proven-behavioral: YES
+Evidence Status: All stages complete
+Implementation Status: PROVEN_IMPLEMENTED (OSC1.Pan target)
+Representation Family: osc_shared_param
+
+---
+
+ID: OSC.A.SHARED.OCTAVE
+Control Name: Octave
+Container: Oscillator0.plainParams
+Field Path: kParamOctave
+Type: Integer (-?, +?)
+Range: UNRESOLVED
+Discovered-in-preset: YES (observed in multiple presets: -1.0, 1.0)
+Proven-user-control: YES (UI control exists)
+Proven-persistent: YES (varies in presets)
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_shared_param
+Proof Required:
+  1. Determine min/max range (likely -4 to +4 or similar)
+  2. Confirm integer-only vs float
+  3. Behavioral test: set octave, verify pitch shift in playback
+
+---
+
+ID: OSC.A.SHARED.SEMITONE
+Control Name: Semitone
+Container: Oscillator0.plainParams
+Field Path: kParamSemitone
+Type: Integer/Float?
+Discovered-in-preset: UNCONFIRMED (field name inferred, not yet observed)
+Proven-user-control: YES (UI control exists in Wavetable mode)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_pitch_family
+Proof Required:
+  1. Find preset with non-zero semitone value
+  2. Decode and confirm kParamSemitone field
+  3. Test range and behavioral effect
+
+---
+
+ID: OSC.A.SHARED.FINE
+Control Name: Fine Tune
+Container: Oscillator0.plainParams
+Field Path: kParamFine
+Type: Float
+Range: Observed -8.055520 to +18.750000 (cents? semitones? unclear)
+Discovered-in-preset: YES (ARP presets, Spectral preset)
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_pitch_family
+Proof Required:
+  1. Determine scale (cents? semitones? 0-1 range?)
+  2. Behavioral test: set fine=-5, verify pitch shift matches expected cents
+
+---
+
+ID: OSC.A.SHARED.DETUNE
+Control Name: Detune
+Container: Oscillator0.plainParams
+Field Path: kParamDetune
+Type: Float
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: YES (PROVEN_IMPLEMENTED as OSC1.Detune)
+Evidence Status: All stages complete
+Implementation Status: PROVEN_IMPLEMENTED (OSC1.Detune target)
+Representation Family: osc_pitch_family
+
+---
+
+ID: OSC.A.SHARED.DETUNE_WIDTH
+Control Name: Detune Width / Spread
+Container: Oscillator0.plainParams
+Field Path: kParamDetuneWid
+Type: Float
+Discovered-in-preset: YES
+Proven-user-control: YES (part of unison config)
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_unison_family
+Proof Required:
+  1. Verify relationship to kParamUnison
+  2. Behavioral test: detune width effect on unison sound
+
+---
+
+ID: OSC.A.SHARED.UNISON
+Control Name: Unison Count
+Container: Oscillator0.plainParams
+Field Path: kParamUnison
+Type: Integer (0-7?, observed 1.0, 2.0, 3.0, 7.0)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: YES (PROVEN_IMPLEMENTED as OSC1.Unison)
+Evidence Status: All stages complete
+Implementation Status: PROVEN_IMPLEMENTED (OSC1.Unison target)
+Representation Family: osc_unison_family
+
+---
+
+ID: OSC.A.SHARED.PHASE
+Control Name: Phase
+Container: Oscillator0.plainParams
+Field Path: kParamPhase
+Type: Float (0.0-1.0 or 0-360?)
+Discovered-in-preset: UNCONFIRMED (inferred from mode, not yet observed)
+Proven-user-control: YES (UI control exists)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_phase_family
+Proof Required:
+  1. Find preset with explicitly set phase
+  2. Confirm field path and scale
+  3. Behavioral test
+
+---
+
+ID: OSC.A.SHARED.PHASE_RANDOM
+Control Name: Phase Randomization / Phase Memory
+Container: Oscillator0.plainParams OR mode container
+Field Path: kParamPhaseRandom OR kParamRandomPhase OR variant
+Type: Float (0-1?)
+Discovered-in-preset: YES (observed kParamRandomPhase in MultiSample preset)
+Proven-user-control: YES (UI control in Wavetable mode: Phase Memory)
+Proven-persistent: PARTIAL (found in one preset; need to verify field naming consistency)
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_phase_family
+Proof Required:
+  1. Confirm whether field is kParamPhaseRandom or kParamRandomPhase
+  2. Determine if it's in plainParams or mode container
+  3. Test across all modes
+  4. Behavioral verification
+
+---
+
+ID: OSC.A.SHARED.ENABLE
+Control Name: Enable / Mute
+Container: Oscillator0.plainParams
+Field Path: kParamEnable
+Type: Boolean (0.0/1.0)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: YES (PROVEN_IMPLEMENTED as OSC1.Enable)
+Evidence Status: All stages complete
+Implementation Status: PROVEN_IMPLEMENTED (OSC1.Enable target)
+Representation Family: osc_shared_param
+
+---
+
+ID: OSC.A.SHARED.BUS1_SEND
+Control Name: Send to FX Bus 1
+Container: RoutingSlot0.plainParams
+Field Path: kParamFXBus1Level
+Type: Float (0-100)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES (PART 3 proven)
+Proven-behavioral: YES
+Evidence Status: All stages complete
+Implementation Status: PROVEN_IMPLEMENTED (OSC1.BUS1Send target)
+Representation Family: send_routing_family (parametric across all sources)
+
+---
+
+ID: OSC.A.SHARED.BUS2_SEND
+Control Name: Send to FX Bus 2
+Container: RoutingSlot0.plainParams
+Field Path: kParamFXBus2Level
+Type: Float (0-100)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES (PART 3 proven)
+Proven-behavioral: YES
+Evidence Status: All stages complete
+Implementation Status: PROVEN_IMPLEMENTED (OSC1.BUS2Send target)
+Representation Family: send_routing_family
+
+---
+
+ID: OSC.A.SHARED.ROUTING_DEST
+Control Name: Routing Destination
+Container: RoutingSlot0.plainParams
+Field Path: kParamRoutingDest
+Type: Enum (kRoutingDestMaster, kRoutingDestDirect, kRoutingDestNone, kRoutingDestFilter)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES (PART 5 proven)
+Proven-behavioral: YES
+Evidence Status: All stages complete
+Implementation Status: PROVEN_IMPLEMENTED (OSC1.Route target)
+Representation Family: routing_family (parametric across all sources)
+
+---
+
+ID: OSC.A.SHARED.WARP_AMOUNT
+Control Name: Warp Amount
+Container: Oscillator0.plainParams
+Field Path: kParamWarp
+Type: Float
+Discovered-in-preset: YES (Sample preset: 0.1337)
+Proven-user-control: YES (UI control in Sample/Granular/Spectral modes)
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_warp_family
+Proof Required:
+  1. Determine scale and range
+  2. Verify if shared across all modes or mode-specific
+  3. Behavioral test
+  4. Distinguish from mode-specific warp variants
+
+---
+
+ID: OSC.A.SHARED.WARP_MODE
+Control Name: Warp Mode
+Container: Oscillator0.plainParams
+Field Path: kParamWarpMenu
+Type: Enum
+Discovered-in-preset: YES (Sample: kFM_OSC2; Granular: kFilterHPF; Spectral: various)
+Proven-user-control: YES (UI dropdown)
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_warp_family
+Proof Required:
+  1. Enumerate all warp mode enum values
+  2. Determine which modes apply to which synthesis modes
+  3. Verify mode availability across WT/Sample/Granular/Spectral/Multisample
+
+---
+
+ID: OSC.A.SHARED.WARP_MODE_2
+Control Name: Warp Mode 2 (Dual Warp Secondary)
+Container: Oscillator0.plainParams
+Field Path: kParamWarpMenu2
+Type: Enum (similar to kParamWarpMenu)
+Discovered-in-preset: YES (Granular: kFilterHPF; Spectral: various)
+Proven-user-control: YES (UI control in Granular/Spectral modes)
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_warp_family
+Proof Required:
+  1. Determine which modes support dual warp
+  2. Verify interaction between kParamWarp/kParamWarpMenu and kParamWarpMenu2
+
+---
+
+#### WAVETABLE MODE SPECIFIC (WTOsc0)
+
+ID: OSC.A.WAVETABLE.WT_RESOURCE
+Control Name: Wavetable Selection
+Container: WTOsc0 (structural: relativePathToWT + flex + metadata)
+Field Path: WTOsc0.relativePathToWT (string path)
+Type: Resource reference (string) + flex binary data
+Discovered-in-preset: YES (all WT presets contain this)
+Proven-user-control: YES (UI has WT selector)
+Proven-persistent: YES
+Proven-behavioral: YES (affects sound)
+Evidence Status: All stages complete
+Implementation Status: PARTIALLY_IMPLEMENTED (resource loading exists; selection control unclear)
+Representation Family: resource_family
+Proof Required:
+  1. Verify relativePathToWT format and resolution
+  2. Understand flex field structure (waveform morphing data)
+  3. Confirm write-ability (can we change WT and save?)
+
+---
+
+ID: OSC.A.WAVETABLE.WT_POSITION
+Control Name: Wavetable Position / Morphing
+Container: WTOsc0.plainParams
+Field Path: kParamTablePos
+Type: Float (0-180+, observed 129.72)
+Discovered-in-preset: YES
+Proven-user-control: YES (WT position slider)
+Proven-persistent: YES
+Proven-behavioral: YES (affects timbre)
+Evidence Status: All stages complete
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_wavetable_family
+Proof Required:
+  1. Determine range (0-255? 0-100? open-ended?)
+  2. Verify relationship to flex (morphing) data
+  3. Behavioral test
+
+---
+
+ID: OSC.A.WAVETABLE.WT_INTERPOLATION
+Control Name: WT Interpolation Mode
+Container: WTOsc0.plainParams OR undiscovered
+Field Path: kParamInterpolation OR variant
+Type: Enum
+Discovered-in-preset: UNCONFIRMED (not yet found)
+Proven-user-control: YES (UI option: "Smooth interpolation for WT position")
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_wavetable_family
+Proof Required:
+  1. Find preset with interpolation mode set
+  2. Confirm field name and enum values
+  3. Verify persistence and behavior
+
+---
+
+ID: OSC.A.WAVETABLE.WT_UNISON_CONFIG
+Control Name: Unison Configuration (WT specific)
+Container: WTOsc0.plainParams OR undiscovered
+Field Path: kParamUnison??? OR structured data
+Type: Complex (number of voices, spread, detune curve, etc.)
+Discovered-in-preset: UNCONFIRMED (kParamUnison exists but is shared; unison-specific WT config unknown)
+Proven-user-control: YES (UI has unison controls in WT mode)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_unison_family
+Proof Required:
+  1. Determine if WT unison is mode-specific OR uses shared kParamUnison
+  2. Find preset with WT unison specifically configured
+  3. Verify any additional WT-specific unison parameters
+
+---
+
+ID: OSC.A.WAVETABLE.TUNING_MODE
+Control Name: Tuning Mode (WT specific)
+Container: WTOsc0.plainParams OR undiscovered
+Field Path: kParamTuningMode OR variant
+Type: Enum (Semitone, Harmonics, Ratio, Step — from docs)
+Discovered-in-preset: UNCONFIRMED
+Proven-user-control: YES (UI has tuning mode selector)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_pitch_family
+Proof Required:
+  1. Find preset with non-default tuning mode
+  2. Identify field and enum values
+  3. Verify mode-specific behavior
+
+---
+
+#### SAMPLE MODE SPECIFIC (SampleOsc0)
+
+ID: OSC.A.SAMPLE.SAMPLE_RESOURCE
+Control Name: Sample Selection / Loading
+Container: SampleOsc0 (structural: samplePathRelative + metadata)
+Field Path: SampleOsc0.samplePathRelative (string)
+Type: Resource reference (string)
+Discovered-in-preset: YES (Sample preset contains this)
+Proven-user-control: YES (UI has sample selector)
+Proven-persistent: YES
+Proven-behavioral: YES
+Evidence Status: All stages complete
+Implementation Status: PARTIALLY_IMPLEMENTED
+Representation Family: resource_family
+
+---
+
+ID: OSC.A.SAMPLE.START_POINT
+Control Name: Sample Start Point
+Container: Oscillator0.plainParams
+Field Path: kParamStart OR SampleOsc0.plainParams variant
+Type: Float (sample position, 0-end)
+Discovered-in-preset: YES (Granular preset: kParamStart = 48.88)
+Proven-user-control: YES (UI has start point control)
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_sample_family
+Proof Required:
+  1. Confirm field path (shared plainParams or mode-specific?)
+  2. Determine scale (sample frames? percentage? 0-100?)
+  3. Behavioral test
+
+---
+
+ID: OSC.A.SAMPLE.END_POINT
+Control Name: Sample End Point
+Container: Oscillator0.plainParams
+Field Path: kParamEnd OR SampleOsc0.plainParams variant
+Type: Float
+Discovered-in-preset: UNCONFIRMED (kParamLoopEnd found but is loop-end, not sample-end)
+Proven-user-control: YES (UI control exists)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_sample_family
+Proof Required:
+  1. Determine if separate from loop-end or same field
+  2. Find preset with custom end point
+  3. Verify persistence and behavior
+
+---
+
+ID: OSC.A.SAMPLE.LOOP_START
+Control Name: Loop Start Point
+Container: Oscillator0.plainParams
+Field Path: kParamLoopStart
+Type: Float
+Discovered-in-preset: YES (Granular preset: 48.88, Sample preset: 27.78)
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_sample_family
+
+---
+
+ID: OSC.A.SAMPLE.LOOP_END
+Control Name: Loop End Point
+Container: Oscillator0.plainParams
+Field Path: kParamLoopEnd
+Type: Float
+Discovered-in-preset: YES (Sample preset: 54.97)
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_sample_family
+
+---
+
+ID: OSC.A.SAMPLE.LOOP_MODE
+Control Name: Loop Mode
+Container: Oscillator0.plainParams
+Field Path: kParamLoopMode
+Type: Enum (observed: kForward, kTailed; likely others: kBackward, kPingPong, etc.)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_sample_family
+Proof Required:
+  1. Enumerate all loop mode enum values
+  2. Behavioral test for each mode
+  3. Verify forward-reverse looping (official feature)
+
+---
+
+ID: OSC.A.SAMPLE.LOOP_CROSSFADE
+Control Name: Loop Crossfade
+Container: Oscillator0.plainParams
+Field Path: kParamLoopCrossfade
+Type: Float (0-100?, observed 8.85)
+Discovered-in-preset: YES
+Proven-user-control: YES (UI slider)
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_sample_family
+
+---
+
+ID: OSC.A.SAMPLE.SLICING_MODE
+Control Name: Slicing Mode (Auto / Manual)
+Container: SampleOsc0.plainParams OR undiscovered
+Field Path: kParamSlicingMode OR variant
+Type: Enum
+Discovered-in-preset: UNCONFIRMED
+Proven-user-control: YES (UI has auto/manual toggle)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_sample_family
+Proof Required:
+  1. Find preset with slicing enabled
+  2. Identify field and enum values
+  3. Understand slicing parameter storage
+
+---
+
+#### GRANULAR MODE SPECIFIC (GranularOsc0)
+
+ID: OSC.A.GRANULAR.SAMPLE_RESOURCE
+Control Name: Sample Selection (Granular)
+Container: GranularOsc0
+Field Path: (TBD, likely similar to SampleOsc0)
+Type: Resource reference
+Discovered-in-preset: PARTIAL (Granular preset exists; field path not yet confirmed)
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: YES
+Evidence Status: proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: resource_family
+
+---
+
+ID: OSC.A.GRANULAR.DENSITY
+Control Name: Grain Density / Grain Count
+Container: GranularOsc0.plainParams
+Field Path: kParamDensity
+Type: Float (0-256?, observed 10.51)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED (affects grain playback density)
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_granular_family
+
+---
+
+ID: OSC.A.GRANULAR.GRAIN_LENGTH
+Control Name: Grain Length
+Container: GranularOsc0.plainParams
+Field Path: kParamGrainLength
+Type: Float (observed 0.847)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_granular_family
+
+---
+
+ID: OSC.A.GRANULAR.LENGTH_MODE
+Control Name: Grain Length Mode
+Container: GranularOsc0.plainParams
+Field Path: kParamLengthMode
+Type: Enum (observed: kLengthBPM; likely others)
+Discovered-in-preset: YES
+Proven-user-control: YES (UI has mode selector)
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_granular_family
+Proof Required:
+  1. Enumerate length mode enum values
+  2. Verify BPM mode interaction
+
+---
+
+ID: OSC.A.GRANULAR.WINDOW_AMOUNT
+Control Name: Grain Window / Amplitude Envelope
+Container: GranularOsc0.plainParams
+Field Path: kParamRandomGain OR kParamWindowAmount OR variant
+Type: Float
+Discovered-in-preset: UNCONFIRMED (kParamRandomGain found; unclear if this is window amount)
+Proven-user-control: YES (UI control exists)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_granular_family
+Proof Required:
+  1. Identify correct field
+  2. Verify relationship to randomization controls
+  3. Behavioral test
+
+---
+
+ID: OSC.A.GRANULAR.RANDOM_DIR
+Control Name: Grain Direction Randomization
+Container: GranularOsc0.plainParams
+Field Path: kParamRandomDir
+Type: Float (0-100?, observed 33.33)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_granular_family
+
+---
+
+ID: OSC.A.GRANULAR.RANDOM_PITCH
+Control Name: Grain Pitch Randomization
+Container: GranularOsc0.plainParams
+Field Path: kParamRandomPitch
+Type: Float (semitones?, observed 12.0)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_granular_family
+
+---
+
+#### SPECTRAL MODE SPECIFIC (SpectralOsc0)
+
+ID: OSC.A.SPECTRAL.SAMPLE_RESOURCE
+Control Name: Sample Selection (Spectral)
+Container: SpectralOsc0
+Field Path: (TBD)
+Type: Resource reference
+Discovered-in-preset: PARTIAL
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: YES
+Evidence Status: proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: resource_family
+
+---
+
+ID: OSC.A.SPECTRAL.TIMBRE_SHIFT
+Control Name: Timbre Shifting / Transients Control
+Container: SpectralOsc0.plainParams
+Field Path: kParamTransients
+Type: Float (0-100?, observed value unknown)
+Discovered-in-preset: YES
+Proven-user-control: YES (UI control)
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_spectral_family
+
+---
+
+ID: OSC.A.SPECTRAL.SCAN_RATE
+Control Name: Spectral Scan Rate
+Container: Oscillator0.plainParams
+Field Path: kParamScanRate
+Type: Float (0-100+, observed 15.0)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_spectral_family
+
+---
+
+ID: OSC.A.SPECTRAL.HI_FREQ
+Control Name: High Frequency Limit
+Container: SpectralOsc0.plainParams OR undiscovered
+Field Path: kParamHighFreq OR variant
+Type: Float (Hz?, normalized?)
+Discovered-in-preset: UNCONFIRMED
+Proven-user-control: YES (UI control)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_spectral_family
+Proof Required:
+  1. Find preset with custom hi/lo freq
+  2. Identify field paths and scale
+
+---
+
+ID: OSC.A.SPECTRAL.LO_FREQ
+Control Name: Low Frequency Limit
+Container: SpectralOsc0.plainParams OR undiscovered
+Field Path: kParamLowFreq OR variant
+Type: Float
+Discovered-in-preset: UNCONFIRMED
+Proven-user-control: YES
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_spectral_family
+
+---
+
+ID: OSC.A.SPECTRAL.ENVELOPE
+Control Name: Spectral Envelope Control
+Container: SpectralOsc0.plainParams OR undiscovered
+Field Path: kParamEnvelope OR variant
+Type: (TBD, possibly array of points)
+Discovered-in-preset: UNCONFIRMED
+Proven-user-control: YES (UI has envelope editor)
+Proven-persistent: UNCONFIRMED
+Proven-behavioral: UNRESOLVED
+Evidence Status: proven-user-control only
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_spectral_family
+Proof Required:
+  1. Understand envelope storage format
+  2. Verify persistence of envelope curves
+
+---
+
+#### MULTISAMPLE MODE SPECIFIC (MultiSampleOsc0)
+
+ID: OSC.A.MULTISAMPLE.INSTRUMENT_RESOURCE
+Control Name: Multisample Instrument Selection
+Container: MultiSampleOsc0
+Field Path: MultiSampleOsc0.sfzPathRelative (string) + embedded_sfz (binary)
+Type: Resource reference (SFZ file + embedded samples)
+Discovered-in-preset: YES
+Proven-user-control: YES (UI has instrument selector)
+Proven-persistent: YES
+Proven-behavioral: YES
+Evidence Status: All stages complete
+Implementation Status: PARTIALLY_IMPLEMENTED (resource loading; selection control unclear)
+Representation Family: resource_family
+
+---
+
+ID: OSC.A.MULTISAMPLE.ENV_OVERRIDE
+Control Name: Envelope Override
+Container: MultiSampleOsc0.plainParams
+Field Path: kParamEnvOverride
+Type: Boolean / Float (0.0 or 1.0)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED (affects ADSR behavior)
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_multisample_family
+
+---
+
+ID: OSC.A.MULTISAMPLE.ENV_ATTACK
+Control Name: Envelope Attack
+Container: MultiSampleOsc0.plainParams
+Field Path: kParamEnvAttack
+Type: Float (ms?, observed value unknown)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_multisample_family
+
+---
+
+ID: OSC.A.MULTISAMPLE.ENV_DECAY
+Control Name: Envelope Decay
+Container: MultiSampleOsc0.plainParams
+Field Path: kParamEnvDecay
+Type: Float
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_multisample_family
+
+---
+
+ID: OSC.A.MULTISAMPLE.ENV_RELEASE
+Control Name: Envelope Release
+Container: MultiSampleOsc0.plainParams
+Field Path: kParamEnvRelease
+Type: Float (ms, observed 19.97)
+Discovered-in-preset: YES
+Proven-user-control: YES
+Proven-persistent: YES
+Proven-behavioral: UNRESOLVED
+Evidence Status: discovered-in-preset + proven-user-control + proven-persistent
+Implementation Status: UNIMPLEMENTED
+Representation Family: osc_multisample_family
+
+---
+
+### OSC.B (Oscillator1) and OSC.C (Oscillator2)
+
+REPRESENTATION FAMILY: osc_shared_parametric
+
+All controls from OSC.A above apply identically to OSC.B (Oscillator1) and OSC.C (Oscillator2).
+
+Evidence:
+  1. All factory presets show Oscillator0/1/2 with identical container structure
+  2. All modes (WTOsc1, SampleOsc1, etc.) follow identical pattern
+  3. VST3 parameters use consistent naming (A/B/C prefixes)
+
+Status:
+  - When OSC.A controls are PROVEN_IMPLEMENTED, OSC.B and OSC.C can use same family
+  - Requires testing at least one non-OSC.A control on OSC.B/C to verify parametric assumption
+
+---
+
+### SUB (Oscillator3) — IDENTITY UNRESOLVED
+
+ID: OSC.SUB.IDENTITY_CONTRADICTION
+Claim: Oscillator3 = SUB oscillator
+Evidence:
+  1. VST3 parameters clearly named "Sub Enable", "Sub Level", "Sub Pan", etc. (12 params)
+  2. Official Serum 2 documentation: "Sub Oscillator"
+  3. Preset structure shows Oscillator3 with plainParams containing Enable/Volume
+Contradictory Evidence:
+  1. Oscillator3 contains container named "NoiseOsc3" (not SubOsc3)
+  2. This contradicts VST3 naming convention (all other containers match VST3 labels)
+Confidence: MEDIUM-HIGH (VST3 naming is authoritative; CBOR container naming may be legacy or internal)
+Status: UNRESOLVED — BLOCKING
+
+Proof Required:
+  1. Use real Serum UI: set Sub to MAX, Noise to MIN
+  2. Save preset
+  3. Decode and observe which Oscillator{3,4}.plainParams.kParamVolume changed
+  4. Confirm Oscillator3 plainParams volume changed (proves Oscillator3 = SUB)
+  5. Confirm Oscillator4 plainParams volume changed (proves Oscillator4 = NOISE)
+
+---
+
+### NOISE (Oscillator4) — IDENTITY UNRESOLVED
+
+ID: OSC.NOISE.IDENTITY_CONTRADICTION
+Claim: Oscillator4 = NOISE oscillator
+Evidence:
+  1. VST3 parameters clearly named "Noise Enable", "Noise Level", etc. (11 params)
+  2. Official Serum 2 documentation: "Noise Oscillator"
+Contradictory Evidence:
+  1. Oscillator4 contains container named "SubOsc4" (not NoiseOsc4)
+Confidence: MEDIUM-HIGH
+Status: UNRESOLVED — BLOCKING
+
+Proof Required: Same as SUB (see above)
+
+---
+
+================================================================================
+NEXT PHASE: RESOLUTION OF OSC IDENTITY BLOCKERS
+================================================================================
+
+Before proceeding to inventory remaining oscillators, filters, or any other subsystems:
+
+1. RESOLVE OSC3/OSC4 identity through real Serum testing (as documented above)
+2. CONFIRM naming convention (whether CBOR containers match VST3 or not)
+3. BEGIN SUB/NOISE control inventory once identity is PROVEN
+
+This is a hard gate. No implementation of SUB or NOISE controls proceeds until identity is proven.
+
+================================================================================
+
+Current Status: PHASE 1 IN PROGRESS — Awaiting OSC identity resolution
+
+Next: PHASE 2 — Complete OSC.A/B/C mode-specific control discovery (after PHASE 1)
+

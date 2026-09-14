@@ -1,0 +1,315 @@
+================================================================================
+STEP 21 / 29 — COMPLETE OSCILLATOR CONTROL SURFACE
+PART 1: COMPLETE OSC INVENTORY (IN PROGRESS)
+================================================================================
+
+SCOPE:
+- Three (3) primary oscillators: Oscillator0 (OSC A), Oscillator1 (OSC B), Oscillator2 (OSC C)
+- One (1) sub oscillator: Oscillator3 (SUB)
+- One (1) noise oscillator: Oscillator4 (NOISE)
+- Five (5) oscillator modes: WAVETABLE, SAMPLE, GRANULAR, SPECTRAL, MULTISAMPLE
+
+SERUM STATE STRUCTURE:
+Each Oscillator{N} container holds:
+  - plainParams (shared controls, mode selection)
+  - WTOsc{N} (Wavetable mode state)
+  - SampleOsc{N} (Sample mode state)
+  - GranularOsc{N} (Granular mode state)
+  - SpectralOsc{N} (Spectral mode state)
+  - MultiSampleOsc{N} (Multisample mode state)
+
+================================================================================
+PART 1A: SHARED OSCILLATOR PARAMETERS (plainParams)
+================================================================================
+
+All oscillators share these controls in plainParams:
+
+BASIC CONTROLS:
+  kParamType — mode selection (enum)
+    Values discovered:
+      kOsc_Wavetable (inferred, not yet observed in preset)
+      kOsc_Sample
+      kOsc_MultiSample
+      (kOsc_Granular, kOsc_Spectral: TBD)
+
+  kParamVolume — oscillator level (0.0-1.0)
+  kParamPan — stereo pan (-inf to +inf, real UI shows -90 to +90 degrees)
+
+PITCH CONTROLS:
+  kParamOctave — octave selection (integer, range TBD)
+  kParamSemitone — semitone (range TBD, default likely 0)
+  kParamFine — fine tuning (range TBD, observed ±0.42)
+  kParamDetune — global detune amount (range TBD)
+  kParamDetuneWid — detune spread/width (range TBD)
+
+SAMPLE/LOOP CONTROLS (shared, used across modes):
+  kParamLoopStart — loop start point (range TBD)
+  kParamLoopEnd — loop end point (range TBD)
+  kParamLoopMode — loop mode (enum: kTailed, others TBD)
+  kParamLoopCrossfade — crossfade at loop point (range TBD)
+  kParamScanRate — spectral/sample scan rate (range TBD, observed ~66)
+
+SYNTHESIS CONTROLS:
+  kParamUnison — unison count (0-7?, observed values 1.0, 7.0)
+  kParamPhase — oscillator phase (range TBD)
+  kParamPhaseRandom — phase randomization (range TBD)
+  kParamWarp — warp amount (range TBD, observed 0.0-0.133)
+  kParamWarpMenu — warp type/mode (enum)
+
+ROUTING/STATE:
+  kParamRoute — routing destination (enum, from prior PART 5)
+  (other routing/state fields: TBD)
+
+STATUS:
+  [ ] kParamType values for all 5 modes
+  [ ] Range/scale for each numeric parameter
+  [ ] Complete parameter list (likely more exist)
+  [ ] SUB-specific parameters
+  [ ] NOISE-specific parameters
+
+================================================================================
+PART 1B: WAVETABLE MODE (WTOsc{N})
+================================================================================
+
+Discovered parameters in WTOsc{N}.plainParams:
+  kParamTablePos — wavetable position (range TBD, observed 129.72)
+
+Mode container fields (WTOsc{N}):
+  flex — wavetable flex/morphing data (binary/structured)
+  numChannels — audio channels (int, likely 1 or 2)
+  numFrames — sample frames (int)
+  relativePathToWT — wavetable file path (string, relative)
+  sampleRate — sample rate (int)
+
+Official features (from PDF):
+  - WT interpolation (mode selection)
+  - Unison configuration
+  - Tuning modes (semitone, harmonics, ratio, step)
+  - Warp modes (multiple, including FM, PD from filters, distortions)
+  - Dual warp (two modes at once)
+  - Routing
+  - Phase memory (control phase and phase randomization)
+  - Copy/paste oscillators (with or without modulations)
+
+MAPPING REQUIRED:
+  [ ] WT interpolation → persistent field?
+  [ ] Unison config → parameters?
+  [ ] Tuning modes → persistent representation
+  [ ] Warp modes → kParamWarpMenu values
+  [ ] Dual warp → persistent flag/parameter
+  [ ] Phase memory → persistent field
+  [ ] Copy/paste → stateful operation?
+
+STATUS: Partially discovered (plainParams known, mode-specific details TBD)
+
+================================================================================
+PART 1C: SAMPLE MODE (SampleOsc{N})
+================================================================================
+
+Discovered parameters in SampleOsc{N}.plainParams:
+  kParamWarp — warp amount (range TBD)
+  kParamWarpMenu — warp mode (enum)
+
+Mode container fields (SampleOsc{N}):
+  numChannels — audio channels (int)
+  numFrames — sample frames (int)
+  samplePathRelative — sample file path (string, relative)
+  sampleRate — sample rate (int)
+
+Official features (from PDF):
+  - Set points (start/end, loop start/end)
+  - Crossfade at loop points
+  - Slicing (auto and manual modes with advanced options)
+  - Playback modes (loop mode, forward-reverse looping tails)
+  - Warp (advanced modes including FM and PM)
+  - Stretch/time-stretch
+
+MAPPING REQUIRED:
+  [ ] Set points → kParamLoopStart/End in plainParams
+  [ ] Crossfade → kParamLoopCrossfade
+  [ ] Slicing mode (auto/manual) → persistent field
+  [ ] Slicing parameters → persistent fields
+  [ ] Playback modes → kParamLoopMode values
+  [ ] Forward-reverse looping → state field?
+  [ ] Warp modes → kParamWarpMenu values
+
+STATUS: Partially discovered (warp known, slicing/playback modes TBD)
+
+================================================================================
+PART 1D: GRANULAR MODE (GranularOsc{N})
+================================================================================
+
+Discovered parameters: NONE YET (no test presets found)
+
+Official features (from PDF):
+  - Up to 256 grains
+  - Grain count
+  - Grain/window controls
+  - Position/start/end
+  - Looping controls
+  - Window amount (grain amplitude window)
+  - Playback behavior
+  - Warp modes
+  - Set points (start/end, looping, slicing)
+
+DISCOVERY REQUIRED:
+  [ ] Create test preset with Granular mode
+  [ ] Identify mode field value (kOsc_Granular?)
+  [ ] Discover all plainParams fields
+  [ ] Discover GranularOsc{N} container fields
+  [ ] Map all window/grain controls to persistent representation
+
+STATUS: NOT YET DISCOVERED
+
+================================================================================
+PART 1E: SPECTRAL MODE (SpectralOsc{N})
+================================================================================
+
+Discovered parameters: NONE YET (no test presets found)
+
+Official features (from PDF):
+  - Timbre shifting (adjust and modulate)
+  - Scan rate (speed and direction of sample playback)
+  - Warp (advanced warping options)
+  - Hi/Low freqs (set sample high and low frequencies)
+  - Envelope (customize envelope)
+  - Set points (start/end, looping, slicing)
+
+DISCOVERY REQUIRED:
+  [ ] Create test preset with Spectral mode
+  [ ] Identify mode field value (kOsc_Spectral?)
+  [ ] Discover all plainParams fields
+  [ ] Discover SpectralOsc{N} container fields
+  [ ] Map timbre/scan/envelope controls to persistent representation
+
+STATUS: NOT YET DISCOVERED
+
+================================================================================
+PART 1F: MULTISAMPLE MODE (MultiSampleOsc{N})
+================================================================================
+
+Discovered parameters in MultiSampleOsc{N}.plainParams:
+  kParamEnvOverride — envelope override flag (0.0 or 1.0)
+  kParamEnvRelease — envelope release time (range TBD, observed ~20)
+
+Mode container fields (MultiSampleOsc{N}):
+  embedded_sfz — embedded SFZ file (binary/structured)
+  files — list of sample files
+  sfzPathRelative — SFZ file path (string, relative)
+
+Official features (from PDF):
+  - Instruments with SFZ file support
+  - Sample/map selection
+  - All instrument/sample-specific controls
+  - Tuning, level/pan, routing
+
+MAPPING REQUIRED:
+  [ ] SFZ loading/selection → persistent representation
+  [ ] Sample/map selection → persistent field
+  [ ] Envelope controls → parameters in plainParams
+  [ ] Instrument-specific controls → persistent fields
+  [ ] Routing → plainParams field?
+
+STATUS: Partially discovered (envelope params known, map selection TBD)
+
+================================================================================
+PART 1G: SUB OSCILLATOR (Oscillator3)
+================================================================================
+
+Structure:
+  plainParams — shared sub controls
+  NoiseOsc3 — ??? (naming suggests noise-like capabilities)
+
+Official features (from PDF):
+  - Dedicated sub oscillator similar to Serum 1
+  - Type/waveform selection
+  - Octave control
+  - Level
+  - Pan (if present)
+  - Routing
+  - Enable/state (if it has independent enable)
+
+DISCOVERY REQUIRED:
+  [ ] Understand NoiseOsc3 in Oscillator3 context
+  [ ] Enumerate all SUB plainParams controls
+  [ ] Determine SUB-specific state structure
+  [ ] Verify if SUB has independent enable
+
+STATUS: STRUCTURE SEEN, DETAILS UNKNOWN
+
+================================================================================
+PART 1H: NOISE OSCILLATOR (Oscillator4)
+================================================================================
+
+Structure:
+  plainParams — shared noise controls
+  SubOsc4 — ??? (naming suggests sub-like capabilities)
+
+Official features (from PDF):
+  - Dedicated noise oscillator
+  - Resource/type selection
+  - Fine tuning
+  - Level
+  - Pan
+  - Warp
+  - Routing
+  - Enable/state (if separate)
+
+DISCOVERY REQUIRED:
+  [ ] Understand SubOsc4 in Oscillator4 context
+  [ ] Enumerate all NOISE plainParams controls
+  [ ] Determine NOISE-specific state structure
+  [ ] Verify if NOISE has independent enable
+
+STATUS: STRUCTURE SEEN, DETAILS UNKNOWN
+
+================================================================================
+PART 2: CLASSIFICATION STATUS (TBD)
+================================================================================
+
+Each discovered control must be classified as:
+  A. Persistent Serum-state control (CBOR field)
+  B. Runtime/VST3 control (HOST_PARAM, no CBOR persistence)
+  C. Structural/topology control (array/container state)
+  D. Resource control (file/sample reference)
+  E. Compound operation (multiple coordinated mutations)
+  F. UI-only interaction (no persistent representation)
+  G. Unknown (requires discovery)
+
+STATUS: Classification deferred until discovery complete
+
+================================================================================
+PART 3: MODE SWITCHING DISCOVERY (NEXT)
+================================================================================
+
+Must determine:
+  [ ] Exact persistent representation of mode selection (kParamType values)
+  [ ] Behavior when switching modes (preserve other parameters?)
+  [ ] Default mode for each oscillator
+  [ ] Whether mode state is persisted per oscillator
+
+DISCOVERY PLAN:
+  1. Create test preset: OSC A in Wavetable mode
+  2. Save, decode, record kParamType value
+  3. Switch to Sample mode in real UI
+  4. Save, decode, record kParamType value
+  5. Repeat for Granular, Spectral, Multisample
+  6. Compare state diffs to prove mode switching mechanism
+
+STATUS: READY TO START
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+Immediate priorities:
+1. Create test presets for Granular and Spectral modes (via real Serum UI)
+2. Complete PART 3 (mode switching discovery)
+3. Discover all plainParams fields via exhaustive UI exploration
+4. Map each discovered parameter to its CBOR path and scale
+5. Classify each parameter (persistent/runtime/UI-only/etc.)
+6. Implement semantic operations and tests
+
+ETA: Full inventory complete before implementation begins
+
+================================================================================

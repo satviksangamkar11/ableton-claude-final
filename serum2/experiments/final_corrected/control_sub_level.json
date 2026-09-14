@@ -1,0 +1,15 @@
+{
+  "control_name": "Sub Level",
+  "vst3_idx": 194,
+  "baseline_runtime": 0.75,
+  "mutated_runtime": 1.0,
+  "baseline_vc2_hash": "6537cdfb1f0fc201",
+  "mutated_vc2_hash": "6537cdfb1f0fc201",
+  "vc2_blobs_differ": false,
+  "cbor_differs": false,
+  "fresh_baseline_loads_original": true,
+  "fresh_mutated_loads_mutated": false,
+  "fresh_baseline_value": 0.75,
+  "fresh_mutated_value": 0.75,
+  "classification": "NOT_PERSISTENT"
+}

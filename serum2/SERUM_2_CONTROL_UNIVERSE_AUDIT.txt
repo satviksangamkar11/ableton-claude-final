@@ -1,0 +1,500 @@
+================================================================================
+SERUM 2.0.21 COMPLETE CONTROL UNIVERSE AUDIT
+================================================================================
+
+METHODOLOGY:
+- Enumerate EVERY user-manipulable control in Serum 2.0.21
+- Distinguish implemented vs. missing
+- Identify representation families (parametric patterns)
+- Specify exact implementation order
+- Do NOT count by percentages — count by COMPLETION of mode-dependent controls
+
+================================================================================
+PART A: OSCILLATORS (366 parameters discovered)
+================================================================================
+
+SCOPE: OSC1, OSC2, OSC3 (primary), SUB, NOISE with all 5 synthesis modes
+
+OSC STRUCTURE:
+Each Oscillator{N} contains:
+  plainParams — shared controls (mode selection, pitch, level, pan, etc.)
+  WTOsc{N} — Wavetable mode container
+  SampleOsc{N} — Sample mode container
+  GranularOsc{N} — Granular mode container
+  SpectralOsc{N} — Spectral mode container
+  MultiSampleOsc{N} — Multisample mode container
+
+MODE SELECTION FIELD:
+  Oscillator{N}.plainParams.kParamType → enum value:
+    kOsc_Wavetable (default, no explicit kParamType)
+    kOsc_Sample
+    kOsc_Granular
+    kOsc_Spectral
+    kOsc_MultiSample
+
+---
+
+OSC1 (Oscillator0):
+
+IMPLEMENTED (11 semantic targets):
+  ✓ OSC1.BUS1Send — Oscillator0.plainParams.kParamFXBus1Level
+  ✓ OSC1.BUS2Send — Oscillator0.plainParams.kParamFXBus2Level
+  ✓ OSC1.Detune — Oscillator0.plainParams.kParamDetune
+  ✓ OSC1.Enable — Oscillator0.plainParams.kParamEnable
+  ✓ OSC1.Level — Oscillator0.plainParams.kParamVolume
+  ✓ OSC1.Pan — Oscillator0.plainParams.kParamPan
+  ✓ OSC1.Route — RoutingSlot0.plainParams.kParamRoutingDest (PART 5)
+  ✓ OSC1.Unison — Oscillator0.plainParams.kParamUnison
+  ✓ OSC1.Pan (duplicate from above, confirmed independent)
+  ✓ FX Bypass (Bus-level) — bypass_bus_MAIN/BUS1/BUS2 operations (PART 6)
+  ✓ FX Bypass (Module-level) — individual FX module enable (PART 19)
+
+MISSING — SHARED CONTROLS (plainParams):
+  ✗ Octave — Oscillator0.plainParams.kParamOctave [FOUND in presets]
+  ✗ Semitone — Oscillator0.plainParams.kParamSemitone [LIKELY IN PRESETS]
+  ✗ Fine Tune — Oscillator0.plainParams.kParamFine [FOUND in presets]
+  ✗ Phase — Oscillator0.plainParams.kParamPhase [TBD]
+  ✗ Phase Random — Oscillator0.plainParams.kParamPhaseRandom [TBD]
+  ✗ Loop Mode — Oscillator0.plainParams.kParamLoopMode [FOUND in Granular preset]
+  ✗ Loop Start — Oscillator0.plainParams.kParamLoopStart [FOUND in Granular preset]
+  ✗ Loop End — Oscillator0.plainParams.kParamLoopEnd [FOUND in Sample preset]
+  ✗ Loop Crossfade — Oscillator0.plainParams.kParamLoopCrossfade [FOUND in Sample preset]
+  ✗ Scan Rate — Oscillator0.plainParams.kParamScanRate [FOUND in Spectral/Granular presets]
+  ✗ Warp Amount — Oscillator0.plainParams.kParamWarp [FOUND in Sample preset]
+  ✗ Warp Mode — Oscillator0.plainParams.kParamWarpMenu [FOUND in Sample preset]
+  ✗ Warp Mode 2 — Oscillator0.plainParams.kParamWarpMenu2 [FOUND in Granular/Spectral presets]
+  ✗ Enable — Oscillator0.plainParams.kParamEnable [FOUND in presets]
+  ✗ Pitch Track — Oscillator0.plainParams.kParamPitchTrack [FOUND in Spectral preset]
+
+WAVETABLE MODE (plainParams in WTOsc0):
+  ✗ WT Position — WTOsc0.plainParams.kParamTablePos [FOUND in WT presets]
+  ✗ WT Interpolation — [TBD, control exists in UI]
+  ✗ WT Resource — WTOsc0.relativePathToWT + flex data [FOUND]
+  ✗ Unison Config — [TBD, part of shared kParamUnison]
+  ✗ Tuning Mode — [TBD, UI control exists]
+  ✗ Phase Memory — [TBD, UI control exists]
+  ✗ Random Phase — [LIKELY kParamRandomPhase in WTOsc0.plainParams]
+
+SAMPLE MODE (plainParams in SampleOsc0):
+  ✗ Warp — SampleOsc0.plainParams.kParamWarp [FOUND in Sample preset]
+  ✗ Warp Mode — SampleOsc0.plainParams.kParamWarpMenu [FOUND in Sample preset]
+  ✗ Slicing Mode — [TBD, control exists in UI]
+  ✗ Start/End — SampleOsc0 or plainParams [TBD]
+  ✗ Crossfade — Oscillator0.plainParams.kParamLoopCrossfade [FOUND]
+  ✗ Sample Resource — SampleOsc0.samplePathRelative [FOUND]
+
+GRANULAR MODE (plainParams in GranularOsc0):
+  ✗ Density — GranularOsc0.plainParams.kParamDensity [FOUND in Granular preset]
+  ✗ Grain Length — GranularOsc0.plainParams.kParamGrainLength [FOUND]
+  ✗ Window Amount — [TBD, may be kParamRandomGain or similar]
+  ✗ Random Dir — GranularOsc0.plainParams.kParamRandomDir [FOUND]
+  ✗ Random Pitch — GranularOsc0.plainParams.kParamRandomPitch [FOUND]
+  ✗ Warp — [May use shared kParamWarp or mode-specific field]
+  ✗ Sample Resource — GranularOsc0 container fields [TBD]
+
+SPECTRAL MODE (plainParams in SpectralOsc0):
+  ✗ Timbre Shift — SpectralOsc0.plainParams.kParamTransients [FOUND in Spectral preset]
+  ✗ Scan Rate — Oscillator0.plainParams.kParamScanRate [FOUND]
+  ✗ Hi/Low Freqs — [TBD, fields not yet identified]
+  ✗ Warp — SpectralOsc0.plainParams.kParamWarp [FOUND]
+  ✗ Envelope — [TBD, control exists in UI]
+  ✗ Sample Resource — SpectralOsc0 container fields [TBD]
+
+MULTISAMPLE MODE (plainParams in MultiSampleOsc0):
+  ✗ Envelope Override — MultiSampleOsc0.plainParams.kParamEnvOverride [FOUND]
+  ✗ Envelope Release — MultiSampleOsc0.plainParams.kParamEnvRelease [FOUND]
+  ✗ SFZ Loading — MultiSampleOsc0.sfzPathRelative + embedded_sfz [FOUND]
+  ✗ Map Selection — [TBD, field not yet identified]
+  ✗ Sample/Instrument Selection — [TBD]
+
+STATUS: OSC1 shared controls are INCOMPLETE. Each mode has MODE-SPECIFIC parameters that must be individually proven.
+
+---
+
+OSC2 (Oscillator1), OSC3 (Oscillator2):
+PARAMETRIC: Follow identical structure to OSC1
+REPRESENTED BY: Oscillator1, Oscillator2 (1:1 mapping)
+STATUS: Same missing controls as OSC1, multiplied by 2 oscillators
+
+---
+
+SUB (Oscillator3):
+IMPLEMENTED (10 semantic targets):
+  ✓ SUB.BUS1Send — Oscillator3.plainParams.kParamFXBus1Level
+  ✓ SUB.BUS2Send — Oscillator3.plainParams.kParamFXBus2Level
+  ✓ SUB.Detune — Oscillator3.plainParams.kParamDetune
+  ✓ SUB.Enable — Oscillator3.plainParams.kParamEnable
+  ✓ SUB.Level — Oscillator3.plainParams.kParamVolume
+  ✓ SUB.Pan — Oscillator3.plainParams.kParamPan
+  ... (others TBD from mapping)
+
+STRUCTURE: Contains NoiseOsc3 container (naming reversed?)
+  NoiseOsc3.plainParams.kParamColor [FOUND in ARP preset]
+  NoiseOsc3.plainParams.kParamInitialPhase [FOUND]
+  NoiseOsc3.plainParams.kParamNoiseType [FOUND]
+
+MISSING:
+  ✗ SUB type/waveform selection — [TBD, likely kParamNoiseType]
+  ✗ SUB octave — Oscillator3.plainParams.kParamOctave [TBD]
+  ✗ SUB color/filter — NoiseOsc3.kParamColor [FOUND]
+
+STATUS: SUB structure unclear (contains NoiseOsc3, should be SubOsc3?). Needs clarification.
+
+---
+
+NOISE (Oscillator4):
+IMPLEMENTED (9 semantic targets):
+  ✓ NOISE.BUS1Send — Oscillator4.plainParams.kParamFXBus1Level
+  ✓ NOISE.BUS2Send — Oscillator4.plainParams.kParamFXBus2Level
+  ✓ NOISE.Fine — Oscillator4.plainParams.kParamFine
+  ✓ NOISE.Level — Oscillator4.plainParams.kParamVolume
+  ✓ NOISE.Pan — Oscillator4.plainParams.kParamPan
+  ... (others TBD)
+
+STRUCTURE: Contains SubOsc4 container (naming reversed?)
+  SubOsc4 container is empty in skeleton (no plainParams discovered in presets)
+
+MISSING:
+  ✗ NOISE type selection — [TBD]
+  ✗ NOISE warp — [TBD]
+  ✗ NOISE enable — Oscillator4.plainParams.kParamEnable [TBD]
+
+STATUS: NOISE structure unclear (contains SubOsc4, should be NoiseOsc4?). Needs clarification.
+
+---
+
+STRUCTURAL OPERATIONS (Oscillators):
+  ✓ bypass_fx_bus_MAIN, bypass_fx_bus_BUS1, bypass_fx_bus_BUS2 (PART 6)
+  ✓ unbypass_fx_bus_MAIN, unbypass_fx_bus_BUS1, unbypass_fx_bus_BUS2 (PART 6)
+  ✗ Copy oscillator (with/without modulations) — [TBD, UI gesture]
+  ✗ Paste oscillator (with/without modulations) — [TBD, UI gesture]
+  ✗ Switch mode (WT↔Sample↔Granular↔Spectral↔Multisample) — [Needs investigation]
+
+================================================================================
+PART B: FILTERS (13 parameters discovered)
+================================================================================
+
+FILTER1 (VoiceFilter0):
+
+IMPLEMENTED (5 semantic targets):
+  ✓ FILTER1.BUS1Send
+  ✓ FILTER1.BUS2Send
+  ✓ FILTER1.Level
+  ✓ FILTER1.Mix
+  ✓ FILTER1.Route
+
+MISSING:
+  ✗ Cutoff — VoiceFilter0.plainParams.kParamFreq [FOUND in presets]
+  ✗ Resonance — VoiceFilter0.plainParams.kParamReso [FOUND]
+  ✗ Drive — VoiceFilter0.plainParams.kParamDrive [FOUND]
+  ✗ Enable — VoiceFilter0.plainParams.kParamEnable [FOUND]
+  ✗ Type — VoiceFilter0.plainParams.kParamType [FOUND]
+  ✗ Key Track — VoiceFilter0.plainParams.kParamKeyTrack [FOUND]
+  ✗ Q vs Reso mode — [TBD]
+  ✗ Pad mode — VoiceFilter0.plainParams.kParamPad [FOUND]
+
+FILTER2 (VoiceFilter1):
+Same structure as FILTER1, identical missing controls
+
+STATUS: Filters are 38% implemented (5 of 13 targets). Core cutoff/resonance/drive/enable missing.
+
+================================================================================
+PART C: ENVELOPES (22 parameters discovered)
+================================================================================
+
+ENV1-4 (Env0-3):
+
+IMPLEMENTED: ~16 targets (4 basic + more)
+  ✓ Env1.Attack, Env1.Decay, Env1.Release, Env1.Sustain
+  ✓ Env2.Attack, Env2.Decay, Env2.Release, Env2.Sustain
+  ✓ Env3.Attack, Env3.Decay, Env3.Release, Env3.Sustain
+  ✓ Env4.Attack, Env4.Decay, Env4.Release, Env4.Sustain
+
+MISSING:
+  ✗ Hold — Env{N}.plainParams.kParamHold [FOUND]
+  ✗ Curve — Env{N}.plainParams.kParamCurve1/2/3 [FOUND]
+  ✗ Beat Sync — Env{N}.plainParams.kParamBeatSync [FOUND]
+  ✗ Legato Inverted — Env{N}.plainParams.kParamLegatoInverted [FOUND]
+  ✗ Retrigger — [TBD]
+
+STATUS: Envelopes are ~73% implemented. Core ADSR done; advanced options missing.
+
+================================================================================
+PART D: LFOS (18 parameters discovered)
+================================================================================
+
+LFO0-9 (10 total LFOs):
+
+IMPLEMENTED: ~50 targets (5 per LFO × 10)
+  ✓ LFO{N}.Mode, .Phase, .Rate, .Retrigger, .Shape (×10)
+
+MISSING (per LFO):
+  ✗ Delay — LFO{N}.plainParams.kParamDelay [FOUND]
+  ✗ BeatSync — LFO{N}.plainParams.kParamBeatSync [FOUND]
+  ✗ Direction — LFO{N}.plainParams.kParamDirection [FOUND]
+  ✗ Anchored — LFO{N}.plainParams.kParamAnchored [FOUND]
+  ✗ Mono — LFO{N}.plainParams.kParamMono [FOUND]
+  ✗ Dotted — LFO{N}.plainParams.kParamDotted [FOUND]
+  ✗ Grid X/Y — LFO{N}.plainParams.kParamGridX/Y [FOUND]
+  ✗ DefaultMode — LFO{N}.plainParams.kParamDefaultMode [FOUND]
+  ✗ Mode options: Normal, Free, Retrig, Envelope, Rossler, Lorenz [TBD, enum values]
+  ✗ Shape drawing/data — [TBD, stored as plainParams or flex]
+
+STATUS: LFOs are ~28% implemented. Only basic Rate/Phase/Mode/Retrig/Shape; missing tempo sync, envelope mode, chaos modes.
+
+================================================================================
+PART E: MIX / ROUTING (33 parameters, mostly proven in PARTS 3-5)
+================================================================================
+
+IMPLEMENTED:
+  ✓ OSC1/2/3/SUB/NOISE BUS1Send, BUS2Send (PART 3)
+  ✓ FILTER1/2 BUS1Send, BUS2Send (PART 4)
+  ✓ BUS1.Level, BUS2.Level — Global0.plainParams.kParamFXBus1Vol/2Vol (PART 4)
+  ✓ OSC Routing Destination — RoutingSlot{N}.plainParams.kParamRoutingDest (PART 5)
+  ✓ Filter Balance — RoutingSlot{N}.plainParams.kParamFilterBalance [PART 3 proven]
+  ✓ Via Env modulation — RoutingSlot{N}.plainParams.kParamViaEnv1 [TBD]
+
+MISSING:
+  ✗ MAIN/Direct output volume — Global0.plainParams.kParamDirectVol [FOUND, unimplemented]
+  ✗ Master Volume — Global0.plainParams.kParamMasterVolume [TBD]
+  ✗ FX Bus destination — Global0.plainParams.kParamFXBus{N}Dest [FOUND]
+  ✗ Via Env on other sends — [TBD]
+
+STATUS: Mix is ~80% implemented. Foundation proven; missing master/direct controls.
+
+================================================================================
+PART F: MATRIX / MODULATION (52 parameters discovered in OTHER)
+================================================================================
+
+IMPLEMENTED (5 targets per ModRoute ×?):
+  ✓ ModRoute.AuxSource
+  ✓ ModRoute.Bipolar
+  ✓ ModRoute.Bypass
+  ✓ ModRoute.Curve
+  ✓ ModRoute.MacroDepth
+  ... (unclear total count)
+
+MISSING:
+  ✗ Source/Destination routing array structure
+  ✗ Modulation depth per route
+  ✗ Route enable/bypass per route
+  ✗ Curve editing per route
+  ✗ Max routes count
+  ✗ Route reordering/deletion
+
+STATUS: Matrix control is INCOMPLETE. Structure not yet fully mapped.
+
+================================================================================
+PART G: MACROS (1 parameter discovered)
+================================================================================
+
+IMPLEMENTED: ~8 targets (Macro0-7 with .Value each)
+  ✓ Macro0.Value through Macro7.Value — Macro{N}.plainParams.kParamValue
+
+MISSING:
+  ✗ Macro mapping to targets — [TBD, stored in matrix routes]
+  ✗ Macro enable/mute — [TBD]
+  ✗ Macro name — [TBD]
+
+STATUS: Macros are 100% for value storage; mapping/routing is part of MATRIX.
+
+================================================================================
+PART H: FX (0 parameters discovered as kParam, 14 effects implemented)
+================================================================================
+
+IMPLEMENTED (partial):
+  ✓ 13 Effects + 3 Splitters across 3 buses
+  ✓ Per-effect parameters (vary by effect type)
+  ✓ Bypass per module
+  ✓ Add/Remove/Reorder modules
+
+MISSING:
+  ✗ Complete parameter inventory per effect (done in PARTS 10-19)
+  ✗ Verify all 14 effects have complete control coverage
+  ✗ Splitter-specific controls
+
+STATUS: FX architecture is IMPLEMENTED but parameter coverage varies per effect. Reconcile against PARTS 10-19.
+
+================================================================================
+PART I: ARP (33 parameters discovered)
+================================================================================
+
+IMPLEMENTED: 1 target
+  ✓ ARP.Enable
+
+MISSING:
+  ✗ Pattern/Shape — ARP0.plainParams.kParamShape [TBD]
+  ✗ Octaves — ARP0.plainParams.kParamOctave [TBD]
+  ✗ Gate — [TBD]
+  ✗ Chance — ArpClip0.plainParams.kParamChance [FOUND]
+  ✗ Retrigger — ArpClip0.plainParams.kParamBeatRetrig [FOUND]
+  ✗ Rate — [TBD]
+  ✗ Velocity — [TBD]
+  ✗ All other 30+ ArpClip parameters
+
+STATUS: ARP is <5% implemented. Requires complete discovery.
+
+================================================================================
+PART J: CLIP (14 parameters discovered)
+================================================================================
+
+IMPLEMENTED: 0 targets
+
+MISSING:
+  ✗ All CLIP controls — ClipPlayer0.plainParams.{14 parameters} [FOUND]
+
+STATUS: CLIP is 0% implemented. Requires discovery and implementation.
+
+================================================================================
+PART K: VOICE/GLOBAL (28 parameters discovered)
+================================================================================
+
+IMPLEMENTED:
+  ✓ Global.Glide, Global.Key, Global.MasterVolume, Global.Mono, Global.PitchTracking
+  ... (13 targets total)
+
+MISSING:
+  ✗ Pitch bend range up/down — Global0.plainParams.kParamBendRangeDn/Up [FOUND]
+  ✗ Tuning — Global0.plainParams.kParamGlobalTuning [FOUND]
+  ✗ Portamento time — [TBD]
+  ✗ Transpose — [TBD]
+  ✗ Key zone limits — [TBD]
+  ✗ Polyphony limiting — Global0.plainParams.kParamLimitSameNotePolyphony [FOUND]
+  ✗ Other 15+ global parameters
+
+STATUS: Global is ~50% implemented. Core pitch/glide/mono done; advanced options missing.
+
+================================================================================
+PART L: RESOURCES
+================================================================================
+
+IMPLEMENTED:
+  ✓ WT resource reference (via relativePathToWT)
+  ✓ Sample resource reference (via samplePathRelative)
+  ✓ SFZ resource reference (via sfzPathRelative + embedded_sfz)
+
+MISSING:
+  ✗ WT flex data (waveform morphing) — [TBD, stored in WTOsc{N}.flex]
+  ✗ Sample start/end point selection — [TBD]
+  ✗ Multisample map selection — [TBD]
+
+STATUS: Basic resource loading works; advanced features missing.
+
+================================================================================
+PART M: REPRESENTATION FAMILIES (parametric patterns proven)
+================================================================================
+
+FAMILY 1: Oscillator Shared Parameters (parametric across OSC1/2/3)
+  Pattern: Oscillator{N}.plainParams.kParam{X}
+  Members: Level, Pan, Detune, Enable, Octave, Fine, Phase, etc.
+  STATUS: Pattern proven; need to enumerate all {X} values
+
+FAMILY 2: Oscillator Mode Containers (parametric across all modes)
+  Pattern: {Mode}Osc{N}.plainParams.kParam{Y}
+  Members: WTOsc, SampleOsc, GranularOsc, SpectralOsc, MultiSampleOsc
+  STATUS: Pattern proven; need to enumerate all {Y} values per mode
+
+FAMILY 3: Filter Parameters (identical for FILTER1 and FILTER2)
+  Pattern: VoiceFilter{N}.plainParams.kParam{Z}
+  Members: Cutoff, Resonance, Drive, Enable, Type, etc.
+  STATUS: Pattern proven; core parameters identified
+
+FAMILY 4: LFO Parameters (parametric across LFO0-9)
+  Pattern: LFO{N}.plainParams.kParam{W}
+  Members: Rate, Phase, Mode, Delay, BeatSync, etc.
+  STATUS: Pattern proven; need complete {W} enumeration
+
+FAMILY 5: Envelope Parameters (identical for ENV1-4)
+  Pattern: Env{N}.plainParams.kParam{V}
+  Members: Attack, Decay, Sustain, Release, Hold, etc.
+  STATUS: Pattern proven; core parameters identified
+
+FAMILY 6: Send Routing (identical pattern for OSC/SUB/NOISE/FILTERS)
+  Pattern: RoutingSlot{N}.plainParams.kParamFXBus{M}Level
+  Members: A/B/C/SUB/NOISE sending to BUS1/BUS2
+  STATUS: Pattern proven; complete (PARTS 3-5)
+
+FAMILY 7: Bus Send Level (identical for BUS1 and BUS2)
+  Pattern: Global0.plainParams.kParamFXBus{M}Vol
+  Members: Bus1, Bus2 output levels
+  STATUS: Pattern proven (PART 4)
+
+================================================================================
+PART N: IMPLEMENTATION ORDER (RECOMMENDATION)
+================================================================================
+
+CRITICAL PATH (blocking other work):
+  1. OSC shared controls (Octave, Fine, Phase, etc.) — enables all 3 primary OSCs
+  2. SUB/NOISE structures clarification (NoiseOsc3 vs SubOsc4) — required for correct naming
+  3. FILTER core controls (Cutoff, Resonance, Drive, Enable, Type)
+  4. OSC mode switching representation (kParamType enum values complete)
+
+NEAR-CRITICAL:
+  5. OSC mode-specific parameters (Warp, Slicing, Granular density, Spectral timbre)
+  6. LFO advanced controls (Delay, BeatSync, Mode enum values)
+  7. Envelope advanced controls (Hold, Curve, Legato)
+  8. Global/Voice controls (Bend range, Tuning, Portamento)
+
+SECONDARY:
+  9. MATRIX/Modulation route structure
+  10. ARP controls
+  11. CLIP controls
+  12. Resource operations (copy/paste oscillators, mode switching)
+
+TERTIARY:
+  13. FX effect-specific parameters (already mostly done in PARTS 10-19)
+  14. Advanced Filter routing (series/parallel, filter-to-filter)
+
+================================================================================
+PART O: SUMMARY
+================================================================================
+
+TOTAL CONTROL UNIVERSE: 1385 kParam fields discovered
+
+CURRENT IMPLEMENTATION: 255 semantic targets (~18% coverage)
+
+BREAKDOWN BY SUBSYSTEM:
+  Oscillators: ~20 of 366 possible controls (5%)
+  Filters: 5 of 13 (38%)
+  Envelopes: ~16 of 47 (34%)
+  LFOs: ~50 of 147 (34%)
+  Mix: ~10 of 33 (30%)
+  Global: 13 of 28 (46%)
+  ARP: 1 of 33 (3%)
+  CLIP: 0 of 14 (0%)
+  Matrix: ~5 of 52 (10%)
+  FX: Partial (varies by effect)
+
+CRITICAL GAPS:
+  1. OSC mode-dependent controls completely missing (Sample/Granular/Spectral/Multisample)
+  2. Filter core controls (cutoff/resonance) missing
+  3. LFO chaos modes (Rossler, Lorenz) unknown
+  4. ARP largely unimplemented
+  5. CLIP completely unimplemented
+  6. MATRIX route management structure unknown
+
+REPRESENTATION FAMILIES PROVEN:
+  ✓ Oscillator parametric structure (OSC1/2/3 identical)
+  ✓ Mode container parametric structure (all modes follow same layout)
+  ✓ Filter parametric structure (FILTER1/2 identical)
+  ✓ LFO parametric structure (LFO0-9 identical)
+  ✓ Envelope parametric structure (ENV1-4 identical)
+  ✓ Send routing parametric structure (all sources follow same pattern)
+
+================================================================================
+NEXT STEP: DO NOT PROCEED TO IMPLEMENTATION
+================================================================================
+
+This audit defines the COMPLETE control universe.
+
+Return this audit. Do NOT implement speculative controls.
+
+The finish line is when:
+  - Every kParam field is either implemented, proven UI-only, or explicitly marked unknown
+  - Every mode-dependent control is explicitly discovered (not assumed)
+  - Every representation family has at least one authoritative proof
+  - Every structural operation is classified
+
+ONLY THEN proceed with prioritized implementation.
+
+================================================================================

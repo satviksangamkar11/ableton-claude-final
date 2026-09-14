@@ -1,0 +1,9 @@
+{
+  "phase": "1a_serialization",
+  "cbor_path": "Oscillator0.plainParams.kParamVolume",
+  "mutation_value": 1.0,
+  "mutated_value_before_save": 1.0,
+  "reloaded_value": 1.0,
+  "persistence_ok": true,
+  "phase1a_pass": true
+}

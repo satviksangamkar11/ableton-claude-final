@@ -282,6 +282,112 @@ class FXStructuralCompiler:
             mutation_description=f"FX unbypass: Unbypass effect at {location.rack_path}[{slot_index}]",
         )
 
+    def bypass_bus(
+        self,
+        operation: SerumOperation,
+        ctx: OperationContext,
+        bus: Bus,
+    ) -> OperationResult:
+        """Bypass ALL FX modules currently in a bus's rack (STEP 20B PART 6).
+
+        PROVEN via rigorous negative evidence that no distinct bus-level
+        bypass flag exists in Serum 2.0.21:
+          - No dedicated UI control found (FX page menus: Cut/Copy/Paste/
+            Clear/Lock FX Bus, Lock All Busses, Load/Save FX Bus, Add FX
+            Module - none is a bypass; MIX page BUS1/BUS2/MAIN headers have
+            no checkbox/mute, unlike oscillator channels; no context-menu
+            bypass option on tabs, modules, or faders; top MENU has none).
+          - No VST3 HOST_PARAM exists for it (searched all 2623 parameters;
+            only "Bus {N} Vol" and generic "FX Bus {N} Param 1-16"
+            placeholders exist under the "Bus N" name).
+          - FXRack{N}.plainParams.kParamEnable is NOT a genuine field: set
+            via pathmerge and round-tripped through a real DawDreamer
+            save/reload, it is silently discarded back to "default" -
+            confirmed on FXRack0 (MAIN), FXRack1 (BUS1), FXRack2 (BUS2)
+            alike, while the SAME round-trip on an individual FX module's
+            plainParams.kParamEnable is preserved exactly (sanity check
+            ruling out a bridge/skeleton artifact).
+
+        CONCLUSION: "bus bypass" is not a distinct persistent representation.
+        It is implemented here as a COMPOUND operation - the proven
+        individual-FX bypass mutation (plainParams -> {"kParamEnable": 0.0})
+        applied to every FX slot currently present in the bus, in one
+        operation. This is explicitly NOT the wildcard path used by
+        bypass_effect()/unbypass_effect() above (that "*" placeholder has no
+        resolver in pathmerge.apply_path_value and would write a literal "*"
+        key) - the FX-type key at each slot is read directly from ctx.body
+        and used verbatim, matching the pattern already verified safe.
+
+        Preserves: rack topology, module order, module types, all other
+        module parameter state, and (per PART 6 sibling-isolation
+        requirement) does not touch any other bus's rack.
+        """
+        rack_path = f"FXRack{bus.value}"
+        fx_array = ctx.body.get(rack_path, {}).get("FX", [])
+
+        mutations = []
+        for slot_index, fx_entry in enumerate(fx_array):
+            fx_type_key = _resolve_fx_type_key(fx_entry)
+            if fx_type_key is None:
+                continue  # empty/malformed slot - nothing to bypass
+            target_path = f"{rack_path}.FX.{slot_index}.{fx_type_key}.plainParams"
+            mutations.append(Mutation(
+                target_path=target_path,
+                value={"kParamEnable": 0.0},
+                provenance=f"SerumOperation.{operation.operation_id}",
+            ))
+
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=True,
+            compiled_mutations=mutations,
+            mutation_description=f"Bus bypass: bypassed {len(mutations)} FX module(s) in {rack_path}",
+        )
+
+    def unbypass_bus(
+        self,
+        operation: SerumOperation,
+        ctx: OperationContext,
+        bus: Bus,
+    ) -> OperationResult:
+        """Unbypass (reactivate) ALL FX modules currently in a bus's rack.
+
+        Inverse of bypass_bus(); see that method's docstring for the full
+        evidence chain establishing this as a compound operation over the
+        proven individual-FX mechanism, not a distinct persistent flag.
+        """
+        rack_path = f"FXRack{bus.value}"
+        fx_array = ctx.body.get(rack_path, {}).get("FX", [])
+
+        mutations = []
+        for slot_index, fx_entry in enumerate(fx_array):
+            fx_type_key = _resolve_fx_type_key(fx_entry)
+            if fx_type_key is None:
+                continue
+            target_path = f"{rack_path}.FX.{slot_index}.{fx_type_key}.plainParams"
+            mutations.append(Mutation(
+                target_path=target_path,
+                value="default",
+                provenance=f"SerumOperation.{operation.operation_id}",
+            ))
+
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=True,
+            compiled_mutations=mutations,
+            mutation_description=f"Bus unbypass: reactivated {len(mutations)} FX module(s) in {rack_path}",
+        )
+
+
+def _resolve_fx_type_key(fx_entry: Dict[str, Any]) -> Optional[str]:
+    """Given one FXRack{N}.FX[i] entry, return its FX-type key (e.g.
+    'FXBode', 'FXChorus') - the sibling of 'type' that holds plainParams.
+    Returns None for an empty/malformed entry."""
+    for key in fx_entry:
+        if key != "type" and key.startswith("FX"):
+            return key
+    return None
+
 
 def build_fx_structural_operations(registry: OperationRegistry) -> None:
     """Register FX structural operations.
@@ -450,6 +556,55 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
             return unbypass_compiler
 
         registry.register_compiler(operation_id, make_unbypass_compiler(bus))
+
+    # Register BUS BYPASS/UNBYPASS operations for each bus (STEP 20B PART 6)
+    # Distinct from BYPASS/UNBYPASS above: bypasses ALL FX in the bus's rack
+    # as a compound operation, since no separate persistent bus-level flag
+    # exists (see bypass_bus()/unbypass_bus() docstrings for the evidence).
+    for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
+        bus_name = bus.name
+
+        bypass_bus_id = f"fx_struct_bypass_bus_{bus_name}"
+        registry.register(OperationDefinition(
+            operation_id=bypass_bus_id,
+            semantic_name=f"Bypass FX Bus {bus_name}",
+            kind=OperationKind.TOPOLOGY,
+            parameters=[],
+            measurement_metric=None,
+            expected_direction=None,
+            description=f"Bypass every FX module currently in the {bus_name} rack",
+        ))
+
+        def make_bypass_bus_compiler(target_bus: Bus) -> callable:
+            def bypass_bus_compiler(
+                operation: SerumOperation, ctx: OperationContext
+            ) -> OperationResult:
+                return compiler.bypass_bus(operation, ctx, target_bus)
+
+            return bypass_bus_compiler
+
+        registry.register_compiler(bypass_bus_id, make_bypass_bus_compiler(bus))
+
+        unbypass_bus_id = f"fx_struct_unbypass_bus_{bus_name}"
+        registry.register(OperationDefinition(
+            operation_id=unbypass_bus_id,
+            semantic_name=f"Unbypass FX Bus {bus_name}",
+            kind=OperationKind.TOPOLOGY,
+            parameters=[],
+            measurement_metric=None,
+            expected_direction=None,
+            description=f"Unbypass every FX module currently in the {bus_name} rack",
+        ))
+
+        def make_unbypass_bus_compiler(target_bus: Bus) -> callable:
+            def unbypass_bus_compiler(
+                operation: SerumOperation, ctx: OperationContext
+            ) -> OperationResult:
+                return compiler.unbypass_bus(operation, ctx, target_bus)
+
+            return unbypass_bus_compiler
+
+        registry.register_compiler(unbypass_bus_id, make_unbypass_bus_compiler(bus))
 
 
 def register_fx_structural_operations() -> None:

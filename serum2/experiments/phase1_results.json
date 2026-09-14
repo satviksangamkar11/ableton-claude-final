@@ -1,0 +1,14 @@
+{
+  "phase": "1_control",
+  "control": "OSC A Volume",
+  "baseline_cbor": null,
+  "baseline_vst3": 0.75,
+  "mutation_vst3": 1.0,
+  "mutated_cbor": null,
+  "mutated_vst3": 1.0,
+  "full_diff_count": 0,
+  "control_in_diff": false,
+  "reloaded_cbor": null,
+  "classification": "FAILED",
+  "phase1_pass": false
+}
