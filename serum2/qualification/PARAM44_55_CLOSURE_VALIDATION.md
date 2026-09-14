@@ -1,7 +1,18 @@
 # Param44-55 Final OSC Closure Validation
 
 **Date:** 2026-09-15
-**Scope:** 12 VST3 parameters (Param44-55) at indices 63-74, following A Rand Phase (index 62)
+**Status:** PARTIAL (this document validated Param44-55 only; SUPERSEDED by OSC_FINAL_CLOSURE_REPORT.md)
+
+⚠️  **This document is preserved for historical audit trail only.** 
+
+The final OSC closure required a critical course correction: semantic control discovery 
+must be separated from target vocabulary and operation implementation state. This 
+document addressed only one of four populations (Param44-55 technical disposition).
+
+See OSC_FINAL_CLOSURE_REPORT.md for the authoritative closure narrative incorporating 
+all four populations and the complete reconciliation.
+
+**Scope (historical):** 12 VST3 parameters (Param44-55) at indices 63-74, following A Rand Phase (index 62)
 **Methodology:** Cross-reference three sources + direct UI inspection of all five oscillator modes
 
 ---
