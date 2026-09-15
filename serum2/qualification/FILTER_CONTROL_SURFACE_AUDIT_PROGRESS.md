@@ -73,9 +73,31 @@ This is NOT a fixed "FAT" knob as initially assumed from Normal-category evidenc
 
 ### Directly Verified (23 of 107 = 21.5%)
 
-**Normal (2 of 18):**
+**Normal (18 of 18 = 100% COMPLETE):**
 1. MG Low 6 — FAT
 2. MG Low 12 — FAT
+2b. MG Low 18 — FAT
+2c. MG Low 24 — FAT
+2d. Low 6 — DISABLED
+2e. Low 12 — DISABLED
+2f. Low 18 — DISABLED
+2g. Low 24 — DISABLED
+2h. High 6 — DISABLED (outlier within High family)
+2i. High 12 — FAT
+2j. High 18 — FAT
+2k. High 24 — FAT
+2l. Band 12 — FAT
+2m. Band 24 — FAT
+2n. Peak 12 — FAT
+2o. Peak 24 — FAT
+2p. Notch 12 — FAT
+2q. Notch 24 — FAT
+
+**Normal category final pattern:** MG Low(all 4)=FAT; Low(all 4)=DISABLED;
+High=DISABLED only at 6dB, FAT at 12/18/24dB (asymmetric outlier); Band,
+Peak, Notch (all slopes)=FAT. This confirms per-type verification was
+necessary — the High-family 6dB exception would have been missed by any
+family or category-level inference.
 
 **Multi (3 of 21):**
 3. LH 6 — FREQ (2-way)
