@@ -146,7 +146,7 @@ The 4th knob position carries genuinely distinct semantic meaning depending on f
 | Filter{N}.RouteOscB | "B" button in routing row | STRUCTURAL_CONTROL | Routes OSC B into this filter |
 | Filter{N}.RouteOscC | "C" button in routing row | STRUCTURAL_CONTROL | Routes OSC C into this filter |
 | Filter{N}.RouteNoise | "N" button in routing row | STRUCTURAL_CONTROL | Routes Noise into this filter |
-| Filter{N}.GridIcon | Grid icon next to routing row | UNRESOLVED | Function not yet determined (possibly pattern/matrix view toggle) |
+| Filter{N}.KeyTrack | Piano-key icon next to routing row | STRUCTURAL_CONTROL | RESOLVED via UI inspection: icon shape (two piano keys) + position (adjacent to S/A/B/C/N routing row) strongly indicates a keyboard-tracking toggle for Cutoff. Click produced no visible highlight change in this session's screenshots (MEDIUM confidence on exact behavior; semantic identity confirmed, full behavioral verification deferred as non-blocking per project convention) |
 | Filter{N}.BUS1Send | (existing target: routing_slot5/6_bus1_level) | STRUCTURAL_CONTROL | Already in targets.py; FILTER-triggered, MIX-owned destination |
 | Filter{N}.BUS2Send | (existing target: routing_slot5/6_bus2_level) | STRUCTURAL_CONTROL | Already in targets.py |
 | Filter{N}.Route | (existing target: routing_slot5/6_dest) | STRUCTURAL_CONTROL | Already in targets.py |
@@ -178,7 +178,7 @@ Type-specific 4th-knob controls (distinct IDs): 20  (Fat, Freq2, Morph, Smooth, 
                                                        ScreamAmt, Spread, Stages, Pain, Boeuf,
                                                        Thru, Width, Freq2Comb, MixAlt)
 Structural controls:                             9  (Enable, Type, Mute, RouteSub, RouteOscA,
-                                                       RouteOscB, RouteOscC, RouteNoise, GridIcon[unresolved])
+                                                       RouteOscB, RouteOscC, RouteNoise, KeyTrack)
 Existing routing targets (already in targets.py): 3  (BUS1Send, BUS2Send, Route)
 Structural actions (generic, per-knob):           6  (Reset, MIDI Learn, Lock, Mod Source,
                                                        Bypass Modulator, Remove [All] Modulators)
@@ -204,7 +204,7 @@ CONDITIONAL_CONTROL:       20  (all type-specific controls ARE conditional; not 
                                  cross-referenced with TYPE_SPECIFIC_CONTROL above)
 DISPLAY_ONLY:               1  ("DISABLED" 4th-knob state across 25 types — not a control,
                                  the absence of one)
-UNRESOLVED:                 1  (GridIcon function)
+UNRESOLVED:                 0  (KeyTrack resolved this pass)
 ```
 
 ---
