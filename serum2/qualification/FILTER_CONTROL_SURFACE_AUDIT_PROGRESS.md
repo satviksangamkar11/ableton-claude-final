@@ -126,10 +126,53 @@ family or category-level inference.
 consistent); all 8 three-way morphs = MORPH (perfectly consistent). Unlike
 Normal category, Multi shows clean internal consistency by morph-arity.
 
-**Flanges (3 of 32):**
+**Flanges (32 of 32 = 100% COMPLETE):**
+
+*Comb sub-family (8):*
 6. Cmb + — DISABLED
-7. Flg + — DISABLED
-8. Phs 12+ — DISABLED
+7. Cmb - — DISABLED
+8. Cmb L6+ — LP FRQ
+9. Cmb L6- — LP FRQ
+10. Cmb H6+ — HP FRQ
+11. Cmb H6- — HP FRQ
+12. Cmb HL6+ — HL WID
+13. Cmb HL6- — HL WID
+
+*Flange sub-family (8, exact mirror of Comb pattern):*
+14. Flg + — DISABLED
+15. Flg - — DISABLED
+16. Flg L6+ — LP FRQ
+17. Flg L6- — LP FRQ
+18. Flg H6+ — HP FRQ
+19. Flg H6- — HP FRQ
+20. Flg HL6+ — HL WID
+21. Flg HL6- — HL WID
+
+*Phaser sub-family (16):*
+22. Phs 12+ — DISABLED
+23. Phs 12- — DISABLED
+24. Phs 24+ — DISABLED
+25. Phs 24- — DISABLED
+26. Phs 36+ — DISABLED
+27. Phs 36- — DISABLED
+28. Phs 48+ — DISABLED
+29. Phs 48- — DISABLED
+30. Phs 48L6+ — LP FRQ
+31. Phs 48L6- — LP FRQ
+32. Phs 48H6+ — HP FRQ
+33. Phs 48H6- — HP FRQ
+34. Phs 48HL6+ — HL WID
+35. Phs 48HL6- — HL WID
+36. FPhs 12HL6+ — HL WID
+37. FPhs 12HL6- — HL WID
+
+**Flanges category final pattern:** Comb and Flange sub-families share an
+IDENTICAL internal structure (±: DISABLED, L6±: LP FRQ, H6±: HP FRQ, HL6±:
+HL WID). Phaser sub-family extends this with plain-slope variants (12/24/
+36/48) all DISABLED, then the same L6/H6/HL6 pattern for the 48dB variant,
+plus FPhs (Formant Phaser) also = HL WID. Despite the perfect internal
+consistency WITHIN Flanges, this could not have been safely inferred from
+the Normal or Multi category findings.
 
 **Misc (4 of 25):**
 9. Low EQ 6 — DB+/-
