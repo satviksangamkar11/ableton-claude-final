@@ -147,43 +147,48 @@ No code/target name was promoted into a semantic control without independent UI 
 ## 10. Final Exact Counts
 
 ```
-ENV1 semantic controls:              9   (Attack, Hold, Decay, Sustain, Release,
-                                           BPM/MS, LegatoInverted,
-                                           VoiceStealRetriggerMode[From Zero variant],
-                                           Source)
-ENV2 semantic controls:              9   (same 9 identities, VoiceStealRetriggerMode
-                                           uses [From Start Level variant])
-ENV3 semantic controls:              9   (identical structure to ENV2)
-ENV4 semantic controls:              9   (identical structure to ENV2)
+ENV1 semantic controls (UI-verified):        9   (Attack, Hold, Decay, Sustain,
+                                                    Release, BPM/MS, LegatoInverted,
+                                                    VoiceStealRetriggerMode[From Zero],
+                                                    Source)
+ENV2 semantic controls (UI-verified):        9   (same 9 identities, VSR uses
+                                                    [From Start Level variant])
+ENV3 semantic controls (UI-verified):        9   (identical structure to ENV2)
+ENV4 semantic controls (UI-verified):        9   (identical structure to ENV2)
 
-Shared controls (identical across all 4):    8   (Attack, Hold, Decay, Sustain,
+Shared controls (identical across all 4):     8   (Attack, Hold, Decay, Sustain,
                                                     Release, BPM/MS, LegatoInverted,
                                                     Source)
-Env1-only controls:                          0   (no control EXCLUSIVE to Env1 —
-                                                    VoiceStealRetriggerMode exists on
-                                                    all 4, only its 2nd enum option
-                                                    label differs)
-Env2-4-only controls:                        0   (same reasoning)
-Conditional controls:                        0
-Display-only controls (shared, all 4):       3   (Grid, Auto-Zoom Switch, Zoom Slider)
-Structural/context actions:                  2   (BPM/MS toggle, LegatoInverted —
-                                                    both boolean-style structural
-                                                    controls; VoiceStealRetriggerMode
-                                                    is enum-structural, counted above)
+Env1-only controls:                           0   (VoiceStealRetriggerMode exists on
+                                                    all 4, only 2nd option label differs)
+Env2-4-only controls:                         0
+Conditional controls:                         0
+Display-only controls (shared, all 4):        3   (Grid, Auto-Zoom Switch, Zoom Slider)
+Structural/context actions:                   2   (BPM/MS toggle, LegatoInverted)
 
-TOTAL DISTINCT SEMANTIC CONTROLS (per envelope): 9
-TOTAL CONCRETE TARGETS (9 × 4 envelopes):        36
+TOTAL DISTINCT SEMANTIC CONTROLS (per envelope):  9
+TOTAL SEMANTIC CONTROL INSTANCES (9 × 4 envelopes): 36
+  ⚠️ NOTE: These are 36 semantic/UI instances, NOT 36 proven compiler targets
+     or runtime-controllable operations. Semantic discovery ≠ target coverage
+     ≠ operation coverage. Example: Hold is in the UI but missing from targets.py.
 
 Semantic target gaps (per envelope):   4   (Hold, BPM/MS, LegatoInverted,
                                              VoiceStealRetriggerMode)
-                                        × 4 envelopes = 16 total target gaps
-                                        (Source excluded — N/A, handled via Matrix scope)
-Operation gaps:                       36   (0/36 implemented, 0%)
+                                        = 16 total target gaps of 36 instances
+                                        (44% semantic↔target mismatch)
+Operation gaps:                        36   (0/36 operations implemented, 0%)
+Runtime proof gaps:                    36   (0/36 proven controllable via mutation)
+Persistence proof gaps:                36   (0/36 proven to persist via state)
 
-P0 = 0
-P1 = 0
-P2 = 1  (Env1-vs-Env2-4 residual technical field gap — non-blocking)
+P0 = 0 (semantic discovery complete)
+P1 = 0 (no blocking gaps)
+P2 = 1 (non-blocking: Env1-vs-Env2-4 residual technical field gap)
 ```
+
+**Closure Interpretation:**
+- **ENV SEMANTIC/UI DISCOVERY = COMPLETE** — 9 controls per envelope, all 4 instances verified
+- **ENV TARGET/OPERATION COVERAGE = INCOMPLETE** — separate reconciliation phase required post-freeze
+- Proof method: semantic controls are verified via UI; targets/operations/runtime/persistence are verified via code/experiment, not UI
 
 ---
 
