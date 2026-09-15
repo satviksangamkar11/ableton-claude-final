@@ -1,17 +1,18 @@
 {
   "meta": {
-    "inventory_version": "0.1.0-FILTER",
+    "inventory_version": "0.1.0-ENV",
     "created": "2026-09-14",
     "last_modified": "2026-09-15",
-    "sections_complete": ["MACRO", "OSC", "FILTER"],
+    "sections_complete": ["MACRO", "OSC", "FILTER", "ENV"],
     "section_status": {
       "MACRO": "CLOSED_STAR",
       "OSC": "CLOSED_STAR",
       "FILTER": "CLOSED_STAR",
-      "_legend": "CLOSED = 0 unresolved records. CLOSED_STAR = closed per the Section-Closure Method (2026-09-14): all P0/P1 resolved, exactly 1 non-blocking P2 residual deferred to DEFERRED_SEMANTIC_VALIDATION_QUEUE. FILTER closed with P2=0 (exceeds the <=1 requirement)."
+      "ENV": "CLOSED_STAR",
+      "_legend": "CLOSED = 0 unresolved records. CLOSED_STAR = closed per the Section-Closure Method (2026-09-14): all P0/P1 resolved, exactly 1 non-blocking P2 residual deferred to DEFERRED_SEMANTIC_VALIDATION_QUEUE. FILTER closed with P2=0 (exceeds the <=1 requirement). ENV closed with P2=1 (Env1-vs-Env2/3/4 residual technical field-count gap, non-blocking)."
     },
     "sections_pending": [
-      "ENV", "LFO", "MATRIX", "MIX", "FX", "ARP", "CLIP",
+      "LFO", "MATRIX", "MIX", "FX", "ARP", "CLIP",
       "KEYBOARD", "VOICE", "GLOBAL", "BROWSER", "CROSS-SYSTEM"
     ],
     "closure_method": {
@@ -308,6 +309,109 @@
           "The original premature 'FILTER CLOSED*' claim based only on Param44-55 technical-field validation (superseded by this full reconciliation)"
         ],
         "final_status": "CLOSED_STAR per Section-Closure Method: P0=0, P1=0, P2=0 (exceeds the <=1 requirement). All 107 individual filter types individually verified with zero shortcuts, zero category-level inference, zero approximations. 44 distinct semantic controls per filter instance identified with exact applicability lists. Target vocabulary (~20%) and operation implementation (0%) explicitly recognized as separate, independent, post-closure engineering metrics -- not semantic-discovery blockers."
+      }
+    },
+    "env_closure_ledger": {
+      "closure_pass_2026_09_15_exact_matrix_reconciliation": {
+        "date": "2026-09-15",
+        "method": "Official 'Serum 2 What's New' PDF (Priority 1) + direct Serum 2.0.21 UI verification of ALL 4 envelope instances individually (ENV1, ENV2, ENV3, ENV4 each independently right-clicked and inspected -- not a 2-instance spot-check). Superseded an initial spot-check-only pass after user correction identified the spot-check as insufficient. An unverified external claim (additional controls Curve/Velocity/Loop Mode/Env Amount, allegedly from a local 'Serum 2 User Guide.pdf' that does not exist on this machine per filesystem search) was directly tested against the live UI and refuted in full.",
+        "instance_universe_exact": {
+          "total_envelope_instances": 4,
+          "instances": ["Env1", "Env2", "Env3", "Env4"],
+          "architectural_note": "Env1 is hardwired to amplitude (SUS displayed in dB); Env2/3/4 are freely assignable via the mod-matrix (SUS displayed in %). This is a value-representation difference, not a control-surface difference -- all 4 instances expose the identical 9-control semantic surface."
+        },
+        "semantic_matrix_exact": {
+          "common_controls_all_4_envelopes": {
+            "count": 5,
+            "controls": ["Attack", "Hold", "Decay", "Sustain", "Release"],
+            "evidence": "Official PDF screenshot (ATK/HOLD/DEC/SUS/REL) + direct UI tooltip confirmation on Env1 ('Env 1 Hold (0.0 ms) / Hold time for selected Envelope.')"
+          },
+          "structural_controls_all_4_envelopes": {
+            "count": 4,
+            "controls": [
+              {
+                "semantic_id": "Env{N}.BPM",
+                "ui_label": "BPM MS toggle",
+                "tooltip_confirmed": "Env 1 BPM (Off) / Choose if the envelope parameters are in seconds or divisions/multiples of a beat.",
+                "type": "boolean toggle",
+                "behavior_confirmed": "Live-toggled during this session: switches ATK/HOLD/DEC/REL display+value from ms/s to beat-division fractions (e.g. 1/1024, 1/2, 1/128); SUS unaffected (level, not time)."
+              },
+              {
+                "semantic_id": "Env{N}.LegatoInverted",
+                "ui_label": "Legato Inverted",
+                "location": "right-click context menu on envelope graph, direct checkbox item",
+                "type": "boolean",
+                "pdf_match": "Exact match to PDF's 'Invert Legato: Force an envelope to always trigger at note on, even when legato is enabled'"
+              },
+              {
+                "semantic_id": "Env{N}.VoiceStealRetriggerMode",
+                "ui_label": "Voice Steal Retrigger",
+                "location": "right-click context menu on envelope graph, submenu",
+                "type": "enum, 2 options",
+                "option_a_all_instances": "From Stolen Voice Level",
+                "option_b_ENV1": "From Zero",
+                "option_b_ENV2_3_4": "From Start Level",
+                "critical_correction": "Initial pass (spot-check ENV1 vs ENV2 only) mis-recorded option B as uniformly 'From Start Level' for all 4 envelopes. Re-verification this pass, individually opening all 4 envelopes' context menus, found ENV1's actual option B is 'From Zero' -- a genuine ENV1-specific semantic variant, not a display artifact. Confirmed via 4/4 individual UI checks (ENV1='From Zero' checked default; ENV2, ENV3, ENV4 all ='From Start Level' checked default).",
+                "ownership_resolution": "ENV-scoped (not VOICE/PERFORMANCE/GLOBAL). Proof: state is demonstrably per-envelope-instance, not global -- a single global setting could not present different enum option sets depending on which envelope's menu is opened. Governs this envelope's own retrigger value, not voice-allocation policy broadly.",
+                "not_in_pdf": true,
+                "discovery_note": "NEW discovery this session -- not named in the official PDF's brief feature summary; found only via direct UI context-menu inspection."
+              },
+              {
+                "semantic_id": "Env{N}.Source",
+                "ui_label": "drag-handle circle icon next to envelope tab label",
+                "tooltip_confirmed": "Env 1 Source / drag this to other controls, to map Envelope 1 to a desired control.",
+                "classification": "MODULATION_SOURCE_ASSIGNMENT -- cross-referenced to MATRIX section, not given a duplicate semantic identity. Retained as one of the 9 per-envelope semantic controls because the drag-handle affordance itself is a genuine, distinct, ENV-panel UI element, even though the routing OUTCOME it produces belongs conceptually to Matrix (to be fully reconciled when MATRIX section is audited)."
+              }
+            ]
+          },
+          "total_distinct_semantic_controls_per_envelope": 9,
+          "total_concrete_targets": 36
+        },
+        "env1_vs_env2_4_asymmetry_resolution": {
+          "known_technical_discrepancy": "A_FILTERS_ENV_AUDIT.json recorded Env1=8 VST3 fields vs Env2/Env3/Env4=10 fields each",
+          "resolution": "PARTIALLY_RESOLVED_DISCOVERY_ARTIFACT (revised from prior pass's unqualified RESOLVED_DISCOVERY_ARTIFACT). A genuine ENV1-specific semantic variant WAS found this pass (VoiceStealRetriggerMode option B differs: 'From Zero' on Env1 vs 'From Start Level' on Env2/3/4) -- architecturally consistent with Env1 being hardwired to amplitude (silence=meaningful zero point) vs Env2-4 being freely routable (own starting value is the meaningful reference). This single differing enum label does not by itself require 2 extra VST3 fields (enum options are typically one field regardless of label text), so the residual field-count gap is classified as very likely non-user-facing internal routing/destination-plumbing state exclusive to freely-assignable envelopes -- carried forward as a single non-blocking P2 note, not zero residue.",
+          "does_not_indicate": "A missing user-facing control. The semantic layer (9 controls x 4 envelopes) is fully and identically accounted for across all 4 instances."
+        },
+        "display_only_controls_excluded_from_semantic_count": {
+          "count": 3,
+          "controls": [
+            {"name": "Grid", "options": "Time (default) / Beats", "tooltip_or_menu": "context menu submenu", "reason": "graph X-axis display unit only, confirmed via live menu re-inspection; does not affect modulation behavior"},
+            {"name": "Envelope Auto-Zoom Switch", "tooltip_confirmed": "Envelope Auto-Zoom Switch. Enables an autozooming mode, where the view width will always fit the envelope length (time scales automatically)", "reason": "view mode toggle only"},
+            {"name": "Envelope Zoom Slider", "reason": "view navigation (up-arrow/magnify/down-arrow compound control), confirmed present, no modulation effect"}
+          ]
+        },
+        "conditional_controls": 0,
+        "env1_only_controls": 0,
+        "env2_4_only_controls": 0,
+        "refuted_external_claims": {
+          "source": "Unverified external summary claiming a local 'Serum 2 User Guide.pdf' exists (confirmed absent via filesystem search of Downloads and Xfer Presets folders)",
+          "claims_tested_and_refuted": [
+            {"claim": "Curve (per-stage curve shape control)", "test": "Dragged midpoint of a visible Decay slope (Sustain lowered to -3.1dB to expose non-flat segment) vertically; also checked Decay knob right-click menu", "result": "NO curvature change from drag; knob menu shows only the 6 generic structural actions (Mod Source, Bypass Modulator, Remove Modulator(s), Reset Control, MIDI Learn, Lock Parameter). REFUTED -- no such control exists."},
+            {"claim": "Velocity (note-velocity-to-envelope sensitivity)", "test": "Checked all ENV1 knobs and context menus", "result": "Not found on ENV panel. Velocity is a separate Matrix modulation-source tab (VELO), not an ENV-owned parameter. REFUTED as an ENV-section control."},
+            {"claim": "Loop Mode", "test": "Checked ENV1 graph context menu (3 items) and all knob context menus (6 generic items)", "result": "Not found anywhere. REFUTED."},
+            {"claim": "Env Amount (Depth)", "test": "Checked all ENV1 controls for an amount/depth field", "result": "No ENV-panel UI presence at all (unlike Source, which has a physical drag-handle). Modulation depth is set per-destination inside Matrix. REFUTED as an ENV-panel control, not even added as a cross-reference."}
+          ],
+          "disposition": "All 4 claims tested directly against live UI and refuted. Retained as explicit negative evidence per project evidence-hierarchy discipline (direct UI inspection overrides an unverified external summary). Zero inventory changes resulted from these claims."
+        },
+        "target_gap_analysis": {
+          "targets_existing": ["Env{1-4}.Attack", "Env{1-4}.Decay", "Env{1-4}.Sustain", "Env{1-4}.Release"],
+          "target_gaps_per_envelope": ["Hold", "BPM (TimeMode)", "LegatoInverted", "VoiceStealRetriggerMode"],
+          "target_gaps_total": 16,
+          "source_target_status": "N/A -- Env{N}.Source is a UI-interaction mechanism reconciled under MATRIX section scope, not directly targetable here",
+          "operation_gaps_total": 36,
+          "operation_coverage_pct": 0
+        },
+        "p0": 0,
+        "p1": 0,
+        "p2": 1,
+        "p2_item": "Env1-vs-Env2/3/4 residual technical VST3 field-count gap (8 vs 10) -- semantic layer fully resolved (genuine ENV1-specific VoiceStealRetriggerMode option-label variant documented); residual gap classified as very likely non-user-facing internal routing/destination-plumbing state, non-blocking, carried forward for future CBOR-level engineering investigation.",
+        "closure_gate_satisfied": true,
+        "corrections_vs_prior_pass": [
+          "VoiceStealRetriggerMode option B corrected from uniform 'From Start Level' to ENV1='From Zero' / ENV2-4='From Start Level', found by individually re-checking all 4 envelope context menus rather than relying on a 2-instance spot-check",
+          "Env1-vs-Env2-4 asymmetry reclassified from RESOLVED_DISCOVERY_ARTIFACT to PARTIALLY_RESOLVED_DISCOVERY_ARTIFACT with an explicit P2 residual, reflecting the genuine variant found in point 1",
+          "Refuted an unverified external claim of 4 additional ENV controls (Curve, Velocity, Loop Mode, Env Amount) via direct live-UI testing"
+        ],
+        "final_status": "CLOSED_STAR per Section-Closure Method: P0=0, P1=0, P2=1 (within the <=1 requirement). All 4 envelope instances individually verified (not spot-checked). 9 distinct semantic controls per envelope instance (36 total across Env1-4) confirmed via official PDF + direct UI, including one NEW discovery (VoiceStealRetriggerMode) with a genuine ENV1-specific option-label variant. 3 display-only controls correctly excluded. An unverified external claim of 4 additional controls was tested and refuted in full. Target vocabulary (44%, 16 gaps of 36) and operation implementation (0%) explicitly recognized as separate, post-closure engineering metrics."
       }
     },
     "notes": "Official 354-page Xfer Serum 2 User Guide PDF referenced in prior project memory as located under the Xfer Serum 2 Presets folder; not located on disk in this session (search intentionally not broadened at user's direction). MACRO section below is built from: (a) existing project code/experiment evidence [tier 4/5], (b) two YouTube tutorial transcripts ingested into serum2/knowledge/, one of which explicitly frames itself as walking through the official manual ('I read the entire Serum 2 manual so you don't have to') [tier 6, SOURCE_REPORTED/SOURCE_OBSERVED]. No direct live-UI screenshot evidence [tier 2/3] was available this session. All UI-only claims lacking direct observation are marked UI_VALIDATION_REQUIRED in notes even when status is VERIFIED from secondary-source evidence. OSC section (2026-09-15): Final closure validation completed via comprehensive mode-by-mode UI sweep of all five oscillator modes across A/B/C oscillators. Param44-55 disposition (12 fields) classified as TECHNICAL_STRUCTURAL_FIELD based on zero UI controls found, generic placeholder naming, no documentation mention, and HOST_PARAM_ONLY controllability."
