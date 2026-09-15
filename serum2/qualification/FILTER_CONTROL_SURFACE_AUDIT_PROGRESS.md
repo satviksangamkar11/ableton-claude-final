@@ -6,6 +6,26 @@
 
 ---
 
+## ⚠️ SCOPE ESCALATION (Critical Update)
+
+Initial hypothesis was that slope variants (6/12/18/24 dB) within the same
+filter family would share an identical 4th-knob control. This has been
+**DISPROVEN**:
+
+- **Low 6** (Standard, non-Moog) → DISABLED
+- **High 6** (Standard, non-Moog) → DISABLED
+- **High 24** (Standard, non-Moog, SAME family as High 6) → **FAT**
+
+This means slope variants of the SAME named family do NOT reliably share
+control surfaces. Combined with the earlier MG Dirty vs. Ladder-family
+finding, this proves: **NO level of inference is safe** — category-level,
+family-level, and even slope-level groupings can all diverge. Every one of
+the 107 individual types requires direct, independent verification with
+no exceptions. This significantly increases the scope of Phase 2 versus
+the original estimate.
+
+---
+
 ## Critical Discovery: Control Surface Template
 
 Every filter type (across all 107) shares this fixed physical layout:
