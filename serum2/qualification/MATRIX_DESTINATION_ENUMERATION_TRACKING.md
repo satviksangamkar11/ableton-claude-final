@@ -42,15 +42,24 @@ Main Tuning, Amp, Porta Time, Swing, Transpose, Envelope Scaling, LFO Scaling
 
 ## PENDING CATEGORIES (14 REMAINING)
 
-### OSC B — ? PARAMETERS ⏳
-Expected: ~38 (parity verification required, NOT assumed)  
-Ownership: OSC section (existing)  
-Status: Requires enumeration
+### OSC B — 23 PARAMETERS ✅
+Level, Pan, Octave, Semi, Fine, Coarse Pitch, Ratio, Hz Offset, Uni Detune, Uni Blend, Uni Width, Uni Range, Uni Rotate, Uni Warp, Uni Warp 2, Warp, Warp Var, Warp 2, Warp 2 Var, WT Pos, Uni WT Pos, Phase, Rand Phase
 
-### OSC C — ? PARAMETERS ⏳
-Expected: ~38 (parity verification required, NOT assumed)  
+**CRITICAL FINDING:** OSC B ≠ OSC A in parameter set (NOT parity, different feature set)
+- OSC A (38): Sampling/granular focus (Start, End, Reverse, Scan Rate, Position, Loop params, Spectral params)
+- OSC B (23): Wavetable/synthesis focus (WT Pos, Phase, Rand Phase; NO sampling features)
+- **IMPLICATION:** Each OSC (A, B, C) likely has unique feature sets due to different synthesis engines
+
 Ownership: OSC section (existing)  
-Status: Requires enumeration
+Status: VERIFIED - No parity assumption; each OSC requires independent enumeration
+
+### OSC C — 23 PARAMETERS ✅
+Level, Pan, Octave, Semi, Fine, Coarse Pitch, Ratio, Hz Offset, Uni Detune, Uni Blend, Uni Width, Uni Range, Uni Rotate, Uni Warp, Uni Warp 2, Warp, Warp Var, Warp 2, Warp 2 Var, WT Pos, Uni WT Pos, Phase, Rand Phase
+
+**CRITICAL FINDING:** OSC C ≡ OSC B (IDENTICAL wavetable feature set; NOT parity with OSC A)
+
+Ownership: OSC section (existing)  
+Status: VERIFIED - OSC B and OSC C are identical wavetable oscillators
 
 ### Noise OSC — ? PARAMETERS ⏳
 Ownership: OSC section (existing)  
@@ -163,8 +172,8 @@ Explicit P0/P1 Items:
 | Category | Count | Verified | Ownership | New Control? |
 |----------|-------|----------|-----------|--------------|
 | OSC A | 38 | ✅ | OSC | No |
-| OSC B | ? | ⏳ | OSC | No |
-| OSC C | ? | ⏳ | OSC | No |
+| OSC B | 23 | ✅ | OSC | No |
+| OSC C | 23 | ✅ | OSC | No |
 | Noise OSC | ? | ⏳ | OSC | No |
 | SUB OSC | ? | ⏳ | OSC | No |
 | Filter 1 | 7 | ✅ | FILTER | No |
@@ -178,8 +187,8 @@ Explicit P0/P1 Items:
 | Retriggers | ? | ⏳ | GLOBAL/VOICE | Yes |
 | Global | 7 | ✅ | GLOBAL | Yes |
 
-**Verified Total:** 69 parameters (38+7+7+8+7)  
-**Remaining:** 10 categories (exact counts unknown)
+**Verified Total:** 92 parameters (38+23+23+7+7+8+7)  
+**Remaining:** 7 categories (Noise OSC, SUB OSC, Macros, LFO Busses, Routing Matrix, Clip Player, Arpeggiator, Retriggers, Global - exact counts unknown)
 
 ---
 
