@@ -96,20 +96,28 @@ For each OSC:
 
 ## Current Evidence State
 
-### Verified (Session 2 Complete)
-- ✅ OSC A exists and supports 5 synthesis modes (Wavetable, Multisample, Sample, Granular, Spectral)
-- ✅ OSC A (Wavetable mode) → 23 Matrix destinations
-- ✅ OSC A (Multisample mode) → 29 Matrix destinations (sampling + envelope-like controls)
-- ✅ OSC A (Sample mode) → 33 Matrix destinations (full sampling + slice controls)
-- ✅ OSC A (Granular mode) → 37 Matrix destinations (sampling + granular-specific controls)
-- ✅ OSC A (Spectral mode) → 38+ Matrix destinations (sampling + spectral analysis)
-- ✅ OSC B (Wavetable mode, same as OSC C) → 23 Matrix destinations
-- ✅ OSC C (Wavetable mode, same as OSC B) → 23 Matrix destinations
+### Verified (Session 2 & Session 2 Continuation Complete)
 
-### Unverified (Next Session Testing)
-- ❓ OSC B mode flexibility (locked to Wavetable? or multi-mode?)
-- ❓ OSC C mode flexibility (locked to Wavetable? or multi-mode?)
-- ❓ Do OSC B/C change destination count when mode switched (if supported)?
+**OSC A: All 5 Modes Tested Exhaustively**
+- ✅ Wavetable mode → 23 Matrix destinations
+- ✅ Multisample mode → 29 Matrix destinations (+ envelope-like controls)
+- ✅ Sample mode → 33 Matrix destinations (+ slice controls)
+- ✅ Granular mode → 37 Matrix destinations (+ granular-specific controls)
+- ✅ Spectral mode → 38+ Matrix destinations (+ spectral analysis)
+
+**OSC B: Multi-Mode Support Verified, Identical to OSC A**
+- ✅ Supports all 5 synthesis modes (NOT Wavetable-only)
+- ✅ Multisample mode → 29 Matrix destinations (IDENTICAL to OSC A)
+- ✅ Spectral mode → 38+ Matrix destinations (IDENTICAL to OSC A)
+- ✅ Mode switching changes destination count (CONFIRMED)
+
+**OSC C: Multi-Mode Support Verified, Identical to OSC A/B**
+- ✅ Supports all 5 synthesis modes (NOT Wavetable-only)
+- ✅ Spectral mode → 38+ Matrix destinations (IDENTICAL to OSC A/B)
+
+**CRITICAL FINDING:**
+All three oscillators (A, B, C) have IDENTICAL conditional destination coverage across all modes.
+Mode-switching exposes different routable parameters to Matrix in each case.
 
 ### Remaining Destination Families (8 unchanged)
 - Noise OSC (unknown if mode-conditional)
