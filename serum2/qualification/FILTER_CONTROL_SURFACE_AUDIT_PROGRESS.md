@@ -51,24 +51,44 @@ This is NOT a fixed "FAT" knob as initially assumed from Normal-category evidenc
 
 ## Verified vs. Remaining (107 types total)
 
-### Directly Verified (11 of 107 = 10.3%)
-1. MG Low 6 — FAT (Normal)
-2. MG Low 12 — FAT (Normal)
-3. LH 6 — FREQ (Multi, 2-way)
-4. BP 12 — FREQ (Multi, 2-way)
-5. L/B/H 12 — MORPH (Multi, 3-way)
-6. Cmb + — DISABLED (Flanges, Comb)
-7. Flg + — DISABLED (Flanges, Flange)
-8. Phs 12+ — DISABLED (Flanges, Phaser)
-9. Low EQ 6 — DB+/- (Misc, EQ)
-10. Ring Mod — DISABLED (Misc, RingMod) [distinct graph type: waveform, not filter curve]
-11. Ring Modx2 — SPREAD (Misc, RingMod2)
-12. SampHold — DISABLED (Misc, S&H)
-13. MG Ladder — SMOOTH (S2 Filters, Ladder)
+### Directly Verified (23 of 107 = 21.5%)
 
-(13 verified, correcting count above)
+**Normal (2 of 18):**
+1. MG Low 6 — FAT
+2. MG Low 12 — FAT
 
-### Remaining to verify (94 of 107 = 87.9%)
+**Multi (3 of 21):**
+3. LH 6 — FREQ (2-way)
+4. BP 12 — FREQ (2-way)
+5. L/B/H 12 — MORPH (3-way)
+
+**Flanges (3 of 32):**
+6. Cmb + — DISABLED
+7. Flg + — DISABLED
+8. Phs 12+ — DISABLED
+
+**Misc (4 of 25):**
+9. Low EQ 6 — DB+/-
+10. Ring Mod — DISABLED [distinct graph type: waveform, not filter curve]
+11. Ring Modx2 — SPREAD [differs from Ring Mod despite same family]
+12. SampHold — DISABLED
+
+**S2 Filters (11 of 11 = 100% COMPLETE):**
+13. Wsp — MORPH
+14. DJ Mixer — DISABLED
+15. Diffusor — STAGES
+16. MG Ladder — SMOOTH
+17. Acid Ladder — SMOOTH
+18. EMS Ladder — SMOOTH
+19. MG Dirty — PAIN [breaks the "MG"-family SMOOTH pattern]
+20. PZ SVF — SMOOTH
+21. Comb 2 — FRQ2
+22. Exp MM — MIX [duplicate label vs. main Mix knob — needs CBOR disambiguation]
+23. Exp BPF — DISABLED [confirmed as absolute last type via wraparound to MG Low 6]
+
+**S2 Filters family sub-pattern discovered:** Ladder-named types (MG Ladder, Acid Ladder, EMS Ladder, PZ SVF) all share SMOOTH, but MG Dirty (also Moog-related) breaks this with PAIN — confirming NO naming-based inference is safe without verification.
+
+### Remaining to verify (84 of 107 = 78.5%)
 
 **Normal (16 remaining):** MG Low 18/24, Low 6/12/18/24, High 6/12/18/24, Band 12/24, Peak 12/24, Notch 12/24
 - Hypothesis: FAT (same family as MG Low, all single-mode standard filters)
@@ -86,9 +106,7 @@ This is NOT a fixed "FAT" knob as initially assumed from Normal-category evidenc
 - Hypothesis: UNRELIABLE — Misc has proven to be the most heterogeneous category (EQ→DB+/-, RingMod→DISABLED, RingModx2→SPREAD, SampHold→DISABLED all within "similar-sounding" families)
 - Risk: HIGH — every remaining Misc type needs individual verification; no safe inference
 
-**S2 Filters (9 remaining):** Wsp, DJ Mixer, Diffusor, Acid Ladder, EMS Ladder, MG Dirty, PZ SVF, Comb 2, Exp MM, Exp BPF
-- Hypothesis: Ladder-family (Acid Ladder, EMS Ladder, MG Dirty) may share SMOOTH with MG Ladder; others (Wsp, DJ Mixer, Diffusor, PZ SVF, Comb 2, Exp MM, Exp BPF) are structurally distinct and need individual checks
-- Risk: HIGH — this is a small category (11 total) where full verification is feasible and required
+**S2 Filters: ✅ 100% COMPLETE (0 remaining)** — all 11 types individually verified. Final result: MORPH(1), DISABLED(2), STAGES(1), SMOOTH(4), PAIN(1), FRQ2(1), MIX-duplicate(1).
 
 ---
 
