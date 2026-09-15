@@ -13,9 +13,10 @@
       "_legend": "CLOSED = 0 unresolved records. CLOSED_STAR = closed per the Section-Closure Method (2026-09-14): all P0/P1 resolved, AT MOST 1 non-blocking P2 residual deferred to DEFERRED_SEMANTIC_VALIDATION_QUEUE. CLOSED* (strict, no deferrals) = P0=0, P1=0, P2=0. FILTER closed* with P2=0 (exceeds the <=1 requirement). ENV closed_star with P2=1 (Env1-vs-Env2/3/4 residual technical field-count gap, non-blocking). LFO closed* with P2=0 (all semantic gaps resolved via targeted direct testing: trigger mode control confirmed as 1 mutually exclusive enum, LFO 7-10 confirmed as headless sources with 0 parameters each)."
     },
     "sections_pending": [
-      "MATRIX", "MIX", "FX", "ARP", "CLIP",
+      "MIX", "FX", "ARP", "CLIP",
       "KEYBOARD", "VOICE", "GLOBAL", "BROWSER", "CROSS-SYSTEM"
     ],
+    "section_in_progress": "MATRIX",
     "closure_method": {
       "name": "Section-Closure Method (adopted 2026-09-14, supersedes the earlier hard 0-unverified-candidate gate)",
       "rule": "For every section: discover, reconcile against authoritative sources, resolve all P0 (blocking) and cheap P1 gaps, run the section completeness checklist, then close. A section may close with AT MOST 1 non-blocking P2 residual, deferred to DEFERRED_SEMANTIC_VALIDATION_QUEUE rather than chased to forced closure. Never defer an item that could change: (1) semantic control count, (2) mode/type universe, (3) control ownership, (4) conditional UI, (5) structural topology, (6) cross-system relationship, (7) resource workflow, or (8) another section's inventory -- those are always P0.",
