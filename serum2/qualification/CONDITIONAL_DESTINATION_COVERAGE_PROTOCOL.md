@@ -57,14 +57,30 @@ Note: Not all modes may be supported (e.g., OSC B/C may be locked to Wavetable)
 
 **Step 3: Build Conditional Destination Table**
 ```
-OSC A
-├── Wavetable → 23 params [exact list]
-├── Multisample → ? params [exact list]
-├── Sample → ? params [exact list]
-├── Granular → ? params [exact list]
-└── Spectral → 38+ params [exact list]
+OSC A (VERIFIED)
+├── Wavetable → 23 params ✅
+│   Level, Pan, Octave, Semi, Fine, Coarse Pitch, Ratio, Hz Offset,
+│   Uni Detune, Uni Blend, Uni Width, Uni Range, Uni Rotate, Uni Warp, Uni Warp 2,
+│   Warp, Warp Var, Warp 2, Warp 2 Var, WT Pos, Uni WT Pos, Phase, Rand Phase
+│
+├── Multisample → 29 params ✅
+│   + Envelope-like: Attack, Hold, Decay, Sustain, Release, Vel Track
+│   + Sampling: Start, Timbre, Rand Phase, Delay
+│
+├── Sample → 33 params ✅
+│   + Full Sampling: Start, End, Reverse, Scan Rate, Scan BPM Rate
+│   + Loop Controls: Loop Start, Loop End, Loop X-Fade, Loop Mode, Relative Loop
+│   + Slice Controls: Slice Play Mode, Single Slice
+│
+├── Granular → 37 params ✅
+│   + Granular-Specific: Density, Grain Length, Grain Reverse, Window Amt, Window Skew
+│   + Sampling + Loop Controls (as in Sample mode)
+│
+└── Spectral → 38+ params ✅
+    + Spectral Analysis: Spec Fit Cutoff, Spec Fit Wet/Dry, Freq Lo, Freq Hi
+    + Sampling + all other features
 
-(repeat for OSC B, OSC C)
+(pending: OSC B, OSC C mode testing)
 ```
 
 **Step 4: Cross-Compare**
@@ -80,17 +96,17 @@ For each OSC:
 
 ## Current Evidence State
 
-### Verified
+### Verified (Session 2 Complete)
 - ✅ OSC A exists and supports 5 synthesis modes (Wavetable, Multisample, Sample, Granular, Spectral)
 - ✅ OSC A (Wavetable mode) → 23 Matrix destinations
-- ✅ OSC A (Spectral mode) → 38+ Matrix destinations (includes sampling + spectral features)
+- ✅ OSC A (Multisample mode) → 29 Matrix destinations (sampling + envelope-like controls)
+- ✅ OSC A (Sample mode) → 33 Matrix destinations (full sampling + slice controls)
+- ✅ OSC A (Granular mode) → 37 Matrix destinations (sampling + granular-specific controls)
+- ✅ OSC A (Spectral mode) → 38+ Matrix destinations (sampling + spectral analysis)
 - ✅ OSC B (Wavetable mode, same as OSC C) → 23 Matrix destinations
 - ✅ OSC C (Wavetable mode, same as OSC B) → 23 Matrix destinations
 
 ### Unverified (Next Session Testing)
-- ❓ OSC A (Multisample mode) → ? destinations
-- ❓ OSC A (Sample mode) → ? destinations
-- ❓ OSC A (Granular mode) → ? destinations
 - ❓ OSC B mode flexibility (locked to Wavetable? or multi-mode?)
 - ❓ OSC C mode flexibility (locked to Wavetable? or multi-mode?)
 - ❓ Do OSC B/C change destination count when mode switched (if supported)?
