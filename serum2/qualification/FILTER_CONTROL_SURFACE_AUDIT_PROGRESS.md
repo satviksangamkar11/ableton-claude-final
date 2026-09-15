@@ -99,10 +99,32 @@ Peak, Notch (all slopes)=FAT. This confirms per-type verification was
 necessary — the High-family 6dB exception would have been missed by any
 family or category-level inference.
 
-**Multi (3 of 21):**
-3. LH 6 — FREQ (2-way)
-4. BP 12 — FREQ (2-way)
-5. L/B/H 12 — MORPH (3-way)
+**Multi (21 of 21 = 100% COMPLETE):**
+3. LH 6 — FREQ
+4. LH 12 — FREQ
+5. LB 12 — FREQ
+6. LP 12 — FREQ
+7. LN 12 — FREQ
+8. HB 12 — FREQ
+9. HP 12 — FREQ
+10. HN 12 — FREQ
+11. BP 12 — FREQ
+12. BN 12 — FREQ
+13. PP 12 — FREQ
+14. PN 12 — FREQ
+15. NN 12 — FREQ
+16. L/B/H 12 — MORPH
+17. L/B/H 24 — MORPH
+18. L/P/H 12 — MORPH
+19. L/P/H 24 — MORPH
+20. L/N/H 12 — MORPH
+21. L/N/H 24 — MORPH
+22. B/P/N 12 — MORPH
+23. B/P/N 24 — MORPH
+
+**Multi category final pattern:** All 13 two-way morphs = FREQ (perfectly
+consistent); all 8 three-way morphs = MORPH (perfectly consistent). Unlike
+Normal category, Multi shows clean internal consistency by morph-arity.
 
 **Flanges (3 of 32):**
 6. Cmb + — DISABLED
