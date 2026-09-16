@@ -1,6 +1,6 @@
 {
   "meta": {
-    "inventory_version": "0.9.0-VOICE-CLOSED",
+    "inventory_version": "1.0.0-GLOBAL-CLOSED",
     "created": "2026-09-14",
     "last_modified": "2026-09-16",
     "sections_complete": [
@@ -15,7 +15,8 @@
       "ARP",
       "CLIP",
       "GLOBAL_KEYBOARD",
-      "VOICE"
+      "VOICE",
+      "GLOBAL"
     ],
     "section_status": {
       "MACRO": "CLOSED_STAR",
@@ -30,7 +31,8 @@
       "ARP": "CLOSED_STAR (2026-09-17): All 6 panes covered -- GLOBAL (Bank resource system w/ 3 factory banks confirmed as full 12-slot presets, Launch Quant, EDIT ALL confirmed via clean A/B propagation test), PATTERN (Shape=20 options incl. special Pattern mode unlocking a full custom Pattern Editor sub-system [piano-roll step grid, Mode=9 options, Step Mode=4, Wrap=3, Pitch/Range=Wrap Transpose/Wrap Range both confirmed mutable, Time conditionally gated by Mode=One Shot, Velocity/Vel Rand lanes, plus a major '+' menu discovery: per-step automation lanes for all 8 Macros + MIDI Pitch Bend/Mod Wheel + Note Attributes + Expression], Rate/BPM-Hz/Trip/Dot all confirmed), TRANSPOSE (Shape=18 options, Shift/Range both modulatable with negative values confirmed), PLAYBACK (Offset/Repeats[finite-to-inf]/Gate/Chance[with Pre sub-option fully resolved]/Latch/Thru all confirmed with rich tooltips), RETRIGGER (Launch/Rate/Note all confirmed; First conditional gating by Note directly proven via before/after interactivity test), VELOCITY (Enable/Retrig/Decay/Target all confirmed, Decay+Target modulatable via Matrix). 12 SLOTS: play-button launch+select behavior confirmed via before/after, right-click Copy/Paste/Erase Pattern structural menu confirmed, slot count=12 confirmed, MIDI-keyboard-triggered launch existence confirmed via official docs (live behavioral confirmation blocked by lack of physical MIDI input hardware in this session -- scoped evidence boundary, consistent with MATRIX Dynamic Visualization precedent). OSC MAPPING: major discovery of a full Note Range Editor with SUB/OSC A/B/C/NOISE/ARP rows, each with independent Fold/Warp toggles (both confirmed) and a draggable key-range bar (resolved after discovering the correct double-click-then-drag gesture) across two independent KEY and VEL(ocity) tabs, plus Reset All confirmed functional. MIDI OUT: 3 options (Off/Clip Player/On) all confirmed, Clip Player revealing a direct cross-reference to Ableton's Clip Player context. LOWER KEYBOARD cross-system controls correctly NOT duplicated as ARP-owned -- reassigned to GLOBAL_KEYBOARD section: Transpose (global MIDI semitone offset, distinct from ARP.TRANSPOSE.SHIFT), Key (13 options), Scale (~75 options, CONFIRMED conditionally gated by Key != '--'), Swing (explicit official tooltip naming both Clips and Arp editors), Porta/Curve/Always-Scaled (deferred to future VOICE/KEYBOARD section pass, correctly out of ARP's ownership scope). 55 ARP-owned records: 53 VERIFIED, 2 PROVEN_NOT_USER_CONTROL (Pattern Editor Accent/Strum rows -- negative based on click+hover only; right-click could not be tested due to an environment tier restriction encountered mid-session, flagged for retest), 0 UNVERIFIED_CANDIDATE. ARP CLOSURE GATE: PASSED. | OWNERSHIP CORRECTION 2026-09-17 (KEYBOARD/PERFORMANCE pass): the OSC MAPPING editor (6 records: EDITOR, ARP_ROW_FOLD, ARP_ROW_WARP, ARP_ROW_KEY_RANGE, VEL_TAB, RESET_ALL) was re-tested and directly confirmed to launch from the shared Keyboard/Performance bar independent of ARP/CLIP tab selection -- re-homed from section=ARP to section=GLOBAL_KEYBOARD (semantic_id prefix ARP.OSC_MAPPING.* -> KEYBOARD.OSC_MAPPING.*, evidence content unchanged, ARP-row content cross-referenced back to ARP). Corrected ARP-owned record count: 49 (47 VERIFIED, 2 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE). ARP's substantive findings are unchanged; this is an ownership/section correction only, made under the project's 'new direct evidence contradicts the canonical JSON' exception -- ARP CLOSURE GATE remains PASSED.",
       "CLIP": "CLOSED_STAR (2026-09-17): Full CLIP piano-roll clip-player system discovered, structurally parallel to ARP but with genuine live-recording and general MIDI editing capabilities ARP lacks. GLOBAL: Bank resource system (richer nested category structure than ARP -- Chords>[Duda Chords/Neo Chords/One Bar Cluster Chords], Drums>, Guitar>, Duda EPiano Noodles, Init), Trigger Mode (Mono/Poly simultaneous-clip-triggering, no ARP equivalent), Edit All (consistent with ARP's confirmed mechanism), Show Macros (confirmed reveals 8 inline Macro knobs). CLIP SETTINGS: Clip selector, Length, KB Span (4 options: Off/Mono/Poly/Offset -- CLIP-exclusive, governs keyboard-to-pitch remapping, Poly confirmed to add a slot badge), Trans, Mode (9 options, IDENTICAL vocabulary to ARP's Pattern Editor Mode), Time (confirmed conditionally activated by Mode=Static, broader gate than ARP's One-Shot-only), Rate+BPM/Hz+Trip+Dot (consistent pattern), Launch Quant (structurally relocated to per-clip CLIP_SETTINGS vs ARP's GLOBAL-level equivalent -- reconciliation note for CROSS-SYSTEM pass), Retrig/Velo Trig/Note Gate (all 3 confirmed with full tooltip semantics). RECORD (CLIP-EXCLUSIVE, no ARP equivalent): Record button (live MIDI recording into a clip), Overdub/Extend record-mode toggle, Metronome toggle. EDITOR: full general-purpose piano-roll MIDI note grid (confirmed directly draggable for pitch, richer than ARP's scale-degree-block Pattern Editor), Velocity lane, Hear Selected Notes audition button (CLIP-exclusive). 12 SLOTS: play/launch/select behavior consistent with ARP; right-click context menu CONFIRMED RICHER than ARP's (5 items: Rename Clip/Copy Clip/Paste Clip/Erase Clip/Set as Preview Clip, vs ARP's 3: Copy/Paste/Erase Pattern). MIDI OUT: identical 3 options to ARP (Off/Clip Player/On), directly reconfirmed. 28 CLIP records: 28 VERIFIED, 0 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE. CLIP CLOSURE GATE: PASSED. CROSS-SYSTEM NOTE for future CROSS-SYSTEM RECONCILIATION pass: CLIP and ARP share the exact same 9-option Mode vocabulary and near-identical Rate/BPM-Hz/Trip/Dot/Retrig-family controls -- likely a shared underlying 'sequencer slot' architecture; Launch Quant's differing scope (per-clip in CLIP vs global in ARP) should be explicitly reconciled; SHOW_MACROS and Pattern Editor's Macro-lane feature both cross-reference MACRO.1-8 and should be checked for redundancy/consistency.",
       "GLOBAL_KEYBOARD": "CLOSED_STAR (2026-09-17): Complete KEYBOARD/PERFORMANCE section enumeration finished. 22 KEYBOARD-section records discovered total (15 new this pass + 7 pre-existing + 6 re-homed from ARP). CORE KEYBOARD CONTROLS: TRANSPOSE (global MIDI offset, distinct from ARP.TRANSPOSE.SHIFT), KEY (13 options -- null + 12 semitones), SCALE (~75 options, conditionally gated by Key != '--'), SWING (cross-system Clips+Arp control per tooltip), PORTA_TIME (portamento glide, 0.0ms default), PORTA_CURVE (bipolar portamento curvature: negative=accelerate, 0=linear, positive=decelerate), ALWAYS/SCALED checkboxes (independent toggles, NOT radio, effect on portamento unobserved due to audio-processing-disabled session environment). PERFORMANCE SOURCES: PITCH_BEND (spring-loaded wheel, 0.00 default, auto-returns to center on release), PITCH_BEND.BEND_UP (semitone range, 2 default), PITCH_BEND.BEND_DOWN (semitone range, -2 default), MOD_WHEEL (sticky wheel, 0% default, persists value until reset), MOD_WHEEL.SOURCE_INDICATOR (quick-nav badge UI showing active Matrix destinations; left-click highlight-toggle mechanics confirmed, semantic meaning/integration with Matrix panel unconfirmed this pass). OSC_MAPPING: Full Note Range Editor with 6 rows (SUB/OSC A/B/C/NOISE/ARP), KEY and VEL tabs, Fold/Warp toggles per row (both VERIFIED), double-click-then-drag key-range bars (VERIFIED after discovering correct gesture), Reset All button (VERIFIED functional). OSC MAPPING OWNERSHIP CORRECTION: 6 re-homed records (EDITOR, ARP_ROW_FOLD/WARP/KEY_RANGE, VEL_TAB, RESET_ALL) moved from ARP to GLOBAL_KEYBOARD section after direct confirmation that editor launches from Keyboard/Performance bar independent of ARP/CLIP tab, consistent with official documentation naming OSC Mapping as a Keyboard/Performance control. MAIN_KEYBOARD: Full-width piano-roll playable surface (click-to-play NOT behaviorally tested due to audio-processing-disabled; surface existence VERIFIED). MPE SETTINGS (in Serum main MENU, not Keyboard bar itself): MPE Enabled (checked by default), MPE:XYZ->Macro1,2,3 (action, menu state unclicked to avoid MATRIX mutation), MPE:YZ->Macro1,2 (action, same), MPE:Y->ModWheel (action, same), MPE Bend Range (48 semitones, unclicked). STRUCTURAL ACTIONS & CONTEXT MENUS: Rich right-click menus VERIFIED for TRANSPOSE/SWING/KEY (all include Mod Source submenu, Lock Parameter, Link Parameter, Link All Parameters mechanisms), PORTA_TIME (Mod Source, NO Link Parameter), PORTA_CURVE (NO Mod Source, NO Link Parameter, minimal menu: Reset/MIDI Learn/Lock only), MOD_WHEEL/PITCH_BEND (minimal menus: Reset Control / MIDI Learn only, no modulation/lock options reflecting their transient live-input nature). KEY's unique context menu (Swap Key/Mode to Major/Minor, Start Learning [MIDI-input scale-detection, unobserved], Lock Key & Scale pair-specific toggle) VERIFIED. CONDITIONAL UI: SCALE dropdown blocked when Key='--', confirmed via both left-click and right-click gates. 22 GLOBAL_KEYBOARD records: 19 VERIFIED, 0 PROVEN_NOT_USER_CONTROL, 3 UNVERIFIED_CANDIDATE (MPE:XYZ->Macro1,2,3, MPE:YZ->Macro1,2, MPE:Y->ModWheel all left unclicked due to ambiguity between two competing hypotheses -- persistent radio-selection vs one-shot Matrix-route-creating quick-action; flagged for dedicated retest with MATRIX panel open to disambiguate). GATES TO CLOSURE: (1) all 7 pre-existing KEYBOARD records VERIFIED, (2) all 15 new KEYBOARD records status resolved (19 VERIFIED + 3 UNVERIFIED_CANDIDATE), (3) 6 ARP-to-KEYBOARD re-homing completed with ownership evidence, (4) cross-system reconciliation: OSC_MAPPING's ARP row cross-referenced back to ARP section; TRANSPOSE/KEY/SCALE/SWING/PORTA/CURVE/ALWAYS_SCALED confirmed as Keyboard-bar-owned, not ARP-owned; MPE mapping to MATRIX.SOURCE domain confirmed; Pitch Bend/Mod Wheel confirmed as live-input Performance Sources and MATRIX.SOURCE domain members. DEFERRED TO FUTURE VOICE/KEYBOARD PASS: PORTA_TIME/PORTA_CURVE/ALWAYS_SCALED control-semantics (exact effect on portamento behavior when ALWAYS vs SCALED are toggled; unobserved due to audio-processing-disabled). MOD_WHEEL.SOURCE_INDICATOR's meaning/Matrix-panel-integration (left-click highlight-toggle behavior observed, semantic purpose unconfirmed; flagged for retest with Matrix panel open). Three MPE menu items' function (radio vs quick-action mode; flagged for retest with MATRIX panel open to observe any route-table mutation on click). GLOBAL_KEYBOARD CLOSURE GATE: PASSED (all P0/P1 gaps resolved; 3 narrow P2 deferrals flagged and scoped, no major semantic gaps remain). OWNERSHIP CORRECTION 2026-09-16 (VOICE gap-analysis pass): 3 records (PORTA_TIME, PORTA_CURVE, ALWAYS_SCALED) re-homed from GLOBAL_KEYBOARD to VOICE/VOICING after direct live-UI confirmation that they physically reside inside Serum's labeled 'VOICING' panel, not the Keyboard/Performance bar (the two are visually distinct, divider-separated regions; this was not previously distinguished because both sit at the bottom of the window). ALWAYS_SCALED was additionally split into two independent records (PORTA_ALWAYS, PORTA_SCALED) upon direct proof via right-click context-menu headers that they are two separately-named engine controls, not one compound toggle-pair. GLOBAL_KEYBOARD now holds 21 records (previously 24 in the raw data / 22 per this section's own closure count, a pre-existing discrepancy left for FINAL RECONCILIATION to resolve). No GLOBAL_KEYBOARD evidence was deleted; the three re-homed records retain their full original evidence chains under their new VOICE.VOICING.* semantic_ids.",
-      "VOICE": "CLOSED_STAR (2026-09-16): VOICE section (Serum's 'VOICING' panel, bottom-right of the main window) gap-analysis and reconciliation pass complete. 8 VOICE-scoped records total: 7 VERIFIED, 1 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE, P0=0, P1=0, P2=0. METHOD: gap-analysis against official Xfer 'What's New in Serum 2' PDF (page 4 UI-overview diagram, the only official source available this session) plus the existing canonical inventory, per gap_analysis_methodology.md; direct UI validation performed only for gaps/conflicts/ownership questions, not a full rediscovery. OWNERSHIP RESOLUTION (Conflicts A/B/C from gap_analysis_methodology.md): PORTA_TIME, PORTA_CURVE, ALWAYS and SCALED were previously recorded under GLOBAL_KEYBOARD; direct live-UI observation proved all four are physically located inside the single labeled 'VOICING' panel (confirmed via verbatim-identical hover tooltips and right-click context-menu headers matching the pre-existing KEYBOARD/PERFORMANCE-pass evidence exactly), a visually distinct, divider-separated region from the Keyboard/Performance bar -- there is exactly ONE physical instance of each control, so this was a RE-HOME (ownership correction), not a two-surface merge. ALWAYS/SCALED were further SPLIT into VOICE.VOICING.PORTA_ALWAYS and VOICE.VOICING.PORTA_SCALED after right-click menus proved their exact distinct internal names ('Porta Always', 'Porta Scaled'). No prior evidence was deleted or overwritten; all three original records were re-homed in place (semantic_id/section/module changed, original sources/notes preserved and extended). NEW DISCOVERIES: MONO (checkbox, disables POLY when on, changes voice-count display denominator to 1, no tooltip, no context menu), POLY/'Poly Count' (stepper, default 8, scroll-mutable only -- click on rendered arrows non-responsive, no context menu, disabled under MONO), LEGATO (checkbox, minimal context menu 'Legato'/Reset Control/MIDI Learn, independent of MONO state, cross-referenced but NOT merged with the distinct ENV-section 'Invert Legato' feature), and the read-only '0/N' voice-count display (PROVEN_NOT_USER_CONTROL, denominator mirrors POLY/MONO, not independently interactive). CONDITIONAL-STATE TRAVERSAL performed and documented: MONO off/on, LEGATO off/on under both MONO states, ALWAYS/SCALED off/on/both-on -- all transitions restored to baseline and re-verified via zoom; no additional hidden or conditionally-appearing controls were found beyond the disable/grey effect of MONO on POLY. UNRESOLVED PRIOR CLAIM: a pre-existing project memory (voice_section_boundary.md) asserted a 'Limit Same Note Poly to 1' item and a 'Voice Steal Priority' submenu (Newest/Oldest/Highest/Lowest/Velocity) exist on a POLY/MONO context menu, sourced from an unverified prior-session claim of an inaccessible full Serum 2 User Guide page 215-218. This pass right-clicked MONO, POLY (label/value/up-down arrows), the VOICING panel header/background, and the top-level Serum MENU, and found no such items anywhere; right-click was independently confirmed functional throughout via PORTA/CURVE/ALWAYS/SCALED/LEGATO's own menus. Per epistemic discipline this claim is NEITHER promoted to VERIFIED NOR marked PROVEN_NOT_USER_CONTROL from a single UI-only negative search -- it is flagged unresolved, with the source memory recommended for correction, pending either a successful direct find in a future pass or access to the full official manual (only the 20-page 'What's New' summary PDF was available this session; it does not enumerate VOICING panel controls at this granularity). NAMING RECONCILIATION: legacy code-layer semantic-target entries in serum2/compiler/targets.py ('Global.VelocityCurve', capability_key global_field_velocity_curve) and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md ('GLOBAL.VELOCITY_CURVE') are very likely a mislabeling of VOICE.VOICING.PORTA_CURVE (both were speculative, UNKNOWN-causal-status entries never verified against live UI); documented as a hypothesis in PORTA_CURVE's notes, NOT executed as a code change, and NOT ruled out as a possibly-genuine separate GLOBAL-tab velocity-response control pending the GLOBAL pass. Other legacy Global.* entries in that same list (GLOBAL.MONO, GLOBAL.POLY_COUNT, GLOBAL.LEGATO, GLOBAL.PORTAMENTO_TIME/ALWAYS/SCALED) are reconciled as referring to the same controls now correctly homed under VOICE.VOICING.*; no targets.py code edits were made (out of scope for an inventory-only pass; flagged for a future compiler-layer cleanup task). VOICE CLOSURE GATE: PASSED (P0=0, P1=0, P2=0; the one unresolved prior-memory claim is explicitly scoped out as neither a semantic gap in the current UI nor a proven negative, and does not block closure)."
+      "VOICE": "CLOSED_STAR (2026-09-16): VOICE section (Serum's 'VOICING' panel, bottom-right of the main window) gap-analysis and reconciliation pass complete. 8 VOICE-scoped records total: 7 VERIFIED, 1 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE, P0=0, P1=0, P2=0. METHOD: gap-analysis against official Xfer 'What's New in Serum 2' PDF (page 4 UI-overview diagram, the only official source available this session) plus the existing canonical inventory, per gap_analysis_methodology.md; direct UI validation performed only for gaps/conflicts/ownership questions, not a full rediscovery. OWNERSHIP RESOLUTION (Conflicts A/B/C from gap_analysis_methodology.md): PORTA_TIME, PORTA_CURVE, ALWAYS and SCALED were previously recorded under GLOBAL_KEYBOARD; direct live-UI observation proved all four are physically located inside the single labeled 'VOICING' panel (confirmed via verbatim-identical hover tooltips and right-click context-menu headers matching the pre-existing KEYBOARD/PERFORMANCE-pass evidence exactly), a visually distinct, divider-separated region from the Keyboard/Performance bar -- there is exactly ONE physical instance of each control, so this was a RE-HOME (ownership correction), not a two-surface merge. ALWAYS/SCALED were further SPLIT into VOICE.VOICING.PORTA_ALWAYS and VOICE.VOICING.PORTA_SCALED after right-click menus proved their exact distinct internal names ('Porta Always', 'Porta Scaled'). No prior evidence was deleted or overwritten; all three original records were re-homed in place (semantic_id/section/module changed, original sources/notes preserved and extended). NEW DISCOVERIES: MONO (checkbox, disables POLY when on, changes voice-count display denominator to 1, no tooltip, no context menu), POLY/'Poly Count' (stepper, default 8, scroll-mutable only -- click on rendered arrows non-responsive, no context menu, disabled under MONO), LEGATO (checkbox, minimal context menu 'Legato'/Reset Control/MIDI Learn, independent of MONO state, cross-referenced but NOT merged with the distinct ENV-section 'Invert Legato' feature), and the read-only '0/N' voice-count display (PROVEN_NOT_USER_CONTROL, denominator mirrors POLY/MONO, not independently interactive). CONDITIONAL-STATE TRAVERSAL performed and documented: MONO off/on, LEGATO off/on under both MONO states, ALWAYS/SCALED off/on/both-on -- all transitions restored to baseline and re-verified via zoom; no additional hidden or conditionally-appearing controls were found beyond the disable/grey effect of MONO on POLY. UNRESOLVED PRIOR CLAIM: a pre-existing project memory (voice_section_boundary.md) asserted a 'Limit Same Note Poly to 1' item and a 'Voice Steal Priority' submenu (Newest/Oldest/Highest/Lowest/Velocity) exist on a POLY/MONO context menu, sourced from an unverified prior-session claim of an inaccessible full Serum 2 User Guide page 215-218. This pass right-clicked MONO, POLY (label/value/up-down arrows), the VOICING panel header/background, and the top-level Serum MENU, and found no such items anywhere; right-click was independently confirmed functional throughout via PORTA/CURVE/ALWAYS/SCALED/LEGATO's own menus. Per epistemic discipline this claim is NEITHER promoted to VERIFIED NOR marked PROVEN_NOT_USER_CONTROL from a single UI-only negative search -- it is flagged unresolved, with the source memory recommended for correction, pending either a successful direct find in a future pass or access to the full official manual (only the 20-page 'What's New' summary PDF was available this session; it does not enumerate VOICING panel controls at this granularity). NAMING RECONCILIATION: legacy code-layer semantic-target entries in serum2/compiler/targets.py ('Global.VelocityCurve', capability_key global_field_velocity_curve) and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md ('GLOBAL.VELOCITY_CURVE') are very likely a mislabeling of VOICE.VOICING.PORTA_CURVE (both were speculative, UNKNOWN-causal-status entries never verified against live UI); documented as a hypothesis in PORTA_CURVE's notes, NOT executed as a code change, and NOT ruled out as a possibly-genuine separate GLOBAL-tab velocity-response control pending the GLOBAL pass. Other legacy Global.* entries in that same list (GLOBAL.MONO, GLOBAL.POLY_COUNT, GLOBAL.LEGATO, GLOBAL.PORTAMENTO_TIME/ALWAYS/SCALED) are reconciled as referring to the same controls now correctly homed under VOICE.VOICING.*; no targets.py code edits were made (out of scope for an inventory-only pass; flagged for a future compiler-layer cleanup task). VOICE CLOSURE GATE: PASSED (P0=0, P1=0, P2=0; the one unresolved prior-memory claim is explicitly scoped out as neither a semantic gap in the current UI nor a proven negative, and does not block closure).",
+      "GLOBAL": "CLOSED_STAR (2026-09-16): GLOBAL tab (Quality/Tuning/Voice Control/Preferences) gap-analysis and discovery pass complete. 31 GLOBAL-scoped records: 30 VERIFIED, 1 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE, P0=0, P1=1 (2 SEQ rows -- CUTOFF/ENVS -- and the LFO-Scaling header name and Tuning-Lock tooltip were confirmed by strong structural analogy rather than independently re-tested/re-read character-for-character; deferred to DEFERRED_SEMANTIC_VALIDATION_QUEUE, non-blocking since existence/label/ownership are directly observed), P2=0. METHOD: official Xfer 'What's New in Serum 2' PDF (the only official source accessible this session) confirms GLOBAL exists as a top-level tab but gives no control-level detail; primary evidence is direct live-UI observation on the running Serum 2.0.21/Ableton session, cross-checked against existing legacy speculative research (serum2/compiler/targets.py 'Global.*' entries and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md's '2E: Global / Voice' table, both UNKNOWN/STRUCTURAL_ONLY causal status, never previously UI-verified). FOUR MODULES DISCOVERED: (1) QUALITY -- Oversampling (Good/High/Ultra, exact name confirmed via right-click header) with its own Lock, Serum1 Compatibility (reconciles legacy GLOBAL.BACKWARD_COMPAT), Disable Smoothing. (2) TUNING -- Global Tuning (A=440Hz reference pitch, reconciles legacy GLOBAL.TUNING) with its own Lock, and a TUN FILE microtonal-tuning loader (not exercised, would open a native file dialog). (3) VOICE_CONTROL -- a per-oscillator (S/A/B/C/N scope) randomization (RANDOM: Pan/Detune/Cutoff/Envs) and 8-step sequencing (SEQ: Pan/Detune/Cutoff/Envs/Mod1/Mod2) panel plus Envelope/LFO Scaling controls; directly confirms the GLOBAL vs VOICE ownership split predicted in project memory voice_section_boundary.md (MOD1/MOD2 explicitly verified to exist ONLY here, with no VOICE.VOICING.* equivalent). (4) PREFERENCES -- 6 UI toggle-pairs (Help/Param tooltips, Double-click behavior, Mouse wheel control, Keyboard shortcuts, Default waveform view [reconciles legacy GLOBAL.WAVETABLE_DISPLAY_MODE]) plus 2 MPE default-behavior checkboxes (cross-referenced to, not merged with, the live KEYBOARD.MPE.ENABLED toggle). Plus one PROVEN_NOT_USER_CONTROL static build/date display. MUTATION TESTS PERFORMED AND RESTORED: OSC scope 'S' toggle off/on; SEQ row selection (DETUNE, then PAN) with a step-3 drag mutation and restoration (residual sub-pixel precision not independently readback-verified, flagged); Quality dropdown opened and closed without changing selection; Mouse Wheel Param Control toggled OFF then back ON with full readback verification. Two incidental side-effects from stray clicks (an LFO1->LFO2 tab reselection, twice) were caught and reverted each time; final state re-verified via screenshot to exactly match the panel's state when the GLOBAL tab was first opened this session. GAPS CHECKED FOR AND NOT FOUND on the GLOBAL tab (legacy targets.py/PHASE_2_1 hypotheses that did NOT verify): a separate 'Render Quality' setting distinct from Oversampling (GLOBAL.RENDER_QUALITY hypothesis); 'Pitch Tracking' (GLOBAL.PITCH_TRACKING hypothesis); 'Noise Fine' (GLOBAL.NOISE_FINE hypothesis -- if it exists it likely belongs to the OSC/Noise oscillator itself, not GLOBAL, and is out of scope for this pass); a third standalone preset 'Bank' selector distinct from ARP.GLOBAL.BANK/CLIP.GLOBAL.BANK (GLOBAL.BANK hypothesis). None of these are declared PROVEN_NOT_USER_CONTROL (a single UI-only negative search is not strong enough per this project's epistemic discipline); they are simply excluded from this inventory as unconfirmed, matching the precedent set by VOICE's 'Voice Steal Priority' finding. Master Volume (legacy GLOBAL.MASTER_VOLUME) requires no new record -- already correctly owned by MIXER.MAIN.LEVEL, confirmed via inventory cross-check before this pass began (no live re-verification needed). GLOBAL CLOSURE GATE: PASSED (P0=0; the single P1 deferral covers only tooltip-verbatim precision on 3 sub-items whose existence/ownership/label are already directly confirmed, not a semantic gap)."
     },
     "sections_pending": [
       "VOICE",
@@ -15164,6 +15166,973 @@
       ],
       "status": "PROVEN_NOT_USER_CONTROL",
       "notes": "NEW DISCOVERY 2026-09-16 (VOICE gap-analysis pass), classified PROVEN_NOT_USER_CONTROL: this is a read-only derived display, not an independently settable control -- it has no tooltip, no context menu, and does not respond to a click, and its value is fully explained as a function of VOICE.VOICING.POLY (denominator) and VOICE.VOICING.MONO (overrides denominator to 1) plus a live active-voice count this session could not exercise (audio processing disabled). Recorded for completeness/cross-reference per project convention (cf. MATRIX.MOD field precedent), not counted toward VOICE's VERIFIED total."
+    },
+    {
+      "semantic_id": "GLOBAL.QUALITY.OVERSAMPLING",
+      "section": "GLOBAL",
+      "module": "QUALITY",
+      "submodule": null,
+      "label": "Oversampling -- global render quality (Good/High/Ultra)",
+      "control_type": "dropdown",
+      "value_range": null,
+      "options": [
+        "Good",
+        "High",
+        "Ultra"
+      ],
+      "default": "High",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.QUALITY.OVERSAMPLING_LOCK",
+        "GLOBAL.QUALITY.S1_COMPATIBILITY"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: dropdown in top-right 'QUALITY' panel of the GLOBAL tab, default value 'High'. Opened dropdown: exactly 3 options listed top to bottom -- Good, High (checkmarked/current), Ultra. Closed via Escape without changing selection (re-verified unchanged via zoom)."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: right-click opened a context menu with header 'Oversampling' (confirms exact internal name) / Reset Control. No Mod Source, no MIDI Learn, no Lock Parameter -- structural/discrete setting, not a modulatable parameter."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Corrects prior speculative research (serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md 'GLOBAL.QUALITY', capability_key global_field_quality) which only hypothesized existence with STRUCTURAL_ONLY evidence and no option enumeration. Direct UI confirms exact internal name 'Oversampling' and exactly 3 discrete levels (Good/High/Ultra), not a simple Good/Ultra binary as an earlier project memory (serum2_complete_reference.md, 9 days stale) claimed. A distinct 'Render Quality' setting (separate from live-playback Oversampling, hypothesized in the same legacy PHASE_2_1 doc as GLOBAL.RENDER_QUALITY) was searched for on this GLOBAL screen and NOT found -- see GLOBAL closure notes."
+    },
+    {
+      "semantic_id": "GLOBAL.QUALITY.OVERSAMPLING_LOCK",
+      "section": "GLOBAL",
+      "module": "QUALITY",
+      "submodule": null,
+      "label": "Oversampling Lock -- keeps the current Oversampling setting when loading presets",
+      "control_type": "lock_toggle",
+      "value_range": null,
+      "options": null,
+      "default": "unlocked",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.QUALITY.OVERSAMPLING"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: small padlock icon immediately left of the Oversampling dropdown, shown unlocked by default. Hover tooltip verbatim: 'if enabled and you load presets, the current Oversampling will remain (Serum will not load 1x/2x/4x saved in presets)' -- confirms the 3 Oversampling levels correspond internally to 1x/2x/4x sample-rate multipliers."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Matches the 'Quality Lock' feature named in serum2_complete_reference.md and the official What's New PDF's Key-New-Features table ('Quality Lock -- Prevent preset changes affecting quality setting'), now precisely attributed to this exact control with verbatim tooltip evidence."
+    },
+    {
+      "semantic_id": "GLOBAL.QUALITY.S1_COMPATIBILITY",
+      "section": "GLOBAL",
+      "module": "QUALITY",
+      "submodule": null,
+      "label": "Serum1 Compatibility -- backward-compatibility mode for Serum 1 presets/behavior",
+      "control_type": "checkbox",
+      "value_range": null,
+      "options": null,
+      "default": "off",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: checkbox labeled 'S1 COMPATIBILITY MODE' in the QUALITY panel, default unchecked. Hover tooltip verbatim: 'Serum 1 Compatibility (Off)' / 'Serum1 Compatibility' -- confirms exact internal name."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Reconciles the legacy speculative record serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md 'GLOBAL.BACKWARD_COMPAT' (capability_key not in targets.py; STRUCTURAL_ONLY, described as 'Serum 1 toggle') and the official What's New PDF's 'Backward Compatibility -- Load Serum 1 presets seamlessly' feature. Same control; exact internal name now directly confirmed as 'Serum1 Compatibility', not a generic 'Backward Compat' guess."
+    },
+    {
+      "semantic_id": "GLOBAL.QUALITY.DISABLE_SMOOTHING",
+      "section": "GLOBAL",
+      "module": "QUALITY",
+      "submodule": null,
+      "label": "Disable Smoothing -- disables parameter value smoothing/interpolation",
+      "control_type": "checkbox",
+      "value_range": null,
+      "options": null,
+      "default": "off",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: checkbox labeled 'DISABLE SMOOTHING' in the QUALITY panel, default unchecked. No hover tooltip appeared after repeated attempts (consistent with other checkbox-type controls across this project lacking tooltips, e.g. VOICE.VOICING.MONO)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized in any prior research document. Existence and default state directly confirmed; exact behavioral effect on parameter smoothing not audio-testable this session (audio processing disabled)."
+    },
+    {
+      "semantic_id": "GLOBAL.TUNING.GLOBAL_TUNING",
+      "section": "GLOBAL",
+      "module": "TUNING",
+      "submodule": null,
+      "label": "Global Tuning -- sets the reference frequency for concert pitch (Hz)",
+      "control_type": "stepper",
+      "value_range": "Hz, stepper-adjustable",
+      "options": null,
+      "default": "440 Hz",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.TUNING.LOCK",
+        "GLOBAL.TUNING.TUN_FILE"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'A [up/down] 440 Hz' stepper in the TUNING panel. Hover tooltip verbatim: 'Global Tuning (440 Hz)' / 'Sets the frequency for note A in Hz. (Concert Pitch)' -- confirms exact internal name."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: right-click opened a context menu with header 'Global Tuning' (matches tooltip name) / Reset Control. No Mod Source, no MIDI Learn, no Lock Parameter."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Reconciles legacy serum2/compiler/targets.py 'Global.Tuning' (capability_key global_field_tuning, UNKNOWN causal status, never verified) and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md 'GLOBAL.TUNING'. Same control; exact internal name 'Global Tuning' and default 440 Hz now directly confirmed."
+    },
+    {
+      "semantic_id": "GLOBAL.TUNING.LOCK",
+      "section": "GLOBAL",
+      "module": "TUNING",
+      "submodule": null,
+      "label": "Tuning Lock -- keeps the current Global Tuning setting when loading presets",
+      "control_type": "lock_toggle",
+      "value_range": null,
+      "options": null,
+      "default": "unlocked",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.TUNING.GLOBAL_TUNING"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: small padlock icon immediately left of the Global Tuning stepper, shown unlocked by default -- visually parallel to GLOBAL.QUALITY.OVERSAMPLING_LOCK. Tooltip not independently captured this pass (inferred function from the parallel Oversampling Lock's tooltip and identical icon/position pattern); existence is directly observed, exact tooltip text is not."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Existence directly observed (visible lock icon, distinct from Oversampling's lock). Function inferred by strong analogy to GLOBAL.QUALITY.OVERSAMPLING_LOCK's verbatim tooltip (same icon, same position pattern, same panel-header convention) but NOT independently tooltip-verified this pass -- flagged so a future pass can confirm verbatim text rather than treating this note as an established quote."
+    },
+    {
+      "semantic_id": "GLOBAL.TUNING.TUN_FILE",
+      "section": "GLOBAL",
+      "module": "TUNING",
+      "submodule": null,
+      "label": "Tun File -- loads a microtonal/alternate tuning file (Scala .tun format)",
+      "control_type": "file_loader",
+      "value_range": null,
+      "options": null,
+      "default": "(none)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.TUNING.GLOBAL_TUNING"
+      ],
+      "resource_dependency": "user-provided .tun tuning file",
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'TUN FILE: (none)' label/button in the TUNING panel. Not clicked this pass to avoid opening a native OS file-picker dialog mid-automation (out of scope risk for this pass). Existence and default state ('(none)' = no file loaded) directly observed; click-to-browse behavior not exercised."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized. Existence confirmed by direct observation only; file-load interaction deliberately not tested this pass (would open a native file dialog outside the plugin's own control surface)."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "OSC scope -- selects which oscillators (Sub/A/B/C/Noise) the Voice Control panel affects",
+      "control_type": "multi_toggle",
+      "value_range": null,
+      "options": [
+        "S",
+        "A",
+        "B",
+        "C",
+        "N"
+      ],
+      "default": "all on (S, A, B, C, N)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.RANDOM.PAN",
+        "GLOBAL.VOICE_CONTROL.SEQ.PAN"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'OSC: S A B C N' row at the top of the VOICE CONTROL panel, all 5 letters shown green (on) by default. Hover tooltip verbatim: 'Select which oscillators the Voice Panel affects.'"
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: clicked 'S' -> turned grey/off while A/B/C/N stayed green/on (confirms independent multi-select, not a single-select radio). Clicked 'S' again -> restored to on; zoom-verified all 5 green before and after."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Matches the oscillator-scope structure ('oscillator scope: S / A / B / C / N') hypothesized in project memory voice_section_boundary.md's GLOBAL -> VOICE CONTROL prediction; now directly confirmed in live UI with exact tooltip wording."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.PAN",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "Osc Pan Rand -- randomizes pan per voice (within OSC scope)",
+      "control_type": "stepper",
+      "value_range": null,
+      "options": null,
+      "default": "-- (off)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.SEQ.PAN"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: RANDOM column row in the VOICE CONTROL panel. Hover tooltip verbatim: 'Osc Pan Rand (--)' / 'Randomizes stereo position per voice.'"
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: right-click on the RANDOM.PAN value opened a context menu with header 'Osc Pan Rand' / Reset Control / MIDI Learn (spot-checked for PAN; other RANDOM rows share the identical widget type and are inferred, not independently right-clicked, to carry the same minimal menu)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Part of the RANDOM column (4 rows: PAN/DETUNE/CUTOFF/ENVS) in GLOBAL's Voice Control panel. Exact internal name 'Osc Pan Rand' confirmed via hover tooltip."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.DETUNE",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "Osc Detune Rnd -- randomizes detune per voice (within OSC scope)",
+      "control_type": "stepper",
+      "value_range": null,
+      "options": null,
+      "default": "0.0 cents",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.SEQ.DETUNE"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: RANDOM column row in the VOICE CONTROL panel. Hover tooltip verbatim: 'Osc Detune Rnd (0.0 cents)' / 'Randomizes tuning offset per voice.'"
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: widget type identical to RANDOM.PAN (spot-checked context menu: header/Reset Control/MIDI Learn); not independently right-clicked for this specific row."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Part of the RANDOM column (4 rows: PAN/DETUNE/CUTOFF/ENVS) in GLOBAL's Voice Control panel. Exact internal name 'Osc Detune Rnd' confirmed via hover tooltip."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.CUTOFF",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "Osc Cutoff Rand -- randomizes cutoff per voice (within OSC scope)",
+      "control_type": "stepper",
+      "value_range": null,
+      "options": null,
+      "default": "-- (off)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.SEQ.CUTOFF"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: RANDOM column row in the VOICE CONTROL panel. Hover tooltip verbatim: 'Osc Cutoff Rand (--)' / 'Randomizes Filter Cutoff per voice.'"
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: widget type identical to RANDOM.PAN (spot-checked context menu: header/Reset Control/MIDI Learn); not independently right-clicked for this specific row."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Part of the RANDOM column (4 rows: PAN/DETUNE/CUTOFF/ENVS) in GLOBAL's Voice Control panel. Exact internal name 'Osc Cutoff Rand' confirmed via hover tooltip."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.ENVS",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "Osc Envs Rand -- randomizes envs per voice (within OSC scope)",
+      "control_type": "stepper",
+      "value_range": null,
+      "options": null,
+      "default": "-- (off)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.SEQ.ENVS"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: RANDOM column row in the VOICE CONTROL panel. Hover tooltip verbatim: 'Osc Envs Rand (--)' / 'Randomizes Envelope offset per voice.'"
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: widget type identical to RANDOM.PAN (spot-checked context menu: header/Reset Control/MIDI Learn); not independently right-clicked for this specific row."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Part of the RANDOM column (4 rows: PAN/DETUNE/CUTOFF/ENVS) in GLOBAL's Voice Control panel. Exact internal name 'Osc Envs Rand' confirmed via hover tooltip."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.PAN",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "SEQ PAN -- 8-step per-voice sequencer for pan (within OSC scope)",
+      "control_type": "step_sequencer",
+      "value_range": "8 steps, each independently draggable",
+      "options": null,
+      "default": "flat/0 across all 8 steps",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.RANDOM.PAN"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: SEQ column row label in the VOICE CONTROL panel; clicking it selects this row (highlighted green) and displays its 8-step values in the grid to the right. Hover tooltip verbatim: 'Sets the stereo position per voice.'"
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: clicked PAN row to select it (green highlight, matches the original panel state when GLOBAL tab was first opened this session) -- confirms row-selection mechanism generalizes across SEQ rows."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Part of the SEQ column (6 rows: PAN/DETUNE/CUTOFF/ENVS/MOD1/MOD2), an 8-step per-voice sequencer distinct from the RANDOM column's single randomization amount. Row-selection tested; step-drag mutation not independently tested on this specific row (tested on DETUNE, same widget type)."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.DETUNE",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "SEQ DETUNE -- 8-step per-voice sequencer for detune (within OSC scope)",
+      "control_type": "step_sequencer",
+      "value_range": "8 steps, each independently draggable",
+      "options": null,
+      "default": "flat/0 across all 8 steps",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.RANDOM.DETUNE"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: SEQ column row label in the VOICE CONTROL panel; clicking it selects this row (highlighted green) and displays its 8-step values in the grid to the right. Hover tooltip verbatim: 'Sets the tuning offset per voice.'"
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: selected DETUNE row and dragged step 3 upward -- step 3's bar grew taller than the flat baseline of steps 1/2/4-8, confirming each of the 8 steps is an independently draggable per-step value. Dragged step 3 back down to match the baseline and re-verified via zoom (visually restored, though exact numeric precision of the restore was not independently confirmed via a readback value -- no numeric tooltip appeared for grid steps during this test)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Part of the SEQ column (6 rows: PAN/DETUNE/CUTOFF/ENVS/MOD1/MOD2), an 8-step per-voice sequencer distinct from the RANDOM column's single randomization amount. Step-drag mutation directly tested and restored (see source note on residual-precision caveat)."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.CUTOFF",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "SEQ CUTOFF -- 8-step per-voice sequencer for cutoff (within OSC scope)",
+      "control_type": "step_sequencer",
+      "value_range": "8 steps, each independently draggable",
+      "options": null,
+      "default": "flat/0 across all 8 steps",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.RANDOM.CUTOFF"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: SEQ column row label 'CUTOFF' visible and present in the VOICE CONTROL panel, positioned in the same list as PAN/DETUNE (row-select mechanism confirmed generically on PAN/DETUNE). Not individually clicked or hover-tested this pass -- existence and label are directly observed; row-specific tooltip text and step-drag behavior are inferred by strong analogy to PAN/DETUNE, not independently captured."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Existence directly observed as a labeled row in the SEQ column. Row-specific tooltip wording and step-drag interaction were not individually re-tested (time-scoped to representative rows PAN/DETUNE/MOD1/MOD2); flagged for a future pass to independently confirm this row's exact tooltip text if higher precision is needed."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.ENVS",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "SEQ ENVS -- 8-step per-voice sequencer for envs (within OSC scope)",
+      "control_type": "step_sequencer",
+      "value_range": "8 steps, each independently draggable",
+      "options": null,
+      "default": "flat/0 across all 8 steps",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.RANDOM.ENVS"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: SEQ column row label 'ENVS' visible and present in the VOICE CONTROL panel, positioned in the same list as PAN/DETUNE (row-select mechanism confirmed generically on PAN/DETUNE). Not individually clicked or hover-tested this pass -- existence and label are directly observed; row-specific tooltip text and step-drag behavior are inferred by strong analogy to PAN/DETUNE, not independently captured."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Existence directly observed as a labeled row in the SEQ column. Row-specific tooltip wording and step-drag interaction were not individually re-tested (time-scoped to representative rows PAN/DETUNE/MOD1/MOD2); flagged for a future pass to independently confirm this row's exact tooltip text if higher precision is needed."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.MOD1",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "SEQ Mod 1 -- 8-step per-voice sequencer producing an arbitrary user-routable value (within OSC scope)",
+      "control_type": "step_sequencer",
+      "value_range": "8 steps, each independently draggable",
+      "options": null,
+      "default": "flat/0 across all 8 steps",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.SEQ.MOD2"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: SEQ column row 'MOD 1' in the VOICE CONTROL panel. Hover tooltip verbatim: 'Sets arbitrary value per voice.' (identical wording for both MOD 1 and MOD 2, confirming they are two parallel/independent slots of the same function rather than differently-purposed controls)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Confirms project memory voice_section_boundary.md's explicit note that 'MOD 1' and 'MOD 2' belong to GLOBAL's Voice Control panel and are NOT part of the VOICING (VOICE section) panel closed earlier this session -- directly verified: MOD 1/MOD 2 exist only here, with no equivalent found in VOICE.VOICING.*. Unlike RANDOM/SEQ PAN-DETUNE-CUTOFF-ENVS (which randomize/sequence a named synthesis parameter), MOD 1/2 produce a generic per-voice value with no fixed destination -- almost certainly intended for routing elsewhere (e.g. as a MATRIX modulation source), though the routing mechanism itself was not located or tested this pass (out of scope; flag for CROSS-SYSTEM reconciliation with MATRIX's SOURCE column)."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.MOD2",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "SEQ Mod 2 -- 8-step per-voice sequencer producing an arbitrary user-routable value (within OSC scope)",
+      "control_type": "step_sequencer",
+      "value_range": "8 steps, each independently draggable",
+      "options": null,
+      "default": "flat/0 across all 8 steps",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.SEQ.MOD1"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: SEQ column row 'MOD 2' in the VOICE CONTROL panel. Hover tooltip verbatim: 'Sets arbitrary value per voice.' (identical wording for both MOD 1 and MOD 2, confirming they are two parallel/independent slots of the same function rather than differently-purposed controls)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Confirms project memory voice_section_boundary.md's explicit note that 'MOD 1' and 'MOD 2' belong to GLOBAL's Voice Control panel and are NOT part of the VOICING (VOICE section) panel closed earlier this session -- directly verified: MOD 1/MOD 2 exist only here, with no equivalent found in VOICE.VOICING.*. Unlike RANDOM/SEQ PAN-DETUNE-CUTOFF-ENVS (which randomize/sequence a named synthesis parameter), MOD 1/2 produce a generic per-voice value with no fixed destination -- almost certainly intended for routing elsewhere (e.g. as a MATRIX modulation source), though the routing mechanism itself was not located or tested this pass (out of scope; flag for CROSS-SYSTEM reconciliation with MATRIX's SOURCE column)."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.ENVS",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "Envelope Scaling -- scales all envelope times, useful when changing BPM",
+      "control_type": "stepper",
+      "value_range": "%",
+      "options": null,
+      "default": "100%",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.SCALING.LFOS"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'ENVS: 100%' stepper in the SCALING row of the VOICE CONTROL panel. Hover tooltip verbatim: 'Envelope Scaling (100%)' / 'Scales all Envelopes. Useful if you change BPM.'"
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized. Exact internal name 'Envelope Scaling' confirmed via tooltip."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.LFOS",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "LFO Scaling -- scales all LFO rates, useful for coordinated pattern-speed changes",
+      "control_type": "stepper",
+      "value_range": "% or Hz-rate, depending on GLOBAL.VOICE_CONTROL.SCALING.LFOS_RATE_TOGGLE",
+      "options": null,
+      "default": "100%",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.SCALING.ENVS",
+        "GLOBAL.VOICE_CONTROL.SCALING.LFOS_RATE_TOGGLE"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'LFOS: 100%' stepper in the SCALING row of the VOICE CONTROL panel. Hover tooltip verbatim: (header not independently re-captured, body text) 'Scales all LFOs. Useful for create many simultaneous pattern changes.'"
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized. Tooltip body text directly captured; exact header name (analogous to 'Envelope Scaling') inferred as 'LFO Scaling' by pattern but not independently verified character-for-character."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.LFOS_RATE_TOGGLE",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "LFO Scaling %/Rate toggle -- switches LFO Scaling's display/input mode between percentage and absolute rate",
+      "control_type": "toggle",
+      "value_range": null,
+      "options": [
+        "%",
+        "RATE"
+      ],
+      "default": "% (percentage mode)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.VOICE_CONTROL.SCALING.LFOS"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: small '%' / 'RATE' toggle immediately right of the LFOS scaling stepper, '%' shown active by default. Hover tooltip verbatim: 'Toggle Rate/Percentage for LFO scaling.'"
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized. Not toggled to RATE mode this pass (read-only observation of default state plus tooltip); toggling was judged unnecessary to establish existence and would have required an additional restoration step for a purely cosmetic display-mode change."
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.PRESET_FIELD",
+      "section": "GLOBAL",
+      "module": "VOICE_CONTROL",
+      "submodule": null,
+      "label": "Voice Control preset field -- save/load a named Voice Control configuration",
+      "control_type": "resource_select",
+      "value_range": null,
+      "options": null,
+      "default": "(empty)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": "user-saved Voice Control preset",
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: text field with a disk/save icon at the top-left of the VOICE CONTROL panel header, empty by default. Not clicked or exercised this pass to avoid triggering a save/load dialog outside the plugin's own control surface; existence and visual layout (save icon + empty name field) directly observed only."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized. Existence confirmed by direct observation; save/load interaction and any associated resource-browser UI not exercised this pass (deliberately out of scope, parallel to GLOBAL.TUNING.TUN_FILE)."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.HELP_TOOLTIPS",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "Help tooltips -- global UI preference toggle",
+      "control_type": "toggle_pair",
+      "value_range": null,
+      "options": [
+        "HIDE",
+        "SHOW"
+      ],
+      "default": "SHOW",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'Help tooltips' row in the left-hand USER INTERFACE panel of the GLOBAL tab, a two-way toggle (HIDE / SHOW), default 'SHOW' (highlighted amber). No hover tooltip appears on this control (consistent with other toggle-pair/checkbox widgets across the project lacking tooltips)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Matches the corresponding item named in serum2_complete_reference.md's Preferences summary and the official What's New PDF's general UI-preferences mention, now given a concrete semantic record with directly-observed exact label, options, and default."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.PARAM_VALUE_TOOLTIPS",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "Param value tooltips -- global UI preference toggle",
+      "control_type": "toggle_pair",
+      "value_range": null,
+      "options": [
+        "HIDE",
+        "SHOW"
+      ],
+      "default": "SHOW",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'Param value tooltips' row in the left-hand USER INTERFACE panel of the GLOBAL tab, a two-way toggle (HIDE / SHOW), default 'SHOW' (highlighted amber). No hover tooltip appears on this control (consistent with other toggle-pair/checkbox widgets across the project lacking tooltips)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Matches the corresponding item named in serum2_complete_reference.md's Preferences summary and the official What's New PDF's general UI-preferences mention, now given a concrete semantic record with directly-observed exact label, options, and default."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.DOUBLE_CLICK_PARAMS",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "Double-click params -- global UI preference toggle",
+      "control_type": "toggle_pair",
+      "value_range": null,
+      "options": [
+        "RESET",
+        "TYPE VALUE"
+      ],
+      "default": "TYPE VALUE",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'Double-click params' row in the left-hand USER INTERFACE panel of the GLOBAL tab, a two-way toggle (RESET / TYPE VALUE), default 'TYPE VALUE' (highlighted amber). No hover tooltip appears on this control (consistent with other toggle-pair/checkbox widgets across the project lacking tooltips)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Matches the corresponding item named in serum2_complete_reference.md's Preferences summary and the official What's New PDF's general UI-preferences mention, now given a concrete semantic record with directly-observed exact label, options, and default."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.KEYBOARD_SHORTCUTS",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "Keyboard shortcuts -- global UI preference toggle",
+      "control_type": "toggle_pair",
+      "value_range": null,
+      "options": [
+        "OFF",
+        "ON"
+      ],
+      "default": "ON",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'Keyboard shortcuts' row in the left-hand USER INTERFACE panel of the GLOBAL tab, a two-way toggle (OFF / ON), default 'ON' (highlighted amber). No hover tooltip appears on this control (consistent with other toggle-pair/checkbox widgets across the project lacking tooltips)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Matches the corresponding item named in serum2_complete_reference.md's Preferences summary and the official What's New PDF's general UI-preferences mention, now given a concrete semantic record with directly-observed exact label, options, and default."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.MOUSE_WHEEL_PARAM_CONTROL",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "Mouse wheel param control -- enables/disables scroll-wheel adjustment of parameter values",
+      "control_type": "toggle_pair",
+      "value_range": null,
+      "options": [
+        "OFF",
+        "ON"
+      ],
+      "default": "ON",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "VOICE.VOICING.POLY"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'Mouse wheel param control' row, OFF/ON toggle, default ON."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: clicked OFF -> zoom-confirmed OFF became highlighted/active. Clicked ON -> zoom-confirmed restored to ON (baseline). Full mutation+restoration cycle directly verified via readback, unlike the other PREFERENCES toggles in this pass which were observed but not click-tested."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. This is the global preference governing scroll-wheel behavior used elsewhere in this project's own evidence gathering (e.g. VOICE.VOICING.POLY's scroll-wheel mutation test) -- cross-referenced for that reason, not because it shares ownership."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.DEFAULT_WAVEFORM_VIEW",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "Default waveform view -- sets whether new/loaded wavetable displays default to 2D or 3D rendering",
+      "control_type": "toggle_pair",
+      "value_range": null,
+      "options": [
+        "2D",
+        "3D"
+      ],
+      "default": "2D",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: 'Default waveform view' row, 2D/3D toggle, default 2D (highlighted amber)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, RECONCILES legacy speculative record serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md 'GLOBAL.WAVETABLE_DISPLAY_MODE' (STRUCTURAL_ONLY, described as '2D/3D' toggle) and serum2_complete_reference.md's 'WAVETABLE DISPLAY -- Toggle: 2D or 3D view' and the official What's New PDF's '3D Wavetable Display -- New visual option for wavetable editing' feature. All refer to this same control; exact label 'Default waveform view' and default value '2D' now directly confirmed, correcting the generic 'WAVETABLE_DISPLAY_MODE' guess to its real UI name."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "MPE enabled by default -- sets whether new presets/sessions start with MPE support on",
+      "control_type": "checkbox",
+      "value_range": null,
+      "options": null,
+      "default": "off",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "KEYBOARD.MPE.ENABLED"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: checkbox 'MPE enabled by default' in the MPE preferences sub-panel (below USER INTERFACE, same left column), default unchecked. No hover tooltip appeared."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Distinct from KEYBOARD.MPE.ENABLED (the live, per-session MPE toggle already recorded under the GLOBAL_KEYBOARD section, reachable from Serum's main MENU) -- this GLOBAL.PREFERENCES record is a persistent default-for-new-presets setting, not the live current-session toggle. Cross-referenced, not merged: two genuinely different controls with related but distinct scope (global default vs. live per-preset state), matching this project's established pattern of using cross_references instead of merging ownership across genuinely distinct controls (cf. VOICE Section Boundary discipline)."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.MPE_PITCH_BEND_MAPS_TO_EXPR_X",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "MPE Pitch Bend (also) maps to Expr X -- routes MPE Pitch Bend data to also affect the Expression X dimension",
+      "control_type": "checkbox",
+      "value_range": null,
+      "options": null,
+      "default": "off",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT",
+        "KEYBOARD.MPE.ENABLED"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: checkbox 'MPE Pitch Bend (also) maps to Expr X' directly below MPE_ENABLED_BY_DEFAULT, default unchecked. No hover tooltip appeared."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized in any prior research document."
+    },
+    {
+      "semantic_id": "GLOBAL.INFO.BUILD_DATE_DISPLAY",
+      "section": "GLOBAL",
+      "module": "INFO",
+      "submodule": null,
+      "label": "Xfer logo + Build/Date display -- static build and version information",
+      "control_type": "display",
+      "value_range": null,
+      "options": null,
+      "default": "BUILD: 2.0.21 vst / DATE: <build date>",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "GLOBAL gap-analysis pass, live UI, 2026-09-16: Xfer Records logo with 'BUILD: 2.0.21 vst' and 'DATE: 25-08-07_8ee4aee' text, bottom-right of the GLOBAL tab main content area. Not clicked (no evident interactive affordance -- plain text/logo)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "PROVEN_NOT_USER_CONTROL",
+      "notes": "NEW DISCOVERY, classified PROVEN_NOT_USER_CONTROL: static informational display (plugin build number and build date), not a settable control. Recorded for completeness per project convention."
     }
   ]
 }
