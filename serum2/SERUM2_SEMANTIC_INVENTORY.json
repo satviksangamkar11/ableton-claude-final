@@ -1,6 +1,6 @@
 {
   "meta": {
-    "inventory_version": "1.0.0-GLOBAL-CLOSED",
+    "inventory_version": "1.1.0-BROWSER-CLOSED",
     "created": "2026-09-14",
     "last_modified": "2026-09-16",
     "sections_complete": [
@@ -16,7 +16,8 @@
       "CLIP",
       "GLOBAL_KEYBOARD",
       "VOICE",
-      "GLOBAL"
+      "GLOBAL",
+      "BROWSER"
     ],
     "section_status": {
       "MACRO": "CLOSED_STAR",
@@ -32,7 +33,8 @@
       "CLIP": "CLOSED_STAR (2026-09-17): Full CLIP piano-roll clip-player system discovered, structurally parallel to ARP but with genuine live-recording and general MIDI editing capabilities ARP lacks. GLOBAL: Bank resource system (richer nested category structure than ARP -- Chords>[Duda Chords/Neo Chords/One Bar Cluster Chords], Drums>, Guitar>, Duda EPiano Noodles, Init), Trigger Mode (Mono/Poly simultaneous-clip-triggering, no ARP equivalent), Edit All (consistent with ARP's confirmed mechanism), Show Macros (confirmed reveals 8 inline Macro knobs). CLIP SETTINGS: Clip selector, Length, KB Span (4 options: Off/Mono/Poly/Offset -- CLIP-exclusive, governs keyboard-to-pitch remapping, Poly confirmed to add a slot badge), Trans, Mode (9 options, IDENTICAL vocabulary to ARP's Pattern Editor Mode), Time (confirmed conditionally activated by Mode=Static, broader gate than ARP's One-Shot-only), Rate+BPM/Hz+Trip+Dot (consistent pattern), Launch Quant (structurally relocated to per-clip CLIP_SETTINGS vs ARP's GLOBAL-level equivalent -- reconciliation note for CROSS-SYSTEM pass), Retrig/Velo Trig/Note Gate (all 3 confirmed with full tooltip semantics). RECORD (CLIP-EXCLUSIVE, no ARP equivalent): Record button (live MIDI recording into a clip), Overdub/Extend record-mode toggle, Metronome toggle. EDITOR: full general-purpose piano-roll MIDI note grid (confirmed directly draggable for pitch, richer than ARP's scale-degree-block Pattern Editor), Velocity lane, Hear Selected Notes audition button (CLIP-exclusive). 12 SLOTS: play/launch/select behavior consistent with ARP; right-click context menu CONFIRMED RICHER than ARP's (5 items: Rename Clip/Copy Clip/Paste Clip/Erase Clip/Set as Preview Clip, vs ARP's 3: Copy/Paste/Erase Pattern). MIDI OUT: identical 3 options to ARP (Off/Clip Player/On), directly reconfirmed. 28 CLIP records: 28 VERIFIED, 0 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE. CLIP CLOSURE GATE: PASSED. CROSS-SYSTEM NOTE for future CROSS-SYSTEM RECONCILIATION pass: CLIP and ARP share the exact same 9-option Mode vocabulary and near-identical Rate/BPM-Hz/Trip/Dot/Retrig-family controls -- likely a shared underlying 'sequencer slot' architecture; Launch Quant's differing scope (per-clip in CLIP vs global in ARP) should be explicitly reconciled; SHOW_MACROS and Pattern Editor's Macro-lane feature both cross-reference MACRO.1-8 and should be checked for redundancy/consistency.",
       "GLOBAL_KEYBOARD": "CLOSED_STAR (2026-09-17): Complete KEYBOARD/PERFORMANCE section enumeration finished. 22 KEYBOARD-section records discovered total (15 new this pass + 7 pre-existing + 6 re-homed from ARP). CORE KEYBOARD CONTROLS: TRANSPOSE (global MIDI offset, distinct from ARP.TRANSPOSE.SHIFT), KEY (13 options -- null + 12 semitones), SCALE (~75 options, conditionally gated by Key != '--'), SWING (cross-system Clips+Arp control per tooltip), PORTA_TIME (portamento glide, 0.0ms default), PORTA_CURVE (bipolar portamento curvature: negative=accelerate, 0=linear, positive=decelerate), ALWAYS/SCALED checkboxes (independent toggles, NOT radio, effect on portamento unobserved due to audio-processing-disabled session environment). PERFORMANCE SOURCES: PITCH_BEND (spring-loaded wheel, 0.00 default, auto-returns to center on release), PITCH_BEND.BEND_UP (semitone range, 2 default), PITCH_BEND.BEND_DOWN (semitone range, -2 default), MOD_WHEEL (sticky wheel, 0% default, persists value until reset), MOD_WHEEL.SOURCE_INDICATOR (quick-nav badge UI showing active Matrix destinations; left-click highlight-toggle mechanics confirmed, semantic meaning/integration with Matrix panel unconfirmed this pass). OSC_MAPPING: Full Note Range Editor with 6 rows (SUB/OSC A/B/C/NOISE/ARP), KEY and VEL tabs, Fold/Warp toggles per row (both VERIFIED), double-click-then-drag key-range bars (VERIFIED after discovering correct gesture), Reset All button (VERIFIED functional). OSC MAPPING OWNERSHIP CORRECTION: 6 re-homed records (EDITOR, ARP_ROW_FOLD/WARP/KEY_RANGE, VEL_TAB, RESET_ALL) moved from ARP to GLOBAL_KEYBOARD section after direct confirmation that editor launches from Keyboard/Performance bar independent of ARP/CLIP tab, consistent with official documentation naming OSC Mapping as a Keyboard/Performance control. MAIN_KEYBOARD: Full-width piano-roll playable surface (click-to-play NOT behaviorally tested due to audio-processing-disabled; surface existence VERIFIED). MPE SETTINGS (in Serum main MENU, not Keyboard bar itself): MPE Enabled (checked by default), MPE:XYZ->Macro1,2,3 (action, menu state unclicked to avoid MATRIX mutation), MPE:YZ->Macro1,2 (action, same), MPE:Y->ModWheel (action, same), MPE Bend Range (48 semitones, unclicked). STRUCTURAL ACTIONS & CONTEXT MENUS: Rich right-click menus VERIFIED for TRANSPOSE/SWING/KEY (all include Mod Source submenu, Lock Parameter, Link Parameter, Link All Parameters mechanisms), PORTA_TIME (Mod Source, NO Link Parameter), PORTA_CURVE (NO Mod Source, NO Link Parameter, minimal menu: Reset/MIDI Learn/Lock only), MOD_WHEEL/PITCH_BEND (minimal menus: Reset Control / MIDI Learn only, no modulation/lock options reflecting their transient live-input nature). KEY's unique context menu (Swap Key/Mode to Major/Minor, Start Learning [MIDI-input scale-detection, unobserved], Lock Key & Scale pair-specific toggle) VERIFIED. CONDITIONAL UI: SCALE dropdown blocked when Key='--', confirmed via both left-click and right-click gates. 22 GLOBAL_KEYBOARD records: 19 VERIFIED, 0 PROVEN_NOT_USER_CONTROL, 3 UNVERIFIED_CANDIDATE (MPE:XYZ->Macro1,2,3, MPE:YZ->Macro1,2, MPE:Y->ModWheel all left unclicked due to ambiguity between two competing hypotheses -- persistent radio-selection vs one-shot Matrix-route-creating quick-action; flagged for dedicated retest with MATRIX panel open to disambiguate). GATES TO CLOSURE: (1) all 7 pre-existing KEYBOARD records VERIFIED, (2) all 15 new KEYBOARD records status resolved (19 VERIFIED + 3 UNVERIFIED_CANDIDATE), (3) 6 ARP-to-KEYBOARD re-homing completed with ownership evidence, (4) cross-system reconciliation: OSC_MAPPING's ARP row cross-referenced back to ARP section; TRANSPOSE/KEY/SCALE/SWING/PORTA/CURVE/ALWAYS_SCALED confirmed as Keyboard-bar-owned, not ARP-owned; MPE mapping to MATRIX.SOURCE domain confirmed; Pitch Bend/Mod Wheel confirmed as live-input Performance Sources and MATRIX.SOURCE domain members. DEFERRED TO FUTURE VOICE/KEYBOARD PASS: PORTA_TIME/PORTA_CURVE/ALWAYS_SCALED control-semantics (exact effect on portamento behavior when ALWAYS vs SCALED are toggled; unobserved due to audio-processing-disabled). MOD_WHEEL.SOURCE_INDICATOR's meaning/Matrix-panel-integration (left-click highlight-toggle behavior observed, semantic purpose unconfirmed; flagged for retest with Matrix panel open). Three MPE menu items' function (radio vs quick-action mode; flagged for retest with MATRIX panel open to observe any route-table mutation on click). GLOBAL_KEYBOARD CLOSURE GATE: PASSED (all P0/P1 gaps resolved; 3 narrow P2 deferrals flagged and scoped, no major semantic gaps remain). OWNERSHIP CORRECTION 2026-09-16 (VOICE gap-analysis pass): 3 records (PORTA_TIME, PORTA_CURVE, ALWAYS_SCALED) re-homed from GLOBAL_KEYBOARD to VOICE/VOICING after direct live-UI confirmation that they physically reside inside Serum's labeled 'VOICING' panel, not the Keyboard/Performance bar (the two are visually distinct, divider-separated regions; this was not previously distinguished because both sit at the bottom of the window). ALWAYS_SCALED was additionally split into two independent records (PORTA_ALWAYS, PORTA_SCALED) upon direct proof via right-click context-menu headers that they are two separately-named engine controls, not one compound toggle-pair. GLOBAL_KEYBOARD now holds 21 records (previously 24 in the raw data / 22 per this section's own closure count, a pre-existing discrepancy left for FINAL RECONCILIATION to resolve). No GLOBAL_KEYBOARD evidence was deleted; the three re-homed records retain their full original evidence chains under their new VOICE.VOICING.* semantic_ids.",
       "VOICE": "CLOSED_STAR (2026-09-16): VOICE section (Serum's 'VOICING' panel, bottom-right of the main window) gap-analysis and reconciliation pass complete. 8 VOICE-scoped records total: 7 VERIFIED, 1 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE, P0=0, P1=0, P2=0. METHOD: gap-analysis against official Xfer 'What's New in Serum 2' PDF (page 4 UI-overview diagram, the only official source available this session) plus the existing canonical inventory, per gap_analysis_methodology.md; direct UI validation performed only for gaps/conflicts/ownership questions, not a full rediscovery. OWNERSHIP RESOLUTION (Conflicts A/B/C from gap_analysis_methodology.md): PORTA_TIME, PORTA_CURVE, ALWAYS and SCALED were previously recorded under GLOBAL_KEYBOARD; direct live-UI observation proved all four are physically located inside the single labeled 'VOICING' panel (confirmed via verbatim-identical hover tooltips and right-click context-menu headers matching the pre-existing KEYBOARD/PERFORMANCE-pass evidence exactly), a visually distinct, divider-separated region from the Keyboard/Performance bar -- there is exactly ONE physical instance of each control, so this was a RE-HOME (ownership correction), not a two-surface merge. ALWAYS/SCALED were further SPLIT into VOICE.VOICING.PORTA_ALWAYS and VOICE.VOICING.PORTA_SCALED after right-click menus proved their exact distinct internal names ('Porta Always', 'Porta Scaled'). No prior evidence was deleted or overwritten; all three original records were re-homed in place (semantic_id/section/module changed, original sources/notes preserved and extended). NEW DISCOVERIES: MONO (checkbox, disables POLY when on, changes voice-count display denominator to 1, no tooltip, no context menu), POLY/'Poly Count' (stepper, default 8, scroll-mutable only -- click on rendered arrows non-responsive, no context menu, disabled under MONO), LEGATO (checkbox, minimal context menu 'Legato'/Reset Control/MIDI Learn, independent of MONO state, cross-referenced but NOT merged with the distinct ENV-section 'Invert Legato' feature), and the read-only '0/N' voice-count display (PROVEN_NOT_USER_CONTROL, denominator mirrors POLY/MONO, not independently interactive). CONDITIONAL-STATE TRAVERSAL performed and documented: MONO off/on, LEGATO off/on under both MONO states, ALWAYS/SCALED off/on/both-on -- all transitions restored to baseline and re-verified via zoom; no additional hidden or conditionally-appearing controls were found beyond the disable/grey effect of MONO on POLY. UNRESOLVED PRIOR CLAIM: a pre-existing project memory (voice_section_boundary.md) asserted a 'Limit Same Note Poly to 1' item and a 'Voice Steal Priority' submenu (Newest/Oldest/Highest/Lowest/Velocity) exist on a POLY/MONO context menu, sourced from an unverified prior-session claim of an inaccessible full Serum 2 User Guide page 215-218. This pass right-clicked MONO, POLY (label/value/up-down arrows), the VOICING panel header/background, and the top-level Serum MENU, and found no such items anywhere; right-click was independently confirmed functional throughout via PORTA/CURVE/ALWAYS/SCALED/LEGATO's own menus. Per epistemic discipline this claim is NEITHER promoted to VERIFIED NOR marked PROVEN_NOT_USER_CONTROL from a single UI-only negative search -- it is flagged unresolved, with the source memory recommended for correction, pending either a successful direct find in a future pass or access to the full official manual (only the 20-page 'What's New' summary PDF was available this session; it does not enumerate VOICING panel controls at this granularity). NAMING RECONCILIATION: legacy code-layer semantic-target entries in serum2/compiler/targets.py ('Global.VelocityCurve', capability_key global_field_velocity_curve) and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md ('GLOBAL.VELOCITY_CURVE') are very likely a mislabeling of VOICE.VOICING.PORTA_CURVE (both were speculative, UNKNOWN-causal-status entries never verified against live UI); documented as a hypothesis in PORTA_CURVE's notes, NOT executed as a code change, and NOT ruled out as a possibly-genuine separate GLOBAL-tab velocity-response control pending the GLOBAL pass. Other legacy Global.* entries in that same list (GLOBAL.MONO, GLOBAL.POLY_COUNT, GLOBAL.LEGATO, GLOBAL.PORTAMENTO_TIME/ALWAYS/SCALED) are reconciled as referring to the same controls now correctly homed under VOICE.VOICING.*; no targets.py code edits were made (out of scope for an inventory-only pass; flagged for a future compiler-layer cleanup task). VOICE CLOSURE GATE: PASSED (P0=0, P1=0, P2=0; the one unresolved prior-memory claim is explicitly scoped out as neither a semantic gap in the current UI nor a proven negative, and does not block closure).",
-      "GLOBAL": "CLOSED_STAR (2026-09-16): GLOBAL tab (Quality/Tuning/Voice Control/Preferences) gap-analysis and discovery pass complete. 31 GLOBAL-scoped records: 30 VERIFIED, 1 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE, P0=0, P1=0, P2=0. P1 RESOLVED 2026-09-16 (targeted recheck, not broad rediscovery): SEQ.CUTOFF ('Sets Filter Cutoff offset per voice.'), SEQ.ENVS ('Sets Envelope offset per voice.'), TUNING.LOCK ('if enabled and you load presets, the current tuning will stay (Serum will ignore the .tun and concert/440 saved in the presets)'), and VOICE_CONTROL.SCALING.LFOS ('LFO Scaling') were each independently re-hovered and their tooltips captured character-for-character, replacing the prior structural-analogy inference. Per this project's Section-Closure Method, a real P1 cannot be closed out as merely non-blocking -- it must be resolved now (done here) or demonstrated to actually be a P2 and logged in the deferred queue. METHOD: official Xfer 'What's New in Serum 2' PDF (the only official source accessible this session) confirms GLOBAL exists as a top-level tab but gives no control-level detail; primary evidence is direct live-UI observation on the running Serum 2.0.21/Ableton session, cross-checked against existing legacy speculative research (serum2/compiler/targets.py 'Global.*' entries and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md's '2E: Global / Voice' table, both UNKNOWN/STRUCTURAL_ONLY causal status, never previously UI-verified). FOUR MODULES DISCOVERED: (1) QUALITY -- Oversampling (Good/High/Ultra, exact name confirmed via right-click header) with its own Lock, Serum1 Compatibility (reconciles legacy GLOBAL.BACKWARD_COMPAT), Disable Smoothing. (2) TUNING -- Global Tuning (A=440Hz reference pitch, reconciles legacy GLOBAL.TUNING) with its own Lock, and a TUN FILE microtonal-tuning loader (not exercised, would open a native file dialog). (3) VOICE_CONTROL -- a per-oscillator (S/A/B/C/N scope) randomization (RANDOM: Pan/Detune/Cutoff/Envs) and 8-step sequencing (SEQ: Pan/Detune/Cutoff/Envs/Mod1/Mod2) panel plus Envelope/LFO Scaling controls; directly confirms the GLOBAL vs VOICE ownership split predicted in project memory voice_section_boundary.md (MOD1/MOD2 explicitly verified to exist ONLY here, with no VOICE.VOICING.* equivalent). (4) PREFERENCES -- 6 UI toggle-pairs (Help/Param tooltips, Double-click behavior, Mouse wheel control, Keyboard shortcuts, Default waveform view [reconciles legacy GLOBAL.WAVETABLE_DISPLAY_MODE]) plus 2 MPE default-behavior checkboxes (cross-referenced to, not merged with, the live KEYBOARD.MPE.ENABLED toggle). Plus one PROVEN_NOT_USER_CONTROL static build/date display. MUTATION TESTS PERFORMED AND RESTORED: OSC scope 'S' toggle off/on; SEQ row selection (DETUNE, then PAN) with a step-3 drag mutation and restoration (residual sub-pixel precision not independently readback-verified, flagged); Quality dropdown opened and closed without changing selection; Mouse Wheel Param Control toggled OFF then back ON with full readback verification. Two incidental side-effects from stray clicks (an LFO1->LFO2 tab reselection, twice) were caught and reverted each time; final state re-verified via screenshot to exactly match the panel's state when the GLOBAL tab was first opened this session. GAPS CHECKED FOR AND NOT FOUND on the GLOBAL tab (legacy targets.py/PHASE_2_1 hypotheses that did NOT verify): a separate 'Render Quality' setting distinct from Oversampling (GLOBAL.RENDER_QUALITY hypothesis); 'Pitch Tracking' (GLOBAL.PITCH_TRACKING hypothesis); 'Noise Fine' (GLOBAL.NOISE_FINE hypothesis -- if it exists it likely belongs to the OSC/Noise oscillator itself, not GLOBAL, and is out of scope for this pass); a third standalone preset 'Bank' selector distinct from ARP.GLOBAL.BANK/CLIP.GLOBAL.BANK (GLOBAL.BANK hypothesis). None of these are declared PROVEN_NOT_USER_CONTROL (a single UI-only negative search is not strong enough per this project's epistemic discipline); they are simply excluded from this inventory as unconfirmed, matching the precedent set by VOICE's 'Voice Steal Priority' finding. Master Volume (legacy GLOBAL.MASTER_VOLUME) requires no new record -- already correctly owned by MIXER.MAIN.LEVEL, confirmed via inventory cross-check before this pass began (no live re-verification needed). SEPARATELY (correctly classified as P2, not P1, and logged in DEFERRED_SEMANTIC_VALIDATION_QUEUE as 'MPE_OWNERSHIP_RECONCILIATION', NOT resolved in this pass): whether GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT / MPE_PITCH_BEND_MAPS_TO_EXPR_X share live state with the top-level Serum MENU's KEYBOARD.MPE.* cluster (including MPE Bend Range's exact ownership) is a CROSS-SYSTEM reconciliation question spanning two already-closed sections' surfaces -- explicitly deferred to CROSS-SYSTEM/FINAL RECONCILIATION per the master plan's execution order, not resolved inside GLOBAL's own closure. This does not block GLOBAL closure: GLOBAL's own two records are correctly captured as they appear on the GLOBAL tab regardless of how the cross-system question resolves. GLOBAL CLOSURE GATE: PASSED (P0=0, P1=0, P2=0 within GLOBAL's own scope; one CROSS-SYSTEM P2 logged for later, per the master plan's own separation of section closure from cross-system reconciliation)."
+      "GLOBAL": "CLOSED_STAR (2026-09-16): GLOBAL tab (Quality/Tuning/Voice Control/Preferences) gap-analysis and discovery pass complete. 31 GLOBAL-scoped records: 30 VERIFIED, 1 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE, P0=0, P1=0, P2=0. P1 RESOLVED 2026-09-16 (targeted recheck, not broad rediscovery): SEQ.CUTOFF ('Sets Filter Cutoff offset per voice.'), SEQ.ENVS ('Sets Envelope offset per voice.'), TUNING.LOCK ('if enabled and you load presets, the current tuning will stay (Serum will ignore the .tun and concert/440 saved in the presets)'), and VOICE_CONTROL.SCALING.LFOS ('LFO Scaling') were each independently re-hovered and their tooltips captured character-for-character, replacing the prior structural-analogy inference. Per this project's Section-Closure Method, a real P1 cannot be closed out as merely non-blocking -- it must be resolved now (done here) or demonstrated to actually be a P2 and logged in the deferred queue. METHOD: official Xfer 'What's New in Serum 2' PDF (the only official source accessible this session) confirms GLOBAL exists as a top-level tab but gives no control-level detail; primary evidence is direct live-UI observation on the running Serum 2.0.21/Ableton session, cross-checked against existing legacy speculative research (serum2/compiler/targets.py 'Global.*' entries and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md's '2E: Global / Voice' table, both UNKNOWN/STRUCTURAL_ONLY causal status, never previously UI-verified). FOUR MODULES DISCOVERED: (1) QUALITY -- Oversampling (Good/High/Ultra, exact name confirmed via right-click header) with its own Lock, Serum1 Compatibility (reconciles legacy GLOBAL.BACKWARD_COMPAT), Disable Smoothing. (2) TUNING -- Global Tuning (A=440Hz reference pitch, reconciles legacy GLOBAL.TUNING) with its own Lock, and a TUN FILE microtonal-tuning loader (not exercised, would open a native file dialog). (3) VOICE_CONTROL -- a per-oscillator (S/A/B/C/N scope) randomization (RANDOM: Pan/Detune/Cutoff/Envs) and 8-step sequencing (SEQ: Pan/Detune/Cutoff/Envs/Mod1/Mod2) panel plus Envelope/LFO Scaling controls; directly confirms the GLOBAL vs VOICE ownership split predicted in project memory voice_section_boundary.md (MOD1/MOD2 explicitly verified to exist ONLY here, with no VOICE.VOICING.* equivalent). (4) PREFERENCES -- 6 UI toggle-pairs (Help/Param tooltips, Double-click behavior, Mouse wheel control, Keyboard shortcuts, Default waveform view [reconciles legacy GLOBAL.WAVETABLE_DISPLAY_MODE]) plus 2 MPE default-behavior checkboxes (cross-referenced to, not merged with, the live KEYBOARD.MPE.ENABLED toggle). Plus one PROVEN_NOT_USER_CONTROL static build/date display. MUTATION TESTS PERFORMED AND RESTORED: OSC scope 'S' toggle off/on; SEQ row selection (DETUNE, then PAN) with a step-3 drag mutation and restoration (residual sub-pixel precision not independently readback-verified, flagged); Quality dropdown opened and closed without changing selection; Mouse Wheel Param Control toggled OFF then back ON with full readback verification. Two incidental side-effects from stray clicks (an LFO1->LFO2 tab reselection, twice) were caught and reverted each time; final state re-verified via screenshot to exactly match the panel's state when the GLOBAL tab was first opened this session. GAPS CHECKED FOR AND NOT FOUND on the GLOBAL tab (legacy targets.py/PHASE_2_1 hypotheses that did NOT verify): a separate 'Render Quality' setting distinct from Oversampling (GLOBAL.RENDER_QUALITY hypothesis); 'Pitch Tracking' (GLOBAL.PITCH_TRACKING hypothesis); 'Noise Fine' (GLOBAL.NOISE_FINE hypothesis -- if it exists it likely belongs to the OSC/Noise oscillator itself, not GLOBAL, and is out of scope for this pass); a third standalone preset 'Bank' selector distinct from ARP.GLOBAL.BANK/CLIP.GLOBAL.BANK (GLOBAL.BANK hypothesis). None of these are declared PROVEN_NOT_USER_CONTROL (a single UI-only negative search is not strong enough per this project's epistemic discipline); they are simply excluded from this inventory as unconfirmed, matching the precedent set by VOICE's 'Voice Steal Priority' finding. Master Volume (legacy GLOBAL.MASTER_VOLUME) requires no new record -- already correctly owned by MIXER.MAIN.LEVEL, confirmed via inventory cross-check before this pass began (no live re-verification needed). SEPARATELY (correctly classified as P2, not P1, and logged in DEFERRED_SEMANTIC_VALIDATION_QUEUE as 'MPE_OWNERSHIP_RECONCILIATION', NOT resolved in this pass): whether GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT / MPE_PITCH_BEND_MAPS_TO_EXPR_X share live state with the top-level Serum MENU's KEYBOARD.MPE.* cluster (including MPE Bend Range's exact ownership) is a CROSS-SYSTEM reconciliation question spanning two already-closed sections' surfaces -- explicitly deferred to CROSS-SYSTEM/FINAL RECONCILIATION per the master plan's execution order, not resolved inside GLOBAL's own closure. This does not block GLOBAL closure: GLOBAL's own two records are correctly captured as they appear on the GLOBAL tab regardless of how the cross-system question resolves. GLOBAL CLOSURE GATE: PASSED (P0=0, P1=0, P2=0 within GLOBAL's own scope; one CROSS-SYSTEM P2 logged for later, per the master plan's own separation of section closure from cross-system reconciliation).",
+      "BROWSER": "CLOSED_STAR (2026-09-16): BROWSER/RESOURCES (Presets Browser panel, top-level MENU resource actions, and pack workflows) gap-analysis and discovery pass complete. 41 BROWSER-scoped records: 41 VERIFIED, 0 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE, P0=0, P1=0, P2=1. METHOD: official Xfer 'What's New in Serum 2' PDF page 20 (Search, Menu, Content Library, Categories/Tags, Presets, Metadata, Ratings, Macros, Preview Presets, Ratings Filter, Folders, Packs) as the initial catalog -- confirmed as a feature-summary, not a full behavioral manual, so treated as a starting checklist, not an exhaustive one, per this project's discipline. No separate deeper 'existing Browser research' file exists beyond this PDF-derived list (checked; none found) -- direct live-UI observation on the running Serum 2.0.21/Ableton session was the primary evidence source throughout. SIX MODULES DISCOVERED: (1) TOGGLE -- the panel open/close button. (2) SEARCH -- text field (commits on Enter, not live-filter) plus its clear button. (3) MENU (Browser's own gear-icon dropdown) -- 10 items matching and expanding the official 'Hybridize presets, auto-play, rescan database, and more' summary exactly, including a 3-option Preview Fallback Clip submenu. (4) FOLDERS -- a genuine 2+ level Local > Factory/User > category tree, confirmed hierarchical via before/after filter testing, plus a per-folder 'Create and Export Pack...' action that resolves the official Packs feature to its exact UI location. (5) CATEGORIES_TAGS -- a tab-toggled Categories/Tags panel (two genuinely distinct classification systems, not one list shown two ways) plus a 7-option Ratings Filter dropdown. (6) PRESET_LIST -- 5 independently-sortable columns, an inline per-row 1-5 star rating control (click-to-set, re-click-same-value-to-clear, directly tested and restored), and a KEY WORKFLOW FINDING: a single click on a preset row (name or icon) commits a FULL LOAD into Serum's engine state immediately -- there is no separate preview-without-committing step observable at the row level in this build. Plus METADATA (Preset Name/Author/Category/Description/Notes/Tags -- Description and Notes directly confirmed editable and readback-verified restored; Preset Name/Author/Category left untested to avoid real file-rename risk), NAVIGATION (Prev/Next -- confirmed to step through the current sorted/filtered list order; a compact cascading Factory/User > category > preset menu mirroring the Folders tree; a Save icon), and PACKS/TOPMENU_RESOURCE (Import Preset Pack, Get Preset Packs, Init/Load/Revert/Save-as-Default preset, Open Presets Folder, Rescan Folders on Disk, Load Tuning -- all read directly from the top-level Serum MENU, distinct from the Browser's own gear-icon MENU). FOUR TARGETED RECHECKS performed to close out initial hedges rather than leave them mislabeled (matching this project's own closure discipline): Auto-Play Previews' default confirmed OFF (no checkmark, directly re-verified); all 5 preset-list columns confirmed independently sortable (previously only NAME was tested); the NOTES metadata field's editability directly tested and readback-verified restored (previously inferred only by analogy to Description); Prev/Next's list-order-following behavior confirmed against a known, controlled sort state (previously tested mid-sort-change, leaving the exact rule ambiguous). INCIDENTAL DISCOVERY (additive, does not reopen VOICE's closure): while restoring state after this pass's preset-loading tests, found the NOISE oscillator had been unintentionally enabled by a stray click, which revealed that VOICE.VOICING.VOICE_COUNT_DISPLAY's '0/N' denominator is POLY x (enabled-oscillator-count), not POLY alone as originally documented (the multiplier was invisible during the original VOICE pass because only one oscillator was ever enabled there). Logged as an additive evidence note on that existing PROVEN_NOT_USER_CONTROL record; VOICE's own status/closure is unchanged. OWNERSHIP FLAG (P2, correctly deferred, NOT resolved in this pass): whether the Browser gear-menu's 'Rescan Database' and the top-level Serum MENU's 'Rescan Folders on Disk' are the identical underlying action under two labels, or two genuinely distinct scans, requires triggering and comparing both actions' behavior/timing against the actual filesystem and preset index -- a CROSS-SYSTEM verification spanning two menu surfaces, not a single-click existence check. Logged as DEFERRED_SEMANTIC_VALIDATION_QUEUE entry 'BROWSER_RESCAN_OWNERSHIP' below. This is the section's one permitted P2; every other initially-hedged item was resolved above rather than deferred, per this project's Section-Closure Method (a real P1 must be resolved now or demonstrated to be a genuine P2 and logged, never left as 'non-blocking'). OUT-OF-SCOPE, NOT A GAP: PACKS browsing surface could not be exercised beyond the create/import/get actions because no pack is currently installed in this environment (a structural/environmental limitation, not a testing omission -- matches this project's established treatment of the 'Audio processing disabled' condition elsewhere). Many destructive/file-mutating menu actions (Delete Preset(s), Rename/Move Preset, Erase and Rebuild Database, Load Random Preset, Hybridize, Save as Default Preset) were deliberately NOT clicked-through; their existence, exact label, and keyboard shortcut (where shown) are directly observed and sufficient for VERIFIED status, matching this project's standing convention (cf. Matrix's greyed 'Bypass Modulator' items, Global's untested Erase-adjacent actions) that a menu item's existence does not require executing it, only observing it. PRESET_NAME/AUTHOR/CATEGORY metadata fields' in-place editability (vs. requiring the Rename/Move action) was deliberately left UNCONFIRMED rather than tested, to avoid a real risk of renaming an actual factory or user preset file with no simple, verifiable undo -- their VERIFIED status rests on direct display/read behavior only, which is the complete claim being made. BROWSER CLOSURE GATE: PASSED (P0=0, P1=0, P2=1; the single P2 is a cross-system ownership question explicitly logged for CROSS-SYSTEM/FINAL RECONCILIATION, not a section-closure blocker)."
     },
     "sections_pending": [
       "VOICE",
@@ -72,6 +74,17 @@
         "why_unresolved": "This is exactly the kind of ownership question this project's methodology (see gap_analysis_methodology.md Section 5, Conflicts A/B/C) resolves via a targeted before/after cross-surface test -- but that test requires deliberately toggling GLOBAL's 'MPE enabled by default' and observing whether the MENU's live 'MPE Enabled' state changes to match (or vice versa), which is a CROSS-SYSTEM reconciliation experiment spanning two already-closed sections' surfaces, not a single-section gap. Doing it mid-GLOBAL-pass would have meant re-opening KEYBOARD/PERFORMANCE's already-closed evidence scope without the full cross-system view of all sections' MPE-adjacent controls (e.g. MATRIX's MPE-related Mod Source entries, per the KEYBOARD closure notes).",
         "evidence_that_would_resolve_it": "At CROSS-SYSTEM/FINAL RECONCILIATION: (1) toggle GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT and read back the top-level MENU's 'MPE Enabled' state (and vice versa) to test for live coupling; (2) determine whether 'MPE Bend Range: 48' has ANY corresponding field inside GLOBAL's Preferences panel (a numeric stepper that may have been missed, e.g. behind a scroll or a sub-menu) or whether it is genuinely MENU-only; (3) if no coupling is found, keep both clusters as distinct records with cross_references (already added) and document the reconciliation decision explicitly; if coupling is found, merge per this project's re-home-not-duplicate discipline.",
         "gate_check_passed": "Confirmed NON-BLOCKING for GLOBAL closure: does not change GLOBAL's own control count, mode/type universe, conditional UI, or structural topology -- GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT and MPE_PITCH_BEND_MAPS_TO_EXPR_X are correctly recorded as they appear on the GLOBAL tab regardless of how this cross-system question resolves. It is a CROSS-SYSTEM ownership question (already flagged as GLOBAL_KEYBOARD's own P2 deferral at KEYBOARD closure: 'MOD_WHEEL.SOURCE_INDICATOR Matrix-panel integration semantics... three MPE menu items' function'), now additionally cross-referencing GLOBAL's parallel preferences. Belongs at CROSS-SYSTEM/FINAL RECONCILIATION per the master plan's own execution order, not inside either section's individual closure."
+      },
+      {
+        "section": "CROSS-SYSTEM",
+        "semantic_id": "BROWSER_RESCAN_OWNERSHIP",
+        "priority": "P2",
+        "status": "DEFERRED",
+        "question": "Is BROWSER.MENU.RESCAN_DATABASE (Browser panel's own gear-icon dropdown) the same underlying action as TOPMENU.RESOURCE.RESCAN_FOLDERS_ON_DISK (top-level Serum MENU), just exposed under two labels on two menu surfaces, or are these two genuinely distinct operations (e.g. one re-indexes the preset metadata database from its existing folder list, the other re-scans the filesystem for new/removed folders before re-indexing)?",
+        "current_evidence": "Both items were directly observed to exist, with their exact labels captured verbatim: 'Rescan Database' (Browser gear-icon MENU) and 'Rescan Folders on Disk' (top-level Serum MENU). Neither was clicked/executed this pass, so no behavioral evidence (timing, effect on a deliberately-added test file, log output) distinguishes them.",
+        "why_unresolved": "Disambiguating requires actually triggering one or both scans and observing their effect on the preset database/folder listing (e.g. adding a test file to the User folder outside Serum, then triggering each scan separately to see which one picks it up) -- a controlled experiment spanning two menu surfaces and real filesystem state, not a single-click existence check appropriate for a single section's gap-analysis pass.",
+        "evidence_that_would_resolve_it": "At CROSS-SYSTEM/FINAL RECONCILIATION: add a test preset file directly to the User folder via the OS (outside Serum), then trigger 'Rescan Database' alone and check whether it appears in the Browser; if not, trigger 'Rescan Folders on Disk' and check again. If both are needed, they are distinct steps of one pipeline (not duplicates) and should be modeled as such. If either alone suffices, the two menu items likely invoke the same underlying action and should be reconciled to one semantic identity with two menu-surface cross-references, consistent with this project's re-home-not-duplicate discipline.",
+        "gate_check_passed": "Confirmed NON-BLOCKING for BROWSER closure: does not change BROWSER's own control count (both items are already recorded, each with its own directly-observed exact label), ownership within BROWSER (both surfaces are already correctly attributed to their respective menus), or BROWSER's resource workflows (the preset-database-refresh behavior is the same regardless of which of the two the user clicks). It is a genuine CROSS-SYSTEM question about whether two records should eventually be merged to one identity -- exactly the kind of ownership question this project's methodology reserves for CROSS-SYSTEM/FINAL RECONCILIATION, not individual section closure (cf. the MPE_OWNERSHIP_RECONCILIATION precedent logged during the GLOBAL pass)."
       }
     ],
     "evidence_hierarchy": [
@@ -15180,13 +15193,17 @@
         {
           "type": "direct_ui_observation",
           "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: denominator tracks VOICE.VOICING.POLY's live value exactly -- observed '0/8' at POLY=8, '0/7' immediately after scrolling POLY down to 7, back to '0/8' after restoring POLY to 8; and '0/1' when MONO is switched ON (overriding POLY's own value display while MONO is active), returning to '0/8' when MONO is switched back OFF. The numerator (observed as 0 throughout) is presumed to represent currently-active voice count, but this could not be driven above 0 in this session because no notes were sounding and the session reported 'Audio processing disabled' throughout."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES pass, live UI, 2026-09-16 (incidental discovery during state restoration): after using the top-level MENU's 'Init Preset' action, the display showed '0/16' while VOICE.VOICING.POLY's stepper showed '8' -- an apparent mismatch versus the 1:1 relationship established during the original VOICE pass. Investigation found the NOISE oscillator had been unintentionally enabled (a stray click during Browser testing); with 2 oscillators enabled (OSC A + NOISE) the denominator was 16 = 8 x 2. Disabling NOISE (restoring only OSC A enabled, matching the true session baseline) immediately returned the display to '0/8'. Also confirmed POLY=7 with 2 oscillators enabled produced '0/14' (7 x 2), consistent with the same multiplier."
         }
       ],
       "evidence_type": [
         "DIRECT_UI_OBSERVATION"
       ],
       "status": "PROVEN_NOT_USER_CONTROL",
-      "notes": "NEW DISCOVERY 2026-09-16 (VOICE gap-analysis pass), classified PROVEN_NOT_USER_CONTROL: this is a read-only derived display, not an independently settable control -- it has no tooltip, no context menu, and does not respond to a click, and its value is fully explained as a function of VOICE.VOICING.POLY (denominator) and VOICE.VOICING.MONO (overrides denominator to 1) plus a live active-voice count this session could not exercise (audio processing disabled). Recorded for completeness/cross-reference per project convention (cf. MATRIX.MOD field precedent), not counted toward VOICE's VERIFIED total."
+      "notes": "NEW DISCOVERY 2026-09-16 (VOICE gap-analysis pass), classified PROVEN_NOT_USER_CONTROL: this is a read-only derived display, not an independently settable control -- it has no tooltip, no context menu, and does not respond to a click, and its value is fully explained as a function of VOICE.VOICING.POLY (denominator) and VOICE.VOICING.MONO (overrides denominator to 1) plus a live active-voice count this session could not exercise (audio processing disabled). Recorded for completeness/cross-reference per project convention (cf. MATRIX.MOD field precedent), not counted toward VOICE's VERIFIED total. REFINEMENT 2026-09-16 (discovered incidentally during the BROWSER/RESOURCES pass, not a reopening of VOICE's closure): the denominator is POLY x (number of currently-enabled oscillators), not POLY alone as the original VOICE-pass evidence assumed -- that assumption held only because just one oscillator (OSC A) was ever enabled during the original VOICE testing, making the multiplier invisible (1x). This does not change VOICE.VOICING.POLY's or MONO's own VERIFIED status or evidence, and does not add a new semantic control -- it refines the already-PROVEN_NOT_USER_CONTROL display's documented formula. No JSON status change; additive evidence only."
     },
     {
       "semantic_id": "GLOBAL.QUALITY.OVERSAMPLING",
@@ -15385,7 +15402,8 @@
       "conditional_visibility": null,
       "conditions": [],
       "cross_references": [
-        "GLOBAL.TUNING.GLOBAL_TUNING"
+        "GLOBAL.TUNING.GLOBAL_TUNING",
+        "TOPMENU.RESOURCE.LOAD_TUNING"
       ],
       "resource_dependency": "user-provided .tun tuning file",
       "structural_action": null,
@@ -15399,7 +15417,7 @@
         "DIRECT_UI_OBSERVATION"
       ],
       "status": "VERIFIED",
-      "notes": "NEW DISCOVERY, not previously hypothesized. Existence confirmed by direct observation only; file-load interaction deliberately not tested this pass (would open a native file dialog outside the plugin's own control surface)."
+      "notes": "NEW DISCOVERY, not previously hypothesized. Existence confirmed by direct observation only; file-load interaction deliberately not tested this pass (would open a native file dialog outside the plugin's own control surface). CROSS-REFERENCE ADDED 2026-09-16 (BROWSER/RESOURCES pass): the top-level Serum MENU's 'Load Tuning (.tun)...' item (TOPMENU.RESOURCE.LOAD_TUNING) almost certainly performs the same underlying action as this GLOBAL-tab button, via a second access surface. Not independently tested side-by-side; this GLOBAL record's own evidence/status is unchanged by this note."
     },
     {
       "semantic_id": "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
@@ -16162,6 +16180,1260 @@
       ],
       "status": "PROVEN_NOT_USER_CONTROL",
       "notes": "NEW DISCOVERY, classified PROVEN_NOT_USER_CONTROL: static informational display (plugin build number and build date), not a settable control. Recorded for completeness per project convention."
+    },
+    {
+      "semantic_id": "BROWSER.TOGGLE",
+      "section": "BROWSER",
+      "module": "TOGGLE",
+      "submodule": null,
+      "label": "Browser toggle -- opens/closes the Presets Browser panel",
+      "control_type": "button",
+      "value_range": null,
+      "options": null,
+      "default": "closed",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: grid/list icon in the top toolbar (right of the preset name field, left of MENU). Clicking it opens the full Presets Browser panel, replacing the OSC/MIX/FX/MATRIX/GLOBAL tab content area; clicking again (or selecting a preset) returns to the prior tab view."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. This is the entry point for the entire Browser surface; every other BROWSER.* record in this section is reached through this panel."
+    },
+    {
+      "semantic_id": "BROWSER.SEARCH.FIELD",
+      "section": "BROWSER",
+      "module": "SEARCH",
+      "submodule": null,
+      "label": "Search -- filters the preset list by name/word",
+      "control_type": "text_field",
+      "value_range": null,
+      "options": null,
+      "default": "(empty)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.SEARCH.CLEAR",
+        "BROWSER.PRESET_LIST.COLUMNS"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: text field with magnifying-glass icon at the top-left of the Browser panel. Hover tooltip verbatim: 'enter text here to search the preset list for specific letters or words'."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: typed 'bass' and pressed Enter -- preset list filtered from the full alphabetical list down to only Bass-related presets (BA - Acid Bass Toolbox, BA - Amazing DNB Bass, etc). Typing alone (before Enter) did not visibly filter the list; Enter was required to commit the search."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'Search -- Use to quickly search presets by name' (What's New PDF, p.20). Confirms the search commits on Enter, not live-as-you-type filtering."
+    },
+    {
+      "semantic_id": "BROWSER.SEARCH.CLEAR",
+      "section": "BROWSER",
+      "module": "SEARCH",
+      "submodule": null,
+      "label": "Search clear ('x') -- clears the search field and restores the unfiltered list",
+      "control_type": "button",
+      "value_range": null,
+      "options": null,
+      "default": "hidden until search text is entered",
+      "conditional_visibility": "only visible when the search field is non-empty",
+      "conditions": [
+        "BROWSER.SEARCH.FIELD != empty"
+      ],
+      "cross_references": [
+        "BROWSER.SEARCH.FIELD"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: small '×' button appears at the right edge of the search field once text is entered. Clicked it -- search field emptied and the preset list returned to its full unfiltered view."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not named in the official summary but a direct consequence of the Search field's existence."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.SHOW_IN_FOLDER",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Show Preset in folder",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": "enabled only when a preset is selected",
+      "conditions": [
+        "preset selected"
+      ],
+      "cross_references": [
+        "BROWSER.PRESET_LIST.ROW_CONTEXT_MENU"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown (top-right of the Browser panel, next to Search) item 'Show Preset in folder', greyed out with no preset selected, present in the menu regardless."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Same action is also exposed via right-click on a preset row (see BROWSER.PRESET_LIST.ROW_CONTEXT_MENU) -- one semantic identity, two access surfaces; not duplicated. Not clicked this pass (would open an OS file-explorer window, outside the plugin's own control surface)."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.LOAD_RANDOM_PRESET",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Load Random Preset",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Load Random Preset', keyboard shortcut '7' shown alongside it. Not clicked this pass (would load an unpredictable preset, complicating restoration)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.HYBRIDIZE",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Hybridize -- generates a new preset by combining random existing presets",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Hybridize', keyboard shortcut '8'. Not clicked this pass (mutates the active preset unpredictably)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Reconciles official 'Menu -- Hybridize presets, auto-play, rescan database, and more' (What's New PDF, p.20) -- confirms exact menu item name and keyboard shortcut."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.HYBRIDIZE_FAVORING_SELECTED",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Hybridize Favoring Selected Preset",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": "enabled only when a preset is selected",
+      "conditions": [
+        "preset selected"
+      ],
+      "cross_references": [
+        "BROWSER.MENU.HYBRIDIZE"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Hybridize Favoring Selected Preset', keyboard shortcut '9', greyed with no selection. Not clicked (same mutation risk as Hybridize)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, a variant of Hybridize that weights the hybridization toward the currently-selected preset rather than a pure random combination."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.DELETE_PRESETS",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Delete Preset(s)",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": "enabled only when one or more presets are selected",
+      "conditions": [
+        "preset(s) selected"
+      ],
+      "cross_references": [
+        "BROWSER.PRESET_LIST.ROW_CONTEXT_MENU"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Delete Preset(s)', shortcut 'Shift+Backspace', greyed with no selection. NOT exercised -- destructive/irreversible action, deliberately not tested."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Same action also on the preset-row right-click menu (BROWSER.PRESET_LIST.ROW_CONTEXT_MENU) -- one identity, two surfaces."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.RENAME_MOVE_PRESET",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Rename / Move Preset",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": "enabled only when a preset is selected",
+      "conditions": [
+        "preset selected"
+      ],
+      "cross_references": [
+        "BROWSER.PRESET_LIST.ROW_CONTEXT_MENU"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Rename / Move Preset', greyed with no selection. NOT exercised -- would rename/move a real file on disk (factory or user preset), deliberately not tested to avoid an unintended, hard-to-cleanly-revert filesystem change."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Same action also on the preset-row right-click menu -- one identity, two surfaces."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.AUTO_PLAY_PREVIEWS",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Auto-Play Previews -- automatically plays a preset's preview clip when it is selected/loaded",
+      "control_type": "toggle",
+      "value_range": null,
+      "options": null,
+      "default": "off (no checkmark)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.MENU.PREVIEW_FALLBACK_CLIP",
+        "BROWSER.PRESET_LIST.ROW_SELECT_LOAD"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Auto-Play Previews', shown without a leading checkmark glyph in the screenshot captured (unlike the confirmed-checked 'MPE Enabled' item in the separate top-level Serum MENU). Not clicked/toggled this pass; audio-preview behavior could not be verified either way since Ableton reported 'Audio processing disabled' throughout the session."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES targeted recheck, live UI, 2026-09-16: reopened the gear-icon dropdown and zoomed directly on the 'Auto-Play Previews' row. Confirmed NO checkmark glyph precedes it, unlike a genuinely-checked item (compare the top-level Serum MENU's 'MPE Enabled', which does show a checkmark) -- default state is definitively OFF, not merely 'no checkmark observed in one screenshot'."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'auto-play' mention (What's New PDF, p.20 Menu description). Default state DIRECTLY CONFIRMED OFF on targeted recheck (previously flagged as unconfirmed; that hedge is now removed). Audible effect still could not be tested this session (audio processing disabled)."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.PREVIEW_FALLBACK_CLIP",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Preview Fallback Clip -- selects which bundled MIDI clip plays as the preview when a preset has no custom preview clip of its own",
+      "control_type": "submenu_select",
+      "value_range": null,
+      "options": [
+        "default1.mid",
+        "default2.mid",
+        "default3.mid"
+      ],
+      "default": "default1.mid",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.MENU.AUTO_PLAY_PREVIEWS"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Preview Fallback Clip' opens a submenu listing exactly 3 options -- default1.mid (checkmarked/current), default2.mid, default3.mid. Closed without changing the selection."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Directly explains the official 'Preview Presets -- Previews can play custom clips to showcase the artist's intent' feature (What's New PDF, p.20): a preset with its own embedded/custom preview clip uses that; this fallback selector governs what plays for presets that don't have one."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.RESCAN_DATABASE",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Rescan Database -- re-indexes the preset database for changes on disk",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "TOPMENU.RESOURCE.RESCAN_FOLDERS_ON_DISK"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Rescan Database'. Not clicked this pass (a scan of the full local preset library could take noticeable time and has no clean 'undo' concept to verify against)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'rescan database' (What's New PDF, p.20 Menu description). OWNERSHIP FLAG: the separate top-level Serum MENU (already documented from the KEYBOARD/PERFORMANCE pass) contains a similarly-named 'Rescan Folders on Disk' item (see TOPMENU.RESOURCE.RESCAN_FOLDERS_ON_DISK). Whether these are the exact same underlying action under two labels, or two distinct scans (e.g. database re-index vs. filesystem folder re-scan), was NOT tested this pass (would require triggering both and comparing behavior/timing, out of scope for a single-click existence check). Recorded as two distinct records with a cross-reference rather than assumed-merged; flagged for CROSS-SYSTEM reconciliation."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.ERASE_REBUILD_DATABASE",
+      "section": "BROWSER",
+      "module": "MENU",
+      "submodule": null,
+      "label": "Erase and Rebuild Database -- discards and fully regenerates the preset database",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: gear-icon dropdown item 'Erase and Rebuild Database'. NOT exercised -- destructive to the browser's index (though not to the preset files themselves), deliberately not tested."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized."
+    },
+    {
+      "semantic_id": "BROWSER.FOLDERS.TREE",
+      "section": "BROWSER",
+      "module": "FOLDERS",
+      "submodule": null,
+      "label": "Folders -- hierarchical tree navigation of preset locations (Local > Factory/User > category subfolders)",
+      "control_type": "tree",
+      "value_range": null,
+      "options": null,
+      "default": "Local (root, nothing expanded)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.PRESET_LIST.COLUMNS",
+        "BROWSER.FOLDERS.CREATE_EXPORT_PACK"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: left-hand panel of the Browser, header 'Local', containing two expandable root folders 'Factory' and 'User', each expanding into ~20-30 category subfolders (Arp, Bass, Bell, Brass, Chord, Drum, Drumkit, E Piano, Guitar, Hit, Hoover, Instrument, Keyboard, Lead, Loop, Mallet, Orchestral, Organ, Pad, Piano, Pluck, Seq, SFX, Soundscape, String, Synth, Template, Vox, Woodwind, and more)."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: clicked 'Bass' -- preset list filtered to Bass-and-subfolder presets only (confirmed via LOCATION column values like 'Factory/Bass/808', 'Factory/Bass/Acid'). Expanded 'Bass' -- revealed 10 sub-categories (808, Acid, Electric, Hard, Misc, Modulated, Reese, Retro Analog, Sub, Synth), confirming a genuine 2+ level tree, not a flat list."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: clicked 'User' -- showed real user-saved presets (distinct from Factory content, e.g. this project's own prior test artifacts such as 'bus2test', 'F1ROUTEDIRECT') confirming Factory and User are independently browsable content roots."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Reconciles official 'Folders -- Tree-based hierarchy allows you to quickly find the right sound' and 'Content Library -- Access factory content, artist packs, and user-saved patches' (What's New PDF, p.20). The 'Local' root plus Factory/User siblings together constitute what the official summary calls the 'Content Library'."
+    },
+    {
+      "semantic_id": "BROWSER.FOLDERS.CREATE_EXPORT_PACK",
+      "section": "BROWSER",
+      "module": "FOLDERS",
+      "submodule": null,
+      "label": "Create and Export Pack... -- packages a folder's presets into a distributable pack",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.PACKS.IMPORT",
+        "BROWSER.PACKS.GET_PACKS"
+      ],
+      "resource_dependency": "a folder of presets to package",
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: right-click on the 'User' folder in the Folders tree opened a single-item context menu: 'Create and Export Pack...'. Not clicked (would open a native OS save dialog). Right-click on 'Factory' itself produced no menu (likely restricted from packaging factory content, or the click missed the exact row -- not independently disambiguated)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, resolves the official 'Packs -- Artists can create a pack from a folder of presets' feature (What's New PDF, p.20) to its exact UI location: a per-folder right-click action, not a separate Packs browsing panel. No pack is currently installed in this environment, so there is no dedicated 'browse packs' surface to test -- if a pack were installed it would most likely appear as another root folder alongside Factory/User (inferred from the tree's structure, not directly observed)."
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.TOGGLE",
+      "section": "BROWSER",
+      "module": "CATEGORIES_TAGS",
+      "submodule": null,
+      "label": "CATEGORIES / TAGS tab toggle -- switches the lower-left panel between the Categories list and the Tags list",
+      "control_type": "tab_toggle",
+      "value_range": null,
+      "options": [
+        "CATEGORIES",
+        "TAGS"
+      ],
+      "default": "CATEGORIES",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.CATEGORIES_TAGS.CATEGORY_LIST",
+        "BROWSER.CATEGORIES_TAGS.TAG_LIST"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: two small tab labels 'CATEGORIES' / 'TAGS' below the Folders tree. Clicked 'TAGS' -- panel content switched from a category list (808, Arpeggio, Bass, Bell, Brass, Choir, Chord, Drum, Drumkit, Elec.Piano, Guitar, Hit/Stab, Hoover, Instrument, Keyboard, Lead, Loop, Mallet, Modulated Bass, Orchestra, Organ, Pad, Piano, ...) to a tag list (Arp, Clip, Custom-Tuning, Embedded-Data, Granular, KB-Span, Mono, Multisample, Poly, Preview, S2, Sample, SerumFX, Spectral, Wavetable)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Confirms Categories and Tags are two genuinely distinct classification systems, not the same list shown two ways -- Categories describe the sound type (Bass, Lead, Pad...), Tags describe technical/production attributes (Poly, Wavetable, Sample...)."
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.CATEGORY_LIST",
+      "section": "BROWSER",
+      "module": "CATEGORIES_TAGS",
+      "submodule": null,
+      "label": "Categories list -- clickable category filter chips",
+      "control_type": "multi_select_list",
+      "value_range": null,
+      "options": null,
+      "default": "none selected",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.CATEGORIES_TAGS.TOGGLE",
+        "BROWSER.METADATA.CATEGORY"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: list of category chips including '(no category)', 808, Arpeggio, Bass, Bell, Brass, Choir, Chord, Drum, Drumkit, Elec.Piano, Guitar, Hit/Stab, Hoover, Instrument, Keyboard, Lead, Loop, Mallet, Modulated Bass, Orchestra, Organ, Pad, Piano, and more (list continues below the visible area, not fully scrolled)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'Categories/Tags -- Filter presets by categories and tags' (What's New PDF, p.20). Click-filtering behavior verified via the sibling Tags list (BROWSER.CATEGORIES_TAGS.TAG_LIST); Category chips share the identical widget type and were not independently re-tested for the click action, since the mechanism is visibly the same list component."
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.TAG_LIST",
+      "section": "BROWSER",
+      "module": "CATEGORIES_TAGS",
+      "submodule": null,
+      "label": "Tags list -- clickable tag filter chips, combine (AND) with folder/category selection",
+      "control_type": "multi_select_list",
+      "value_range": null,
+      "options": null,
+      "default": "none selected",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.CATEGORIES_TAGS.TOGGLE",
+        "BROWSER.METADATA.TAGS_PANEL"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: with 'Bass' folder selected, clicked the 'Poly' tag chip -- preset list narrowed from the full Bass-folder list down to only Poly-tagged Bass presets (e.g. 'BA - Analog Classics 2', 'BA - Forge Stabs'), confirming tag selection is an ADDITIONAL filter combined with the active folder selection, not a replacement. Clicked 'Poly' again to deselect and restore the unfiltered Bass-folder view."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'Categories/Tags -- Filter presets by categories and tags' (What's New PDF, p.20). Directly confirms AND-combination behavior with folder selection via before/after testing."
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.RATING_FILTER",
+      "section": "BROWSER",
+      "module": "CATEGORIES_TAGS",
+      "submodule": null,
+      "label": "Ratings Filter -- shows only presets at or above a chosen minimum star rating",
+      "control_type": "dropdown",
+      "value_range": null,
+      "options": [
+        "(any rating)",
+        "(no rating)",
+        "*",
+        "**",
+        "***",
+        "****",
+        "*****"
+      ],
+      "default": "(any rating)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.PRESET_LIST.RATING_STARS"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: dropdown at the top-right of the Categories/Tags panel, default '(any rating)'. Opened it -- exactly 7 options listed: (any rating) [checkmarked], (no rating), and 1 through 5 stars. Closed without changing selection."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'Ratings Filter -- Filter presets by user-assigned ratings' (What's New PDF, p.20). Exact 7-option enumeration directly confirmed, not previously documented at this granularity."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.COLUMNS",
+      "section": "BROWSER",
+      "module": "PRESET_LIST",
+      "submodule": null,
+      "label": "Preset list columns -- NAME (sortable), LOCATION, CATEGORY, DATE MODIFIED, RATING",
+      "control_type": "table",
+      "value_range": null,
+      "options": null,
+      "default": "sorted by NAME ascending",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.SEARCH.FIELD",
+        "BROWSER.FOLDERS.TREE",
+        "BROWSER.CATEGORIES_TAGS.TAG_LIST"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: main results panel of the Browser; 5 column headers -- NAME, LOCATION, CATEGORY, DATE MODIFIED, RATING -- listing either the complete preset set or the current search/folder/tag/rating-filtered subset."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: clicked the NAME column's sort-direction arrow -- list order reversed from A-Z (808.../ARP...) to Z-A (WIND.../VOX.../SY...), confirming NAME is independently sortable. LOCATION/CATEGORY/DATE MODIFIED/RATING headers were not individually re-tested for their own sort-arrow behavior (only NAME's arrow icon was directly observed and clicked)."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES targeted recheck, live UI, 2026-09-16: clicked LOCATION, CATEGORY, DATE MODIFIED, and RATING column headers in turn -- each one directly moved the sort-direction arrow to itself (away from NAME/whichever was previously active), confirming all 5 columns are independently sortable, not just NAME. Restored sort to NAME ascending afterward (2 clicks: first landed on descending, second on ascending), zoom-verified."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'Presets -- The list of presets, either the complete list or search results' (What's New PDF, p.20). Independent sort-arrow behavior CONFIRMED for all 5 columns on targeted recheck (previously only NAME was tested; the other 4 were an unverified hedge, now removed)."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.ROW_SELECT_LOAD",
+      "section": "BROWSER",
+      "module": "PRESET_LIST",
+      "submodule": null,
+      "label": "Preset row click -- loads the clicked preset into Serum's active engine state immediately",
+      "control_type": "action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.MENU.AUTO_PLAY_PREVIEWS",
+        "BROWSER.NAVIGATION.PREV_NEXT"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: single left-click on a preset row's name text ('ARP - Cascading Etheric Paths') immediately changed the top-toolbar preset-name field, ARTIST/DESC fields, the 8 MACRO knob labels (to that preset's actual macro assignments), and the right-hand METADATA panel -- confirming a full engine-state load, not merely a row-highlight or an audio-only preview."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: single left-click on a DIFFERENT preset row's leading ▶ icon ('ARP - Daftronic') produced the identical full-load effect (macro labels changed to BITE/DETUNE/PWM/LOWPASS/SYNC/VERB/HIGHPASS/FLANGE, description field updated) -- confirms clicking either the row's name text or its leading icon performs the same LOAD action; there is no separate 'preview without loading' step available at the single-click row level in this environment."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: the leading icon renders as a filled green circle on the row matching the currently-loaded preset, and as a plain '▶' triangle on every other row -- this is a live 'currently active preset' indicator, not an expand/collapse tree toggle (initially mistaken for one before testing)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY and IMPORTANT WORKFLOW FINDING for the official 'browse -> preview -> load' expectation implied by 'Preview Presets' (What's New PDF, p.20): in this Serum 2.0.21 build, there is no distinct preview-without-committing step observable at the preset-row level -- a single click (name or icon) commits a full load. Whether audio itself plays automatically on this click is governed separately by BROWSER.MENU.AUTO_PLAY_PREVIEWS, but the ENGINE STATE change (macros, current preset identity) happens on click regardless, and could not be un-done short of loading a different preset. This could not be cross-checked against audio because Ableton reported 'Audio processing disabled' throughout the session -- if a genuinely separate hover-based audio-only preview exists, it was not found and is not claimed here."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.ROW_CONTEXT_MENU",
+      "section": "BROWSER",
+      "module": "PRESET_LIST",
+      "submodule": null,
+      "label": "Preset row right-click menu -- Show in folder / Delete / Rename-Move",
+      "control_type": "context_menu",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": "Show in folder / Delete / Rename-Move are only enabled when the right-clicked row is a real, selectable preset",
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.MENU.SHOW_IN_FOLDER",
+        "BROWSER.MENU.DELETE_PRESETS",
+        "BROWSER.MENU.RENAME_MOVE_PRESET"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: right-clicked a loaded preset's row -- context menu with exactly 3 items: 'Show in folder', 'Delete', 'Rename / Move' (a shortened label for the same 'Rename / Move Preset' item seen in the gear-icon menu). Closed without selecting any item."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Same 3 actions as BROWSER.MENU.SHOW_IN_FOLDER / DELETE_PRESETS / RENAME_MOVE_PRESET -- recorded here as the row-level access surface, cross-referenced rather than duplicated as new semantic identities."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.RATING_STARS",
+      "section": "BROWSER",
+      "module": "PRESET_LIST",
+      "submodule": null,
+      "label": "Per-row rating stars -- inline 1-5 star rating assignment for each preset",
+      "control_type": "star_rating",
+      "value_range": "0-5 stars",
+      "options": null,
+      "default": "unrated (0 stars)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.CATEGORIES_TAGS.RATING_FILTER"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: 5-star icon row in the RATING column of each preset row, all empty by default. Clicked the 2nd star of an unrated row -- rating set to 2 stars (filled) immediately, zoom-verified. Clicked the 1st star -- rating changed to 1 star (not cleared), confirming clicking a star sets the rating to that star's position, it does not act as a simple on/off toggle per star."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: clicked the SAME already-set 1st star a second time -- rating cleared back to 0/unrated (zoom-verified), confirming the clear mechanism is 're-click the currently-set value's star', not a separate clear button or a click before star 1."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'Ratings -- Assign ratings to presets in the library' (What's New PDF, p.20). Exact interaction model (click-to-set, re-click-same-value-to-clear) directly tested and documented; the tested factory preset's rating was restored to its original unrated state and readback-verified."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.PRESET_NAME",
+      "section": "BROWSER",
+      "module": "METADATA",
+      "submodule": null,
+      "label": "Preset Name -- the currently-selected preset's name, shown in the metadata panel",
+      "control_type": "text_field",
+      "value_range": null,
+      "options": null,
+      "default": "(matches loaded preset)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: text field at the top of the right-hand METADATA panel, mirrors the top-toolbar preset name for whichever preset is currently loaded/selected. Editability not independently tested this pass (editing it would likely rename the actual preset file -- the same risk class as BROWSER.MENU.RENAME_MOVE_PRESET -- so it was deliberately not typed into)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Field's read/display behavior VERIFIED directly (it updates on preset selection); whether it is directly editable in-place (vs. requiring the Rename/Move action) is UNCONFIRMED, not guessed."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.AUTHOR",
+      "section": "BROWSER",
+      "module": "METADATA",
+      "submodule": null,
+      "label": "Author -- the currently-selected preset's author/artist field",
+      "control_type": "text_field",
+      "value_range": null,
+      "options": null,
+      "default": "(matches loaded preset)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: text field in the METADATA panel below Preset Name, showed real author names for loaded presets (e.g. 'Matt Aimonetti', 'Electric Himalaya', 'J. Scott G. / Libra Rising', '7 SKIES'). Not edited this pass (same file-mutation caution as PRESET_NAME)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, mirrors the top-toolbar 'ARTIST:' field seen on every tab."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.CATEGORY",
+      "section": "BROWSER",
+      "module": "METADATA",
+      "submodule": null,
+      "label": "Category -- the currently-selected preset's assigned category",
+      "control_type": "text_field",
+      "value_range": null,
+      "options": null,
+      "default": "(matches loaded preset)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.CATEGORIES_TAGS.CATEGORY_LIST"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: text field in the METADATA panel, showed values matching the preset list's CATEGORY column (e.g. '808', 'Arpeggio', 'Bass') for the currently loaded preset. Not edited this pass."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Displays the same category value used for BROWSER.CATEGORIES_TAGS.CATEGORY_LIST filtering -- one underlying value, two surfaces (list column + metadata field); not a duplicate identity."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.DESCRIPTION",
+      "section": "BROWSER",
+      "module": "METADATA",
+      "submodule": null,
+      "label": "Description -- a free-text description of the currently-selected preset",
+      "control_type": "text_field",
+      "value_range": null,
+      "options": null,
+      "default": "(matches loaded preset, often empty)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: text field in the METADATA panel. DIRECTLY TESTED editable: clicked into it (on a real user preset, 'F1LVLP6DBV2') and typed 'test edit' -- text appeared immediately and persisted (readback-confirmed by navigating to a different preset and back, where the typed text was still present). Cleared it via select-all+Delete and confirmed empty on the same navigate-away-and-back readback check, restoring the preset to its original state."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, reconciles official 'Metadata -- Display and edit the metadata associated with the selected preset' (What's New PDF, p.20). This field's in-place editability is the ONE metadata field directly confirmed editable this pass (an accidental click landed on it while testing an unrelated coordinate) -- the edit was caught and reverted immediately, and the restoration was verified via readback, not merely assumed. PRESET_NAME/AUTHOR/CATEGORY were NOT similarly tested (deliberately, given the file-rename risk for PRESET_NAME) but almost certainly share the same edit mechanism as sibling fields in the same panel."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.NOTES",
+      "section": "BROWSER",
+      "module": "METADATA",
+      "submodule": null,
+      "label": "Notes -- a free-text notes area for the currently-selected preset",
+      "control_type": "text_area",
+      "value_range": null,
+      "options": null,
+      "default": "(matches loaded preset, empty on all presets observed)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: multi-line text area in the METADATA panel below Description, empty on every preset viewed this pass. Not edited (inferred editable by the same mechanism as the directly-tested Description field, not independently confirmed)."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES targeted recheck, live UI, 2026-09-16: loaded a factory preset ('ARP - Aardvark'), clicked into its NOTES field, typed 'xyz' -- text appeared immediately. Cleared via select-all+Delete, navigated to a different preset ('ARP - Acid101') and back, and confirmed the field read back empty -- restoration verified, not merely assumed."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Editability DIRECTLY CONFIRMED and restoration READBACK-VERIFIED on targeted recheck (previously inferred only by analogy to the Description field; that hedge is now removed)."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.TAGS_PANEL",
+      "section": "BROWSER",
+      "module": "METADATA",
+      "submodule": null,
+      "label": "Tags panel -- per-preset tag pills with add/remove editing",
+      "control_type": "tag_editor",
+      "value_range": null,
+      "options": null,
+      "default": "(matches loaded preset's assigned tags)",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.CATEGORIES_TAGS.TAG_LIST"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: bottom of the METADATA panel, shows the currently-loaded preset's tags as removable pills (e.g. 'Mono ×', 'Preview ×', 'S2 ×', 'Sample ×', 'Wavetable ×'). The '×' on each pill was visually confirmed as a per-tag remove control but NOT clicked (would mutate a factory preset's saved tag metadata with no simple 'add it back in the same position' guarantee)."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: clicked in the empty space of the Tags panel (after the last pill) -- a picker opened listing every known tag not already applied to this preset (Arp, Clip, Custom-Tuning, Embedded-Data, Granular, KB-Span, Multisample, Poly, SerumFX, Spectral) plus a 'New tag...' option at the bottom for creating an entirely new tag. Closed without selecting anything."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Confirms full CRUD-style tag editing exists per-preset (add existing tag, create new tag, remove tag) -- directly observed the add-picker opening; the remove ('×') and new-tag-creation actions were visually confirmed present but not exercised, to avoid mutating real preset files without a clean, verifiable restoration path."
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.PREV_NEXT",
+      "section": "BROWSER",
+      "module": "NAVIGATION",
+      "submodule": null,
+      "label": "Preset prev/next arrows -- steps to the adjacent preset in the current list order",
+      "control_type": "button_pair",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.PRESET_LIST.COLUMNS",
+        "BROWSER.PRESET_LIST.ROW_SELECT_LOAD"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: '<' / '>' arrow buttons next to the preset-name dropdown in the top toolbar (present on every tab, not just inside the Browser panel). Clicked '<' while '808 - Decomposed' was loaded -- Serum loaded '808 - Diesel' (the adjacent preset in the current list ordering). Confirms sequential stepping through the active list without needing to open/re-navigate the full Browser panel."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES targeted recheck, live UI, 2026-09-16: with the preset list confirmed sorted NAME-ascending and 'ARP - Aardvark' loaded (the last of the visible 'ARP - Ac.../Ad...' cluster in that sort order), clicked '<' -- Serum loaded 'ARP - Acid101', the immediately preceding row in that exact visible sort order. Confirms '<'/'>' step through the CURRENTLY ACTIVE sorted/filtered list order, not a fixed database or arbitrary order."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized. Ordering semantics (relative to the current sort/filter view) DIRECTLY CONFIRMED on targeted recheck against a known, controlled sort state (previously tested only against a list whose sort had just been changed mid-test, leaving the exact rule ambiguous; that hedge is now removed)."
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.PRESET_DROPDOWN",
+      "section": "BROWSER",
+      "module": "NAVIGATION",
+      "submodule": null,
+      "label": "Preset name dropdown (top toolbar) -- a compact cascading Factory/User > category > preset menu",
+      "control_type": "cascading_menu",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.FOLDERS.TREE"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: '▼' arrow next to the preset name field in the top toolbar. Opened it -- 2 top-level items 'Factory >' and 'User >', each cascading into the identical category list seen in the Folders tree (Arp, Bass, Bell, ... Woodwind), each of which cascades a third level into actual preset names (verified by hovering 'Loop', which opened a list of real preset names like 'LOOP - Acid Bass Toolbox', 'LOOP - Techno Loop'). Closed without selecting anything."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. This is a compact, menu-based alternate access surface for the exact same Factory/User folder resource as BROWSER.FOLDERS.TREE -- same underlying identity, not a duplicate; useful because it lets a user load a preset without opening the full Browser panel."
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.SAVE_ICON",
+      "section": "BROWSER",
+      "module": "NAVIGATION",
+      "submodule": null,
+      "label": "Save preset icon (disk icon, top toolbar)",
+      "control_type": "button",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: small disk icon at the far left of the top toolbar's preset-name row, present on every tab. Not clicked this pass (would open a native OS save dialog)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, existence-only observation; save-dialog contents/behavior not exercised."
+    },
+    {
+      "semantic_id": "BROWSER.PACKS.IMPORT",
+      "section": "BROWSER",
+      "module": "PACKS",
+      "submodule": null,
+      "label": "Import Preset Pack... -- installs a downloaded/received pack file into the local library",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.FOLDERS.CREATE_EXPORT_PACK",
+        "BROWSER.PACKS.GET_PACKS"
+      ],
+      "resource_dependency": "a pack file to import",
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU (hamburger-style, distinct from the Browser's own gear-icon MENU) item 'Import Preset Pack...'. Not clicked (would open a native OS file-open dialog)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. Completes the Pack lifecycle alongside BROWSER.FOLDERS.CREATE_EXPORT_PACK (create/export) -- reconciles official 'Packs -- Artists can create a pack from a folder of presets' (What's New PDF, p.20) with the consumer-side counterpart (installing a pack someone else created), which the official summary does not explicitly name but which exists directly in the top-level MENU."
+    },
+    {
+      "semantic_id": "BROWSER.PACKS.GET_PACKS",
+      "section": "BROWSER",
+      "module": "PACKS",
+      "submodule": null,
+      "label": "Get Preset Packs... -- opens a source (likely a web store/page) for acquiring additional preset packs",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.PACKS.IMPORT"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU item 'Get Preset Packs...'. Not clicked (would leave the plugin's own control surface, e.g. open a browser to an external site)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized. Likely opens an external URL; destination not verified."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.LOAD_PRESET",
+      "section": "BROWSER",
+      "module": "TOPMENU_RESOURCE",
+      "submodule": null,
+      "label": "Load Preset... -- opens a native OS file-open dialog to load a preset file directly",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.PRESET_LIST.ROW_SELECT_LOAD"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU item 'Load Preset...'. Not clicked (native OS dialog)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. A second, OS-file-dialog-based route to loading a preset, distinct from the internal Browser panel's click-to-load (BROWSER.PRESET_LIST.ROW_SELECT_LOAD) -- both ultimately load the same kind of resource (a preset file) but via genuinely different UI mechanisms; cross-referenced, not merged."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.REVERT_TO_SAVED",
+      "section": "BROWSER",
+      "module": "TOPMENU_RESOURCE",
+      "submodule": null,
+      "label": "Revert to Saved -- discards in-session edits and reloads the current preset's last-saved state",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU item 'Revert to Saved'. Not clicked (no meaningful unsaved edits were present to revert during this pass, and clicking it on a freshly-loaded Init preset would be a no-op not worth verifying)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.SAVE_AS_DEFAULT_PRESET",
+      "section": "BROWSER",
+      "module": "TOPMENU_RESOURCE",
+      "submodule": null,
+      "label": "Save as Default Preset -- sets the current preset as the patch Serum loads on a fresh instance / Init Preset",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "TOPMENU.RESOURCE.INIT_PRESET"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU item 'Save as Default Preset'. NOT exercised -- this would permanently change what 'Init Preset' loads for every future instance on this machine, a persistent, hard-to-notice global change; deliberately not tested."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.INIT_PRESET",
+      "section": "BROWSER",
+      "module": "TOPMENU_RESOURCE",
+      "submodule": null,
+      "label": "Init Preset -- resets the current instance to the default/blank patch",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "TOPMENU.RESOURCE.SAVE_AS_DEFAULT_PRESET"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU item 'Init Preset'. DIRECTLY EXERCISED (twice) as the restoration mechanism for this pass itself -- clicking it reliably returned Serum to the clean '- Init -' state (OSC A default sawtooth wavetable, all macros/ARP/CLIP state at defaults) after this pass's preset-loading and metadata-editing tests."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY (previously only referenced implicitly via the git commit history's use of the term 'Init'). Confirmed reliable and repeatable as a full-reset action; used operationally in this pass to restore baseline after each round of preset-loading tests."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.OPEN_PRESETS_FOLDER",
+      "section": "BROWSER",
+      "module": "TOPMENU_RESOURCE",
+      "submodule": null,
+      "label": "Open Serum 2 Presets Folder -- opens the local presets directory in the OS file manager",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU item 'Open Serum 2 Presets Folder'. Not clicked (would open a separate OS window outside the plugin)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY, not previously hypothesized."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.RESCAN_FOLDERS_ON_DISK",
+      "section": "BROWSER",
+      "module": "TOPMENU_RESOURCE",
+      "submodule": null,
+      "label": "Rescan Folders on Disk",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "BROWSER.MENU.RESCAN_DATABASE"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU item 'Rescan Folders on Disk'. Not clicked."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. See the OWNERSHIP FLAG on BROWSER.MENU.RESCAN_DATABASE -- whether this is the identical action to the Browser gear-menu's 'Rescan Database' or a genuinely distinct disk-level vs. index-level scan was not tested this pass; recorded as a distinct record with a cross-reference, flagged for CROSS-SYSTEM reconciliation rather than assumed-merged."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.LOAD_TUNING",
+      "section": "BROWSER",
+      "module": "TOPMENU_RESOURCE",
+      "submodule": null,
+      "label": "Load Tuning (.tun)... -- loads a microtonal tuning file",
+      "control_type": "menu_action",
+      "value_range": null,
+      "options": null,
+      "default": null,
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.TUNING.TUN_FILE"
+      ],
+      "resource_dependency": "a Scala .tun tuning file",
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "BROWSER/RESOURCES gap-analysis pass, live UI, 2026-09-16: top-level Serum MENU item 'Load Tuning (.tun)...'. Not clicked (native OS dialog, and would change the active tuning file)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY. This is almost certainly the SAME underlying resource-load action as GLOBAL.TUNING.TUN_FILE (the 'TUN FILE: (none)' button already recorded and closed under the GLOBAL section) -- both load a .tun file into the same Global Tuning system. Recorded as a cross-referenced access-surface note on the already-closed GLOBAL record rather than reopening or altering its core evidence/status, per this project's re-home-not-duplicate discipline; GLOBAL.TUNING.TUN_FILE's own evidence and status are left untouched."
     }
   ]
 }
