@@ -1,0 +1,33 @@
+{
+  "autoMode": {
+    "environment": [
+      "Organization: None configured",
+      "Cloud provider(s): None configured",
+      "Repository visibility: satviksangamkar11/ableton-claude-final — not queryable via gh; assume private",
+      "Internal sharing / snippet hosting: None configured — treat public paste/gist services as outside the trust boundary",
+      "Secrets management: None configured",
+      "Default / protected branches: main (branch protection/rulesets not queryable via gh)",
+      "CI/CD deploy targets: None configured",
+      "Network posture: None configured",
+      "Host containment: None configured — Windows developer machine (Ableton Live 12.3 Suite environment); open internet assumed",
+      "Source control: satviksangamkar11/ableton-claude-final on GitHub (origin); ableton-claude-test- remote (test) is an additional remote of the same repo",
+      "Trusted internal domains: None configured",
+      "Trusted cloud buckets: None configured",
+      "Key internal services: DawDreamer 0.9.0 (local Serum VST3 host); Serum 2.0.21 VST3 (local plugin); Ableton Live 12.3 Suite (local DAW)",
+      "Internal package registry: None configured",
+      "Sensitive data locations & audiences: pickle artifact files (CapabilityContract, EvidenceRecord files) containing experimental evidence — treat as internal research data; preserve exact handles and share only with cleared audiences",
+      "Data retention / declassification: None configured",
+      "Sensitive remote targets: any namespace, host, or container whose name carries prod or production as a whole word or name segment (hyphen/underscore/dot-delimited)",
+      "Protected deployment namespaces / environments: None configured — fall back to the Sensitive remote targets heuristic",
+      "Protected IaC scopes: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries prod or production as a whole word or name segment",
+      "Primary use of Claude Code: AI music producer toolchain development — building a Serum 2.0.21 synthesis knowledge and capability system in Python under Ableton Live 12.3 Suite on Windows",
+      "Trusted repo: satviksangamkar11/ableton-claude-final (D:\\ableton claude) and its remotes at https://github.com/satviksangamkar11/ableton-claude-final.git (origin) and https://github.com/satviksangamkar11/ableton-claude-test- (test)",
+      "Org-specific CLIs: uv (Python package/env manager); uvx; powershell",
+      "Routine under user prefix: Python scripts run frequently against local serum2/ package tree; notepad used for direct file edits"
+    ],
+    "soft_deny": [
+      "$defaults",
+      "Bash(* serum2/evidence/* *)"
+    ]
+  }
+}

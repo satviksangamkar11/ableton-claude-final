@@ -1,8 +1,10 @@
 {
   "meta": {
-    "inventory_version": "1.1.0-BROWSER-CLOSED",
+    "inventory_version": "1.2.0-CROSS-SYSTEM-RECONCILIATION-PHASE-1",
     "created": "2026-09-14",
     "last_modified": "2026-09-16",
+    "phase_1_reconciliation_date": "2026-09-16",
+    "phase_1_changes": "MPE_OWNERSHIP_RECONCILIATION resolved via direct toggle test (live vs. default confirmed distinct). New control added: GLOBAL.PREFERENCES.MPE_EXPR_Y_ACTS_BI_DIRECTIONAL. Deferred queue updated: MPE deferral CLOSED, MACRO.SYS.RENAME_MECHANISM and BROWSER_RESCAN_OWNERSHIP confirmed as legitimate P2 non-blockers."
     "sections_complete": [
       "MACRO",
       "OSC",
@@ -68,12 +70,15 @@
         "section": "CROSS-SYSTEM",
         "semantic_id": "MPE_OWNERSHIP_RECONCILIATION",
         "priority": "P2",
-        "status": "DEFERRED",
+        "status": "RESOLVED",
         "question": "Are KEYBOARD.MPE.ENABLED / XYZ_TO_MACROS123 / YZ_TO_MACROS12 / Y_TO_MODWHEEL / BEND_RANGE (all read from the top-level Serum main MENU during the KEYBOARD/PERFORMANCE pass) the same underlying engine state as GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT / MPE_PITCH_BEND_MAPS_TO_EXPR_X (read from the GLOBAL tab's left-hand Preferences panel during the GLOBAL pass), or genuinely distinct controls (e.g. live per-session state vs. persistent default-for-new-presets)? In particular, MPE Bend Range's value (48 semitones) was read only from the MENU; the GLOBAL tab's MPE preferences sub-panel shows no numeric Bend Range field at all, so its exact ownership/scope is unconfirmed.",
-        "current_evidence": "Direct UI observation of the top-level Serum MENU (KEYBOARD/PERFORMANCE pass) shows a live MPE cluster: 'MPE Enabled' (checked), 3 quick-assignment actions, and 'MPE Bend Range: 48'. Direct UI observation of the GLOBAL tab's Preferences panel (GLOBAL pass) shows a separate, textually-similar but not identical MPE cluster: only 2 checkboxes ('MPE enabled by default', 'MPE Pitch Bend (also) maps to Expr X'), no Bend Range value and no XYZ/YZ/Y mapping actions. The two clusters were never tested side-by-side (e.g. toggling one and reading back the other) because the GLOBAL pass's own scope was the GLOBAL tab's controls, not a live-vs-default state-sync experiment across two tabs.",
-        "why_unresolved": "This is exactly the kind of ownership question this project's methodology (see gap_analysis_methodology.md Section 5, Conflicts A/B/C) resolves via a targeted before/after cross-surface test -- but that test requires deliberately toggling GLOBAL's 'MPE enabled by default' and observing whether the MENU's live 'MPE Enabled' state changes to match (or vice versa), which is a CROSS-SYSTEM reconciliation experiment spanning two already-closed sections' surfaces, not a single-section gap. Doing it mid-GLOBAL-pass would have meant re-opening KEYBOARD/PERFORMANCE's already-closed evidence scope without the full cross-system view of all sections' MPE-adjacent controls (e.g. MATRIX's MPE-related Mod Source entries, per the KEYBOARD closure notes).",
-        "evidence_that_would_resolve_it": "At CROSS-SYSTEM/FINAL RECONCILIATION: (1) toggle GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT and read back the top-level MENU's 'MPE Enabled' state (and vice versa) to test for live coupling; (2) determine whether 'MPE Bend Range: 48' has ANY corresponding field inside GLOBAL's Preferences panel (a numeric stepper that may have been missed, e.g. behind a scroll or a sub-menu) or whether it is genuinely MENU-only; (3) if no coupling is found, keep both clusters as distinct records with cross_references (already added) and document the reconciliation decision explicitly; if coupling is found, merge per this project's re-home-not-duplicate discipline.",
-        "gate_check_passed": "Confirmed NON-BLOCKING for GLOBAL closure: does not change GLOBAL's own control count, mode/type universe, conditional UI, or structural topology -- GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT and MPE_PITCH_BEND_MAPS_TO_EXPR_X are correctly recorded as they appear on the GLOBAL tab regardless of how this cross-system question resolves. It is a CROSS-SYSTEM ownership question (already flagged as GLOBAL_KEYBOARD's own P2 deferral at KEYBOARD closure: 'MOD_WHEEL.SOURCE_INDICATOR Matrix-panel integration semantics... three MPE menu items' function'), now additionally cross-referencing GLOBAL's parallel preferences. Belongs at CROSS-SYSTEM/FINAL RECONCILIATION per the master plan's own execution order, not inside either section's individual closure."
+        "resolution_date": "2026-09-16",
+        "resolution_evidence": "CROSS-SYSTEM RECONCILIATION pass (MPE ownership triage), live UI 2026-09-16: Performed side-by-side toggle test: toggled GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT from OFF→ON→OFF while monitoring KEYBOARD.MPE.ENABLED (live MENU state) simultaneously. Result: KEYBOARD.MPE.ENABLED remained CHECKED throughout; toggling GLOBAL preference had ZERO effect on live MENU state. Conclusion: genuinely distinct controls. KEYBOARD.MPE.ENABLED = live per-session MPE state. GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT = persistent default for new presets. KEYBOARD.MPE.BEND_RANGE (48 semitones) exists ONLY in MENU; GLOBAL Preferences panel has NO corresponding Bend Range field (verified via scroll and full panel inspection). NEW DISCOVERY: GLOBAL.PREFERENCES.MPE_EXPR_Y_ACTS_BI_DIRECTIONAL found during inspection.",
+        "resolution_decision": "Two separate semantic identities are CORRECT. No re-homing or merging required. KEYBOARD.MPE.* records own live per-session state. GLOBAL.PREFERENCES.MPE_* records own persistent defaults. Both clusters already have cross-references; identity is stable.",
+        "current_evidence": "[ARCHIVED - see resolution_evidence above]",
+        "why_unresolved": "[RESOLVED - see resolution_evidence above]",
+        "evidence_that_would_resolve_it": "[RESOLVED - toggling test performed and documented above]",
+        "gate_check_passed": "Confirmed NON-BLOCKING for GLOBAL closure: does not change GLOBAL's own control count, mode/type universe, conditional UI, or structural topology -- GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT and MPE_PITCH_BEND_MAPS_TO_EXPR_X are correctly recorded as they appear on the GLOBAL tab regardless of how this cross-system question resolves. It is a CROSS-SYSTEM ownership question (already flagged as GLOBAL_KEYBOARD's own P2 deferral at KEYBOARD closure: 'MOD_WHEEL.SOURCE_INDICATOR Matrix-panel integration semantics... three MPE menu items' function'), now additionally cross-referencing GLOBAL's parallel preferences. Belongs at CROSS-SYSTEM/FINAL RECONCILIATION per the master plan's own execution order, not inside either section's individual closure. RESOLUTION: This P2 is now CLOSED via direct experimental evidence."
       },
       {
         "section": "CROSS-SYSTEM",
@@ -16152,7 +16157,38 @@
         "DIRECT_UI_OBSERVATION"
       ],
       "status": "VERIFIED",
-      "notes": "NEW DISCOVERY, not previously hypothesized in any prior research document. CROSS-SYSTEM FLAG (2026-09-16): full MPE ownership across this GLOBAL preference and the top-level Serum MENU's live MPE cluster (KEYBOARD.MPE.*) is NOT yet reconciled -- see DEFERRED_SEMANTIC_VALIDATION_QUEUE entry 'MPE_OWNERSHIP_RECONCILIATION'."
+      "notes": "NEW DISCOVERY, not previously hypothesized in any prior research document. CROSS-SYSTEM FLAG (2026-09-16): full MPE ownership across this GLOBAL preference and the top-level Serum MENU's live MPE cluster (KEYBOARD.MPE.*) is NOT yet reconciled -- see DEFERRED_SEMANTIC_VALIDATION_QUEUE entry 'MPE_OWNERSHIP_RECONCILIATION'. RESOLVED 2026-09-16 via toggle test: confirmed genuinely distinct controls (live vs. default)."
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.MPE_EXPR_Y_ACTS_BI_DIRECTIONAL",
+      "section": "GLOBAL",
+      "module": "PREFERENCES",
+      "submodule": null,
+      "label": "MPE Expr Y acts bi-directional -- enables bi-directional mapping for MPE Expression Y (Timbre dimension)",
+      "control_type": "checkbox",
+      "value_range": null,
+      "options": null,
+      "default": "on",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT",
+        "GLOBAL.PREFERENCES.MPE_PITCH_BEND_MAPS_TO_EXPR_X",
+        "KEYBOARD.MPE.ENABLED"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "CROSS-SYSTEM RECONCILIATION pass (MPE ownership triage), live UI, 2026-09-16: checkbox 'MPE Expr Y acts bi-directional' in GLOBAL Preferences panel, positioned below MPE_PITCH_BEND_MAPS_TO_EXPR_X, default checked (enabled). Discovered during vertical scroll inspection of full PREFERENCES panel while testing MPE ownership coupling."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY during CROSS-SYSTEM RECONCILIATION pass, 2026-09-16. Not previously documented in any prior pass. Part of GLOBAL Preferences MPE cluster (distinct from live KEYBOARD.MPE.* controls). Functionality: sets whether Expression Y (Timbre) in MPE messages is bidirectional or unidirectional. Checked by default, indicating bi-directional is the default mapping mode."
     },
     {
       "semantic_id": "GLOBAL.INFO.BUILD_DATE_DISPLAY",
