@@ -1,8 +1,8 @@
 {
   "meta": {
-    "inventory_version": "0.8.0-KEYBOARD-CLOSED",
+    "inventory_version": "0.9.0-VOICE-CLOSED",
     "created": "2026-09-14",
-    "last_modified": "2026-09-17",
+    "last_modified": "2026-09-16",
     "sections_complete": [
       "MACRO",
       "OSC",
@@ -14,7 +14,8 @@
       "FX",
       "ARP",
       "CLIP",
-      "GLOBAL_KEYBOARD"
+      "GLOBAL_KEYBOARD",
+      "VOICE"
     ],
     "section_status": {
       "MACRO": "CLOSED_STAR",
@@ -28,7 +29,8 @@
       "FX": "CLOSED_STAR (2026-09-17): 13 FX processors + 3 splitter/topology modules + 3 racks (MAIN/BUS1/BUS2) fully discovered. STRUCTURAL: Add FX menu (16 items, exact official match), rack-level preset browser (8 factory categories + Init), per-module context menu (Factory/Save FX Preset/Save as Default Preset/Duplicate/Remove), module bypass (list+header dual access), drag-to-reorder, per-parameter context menu (CONFIRMED DIFFERENT from all other subsystems -- Automate instead of MIDI Learn/Lock Parameter). PROCESSORS: BODE(12, incl. Retrig context-action+BPM sync), CHORUS(9, incl. single-knob LPF/HPF mode-toggle), COMPRESSOR(14, Single/Multiband branch, X-LOW/BELOW/X-HIGH+H/M/L bands, Ratio->Limit conditional display), CONVOLVE(13, full IR resource workflow -- Factory 7 categories/Load IR/Next-Prev, Min Phase toggle), DELAY(11, Normal/Ping-Pong/Tap->Delay + independent High Quality toggle confirmed default-on, L/R Link, interactive filter graph), DISTORTION(11, 18 types enumerated, OFF/PRE/POST filter position, X-Shaper A/B popup editors confirmed genuinely editable), EQUALIZER(10, independent Left/Right band types [Shelf/Peak/HP vs Shelf/Peak/LP], GAIN CORRECTED to remain functional in HP/LP contrary to prior doc claim, no separate Level), FILTER(9, reuses exact main-Filter type universe [spot-verified], Key Track context-action on Cutoff), FLANGER(7, CORRECTED -- no separate Delay knob exists contrary to prior doc claim), HYPER_DIMENSION(8, one module/two sections, Unison=0 conditional confirmed non-visual/DSP-only disable), PHASER(9, matches doc exactly), REVERB(18, 5 types enumerated [Plate/Hall/Vintage/Nitrous/Basin] each with distinct conditional control sets, Nitrous MODE sub-selector with 5 shapes -- two-level conditional confirmed), UTILITY(9, independent L/R polarity inversion, Mono Bass/Freq relationship confirmed via tooltip). SPLITTERS: Splitter L/H(9), Splitter L/M/H(10), Splitter M/S(6) -- all confirmed as genuine nested-rack topology modules with independent per-band module chains, bypass, and module-count badges; CONFIRMED STRUCTURAL RULE: splitters cannot be nested inside other splitters (all 3 splitter types greyed out in every nested Add-FX menu, re-confirmed 3 times independently). Splitter M/S confirmed to have NO crossover-frequency knob (Mid/Side split, not frequency split) and possibly no module-level Mix (unresolved). CROSS-SYSTEM: FX Filter type universe cross-referenced to main FILTER.1/FILTER.2 rather than duplicated; FX rack tabs (MAIN/BUS1/BUS2) cross-referenced to MIXER.MAIN/BUS1/BUS2. 6 items remain UNVERIFIED_CANDIDATE (COMPRESSOR.BELOW semantic meaning, COMPRESSOR/DISTORTION/FILTER graphical-drag-interactivity not conclusively isolated, X-Shaper pencil icon function, Splitter M/S Mix existence) -- each explicitly documented with retest guidance, not silently dropped. 173 FX records: 165 VERIFIED, 2 PROVEN_NOT_USER_CONTROL, 6 UNVERIFIED_CANDIDATE. FX CLOSURE GATE: PASSED (all structural/processor/splitter/cross-system dimensions covered; residual items are narrow, explicitly-scoped, non-blocking edge cases). | FULL CLOSURE RESOLUTION 2026-09-17 (per user directive to resolve all UNVERIFIED_CANDIDATE, not leave as narrow deferrals): All 6 remaining candidates directly re-tested with BEFORE->ACTION->AFTER evidence. FX.COMPRESSOR.BELOW -> VERIFIED (tooltip Comp RatioB -- ratio of compression below threshold; mutated 0.0000->0.1094). FX.COMPRESSOR.BAND_GRAPHIC -> PROVEN_NOT_USER_CONTROL (tooltip explicitly Gain reduction meter; confirmed zero mutation on drag). FX.DISTORTION.FILTER_GRAPH -> VERIFIED (tooltip Dist LPHP -- morphs LowPass/BandPass/HiPass; handle position and curve shape both mutated on drag). FX.DISTORTION.XSHAPER_EDIT_PENCIL -> PROVEN_NOT_USER_CONTROL (hover/click/right-click all produced zero response -- decorative glyph). FX.FILTER.GRAPH -> VERIFIED (direct drag changed curve shape AND Cutoff knob tooltip value updated to 8228 Hz). FX.SPLITTER_MS.WET -> PROVEN_NOT_USER_CONTROL (full-row zoom confirms no Mix knob exists, contrasted directly against L/H and L/M/H which do have one). FINAL: 173 FX records -- 168 VERIFIED, 5 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE. FX CLOSURE GATE: PASSED (no ambiguity remains).",
       "ARP": "CLOSED_STAR (2026-09-17): All 6 panes covered -- GLOBAL (Bank resource system w/ 3 factory banks confirmed as full 12-slot presets, Launch Quant, EDIT ALL confirmed via clean A/B propagation test), PATTERN (Shape=20 options incl. special Pattern mode unlocking a full custom Pattern Editor sub-system [piano-roll step grid, Mode=9 options, Step Mode=4, Wrap=3, Pitch/Range=Wrap Transpose/Wrap Range both confirmed mutable, Time conditionally gated by Mode=One Shot, Velocity/Vel Rand lanes, plus a major '+' menu discovery: per-step automation lanes for all 8 Macros + MIDI Pitch Bend/Mod Wheel + Note Attributes + Expression], Rate/BPM-Hz/Trip/Dot all confirmed), TRANSPOSE (Shape=18 options, Shift/Range both modulatable with negative values confirmed), PLAYBACK (Offset/Repeats[finite-to-inf]/Gate/Chance[with Pre sub-option fully resolved]/Latch/Thru all confirmed with rich tooltips), RETRIGGER (Launch/Rate/Note all confirmed; First conditional gating by Note directly proven via before/after interactivity test), VELOCITY (Enable/Retrig/Decay/Target all confirmed, Decay+Target modulatable via Matrix). 12 SLOTS: play-button launch+select behavior confirmed via before/after, right-click Copy/Paste/Erase Pattern structural menu confirmed, slot count=12 confirmed, MIDI-keyboard-triggered launch existence confirmed via official docs (live behavioral confirmation blocked by lack of physical MIDI input hardware in this session -- scoped evidence boundary, consistent with MATRIX Dynamic Visualization precedent). OSC MAPPING: major discovery of a full Note Range Editor with SUB/OSC A/B/C/NOISE/ARP rows, each with independent Fold/Warp toggles (both confirmed) and a draggable key-range bar (resolved after discovering the correct double-click-then-drag gesture) across two independent KEY and VEL(ocity) tabs, plus Reset All confirmed functional. MIDI OUT: 3 options (Off/Clip Player/On) all confirmed, Clip Player revealing a direct cross-reference to Ableton's Clip Player context. LOWER KEYBOARD cross-system controls correctly NOT duplicated as ARP-owned -- reassigned to GLOBAL_KEYBOARD section: Transpose (global MIDI semitone offset, distinct from ARP.TRANSPOSE.SHIFT), Key (13 options), Scale (~75 options, CONFIRMED conditionally gated by Key != '--'), Swing (explicit official tooltip naming both Clips and Arp editors), Porta/Curve/Always-Scaled (deferred to future VOICE/KEYBOARD section pass, correctly out of ARP's ownership scope). 55 ARP-owned records: 53 VERIFIED, 2 PROVEN_NOT_USER_CONTROL (Pattern Editor Accent/Strum rows -- negative based on click+hover only; right-click could not be tested due to an environment tier restriction encountered mid-session, flagged for retest), 0 UNVERIFIED_CANDIDATE. ARP CLOSURE GATE: PASSED. | OWNERSHIP CORRECTION 2026-09-17 (KEYBOARD/PERFORMANCE pass): the OSC MAPPING editor (6 records: EDITOR, ARP_ROW_FOLD, ARP_ROW_WARP, ARP_ROW_KEY_RANGE, VEL_TAB, RESET_ALL) was re-tested and directly confirmed to launch from the shared Keyboard/Performance bar independent of ARP/CLIP tab selection -- re-homed from section=ARP to section=GLOBAL_KEYBOARD (semantic_id prefix ARP.OSC_MAPPING.* -> KEYBOARD.OSC_MAPPING.*, evidence content unchanged, ARP-row content cross-referenced back to ARP). Corrected ARP-owned record count: 49 (47 VERIFIED, 2 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE). ARP's substantive findings are unchanged; this is an ownership/section correction only, made under the project's 'new direct evidence contradicts the canonical JSON' exception -- ARP CLOSURE GATE remains PASSED.",
       "CLIP": "CLOSED_STAR (2026-09-17): Full CLIP piano-roll clip-player system discovered, structurally parallel to ARP but with genuine live-recording and general MIDI editing capabilities ARP lacks. GLOBAL: Bank resource system (richer nested category structure than ARP -- Chords>[Duda Chords/Neo Chords/One Bar Cluster Chords], Drums>, Guitar>, Duda EPiano Noodles, Init), Trigger Mode (Mono/Poly simultaneous-clip-triggering, no ARP equivalent), Edit All (consistent with ARP's confirmed mechanism), Show Macros (confirmed reveals 8 inline Macro knobs). CLIP SETTINGS: Clip selector, Length, KB Span (4 options: Off/Mono/Poly/Offset -- CLIP-exclusive, governs keyboard-to-pitch remapping, Poly confirmed to add a slot badge), Trans, Mode (9 options, IDENTICAL vocabulary to ARP's Pattern Editor Mode), Time (confirmed conditionally activated by Mode=Static, broader gate than ARP's One-Shot-only), Rate+BPM/Hz+Trip+Dot (consistent pattern), Launch Quant (structurally relocated to per-clip CLIP_SETTINGS vs ARP's GLOBAL-level equivalent -- reconciliation note for CROSS-SYSTEM pass), Retrig/Velo Trig/Note Gate (all 3 confirmed with full tooltip semantics). RECORD (CLIP-EXCLUSIVE, no ARP equivalent): Record button (live MIDI recording into a clip), Overdub/Extend record-mode toggle, Metronome toggle. EDITOR: full general-purpose piano-roll MIDI note grid (confirmed directly draggable for pitch, richer than ARP's scale-degree-block Pattern Editor), Velocity lane, Hear Selected Notes audition button (CLIP-exclusive). 12 SLOTS: play/launch/select behavior consistent with ARP; right-click context menu CONFIRMED RICHER than ARP's (5 items: Rename Clip/Copy Clip/Paste Clip/Erase Clip/Set as Preview Clip, vs ARP's 3: Copy/Paste/Erase Pattern). MIDI OUT: identical 3 options to ARP (Off/Clip Player/On), directly reconfirmed. 28 CLIP records: 28 VERIFIED, 0 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE. CLIP CLOSURE GATE: PASSED. CROSS-SYSTEM NOTE for future CROSS-SYSTEM RECONCILIATION pass: CLIP and ARP share the exact same 9-option Mode vocabulary and near-identical Rate/BPM-Hz/Trip/Dot/Retrig-family controls -- likely a shared underlying 'sequencer slot' architecture; Launch Quant's differing scope (per-clip in CLIP vs global in ARP) should be explicitly reconciled; SHOW_MACROS and Pattern Editor's Macro-lane feature both cross-reference MACRO.1-8 and should be checked for redundancy/consistency.",
-      "GLOBAL_KEYBOARD": "CLOSED_STAR (2026-09-17): Complete KEYBOARD/PERFORMANCE section enumeration finished. 22 KEYBOARD-section records discovered total (15 new this pass + 7 pre-existing + 6 re-homed from ARP). CORE KEYBOARD CONTROLS: TRANSPOSE (global MIDI offset, distinct from ARP.TRANSPOSE.SHIFT), KEY (13 options -- null + 12 semitones), SCALE (~75 options, conditionally gated by Key != '--'), SWING (cross-system Clips+Arp control per tooltip), PORTA_TIME (portamento glide, 0.0ms default), PORTA_CURVE (bipolar portamento curvature: negative=accelerate, 0=linear, positive=decelerate), ALWAYS/SCALED checkboxes (independent toggles, NOT radio, effect on portamento unobserved due to audio-processing-disabled session environment). PERFORMANCE SOURCES: PITCH_BEND (spring-loaded wheel, 0.00 default, auto-returns to center on release), PITCH_BEND.BEND_UP (semitone range, 2 default), PITCH_BEND.BEND_DOWN (semitone range, -2 default), MOD_WHEEL (sticky wheel, 0% default, persists value until reset), MOD_WHEEL.SOURCE_INDICATOR (quick-nav badge UI showing active Matrix destinations; left-click highlight-toggle mechanics confirmed, semantic meaning/integration with Matrix panel unconfirmed this pass). OSC_MAPPING: Full Note Range Editor with 6 rows (SUB/OSC A/B/C/NOISE/ARP), KEY and VEL tabs, Fold/Warp toggles per row (both VERIFIED), double-click-then-drag key-range bars (VERIFIED after discovering correct gesture), Reset All button (VERIFIED functional). OSC MAPPING OWNERSHIP CORRECTION: 6 re-homed records (EDITOR, ARP_ROW_FOLD/WARP/KEY_RANGE, VEL_TAB, RESET_ALL) moved from ARP to GLOBAL_KEYBOARD section after direct confirmation that editor launches from Keyboard/Performance bar independent of ARP/CLIP tab, consistent with official documentation naming OSC Mapping as a Keyboard/Performance control. MAIN_KEYBOARD: Full-width piano-roll playable surface (click-to-play NOT behaviorally tested due to audio-processing-disabled; surface existence VERIFIED). MPE SETTINGS (in Serum main MENU, not Keyboard bar itself): MPE Enabled (checked by default), MPE:XYZ->Macro1,2,3 (action, menu state unclicked to avoid MATRIX mutation), MPE:YZ->Macro1,2 (action, same), MPE:Y->ModWheel (action, same), MPE Bend Range (48 semitones, unclicked). STRUCTURAL ACTIONS & CONTEXT MENUS: Rich right-click menus VERIFIED for TRANSPOSE/SWING/KEY (all include Mod Source submenu, Lock Parameter, Link Parameter, Link All Parameters mechanisms), PORTA_TIME (Mod Source, NO Link Parameter), PORTA_CURVE (NO Mod Source, NO Link Parameter, minimal menu: Reset/MIDI Learn/Lock only), MOD_WHEEL/PITCH_BEND (minimal menus: Reset Control / MIDI Learn only, no modulation/lock options reflecting their transient live-input nature). KEY's unique context menu (Swap Key/Mode to Major/Minor, Start Learning [MIDI-input scale-detection, unobserved], Lock Key & Scale pair-specific toggle) VERIFIED. CONDITIONAL UI: SCALE dropdown blocked when Key='--', confirmed via both left-click and right-click gates. 22 GLOBAL_KEYBOARD records: 19 VERIFIED, 0 PROVEN_NOT_USER_CONTROL, 3 UNVERIFIED_CANDIDATE (MPE:XYZ->Macro1,2,3, MPE:YZ->Macro1,2, MPE:Y->ModWheel all left unclicked due to ambiguity between two competing hypotheses -- persistent radio-selection vs one-shot Matrix-route-creating quick-action; flagged for dedicated retest with MATRIX panel open to disambiguate). GATES TO CLOSURE: (1) all 7 pre-existing KEYBOARD records VERIFIED, (2) all 15 new KEYBOARD records status resolved (19 VERIFIED + 3 UNVERIFIED_CANDIDATE), (3) 6 ARP-to-KEYBOARD re-homing completed with ownership evidence, (4) cross-system reconciliation: OSC_MAPPING's ARP row cross-referenced back to ARP section; TRANSPOSE/KEY/SCALE/SWING/PORTA/CURVE/ALWAYS_SCALED confirmed as Keyboard-bar-owned, not ARP-owned; MPE mapping to MATRIX.SOURCE domain confirmed; Pitch Bend/Mod Wheel confirmed as live-input Performance Sources and MATRIX.SOURCE domain members. DEFERRED TO FUTURE VOICE/KEYBOARD PASS: PORTA_TIME/PORTA_CURVE/ALWAYS_SCALED control-semantics (exact effect on portamento behavior when ALWAYS vs SCALED are toggled; unobserved due to audio-processing-disabled). MOD_WHEEL.SOURCE_INDICATOR's meaning/Matrix-panel-integration (left-click highlight-toggle behavior observed, semantic purpose unconfirmed; flagged for retest with Matrix panel open). Three MPE menu items' function (radio vs quick-action mode; flagged for retest with MATRIX panel open to observe any route-table mutation on click). GLOBAL_KEYBOARD CLOSURE GATE: PASSED (all P0/P1 gaps resolved; 3 narrow P2 deferrals flagged and scoped, no major semantic gaps remain)."
+      "GLOBAL_KEYBOARD": "CLOSED_STAR (2026-09-17): Complete KEYBOARD/PERFORMANCE section enumeration finished. 22 KEYBOARD-section records discovered total (15 new this pass + 7 pre-existing + 6 re-homed from ARP). CORE KEYBOARD CONTROLS: TRANSPOSE (global MIDI offset, distinct from ARP.TRANSPOSE.SHIFT), KEY (13 options -- null + 12 semitones), SCALE (~75 options, conditionally gated by Key != '--'), SWING (cross-system Clips+Arp control per tooltip), PORTA_TIME (portamento glide, 0.0ms default), PORTA_CURVE (bipolar portamento curvature: negative=accelerate, 0=linear, positive=decelerate), ALWAYS/SCALED checkboxes (independent toggles, NOT radio, effect on portamento unobserved due to audio-processing-disabled session environment). PERFORMANCE SOURCES: PITCH_BEND (spring-loaded wheel, 0.00 default, auto-returns to center on release), PITCH_BEND.BEND_UP (semitone range, 2 default), PITCH_BEND.BEND_DOWN (semitone range, -2 default), MOD_WHEEL (sticky wheel, 0% default, persists value until reset), MOD_WHEEL.SOURCE_INDICATOR (quick-nav badge UI showing active Matrix destinations; left-click highlight-toggle mechanics confirmed, semantic meaning/integration with Matrix panel unconfirmed this pass). OSC_MAPPING: Full Note Range Editor with 6 rows (SUB/OSC A/B/C/NOISE/ARP), KEY and VEL tabs, Fold/Warp toggles per row (both VERIFIED), double-click-then-drag key-range bars (VERIFIED after discovering correct gesture), Reset All button (VERIFIED functional). OSC MAPPING OWNERSHIP CORRECTION: 6 re-homed records (EDITOR, ARP_ROW_FOLD/WARP/KEY_RANGE, VEL_TAB, RESET_ALL) moved from ARP to GLOBAL_KEYBOARD section after direct confirmation that editor launches from Keyboard/Performance bar independent of ARP/CLIP tab, consistent with official documentation naming OSC Mapping as a Keyboard/Performance control. MAIN_KEYBOARD: Full-width piano-roll playable surface (click-to-play NOT behaviorally tested due to audio-processing-disabled; surface existence VERIFIED). MPE SETTINGS (in Serum main MENU, not Keyboard bar itself): MPE Enabled (checked by default), MPE:XYZ->Macro1,2,3 (action, menu state unclicked to avoid MATRIX mutation), MPE:YZ->Macro1,2 (action, same), MPE:Y->ModWheel (action, same), MPE Bend Range (48 semitones, unclicked). STRUCTURAL ACTIONS & CONTEXT MENUS: Rich right-click menus VERIFIED for TRANSPOSE/SWING/KEY (all include Mod Source submenu, Lock Parameter, Link Parameter, Link All Parameters mechanisms), PORTA_TIME (Mod Source, NO Link Parameter), PORTA_CURVE (NO Mod Source, NO Link Parameter, minimal menu: Reset/MIDI Learn/Lock only), MOD_WHEEL/PITCH_BEND (minimal menus: Reset Control / MIDI Learn only, no modulation/lock options reflecting their transient live-input nature). KEY's unique context menu (Swap Key/Mode to Major/Minor, Start Learning [MIDI-input scale-detection, unobserved], Lock Key & Scale pair-specific toggle) VERIFIED. CONDITIONAL UI: SCALE dropdown blocked when Key='--', confirmed via both left-click and right-click gates. 22 GLOBAL_KEYBOARD records: 19 VERIFIED, 0 PROVEN_NOT_USER_CONTROL, 3 UNVERIFIED_CANDIDATE (MPE:XYZ->Macro1,2,3, MPE:YZ->Macro1,2, MPE:Y->ModWheel all left unclicked due to ambiguity between two competing hypotheses -- persistent radio-selection vs one-shot Matrix-route-creating quick-action; flagged for dedicated retest with MATRIX panel open to disambiguate). GATES TO CLOSURE: (1) all 7 pre-existing KEYBOARD records VERIFIED, (2) all 15 new KEYBOARD records status resolved (19 VERIFIED + 3 UNVERIFIED_CANDIDATE), (3) 6 ARP-to-KEYBOARD re-homing completed with ownership evidence, (4) cross-system reconciliation: OSC_MAPPING's ARP row cross-referenced back to ARP section; TRANSPOSE/KEY/SCALE/SWING/PORTA/CURVE/ALWAYS_SCALED confirmed as Keyboard-bar-owned, not ARP-owned; MPE mapping to MATRIX.SOURCE domain confirmed; Pitch Bend/Mod Wheel confirmed as live-input Performance Sources and MATRIX.SOURCE domain members. DEFERRED TO FUTURE VOICE/KEYBOARD PASS: PORTA_TIME/PORTA_CURVE/ALWAYS_SCALED control-semantics (exact effect on portamento behavior when ALWAYS vs SCALED are toggled; unobserved due to audio-processing-disabled). MOD_WHEEL.SOURCE_INDICATOR's meaning/Matrix-panel-integration (left-click highlight-toggle behavior observed, semantic purpose unconfirmed; flagged for retest with Matrix panel open). Three MPE menu items' function (radio vs quick-action mode; flagged for retest with MATRIX panel open to observe any route-table mutation on click). GLOBAL_KEYBOARD CLOSURE GATE: PASSED (all P0/P1 gaps resolved; 3 narrow P2 deferrals flagged and scoped, no major semantic gaps remain). OWNERSHIP CORRECTION 2026-09-16 (VOICE gap-analysis pass): 3 records (PORTA_TIME, PORTA_CURVE, ALWAYS_SCALED) re-homed from GLOBAL_KEYBOARD to VOICE/VOICING after direct live-UI confirmation that they physically reside inside Serum's labeled 'VOICING' panel, not the Keyboard/Performance bar (the two are visually distinct, divider-separated regions; this was not previously distinguished because both sit at the bottom of the window). ALWAYS_SCALED was additionally split into two independent records (PORTA_ALWAYS, PORTA_SCALED) upon direct proof via right-click context-menu headers that they are two separately-named engine controls, not one compound toggle-pair. GLOBAL_KEYBOARD now holds 21 records (previously 24 in the raw data / 22 per this section's own closure count, a pre-existing discrepancy left for FINAL RECONCILIATION to resolve). No GLOBAL_KEYBOARD evidence was deleted; the three re-homed records retain their full original evidence chains under their new VOICE.VOICING.* semantic_ids.",
+      "VOICE": "CLOSED_STAR (2026-09-16): VOICE section (Serum's 'VOICING' panel, bottom-right of the main window) gap-analysis and reconciliation pass complete. 8 VOICE-scoped records total: 7 VERIFIED, 1 PROVEN_NOT_USER_CONTROL, 0 UNVERIFIED_CANDIDATE, P0=0, P1=0, P2=0. METHOD: gap-analysis against official Xfer 'What's New in Serum 2' PDF (page 4 UI-overview diagram, the only official source available this session) plus the existing canonical inventory, per gap_analysis_methodology.md; direct UI validation performed only for gaps/conflicts/ownership questions, not a full rediscovery. OWNERSHIP RESOLUTION (Conflicts A/B/C from gap_analysis_methodology.md): PORTA_TIME, PORTA_CURVE, ALWAYS and SCALED were previously recorded under GLOBAL_KEYBOARD; direct live-UI observation proved all four are physically located inside the single labeled 'VOICING' panel (confirmed via verbatim-identical hover tooltips and right-click context-menu headers matching the pre-existing KEYBOARD/PERFORMANCE-pass evidence exactly), a visually distinct, divider-separated region from the Keyboard/Performance bar -- there is exactly ONE physical instance of each control, so this was a RE-HOME (ownership correction), not a two-surface merge. ALWAYS/SCALED were further SPLIT into VOICE.VOICING.PORTA_ALWAYS and VOICE.VOICING.PORTA_SCALED after right-click menus proved their exact distinct internal names ('Porta Always', 'Porta Scaled'). No prior evidence was deleted or overwritten; all three original records were re-homed in place (semantic_id/section/module changed, original sources/notes preserved and extended). NEW DISCOVERIES: MONO (checkbox, disables POLY when on, changes voice-count display denominator to 1, no tooltip, no context menu), POLY/'Poly Count' (stepper, default 8, scroll-mutable only -- click on rendered arrows non-responsive, no context menu, disabled under MONO), LEGATO (checkbox, minimal context menu 'Legato'/Reset Control/MIDI Learn, independent of MONO state, cross-referenced but NOT merged with the distinct ENV-section 'Invert Legato' feature), and the read-only '0/N' voice-count display (PROVEN_NOT_USER_CONTROL, denominator mirrors POLY/MONO, not independently interactive). CONDITIONAL-STATE TRAVERSAL performed and documented: MONO off/on, LEGATO off/on under both MONO states, ALWAYS/SCALED off/on/both-on -- all transitions restored to baseline and re-verified via zoom; no additional hidden or conditionally-appearing controls were found beyond the disable/grey effect of MONO on POLY. UNRESOLVED PRIOR CLAIM: a pre-existing project memory (voice_section_boundary.md) asserted a 'Limit Same Note Poly to 1' item and a 'Voice Steal Priority' submenu (Newest/Oldest/Highest/Lowest/Velocity) exist on a POLY/MONO context menu, sourced from an unverified prior-session claim of an inaccessible full Serum 2 User Guide page 215-218. This pass right-clicked MONO, POLY (label/value/up-down arrows), the VOICING panel header/background, and the top-level Serum MENU, and found no such items anywhere; right-click was independently confirmed functional throughout via PORTA/CURVE/ALWAYS/SCALED/LEGATO's own menus. Per epistemic discipline this claim is NEITHER promoted to VERIFIED NOR marked PROVEN_NOT_USER_CONTROL from a single UI-only negative search -- it is flagged unresolved, with the source memory recommended for correction, pending either a successful direct find in a future pass or access to the full official manual (only the 20-page 'What's New' summary PDF was available this session; it does not enumerate VOICING panel controls at this granularity). NAMING RECONCILIATION: legacy code-layer semantic-target entries in serum2/compiler/targets.py ('Global.VelocityCurve', capability_key global_field_velocity_curve) and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md ('GLOBAL.VELOCITY_CURVE') are very likely a mislabeling of VOICE.VOICING.PORTA_CURVE (both were speculative, UNKNOWN-causal-status entries never verified against live UI); documented as a hypothesis in PORTA_CURVE's notes, NOT executed as a code change, and NOT ruled out as a possibly-genuine separate GLOBAL-tab velocity-response control pending the GLOBAL pass. Other legacy Global.* entries in that same list (GLOBAL.MONO, GLOBAL.POLY_COUNT, GLOBAL.LEGATO, GLOBAL.PORTAMENTO_TIME/ALWAYS/SCALED) are reconciled as referring to the same controls now correctly homed under VOICE.VOICING.*; no targets.py code edits were made (out of scope for an inventory-only pass; flagged for a future compiler-layer cleanup task). VOICE CLOSURE GATE: PASSED (P0=0, P1=0, P2=0; the one unresolved prior-memory claim is explicitly scoped out as neither a semantic gap in the current UI nor a proven negative, and does not block closure)."
     },
     "sections_pending": [
       "VOICE",
@@ -13641,117 +13643,6 @@
       "notes": "Explicit official cross-reference confirmed directly via tooltip text naming both 'Clips' and 'Arp' editors -- genuinely shared/global control, correctly NOT duplicated as an ARP-only semantic identity. | KEYBOARD/PERFORMANCE PASS 2026-09-17: confirmed fully Matrix-modulatable (Mod Source submenu) and Link-Parameter-capable, matching KEYBOARD.TRANSPOSE's menu richness exactly -- see KEYBOARD.TRANSPOSE notes for the cross-cutting Link Parameter discovery."
     },
     {
-      "semantic_id": "KEYBOARD.PORTA_TIME",
-      "section": "GLOBAL_KEYBOARD",
-      "module": "GLOBAL_KEYBOARD",
-      "submodule": null,
-      "label": "Porta Time -- sets the time it takes for the pitch of one note to reach the next",
-      "control_type": "knob",
-      "value_range": "0.0 ms and up",
-      "options": null,
-      "default": "0.0 ms",
-      "conditional_visibility": null,
-      "conditions": [],
-      "cross_references": [
-        "KEYBOARD.PORTA_CURVE"
-      ],
-      "resource_dependency": null,
-      "structural_action": null,
-      "sources": [
-        {
-          "type": "direct_ui_observation",
-          "ref": "Serum 2.0.21 Keyboard/Performance bar, live UI, 2026-09-17 (ARP pass): knob present bottom-right labeled PORTA."
-        },
-        {
-          "type": "direct_ui_observation",
-          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: hover tooltip verbatim 'Porta Time (0.0 ms)' -- 'Sets the time it takes for the pitch of one note to reach the next.' Confirms exact internal label is 'Porta Time', not merely 'Porta'."
-        },
-        {
-          "type": "direct_ui_observation",
-          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: right-click context menu enumerated: Porta Time (header) / Mod Source > (full 49-source Matrix-style submenu, opened and read: Envelopes/LFOs/Note/Oscillators/Macros/MPE/Filters/Mod Wheel/Aftertouch/Poly Aftertch/Pitch Bend/Fixed) / Bypass Modulator (greyed) / Remove Modulator (greyed) / Remove All Modulators / Reset Control / MIDI Learn / Lock Parameter. NO Link Parameter / Link All Parameters (unlike TRANSPOSE/SWING/KEY) -- confirms Link is not universal across all Keyboard-bar controls. Menu closed without selecting any Mod Source (avoids an unrecoverable-without-further-testing Matrix-route mutation)."
-        }
-      ],
-      "evidence_type": [
-        "DIRECT_UI_OBSERVATION"
-      ],
-      "status": "VERIFIED",
-      "notes": "RESOLVED 2026-09-17 (KEYBOARD/PERFORMANCE pass, supersedes prior UNVERIFIED_CANDIDATE): classic portamento/glide time, default 0.0ms (off). Genuinely owned by the Keyboard/Performance bar UI (that is where the control physically lives), though the underlying engine parameter may be Voice-level -- UI ownership and engine ownership are tracked separately per this project's control-route distinction; no separate VOICE-section duplicate should be created if a future VOICE pass finds the same parameter, it should cross-reference this record instead. Confirmed fully Matrix-modulatable via a rich Mod Source/Bypass/Remove-Modulator menu identical in structure to Matrix-destination parameters elsewhere in the project, but notably WITHOUT the Link Parameter mechanism found on TRANSPOSE/SWING/KEY -- a genuine, directly-observed asymmetry."
-    },
-    {
-      "semantic_id": "KEYBOARD.PORTA_CURVE",
-      "section": "GLOBAL_KEYBOARD",
-      "module": "GLOBAL_KEYBOARD",
-      "submodule": null,
-      "label": "Porta Curve -- adjusts the portamento curvature (negative=accelerate, 0=linear, positive=decelerate)",
-      "control_type": "draggable_value",
-      "value_range": "bipolar, % (negative to positive)",
-      "options": null,
-      "default": "0%",
-      "conditional_visibility": null,
-      "conditions": [],
-      "cross_references": [
-        "KEYBOARD.PORTA_TIME"
-      ],
-      "resource_dependency": null,
-      "structural_action": null,
-      "sources": [
-        {
-          "type": "direct_ui_observation",
-          "ref": "Serum 2.0.21 Keyboard/Performance bar, live UI, 2026-09-17 (ARP pass): small curve-shaped control present bottom-right labeled CURVE, next to PORTA."
-        },
-        {
-          "type": "direct_ui_observation",
-          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: hover tooltip verbatim 'Porta Curve (0%)' -- 'Adjust the portamento curvature. negative value: accelerates to destination pitch. middle: linear pitch change. positive value: decelerates to destination pitch.' Confirms this is a draggable bipolar value field, not a purely graphical/discrete control as previously guessed."
-        },
-        {
-          "type": "direct_ui_observation",
-          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: right-click context menu enumerated: Porta Curve (header) / Reset Control / MIDI Learn / Lock Parameter. NO Mod Source / Bypass Modulator / Remove Modulator (unlike PORTA_TIME) and NO Link Parameter (unlike TRANSPOSE/SWING/KEY) -- Porta Curve is the least-featured control tested in this pass: not independently Matrix-modulatable and not linkable, only resettable/MIDI-learnable/lockable."
-        }
-      ],
-      "evidence_type": [
-        "DIRECT_UI_OBSERVATION"
-      ],
-      "status": "VERIFIED",
-      "notes": "RESOLVED 2026-09-17 (KEYBOARD/PERFORMANCE pass, supersedes prior UNVERIFIED_CANDIDATE): full tooltip semantics obtained directly -- exact bipolar curve behavior confirmed via official in-app text, not inferred. Genuinely distinct control from PORTA_TIME (separate right-click menu richness, separate tooltip, separate default/range), correctly modeled as two records rather than one merged 'Porta' control."
-    },
-    {
-      "semantic_id": "KEYBOARD.ALWAYS_SCALED",
-      "section": "GLOBAL_KEYBOARD",
-      "module": "GLOBAL_KEYBOARD",
-      "submodule": null,
-      "label": "Always / Scaled -- independent checkbox pair near Porta Time/Curve",
-      "control_type": "toggle_pair",
-      "value_range": null,
-      "options": [
-        "Always",
-        "Scaled"
-      ],
-      "default": "both off",
-      "conditional_visibility": null,
-      "conditions": [],
-      "cross_references": [
-        "KEYBOARD.PORTA_TIME",
-        "KEYBOARD.PORTA_CURVE"
-      ],
-      "resource_dependency": null,
-      "structural_action": "toggle",
-      "sources": [
-        {
-          "type": "direct_ui_observation",
-          "ref": "Serum 2.0.21 Keyboard/Performance bar, live UI, 2026-09-17 (ARP pass): two checkboxes labeled 'ALWAYS' and 'SCALED' present above PORTA/CURVE."
-        },
-        {
-          "type": "direct_ui_observation",
-          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: BEFORE=both unchecked -> clicked ALWAYS -> AFTER=ALWAYS checked, SCALED still unchecked (confirms independent, not a hidden auto-pairing) -> clicked SCALED -> AFTER=both checked simultaneously, confirming the pair is NOT mutually exclusive (both can be active at once, unlike a radio pair). No hover tooltip appeared on either checkbox after repeated attempts. Both reverted to unchecked (clicked ALWAYS then SCALED again) and visually confirmed restored via zoom."
-        }
-      ],
-      "evidence_type": [
-        "DIRECT_UI_OBSERVATION"
-      ],
-      "status": "VERIFIED",
-      "notes": "RESOLVED 2026-09-17 (KEYBOARD/PERFORMANCE pass, supersedes prior UNVERIFIED_CANDIDATE): existence, independent (non-radio) toggle behavior, and default (both off) are all directly confirmed via live UI before/after testing. Exact behavioral EFFECT on portamento (e.g. whether ALWAYS makes Porta Time apply to same-note as well as legato transitions, and whether SCALED scales Porta Time by the interval distance) could not be isolated without audio rendering (session's DawDreamer/render route was out of scope for this UI-only pass, and Ableton reported 'Audio processing disabled' throughout) -- consistent with this project's evidence-boundary precedent (MATRIX Dynamic Visualization, ARP MIDI-keyboard-launch), the control-existence/interactivity claim is VERIFIED while the exact audible-behavior claim remains unclaimed rather than guessed."
-    },
-    {
       "semantic_id": "KEYBOARD.PITCH_BEND",
       "section": "GLOBAL_KEYBOARD",
       "module": "PERFORMANCE_SOURCE",
@@ -14971,6 +14862,308 @@
       ],
       "status": "VERIFIED",
       "notes": "Existence and position confirmed identical to ARP's MIDI OUT; not independently re-opened to re-confirm the exact 3 options this pass, given ARP's already-confirmed identical control (Off/Clip Player/On). | Directly reconfirmed identical option set to ARP.MIDI_OUT this pass."
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_TIME",
+      "section": "VOICE",
+      "module": "VOICING",
+      "submodule": null,
+      "label": "Porta Time -- sets the time it takes for the pitch of one note to reach the next",
+      "control_type": "knob",
+      "value_range": "0.0 ms and up",
+      "options": null,
+      "default": "0.0 ms",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "VOICE.VOICING.PORTA_CURVE",
+        "VOICE.VOICING.PORTA_ALWAYS",
+        "VOICE.VOICING.PORTA_SCALED"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "Serum 2.0.21 Keyboard/Performance bar, live UI, 2026-09-17 (ARP pass): knob present bottom-right labeled PORTA."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: hover tooltip verbatim 'Porta Time (0.0 ms)' -- 'Sets the time it takes for the pitch of one note to reach the next.' Confirms exact internal label is 'Porta Time', not merely 'Porta'."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: right-click context menu enumerated: Porta Time (header) / Mod Source > (full 49-source Matrix-style submenu, opened and read: Envelopes/LFOs/Note/Oscillators/Macros/MPE/Filters/Mod Wheel/Aftertouch/Poly Aftertch/Pitch Bend/Fixed) / Bypass Modulator (greyed) / Remove Modulator (greyed) / Remove All Modulators / Reset Control / MIDI Learn / Lock Parameter. NO Link Parameter / Link All Parameters (unlike TRANSPOSE/SWING/KEY) -- confirms Link is not universal across all Keyboard-bar controls. Menu closed without selecting any Mod Source (avoids an unrecoverable-without-further-testing Matrix-route mutation)."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: re-verified in place. Control is physically located inside the panel explicitly labeled 'VOICING' (bottom-right of Serum window), visually separated by a vertical divider from the Keyboard/Performance bar (TRANSPOSE/KEY/SCALE/SWING/OSC MAPPING/CLIP/ARP/piano). Hover tooltip re-read verbatim identical: 'Porta Time (0.0 ms)' / 'Sets the time it takes for the pitch of one note to reach the next.' Right-click menu re-read verbatim identical: Porta Time / Mod Source > / Bypass Modulator (greyed) / Remove Modulator (greyed) / Remove All Modulators (greyed -- correction: this item is equally greyed as the two above it, not active as an earlier note implied) / Reset Control / MIDI Learn / Lock Parameter. Only ONE physical instance of this control exists on screen; there is no separate second occurrence in the Keyboard/Performance bar. Confirms this record was correctly discovered but mis-attributed to section GLOBAL_KEYBOARD; official Xfer 'What's New in Serum 2' page 4 UI-overview diagram independently corroborates by drawing 'Keyboard' (transposition/key/scale/swing/oscillator mapping) and 'Voicing' (legato, portamento, and more) as two separate labeled UI regions."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "RESOLVED 2026-09-17 (KEYBOARD/PERFORMANCE pass, supersedes prior UNVERIFIED_CANDIDATE): classic portamento/glide time, default 0.0ms (off). Genuinely owned by the Keyboard/Performance bar UI (that is where the control physically lives), though the underlying engine parameter may be Voice-level -- UI ownership and engine ownership are tracked separately per this project's control-route distinction; no separate VOICE-section duplicate should be created if a future VOICE pass finds the same parameter, it should cross-reference this record instead. Confirmed fully Matrix-modulatable via a rich Mod Source/Bypass/Remove-Modulator menu identical in structure to Matrix-destination parameters elsewhere in the project, but notably WITHOUT the Link Parameter mechanism found on TRANSPOSE/SWING/KEY -- a genuine, directly-observed asymmetry. RE-HOMED 2026-09-16 (VOICE gap-analysis pass): section corrected from GLOBAL_KEYBOARD to VOICE/VOICING after direct live-UI confirmation that this control physically resides inside the 'VOICING' panel, not the Keyboard/Performance bar. This is a re-homing (ownership correction), not a duplicate or a merge across two UI surfaces -- there is exactly one physical instance of this control. semantic_id changed from KEYBOARD.PORTA_TIME to VOICE.VOICING.PORTA_TIME; all prior evidence preserved unmodified above."
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_CURVE",
+      "section": "VOICE",
+      "module": "VOICING",
+      "submodule": null,
+      "label": "Porta Curve -- adjusts the portamento curvature (negative=accelerate, 0=linear, positive=decelerate)",
+      "control_type": "draggable_value",
+      "value_range": "bipolar, % (negative to positive)",
+      "options": null,
+      "default": "0%",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "VOICE.VOICING.PORTA_TIME"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "Serum 2.0.21 Keyboard/Performance bar, live UI, 2026-09-17 (ARP pass): small curve-shaped control present bottom-right labeled CURVE, next to PORTA."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: hover tooltip verbatim 'Porta Curve (0%)' -- 'Adjust the portamento curvature. negative value: accelerates to destination pitch. middle: linear pitch change. positive value: decelerates to destination pitch.' Confirms this is a draggable bipolar value field, not a purely graphical/discrete control as previously guessed."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: right-click context menu enumerated: Porta Curve (header) / Reset Control / MIDI Learn / Lock Parameter. NO Mod Source / Bypass Modulator / Remove Modulator (unlike PORTA_TIME) and NO Link Parameter (unlike TRANSPOSE/SWING/KEY) -- Porta Curve is the least-featured control tested in this pass: not independently Matrix-modulatable and not linkable, only resettable/MIDI-learnable/lockable."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: re-verified in place inside the 'VOICING' panel (see VOICE.VOICING.PORTA_TIME source for panel-boundary evidence). Hover tooltip re-read verbatim identical: 'Porta Curve (0 %)' / 'Adjust the portamento curvature. negative value: accelerates to destination pitch. middle: linear pitch change. positive value: decelerates to destination pitch.' Only ONE physical instance exists."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "RESOLVED 2026-09-17 (KEYBOARD/PERFORMANCE pass, supersedes prior UNVERIFIED_CANDIDATE): full tooltip semantics obtained directly -- exact bipolar curve behavior confirmed via official in-app text, not inferred. Genuinely distinct control from PORTA_TIME (separate right-click menu richness, separate tooltip, separate default/range), correctly modeled as two records rather than one merged 'Porta' control. RE-HOMED 2026-09-16 (VOICE gap-analysis pass): section corrected from GLOBAL_KEYBOARD to VOICE/VOICING (see VOICE.VOICING.PORTA_TIME for full ownership-correction rationale). semantic_id changed from KEYBOARD.PORTA_CURVE to VOICE.VOICING.PORTA_CURVE. NAMING RECONCILIATION: legacy code-layer semantic-target vocabulary (serum2/compiler/targets.py, capability_key 'global_field_velocity_curve', semantic_id 'Global.VelocityCurve') and serum2/PHASE_2_1_REPRESENTATION_FAMILY_MATRIX.md's 'GLOBAL.VELOCITY_CURVE' almost certainly refer to THIS SAME control (both were speculative/unverified UNKNOWN-causal-status entries grouped in that legacy list immediately adjacent to GLOBAL.PORTAMENTO_TIME/ALWAYS/SCALED, suggesting the original author mislabeled Porta Curve as a velocity-curve feature). This is a naming hypothesis, not a proven merge -- a genuine, distinct velocity-to-volume response curve has NOT been ruled out and may still exist as a separate GLOBAL-tab control; this must be checked independently during the GLOBAL gap-analysis pass before targets.py is edited. No code changes made in this pass (out of scope for a semantic-inventory reconciliation)."
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_ALWAYS",
+      "section": "VOICE",
+      "module": "VOICING",
+      "submodule": null,
+      "label": "Porta Always -- forces portamento to always be applied (exact internal name 'Porta Always' confirmed via right-click context menu header)",
+      "control_type": "toggle",
+      "value_range": null,
+      "options": null,
+      "default": "off",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "VOICE.VOICING.PORTA_SCALED",
+        "VOICE.VOICING.PORTA_TIME",
+        "VOICE.VOICING.PORTA_CURVE"
+      ],
+      "resource_dependency": null,
+      "structural_action": "toggle",
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "Serum 2.0.21 Keyboard/Performance bar, live UI, 2026-09-17 (ARP pass): two checkboxes labeled 'ALWAYS' and 'SCALED' present above PORTA/CURVE."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "KEYBOARD/PERFORMANCE pass, live UI, 2026-09-17: BEFORE=both unchecked -> clicked ALWAYS -> AFTER=ALWAYS checked, SCALED still unchecked (confirms independent, not a hidden auto-pairing) -> clicked SCALED -> AFTER=both checked simultaneously, confirming the pair is NOT mutually exclusive (both can be active at once, unlike a radio pair). No hover tooltip appeared on either checkbox after repeated attempts. Both reverted to unchecked (clicked ALWAYS then SCALED again) and visually confirmed restored via zoom."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: right-click on the ALWAYS checkbox opened a context menu with header 'Porta Always' / Reset Control / MIDI Learn -- this is DIRECT PROOF of the exact distinct internal engine name, not merely a UI label guess. Re-confirmed independent, non-exclusive toggle behavior: toggled ALWAYS on alone (SCALED remained off), then toggled SCALED on as well (both simultaneously on), then restored both to off via live UI, zoom-verified at each step. Also re-confirmed panel ownership: this control lives inside the 'VOICING' panel alongside MONO/POLY/LEGATO/PORTA/CURVE, not the Keyboard/Performance bar."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "RESOLVED 2026-09-17 (KEYBOARD/PERFORMANCE pass, supersedes prior UNVERIFIED_CANDIDATE): existence, independent (non-radio) toggle behavior, and default (both off) are all directly confirmed via live UI before/after testing. Exact behavioral EFFECT on portamento (e.g. whether ALWAYS makes Porta Time apply to same-note as well as legato transitions, and whether SCALED scales Porta Time by the interval distance) could not be isolated without audio rendering (session's DawDreamer/render route was out of scope for this UI-only pass, and Ableton reported 'Audio processing disabled' throughout) -- consistent with this project's evidence-boundary precedent (MATRIX Dynamic Visualization, ARP MIDI-keyboard-launch), the control-existence/interactivity claim is VERIFIED while the exact audible-behavior claim remains unclaimed rather than guessed. SPLIT 2026-09-16 (VOICE gap-analysis pass): originally recorded as a single combined KEYBOARD.ALWAYS_SCALED 'toggle_pair' record. Direct right-click evidence in this pass proved these are two independently-named engine controls -- 'Porta Always' and 'Porta Scaled' -- confirmed via distinct context-menu headers, not a single compound control. This record is REPURPOSED to carry the ALWAYS/'Porta Always' half of the original evidence; semantic_id changed from KEYBOARD.ALWAYS_SCALED to VOICE.VOICING.PORTA_ALWAYS. The SCALED/'Porta Scaled' half is now tracked separately as VOICE.VOICING.PORTA_SCALED (new record, cross-referenced), which carries forward the same original before/after toggle evidence since that evidence documented both checkboxes jointly. No evidence was discarded; the original KEYBOARD/PERFORMANCE pass's toggle-behavior observations remain attached above and are shared by reference with VOICE.VOICING.PORTA_SCALED. Section corrected from GLOBAL_KEYBOARD to VOICE/VOICING (see VOICE.VOICING.PORTA_TIME for full ownership-correction rationale)."
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_SCALED",
+      "section": "VOICE",
+      "module": "VOICING",
+      "submodule": null,
+      "label": "Porta Scaled -- scales portamento behavior by interval distance (exact internal name 'Porta Scaled' confirmed via right-click context menu header)",
+      "control_type": "toggle",
+      "value_range": null,
+      "options": null,
+      "default": "off",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "VOICE.VOICING.PORTA_ALWAYS",
+        "VOICE.VOICING.PORTA_TIME",
+        "VOICE.VOICING.PORTA_CURVE"
+      ],
+      "resource_dependency": null,
+      "structural_action": "toggle",
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "Serum 2.0.21 VOICING panel, live UI, 2026-09-17 (original KEYBOARD/PERFORMANCE pass, evidence shared with VOICE.VOICING.PORTA_ALWAYS): BEFORE=both unchecked -> clicked ALWAYS -> AFTER=ALWAYS checked, SCALED still unchecked (confirms independent, not a hidden auto-pairing) -> clicked SCALED -> AFTER=both checked simultaneously, confirming the pair is NOT mutually exclusive (both can be active at once, unlike a radio pair). Both reverted to unchecked and visually confirmed restored via zoom."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: right-click on the SCALED checkbox opened a context menu with header 'Porta Scaled' / Reset Control / MIDI Learn -- direct proof of the exact distinct internal engine name. Re-confirmed independent toggle and panel ownership (VOICING panel, alongside MONO/POLY/LEGATO/PORTA/CURVE/ALWAYS)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW RECORD 2026-09-16 (VOICE gap-analysis pass, split from KEYBOARD.ALWAYS_SCALED): see VOICE.VOICING.PORTA_ALWAYS notes for full split rationale. Existence, independent (non-radio) toggle behavior, and default (off) are directly confirmed via live UI before/after testing (evidence shared with PORTA_ALWAYS since the original test toggled both together) plus an independent right-click confirmation of this control's distinct internal name ('Porta Scaled') in this pass. Exact behavioral EFFECT on portamento (whether SCALED scales Porta Time by interval distance, per its name) could not be isolated without audio rendering -- audio processing was reported disabled throughout this session, consistent with prior evidence-boundary precedent (MATRIX Dynamic Visualization, ARP MIDI-keyboard-launch, KEYBOARD.ALWAYS_SCALED). The control-existence/interactivity claim is VERIFIED; the exact audible-behavior claim remains unclaimed rather than guessed."
+    },
+    {
+      "semantic_id": "VOICE.VOICING.MONO",
+      "section": "VOICE",
+      "module": "VOICING",
+      "submodule": null,
+      "label": "Mono -- switches voice allocation to monophonic (single-voice) mode",
+      "control_type": "checkbox",
+      "value_range": null,
+      "options": null,
+      "default": "off",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "VOICE.VOICING.POLY",
+        "VOICE.VOICING.LEGATO",
+        "VOICE.VOICING.VOICE_COUNT_DISPLAY"
+      ],
+      "resource_dependency": null,
+      "structural_action": "toggle",
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: checkbox labeled MONO present at the top of the 'VOICING' panel, default unchecked. Clicked ON: checkbox turns blue/checked; POLY's stepper visually greys out and becomes non-interactive (scroll-wheel test on POLY produced no value change while MONO is ON, confirming genuine disable, not just visual dimming); the '0 / N' voice-count display's denominator changes from 8 to 1. Clicked OFF: POLY re-enables (scroll-responsive again), denominator display returns to 8. No hover tooltip appears after repeated attempts (unlike PORTA/CURVE knobs, which do show tooltips). No right-click context menu appears -- tested at the checkbox glyph position and at the 'MONO' text-label position, both produced no menu (right-click was confirmed generally functional in this session via PORTA's rich menu, ruling out a tool/coordinate failure)."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: LEGATO remains independently toggleable with MONO in either state (tested MONO-on+LEGATO-on and MONO-off+LEGATO-on); MONO is not a prerequisite for LEGATO."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY 2026-09-16 (VOICE gap-analysis pass). Existence, default state, and a real conditional-visibility effect on POLY are directly confirmed via live UI before/after toggle testing (all changes restored to baseline and re-verified via zoom). MONO has no hover tooltip and no right-click context menu in this Serum 2.0.21 build -- this is a genuine negative finding (not an untested gap): tested at two distinct coordinates after confirming right-click works elsewhere in the same panel (PORTA/CURVE/ALWAYS/SCALED/LEGATO all produced menus from the same testing method). A prior project-memory note (voice_section_boundary.md, sourced from an unverified prior-session extraction of an unconfirmed 'page 215-218' manual reference) claimed a 'Voice Steal Priority' submenu (Newest/Oldest/Highest/Lowest/Velocity) and a 'Limit Same Note Poly to 1' item exist on a POLY/MONO context menu. This pass could NOT locate either item via right-click on MONO, POLY (label/value/up-down-arrows), the VOICING panel header, or the top-level Serum MENU. Per epistemic discipline (absence of evidence != evidence of absence from a single UI-only search), these two items are NOT promoted to VERIFIED and are NOT declared PROVEN_NOT_USER_CONTROL either -- they are flagged as corrections-pending for the source memory, unconfirmed by direct testing, and excluded from this inventory pending either a successful direct find or an official-documentation citation this session could not access (only the 20-page 'What's New in Serum 2' summary PDF was available this session, which does not enumerate VOICING panel controls at this level of detail)."
+    },
+    {
+      "semantic_id": "VOICE.VOICING.POLY",
+      "section": "VOICE",
+      "module": "VOICING",
+      "submodule": null,
+      "label": "Poly Count -- sets the maximum number of simultaneous voices used in polyphonic mode",
+      "control_type": "stepper",
+      "value_range": "at least 1-8 observed (scroll-tested 7<->8); full upper bound not exhaustively explored",
+      "options": null,
+      "default": "8",
+      "conditional_visibility": "disabled (non-interactive, greyed) when MONO is ON",
+      "conditions": [
+        "VOICE.VOICING.MONO == off"
+      ],
+      "cross_references": [
+        "VOICE.VOICING.MONO",
+        "VOICE.VOICING.VOICE_COUNT_DISPLAY"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: numeric stepper labeled POLY in the 'VOICING' panel, default value 8, with up/down arrow glyphs beside the number. Hover tooltip verbatim: 'Poly Count (8)' -- 'It is recommended to keep this set as low as possible based on your usage needs, so you can conserve your CPU. Note the fraction below, and keep in mind some softsynths would have the fraction denominator be 64 (maximum voices polyphony cap) to avoid customer complaints of excessive CPU. Serum doesn't force this on you.' Confirms exact internal name is 'Poly Count'."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: mutation test via mouse-wheel scroll over the value (down one tick: 8->7, confirmed via zoom; up one tick: 7->8, restored and re-verified via zoom). The adjacent '0/N' voice-count display's denominator updated in lockstep (0/8 -> 0/7 -> 0/8), proving that display is derived from this control's value. Clicking directly on the rendered up/down arrow glyphs produced no visible value change in repeated attempts; only scroll-wheel input was observed to mutate the value in this session."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: no right-click context menu appears on the POLY label, the numeric value box, or the up/down-arrow glyphs (tested at three distinct coordinates; right-click confirmed functional elsewhere in the same panel)."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY 2026-09-16 (VOICE gap-analysis pass). Existence, exact internal name ('Poly Count'), default value, mutability (scroll-wheel only, confirmed and restored), and conditional disablement under MONO are all directly confirmed via live UI. See VOICE.VOICING.MONO's notes for the unresolved 'Voice Steal Priority' / 'Limit Same Note Poly to 1' prior-memory claim, which was searched for on this control's context menu and not found."
+    },
+    {
+      "semantic_id": "VOICE.VOICING.LEGATO",
+      "section": "VOICE",
+      "module": "VOICING",
+      "submodule": null,
+      "label": "Legato -- enables legato voice-connection behavior between overlapping notes",
+      "control_type": "checkbox",
+      "value_range": null,
+      "options": null,
+      "default": "off",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "VOICE.VOICING.MONO",
+        "VOICE.VOICING.POLY",
+        "VOICE.VOICING.VOICE_COUNT_DISPLAY"
+      ],
+      "resource_dependency": null,
+      "structural_action": "toggle",
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: checkbox labeled LEGATO in the 'VOICING' panel, directly below MONO, default unchecked. Right-click opened a context menu: header 'Legato' / Reset Control / MIDI Learn (no Lock Parameter, no Mod Source -- the minimal menu variant, same tier as PORTA_ALWAYS/PORTA_SCALED). No hover tooltip appears after repeated attempts."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: toggled ON/OFF independently with MONO in both states (MONO-on+LEGATO-on, then MONO-off+LEGATO-on, then restored to off) -- confirms LEGATO is not gated by or exclusive to MONO mode; it can be enabled while POLY (polyphonic) mode is active too. All states restored to baseline and re-verified via zoom."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "VERIFIED",
+      "notes": "NEW DISCOVERY 2026-09-16 (VOICE gap-analysis pass). Existence, default, right-click menu, and independence from MONO state are directly confirmed via live UI. CROSS-SYSTEM NOTE: this is a DIFFERENT control from the per-envelope 'Invert Legato' feature documented in the official Xfer 'What's New in Serum 2' PDF (page 14: 'Force an envelope to always trigger at note on, even when legato is enabled') -- that is an ENV-section override of THIS control's global behavior, not a duplicate. Do not merge; cross-reference only during CROSS-SYSTEM reconciliation. Exact audible behavioral effect (how note connection/retrigger suppression actually sounds) not testable this session (audio processing disabled)."
+    },
+    {
+      "semantic_id": "VOICE.VOICING.VOICE_COUNT_DISPLAY",
+      "section": "VOICE",
+      "module": "VOICING",
+      "submodule": null,
+      "label": "'0 / N' live voice-count readout (active voices / current Poly Count, or /1 when MONO is on)",
+      "control_type": "display",
+      "value_range": null,
+      "options": null,
+      "default": "0 / 8",
+      "conditional_visibility": null,
+      "conditions": [],
+      "cross_references": [
+        "VOICE.VOICING.POLY",
+        "VOICE.VOICING.MONO"
+      ],
+      "resource_dependency": null,
+      "structural_action": null,
+      "sources": [
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: small text readout positioned beside LEGATO in the 'VOICING' panel, showing '0 / 8' at baseline. Left-clicking it produced no visible state change (zoom-verified before/after identical). No hover tooltip appears. No right-click context menu appears."
+        },
+        {
+          "type": "direct_ui_observation",
+          "ref": "VOICE gap-analysis pass, live UI, 2026-09-16: denominator tracks VOICE.VOICING.POLY's live value exactly -- observed '0/8' at POLY=8, '0/7' immediately after scrolling POLY down to 7, back to '0/8' after restoring POLY to 8; and '0/1' when MONO is switched ON (overriding POLY's own value display while MONO is active), returning to '0/8' when MONO is switched back OFF. The numerator (observed as 0 throughout) is presumed to represent currently-active voice count, but this could not be driven above 0 in this session because no notes were sounding and the session reported 'Audio processing disabled' throughout."
+        }
+      ],
+      "evidence_type": [
+        "DIRECT_UI_OBSERVATION"
+      ],
+      "status": "PROVEN_NOT_USER_CONTROL",
+      "notes": "NEW DISCOVERY 2026-09-16 (VOICE gap-analysis pass), classified PROVEN_NOT_USER_CONTROL: this is a read-only derived display, not an independently settable control -- it has no tooltip, no context menu, and does not respond to a click, and its value is fully explained as a function of VOICE.VOICING.POLY (denominator) and VOICE.VOICING.MONO (overrides denominator to 1) plus a live active-voice count this session could not exercise (audio processing disabled). Recorded for completeness/cross-reference per project convention (cf. MATRIX.MOD field precedent), not counted toward VOICE's VERIFIED total."
     }
   ]
 }
