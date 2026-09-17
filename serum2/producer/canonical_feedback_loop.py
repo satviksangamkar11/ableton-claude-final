@@ -391,17 +391,22 @@ def render_and_measure_with_authorized_mutation(
             # Refused: zero mutation occurred
             return None
 
-        # Admitted: synth is already mutated (if HOST_PARAMETER)
-        # Render audio from mutated synth
-        # Use empty extra_host_context since mutation already applied
-        params = synth.get_parameters_description()
-        by_name = {p["name"]: p["index"] for p in params}
+        # Admitted: synth is already mutated (if HOST_PARAMETER, executor
+        # already called synth.set_parameter() above -- nothing further to
+        # set here). Render using the same engine/synth pairing pattern as
+        # execute_vertical_slice.render_arm(): a PluginProcessor has no
+        # standalone .render(); rendering happens via the RenderEngine after
+        # building a graph.
+        # Same stimulus parameters as execute_vertical_slice.render_arm()
+        # (baseline render path) -- consistent stimulus between baseline and
+        # treatment is required for a valid A/B measurement comparison.
+        synth.clear_midi()
+        synth.add_midi_note(60, 100, 0.0, 1.5)
+        engine.load_graph([(synth, [])])
+        engine.render(2.0)
+        audio = np.asarray(engine.get_audio())
 
-        # Render from the synth (already mutated by executor)
-        midi_notes = [(0, 60, 100, 0, 0.5)]
-        audio = synth.render(midi_notes, SR)
-
-        if audio is None or len(audio) == 0:
+        if audio is None or audio.size == 0:
             return None
 
         validity = is_valid_signal(audio)
@@ -415,6 +420,7 @@ def render_and_measure_with_authorized_mutation(
         return audio, float(measurement_value), validity
 
     except Exception as e:
+        print(f"  render_and_measure_with_authorized_mutation error: {type(e).__name__}: {e}")
         return None
 
 
@@ -540,18 +546,52 @@ def execute_producer_feedback_episode(
         print(f"ERROR: No contract found for target {diagnosis.selected_target}")
         return None
 
-    # Verify prerequisites via live Serum readback
+    # Verify prerequisites via live Serum readback.
+    #
+    # Serum's CBOR state is presence-preserving, not schema-complete: a body
+    # field only round-trips through save_state() if it was previously SET.
+    # A fresh/untouched skeleton legitimately has prerequisite fields like
+    # Env0.plainParams.kParamDecay ABSENT (readback=None) -- this means
+    # "never materialized", not "0 / default / acceptable". Absent must not
+    # be silently treated as satisfied, and must not skip verification.
+    #
+    # PRE_AUTHORITY_SETUP: an absent field is materialized via the same
+    # pathmerge mechanism already used for prerequisite_overrides, then
+    # RE-READ through the same authoritative live-readback path to prove the
+    # write actually stuck (not assumed). A field that IS present but holds
+    # the WRONG value is never overwritten here -- that would silently
+    # launder a genuinely mismatched context into a pass, weakening
+    # prerequisite semantics. Wrong values fall straight through to BLOCK.
     verified_prerequisites = {}
     for p in contract.prerequisites:
         field_path = p["field_path"]
         declared_value = p.get("declared_value")
-        # Live readback: load into Serum, resave, read the actual value
-        body_for_readback = copy.deepcopy(body)
         prerequisite_field = field_path.replace("body:", "")
+
+        body_for_readback = copy.deepcopy(body)
         readback = live_readback_prerequisite(meta, body_for_readback, prerequisite_field)
-        verified = verify_prerequisite_for_admission(readback, declared_value)
-        verified_prerequisites[field_path] = True if verified else readback
-        print(f"  Prerequisite {prerequisite_field}: declared={declared_value} readback={readback:.6f} verified={verified}")
+
+        if readback is None:
+            print(f"  Prerequisite {prerequisite_field}: absent (never materialized) "
+                  f"-> materializing declared_value={declared_value} [PRE_AUTHORITY_SETUP]")
+            pathmerge.apply_path_value(body, prerequisite_field, declared_value)
+            body_for_reverify = copy.deepcopy(body)
+            readback = live_readback_prerequisite(meta, body_for_reverify, prerequisite_field)
+
+            if readback is None:
+                verified_prerequisites[field_path] = False
+                print(f"  Prerequisite {prerequisite_field}: MATERIALIZATION FAILED "
+                      f"(still absent after write) -> BLOCK")
+                continue
+
+            verified = verify_prerequisite_for_admission(readback, declared_value)
+            verified_prerequisites[field_path] = True if verified else readback
+            print(f"  Prerequisite {prerequisite_field}: declared={declared_value} "
+                  f"readback(after materialize)={readback:.6f} verified={verified}")
+        else:
+            verified = verify_prerequisite_for_admission(readback, declared_value)
+            verified_prerequisites[field_path] = True if verified else readback
+            print(f"  Prerequisite {prerequisite_field}: declared={declared_value} readback={readback:.6f} verified={verified}")
 
     # Call real admission gate
     admission_result = admission_mod.admit(
@@ -706,13 +746,27 @@ def execute_producer_feedback_episode(
     # NOTE: using contract-derived measurement_metric, not goal.measurement_metric
     print("\n[6/10] Rendering treatment (ONE mutation only, AUTHORIZED)...")
 
-    # Construct MutationRequest for executor authorization
+    # Construct MutationRequest for executor authorization.
+    # target MUST be contract.target (the capability_key admission.admit()
+    # looks contracts up by -- e.g. "envelope_field_release"), NOT
+    # goal.semantic_target (the human-facing name, e.g. "Env1.Release").
+    # These are different strings; using the wrong one makes the inner
+    # admission.admit() call find zero matches and refuse as REFUSED_UNKNOWN.
+    #
+    # The executor's admission.admit() call is a SEPARATE, independent gate
+    # from the diagnostic one at [3.5/10] -- it must be given the same
+    # prerequisite/measurement evidence already established there, or a
+    # target with prerequisites (e.g. Release) is refused for having an
+    # (unpropagated) empty verified-prerequisites map.
     mutation_request = MutationRequest(
-        target=goal.semantic_target,
+        target=contract.target,
         mutation_type=MutationType.HOST_PARAMETER,  # Producer uses HOST_PARAMETER for now
         value=float(mutation_value),
         host_parameter_name=host_param_name,  # Assertion only (contract is authority)
-        contract_id=contract.target if hasattr(contract, 'target') else None,
+        required_causal=True,
+        proposed_prerequisites_verified=verified_prerequisites if contract.prerequisites else {},
+        required_measurement_definition_id=contract.measurement["measurement_definition_id"],
+        contract_id=contract.target,
     )
 
     try:
@@ -722,7 +776,7 @@ def execute_producer_feedback_episode(
         result = render_and_measure_with_authorized_mutation(
             meta=meta,
             body=body,
-            target=goal.semantic_target,
+            target=contract.target,
             mutation_request=mutation_request,
             contracts_dict=contracts_dict,
             measurement_metric=measurement_metric,
