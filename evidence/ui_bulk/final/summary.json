@@ -1,0 +1,10 @@
+{
+  "unique_capability_count": 192,
+  "status_counts": {
+    "NOT_EXECUTABLE": 1,
+    "UI_TEXT_VERIFIED": 163,
+    "NO_DETERMINISTIC_UI_PROXY": 23,
+    "FORENSIC_REQUIRED": 5
+  },
+  "forensic_count": 5
+}

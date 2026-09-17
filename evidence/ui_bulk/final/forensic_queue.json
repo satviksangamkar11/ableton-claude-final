@@ -1,0 +1,101 @@
+[
+  {
+    "capability_id": "HOST_PARAMETER:86385e378f53fb5b",
+    "execution_family": "HOST_PARAMETER",
+    "authoritative_binding": {
+      "binding_schema_version": 1,
+      "binding_type": "HOST_PARAMETER",
+      "parameter_name": "A Warp"
+    },
+    "semantic_ids": [
+      "OSC1.WARP"
+    ],
+    "before_text": "No Warp Type",
+    "ui_after_text": "No Warp Type",
+    "ui_reloaded_text": "No Warp Type",
+    "probe": 0.75,
+    "detail": "displayed text did not change: before='No Warp Type', after='No Warp Type' -- may require a prerequisite context (e.g. a linked mode/type parameter) not set in this bare-skeleton fixture",
+    "classification": "FORENSIC_REQUIRED",
+    "timestamp": 1789673871.9251926
+  },
+  {
+    "capability_id": "HOST_PARAMETER:314e571ad558cbe2",
+    "execution_family": "HOST_PARAMETER",
+    "authoritative_binding": {
+      "binding_schema_version": 1,
+      "binding_type": "HOST_PARAMETER",
+      "parameter_name": "A Warp 2"
+    },
+    "semantic_ids": [
+      "OSC1.WARP_2",
+      "OSC2.WARP_2",
+      "OSC3.WARP_2"
+    ],
+    "before_text": "No Warp Type",
+    "ui_after_text": "No Warp Type",
+    "ui_reloaded_text": "No Warp Type",
+    "probe": 0.75,
+    "detail": "displayed text did not change: before='No Warp Type', after='No Warp Type' -- may require a prerequisite context (e.g. a linked mode/type parameter) not set in this bare-skeleton fixture",
+    "classification": "FORENSIC_REQUIRED",
+    "timestamp": 1789673871.9251978
+  },
+  {
+    "capability_id": "HOST_PARAMETER:2ea2aa6f25285153",
+    "execution_family": "HOST_PARAMETER",
+    "authoritative_binding": {
+      "binding_schema_version": 1,
+      "binding_type": "HOST_PARAMETER",
+      "parameter_name": "A WT Pos"
+    },
+    "semantic_ids": [
+      "OSC1.WT_POS",
+      "OSC2.WT_POS",
+      "OSC3.WT_POS"
+    ],
+    "before_text": " 1",
+    "ui_after_text": "192",
+    "ui_reloaded_text": " 7",
+    "probe": 0.75,
+    "detail": "displayed text changed but did not survive reload: after='192', reloaded=' 7'",
+    "classification": "FORENSIC_REQUIRED",
+    "timestamp": 1789673871.9252021
+  },
+  {
+    "capability_id": "HOST_PARAMETER:bad797bc1d4d7930",
+    "execution_family": "HOST_PARAMETER",
+    "authoritative_binding": {
+      "binding_schema_version": 1,
+      "binding_type": "HOST_PARAMETER",
+      "parameter_name": "B Warp"
+    },
+    "semantic_ids": [
+      "OSC2.WARP"
+    ],
+    "before_text": "No Warp Type",
+    "ui_after_text": "No Warp Type",
+    "ui_reloaded_text": "No Warp Type",
+    "probe": 0.75,
+    "detail": "displayed text did not change: before='No Warp Type', after='No Warp Type' -- may require a prerequisite context (e.g. a linked mode/type parameter) not set in this bare-skeleton fixture",
+    "classification": "FORENSIC_REQUIRED",
+    "timestamp": 1789673871.9252095
+  },
+  {
+    "capability_id": "HOST_PARAMETER:d94913696ec0dcce",
+    "execution_family": "HOST_PARAMETER",
+    "authoritative_binding": {
+      "binding_schema_version": 1,
+      "binding_type": "HOST_PARAMETER",
+      "parameter_name": "C Warp"
+    },
+    "semantic_ids": [
+      "OSC3.WARP"
+    ],
+    "before_text": "No Warp Type",
+    "ui_after_text": "No Warp Type",
+    "ui_reloaded_text": "No Warp Type",
+    "probe": 0.75,
+    "detail": "displayed text did not change: before='No Warp Type', after='No Warp Type' -- may require a prerequisite context (e.g. a linked mode/type parameter) not set in this bare-skeleton fixture",
+    "classification": "FORENSIC_REQUIRED",
+    "timestamp": 1789673871.9252126
+  }
+]
