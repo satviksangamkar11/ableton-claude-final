@@ -1,63 +1,83 @@
 #!/usr/bin/env python3
-"""V1 causal qualification batch: scalar amplitude/cutoff mutations.
+"""V1 causal qualification batch: scalar amplitude/cutoff/envelope mutations.
 
-Uses existing measure.py kernels + seed experiment structure.
-Isolates each capability mutation and measures audio effect.
+REVISED (v2) after root-cause diagnosis: the original batch used incorrect
+CBOR paths (kParamLevel/kParamCutoff/kParamAttackTime — none of which exist
+in Serum's body schema) and loaded a static preset with no exercise context,
+so mutations never reached the audio engine. All 7 experiments silently
+produced 0.0 dB/Hz delta (CAUSAL_BLOCKED/CAUSAL_FAILED), not because Serum/
+DawDreamer cannot be causally mutated, but because of two combined bugs:
 
-Highest-yield batch:
-  1. OSC1/OSC2/OSC3 Level (amplitude)
-  2. Filter1/Filter2 Cutoff (spectral)
-  3. Envelope Attack (temporal)
-  4. Envelope Release (temporal)
+  1. Shallow copy (`dict.copy()`) let baseline/treatment share nested dicts.
+  2. Wrong field names + no exercise context to gate the mutated module.
+
+Root cause proven via serum2/qualification/test_causal_mutation_instrumentation_v2.py,
+which reproduces the existing filter_cutoff_pilot.py CAUSAL_VERIFIED result
+(463.1 Hz -> 3147.4 Hz) end-to-end with full step tracing.
+
+Corrected methodology (mirrors existing proven pilots):
+  - Uses bridge.capture_v8_skeleton() (fresh default state), not a static preset.
+  - Uses copy.deepcopy() for baseline/treatment isolation.
+  - Uses verified CBOR paths: kParamVolume (osc), kParamFreq (filter),
+    kParamAttack (env).
+  - Applies exercise_context (host-level gate parameters) via set_parameter()
+    to BOTH arms where the module requires activation (filters default OFF).
+  - OSC.Level and ENV.Attack need no exercise context (verified: "A Enable"
+    defaults to 1.0; Attack has no prerequisites per
+    attack_qualified_complete_001_PASS_FULL.json).
 
 Each experiment:
-  fixture → render baseline
-        → render with ONE capability mutated
-        → measure audio difference
-        → compare to attribution threshold
-        → record CAUSAL_VERIFIED or CAUSAL_FAILED
-
-Targets deterministic, isolated mutations with clear expected effects.
+  fresh skeleton -> render baseline (+ exercise context)
+                 -> render with ONE capability mutated (+ same exercise context)
+                 -> measure audio difference
+                 -> compare to attribution threshold
+                 -> record CAUSAL_VERIFIED or CAUSAL_FAILED
 """
 
 import sys
 import json
 import tempfile
 import os
+import copy
 from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 import numpy as np
 import dawdreamer as daw
-from serum2 import bridge, codec, vst3_state, pathmerge
+from serum2 import bridge, pathmerge
 from serum2.evidence import epoch as epoch_mod
 from serum2.evidence.measure import (
     rms_db, spectral_centroid_hz, tail_rms_db, attack_onset_rms_db
 )
-from serum2.evidence.mutation_executor_extended import execute_mutation_request_with_authority
-from serum2.evidence.mutation_request import MutationRequest, MutationType
-from serum2.evidence.capability_contract import CapabilityContract, ExecutionBinding
 
 VST3 = epoch_mod.SERUM_VST3
 SR, BLOCK = 44100, 512
-GOLDEN_PRESET = "archive/golden_presets/arp.SerumPreset"
 
-# Scalar batch: (semantic_id, cbor_path, baseline_value, treatment_value, measurement_kernels)
-SCALAR_BATCH = [
-    # OSC Level (amplitude mutations should show RMS difference)
-    ("OSC1.LEVEL", "Oscillator0.plainParams.kParamLevel", 0.5, 1.0, ["rms_db", "tail_rms_db"]),
-    ("OSC2.LEVEL", "Oscillator1.plainParams.kParamLevel", 0.5, 1.0, ["rms_db", "tail_rms_db"]),
-    ("OSC3.LEVEL", "Oscillator2.plainParams.kParamLevel", 0.5, 1.0, ["rms_db", "tail_rms_db"]),
+# Scalar batch: (semantic_id, cbor_path, treatment_value, measurement_names, exercise_context)
+# baseline is always the skeleton default (no baseline override) so the
+# comparison is "default state" vs "default state + single mutation" —
+# matching the proven filter_cutoff_pilot.py / attack_qualified pattern.
+SCALAR_BATCH: List[Tuple[str, str, float, List[str], List[Tuple[str, float]]]] = [
+    # OSC Volume (verified path: kParamVolume, not kParamLevel).
+    # "A Enable" (OSC1's enable) defaults to 1.0 -- no exercise context needed.
+    ("OSC1.LEVEL", "Oscillator0.plainParams.kParamVolume", 0.0, ["rms_db"], []),
+    ("OSC2.LEVEL", "Oscillator1.plainParams.kParamVolume", 0.0, ["rms_db"], []),
+    ("OSC3.LEVEL", "Oscillator2.plainParams.kParamVolume", 0.0, ["rms_db"], []),
 
-    # Filter Cutoff (spectral mutations should show centroid change)
-    ("FILTER1.CUTOFF", "VoiceFilter0.plainParams.kParamCutoff", 50.0, 120.0, ["spectral_centroid_hz"]),
-    ("FILTER2.CUTOFF", "VoiceFilter1.plainParams.kParamCutoff", 50.0, 120.0, ["spectral_centroid_hz"]),
+    # Filter Cutoff (verified path: kParamFreq, not kParamCutoff).
+    # Filter 1/2 On default to 0.0 (OFF) -- exercise context required or the
+    # mutation is inert (proven by filter_cutoff_pilot.py CAUSAL_VERIFIED).
+    ("FILTER1.CUTOFF", "VoiceFilter0.plainParams.kParamFreq", 0.9,
+     ["spectral_centroid_hz"], [("Filter 1 On", 1.0)]),
+    ("FILTER2.CUTOFF", "VoiceFilter1.plainParams.kParamFreq", 0.9,
+     ["spectral_centroid_hz"], [("Filter 2 On", 1.0)]),
 
-    # Envelope Attack (temporal mutation, should show attack_onset difference if note covers it)
-    ("ENV1.ATTACK", "VoiceEnv0.plainParams.kParamAttackTime", 0.01, 0.5, ["attack_onset_rms_db"]),
-    ("ENV2.ATTACK", "VoiceEnv1.plainParams.kParamAttackTime", 0.01, 0.5, ["attack_onset_rms_db"]),
+    # Envelope Attack (verified path: kParamAttack, not kParamAttackTime).
+    # No prerequisites (attack_qualified_complete_001_PASS_FULL.json).
+    ("ENV1.ATTACK", "Env0.plainParams.kParamAttack", 0.8, ["attack_onset_rms_db"], []),
+    ("ENV2.ATTACK", "Env1.plainParams.kParamAttack", 0.8, ["attack_onset_rms_db"], []),
 ]
 
 MEASUREMENT_KERNELS = {
@@ -68,38 +88,53 @@ MEASUREMENT_KERNELS = {
 }
 
 
+def _apply_host_context(synth, context: List[Tuple[str, float]]) -> None:
+    """Apply host-level exercise context parameters (same mechanism as
+    a3_behavior_harness._apply_exercise_context)."""
+    if not context:
+        return
+    params = synth.get_parameters_description()
+    by_name = {p["name"]: p["index"] for p in params}
+    for name, value in context:
+        if name not in by_name:
+            raise KeyError(f"Exercise context: host parameter not found: {name!r}")
+        synth.set_parameter(by_name[name], float(value))
+
+
 def run_causal_experiment(
     semantic_id: str,
     cbor_path: str,
-    baseline_value: float,
     treatment_value: float,
     measurement_names: List[str],
+    exercise_context: List[Tuple[str, float]],
 ) -> Dict[str, Any]:
     """Run single causal qualification experiment.
+
+    Baseline = fresh skeleton default state (+ exercise context).
+    Treatment = fresh skeleton with ONE field mutated (+ same exercise context).
 
     Returns: {success, semantic_id, measurements, status}
     """
     try:
-        # Load golden preset directly
-        with open(GOLDEN_PRESET, 'rb') as f:
-            meta, body = codec.decode(f.read())
+        skeleton = bridge.capture_v8_skeleton(VST3)
+        meta, body = skeleton
 
-        # === BASELINE ===
-        baseline_meta, baseline_body = meta.copy(), body.copy()
-        pathmerge.apply_path_value(baseline_body, cbor_path, baseline_value)
+        # === BASELINE (skeleton default, no mutation) ===
+        baseline_meta, baseline_body = copy.deepcopy(meta), copy.deepcopy(body)
+        baseline_value = pathmerge.read_path_value(baseline_body, cbor_path)
 
-        baseline_audio = _render_state(baseline_meta, baseline_body)
+        baseline_audio = _render_state(baseline_meta, baseline_body, exercise_context)
         baseline_measurements = {}
         if baseline_audio is not None:
             for meas_name in measurement_names:
                 kernel, _ = MEASUREMENT_KERNELS[meas_name]
                 baseline_measurements[meas_name] = kernel(baseline_audio)
 
-        # === TREATMENT ===
-        treatment_meta, treatment_body = meta.copy(), body.copy()
+        # === TREATMENT (single field mutated) ===
+        treatment_meta, treatment_body = copy.deepcopy(meta), copy.deepcopy(body)
         pathmerge.apply_path_value(treatment_body, cbor_path, treatment_value)
 
-        treatment_audio = _render_state(treatment_meta, treatment_body)
+        treatment_audio = _render_state(treatment_meta, treatment_body, exercise_context)
         treatment_measurements = {}
         if treatment_audio is not None:
             for meas_name in measurement_names:
@@ -148,20 +183,23 @@ def run_causal_experiment(
             "cbor_path": cbor_path,
             "baseline_value": baseline_value,
             "treatment_value": treatment_value,
+            "exercise_context": exercise_context,
             "measurements": measurements,
             "causal_status": causal_status,
         }
 
     except Exception as e:
+        import traceback
         return {
             "success": False,
             "semantic_id": semantic_id,
             "error": str(e),
+            "error_traceback": traceback.format_exc(),
             "causal_status": "CAUSAL_BLOCKED",
         }
 
 
-def _render_state(meta, body, duration=2.0):
+def _render_state(meta, body, exercise_context: Optional[List[Tuple[str, float]]] = None, duration=2.0):
     """Render Serum state to audio. Returns numpy array or None on failure."""
     try:
         fd, tmp = tempfile.mkstemp(suffix=".bin")
@@ -172,6 +210,8 @@ def _render_state(meta, body, duration=2.0):
         synth = engine.make_plugin_processor("serum", VST3)
         synth.load_state(tmp)
         os.remove(tmp)
+
+        _apply_host_context(synth, exercise_context or [])
 
         synth.clear_midi()
         synth.add_midi_note(60, 100, 0.0, 1.5)
@@ -188,16 +228,16 @@ def _render_state(meta, body, duration=2.0):
 
 
 def main():
-    print("V1 Scalar Batch Causal Qualification\n")
+    print("V1 Scalar Batch Causal Qualification (v2 — corrected paths + exercise context)\n")
 
     results = []
     verified = []
     failed = []
     blocked = []
 
-    for semantic_id, cbor_path, baseline, treatment, measurements in SCALAR_BATCH:
+    for semantic_id, cbor_path, treatment, measurements, exercise_context in SCALAR_BATCH:
         print(f"  {semantic_id}... ", end="", flush=True)
-        result = run_causal_experiment(semantic_id, cbor_path, baseline, treatment, measurements)
+        result = run_causal_experiment(semantic_id, cbor_path, treatment, measurements, exercise_context)
         results.append(result)
 
         status = result.get("causal_status", "UNKNOWN")
@@ -209,7 +249,7 @@ def main():
             print(f"[FAILED]")
         else:
             blocked.append(semantic_id)
-            print(f"[{status}]")
+            print(f"[{status}] {result.get('error', '')}")
 
     print(f"\nResults:")
     print(f"  CAUSAL_VERIFIED: {len(verified)}")
@@ -220,7 +260,8 @@ def main():
     report_path = Path("serum2/qualification/CAUSAL_QUALIFICATION_V1_SCALAR_BATCH_REPORT.json")
     with open(report_path, "w") as f:
         json.dump({
-            "batch": "scalar_amplitude_cutoff_envelope",
+            "batch": "scalar_amplitude_cutoff_envelope_v2",
+            "methodology": "fresh skeleton + deepcopy + verified paths + exercise context",
             "total_experiments": len(SCALAR_BATCH),
             "verified_count": len(verified),
             "failed_count": len(failed),
