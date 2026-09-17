@@ -1,9 +1,9 @@
 {
   "run_dir": "evidence\\bulk\\final",
-  "unique_capability_count": 180,
+  "unique_capability_count": 192,
   "status_counts": {
     "NOT_EXECUTABLE": 1,
-    "MACHINE_VERIFIED": 179
+    "MACHINE_VERIFIED": 191
   },
   "failure_count": 0
 }

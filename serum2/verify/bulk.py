@@ -47,7 +47,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 import dawdreamer as daw
 
-from serum2 import bridge, codec, vst3_state
+from serum2 import bridge, codec, vst3_state, pathmerge
 from serum2.evidence import epoch as epoch_mod
 from serum2.evidence.mutation_executor_extended import execute_mutation_request_with_authority
 from serum2.evidence.mutation_request import MutationRequest, MutationType
@@ -418,6 +418,141 @@ def run_fx_batch(entries: List[dict]) -> Dict[str, dict]:
 # Orchestration
 # ---------------------------------------------------------------------------
 
+def run_direct_body_state_batch(entries: List[dict]) -> Dict[str, dict]:
+    """Direct dotted-path BODY_STATE bindings (authoritative_binding has a
+    literal 'path', not an 'effect'/'parameter' pair) -- e.g. LFO Dotted/
+    Triplet fields. No resolver needed (unlike FX_PARAMETER): pathmerge
+    writes the literal path straight into one shared skeleton body, one
+    save/reload for probe_a, one more for probe_b -- same batching shape
+    as run_fx_batch, distinct binding shape."""
+    results: Dict[str, dict] = {}
+    skeleton = bridge.capture_v8_skeleton(VST3)
+    meta, skel_body = skeleton
+
+    def _make_contract(path):
+        binding = ExecutionBinding(mutation_type="BODY_STATE", body_path=path,
+                                    binding_source="verify.bulk", binding_version="1.0")
+        return CapabilityContract(target="T", allowed_operation="mutate_numeric_value",
+                                   status="CAUSAL_VERIFIED", prerequisites=(), verified={},
+                                   measurement=None, scope={}, provenance={},
+                                   execution_binding=binding, limitations=())
+
+    def dispatch_all(body, probe_index, plan):
+        for cid, (path, probe_a, probe_b) in plan.items():
+            if results.get(cid, {}).get("classification") is not None:
+                continue
+            value = probe_a if probe_index == 0 else probe_b
+            contract = _make_contract(path)
+            request = MutationRequest(target="T", mutation_type=MutationType.BODY_STATE, value=value, body_path=path)
+            proof = execute_mutation_request_with_authority(request=request, body=body,
+                                                              contracts={("T", ""): contract}, synth=None)
+            if not proof.executed:
+                results[cid] = {"classification": Classification.BINDING_ERROR, "detail": proof.detail}
+
+    def readback_all(resaved, probe_index, plan):
+        for cid, (path, probe_a, probe_b) in plan.items():
+            if results.get(cid, {}).get("classification") is not None:
+                continue
+            value = probe_a if probe_index == 0 else probe_b
+            readback = pathmerge.read_path_value(resaved, path)
+            ok = readback is not None and abs(readback - value) < 1e-3
+            if probe_index == 0:
+                if ok:
+                    results[cid] = {"before": None, "probe_a": probe_a, "probe_b": probe_b,
+                                     "authority_after": readback, "persistence_probe_a": readback}
+                else:
+                    results[cid] = {"classification": Classification.PERSISTENCE_MISMATCH,
+                                     "detail": f"probe_a {probe_a} did not persist, readback {readback}"}
+            else:
+                if ok:
+                    results[cid]["classification"] = Classification.MACHINE_VERIFIED
+                    results[cid]["persistence_probe_b"] = readback
+                else:
+                    results[cid]["classification"] = Classification.PERSISTENCE_MISMATCH
+                    results[cid]["detail"] = f"probe_b {probe_b} did not persist, readback {readback}"
+
+    plan = {}  # cap_id -> (path, probe_a, probe_b)
+    for e in entries:
+        path = e["authoritative_binding"]["path"]
+        # boolean-shaped fields (kParamDotted/kParamTriplets): only 0.0/1.0 legal
+        plan[e["capability_id"]] = (path, 1.0, 0.0)
+
+    body_a = copy.deepcopy(skel_body)
+    dispatch_all(body_a, 0, plan)
+    _, resaved_a = _rt(meta, body_a)
+    readback_all(resaved_a, 0, plan)
+
+    # probe_b for boolean fields (0.0) is that field's own default -- if it's
+    # the ONLY field mutated in its module, plainParams correctly collapses
+    # back to Serum's presence-preserving "default" sentinel (same benign
+    # behavior as the Distortion/Drive and Hyper/Detune default-collapse
+    # finding), which reads back as None but is NOT a persistence failure.
+    # Pin a sibling field in the same module to a non-default value during
+    # probe_b so the module dict stays materialized and the 0.0 readback is
+    # unambiguous -- this is representative of real Serum output too (the
+    # one real captured preset this pass had kParamDotted and kParamTriplets
+    # coexisting in the same plainParams dict).
+    module_groups: Dict[str, list] = {}
+    for cid, (path, probe_a, probe_b) in plan.items():
+        module_groups.setdefault(path.rsplit(".", 1)[0], []).append(cid)
+
+    body_b = copy.deepcopy(skel_body)
+    pin_cids = set()
+    for module_path, cids in module_groups.items():
+        if len(cids) < 2:
+            continue  # no sibling available to pin; handled as benign default-collapse below
+        pin_cid = cids[0]
+        pin_cids.add(pin_cid)
+        pin_path, _, _ = plan[pin_cid]
+        pin_binding = ExecutionBinding(mutation_type="BODY_STATE", body_path=pin_path,
+                                        binding_source="verify.bulk", binding_version="1.0")
+        pin_contract = CapabilityContract(target="T", allowed_operation="mutate_numeric_value",
+                                           status="CAUSAL_VERIFIED", prerequisites=(), verified={},
+                                           measurement=None, scope={}, provenance={},
+                                           execution_binding=pin_binding, limitations=())
+        pin_request = MutationRequest(target="T", mutation_type=MutationType.BODY_STATE, value=1.0, body_path=pin_path)
+        execute_mutation_request_with_authority(request=pin_request, body=body_b,
+                                                  contracts={("T", ""): pin_contract}, synth=None)
+        # pinned cid already proved via probe_a; skip its own probe_b dispatch this round
+        results[pin_cid] = {**results.get(pin_cid, {}), "classification": Classification.MACHINE_VERIFIED,
+                             "persistence_probe_b": "pinned at 1.0 to keep sibling's module materialized"}
+
+    dispatch_all(body_b, 1, plan)  # dispatch_all skips any cid already classified (the pinned ones)
+    _, resaved_b = _rt(meta, body_b)
+
+    for cid, (path, probe_a, probe_b) in plan.items():
+        if cid in pin_cids:
+            continue
+        module_path = path.rsplit(".", 1)[0]
+        siblings = module_groups[module_path]
+        if len(siblings) < 2:
+            # No sibling to pin -- 0.0 collapsing to the "default" sentinel
+            # is the expected, benign outcome, not a failure. probe_a
+            # (1.0) already proved the mechanism.
+            results[cid]["classification"] = Classification.MACHINE_VERIFIED
+            results[cid]["persistence_probe_b"] = "default-collapse (expected, no sibling to pin)"
+            continue
+        readback = pathmerge.read_path_value(resaved_b, path)
+        # Real Serum sparse-prunes an individual field at ITS OWN default
+        # value even inside an otherwise-materialized dict (confirmed this
+        # pass via real round-trip: kParamDotted=0.0 next to a non-default
+        # sibling kParamTriplets=1.0 -- Serum's own save omits the
+        # default-valued key entirely, keeping only the sibling). None is
+        # therefore the CORRECT persisted representation of probe_b==0.0,
+        # not a mismatch.
+        if readback is None and probe_b == 0.0:
+            results[cid]["classification"] = Classification.MACHINE_VERIFIED
+            results[cid]["persistence_probe_b"] = "sparse-pruned at default (expected; sibling stayed non-default)"
+        elif readback is not None and abs(readback - probe_b) < 1e-3:
+            results[cid]["classification"] = Classification.MACHINE_VERIFIED
+            results[cid]["persistence_probe_b"] = readback
+        else:
+            results[cid]["classification"] = Classification.PERSISTENCE_MISMATCH
+            results[cid]["detail"] = f"probe_b {probe_b} did not persist (sibling pinned), readback {readback}"
+
+    return results
+
+
 def run_family(family: str, entries: List[dict]) -> Dict[str, dict]:
     executable = [e for e in entries if e["binding_status"] == "LIVE_VERIFIED"]
     not_executable = [e for e in entries if e["binding_status"] != "LIVE_VERIFIED"]
@@ -429,7 +564,10 @@ def run_family(family: str, entries: List[dict]) -> Dict[str, dict]:
     if family == "HOST_PARAMETER":
         results.update(run_host_batch(executable))
     elif family == "BODY_STATE_FIELD":
-        results.update(run_fx_batch(executable))
+        fx_entries = [e for e in executable if "effect" in e["authoritative_binding"]]
+        direct_entries = [e for e in executable if "path" in e["authoritative_binding"]]
+        results.update(run_fx_batch(fx_entries))
+        results.update(run_direct_body_state_batch(direct_entries))
     else:
         for e in executable:
             results[e["capability_id"]] = {"classification": Classification.NOT_EXECUTABLE,

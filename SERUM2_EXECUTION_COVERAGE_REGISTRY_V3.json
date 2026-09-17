@@ -6164,14 +6164,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6181,14 +6185,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6198,14 +6206,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6215,14 +6227,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6232,14 +6248,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6249,14 +6269,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6266,14 +6290,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6283,14 +6311,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6300,14 +6332,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6317,14 +6353,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6334,14 +6374,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6351,14 +6395,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6368,14 +6416,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6385,14 +6437,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6402,14 +6458,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6419,14 +6479,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6436,14 +6500,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6453,14 +6521,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6470,14 +6542,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6487,14 +6563,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:be1571351b292b89",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 1 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER1.X\"/\"FILTER1.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6644,14 +6724,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6661,14 +6745,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6678,14 +6766,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6695,14 +6787,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6712,14 +6808,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6729,14 +6829,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6746,14 +6850,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6763,14 +6871,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6780,14 +6892,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6797,14 +6913,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6814,14 +6934,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6831,14 +6955,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6848,14 +6976,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6865,14 +6997,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6882,14 +7018,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6899,14 +7039,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6916,14 +7060,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6933,14 +7081,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6950,14 +7102,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -6967,14 +7123,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "BODY_STATE_FIELD",
-        "mutation_type": "STATE",
+        "capability_id": "HOST_PARAMETER:50adb71a14cfe1cd",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Var"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "FILTER TYPE_SPECIFIC reconciliation pass: real-Serum-in-Ableton UI check (not guessed) across 3 distinct filter types spanning this row's full 20-label spectrum -- \"MG Low 12\" (shows FAT), \"Acid Ladder\" (shows SMOOTH), \"L/B/H 12\" (shows MORPH) -- confirmed each relabeled knob is the SAME real host parameter \"Filter 2 Var\" (verified via authority-mutation + Serum-own-save + different-preset-load + reload + visual re-read). No type checked exposes a second/third slot (\"FILTER2.X\"/\"FILTER2.Y\" host params exist but were not observed active in this panel for any type checked) -- generalized: all 20 TYPE_SPECIFIC labels for this filter are the SAME physical knob, cosmetically relabeled per Filter Type, never independently addressable rows.",
+        "binding_version": "1"
       }
     },
     {
@@ -7717,14 +7877,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:e80065f698dc353e",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO0.plainParams.kParamTriplets"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -7734,14 +7898,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:b15467af8508a265",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO0.plainParams.kParamDotted"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -7983,14 +8151,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:38d8a573e00e385f",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO1.plainParams.kParamTriplets"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -8000,14 +8172,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:5385879d0f671cb3",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO1.plainParams.kParamDotted"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -8249,14 +8425,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:2ed61f45c0ea14bb",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO2.plainParams.kParamTriplets"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -8266,14 +8446,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:c3a77b53b00874e8",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO2.plainParams.kParamDotted"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -8515,14 +8699,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:f7d7acbbbfbe5c39",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO3.plainParams.kParamTriplets"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -8532,14 +8720,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:382bcce5e2b6dedd",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO3.plainParams.kParamDotted"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -8781,14 +8973,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:f5c90d4ed6a8a055",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO4.plainParams.kParamTriplets"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -8798,14 +8994,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:a1f66acecda97919",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO4.plainParams.kParamDotted"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -9047,14 +9247,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:4e1afe973585422f",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO5.plainParams.kParamTriplets"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
@@ -9064,14 +9268,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:17b700a9156547c5",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO5.plainParams.kParamDotted"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
+        "binding_version": "1"
       }
     },
     {
