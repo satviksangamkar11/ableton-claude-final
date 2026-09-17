@@ -51,6 +51,12 @@
       "scope": "LFO{1-6}.PRESET/DIVISION/WAVEFORM_GRAPH (18 of 30 LFO rows): all remain NOT_YET_DERIVED with documented architectural blockers (evidence tier mismatch, default collapse, structural type).",
       "rows_with_documented_gaps": 18,
       "skipped": 0
+    },
+    "v4_resource_structural_final_classification": {
+      "scope": "RESOURCE_OPERATION (35) + STRUCTURAL_OPERATION (10) rows",
+      "proven_not_user_control": 4,
+      "unsupported_no_evidence": 41,
+      "skipped": 8
     }
   },
   "summary": {
@@ -467,7 +473,7 @@
       "semantic_id": "MACRO.SYS.KNOB_CONTEXT_MENU",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Macro knob context menu (Serum GUI). Requires Serum UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Macro knob context menu (Serum GUI). Requires Serum UI control.",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -476,7 +482,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Macro knob context menu (Serum GUI). Requires Serum UI control.",
         "binding_version": null
       }
     },
@@ -2473,7 +2479,7 @@
       "semantic_id": "FX.SYS.MODULE_PARAM_CONTEXT_MENU",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- FX module context menu (Serum GUI). Requires Serum UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- FX module context menu (Serum GUI). Requires Serum UI control.",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -2482,7 +2488,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "FX module context menu (Serum GUI). Requires Serum UI control.",
         "binding_version": null
       }
     },
@@ -4510,7 +4516,7 @@
       "semantic_id": "ARP.SLOT.PLAY_BUTTON",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Arp slot launch button (Serum GUI). Requires Serum UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Arp slot launch button (Serum GUI). Requires Serum UI control.",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -4519,7 +4525,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Arp slot launch button (Serum GUI). Requires Serum UI control.",
         "binding_version": null
       }
     },
@@ -4527,7 +4533,7 @@
       "semantic_id": "ARP.SLOT.CONTEXT_MENU",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Arp slot context menu (Serum GUI). Requires Serum UI control (not current scope).; V4: UNSUPPORTED_NO_EVIDENCE -- Arp slot context menu (Serum GUI). Requires Serum UI control (not current scope).",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -4536,7 +4542,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Arp slot context menu (Serum GUI). Requires Serum UI control (not current scope).",
         "binding_version": null
       }
     },
@@ -4544,7 +4550,7 @@
       "semantic_id": "ARP.SLOT.SUMMARY_DISPLAY",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: PROVEN_NOT_USER_CONTROL -- Read-only display element (shows current Shape+Rate, e.g. 'Up 1/16').; V4: PROVEN_NOT_USER_CONTROL -- Read-only display element (shows current Shape+Rate, e.g. 'Up 1/16').",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -4553,7 +4559,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Read-only display element (shows current Shape+Rate, e.g. 'Up 1/16').",
         "binding_version": null
       }
     },
@@ -4561,7 +4567,7 @@
       "semantic_id": "ARP.SLOT.COUNT",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: PROVEN_NOT_USER_CONTROL -- Fixed structural property (12 arp slots per bank, not mutable).; V4: PROVEN_NOT_USER_CONTROL -- Fixed structural property (12 arp slots per bank, not mutable).",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -4570,7 +4576,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Fixed structural property (12 arp slots per bank, not mutable).",
         "binding_version": null
       }
     },
@@ -4578,7 +4584,7 @@
       "semantic_id": "ARP.SLOT.MIDI_KEYBOARD_LAUNCH",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- MIDI-note-triggered arp slot launch. Would require MIDI message injection; outside current Serum execution scope.; V4: UNSUPPORTED_NO_EVIDENCE -- MIDI-note-triggered arp slot launch. Would require MIDI message injection; outside current Serum execution scope.",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -4587,7 +4593,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "MIDI-note-triggered arp slot launch. Would require MIDI message injection; outside current Serum execution scope.",
         "binding_version": null
       }
     },
@@ -5015,7 +5021,7 @@
       "semantic_id": "CLIP.SLOT.PLAY_BUTTON",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Clip slot launch button (Serum GUI). Requires Serum UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Clip slot launch button (Serum GUI). Requires Serum UI control.",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5024,7 +5030,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Clip slot launch button (Serum GUI). Requires Serum UI control.",
         "binding_version": null
       }
     },
@@ -5032,7 +5038,7 @@
       "semantic_id": "CLIP.SLOT.CONTEXT_MENU",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Clip slot context menu (Serum GUI). Requires Serum UI control (not current scope).; V4: UNSUPPORTED_NO_EVIDENCE -- Clip slot context menu (Serum GUI). Requires Serum UI control (not current scope).",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5041,7 +5047,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Clip slot context menu (Serum GUI). Requires Serum UI control (not current scope).",
         "binding_version": null
       }
     },
@@ -5049,7 +5055,7 @@
       "semantic_id": "CLIP.SLOT.COUNT",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: PROVEN_NOT_USER_CONTROL -- Fixed structural property (12 clip slots per bank, not mutable).; V4: PROVEN_NOT_USER_CONTROL -- Fixed structural property (12 clip slots per bank, not mutable).",
       "resolution_reason": "Phase D execution_class='STRUCTURAL_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5058,7 +5064,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Fixed structural property (12 clip slots per bank, not mutable).",
         "binding_version": null
       }
     },
@@ -5421,7 +5427,7 @@
       "semantic_id": "BROWSER.TOGGLE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser button. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser button. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5430,7 +5436,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser button. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5438,7 +5444,7 @@
       "semantic_id": "BROWSER.SEARCH.FIELD",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser text field. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser text field. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5447,7 +5453,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser text field. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5455,7 +5461,7 @@
       "semantic_id": "BROWSER.SEARCH.CLEAR",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser button. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser button. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5464,7 +5470,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser button. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5472,7 +5478,7 @@
       "semantic_id": "BROWSER.MENU.SHOW_IN_FOLDER",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser context menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5481,7 +5487,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser context menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5489,7 +5495,7 @@
       "semantic_id": "BROWSER.MENU.LOAD_RANDOM_PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5498,7 +5504,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5506,7 +5512,7 @@
       "semantic_id": "BROWSER.MENU.HYBRIDIZE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5515,7 +5521,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5523,7 +5529,7 @@
       "semantic_id": "BROWSER.MENU.HYBRIDIZE_FAVORING_SELECTED",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5532,7 +5538,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5540,7 +5546,7 @@
       "semantic_id": "BROWSER.MENU.DELETE_PRESETS",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5549,7 +5555,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5557,7 +5563,7 @@
       "semantic_id": "BROWSER.MENU.RENAME_MOVE_PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5566,7 +5572,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5574,7 +5580,7 @@
       "semantic_id": "BROWSER.MENU.AUTO_PLAY_PREVIEWS",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser toggle. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser toggle. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5583,7 +5589,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser toggle. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5591,7 +5597,7 @@
       "semantic_id": "BROWSER.MENU.PREVIEW_FALLBACK_CLIP",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser submenu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser submenu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5600,7 +5606,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser submenu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5608,7 +5614,7 @@
       "semantic_id": "BROWSER.MENU.RESCAN_DATABASE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5617,7 +5623,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5625,7 +5631,7 @@
       "semantic_id": "BROWSER.MENU.ERASE_REBUILD_DATABASE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5634,7 +5640,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5642,7 +5648,7 @@
       "semantic_id": "BROWSER.FOLDERS.TREE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser tree navigation. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser tree navigation. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5651,7 +5657,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser tree navigation. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5659,7 +5665,7 @@
       "semantic_id": "BROWSER.FOLDERS.CREATE_EXPORT_PACK",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser menu action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5668,7 +5674,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser menu action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5676,7 +5682,7 @@
       "semantic_id": "BROWSER.CATEGORIES_TAGS.TOGGLE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser tab toggle. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser tab toggle. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5685,7 +5691,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser tab toggle. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5693,7 +5699,7 @@
       "semantic_id": "BROWSER.CATEGORIES_TAGS.CATEGORY_LIST",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser multi-select list. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser multi-select list. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5702,7 +5708,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser multi-select list. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5710,7 +5716,7 @@
       "semantic_id": "BROWSER.CATEGORIES_TAGS.TAG_LIST",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser multi-select list. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser multi-select list. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5719,7 +5725,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser multi-select list. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5727,7 +5733,7 @@
       "semantic_id": "BROWSER.CATEGORIES_TAGS.RATING_FILTER",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser dropdown. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser dropdown. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5736,7 +5742,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser dropdown. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5744,7 +5750,7 @@
       "semantic_id": "BROWSER.PRESET_LIST.COLUMNS",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser table columns. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser table columns. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5753,7 +5759,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser table columns. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5761,7 +5767,7 @@
       "semantic_id": "BROWSER.PRESET_LIST.ROW_SELECT_LOAD",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: PROVEN_NOT_USER_CONTROL -- Semantic consequence, not a distinct action: clicking a preset row in the browser is a single user action (row click); the automatic effect is that the preset loads into Serum's active engine state. The BROWSER.PRESET_LIST.ROW_SELECT_LOAD row represents that effect/consequence, not the user's action. The user-facing action is BROWSER.PRESET_LIST.ROW_CONTEXT_MENU or row-click, not this one.; V4: PROVEN_NOT_USER_CONTROL -- Semantic consequence, not a distinct action: clicking a preset row in the browser is a single user action (row click); the automatic effect is that the preset loads into Serum's active engine state. The BROWSER.PRESET_LIST.ROW_SELECT_LOAD row represents that effect/consequence, not the user's action. The user-facing action is BROWSER.PRESET_LIST.ROW_CONTEXT_MENU or row-click, not this one.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5770,7 +5776,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Semantic consequence, not a distinct action: clicking a preset row in the browser is a single user action (row click); the automatic effect is that the preset loads into Serum's active engine state. The BROWSER.PRESET_LIST.ROW_SELECT_LOAD row represents that effect/consequence, not the user's action. The user-facing action is BROWSER.PRESET_LIST.ROW_CONTEXT_MENU or row-click, not this one.",
         "binding_version": null
       }
     },
@@ -5778,7 +5784,7 @@
       "semantic_id": "BROWSER.PRESET_LIST.ROW_CONTEXT_MENU",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser context menu. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser context menu. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5787,7 +5793,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser context menu. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5795,7 +5801,7 @@
       "semantic_id": "BROWSER.PRESET_LIST.RATING_STARS",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser star rating widget. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser star rating widget. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5804,7 +5810,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser star rating widget. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5934,7 +5940,7 @@
       "semantic_id": "BROWSER.NAVIGATION.PREV_NEXT",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser button pair. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser button pair. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5943,7 +5949,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser button pair. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5951,7 +5957,7 @@
       "semantic_id": "BROWSER.NAVIGATION.PRESET_DROPDOWN",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser cascading menu. Requires Ableton browser UI control.; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser cascading menu. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5960,7 +5966,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser cascading menu. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -5968,7 +5974,7 @@
       "semantic_id": "BROWSER.NAVIGATION.SAVE_ICON",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser button. Requires Ableton browser UI control (outside Serum-execution scope).; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser button. Requires Ableton browser UI control (outside Serum-execution scope).",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5977,7 +5983,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser button. Requires Ableton browser UI control (outside Serum-execution scope).",
         "binding_version": null
       }
     },
@@ -5985,7 +5991,7 @@
       "semantic_id": "BROWSER.PACKS.IMPORT",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser packs action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -5994,7 +6000,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser packs action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -6002,7 +6008,7 @@
       "semantic_id": "BROWSER.PACKS.GET_PACKS",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton Browser packs action. Requires Ableton browser UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -6011,7 +6017,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton Browser packs action. Requires Ableton browser UI control.",
         "binding_version": null
       }
     },
@@ -6019,7 +6025,7 @@
       "semantic_id": "TOPMENU.RESOURCE.LOAD_PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton top-menu file action. Requires Ableton UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -6028,7 +6034,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton top-menu file action. Requires Ableton UI control.",
         "binding_version": null
       }
     },
@@ -6036,7 +6042,7 @@
       "semantic_id": "TOPMENU.RESOURCE.REVERT_TO_SAVED",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton top-menu file action. Requires Ableton UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -6045,7 +6051,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton top-menu file action. Requires Ableton UI control.",
         "binding_version": null
       }
     },
@@ -6053,7 +6059,7 @@
       "semantic_id": "TOPMENU.RESOURCE.SAVE_AS_DEFAULT_PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton top-menu file action. Requires Ableton UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -6062,7 +6068,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton top-menu file action. Requires Ableton UI control.",
         "binding_version": null
       }
     },
@@ -6070,7 +6076,7 @@
       "semantic_id": "TOPMENU.RESOURCE.INIT_PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton top-menu file action. Requires Ableton UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -6079,7 +6085,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton top-menu file action. Requires Ableton UI control.",
         "binding_version": null
       }
     },
@@ -6087,7 +6093,7 @@
       "semantic_id": "TOPMENU.RESOURCE.OPEN_PRESETS_FOLDER",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton top-menu file action. Requires Ableton UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -6096,7 +6102,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton top-menu file action. Requires Ableton UI control.",
         "binding_version": null
       }
     },
@@ -6104,7 +6110,7 @@
       "semantic_id": "TOPMENU.RESOURCE.RESCAN_FOLDERS_ON_DISK",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton top-menu file action. Requires Ableton UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -6113,7 +6119,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton top-menu file action. Requires Ableton UI control.",
         "binding_version": null
       }
     },
@@ -6121,7 +6127,7 @@
       "semantic_id": "TOPMENU.RESOURCE.LOAD_TUNING",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: UNSUPPORTED_NO_EVIDENCE -- Ableton top-menu file action. Requires Ableton UI control.",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -6130,7 +6136,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "Ableton top-menu file action. Requires Ableton UI control.",
         "binding_version": null
       }
     },
