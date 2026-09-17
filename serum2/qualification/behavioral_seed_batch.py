@@ -224,6 +224,94 @@ TARGETS: List[TargetDef] = [
 
 
 # ---------------------------------------------------------------------------
+# READY QUEUE: Blocked capabilities with newly-available kernels
+# Bulk requalification with correct measurement kernels
+# ---------------------------------------------------------------------------
+
+BLOCKED_REQUALIFICATION_READY = [
+    # RESONANCE CLUSTER (3 targets)
+    TargetDef(
+        semantic_id="FXEQ.Reso1",
+        experiment_id="fxeq_reso1_requalify_kurtosis",
+        cbor_path="FXRack0.FX.0.FXEQ.plainParams.kParamReso1",
+        host_param_name=None,
+        mutation_value=100.0,
+        baseline_host_val=None,
+        mutated_host_val=None,
+        exercise_context=[],
+        metric="spectral_resonance_peak_db",  # NEW: was spectral_centroid_hz
+        expected_direction="change",
+        effect_threshold=0.3,  # kurtosis delta threshold
+        notes="Resonance Q parameter. NEW kernel: spectral kurtosis (peakiness) instead of centroid.",
+        fx_preset_path=ALTAR_PRESET,
+    ),
+
+    TargetDef(
+        semantic_id="FXEQ.Reso2",
+        experiment_id="fxeq_reso2_requalify_kurtosis",
+        cbor_path="FXRack0.FX.0.FXEQ.plainParams.kParamReso2",
+        host_param_name=None,
+        mutation_value=100.0,
+        baseline_host_val=None,
+        mutated_host_val=None,
+        exercise_context=[],
+        metric="spectral_resonance_peak_db",  # NEW: was spectral_centroid_hz
+        expected_direction="change",
+        effect_threshold=0.3,
+        notes="Second resonance band. Same kernel as Reso1.",
+        fx_preset_path=ALTAR_PRESET,
+    ),
+
+    TargetDef(
+        semantic_id="Filter1.Resonance",
+        experiment_id="filter1_reso_requalify_kurtosis",
+        cbor_path="VoiceFilter0.plainParams.kParamReso",
+        host_param_name=None,
+        mutation_value=0.9,
+        baseline_host_val=None,
+        mutated_host_val=None,
+        exercise_context=[("Filter 1 On", 1.0), ("Filter 1 Freq", 0.15)],
+        metric="spectral_resonance_peak_db",  # NEW: was overall_rms_db
+        expected_direction="change",
+        effect_threshold=0.3,
+        notes="Filter resonance Q. NEW kernel: spectral kurtosis.",
+    ),
+
+    # ENVELOPE RELEASE
+    TargetDef(
+        semantic_id="Env1.Release",
+        experiment_id="env1_release_requalify_tail_rms",
+        cbor_path="Env0.plainParams.kParamRelease",
+        host_param_name=None,
+        mutation_value=0.9,
+        baseline_host_val=None,
+        mutated_host_val=None,
+        exercise_context=[],
+        metric="tail_rms_db",  # NEW: was overall_rms_db
+        expected_direction="change",
+        effect_threshold=1.0,  # 1.0 dB for tail window (vs 0.5 for broad RMS)
+        notes="Envelope release tail. NEW kernel: tail_rms_db (post-0.6s window).",
+    ),
+
+    # DRIVE/DISTORTION
+    TargetDef(
+        semantic_id="Filter1.Drive",
+        experiment_id="filter1_drive_requalify_thd",
+        cbor_path="VoiceFilter0.plainParams.kParamDrive",
+        host_param_name=None,
+        mutation_value=0.9,
+        baseline_host_val=None,
+        mutated_host_val=None,
+        exercise_context=[("Filter 1 On", 1.0)],
+        metric="spectral_harmonic_distortion_ratio",  # NEW: was overall_rms_db
+        expected_direction="increase",
+        effect_threshold=0.05,  # THD ratio (0.05 = 5%)
+        notes="Filter saturation/drive. NEW kernel: harmonic distortion ratio (THD).",
+    ),
+]
+
+
+# ---------------------------------------------------------------------------
 # Registry-driven targets (PROVEN entries -- single source of truth)
 # ---------------------------------------------------------------------------
 
@@ -603,6 +691,70 @@ def print_matrix(results: List[dict]) -> None:
     valid_count = sum(1 for r in results if r["exercise_qualification"].is_valid)
     print("-" * 70)
     print("Chain valid (including pilot): {}/12".format(valid_count + 1))
+
+
+def run_bulk_requalification(verbose: bool = True) -> Tuple[bool, List[dict]]:
+    """STEP 2: Run all READY blocked capabilities with new kernels.
+
+    Bulk qualification of 5 blocked capabilities that now have available kernels:
+    - FXEQ.Reso1, FXEQ.Reso2, Filter1.Resonance (spectral_resonance_peak_db)
+    - Env1.Release (tail_rms_db)
+    - Filter1.Drive (spectral_harmonic_distortion_ratio)
+
+    Returns (all_passed, results). Does NOT update registry; results only.
+    """
+    import gc
+
+    if verbose:
+        print("\n" + "=" * 70)
+        print("BULK REQUALIFICATION — {} READY blocked targets".format(
+            len(BLOCKED_REQUALIFICATION_READY)))
+        print("=" * 70)
+
+    results = []
+    all_passed = True
+    for i, t in enumerate(BLOCKED_REQUALIFICATION_READY):
+        gc.collect()
+        if verbose:
+            print("\n[{}/{}] {}".format(i + 1, len(BLOCKED_REQUALIFICATION_READY), t.semantic_id))
+
+        skeleton = bridge.capture_v8_skeleton(epoch_mod.SERUM_VST3)
+        r = run_one(t, skeleton, verbose=verbose)
+        results.append(r)
+        status = r["behavior_result"].get("status")
+
+        # Track pass/fail
+        if status not in ("CAUSAL_VERIFIED",):
+            if verbose:
+                print("  -> Status: {} (not CAUSAL_VERIFIED)".format(status))
+
+        del skeleton
+        gc.collect()
+
+    if verbose:
+        passed_count = sum(1 for r in results
+                          if r["behavior_result"].get("status") == "CAUSAL_VERIFIED")
+        print("\n" + "-" * 70)
+        print("Requalification results: {}/{} CAUSAL_VERIFIED".format(
+            passed_count, len(BLOCKED_REQUALIFICATION_READY)))
+
+        # Summary table
+        print("\n{:<25} {:<20} {:<15} {:<10}".format(
+            "Capability", "Status", "Delta", "Metric"))
+        print("-" * 70)
+        for r in results:
+            br = r["behavior_result"]
+            metric = br.get("metric_name", "")
+            unit = "Hz" if "centroid" in metric else ("kurtosis" if "resonance_peak" in metric else ("THD" if "distortion" in metric else "dB"))
+            delta_raw = br.get("delta")
+            delta_str = "{:+.2f}".format(delta_raw) if delta_raw is not None else "N/A"
+            status = br.get("status", "UNKNOWN")
+            print("{:<25} {:<20} {:<15} {:<10}".format(
+                r["semantic_id"], status, delta_str, unit))
+        print("-" * 70)
+        print("=" * 70)
+
+    return all_passed, results
 
 
 if __name__ == "__main__":
