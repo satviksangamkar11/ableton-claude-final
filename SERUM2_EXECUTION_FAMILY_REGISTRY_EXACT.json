@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "phase": "D \u2014 Exact Execution Family Registry",
+    "date": "2026-09-17",
+    "method": "Disposition-based family clustering"
+  },
+  "summary": {
+    "total_semantics": 908,
+    "target_backed_semantics": 268,
+    "no_target_semantics": 640,
+    "total_execution_families": 20,
+    "deep_experiments_required": 15,
+    "lightweight_member_verifications": 425
+  },
+  "families": [
+    {
+      "family_id": "BODY_STATE_FIELD_FILTER",
+      "member_count": 40,
+      "experiment_required": true,
+      "experiment_reason": "State mutation",
+      "verification_type": "state readback",
+      "sample_members": [
+        "FILTER1.TYPE_SPECIFIC.BOEUF",
+        "FILTER1.TYPE_SPECIFIC.COMBFREQ",
+        "FILTER1.TYPE_SPECIFIC.DAMP"
+      ]
+    },
+    {
+      "family_id": "BODY_STATE_FIELD_LFO",
+      "member_count": 48,
+      "experiment_required": true,
+      "experiment_reason": "State mutation",
+      "verification_type": "state readback",
+      "sample_members": [
+        "LFO1.DIRECTION",
+        "LFO1.DIVISION",
+        "LFO1.DOTTED"
+      ]
+    },
+    {
+      "family_id": "MATRIX_ROUTE",
+      "member_count": 106,
+      "experiment_required": false,
+      "experiment_reason": "Routing logic",
+      "verification_type": "routing test",
+      "sample_members": [
+        "ENV1.SOURCE",
+        "ENV2.SOURCE",
+        "ENV3.SOURCE"
+      ]
+    },
+    {
+      "family_id": "RESOURCE_OPERATION",
+      "member_count": 41,
+      "experiment_required": false,
+      "experiment_reason": "Resource workflow",
+      "verification_type": "resource test",
+      "sample_members": [
+        "BROWSER.CATEGORIES_TAGS.CATEGORY_LIST",
+        "BROWSER.CATEGORIES_TAGS.RATING_FILTER",
+        "BROWSER.CATEGORIES_TAGS.TAG_LIST"
+      ]
+    },
+    {
+      "family_id": "STRUCTURAL_OPERATION",
+      "member_count": 10,
+      "experiment_required": false,
+      "experiment_reason": "Action-specific",
+      "verification_type": "structural test",
+      "sample_members": [
+        "ARP.SLOT.CONTEXT_MENU",
+        "ARP.SLOT.COUNT",
+        "ARP.SLOT.MIDI_KEYBOARD_LAUNCH"
+      ]
+    },
+    {
+      "family_id": "TARGET_BACKED_CENSUS_VERIFIED",
+      "member_count": 268,
+      "experiment_required": false,
+      "experiment_reason": "Census verified",
+      "verification_type": "lightweight",
+      "sample_members": [
+        "CLIP.SETTINGS.OFFSET",
+        "ENV1.ATK_CURVE",
+        "ENV1.ATTACK"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_ARP",
+      "member_count": 42,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "ARP.GLOBAL.EDIT_ALL",
+        "ARP.GLOBAL.LAUNCH_QUANT",
+        "ARP.MIDI_OUT"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_CLIP",
+      "member_count": 25,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "CLIP.EDITOR.HEAR_SELECTED",
+        "CLIP.EDITOR.NOTE_GRID",
+        "CLIP.EDITOR.VELOCITY_LANE"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_ENV",
+      "member_count": 12,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "ENV1.BPM",
+        "ENV1.LEGATOINVERTED",
+        "ENV1.VOICESTEALRETRIGGERMODE"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_FILTER",
+      "member_count": 14,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "FILTER1.KEYTRACK",
+        "FILTER1.MUTE",
+        "FILTER1.ROUTENOISE"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_FX",
+      "member_count": 52,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "FX.BODE.BPM",
+        "FX.BODE.MONO_INPUT",
+        "FX.BODE.SHIFT_RETRIG"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_GLOBAL_KEYBOARD",
+      "member_count": 13,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "KEYBOARD.MAIN_KEYBOARD",
+        "KEYBOARD.MOD_WHEEL.SOURCE_INDICATOR",
+        "KEYBOARD.MPE.BEND_RANGE"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_LFO",
+      "member_count": 6,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "LFO1.TRIGGER_MODE",
+        "LFO2.TRIGGER_MODE",
+        "LFO3.TRIGGER_MODE"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_MACRO",
+      "member_count": 38,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "MACRO.01.NAME",
+        "MACRO.01.VALUE",
+        "MACRO.02.NAME"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_MATRIX",
+      "member_count": 6,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "MATRIX.SYS.APPLY_AND_DELETE_MACROS",
+        "MATRIX.SYS.CREATE_VELO_AMP_ASSIGNMENT",
+        "MATRIX.SYS.EXPANDED_VIEW"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_MIXER",
+      "member_count": 9,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "MIXER.BUS1.ROUTING",
+        "MIXER.BUS2.ROUTING",
+        "MIXER.FILTER1.ENV1_BYPASS"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_OSC",
+      "member_count": 15,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "OSC1.PITCH_TRACK",
+        "OSC1.RELATIVE_LOOP",
+        "OSC1.REVERSE"
+      ]
+    },
+    {
+      "family_id": "UI_ACTION_VOICE",
+      "member_count": 3,
+      "experiment_required": true,
+      "experiment_reason": "UI action mechanism",
+      "verification_type": "UI test per member",
+      "sample_members": [
+        "VOICE.VOICING.LEGATO",
+        "VOICE.VOICING.PORTA_ALWAYS",
+        "VOICE.VOICING.PORTA_SCALED"
+      ]
+    },
+    {
+      "family_id": "UNCLASSIFIED",
+      "member_count": 129,
+      "experiment_required": false,
+      "experiment_reason": "Unknown",
+      "verification_type": "Unknown",
+      "sample_members": [
+        "FX.BODE.BALANCE",
+        "FX.BODE.BLUR",
+        "FX.BODE.DELAY"
+      ]
+    },
+    {
+      "family_id": "UNKNOWN_EXECUTION",
+      "member_count": 31,
+      "experiment_required": true,
+      "experiment_reason": "Investigation",
+      "verification_type": "investigation",
+      "sample_members": [
+        "ARP.GLOBAL.BANK",
+        "ARP.PATTERN.EDITOR.ACCENT_ROW",
+        "ARP.PATTERN.EDITOR.STRUM_ROW"
+      ]
+    }
+  ]
+}
