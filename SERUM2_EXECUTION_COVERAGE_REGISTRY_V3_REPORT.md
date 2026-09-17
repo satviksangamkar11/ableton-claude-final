@@ -62,6 +62,33 @@ Forensic root-cause (per the exact protocol: manual UI edit -> Serum's own save 
 
 **Why `capability_id` did not change:** `FX.PHASER.PHASE`'s `capability_id` (`BODY_STATE_FIELD:91067f82eb1a2f45`) is unchanged by this fix and was NOT regenerated with a new value. Per the frozen canonicalization rule (`serum2/coverage/canonicalize.py::canonicalize_fx_parameter`), an FX_PARAMETER capability's identity is `(effect, parameter)` only -- e.g. "the capability to control Phaser's Phase" -- deliberately excluding the underlying state-path/field-name, exactly as rack/slot index is excluded. The actual `kParamWidth` vs `kParamPhase` field name is resolver *mechanism*, resolved dynamically at request time by `fx_resolver.py`, not part of what identifies the capability. The registry was re-run through `serum2_execution_coverage_registry_v3_builder.py` this session and produced a byte-identical `SERUM2_EXECUTION_COVERAGE_REGISTRY_V3.json`/`.md` -- confirming the fix is correctly scoped to the mechanism layer and required no registry-identity change.
 
+## Machine-tier bulk verification (all 93 unique BOUND capability_ids, `serum2/evidence/verify_execution_bulk.py`)
+
+**A separate, weaker-but-bulk-automatable evidence tier**, added after the UI Truth Gate above. It proves MUTATION_PASS (authority mutation observed by an in-process readback) and PERSISTENCE_PASS (readback after a real Serum `save_state()`/`load_state()` round-trip, via DawDreamer, not Ableton) for every unique `capability_id` currently in the registry -- fully scriptable, no UI, no per-control human action. It is explicitly **not** a substitute for the UI Truth Gate: MACHINE_VERIFIED proves the byte round-trips through Serum's real save file; it does not prove a visible GUI control reflects it (that gap is exactly what the FX.PHASER.PHASE finding above demonstrates). Two off-default probe values are used per control (not one), because a single default-valued probe cannot be distinguished from Serum's presence-preserving collapse-to-`"default"` sentinel behavior.
+
+Result across all 93 unique bindings:
+
+| Status | Count | Meaning |
+|---|---|---|
+| MACHINE_VERIFIED | 9 | All 9 FX_PARAMETER (BODY_STATE_FIELD) bindings not flagged below |
+| PERSISTENCE_MISMATCH (benign) | 2 | Distortion/Drive, Hyper/Detune -- probe landed exactly on that control's real Serum default (25 for both, matching the BEFORE values observed in the live UI Truth Gate session), triggering the same benign default-collapse behavior described above. Not a defect. |
+| PERSISTENCE_MISMATCH (HOST_PARAMETER) | 81 | Every one of the 81 unique HOST_PARAMETER bindings. See finding below. |
+| SKIPPED_NOT_YET_DERIVED | 1 | MATRIX_ROUTE, no binding populated yet |
+
+### Finding: FX.PHASER.FEEDBACK range defect caught and fixed by the machine tier
+
+The declared range (`-100.0..100.0` in `fx_resolver.py`) was never verified against real Serum -- copied/guessed, same as `kParamPhase` was. Characterized directly: every value from `-1.0` to `-100.0` round-trips through real Serum `save_state()`/`load_state()` as `kParamFeedback=0.0` (silently zeroed), while the entire `0.0..100.0` positive half round-trips exactly as requested, confirmed at every value tested (`1.0`, `10.0`, `33.0`, `50.0`, `75.0`, `99.0`, `100.0`). `fx_resolver.py`'s range corrected to `0.0..100.0`; the resolver's own structural-bounds check now refuses negative values at admission time rather than silently dispatching a value real Serum discards. A permanent regression guard (`test_phaser_feedback_negative_range_regression_guard`) proves both: `75.0` round-trips exactly, and `-75.0` is refused before dispatch.
+
+This does not invalidate the earlier UI Truth Gate result for FX.PHASER.FEEDBACK (`REQUESTED=0.0`, `UI_AFTER=0`, `RELOADED_UI=0`) -- `0.0` is within the corrected range and was genuinely confirmed in the real Serum GUI. The live GUI test simply never happened to probe a negative value, which is exactly why the machine-tier bulk sweep (many more probe values, cheaply, no UI) is a useful complement to the UI Truth Gate rather than a redundant one.
+
+### Finding: the entire 81-binding HOST_PARAMETER family fails real Serum persistence
+
+Every one of the 81 unique `HOST_PARAMETER` bindings (100%) fails PERSISTENCE_MISMATCH: `synth.set_parameter()` takes effect immediately and is readable in-process (`synth.get_parameter()` matches the requested value), but the value is **not present** after a real Serum `save_state()`/`load_state()` cycle. Confirmed not to be a batching artifact -- retested several individually (one parameter mutated per fresh synth instance, e.g. "A Loop Start", "A Warp Mode", "Env 1 Atk Curve") with the identical result.
+
+This means the registry's `binding_status="LIVE_VERIFIED"` for the entire HOST_PARAMETER family is a significant overclaim: its only evidence (`binding_provenance: "live_dawdreamer_parameter_list (this run)"`) is that the parameter name appears in `synth.get_parameters_description()` -- existence, not persistence, and far short of the CAUSAL_VERIFIED bar this codebase otherwise requires. Per `CLAUDE.md`'s evidence tiers, "construct + mutate but persist FAILS/NOT_RUN" is exactly STRUCTURAL_ONLY, not the tier the current status label implies.
+
+**No fix applied yet.** Root cause is not yet established (candidates: these are pure VST3-host-automation shims Serum's own custom preset chunk never serializes, vs. a DawDreamer-specific save/load limitation for this parameter class, vs. something narrower) and fixing 81 bindings needs that established first, not guessed. Flagged for a dedicated follow-up pass rather than addressed here.
+
 ## Skipped (with reason)
 
 - `FX.CHORUS.RATE`: effect 'Chorus' FX-type-key not confirmed against real Serum output (no matching preset evidence found this session) -- refusing to bind on an unverified key

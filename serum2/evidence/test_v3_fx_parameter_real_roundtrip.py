@@ -207,6 +207,68 @@ def test_phaser_phase_real_roundtrip_and_kparamphase_regression_guard():
     print("[PASS] Phaser/Phase: kParamPhase confirmed still silently dropped by real Serum")
 
 
+def test_phaser_feedback_negative_range_regression_guard():
+    """Permanent regression guard for the Phaser/Feedback range finding
+    (machine-tier bulk verification, serum2/evidence/verify_execution_bulk.py):
+    the declared range was -100.0..100.0 (never actually verified against
+    real Serum), but every negative value from -1.0 to -100.0 round-trips
+    through real Serum save_state()/load_state() as kParamFeedback=0.0
+    (silently clamped/dropped), while the entire 0.0..100.0 positive half
+    round-trips exactly as requested. resolve_fx_parameter's declared
+    min_value was corrected to 0.0 -- if this guard ever starts failing
+    (negative values genuinely persisting), the range may be safe to
+    widen back, but only with real evidence, not by reverting the number."""
+    resolved = resolve_fx_parameter("Phaser", "Feedback", 0, 0)
+    assert resolved.min_value == 0.0, (
+        f"Phaser/Feedback min_value must be 0.0 (evidence-backed usable "
+        f"range), got: {resolved.min_value}"
+    )
+
+    def feedback_roundtrip(probe):
+        skeleton = bridge.capture_v8_skeleton(VST3)
+        meta, skel_body = skeleton
+        body = copy.deepcopy(skel_body)
+        body["FXRack0"]["FX"] = [{"type": CONFIRMED_FX_TYPE_INDEX["FXPhaser"], "FXPhaser": {"plainParams": {}}}]
+        contract = make_contract()
+        request = MutationRequest(target="T", mutation_type=MutationType.BODY_STATE, value=probe,
+                                   resolver_parameters={"rack": 0, "slot": 0, "effect": "Phaser", "parameter": "Feedback"})
+        proof = execute_mutation_request_with_authority(
+            request=request, body=body, contracts={("T", ""): contract}, synth=None,
+        )
+        assert proof.executed and proof.pathmerge_call_count == 1, f"Phaser/Feedback: {proof.detail}"
+        _, resaved = real_serum_roundtrip(meta, body)
+        fx = resaved["FXRack0"]["FX"]
+        plain_params = fx[0]["FXPhaser"].get("plainParams")
+        return plain_params.get("kParamFeedback") if isinstance(plain_params, dict) else None
+
+    # Positive: within the corrected range, round-trips exactly.
+    readback = feedback_roundtrip(75.0)
+    assert readback == 75.0, f"Phaser/Feedback=75.0 (within corrected range) did not round-trip: {readback}"
+    print(f"[PASS] Phaser/Feedback: real Serum readback kParamFeedback={readback} (requested 75.0)")
+
+    # Negative: outside the corrected range -- with min_value now 0.0, the
+    # resolver's own structural bound refuses it before dispatch (a
+    # stronger guard than the pre-fix behavior of silently accepting it
+    # and having real Serum zero it out unnoticed).
+    skeleton = bridge.capture_v8_skeleton(VST3)
+    meta, skel_body = skeleton
+    body = copy.deepcopy(skel_body)
+    body["FXRack0"]["FX"] = [{"type": CONFIRMED_FX_TYPE_INDEX["FXPhaser"], "FXPhaser": {"plainParams": {}}}]
+    contract = make_contract()
+    request = MutationRequest(target="T", mutation_type=MutationType.BODY_STATE, value=-75.0,
+                               resolver_parameters={"rack": 0, "slot": 0, "effect": "Phaser", "parameter": "Feedback"})
+    proof = execute_mutation_request_with_authority(
+        request=request, body=body, contracts={("T", ""): contract}, synth=None,
+    )
+    assert not proof.executed, (
+        f"Phaser/Feedback=-75.0 unexpectedly executed after the range fix "
+        f"(detail={proof.detail!r}) -- the corrected min_value=0.0 should "
+        f"refuse this at admission, not dispatch it"
+    )
+    print(f"[PASS] Phaser/Feedback: -75.0 correctly refused at admission "
+          f"(min_value=0.0): {proof.detail}")
+
+
 def test_convolve_correctly_excluded_regression_guard():
     """Permanent regression guard for the Convolve finding: a real captured
     Convolve entry has no "plainParams" at all, so mutating kParamIRGain
@@ -243,6 +305,7 @@ if __name__ == "__main__":
         test_bode_range_real_roundtrip,
         test_hyper_rate_real_roundtrip,
         test_phaser_phase_real_roundtrip_and_kparamphase_regression_guard,
+        test_phaser_feedback_negative_range_regression_guard,
         test_convolve_correctly_excluded_regression_guard,
     ]
     for t in tests:

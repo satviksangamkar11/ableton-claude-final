@@ -264,10 +264,18 @@ _FX_PARAMETERS: Dict[Tuple[str, str], Tuple[str, str, Optional[float], Optional[
         20.0,
         20000.0,
     ),
+    # Declared range was -100..100 (unverified guess). Machine-tier bulk
+    # verification this session (serum2/evidence/verify_execution_bulk.py)
+    # found the negative half does not persist through real Serum: every
+    # value from -1.0 to -100.0 round-trips through actual Serum
+    # save_state()/load_state() as kParamFeedback=0.0 (silently clamped),
+    # while the entire 0.0-100.0 positive half round-trips exactly as
+    # requested. Range corrected to the evidence-backed usable span; see
+    # test_phaser_feedback_negative_range_regression_guard.
     ("Phaser", "Feedback"): (
         "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamFeedback",
         "float",
-        -100.0,
+        0.0,
         100.0,
     ),
     # UI label is "Phase" but Serum's real persisted key is kParamWidth --

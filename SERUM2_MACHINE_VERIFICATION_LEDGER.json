@@ -1,0 +1,1752 @@
+{
+  "unique_capability_count": 93,
+  "status_counts": {
+    "PERSISTENCE_MISMATCH": 81,
+    "MACHINE_VERIFIED": 9,
+    "PERSISTENCE_MISMATCH_PROBE_B": 2,
+    "SKIPPED_NOT_YET_DERIVED": 1
+  },
+  "results": {
+    "HOST_PARAMETER:c08f2ed82cd3762a": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "NOISE_OSC.PITCH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Noise Pitch"
+      }
+    },
+    "HOST_PARAMETER:e2f84bf4e7a90053": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "NOISE_OSC.PHASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Noise Phase"
+      }
+    },
+    "HOST_PARAMETER:739e20fdf28c559f": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "NOISE_OSC.RAND_PHASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Noise Rand Phase"
+      }
+    },
+    "HOST_PARAMETER:38e153dd628e15c5": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "SUB_OSC.COARSE_PITCH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Sub Coarse Pitch"
+      }
+    },
+    "HOST_PARAMETER:742604ad14dfbe34": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "SUB_OSC.PHASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Sub Phase"
+      }
+    },
+    "HOST_PARAMETER:7c24f10449ab589e": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.12559431791305542",
+      "semantic_ids": [
+        "ENV1.ATTACK"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 1 Attack"
+      }
+    },
+    "HOST_PARAMETER:4667a2156f1aa1b1": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "ENV1.HOLD"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 1 Hold"
+      }
+    },
+    "HOST_PARAMETER:6f6e6f1919e8fcf7": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.8,
+      "detail": "requested 0.75, post-reload readback 0.2150000035762787",
+      "semantic_ids": [
+        "ENV1.RELEASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 1 Release"
+      }
+    },
+    "HOST_PARAMETER:5d54c288fb660b9b": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "ENV2.HOLD"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 2 Hold"
+      }
+    },
+    "HOST_PARAMETER:3634149be2c99530": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "ENV3.HOLD"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 3 Hold"
+      }
+    },
+    "HOST_PARAMETER:f1fe1f82788ab4ef": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "ENV4.HOLD"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 4 Hold"
+      }
+    },
+    "HOST_PARAMETER:f69c8268f28f8115": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO1.RISE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 1 Rise"
+      }
+    },
+    "HOST_PARAMETER:37a30401db87fdaf": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO1.DELAY"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 1 Delay"
+      }
+    },
+    "HOST_PARAMETER:06595bdad984b77f": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO1.SMOOTH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 1 Smooth"
+      }
+    },
+    "HOST_PARAMETER:198db3e83c61b8e1": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO2.RISE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 2 Rise"
+      }
+    },
+    "HOST_PARAMETER:6ad184805fd613cb": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO2.DELAY"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 2 Delay"
+      }
+    },
+    "HOST_PARAMETER:120f962b2ede6f27": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO2.SMOOTH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 2 Smooth"
+      }
+    },
+    "HOST_PARAMETER:964fe8709697252e": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO3.RISE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 3 Rise"
+      }
+    },
+    "HOST_PARAMETER:d472ef1ccb9b945a": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO3.DELAY"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 3 Delay"
+      }
+    },
+    "HOST_PARAMETER:2680b74de82b8221": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO3.SMOOTH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 3 Smooth"
+      }
+    },
+    "HOST_PARAMETER:496d479e322b3e88": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO4.RISE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 4 Rise"
+      }
+    },
+    "HOST_PARAMETER:0167b97812523cb2": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO4.DELAY"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 4 Delay"
+      }
+    },
+    "HOST_PARAMETER:bd17b4aa79f2e465": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO4.SMOOTH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 4 Smooth"
+      }
+    },
+    "HOST_PARAMETER:8b352ba751a34ba7": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO5.RISE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 5 Rise"
+      }
+    },
+    "HOST_PARAMETER:01deba0f66e5d65f": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO5.DELAY"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 5 Delay"
+      }
+    },
+    "HOST_PARAMETER:ae95cb920303270d": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO5.SMOOTH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 5 Smooth"
+      }
+    },
+    "HOST_PARAMETER:4ae8a9c0c3e58127": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO6.RISE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 6 Rise"
+      }
+    },
+    "HOST_PARAMETER:12a5a706835e215d": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO6.DELAY"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 6 Delay"
+      }
+    },
+    "HOST_PARAMETER:5d1a10d1242a5704": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "LFO6.SMOOTH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "LFO 6 Smooth"
+      }
+    },
+    "HOST_PARAMETER:9fef3bdca86274f4": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.SEMI",
+        "OSC2.SEMI",
+        "OSC3.SEMI"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Semi"
+      }
+    },
+    "HOST_PARAMETER:2073ea160af32eca": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.FINE",
+        "OSC2.FINE",
+        "OSC3.FINE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Fine"
+      }
+    },
+    "HOST_PARAMETER:98afff14e93137f3": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.COARSE_PITCH",
+        "OSC2.COARSE_PITCH",
+        "OSC3.COARSE_PITCH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Coarse Pitch"
+      }
+    },
+    "HOST_PARAMETER:154567fbd2ee664c": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.START",
+        "OSC2.START",
+        "OSC3.START"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Start"
+      }
+    },
+    "HOST_PARAMETER:2399d5fdd08ba09a": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 1.0",
+      "semantic_ids": [
+        "OSC1.END",
+        "OSC2.END",
+        "OSC3.END"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A End"
+      }
+    },
+    "HOST_PARAMETER:5e634ba16925a883": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.2,
+      "probe_b": 0.25,
+      "detail": "requested 0.2, post-reload readback 0.75",
+      "semantic_ids": [
+        "OSC1.SCAN_RATE",
+        "OSC2.SCAN_RATE",
+        "OSC3.SCAN_RATE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Scan Rate"
+      }
+    },
+    "HOST_PARAMETER:ab559ca8a2ebdf80": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.SCAN_BPM_RATE",
+        "OSC2.SCAN_BPM_RATE",
+        "OSC3.SCAN_BPM_RATE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Scan BPM Rate"
+      }
+    },
+    "HOST_PARAMETER:88803a1530d51238": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.POSITION",
+        "OSC2.POSITION",
+        "OSC3.POSITION"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Position"
+      }
+    },
+    "HOST_PARAMETER:e6053a3544aaf2de": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.LOOP_START",
+        "OSC2.LOOP_START",
+        "OSC3.LOOP_START"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Loop Start"
+      }
+    },
+    "HOST_PARAMETER:bc3934c251d869b6": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 1.0",
+      "semantic_ids": [
+        "OSC1.LOOP_END",
+        "OSC2.LOOP_END",
+        "OSC3.LOOP_END"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Loop End"
+      }
+    },
+    "HOST_PARAMETER:eacf89254c404508": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.LOOP_X-FADE",
+        "OSC2.LOOP_X-FADE",
+        "OSC3.LOOP_X-FADE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Loop X-Fade"
+      }
+    },
+    "HOST_PARAMETER:797a804a71798e7a": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.LOOP_MODE",
+        "OSC2.LOOP_MODE",
+        "OSC3.LOOP_MODE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Loop Mode"
+      }
+    },
+    "HOST_PARAMETER:df2dafa85d795ce8": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.SINGLE_SLICE",
+        "OSC2.SINGLE_SLICE",
+        "OSC3.SINGLE_SLICE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Single Slice"
+      }
+    },
+    "HOST_PARAMETER:43f549b7d91e61b3": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.UNISON",
+        "OSC2.UNISON",
+        "OSC3.UNISON"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Unison"
+      }
+    },
+    "HOST_PARAMETER:5aada1b4476949cd": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.UNI_STACK",
+        "OSC2.UNI_STACK",
+        "OSC3.UNI_STACK"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni Stack"
+      }
+    },
+    "HOST_PARAMETER:d50ee5140cb3d420": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.UNI_DETUNE",
+        "OSC2.UNI_DETUNE",
+        "OSC3.UNI_DETUNE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni Detune"
+      }
+    },
+    "HOST_PARAMETER:cf570d809aea91b4": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.2,
+      "probe_b": 0.25,
+      "detail": "requested 0.2, post-reload readback 0.75",
+      "semantic_ids": [
+        "OSC1.UNI_BLEND",
+        "OSC2.UNI_BLEND",
+        "OSC3.UNI_BLEND"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni Blend"
+      }
+    },
+    "HOST_PARAMETER:e1fba0978c8d3543": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 1.0",
+      "semantic_ids": [
+        "OSC1.UNI_WIDTH",
+        "OSC2.UNI_WIDTH",
+        "OSC3.UNI_WIDTH"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni Width"
+      }
+    },
+    "HOST_PARAMETER:86121007330a83e8": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.UNI_SPAN",
+        "OSC2.UNI_SPAN",
+        "OSC3.UNI_SPAN"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni Span"
+      }
+    },
+    "HOST_PARAMETER:d236faa11d303027": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.UNI_RAND_START",
+        "OSC2.UNI_RAND_START",
+        "OSC3.UNI_RAND_START"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni Rand Start"
+      }
+    },
+    "HOST_PARAMETER:c3f0355412e1d3be": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.UNI_WARP",
+        "OSC2.UNI_WARP",
+        "OSC3.UNI_WARP"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni Warp"
+      }
+    },
+    "HOST_PARAMETER:49a8bd4d8e7e3301": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.UNI_WARP_2",
+        "OSC2.UNI_WARP_2",
+        "OSC3.UNI_WARP_2"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni Warp 2"
+      }
+    },
+    "HOST_PARAMETER:7f8e34e294a96e49": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.WARP_VAR",
+        "OSC2.WARP_VAR",
+        "OSC3.WARP_VAR"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Warp Var"
+      }
+    },
+    "HOST_PARAMETER:2efa95e5929a5857": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.WARP_MODE",
+        "OSC2.WARP_MODE",
+        "OSC3.WARP_MODE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Warp Mode"
+      }
+    },
+    "HOST_PARAMETER:314e571ad558cbe2": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.WARP_2",
+        "OSC2.WARP_2",
+        "OSC3.WARP_2"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Warp 2"
+      }
+    },
+    "HOST_PARAMETER:1c25aa31c576275b": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.WARP_2_VAR",
+        "OSC2.WARP_2_VAR",
+        "OSC3.WARP_2_VAR"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Warp 2 Var"
+      }
+    },
+    "HOST_PARAMETER:c5a77e3129f3b7d5": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.WARP_2_MODE",
+        "OSC2.WARP_2_MODE",
+        "OSC3.WARP_2_MODE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Warp 2 Mode"
+      }
+    },
+    "HOST_PARAMETER:2ea2aa6f25285153": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "OSC1.WT_POS",
+        "OSC2.WT_POS",
+        "OSC3.WT_POS"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A WT Pos"
+      }
+    },
+    "HOST_PARAMETER:071f8446f799e730": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.UNI_WT_POS",
+        "OSC2.UNI_WT_POS",
+        "OSC3.UNI_WT_POS"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Uni WT Pos"
+      }
+    },
+    "HOST_PARAMETER:f1936c3a80a6db49": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "OSC1.PHASE",
+        "OSC2.PHASE",
+        "OSC3.PHASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Phase"
+      }
+    },
+    "HOST_PARAMETER:c869578fe32028db": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 1.0",
+      "semantic_ids": [
+        "OSC1.RAND_PHASE",
+        "OSC2.RAND_PHASE",
+        "OSC3.RAND_PHASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "A Rand Phase"
+      }
+    },
+    "HOST_PARAMETER:f93c2046b8c4ea6d": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 1.0",
+      "semantic_ids": [
+        "SUB_OSC.PITCH_TRACK"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Sub Pitch Track"
+      }
+    },
+    "HOST_PARAMETER:d02f117d962c6b37": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "SUB_OSC.SHAPE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Sub Shape"
+      }
+    },
+    "HOST_PARAMETER:4390b46a1e5e5e83": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "SUB_OSC.CONT_PHASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Sub Cont. Phase"
+      }
+    },
+    "HOST_PARAMETER:4fd947b009710c53": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "NOISE_OSC.PITCH_TRACK"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Noise Pitch Track"
+      }
+    },
+    "HOST_PARAMETER:be1571351b292b89": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "FILTER1.VAR"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Filter 1 Var"
+      }
+    },
+    "HOST_PARAMETER:a2694e36e5e6ae46": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "FILTER1.STEREO"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Filter 1 Stereo"
+      }
+    },
+    "HOST_PARAMETER:50adb71a14cfe1cd": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.0",
+      "semantic_ids": [
+        "FILTER2.VAR"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Filter 2 Var"
+      }
+    },
+    "HOST_PARAMETER:8ecc6644672868c1": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "FILTER2.STEREO"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Filter 2 Stereo"
+      }
+    },
+    "HOST_PARAMETER:82b089a09b3b7c3b": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "ENV1.ATK_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 1 Atk Curve"
+      }
+    },
+    "HOST_PARAMETER:5f3681813f033b87": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.6660000085830688",
+      "semantic_ids": [
+        "ENV1.DEC_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 1 Dec Curve"
+      }
+    },
+    "HOST_PARAMETER:b420ca005b566987": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.6660000085830688",
+      "semantic_ids": [
+        "ENV1.REL_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 1 Rel Curve"
+      }
+    },
+    "HOST_PARAMETER:a3602fd1909cac62": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "ENV2.ATK_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 2 Atk Curve"
+      }
+    },
+    "HOST_PARAMETER:9fcd1af8f072ac8c": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.6660000085830688",
+      "semantic_ids": [
+        "ENV2.DEC_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 2 Dec Curve"
+      }
+    },
+    "HOST_PARAMETER:a0fb06d14ba39b19": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.6660000085830688",
+      "semantic_ids": [
+        "ENV2.REL_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 2 Rel Curve"
+      }
+    },
+    "HOST_PARAMETER:53245ebcd913e19d": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "ENV3.ATK_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 3 Atk Curve"
+      }
+    },
+    "HOST_PARAMETER:bd08d73e855c7452": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.6660000085830688",
+      "semantic_ids": [
+        "ENV3.DEC_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 3 Dec Curve"
+      }
+    },
+    "HOST_PARAMETER:57ad409372a947f5": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.6660000085830688",
+      "semantic_ids": [
+        "ENV3.REL_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 3 Rel Curve"
+      }
+    },
+    "HOST_PARAMETER:2a36bfaef6aaca92": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "ENV4.ATK_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 4 Atk Curve"
+      }
+    },
+    "HOST_PARAMETER:b6d6e28edfbf84e5": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.6660000085830688",
+      "semantic_ids": [
+        "ENV4.DEC_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 4 Dec Curve"
+      }
+    },
+    "HOST_PARAMETER:45421d35fe91734c": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.6660000085830688",
+      "semantic_ids": [
+        "ENV4.REL_CURVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Env 4 Rel Curve"
+      }
+    },
+    "HOST_PARAMETER:c1d4a983bedd4e96": {
+      "status": "PERSISTENCE_MISMATCH",
+      "probe_a": 0.75,
+      "probe_b": 0.25,
+      "detail": "requested 0.75, post-reload readback 0.5",
+      "semantic_ids": [
+        "CLIP.SETTINGS.OFFSET"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Clip Player Offset"
+      }
+    },
+    "BODY_STATE_FIELD:b5b30851fbae302a": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 75.0,
+      "probe_b": 25.0,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.BODE.RANGE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "BODE",
+        "parameter": "Range",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:4c504a186066eecd": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 7.75,
+      "probe_b": 3.25,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.COMPRESSOR.RATIO"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Compressor",
+        "parameter": "Ratio",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:d1bf409b5e1ccf89": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 75.0,
+      "probe_b": 25.0,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.COMPRESSOR.ATTACK"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Compressor",
+        "parameter": "Attack",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:31b72dcf1070760a": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 750.0,
+      "probe_b": 250.0,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.COMPRESSOR.RELEASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Compressor",
+        "parameter": "Release",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:138832e026306362": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 75.0,
+      "probe_b": 25.0,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.DELAY.FEEDBACK"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Delay",
+        "parameter": "Feedback",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:547a37c850ddef93": {
+      "status": "PERSISTENCE_MISMATCH_PROBE_B",
+      "probe_a": 75.0,
+      "probe_b": 25.0,
+      "detail": "requested 25.0, readback None",
+      "semantic_ids": [
+        "FX.DISTORTION.DRIVE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Distortion",
+        "parameter": "Drive",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:2b6a054baecbd0dd": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 7.525,
+      "probe_b": 2.575,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.HYPER.RATE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Hyper",
+        "parameter": "Rate",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:56be42b535780777": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 5.5,
+      "probe_b": 2.5,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.HYPER.UNISON"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Hyper",
+        "parameter": "Unison",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:01e16d4bc51b9d8c": {
+      "status": "PERSISTENCE_MISMATCH_PROBE_B",
+      "probe_a": 75.0,
+      "probe_b": 25.0,
+      "detail": "requested 25.0, readback None",
+      "semantic_ids": [
+        "FX.HYPER.DETUNE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Hyper",
+        "parameter": "Detune",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:9b70443c187b54a9": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 75.0,
+      "probe_b": 25.0,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.PHASER.FEEDBACK"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Phaser",
+        "parameter": "Feedback",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "BODY_STATE_FIELD:91067f82eb1a2f45": {
+      "status": "MACHINE_VERIFIED",
+      "probe_a": 270.0,
+      "probe_b": 90.0,
+      "probe_b_persisted": "PASS",
+      "semantic_ids": [
+        "FX.PHASER.PHASE"
+      ],
+      "authoritative_binding": {
+        "binding_schema_version": 1,
+        "binding_type": "FX_PARAMETER",
+        "effect": "Phaser",
+        "parameter": "Phase",
+        "resolver_operation_id": "fx_set_parameter"
+      }
+    },
+    "null": {
+      "status": "SKIPPED_NOT_YET_DERIVED",
+      "detail": "binding_status != LIVE_VERIFIED, nothing to verify yet",
+      "semantic_ids": [
+        "MACRO.SYS.ASSIGN_MATRIX_SOURCE",
+        "MACRO.SYS.AUX_SOURCE",
+        "MACRO.SYS.AUX_INVERT",
+        "MACRO.SYS.AUX_CURVE",
+        "MACRO.SYS.BIPOLAR_UNIPOLAR",
+        "MACRO.SYS.KNOB_CONTEXT_MENU",
+        "NOISE_OSC.LEVEL",
+        "NOISE_OSC.PAN",
+        "NOISE_OSC.FINE",
+        "SUB_OSC.LEVEL",
+        "SUB_OSC.PAN",
+        "SUB_OSC.OCTAVE",
+        "MATRIX.LFO_BUS.01",
+        "MATRIX.LFO_BUS.02",
+        "MATRIX.LFO_BUS.03",
+        "MATRIX.LFO_BUS.04",
+        "MATRIX.LFO_BUS.05",
+        "MATRIX.LFO_BUS.06",
+        "MATRIX.LFO_BUS.07",
+        "MATRIX.LFO_BUS.08",
+        "MATRIX.LFO_BUS.09",
+        "MATRIX.LFO_BUS.10",
+        "MATRIX.LFO_BUS.11",
+        "MATRIX.LFO_BUS.12",
+        "MATRIX.LFO_BUS.13",
+        "MATRIX.LFO_BUS.14",
+        "MATRIX.LFO_BUS.15",
+        "MATRIX.LFO_BUS.16",
+        "MATRIX.ROUTING.SIGNAL_BALANCE",
+        "MATRIX.SOURCE.OSC_A",
+        "MATRIX.SOURCE.OSC_B",
+        "MATRIX.SOURCE.OSC_C",
+        "MATRIX.SOURCE.NOISE_OSC",
+        "MATRIX.SOURCE.SUB_OSC",
+        "MATRIX.SOURCE.FILTER_1",
+        "MATRIX.SOURCE.FILTER_2",
+        "MATRIX.DESTINATION.LFO_N_CONDITIONAL",
+        "MATRIX.SYS.DUPLICATE_ROUTE_POLICY",
+        "MATRIX.OUT",
+        "MATRIX.OUT_INDICATOR",
+        "MATRIX.MOD",
+        "MATRIX.SYS.MAX_ROUTES",
+        "MATRIX.SYS.MENU",
+        "MIXER.SUB.ENABLE",
+        "MIXER.SUB.ROUTING",
+        "MIXER.SUB.BUS1",
+        "MIXER.SUB.BUS2",
+        "MIXER.OSC_A.ENABLE",
+        "MIXER.OSC_A.ROUTING",
+        "MIXER.OSC_A.BUS1",
+        "MIXER.OSC_A.BUS2",
+        "MIXER.OSC_A.PAN",
+        "MIXER.OSC_A.LEVEL",
+        "MIXER.OSC_B.ENABLE",
+        "MIXER.OSC_B.ROUTING",
+        "MIXER.OSC_B.BUS1",
+        "MIXER.OSC_B.BUS2",
+        "MIXER.OSC_B.PAN",
+        "MIXER.OSC_B.LEVEL",
+        "MIXER.OSC_C.ENABLE",
+        "MIXER.OSC_C.ROUTING",
+        "MIXER.OSC_C.BUS1",
+        "MIXER.OSC_C.BUS2",
+        "MIXER.OSC_C.PAN",
+        "MIXER.OSC_C.LEVEL",
+        "MIXER.NOISE.ENABLE",
+        "MIXER.NOISE.ROUTING",
+        "MIXER.NOISE.BUS1",
+        "MIXER.NOISE.BUS2",
+        "MIXER.FILTER1.ENABLE",
+        "MIXER.FILTER1.ROUTING",
+        "MIXER.FILTER1.BUS1",
+        "MIXER.FILTER1.BUS2",
+        "MIXER.FILTER1.WET",
+        "MIXER.FILTER1.LEVEL",
+        "MIXER.FILTER2.ENABLE",
+        "MIXER.FILTER2.ROUTING",
+        "MIXER.FILTER2.BUS1",
+        "MIXER.FILTER2.BUS2",
+        "MIXER.FILTER2.WET",
+        "MIXER.FILTER2.LEVEL",
+        "MIXER.BUS1.LEVEL",
+        "MIXER.BUS2.LEVEL",
+        "MIXER.MAIN.LEVEL",
+        "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+        "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+        "FX.SYS.MODULE_PARAM_CONTEXT_MENU",
+        "FX.BODE.SHIFT",
+        "FX.CHORUS.RATE",
+        "FX.CHORUS.DEPTH",
+        "FX.CHORUS.FEEDBACK",
+        "FX.COMPRESSOR.GAIN",
+        "FX.CONVOLVE.ATTACK",
+        "FX.CONVOLVE.DECAY",
+        "FX.CONVOLVE.IR_GAIN",
+        "FX.DELAY.MODE",
+        "FX.DELAY.TIME_L",
+        "FX.DELAY.TIME_R",
+        "FX.DISTORTION.FREQ",
+        "FX.FILTER.TYPE",
+        "FX.FILTER.CUTOFF",
+        "FX.FILTER.DRIVE",
+        "FX.FLANGER.RATE",
+        "FX.FLANGER.DEPTH",
+        "FX.FLANGER.FEEDBACK",
+        "FX.FLANGER.PHASE",
+        "FX.REVERB.SIZE",
+        "ARP.SLOT.PLAY_BUTTON",
+        "ARP.SLOT.CONTEXT_MENU",
+        "ARP.SLOT.SUMMARY_DISPLAY",
+        "ARP.SLOT.COUNT",
+        "ARP.SLOT.MIDI_KEYBOARD_LAUNCH",
+        "KEYBOARD.TRANSPOSE",
+        "KEYBOARD.KEY",
+        "KEYBOARD.SCALE",
+        "KEYBOARD.SWING",
+        "CLIP.SLOT.PLAY_BUTTON",
+        "CLIP.SLOT.CONTEXT_MENU",
+        "CLIP.SLOT.COUNT",
+        "VOICE.VOICING.PORTA_TIME",
+        "VOICE.VOICING.MONO",
+        "GLOBAL.TUNING.GLOBAL_TUNING",
+        "BROWSER.TOGGLE",
+        "BROWSER.SEARCH.FIELD",
+        "BROWSER.SEARCH.CLEAR",
+        "BROWSER.MENU.SHOW_IN_FOLDER",
+        "BROWSER.MENU.LOAD_RANDOM_PRESET",
+        "BROWSER.MENU.HYBRIDIZE",
+        "BROWSER.MENU.HYBRIDIZE_FAVORING_SELECTED",
+        "BROWSER.MENU.DELETE_PRESETS",
+        "BROWSER.MENU.RENAME_MOVE_PRESET",
+        "BROWSER.MENU.AUTO_PLAY_PREVIEWS",
+        "BROWSER.MENU.PREVIEW_FALLBACK_CLIP",
+        "BROWSER.MENU.RESCAN_DATABASE",
+        "BROWSER.MENU.ERASE_REBUILD_DATABASE",
+        "BROWSER.FOLDERS.TREE",
+        "BROWSER.FOLDERS.CREATE_EXPORT_PACK",
+        "BROWSER.CATEGORIES_TAGS.TOGGLE",
+        "BROWSER.CATEGORIES_TAGS.CATEGORY_LIST",
+        "BROWSER.CATEGORIES_TAGS.TAG_LIST",
+        "BROWSER.CATEGORIES_TAGS.RATING_FILTER",
+        "BROWSER.PRESET_LIST.COLUMNS",
+        "BROWSER.PRESET_LIST.ROW_SELECT_LOAD",
+        "BROWSER.PRESET_LIST.ROW_CONTEXT_MENU",
+        "BROWSER.PRESET_LIST.RATING_STARS",
+        "BROWSER.METADATA.PRESET_NAME",
+        "BROWSER.METADATA.AUTHOR",
+        "BROWSER.METADATA.CATEGORY",
+        "BROWSER.METADATA.DESCRIPTION",
+        "BROWSER.METADATA.NOTES",
+        "BROWSER.METADATA.TAGS_PANEL",
+        "BROWSER.NAVIGATION.PREV_NEXT",
+        "BROWSER.NAVIGATION.PRESET_DROPDOWN",
+        "BROWSER.NAVIGATION.SAVE_ICON",
+        "BROWSER.PACKS.IMPORT",
+        "BROWSER.PACKS.GET_PACKS",
+        "TOPMENU.RESOURCE.LOAD_PRESET",
+        "TOPMENU.RESOURCE.REVERT_TO_SAVED",
+        "TOPMENU.RESOURCE.SAVE_AS_DEFAULT_PRESET",
+        "TOPMENU.RESOURCE.INIT_PRESET",
+        "TOPMENU.RESOURCE.OPEN_PRESETS_FOLDER",
+        "TOPMENU.RESOURCE.RESCAN_FOLDERS_ON_DISK",
+        "TOPMENU.RESOURCE.LOAD_TUNING",
+        "FILTER1.CUTOFF",
+        "FILTER1.RESONANCE",
+        "FILTER1.DRIVE",
+        "FILTER1.TYPE_SPECIFIC.FAT",
+        "FILTER1.TYPE_SPECIFIC.FREQ2",
+        "FILTER1.TYPE_SPECIFIC.MORPH",
+        "FILTER1.TYPE_SPECIFIC.SMOOTH",
+        "FILTER1.TYPE_SPECIFIC.LPFREQ",
+        "FILTER1.TYPE_SPECIFIC.HPFREQ",
+        "FILTER1.TYPE_SPECIFIC.HLWIDTH",
+        "FILTER1.TYPE_SPECIFIC.GAINDB",
+        "FILTER1.TYPE_SPECIFIC.DAMP",
+        "FILTER1.TYPE_SPECIFIC.FORMANT",
+        "FILTER1.TYPE_SPECIFIC.COMBFREQ",
+        "FILTER1.TYPE_SPECIFIC.SCREAMAMT",
+        "FILTER1.TYPE_SPECIFIC.SPREAD",
+        "FILTER1.TYPE_SPECIFIC.STAGES",
+        "FILTER1.TYPE_SPECIFIC.PAIN",
+        "FILTER1.TYPE_SPECIFIC.BOEUF",
+        "FILTER1.TYPE_SPECIFIC.THRU",
+        "FILTER1.TYPE_SPECIFIC.WIDTH",
+        "FILTER1.TYPE_SPECIFIC.FREQ2COMB",
+        "FILTER1.TYPE_SPECIFIC.MIXALT",
+        "FILTER1.TYPE",
+        "FILTER2.CUTOFF",
+        "FILTER2.RESONANCE",
+        "FILTER2.DRIVE",
+        "FILTER2.TYPE_SPECIFIC.FAT",
+        "FILTER2.TYPE_SPECIFIC.FREQ2",
+        "FILTER2.TYPE_SPECIFIC.MORPH",
+        "FILTER2.TYPE_SPECIFIC.SMOOTH",
+        "FILTER2.TYPE_SPECIFIC.LPFREQ",
+        "FILTER2.TYPE_SPECIFIC.HPFREQ",
+        "FILTER2.TYPE_SPECIFIC.HLWIDTH",
+        "FILTER2.TYPE_SPECIFIC.GAINDB",
+        "FILTER2.TYPE_SPECIFIC.DAMP",
+        "FILTER2.TYPE_SPECIFIC.FORMANT",
+        "FILTER2.TYPE_SPECIFIC.COMBFREQ",
+        "FILTER2.TYPE_SPECIFIC.SCREAMAMT",
+        "FILTER2.TYPE_SPECIFIC.SPREAD",
+        "FILTER2.TYPE_SPECIFIC.STAGES",
+        "FILTER2.TYPE_SPECIFIC.PAIN",
+        "FILTER2.TYPE_SPECIFIC.BOEUF",
+        "FILTER2.TYPE_SPECIFIC.THRU",
+        "FILTER2.TYPE_SPECIFIC.WIDTH",
+        "FILTER2.TYPE_SPECIFIC.FREQ2COMB",
+        "FILTER2.TYPE_SPECIFIC.MIXALT",
+        "FILTER2.TYPE",
+        "ENV1.DECAY",
+        "ENV1.SUSTAIN",
+        "ENV1.SOURCE",
+        "ENV2.ATTACK",
+        "ENV2.DECAY",
+        "ENV2.SUSTAIN",
+        "ENV2.RELEASE",
+        "ENV2.SOURCE",
+        "ENV3.ATTACK",
+        "ENV3.DECAY",
+        "ENV3.SUSTAIN",
+        "ENV3.RELEASE",
+        "ENV3.SOURCE",
+        "ENV4.ATTACK",
+        "ENV4.DECAY",
+        "ENV4.SUSTAIN",
+        "ENV4.RELEASE",
+        "ENV4.SOURCE",
+        "LFO1.TYPE",
+        "LFO1.RATE",
+        "LFO1.TEMPO_SYNC",
+        "LFO1.DIVISION",
+        "LFO1.TRIPLET",
+        "LFO1.DOTTED",
+        "LFO1.PHASE",
+        "LFO1.DIRECTION",
+        "LFO1.PRESET",
+        "LFO1.WAVEFORM_GRAPH",
+        "LFO1.SOURCE",
+        "LFO2.TYPE",
+        "LFO2.RATE",
+        "LFO2.TEMPO_SYNC",
+        "LFO2.DIVISION",
+        "LFO2.TRIPLET",
+        "LFO2.DOTTED",
+        "LFO2.PHASE",
+        "LFO2.DIRECTION",
+        "LFO2.PRESET",
+        "LFO2.WAVEFORM_GRAPH",
+        "LFO2.SOURCE",
+        "LFO3.TYPE",
+        "LFO3.RATE",
+        "LFO3.TEMPO_SYNC",
+        "LFO3.DIVISION",
+        "LFO3.TRIPLET",
+        "LFO3.DOTTED",
+        "LFO3.PHASE",
+        "LFO3.DIRECTION",
+        "LFO3.PRESET",
+        "LFO3.WAVEFORM_GRAPH",
+        "LFO3.SOURCE",
+        "LFO4.TYPE",
+        "LFO4.RATE",
+        "LFO4.TEMPO_SYNC",
+        "LFO4.DIVISION",
+        "LFO4.TRIPLET",
+        "LFO4.DOTTED",
+        "LFO4.PHASE",
+        "LFO4.DIRECTION",
+        "LFO4.PRESET",
+        "LFO4.WAVEFORM_GRAPH",
+        "LFO4.SOURCE",
+        "LFO5.TYPE",
+        "LFO5.RATE",
+        "LFO5.TEMPO_SYNC",
+        "LFO5.DIVISION",
+        "LFO5.TRIPLET",
+        "LFO5.DOTTED",
+        "LFO5.PHASE",
+        "LFO5.DIRECTION",
+        "LFO5.PRESET",
+        "LFO5.WAVEFORM_GRAPH",
+        "LFO5.SOURCE",
+        "LFO6.TYPE",
+        "LFO6.RATE",
+        "LFO6.TEMPO_SYNC",
+        "LFO6.DIVISION",
+        "LFO6.TRIPLET",
+        "LFO6.DOTTED",
+        "LFO6.PHASE",
+        "LFO6.DIRECTION",
+        "LFO6.PRESET",
+        "LFO6.WAVEFORM_GRAPH",
+        "LFO6.SOURCE",
+        "OSC1.OCTAVE",
+        "OSC1.WARP",
+        "OSC2.OCTAVE",
+        "OSC2.WARP",
+        "OSC3.OCTAVE",
+        "OSC3.WARP",
+        "MATRIX.SOURCE.ENV_1",
+        "MATRIX.SOURCE.ENV_2",
+        "MATRIX.SOURCE.ENV_3",
+        "MATRIX.SOURCE.ENV_4",
+        "MATRIX.SOURCE.LFO_1",
+        "MATRIX.SOURCE.LFO_2",
+        "MATRIX.SOURCE.LFO_3",
+        "MATRIX.SOURCE.LFO_4",
+        "MATRIX.SOURCE.LFO_5",
+        "MATRIX.SOURCE.LFO_6",
+        "MATRIX.SOURCE.LFO_7",
+        "MATRIX.SOURCE.LFO_8",
+        "MATRIX.SOURCE.LFO_9",
+        "MATRIX.SOURCE.LFO_10",
+        "MATRIX.SOURCE.ACTIVE_VOICES",
+        "MATRIX.SOURCE.NOTE#",
+        "MATRIX.SOURCE.NOTEON_ALT",
+        "MATRIX.SOURCE.NOTEON_ALT2",
+        "MATRIX.SOURCE.NOTEON_RAND_DISCRETE",
+        "MATRIX.SOURCE.NOTEON_RAND1",
+        "MATRIX.SOURCE.NOTEON_RAND2",
+        "MATRIX.SOURCE.RELEASE_VELO",
+        "MATRIX.SOURCE.VELO",
+        "MATRIX.SOURCE.VOICE_INDEX",
+        "MATRIX.SOURCE.VOICE_MOD_1",
+        "MATRIX.SOURCE.VOICE_MOD_2",
+        "MATRIX.SOURCE.MACRO_1",
+        "MATRIX.SOURCE.MACRO_2",
+        "MATRIX.SOURCE.MACRO_3",
+        "MATRIX.SOURCE.MACRO_4",
+        "MATRIX.SOURCE.MACRO_5",
+        "MATRIX.SOURCE.MACRO_6",
+        "MATRIX.SOURCE.MACRO_7",
+        "MATRIX.SOURCE.MACRO_8",
+        "MATRIX.SOURCE.EXPR_X_PAN",
+        "MATRIX.SOURCE.EXPR_Y_TIMBRE",
+        "MATRIX.SOURCE.EXPR_Z_PRESS",
+        "MATRIX.SOURCE.MOD_WHEEL",
+        "MATRIX.SOURCE.AFTERTOUCH",
+        "MATRIX.SOURCE.POLY_AFTERTCH",
+        "MATRIX.SOURCE.PITCH_BEND",
+        "MATRIX.SOURCE.FIXED",
+        "GLOBAL.RETRIGGERS.NOTE",
+        "GLOBAL.RETRIGGERS.OSC_A",
+        "GLOBAL.RETRIGGERS.OSC_B",
+        "GLOBAL.RETRIGGERS.OSC_C",
+        "GLOBAL.RETRIGGERS.SUB",
+        "GLOBAL.RETRIGGERS.NOISE",
+        "GLOBAL.RETRIGGERS.ENV_2",
+        "GLOBAL.RETRIGGERS.ENV_3",
+        "GLOBAL.RETRIGGERS.ENV_4",
+        "GLOBAL.RETRIGGERS.LFO_1",
+        "GLOBAL.RETRIGGERS.LFO_2",
+        "GLOBAL.RETRIGGERS.LFO_3",
+        "GLOBAL.RETRIGGERS.LFO_4",
+        "GLOBAL.RETRIGGERS.LFO_5",
+        "GLOBAL.RETRIGGERS.LFO_6",
+        "GLOBAL.RETRIGGERS.LFO_7",
+        "GLOBAL.RETRIGGERS.LFO_8",
+        "GLOBAL.RETRIGGERS.LFO_9",
+        "GLOBAL.RETRIGGERS.LFO_10"
+      ],
+      "authoritative_binding": null
+    }
+  }
+}
