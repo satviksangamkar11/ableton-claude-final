@@ -44,6 +44,17 @@ class MutationRequest:
     # Executor will REFUSE if mismatch between request.host_parameter_name and contract binding
     host_parameter_name: Optional[str] = None  # e.g., "Env 1 Release"
 
+    # BODY_STATE resolver payload (used only when
+    # contract.execution_binding.resolver_operation_id is set). This is
+    # PAYLOAD, not authority: WHICH resolver runs is contract-derived
+    # (resolver_operation_id); these are the resolver's own input
+    # parameters (e.g. {"rack": 0, "slot": 1, "effect": "EQ",
+    # "parameter": "Freq1", "value": 500.0}), analogous to `value` above.
+    # The resolver's own validation (range checks, unknown-parameter
+    # rejection) is what makes an invalid payload REFUSE -- there is no
+    # contract-side value to cross-check these against.
+    resolver_parameters: Optional[Dict[str, Any]] = None
+
     # Authority requirements
     required_causal: bool = False
     required_persistence: bool = False

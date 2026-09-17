@@ -86,6 +86,20 @@ class ExecutionBinding:
     binding_source: str = ""          # e.g. "semantic_vst3_mapping.json", "evidence_mutation_0001.pkl"
     binding_version: str = ""         # version/hash of the mapping used
 
+    # AUTHORITY INTEGRATION (STATE, first of the Execution Coverage V2
+    # "authority-integrated generic operations" milestone): for BODY_STATE
+    # targets whose concrete body_path is NOT yet directly known (e.g. FX
+    # parameters addressed by rack/slot/effect/parameter rather than a
+    # literal dotted path), the contract may instead name a resolver
+    # operation registered in serum2.operations.registry.OperationRegistry.
+    # When set, body_path is left None and the executor resolves the real
+    # path (and validates the value) by calling this resolver's compiler --
+    # strictly AFTER admission has already passed, never before. This is
+    # the one and only sanctioned way an OperationRegistry compiler may run:
+    # as a backend invoked from inside the authority-gated executor, never
+    # called directly by a producer or any other caller.
+    resolver_operation_id: Optional[str] = None  # e.g. "fx_set_parameter"
+
 
 @dataclass(frozen=True)
 class CapabilityContract:

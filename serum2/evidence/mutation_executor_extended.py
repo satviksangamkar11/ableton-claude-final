@@ -164,6 +164,15 @@ def _execute_body_state_mutation(
             detail="No BODY_STATE execution binding in contract",
         )
 
+    # AUTHORITY-INTEGRATED RESOLVER PATH (Execution Coverage V2 STATE
+    # integration): the contract may name a resolver operation instead of a
+    # literal body_path, for targets whose real path depends on caller
+    # payload (e.g. FX rack/slot/effect/parameter). The resolver is invoked
+    # here, strictly AFTER admission has already passed above -- it is
+    # never reachable from anywhere else.
+    if contract.execution_binding.resolver_operation_id:
+        return _execute_body_state_mutation_via_resolver(request, body, contract, admission_result)
+
     mutation_target_path = contract.execution_binding.body_path
 
     # Cross-check caller assertion if supplied
@@ -222,6 +231,123 @@ def _execute_body_state_mutation(
             admission_result=admission_result,
             executed=False,
             detail=f"pathmerge error: {str(e)}",
+        )
+
+
+def _execute_body_state_mutation_via_resolver(
+    request: MutationRequest,
+    body: Dict[str, Any],
+    contract: cc.CapabilityContract,
+    admission_result: admission.AdmissionResult,
+) -> MutationAuthorityProof:
+    """Execute BODY_STATE mutation via a registered resolver operation
+    (Execution Coverage V2 STATE integration: OperationRegistry compilers
+    such as compiler_set_fx_parameter become implementation backends,
+    called ONLY from here, strictly after admission -- never directly by a
+    producer or anywhere else).
+
+    resolver_operation_id is authoritative (from the contract). The
+    resolver's own parameters are caller payload (request.resolver_parameters),
+    analogous to request.value for the direct-path case -- there is no
+    single contract-side value to cross-check them against; the resolver's
+    own compilation validates them and REFUSES (zero mutation) on any
+    range/lookup failure.
+    """
+    from serum2.operations.registry import get_registry
+    from serum2.operations.model import SerumOperation, OperationParameter, OperationContext, OperationKind
+
+    operation_id = contract.execution_binding.resolver_operation_id
+    compiler_fn = get_registry().get_compiler(operation_id)
+
+    if compiler_fn is None:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            admission_result=admission_result,
+            executed=False,
+            detail=f"resolver_operation_id={operation_id!r} not found in OperationRegistry",
+        )
+
+    resolver_params = dict(request.resolver_parameters or {})
+    resolver_params.setdefault("value", request.value)
+    op_parameters = [OperationParameter(name=k, value=v) for k, v in resolver_params.items()]
+
+    operation = SerumOperation(
+        operation_id=operation_id,
+        semantic_name=request.target,
+        kind=OperationKind.STATE,
+        parameters=op_parameters,
+        semantic_target=request.target,
+    )
+    ctx = OperationContext(body=body)
+
+    try:
+        result = compiler_fn(operation, ctx)
+    except Exception as e:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            admission_result=admission_result,
+            executed=False,
+            detail=f"resolver {operation_id!r} raised {type(e).__name__}: {e}",
+        )
+
+    if not result.success:
+        # REFUSED: resolver's own validation rejected the payload
+        # (e.g. VALUE_BELOW_MIN, UNKNOWN_FX_PARAMETER). Zero mutation.
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            admission_result=admission_result,
+            executed=False,
+            detail=f"resolver {operation_id!r} refused: "
+                   f"{result.compilation_error}: {result.error_detail}",
+        )
+
+    # Success: apply every compiled mutation via pathmerge, counting each
+    # real invocation (never inferred from whether the value changed).
+    call_count = 0
+    last_path = None
+    baseline_value = None
+    post_value = None
+    changed_any = False
+    try:
+        for mutation in result.compiled_mutations:
+            path = mutation.target_path
+            last_path = path
+            baseline_value = pathmerge.read_path_value(body, path)
+            pathmerge.apply_path_value(body, path, mutation.value)
+            call_count += 1
+            post_value = pathmerge.read_path_value(body, path)
+            if post_value != baseline_value:
+                changed_any = True
+
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            body_path=last_path,
+            body_baseline_value=baseline_value,
+            body_post_value=post_value,
+            admission_result=admission_result,
+            executed=True,
+            mutation_succeeded=changed_any,
+            pathmerge_call_count=call_count,
+            detail=f"resolved via {operation_id!r}: {result.mutation_description}",
+        )
+    except Exception as e:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            body_path=last_path,
+            admission_result=admission_result,
+            executed=False,
+            pathmerge_call_count=call_count,
+            detail=f"pathmerge error applying resolver mutation: {str(e)}",
         )
 
 
