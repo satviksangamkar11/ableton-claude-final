@@ -146,14 +146,13 @@ def test_family_primitive_consistency():
 
 def test_generic_executors_importable():
     status = verify_generic_executors()
-    for prim in ("SCALAR", "STATE", "COMPOUND", "TOPOLOGY"):
+    primitives = ("SCALAR", "STATE", "COMPOUND", "TOPOLOGY", "RESOURCE")
+    for prim in primitives:
         assert status[prim].startswith("VERIFIED_IMPORTABLE")
-    assert status["SCALAR"] == status["STATE"] == status["COMPOUND"] == status["TOPOLOGY"], (
-        "SCALAR, STATE, COMPOUND, and TOPOLOGY must share the same authority-gated entry point"
-    )
-    assert status["RESOURCE"].startswith("NOT_AUTHORITY_INTEGRATED")
-    print("[PASS] generic executor registry: SCALAR+STATE+COMPOUND+TOPOLOGY share the "
-          "authority-gated executor; RESOURCE honestly NOT_AUTHORITY_INTEGRATED")
+    values = {status[p] for p in primitives}
+    assert len(values) == 1, "all five primitives must share the same authority-gated entry point"
+    print("[PASS] generic executor registry: all five primitives (SCALAR, STATE, COMPOUND, "
+          "TOPOLOGY, RESOURCE) share the authority-gated executor")
 
 
 if __name__ == "__main__":

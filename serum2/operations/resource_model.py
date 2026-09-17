@@ -82,82 +82,55 @@ class ResourceResolution:
 
 
 class ResourceSearch:
-    """Resource search configuration and results."""
+    """Resource search configuration and results.
 
-    # Standard Serum resource locations (relative to Serum installation)
-    DEFAULT_WAVETABLE_SEARCH_ROOTS = [
-        "S2 Tables",  # Bundled wavetables
-        "Serum Data/Tables",  # User-imported wavetables
-    ]
+    Search roots corrected against the REAL, verified content directory
+    (this session): "S2 Tables"/"Serum Data/Tables" and the
+    serum_install_dir-relative scheme were both fabricated -- Serum 2's
+    actual factory/user content root is a Documents-based directory (the
+    same one serum2/statemodel.py and several tests already use for
+    PRESET_DIR), structured as <root>/Tables/{S2 Tables,User,Analog,...}
+    and <root>/Samples/{Factory,User,...}, not <install_dir>/S2 Tables.
+    Confirmed via a real preset's Oscillator0.WTOsc0.relativePathToWT ==
+    "S2 Tables/Default Shapes.wav", matching a real file at
+    <root>/Tables/S2 Tables/Default Shapes.wav.
+    """
 
-    DEFAULT_SAMPLE_SEARCH_ROOTS = [
-        "S2 Samples",  # Bundled samples
-        "Serum Data/Samples",  # User-imported samples
-    ]
+    DEFAULT_CONTENT_ROOT = r"C:\Users\Satvik\Documents\Xfer\Serum 2 Presets"
 
     @staticmethod
     def get_wavetable_search_roots(serum_install_dir: Optional[str] = None) -> List[str]:
         """Get search roots for wavetables.
 
         Args:
-            serum_install_dir: Serum installation directory. If None, uses environment.
+            serum_install_dir: content root override (defaults to the real,
+                verified DEFAULT_CONTENT_ROOT if not given).
 
         Returns:
-            List of search roots (absolute paths if serum_install_dir provided, else relative).
+            Absolute directory paths to search, each corresponding to a
+            first path segment Serum itself uses in relativePathToWT
+            (e.g. "S2 Tables/...", "User/...").
         """
-        if serum_install_dir:
-            return [
-                f"{serum_install_dir}\\S2 Tables",
-                f"{serum_install_dir}\\Serum Data\\Tables",
-            ]
-        return ResourceSearch.DEFAULT_WAVETABLE_SEARCH_ROOTS
+        root = serum_install_dir or ResourceSearch.DEFAULT_CONTENT_ROOT
+        tables_root = f"{root}\\Tables"
+        return [f"{tables_root}\\{sub}" for sub in ("S2 Tables", "User", "Analog", "Digital", "Spectral", "Vowel")]
 
     @staticmethod
     def get_sample_search_roots(serum_install_dir: Optional[str] = None) -> List[str]:
         """Get search roots for samples."""
-        if serum_install_dir:
-            return [
-                f"{serum_install_dir}\\S2 Samples",
-                f"{serum_install_dir}\\Serum Data\\Samples",
-            ]
-        return ResourceSearch.DEFAULT_SAMPLE_SEARCH_ROOTS
+        root = serum_install_dir or ResourceSearch.DEFAULT_CONTENT_ROOT
+        samples_root = f"{root}\\Samples"
+        return [f"{samples_root}\\{sub}" for sub in ("Factory", "Factory Non-Tonal", "User")]
 
 
-# Standard built-in resources (discovered from Serum installations)
-STANDARD_WAVETABLES = {
-    "operator": SerumResource(
-        kind=ResourceKind.WAVETABLE,
-        canonical_id="serum2://wavetable/operator",
-        display_name="Operator",
-        absolute_path="",  # Set at resolution time
-        serum_relative_path="Tables/Operator",
-        source="bundled",
-    ),
-    "brass": SerumResource(
-        kind=ResourceKind.WAVETABLE,
-        canonical_id="serum2://wavetable/brass",
-        display_name="Brass",
-        absolute_path="",
-        serum_relative_path="Tables/Brass",
-        source="bundled",
-    ),
-    "pad": SerumResource(
-        kind=ResourceKind.WAVETABLE,
-        canonical_id="serum2://wavetable/pad",
-        display_name="Pad",
-        absolute_path="",
-        serum_relative_path="Tables/Pad",
-        source="bundled",
-    ),
-}
-
-STANDARD_SAMPLES = {
-    "drum_kick": SerumResource(
-        kind=ResourceKind.SAMPLE,
-        canonical_id="serum2://sample/drum_kick",
-        display_name="Drum Kick",
-        absolute_path="",
-        serum_relative_path="Samples/Drums/Kick",
-        source="bundled",
-    ),
-}
+# NOTE: no hardcoded "standard library" shortcut dict here anymore. The
+# previous STANDARD_WAVETABLES/STANDARD_SAMPLES entries ("operator",
+# "brass", "pad", "drum_kick") were fabricated placeholders
+# (absolute_path="", no file_hash/file_size -- never verified against a
+# real installation) and, checked directly against the real content
+# directory this session, do not correspond to any real file: no
+# "Operator.wav"/"Brass.wav"/"Pad.wav" exist, and no kick sample was found
+# under Samples/Factory at all. A hardcoded list that silently resolves to
+# a wrong or nonexistent path is worse than requiring a real filesystem
+# search every time -- resolution now ALWAYS verifies against real files
+# (see ResourceResolver._search_filesystem), never a cached guess.

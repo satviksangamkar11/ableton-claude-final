@@ -16,24 +16,30 @@ from .resource_model import (
     SerumResource,
     ResourceResolution,
     ResourceSearch,
-    STANDARD_WAVETABLES,
-    STANDARD_SAMPLES,
 )
 
 
 class ResourceResolver:
-    """Resolve resource identities to verified SerumResource metadata."""
+    """Resolve resource identities to verified SerumResource metadata.
+
+    ALWAYS verifies against real files on disk -- there is no hardcoded
+    "standard library" shortcut (removed; it was fabricated and wrong, see
+    resource_model.py). A resolution is only ever FOUND if a real file
+    exists at the resolved path.
+    """
 
     def __init__(self, serum_install_dir: Optional[str] = None):
         """Initialize resolver.
 
         Args:
-            serum_install_dir: Serum installation directory (e.g., "C:\\Program Files\\...")
-                              If None, uses relative paths only (no file verification).
+            serum_install_dir: content root override. Defaults to
+                ResourceSearch.DEFAULT_CONTENT_ROOT (the real, verified
+                Serum 2 content directory) if not given -- NOT None/no
+                verification; resolution always checks real files.
         """
-        self.serum_install_dir = serum_install_dir
-        self.wavetable_search_roots = ResourceSearch.get_wavetable_search_roots(serum_install_dir)
-        self.sample_search_roots = ResourceSearch.get_sample_search_roots(serum_install_dir)
+        self.serum_install_dir = serum_install_dir or ResourceSearch.DEFAULT_CONTENT_ROOT
+        self.wavetable_search_roots = ResourceSearch.get_wavetable_search_roots(self.serum_install_dir)
+        self.sample_search_roots = ResourceSearch.get_sample_search_roots(self.serum_install_dir)
 
     def resolve_wavetable(self, identifier: str) -> ResourceResolution:
         """Resolve a wavetable identifier.
@@ -64,7 +70,8 @@ class ResourceResolver:
         kind: ResourceKind,
         search_roots: List[str],
     ) -> ResourceResolution:
-        """Core resource resolution logic.
+        """Core resource resolution logic. ALWAYS a real filesystem search
+        against search_roots -- no hardcoded shortcut, no unverified guess.
 
         Args:
             identifier: Resource identifier (name, path, or canonical ID)
@@ -74,102 +81,32 @@ class ResourceResolver:
         Returns:
             ResourceResolution with resource or error.
         """
-        # Step 1: Check standard library
-        standard_lookup = self._lookup_standard_library(identifier, kind)
-        if standard_lookup:
-            resource = standard_lookup
-            # Resolve absolute path if serum_install_dir is set
-            if self.serum_install_dir:
-                abs_path = os.path.join(self.serum_install_dir, resource.serum_relative_path)
-                if os.path.exists(abs_path):
-                    resource = SerumResource(
-                        kind=resource.kind,
-                        canonical_id=resource.canonical_id,
-                        display_name=resource.display_name,
-                        absolute_path=abs_path,
-                        serum_relative_path=resource.serum_relative_path,
-                        file_hash=self._compute_file_hash(abs_path),
-                        file_size=os.path.getsize(abs_path) if os.path.exists(abs_path) else None,
-                        source=resource.source,
-                    )
-                    return ResourceResolution(
-                        requested_id=identifier,
-                        availability=ResourceAvailability.FOUND,
-                        resource=resource,
-                        search_roots=search_roots,
-                    )
-
-        # Step 2: Search filesystem if serum_install_dir is set
-        if self.serum_install_dir:
-            candidates = self._search_filesystem(identifier, kind, search_roots)
-            if len(candidates) == 0:
-                return ResourceResolution(
-                    requested_id=identifier,
-                    availability=ResourceAvailability.NOT_FOUND,
-                    error_detail=f"No {kind.value} found matching '{identifier}'",
-                    search_roots=search_roots,
-                )
-            elif len(candidates) == 1:
-                resource = candidates[0]
-                return ResourceResolution(
-                    requested_id=identifier,
-                    availability=ResourceAvailability.FOUND,
-                    resource=resource,
-                    candidates=candidates,
-                    search_roots=search_roots,
-                )
-            else:
-                # Ambiguous - multiple matches
-                return ResourceResolution(
-                    requested_id=identifier,
-                    availability=ResourceAvailability.AMBIGUOUS,
-                    candidates=candidates,
-                    search_roots=search_roots,
-                    error_detail=f"Ambiguous: {len(candidates)} matches for '{identifier}'",
-                )
-
-        # Step 3: No serum_install_dir; return "found" for known standard resources only
-        if standard_lookup:
+        candidates = self._search_filesystem(identifier, kind, search_roots)
+        if len(candidates) == 0:
+            return ResourceResolution(
+                requested_id=identifier,
+                availability=ResourceAvailability.NOT_FOUND,
+                error_detail=f"No {kind.value} found matching '{identifier}' in {search_roots}",
+                search_roots=search_roots,
+            )
+        elif len(candidates) == 1:
+            resource = candidates[0]
             return ResourceResolution(
                 requested_id=identifier,
                 availability=ResourceAvailability.FOUND,
-                resource=standard_lookup,
+                resource=resource,
+                candidates=candidates,
                 search_roots=search_roots,
             )
-
-        # Not found and couldn't search filesystem
-        return ResourceResolution(
-            requested_id=identifier,
-            availability=ResourceAvailability.NOT_FOUND,
-            error_detail=f"Resource '{identifier}' not found in standard library and no serum_install_dir provided",
-            search_roots=search_roots,
-        )
-
-    def _lookup_standard_library(self, identifier: str, kind: ResourceKind) -> Optional[SerumResource]:
-        """Look up a resource in standard library.
-
-        Args:
-            identifier: Resource identifier
-            kind: Resource kind
-
-        Returns:
-            SerumResource if found in standard library, else None.
-        """
-        library = STANDARD_WAVETABLES if kind == ResourceKind.WAVETABLE else STANDARD_SAMPLES
-
-        # Normalize identifier
-        search_key = identifier.lower().replace(" ", "_").strip("/\\")
-
-        # Try exact match
-        if search_key in library:
-            return library[search_key]
-
-        # Try prefix match
-        for key, resource in library.items():
-            if key.startswith(search_key) or search_key.startswith(key):
-                return resource
-
-        return None
+        else:
+            # Ambiguous - multiple matches
+            return ResourceResolution(
+                requested_id=identifier,
+                availability=ResourceAvailability.AMBIGUOUS,
+                candidates=candidates,
+                search_roots=search_roots,
+                error_detail=f"Ambiguous: {len(candidates)} matches for '{identifier}'",
+            )
 
     def _search_filesystem(
         self,
@@ -197,7 +134,11 @@ class ResourceResolver:
         }
 
         exts = extensions.get(kind, (".wav",))
-        search_term = identifier.lower().replace(" ", "_")
+        # Normalize both sides the same way (space/underscore were being
+        # compared inconsistently before -- "Default Shapes" would never
+        # match a real file named "Default Shapes.wav"), found and fixed
+        # this session while verifying wavetable resolution against real files.
+        search_term = identifier.lower().replace(" ", "_").replace("-", "_")
 
         for root in search_roots:
             if not os.path.exists(root):
@@ -210,10 +151,17 @@ class ResourceResolver:
                         continue
 
                     # Check name match
-                    file_base = Path(filename).stem.lower()
+                    file_base = Path(filename).stem.lower().replace(" ", "_").replace("-", "_")
                     if search_term in file_base or file_base in search_term:
                         abs_path = os.path.join(dirpath, filename)
-                        rel_path = os.path.relpath(abs_path, self.serum_install_dir) if self.serum_install_dir else ""
+                        # Relative to the Tables/Samples subfolder (Serum's
+                        # own relativePathToWT convention, e.g.
+                        # "S2 Tables/Default Shapes.wav" -- verified this
+                        # session against a real preset), NOT relative to
+                        # the content root, and with forward slashes.
+                        content_subroot = f"{self.serum_install_dir}\\Tables" if kind == ResourceKind.WAVETABLE \
+                            else f"{self.serum_install_dir}\\Samples"
+                        rel_path = os.path.relpath(abs_path, content_subroot).replace("\\", "/")
 
                         resource = SerumResource(
                             kind=kind,

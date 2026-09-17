@@ -22,6 +22,22 @@ from .model import (
 from serum2.evidence.spec import Mutation
 
 
+# Explicit allowlist of PROVEN resource operation_ids safe for authority
+# integration. osc_load_wavetable's state field (Oscillator{N}.WTOsc{N}.
+# relativePathToWT) and relative-path convention ("S2 Tables/Default
+# Shapes.wav") were verified this session against a real preset. osc_load_
+# sample is deliberately EXCLUDED: resource_to_state_path() claims
+# Oscillator{N}.SampleOsc{N}.relativePathToSample, but a real granular-
+# oscillator preset shows the actual field is GranularOsc{N}.
+# samplePathRelative -- a different field entirely, and plain SampleOsc's
+# real field has not been independently confirmed. Wiring an unverified
+# field name into the authority-gated executor would write a plausible-
+# looking but possibly wrong path -- exactly the failure this integration
+# work exists to prevent. Multisample uses embedded SFZ text, not a path
+# field at all, and is unresolved for the same reason.
+PROVEN_RESOURCE_OPERATION_IDS = frozenset({"osc_load_wavetable"})
+
+
 # Oscillator types supported by Serum v8 state representation
 SUPPORTED_OSCILLATOR_TYPES = {
     "wavetable": "WTOsc",
@@ -309,6 +325,22 @@ def compiler_load_wavetable(
             success=False,
             compilation_error="NEGATIVE_OSCILLATOR_INDEX",
             error_detail=f"Oscillator index must be >= 0, got {osc_idx}",
+        )
+
+    # Upper bound: must address a real oscillator in the current state.
+    # No check existed here before (found during RESOURCE authority
+    # integration audit) -- the real skeleton has Oscillator0-Oscillator4
+    # (5 oscillators), verified this session via a live skeleton capture,
+    # but that count is runtime/version data, not a hardcoded constant, so
+    # validate against ctx.body directly rather than a literal "<=4".
+    if ctx.body and f"Oscillator{osc_idx}" not in ctx.body:
+        existing = sorted(k for k in ctx.body if k.startswith("Oscillator"))
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error="INVALID_OSCILLATOR_INDEX",
+            error_detail=f"Oscillator{osc_idx} does not exist in current state "
+                          f"(available: {existing})",
         )
 
     # Resolve resource

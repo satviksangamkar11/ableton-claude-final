@@ -56,10 +56,36 @@ on every run, not just asserted once.
             just unit-level compilation; BYPASS additionally proven to
             produce a genuine audible difference (RMS delta), not just a
             state-field change.
-  RESOURCE: NOT yet integrated -- osc_load_wavetable/osc_load_sample
-            compilers still unreachable from admission. ResourceResolver
-            validates resource identity but is not itself a mutation
-            executor.
+  RESOURCE: integrated, WAVETABLE ONLY -- an explicit allowlist
+            (oscillator_operations.PROVEN_RESOURCE_OPERATION_IDS) permits
+            only osc_load_wavetable. osc_load_sample and osc_load_
+            multisample are deliberately excluded: their claimed state
+            fields were checked against real presets this session and
+            found wrong/inapplicable (SAMPLE's claimed
+            SampleOsc{N}.relativePathToSample is contradicted by a real
+            granular-oscillator preset, whose actual field is
+            GranularOsc{N}.samplePathRelative; MULTISAMPLE uses embedded
+            SFZ text, not a path field). ALSO fixed as part of this
+            integration audit, found by direct evidence, not assumed:
+            (1) ResourceResolver's search roots and its "standard library"
+            shortcut (STANDARD_WAVETABLES/STANDARD_SAMPLES) were entirely
+            fabricated -- checked against the real installed content
+            directory, none of "operator"/"brass"/"pad"/"drum_kick"
+            correspond to any real file. Removed the shortcut; resolution
+            now ALWAYS verifies against real files (hash + size computed),
+            never a cached guess. (2) search roots were wrong
+            (<install_dir>/S2 Tables vs the real Documents-based content
+            root already used elsewhere in this codebase, e.g.
+            serum2/statemodel.py). (3) filename matching silently failed
+            for any multi-word name ("Default Shapes" never matched
+            "Default Shapes.wav") due to inconsistent space/underscore
+            normalization between query and candidate. (4) no upper-bound
+            oscillator-index validation existed at all. Full chain proven
+            against real Serum, not just filesystem resolution: resource
+            identity -> validated content-root resolution (real hash/size)
+            -> authority-gated mutation -> real Serum load -> real Serum
+            save/readback, with two DIFFERENT wavetables shown to produce
+            two DIFFERENT Serum-confirmed readback states.
 """
 
 from __future__ import annotations
@@ -72,28 +98,23 @@ AUTHORITY_GATED_EXECUTOR = (
     "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority"
 )
 
-# mutation_type -> dotted "module.function" path, or None if no
-# AUTHORITY-GATED generic dispatcher exists yet. Values here are the ONLY
-# valid operation_key values (V2-3). SCALAR, STATE, COMPOUND, and TOPOLOGY
-# share the same entry point deliberately: it is one generic executor that
-# dispatches internally on MutationRequest.mutation_type, not a
-# per-primitive function.
+# mutation_type -> dotted "module.function" path. Values here are the ONLY
+# valid operation_key values (V2-3). All five primitives now share the same
+# entry point deliberately: it is one generic executor that dispatches
+# internally on MutationRequest.mutation_type, not a per-primitive function.
+# NOTE: RESOURCE being VERIFIED_IMPORTABLE here means the primitive-level
+# dispatch exists and is real; it does NOT mean every resource kind is
+# usable -- see oscillator_operations.PROVEN_RESOURCE_OPERATION_IDS
+# (WAVETABLE only; SAMPLE/MULTISAMPLE explicitly excluded).
 GENERIC_EXECUTORS: Dict[str, Optional[str]] = {
     MutationPrimitive.SCALAR.value: AUTHORITY_GATED_EXECUTOR,
     MutationPrimitive.STATE.value: AUTHORITY_GATED_EXECUTOR,
     MutationPrimitive.COMPOUND.value: AUTHORITY_GATED_EXECUTOR,
     MutationPrimitive.TOPOLOGY.value: AUTHORITY_GATED_EXECUTOR,
-    MutationPrimitive.RESOURCE.value: None,
+    MutationPrimitive.RESOURCE.value: AUTHORITY_GATED_EXECUTOR,
 }
 
-NOT_IMPLEMENTED_REASON: Dict[str, str] = {
-    MutationPrimitive.RESOURCE.value:
-        "execute_mutation_request_with_authority() has no RESOURCE case at "
-        "all yet. osc_load_wavetable/osc_load_sample compilers exist in the "
-        "disconnected OperationRegistry (same class of bypass risk STATE and COMPOUND already closed); "
-        "ResourceResolver (resource_resolver.py) validates resource "
-        "identity but is not itself a mutation executor.",
-}
+NOT_IMPLEMENTED_REASON: Dict[str, str] = {}
 
 
 def _resolve_dotted_path(dotted_path: str):

@@ -16,6 +16,7 @@ class MutationType(str, Enum):
     HOST_PARAMETER = "HOST_PARAMETER"   # VST3 host parameter mutation
     TOPOLOGY = "TOPOLOGY"               # FX/module enable/disable/reorder
     COMPOUND = "COMPOUND"               # Multi-target coordinated mutation
+    RESOURCE = "RESOURCE"               # Resource resolution + mutation (wavetable/sample load)
 
 
 @dataclass(frozen=True)

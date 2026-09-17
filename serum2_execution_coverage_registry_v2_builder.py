@@ -352,14 +352,22 @@ def write_outputs(resolutions, bindings_by_semantic_id, capability_bindings,
     for mt, status in executor_status.items():
         lines.append(f"- **{mt}**: {status}")
     lines.append("")
-    lines.append("**Architectural finding from this build:** a separate, pre-D.1.x "
-                 "`OperationRegistry` (serum2/operations/registry.py) already has real, "
-                 "registered compilers for STATE/COMPOUND/RESOURCE/TOPOLOGY operations "
-                 "(fx_set_parameter, create_modulation_route, load_wavetable, FX structural "
-                 "ops, etc.), but `get_registry()` is called from nowhere in "
-                 "producer/evidence/compiler -- it is disconnected from the admission-gated "
-                 "authority chain entirely. This is flagged for explicit decision (integrate "
-                 "under the D.1.2 authority pattern, or deprecate), not resolved here.")
+    lines.append("**Architectural finding, resolved across this milestone:** a separate, "
+                 "pre-D.1.x `OperationRegistry` (serum2/operations/registry.py) had real, "
+                 "registered compilers for STATE/COMPOUND/RESOURCE/TOPOLOGY operations, "
+                 "but was originally disconnected from the admission-gated authority chain -- "
+                 "`get_registry()` called from nowhere in producer/evidence/compiler, a "
+                 "verified-by-grep bypass risk. All four have since been wired in as backends "
+                 "invoked ONLY from inside `execute_mutation_request_with_authority()` via "
+                 "`ExecutionBinding.resolver_operation_id` (contract-derived, never "
+                 "caller-chosen), each gated by an explicit allowlist of PROVEN operations "
+                 "(not the whole enum/catalog). `get_registry()` remains called from exactly "
+                 "one place in producer/evidence/compiler, re-verified mechanically on every "
+                 "test run, not just asserted once. Two real defects were found and fixed "
+                 "during this audit rather than carried forward: COMPOUND's hard-coded "
+                 "VoiceFilter/kParamFreq destination, and TOPOLOGY's non-functional \"*\" "
+                 "wildcard bypass path. RESOURCE is scoped to WAVETABLE only -- SAMPLE and "
+                 "MULTISAMPLE remain explicitly unresolved (see below).")
     lines.append("")
 
     lines.append("## Known limitations of this V2 pass\n")
