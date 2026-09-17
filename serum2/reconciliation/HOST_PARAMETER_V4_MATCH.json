@@ -1,0 +1,655 @@
+{
+  "matched_count": 86,
+  "unmatched_count": 31,
+  "matched": [
+    {
+      "semantic_id": "NOISE_OSC.LEVEL",
+      "label": "Noise OSC Level",
+      "matched_param_name": "Noise Level"
+    },
+    {
+      "semantic_id": "NOISE_OSC.PAN",
+      "label": "Noise OSC Pan",
+      "matched_param_name": "Noise Pan"
+    },
+    {
+      "semantic_id": "NOISE_OSC.FINE",
+      "label": "Noise OSC Fine",
+      "matched_param_name": "Noise Fine"
+    },
+    {
+      "semantic_id": "SUB_OSC.LEVEL",
+      "label": "SUB OSC Level",
+      "matched_param_name": "Sub Level"
+    },
+    {
+      "semantic_id": "SUB_OSC.PAN",
+      "label": "SUB OSC Pan",
+      "matched_param_name": "Sub Pan"
+    },
+    {
+      "semantic_id": "SUB_OSC.OCTAVE",
+      "label": "SUB OSC Octave",
+      "matched_param_name": "Sub Octave"
+    },
+    {
+      "semantic_id": "MIXER.SUB.ENABLE",
+      "label": "Sub Osc Enable -- channel on/off toggle",
+      "matched_param_name": "Sub Enable"
+    },
+    {
+      "semantic_id": "MIXER.SUB.BUS1",
+      "label": "Sub Osc>BUS1 -- send amount to Bus 1",
+      "matched_param_name": "Sub Osc>BUS1"
+    },
+    {
+      "semantic_id": "MIXER.SUB.BUS2",
+      "label": "Sub Osc>BUS2 -- send amount to Bus 2",
+      "matched_param_name": "Sub Osc>BUS2"
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.ENABLE",
+      "label": "A Enable -- channel on/off toggle",
+      "matched_param_name": "A Enable"
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.BUS1",
+      "label": "A>BUS1 -- send amount to Bus 1",
+      "matched_param_name": "A>BUS1"
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.BUS2",
+      "label": "A>BUS2 -- send amount to Bus 2",
+      "matched_param_name": "A>BUS2"
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.PAN",
+      "label": "A Pan",
+      "matched_param_name": "A Pan"
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.LEVEL",
+      "label": "A Level -- channel output fader",
+      "matched_param_name": "A Level"
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.ENABLE",
+      "label": "B Enable -- channel on/off toggle",
+      "matched_param_name": "B Enable"
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.BUS1",
+      "label": "B>BUS1 -- send amount to Bus 1",
+      "matched_param_name": "B>BUS1"
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.BUS2",
+      "label": "B>BUS2 -- send amount to Bus 2",
+      "matched_param_name": "B>BUS2"
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.PAN",
+      "label": "B Pan",
+      "matched_param_name": "B Pan"
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.LEVEL",
+      "label": "B Level -- channel output fader",
+      "matched_param_name": "B Level"
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.ENABLE",
+      "label": "C Enable -- channel on/off toggle",
+      "matched_param_name": "C Enable"
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.BUS1",
+      "label": "C>BUS1 -- send amount to Bus 1",
+      "matched_param_name": "C>BUS1"
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.BUS2",
+      "label": "C>BUS2 -- send amount to Bus 2",
+      "matched_param_name": "C>BUS2"
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.PAN",
+      "label": "C Pan",
+      "matched_param_name": "C Pan"
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.LEVEL",
+      "label": "C Level -- channel output fader",
+      "matched_param_name": "C Level"
+    },
+    {
+      "semantic_id": "MIXER.NOISE.ENABLE",
+      "label": "Noise Enable -- channel on/off toggle",
+      "matched_param_name": "Noise Enable"
+    },
+    {
+      "semantic_id": "MIXER.NOISE.BUS1",
+      "label": "Noise>BUS1 -- send amount to Bus 1",
+      "matched_param_name": "Noise>BUS1"
+    },
+    {
+      "semantic_id": "MIXER.NOISE.BUS2",
+      "label": "Noise>BUS2 -- send amount to Bus 2",
+      "matched_param_name": "Noise>BUS2"
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.ENABLE",
+      "label": "Filter 1 Enable -- channel on/off toggle",
+      "matched_param_name": "Filter 1 On"
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.BUS1",
+      "label": "Filter 1>BUS1 -- send amount to Bus 1",
+      "matched_param_name": "Filter 1>BUS1"
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.BUS2",
+      "label": "Filter 1>BUS2 -- send amount to Bus 2",
+      "matched_param_name": "Filter 1>BUS2"
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.WET",
+      "label": "Filter 1 Wet -- filter dry/wet blend knob (labeled 'MIX' in UI)",
+      "matched_param_name": "Filter 1 Wet"
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.LEVEL",
+      "label": "Filter 1 Level -- channel output fader",
+      "matched_param_name": "Filter 1 Level"
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.ENABLE",
+      "label": "Filter 2 Enable -- channel on/off toggle",
+      "matched_param_name": "Filter 2 On"
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.BUS1",
+      "label": "Filter 2>BUS1 -- send amount to Bus 1",
+      "matched_param_name": "Filter 2>BUS1"
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.BUS2",
+      "label": "Filter 2>BUS2 -- send amount to Bus 2",
+      "matched_param_name": "Filter 2>BUS2"
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.WET",
+      "label": "Filter 2 Wet -- filter dry/wet blend knob (labeled 'MIX' in UI)",
+      "matched_param_name": "Filter 2 Wet"
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.LEVEL",
+      "label": "Filter 2 Level -- channel output fader",
+      "matched_param_name": "Filter 2 Level"
+    },
+    {
+      "semantic_id": "MIXER.BUS1.LEVEL",
+      "label": "Bus 1 Level -- bus output fader",
+      "matched_param_name": "Bus 1 Vol"
+    },
+    {
+      "semantic_id": "MIXER.BUS2.LEVEL",
+      "label": "Bus 2 Level -- bus output fader",
+      "matched_param_name": "Bus 2 Vol"
+    },
+    {
+      "semantic_id": "MIXER.MAIN.LEVEL",
+      "label": "Main Vol -- master output level fader",
+      "matched_param_name": "Main Vol"
+    },
+    {
+      "semantic_id": "KEYBOARD.TRANSPOSE",
+      "label": "Transpose -- transposes all incoming and generated MIDI (semitones)",
+      "matched_param_name": "Transpose"
+    },
+    {
+      "semantic_id": "KEYBOARD.KEY",
+      "label": "Key -- global scale root note, affects CLIP and ARP",
+      "matched_param_name": "Key"
+    },
+    {
+      "semantic_id": "KEYBOARD.SCALE",
+      "label": "Scale -- scale/mode selector, conditionally available only when Key != '--'",
+      "matched_param_name": "Scale"
+    },
+    {
+      "semantic_id": "KEYBOARD.SWING",
+      "label": "Swing -- shuffles the timing grid in Clips and Arp editors",
+      "matched_param_name": "Swing"
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_TIME",
+      "label": "Porta Time -- sets the time it takes for the pitch of one note to reach the next",
+      "matched_param_name": "Porta Time"
+    },
+    {
+      "semantic_id": "VOICE.VOICING.MONO",
+      "label": "Mono -- switches voice allocation to monophonic (single-voice) mode",
+      "matched_param_name": "Mono Toggle"
+    },
+    {
+      "semantic_id": "FILTER1.CUTOFF",
+      "label": "Cutoff",
+      "matched_param_name": "Filter 1 Freq"
+    },
+    {
+      "semantic_id": "FILTER1.RESONANCE",
+      "label": "Resonance",
+      "matched_param_name": "Filter 1 Res"
+    },
+    {
+      "semantic_id": "FILTER1.DRIVE",
+      "label": "Drive",
+      "matched_param_name": "Filter 1 Drive"
+    },
+    {
+      "semantic_id": "FILTER1.TYPE",
+      "label": "Type",
+      "matched_param_name": "Filter 1 Type"
+    },
+    {
+      "semantic_id": "FILTER2.CUTOFF",
+      "label": "Cutoff",
+      "matched_param_name": "Filter 2 Freq"
+    },
+    {
+      "semantic_id": "FILTER2.RESONANCE",
+      "label": "Resonance",
+      "matched_param_name": "Filter 2 Res"
+    },
+    {
+      "semantic_id": "FILTER2.DRIVE",
+      "label": "Drive",
+      "matched_param_name": "Filter 2 Drive"
+    },
+    {
+      "semantic_id": "FILTER2.TYPE",
+      "label": "Type",
+      "matched_param_name": "Filter 2 Type"
+    },
+    {
+      "semantic_id": "ENV1.DECAY",
+      "label": "Decay",
+      "matched_param_name": "Env 1 Decay"
+    },
+    {
+      "semantic_id": "ENV1.SUSTAIN",
+      "label": "Sustain",
+      "matched_param_name": "Env 1 Sustain"
+    },
+    {
+      "semantic_id": "ENV2.ATTACK",
+      "label": "Attack",
+      "matched_param_name": "Env 2 Attack"
+    },
+    {
+      "semantic_id": "ENV2.DECAY",
+      "label": "Decay",
+      "matched_param_name": "Env 2 Decay"
+    },
+    {
+      "semantic_id": "ENV2.SUSTAIN",
+      "label": "Sustain",
+      "matched_param_name": "Env 2 Sustain"
+    },
+    {
+      "semantic_id": "ENV2.RELEASE",
+      "label": "Release",
+      "matched_param_name": "Env 2 Release"
+    },
+    {
+      "semantic_id": "ENV3.ATTACK",
+      "label": "Attack",
+      "matched_param_name": "Env 3 Attack"
+    },
+    {
+      "semantic_id": "ENV3.DECAY",
+      "label": "Decay",
+      "matched_param_name": "Env 3 Decay"
+    },
+    {
+      "semantic_id": "ENV3.SUSTAIN",
+      "label": "Sustain",
+      "matched_param_name": "Env 3 Sustain"
+    },
+    {
+      "semantic_id": "ENV3.RELEASE",
+      "label": "Release",
+      "matched_param_name": "Env 3 Release"
+    },
+    {
+      "semantic_id": "ENV4.ATTACK",
+      "label": "Attack",
+      "matched_param_name": "Env 4 Attack"
+    },
+    {
+      "semantic_id": "ENV4.DECAY",
+      "label": "Decay",
+      "matched_param_name": "Env 4 Decay"
+    },
+    {
+      "semantic_id": "ENV4.SUSTAIN",
+      "label": "Sustain",
+      "matched_param_name": "Env 4 Sustain"
+    },
+    {
+      "semantic_id": "ENV4.RELEASE",
+      "label": "Release",
+      "matched_param_name": "Env 4 Release"
+    },
+    {
+      "semantic_id": "LFO1.RATE",
+      "label": "Rate",
+      "matched_param_name": "LFO 1 Rate"
+    },
+    {
+      "semantic_id": "LFO1.PHASE",
+      "label": "Phase",
+      "matched_param_name": "LFO 1 Phase"
+    },
+    {
+      "semantic_id": "LFO2.RATE",
+      "label": "Rate",
+      "matched_param_name": "LFO 2 Rate"
+    },
+    {
+      "semantic_id": "LFO2.PHASE",
+      "label": "Phase",
+      "matched_param_name": "LFO 2 Phase"
+    },
+    {
+      "semantic_id": "LFO3.RATE",
+      "label": "Rate",
+      "matched_param_name": "LFO 3 Rate"
+    },
+    {
+      "semantic_id": "LFO3.PHASE",
+      "label": "Phase",
+      "matched_param_name": "LFO 3 Phase"
+    },
+    {
+      "semantic_id": "LFO4.RATE",
+      "label": "Rate",
+      "matched_param_name": "LFO 4 Rate"
+    },
+    {
+      "semantic_id": "LFO4.PHASE",
+      "label": "Phase",
+      "matched_param_name": "LFO 4 Phase"
+    },
+    {
+      "semantic_id": "LFO5.RATE",
+      "label": "Rate",
+      "matched_param_name": "LFO 5 Rate"
+    },
+    {
+      "semantic_id": "LFO5.PHASE",
+      "label": "Phase",
+      "matched_param_name": "LFO 5 Phase"
+    },
+    {
+      "semantic_id": "LFO6.RATE",
+      "label": "Rate",
+      "matched_param_name": "LFO 6 Rate"
+    },
+    {
+      "semantic_id": "LFO6.PHASE",
+      "label": "Phase",
+      "matched_param_name": "LFO 6 Phase"
+    },
+    {
+      "semantic_id": "OSC1.OCTAVE",
+      "label": "Octave",
+      "matched_param_name": "A Octave"
+    },
+    {
+      "semantic_id": "OSC1.WARP",
+      "label": "Warp",
+      "matched_param_name": "A Warp"
+    },
+    {
+      "semantic_id": "OSC2.OCTAVE",
+      "label": "Octave",
+      "matched_param_name": "B Octave"
+    },
+    {
+      "semantic_id": "OSC2.WARP",
+      "label": "Warp",
+      "matched_param_name": "B Warp"
+    },
+    {
+      "semantic_id": "OSC3.OCTAVE",
+      "label": "Octave",
+      "matched_param_name": "C Octave"
+    },
+    {
+      "semantic_id": "OSC3.WARP",
+      "label": "Warp",
+      "matched_param_name": "C Warp"
+    }
+  ],
+  "unmatched": [
+    {
+      "semantic_id": "MATRIX.ROUTING.SIGNAL_BALANCE",
+      "label": "Routing Matrix signal-balance destinations (19 source-x-target combinations)",
+      "candidates_tried": [
+        "Routing Matrix signal-balance destinations"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.SUB.ROUTING",
+      "label": "Sub Osc channel output routing selector",
+      "candidates_tried": [
+        "Sub Osc channel output routing selector"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.ROUTING",
+      "label": "A channel output routing selector",
+      "candidates_tried": [
+        "A channel output routing selector"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.ROUTING",
+      "label": "B channel output routing selector",
+      "candidates_tried": [
+        "B channel output routing selector"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.ROUTING",
+      "label": "C channel output routing selector",
+      "candidates_tried": [
+        "C channel output routing selector"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.NOISE.ROUTING",
+      "label": "Noise channel output routing selector",
+      "candidates_tried": [
+        "Noise channel output routing selector"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.ROUTING",
+      "label": "Filter 1 channel output routing selector",
+      "candidates_tried": [
+        "Filter 1 channel output routing selector"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.ROUTING",
+      "label": "Filter 2 channel output routing selector",
+      "candidates_tried": [
+        "Filter 2 channel output routing selector"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+      "label": "Filter 1 graphical filter-response curve -- direct-manipulation cutoff/resonance control",
+      "candidates_tried": [
+        "Filter 1 graphical filter-response curve"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+      "label": "Filter 2 graphical filter-response curve -- direct-manipulation cutoff/resonance control",
+      "candidates_tried": [
+        "Filter 2 graphical filter-response curve"
+      ]
+    },
+    {
+      "semantic_id": "FX.BODE.SHIFT",
+      "label": "Shift -- frequency shift amount",
+      "candidates_tried": [
+        "Shift"
+      ]
+    },
+    {
+      "semantic_id": "FX.CHORUS.RATE",
+      "label": "Rate",
+      "candidates_tried": [
+        "Rate"
+      ]
+    },
+    {
+      "semantic_id": "FX.CHORUS.DEPTH",
+      "label": "Depth",
+      "candidates_tried": [
+        "Depth"
+      ]
+    },
+    {
+      "semantic_id": "FX.CHORUS.FEEDBACK",
+      "label": "Feedback",
+      "candidates_tried": [
+        "Feedback"
+      ]
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.GAIN",
+      "label": "Gain -- makeup gain",
+      "candidates_tried": [
+        "Gain"
+      ]
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.ATTACK",
+      "label": "Attack",
+      "candidates_tried": [
+        "Attack"
+      ]
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.DECAY",
+      "label": "Decay",
+      "candidates_tried": [
+        "Decay"
+      ]
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.IR_GAIN",
+      "label": "IR Gain",
+      "candidates_tried": [
+        "IR Gain"
+      ]
+    },
+    {
+      "semantic_id": "FX.DELAY.MODE",
+      "label": "Mode -- Normal/Ping-Pong/Tap->Delay branch selector",
+      "candidates_tried": [
+        "Mode"
+      ]
+    },
+    {
+      "semantic_id": "FX.DELAY.TIME_L",
+      "label": "L -- left channel delay time",
+      "candidates_tried": [
+        "L"
+      ]
+    },
+    {
+      "semantic_id": "FX.DELAY.TIME_R",
+      "label": "R -- right channel delay time",
+      "candidates_tried": [
+        "R"
+      ]
+    },
+    {
+      "semantic_id": "FX.DISTORTION.FREQ",
+      "label": "Freq -- filter cutoff frequency",
+      "candidates_tried": [
+        "Freq"
+      ]
+    },
+    {
+      "semantic_id": "FX.FILTER.TYPE",
+      "label": "FX Filter type selector (category + individual type)",
+      "candidates_tried": [
+        "FX Filter type selector"
+      ]
+    },
+    {
+      "semantic_id": "FX.FILTER.CUTOFF",
+      "label": "Cutoff -- filter cutoff frequency (internal name 'FX Fil Freq')",
+      "candidates_tried": [
+        "Cutoff"
+      ]
+    },
+    {
+      "semantic_id": "FX.FILTER.DRIVE",
+      "label": "Drive",
+      "candidates_tried": [
+        "Drive"
+      ]
+    },
+    {
+      "semantic_id": "FX.FLANGER.RATE",
+      "label": "Rate",
+      "candidates_tried": [
+        "Rate"
+      ]
+    },
+    {
+      "semantic_id": "FX.FLANGER.DEPTH",
+      "label": "Depth",
+      "candidates_tried": [
+        "Depth"
+      ]
+    },
+    {
+      "semantic_id": "FX.FLANGER.FEEDBACK",
+      "label": "Feedback",
+      "candidates_tried": [
+        "Feedback"
+      ]
+    },
+    {
+      "semantic_id": "FX.FLANGER.PHASE",
+      "label": "Phase -- stereo phase offset",
+      "candidates_tried": [
+        "Phase"
+      ]
+    },
+    {
+      "semantic_id": "FX.REVERB.SIZE",
+      "label": "Size (common to all types)",
+      "candidates_tried": [
+        "Size"
+      ]
+    },
+    {
+      "semantic_id": "GLOBAL.TUNING.GLOBAL_TUNING",
+      "label": "Global Tuning -- sets the reference frequency for concert pitch (Hz)",
+      "candidates_tried": [
+        "Global Tuning"
+      ]
+    }
+  ]
+}

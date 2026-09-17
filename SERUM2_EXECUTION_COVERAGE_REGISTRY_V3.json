@@ -526,14 +526,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:f367598acd724373",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Noise Level"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -543,14 +547,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:700f2fa8831182b6",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Noise Pan"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -581,14 +589,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:db5c4ed5072828e5",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Noise Fine"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -640,14 +652,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:e7b46ef353ffac0f",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Sub Level"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -657,14 +673,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:3c99b08e5737ae31",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Sub Pan"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -674,14 +694,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:3ff6f6836ece1ef0",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Sub Octave"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1181,16 +1205,20 @@
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
-      "resolution_reason": "Phase D execution_class='MATRIX_ROUTE' (target-less path, semantic evidence primary)",
+      "resolution_reason": "Phase D execution_class='MATRIX_ROUTE' (target-less path, semantic evidence primary); V4 MATRIX_ROUTE reconciliation: HOST_PARAMETER binding derived (Mod 1 Out)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "MATRIX_ROUTE",
-        "mutation_type": "COMPOUND",
+        "capability_id": "HOST_PARAMETER:67031f6d900603a5",
+        "execution_family": "HOST_PARAMETER",
+        "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Mod 1 Out"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "MATRIX_ROUTE reconciliation pass (serum2/reconciliation/matrix_route_reconciliation.py): semantic definition ('scale the final modulation output, per-row final-output scale slider') matches the live VST3 host-parameter list checked this run ('Mod 1 Out', one of 64 Mod-slot Amount/Out pairs) exactly. HOST_PARAMETER mechanism (not compiler_create_modulation_route). Bound to slot 1 specifically (Mod 1 Out), matching the existing precedent of every other HOST_PARAMETER binding in this registry (e.g. Env 1 Attack) representing a concrete literal parameter name, not an abstracted per-slot form.",
+        "binding_version": "1"
       }
     },
     {
@@ -1324,14 +1352,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:96e63552722902a1",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Sub Enable"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1366,14 +1398,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:dbc99e7dfcae4fa3",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Sub Osc>BUS1"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1383,14 +1419,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:049301f28e9b9431",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Sub Osc>BUS2"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1424,14 +1464,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:e18b06c1384cd314",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "A Enable"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1466,14 +1510,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:9c1f0efaa90acf05",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "A>BUS1"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1483,14 +1531,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:2591f0be85cea98f",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "A>BUS2"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1500,14 +1552,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:520bb9897c5a693f",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "A Pan"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1517,14 +1573,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:5ae40573b1da746d",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "A Level"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1542,14 +1602,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:4459c31a7f965cff",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "B Enable"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1584,14 +1648,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:81c4ee8e633fb9f6",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "B>BUS1"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1601,14 +1669,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:4d1b664deea3b97e",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "B>BUS2"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1618,14 +1690,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:9b83c17ac12da2f5",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "B Pan"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1635,14 +1711,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:8f93ddffe2973eb4",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "B Level"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1660,14 +1740,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:2c6141fb751619a5",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "C Enable"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1702,14 +1786,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:a5219862e7f429f4",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "C>BUS1"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1719,14 +1807,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:4165365c9e2f612f",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "C>BUS2"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1736,14 +1828,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:4a44df23b7de8eb5",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "C Pan"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1753,14 +1849,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:9c59095762878e1c",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "C Level"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1778,14 +1878,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:7a3cbb7aef0247d0",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Noise Enable"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1820,14 +1924,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:12f33969abcd6c65",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Noise>BUS1"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1837,14 +1945,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:2cbf8837bdcc6b28",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Noise>BUS2"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1878,14 +1990,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:f04594ffa400b9c1",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 On"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1912,14 +2028,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:de07c5443652ea81",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1>BUS1"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1929,14 +2049,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:c0125260bdbe68f4",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1>BUS2"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1954,14 +2078,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:c38ffb85c7077bd1",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Wet"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1971,14 +2099,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:17006f958e086789",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Level"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -1996,14 +2128,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:abbea5eb84e6dd2e",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 On"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -2030,14 +2166,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:99e3a38a0d78b6e0",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2>BUS1"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -2047,14 +2187,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:21616285f28684d0",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2>BUS2"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -2072,14 +2216,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:5832e6ad5c426848",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Wet"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -2089,14 +2237,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:031fc411e9f591f5",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Level"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -2122,14 +2274,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:1f71fc6a127ceb89",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Bus 1 Vol"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -2155,14 +2311,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:c45ecf66b166e9f6",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Bus 2 Vol"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -2180,14 +2340,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:999d1b1aae21ae7c",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Main Vol"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -4462,14 +4626,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:c7d31bd85266e915",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Transpose"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -4479,14 +4647,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:16396b0bb207507a",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Key"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -4496,14 +4668,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:3525fca8913326fa",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Scale"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -4513,14 +4689,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:bef942dacc2ddc1a",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Swing"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -4869,14 +5049,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:2be411871c4b0349",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Porta Time"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -4910,14 +5094,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:64fbeeec62a76979",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Mono Toggle"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -5913,14 +6101,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:96729557b23e980a",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Freq"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -5930,14 +6122,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:eb1d7e19bf7888ce",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Res"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -5947,14 +6143,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:176cad526058203c",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Drive"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -6304,14 +6504,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='HOST_PARAMETER' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:d757e747534a7bfd",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 1 Type"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -6377,14 +6581,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:b08b2ab47889c0c2",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Freq"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -6394,14 +6602,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:d5c4ad851f94f454",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Res"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -6411,14 +6623,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:0ae46fa971197d28",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Drive"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -6768,14 +6984,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:ab6562cf1d242483",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Filter 2 Type"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -6883,14 +7103,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:4e61811ee4394e5a",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 1 Decay"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -6900,14 +7124,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:4821fb33cc801e4d",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 1 Sustain"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -6979,14 +7207,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:53eb3ace5ab1b644",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 2 Attack"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7017,14 +7249,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:1c194482bcd1e054",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 2 Decay"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7034,14 +7270,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:f34b633c23ff13fb",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 2 Sustain"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7051,14 +7291,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:6b037fd688aa425b",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 2 Release"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7109,14 +7353,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:113daf70ec35e3df",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 3 Attack"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7147,14 +7395,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:a6d3bab3573c8dd7",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 3 Decay"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7164,14 +7416,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:e98562eca692974f",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 3 Sustain"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7181,14 +7437,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:772c7556f0a724bb",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 3 Release"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7239,14 +7499,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:32f69bd6af53e635",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 4 Attack"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7277,14 +7541,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:4ed736626f9d4301",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 4 Decay"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7294,14 +7562,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:e39c36a282e8fa7a",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 4 Sustain"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7311,14 +7583,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:67e1a51b9ab32816",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "Env 4 Release"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7386,14 +7662,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:6cf29e389fd3d0fb",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 1 Rate"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7534,14 +7814,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:e69f6e7f9e63e6b8",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 1 Phase"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7644,14 +7928,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:15ce74cfd2743e1b",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 2 Rate"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7792,14 +8080,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:6bd35a292e24de9c",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 2 Phase"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -7902,14 +8194,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:399609713aa78e5c",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 3 Rate"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -8050,14 +8346,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:9d6470429eaef9ea",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 3 Phase"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -8160,14 +8460,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:a8b79f92e335edba",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 4 Rate"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -8308,14 +8612,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:dd63f0dd9afebe29",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 4 Phase"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -8418,14 +8726,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:27feef3c9c58dc6b",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 5 Rate"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -8566,14 +8878,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:0bfb162e2cd34942",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 5 Phase"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -8676,14 +8992,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:e7e0b8d797b59d80",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 6 Rate"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -8824,14 +9144,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:606f34235b7d3035",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "LFO 6 Phase"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -8917,14 +9241,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:937bb0afc5093d00",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "A Octave"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -9452,14 +9780,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:86385e378f53fb5b",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "A Warp"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -9658,14 +9990,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:fca8b67d4480b075",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "B Octave"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -10193,14 +10529,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:bad797bc1d4d7930",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "B Warp"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -10399,14 +10739,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:6a41753c0466114e",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "C Octave"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {
@@ -10934,14 +11278,18 @@
       "resolution_provenance": "target_vocabulary:SERUM2_TARGET_NORMALIZED_V4.json; join=mechanical_normalized_string_match",
       "resolution_reason": "parameter_kind='VST3_HOST_FIELD' target_source='SYNTH_PARAMETER' (target-linked path, target evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "HOST_PARAMETER:d94913696ec0dcce",
         "execution_family": "HOST_PARAMETER",
         "mutation_type": "SCALAR",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "HOST_PARAMETER",
+          "parameter_name": "C Warp"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "V4 HOST_PARAMETER reconciliation pass (serum2/reconciliation/host_parameter_v4_match.py): exact match against the live VST3 parameter list this run (module-prefix substitution proven by existing bound rows, e.g. Env N / LFO N / A-B-C for Osc1-3 / Filter N; a handful of direct per-row overrides individually confirmed against the live list where the label used an abbreviation or extra word the real parameter name omits, e.g. \"Filter 1 Res\" not \"Resonance\", \"Sub Level\" not \"SUB OSC Level\").",
+        "binding_version": "1"
       }
     },
     {

@@ -1,0 +1,755 @@
+{
+  "total": 106,
+  "counts": {
+    "UNSUPPORTED_NO_EVIDENCE": 50,
+    "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM": 4,
+    "PROVEN_NOT_USER_CONTROL": 52
+  },
+  "rows": [
+    {
+      "semantic_id": "MACRO.SYS.ASSIGN_MATRIX_SOURCE",
+      "label": "Select a Macro as the Source of a Matrix row via dropdown/list",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "The general mechanism (compound_create_modulation_route's source= parameter) exists, but 'Macro 1'..'Macro 8' are not keys in a3_modulation_route._SOURCES -- selecting a macro as a route source specifically has no source_type_id evidence.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_SOURCE",
+      "label": "Auxiliary Source field: secondary source (can be a macro) that multiplicatively scales a route's effective amount",
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "Registered COMPOUND compiler 'mod_set_aux_source' (compiler_set_modulation_aux_source) writes ModSlot{N}.auxSource -- real, wired mechanism, not compiler_create_modulation_route. Requires an existing ModSlot (route) as a prerequisite; deferred, see caveat below.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_INVERT",
+      "label": "Aux source invert toggle",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='toggle': no registered compiler for aux-invert (checked compound_operations.py's full compiler list) and no matching live host parameter ('invert'/'nvert' not found).",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_CURVE",
+      "label": "Aux source remap curve editor",
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "Registered COMPOUND compiler 'mod_set_curve' (compiler_set_modulation_curve) writes ModSlot{N}.curve -- real, wired mechanism, not compiler_create_modulation_route. Requires an existing ModSlot (route) as a prerequisite; deferred, see caveat below.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MACRO.SYS.BIPOLAR_UNIPOLAR",
+      "label": "Bipolar/Unipolar toggle for a route (applies when source is a macro, among others)",
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "Registered COMPOUND compiler 'mod_set_bipolar' (compiler_set_modulation_bipolar) writes ModSlot{N}.bipolar -- real, wired mechanism, not compiler_create_modulation_route. Requires an existing ModSlot (route) as a prerequisite; deferred, see caveat below.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.01",
+      "label": "LFO Bus 1",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.02",
+      "label": "LFO Bus 2",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.03",
+      "label": "LFO Bus 3",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.04",
+      "label": "LFO Bus 4",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.05",
+      "label": "LFO Bus 5",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.06",
+      "label": "LFO Bus 6",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.07",
+      "label": "LFO Bus 7",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.08",
+      "label": "LFO Bus 8",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.09",
+      "label": "LFO Bus 9",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.10",
+      "label": "LFO Bus 10",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.11",
+      "label": "LFO Bus 11",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.12",
+      "label": "LFO Bus 12",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.13",
+      "label": "LFO Bus 13",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.14",
+      "label": "LFO Bus 14",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.15",
+      "label": "LFO Bus 15",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.16",
+      "label": "LFO Bus 16",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.OSC_A",
+      "label": "OSC A",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='source_target', but 'MATRIX.SOURCE.OSC_A' has no matching key in a3_modulation_route._SOURCES (['Env1', 'Env2', 'Env3', 'Env4', 'LFO1', 'LFO10', 'LFO2', 'LFO3', 'LFO4', 'LFO5', 'LFO6', 'LFO7', 'LFO8', 'LFO9', 'ModWheel', 'Note', 'Velocity']) -- real user-facing concept, no authoritative source_type_id evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.OSC_B",
+      "label": "OSC B",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='source_target', but 'MATRIX.SOURCE.OSC_B' has no matching key in a3_modulation_route._SOURCES (['Env1', 'Env2', 'Env3', 'Env4', 'LFO1', 'LFO10', 'LFO2', 'LFO3', 'LFO4', 'LFO5', 'LFO6', 'LFO7', 'LFO8', 'LFO9', 'ModWheel', 'Note', 'Velocity']) -- real user-facing concept, no authoritative source_type_id evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.OSC_C",
+      "label": "OSC C",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='source_target', but 'MATRIX.SOURCE.OSC_C' has no matching key in a3_modulation_route._SOURCES (['Env1', 'Env2', 'Env3', 'Env4', 'LFO1', 'LFO10', 'LFO2', 'LFO3', 'LFO4', 'LFO5', 'LFO6', 'LFO7', 'LFO8', 'LFO9', 'ModWheel', 'Note', 'Velocity']) -- real user-facing concept, no authoritative source_type_id evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.NOISE_OSC",
+      "label": "Noise OSC",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='source_target', but 'MATRIX.SOURCE.NOISE_OSC' has no matching key in a3_modulation_route._SOURCES (['Env1', 'Env2', 'Env3', 'Env4', 'LFO1', 'LFO10', 'LFO2', 'LFO3', 'LFO4', 'LFO5', 'LFO6', 'LFO7', 'LFO8', 'LFO9', 'ModWheel', 'Note', 'Velocity']) -- real user-facing concept, no authoritative source_type_id evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.SUB_OSC",
+      "label": "SUB OSC",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='source_target', but 'MATRIX.SOURCE.SUB_OSC' has no matching key in a3_modulation_route._SOURCES (['Env1', 'Env2', 'Env3', 'Env4', 'LFO1', 'LFO10', 'LFO2', 'LFO3', 'LFO4', 'LFO5', 'LFO6', 'LFO7', 'LFO8', 'LFO9', 'ModWheel', 'Note', 'Velocity']) -- real user-facing concept, no authoritative source_type_id evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.FILTER_1",
+      "label": "Filter 1",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='source_target', but 'MATRIX.SOURCE.FILTER_1' has no matching key in a3_modulation_route._SOURCES (['Env1', 'Env2', 'Env3', 'Env4', 'LFO1', 'LFO10', 'LFO2', 'LFO3', 'LFO4', 'LFO5', 'LFO6', 'LFO7', 'LFO8', 'LFO9', 'ModWheel', 'Note', 'Velocity']) -- real user-facing concept, no authoritative source_type_id evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.FILTER_2",
+      "label": "Filter 2",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='source_target', but 'MATRIX.SOURCE.FILTER_2' has no matching key in a3_modulation_route._SOURCES (['Env1', 'Env2', 'Env3', 'Env4', 'LFO1', 'LFO10', 'LFO2', 'LFO3', 'LFO4', 'LFO5', 'LFO6', 'LFO7', 'LFO8', 'LFO9', 'ModWheel', 'Note', 'Velocity']) -- real user-facing concept, no authoritative source_type_id evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.DESTINATION.LFO_N_CONDITIONAL",
+      "label": "LFO N (conditional destination family)",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='destination_target_conditional': describes the conditional param-choice submenu shown once LFO is picked as destination module, not itself one settable field.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SYS.DUPLICATE_ROUTE_POLICY",
+      "label": "Duplicate route policy",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_policy': describes internal duplicate-route ALLOW rules, not a settable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.OUT",
+      "label": "OUTPUT -- scale the final modulation output (per-row final-output scale slider)",
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='slider', label 'scale the final modulation output (per-row final-output scale slider)' -- matches the live VST3 host-parameter list's 'Mod N Out' (checked this run: 64 Mod-slot Amount/Out pairs present, e.g. 'Mod 1 Out'..'Mod 64 Out'). HOST_PARAMETER mechanism, not compiler_create_modulation_route.",
+      "candidate_binding": {
+        "binding_type": "HOST_PARAMETER",
+        "parameter_name": "Mod 1 Out"
+      }
+    },
+    {
+      "semantic_id": "MATRIX.OUT_INDICATOR",
+      "label": "OUT -- small non-interactive indicator between DESTINATION and AUX SOURCE columns",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "Own definition: 'small non-interactive indicator' -- proven non-interactive by definition.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.MOD",
+      "label": "MOD -- hypothesized separate modulation-mode control (does not exist as a discrete Matrix column)",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "Own definition: 'hypothesized separate...control (does not exist as a discrete Matrix column)' -- proven not to exist as a real column by its own frozen definition.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SYS.MAX_ROUTES",
+      "label": "Maximum simultaneous Matrix modulation routes (slots) per patch",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='system_limit': a fixed capacity constant (0-64 slots), not a mutable control.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SYS.MENU",
+      "label": "Matrix panel dropdown menu (top-right expand arrow, distinct from Serum's global hamburger MENU)",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='menu': a UI menu container of sub-actions (Sort by Source, Lock Matrix, etc.), not itself a single mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "ENV1.SOURCE",
+      "label": "drag-handle circle icon next to envelope tab label",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "Own definition: 'drag-handle circle icon' -- a drag-gesture affordance for initiating a route, not itself a discrete value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "ENV2.SOURCE",
+      "label": "drag-handle circle icon next to envelope tab label",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "Own definition: 'drag-handle circle icon' -- a drag-gesture affordance for initiating a route, not itself a discrete value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "ENV3.SOURCE",
+      "label": "drag-handle circle icon next to envelope tab label",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "Own definition: 'drag-handle circle icon' -- a drag-gesture affordance for initiating a route, not itself a discrete value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "ENV4.SOURCE",
+      "label": "drag-handle circle icon next to envelope tab label",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "Own definition: 'drag-handle circle icon' -- a drag-gesture affordance for initiating a route, not itself a discrete value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "LFO1.SOURCE",
+      "label": "Source",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='continuous'/value_domain='SCALAR_UNBOUNDED' with no options and no matching field in any registered compiler or a3_modulation_route table -- no evidence for what this numeric value represents mechanically.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "LFO2.SOURCE",
+      "label": "Source",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='continuous'/value_domain='SCALAR_UNBOUNDED' with no options and no matching field in any registered compiler or a3_modulation_route table -- no evidence for what this numeric value represents mechanically.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "LFO3.SOURCE",
+      "label": "Source",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='continuous'/value_domain='SCALAR_UNBOUNDED' with no options and no matching field in any registered compiler or a3_modulation_route table -- no evidence for what this numeric value represents mechanically.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "LFO4.SOURCE",
+      "label": "Source",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='continuous'/value_domain='SCALAR_UNBOUNDED' with no options and no matching field in any registered compiler or a3_modulation_route table -- no evidence for what this numeric value represents mechanically.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "LFO5.SOURCE",
+      "label": "Source",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='continuous'/value_domain='SCALAR_UNBOUNDED' with no options and no matching field in any registered compiler or a3_modulation_route table -- no evidence for what this numeric value represents mechanically.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "LFO6.SOURCE",
+      "label": "Source",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='continuous'/value_domain='SCALAR_UNBOUNDED' with no options and no matching field in any registered compiler or a3_modulation_route table -- no evidence for what this numeric value represents mechanically.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.ENV_1",
+      "label": "Env 1",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['Env1'] (source_type_id=2, Inferred: type 2 produces ~519 centroid std) -- exercising this selection is what compound_create_modulation_route's source='Env1' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.ENV_2",
+      "label": "Env 2",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['Env2'] (source_type_id=3, Inferred: type 3) -- exercising this selection is what compound_create_modulation_route's source='Env2' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.ENV_3",
+      "label": "Env 3",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['Env3'] (source_type_id=4, Inferred: type 4) -- exercising this selection is what compound_create_modulation_route's source='Env3' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.ENV_4",
+      "label": "Env 4",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['Env4'] (source_type_id=5, Inferred: type 5) -- exercising this selection is what compound_create_modulation_route's source='Env4' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_1",
+      "label": "LFO 1",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO1'] (source_type_id=6, Proven: 1996x centroid std vs baseline) -- exercising this selection is what compound_create_modulation_route's source='LFO1' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_2",
+      "label": "LFO 2",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO2'] (source_type_id=7, Proven: driven_by_LFO1) -- exercising this selection is what compound_create_modulation_route's source='LFO2' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_3",
+      "label": "LFO 3",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO3'] (source_type_id=8, Proven: driven_by_LFO2) -- exercising this selection is what compound_create_modulation_route's source='LFO3' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_4",
+      "label": "LFO 4",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO4'] (source_type_id=9, Proven: driven_by_LFO3) -- exercising this selection is what compound_create_modulation_route's source='LFO4' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_5",
+      "label": "LFO 5",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO5'] (source_type_id=10, Proven: driven_by_LFO4) -- exercising this selection is what compound_create_modulation_route's source='LFO5' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_6",
+      "label": "LFO 6",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO6'] (source_type_id=11, Pattern extrapolation; NOT behavior-verified) -- exercising this selection is what compound_create_modulation_route's source='LFO6' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_7",
+      "label": "LFO 7",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO7'] (source_type_id=12, Pattern extrapolation) -- exercising this selection is what compound_create_modulation_route's source='LFO7' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_8",
+      "label": "LFO 8",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO8'] (source_type_id=13, Pattern extrapolation) -- exercising this selection is what compound_create_modulation_route's source='LFO8' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_9",
+      "label": "LFO 9",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO9'] (source_type_id=14, Pattern extrapolation) -- exercising this selection is what compound_create_modulation_route's source='LFO9' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.LFO_10",
+      "label": "LFO 10",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['LFO10'] (source_type_id=15, Pattern extrapolation) -- exercising this selection is what compound_create_modulation_route's source='LFO10' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.ACTIVE_VOICES",
+      "label": "Active Voices",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.NOTE#",
+      "label": "Note#",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['Note'] (source_type_id=17, Type 17, constant during a note) -- exercising this selection is what compound_create_modulation_route's source='Note' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.NOTEON_ALT",
+      "label": "NoteOn Alt.",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.NOTEON_ALT2",
+      "label": "NoteOn Alt.2",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.NOTEON_RAND_DISCRETE",
+      "label": "NoteOn Rand (Discrete)",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.NOTEON_RAND1",
+      "label": "NoteOn Rand1",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.NOTEON_RAND2",
+      "label": "NoteOn Rand2",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.RELEASE_VELO",
+      "label": "Release Velo",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.VELO",
+      "label": "Velo",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['Velocity'] (source_type_id=16, Type 16, no modulation at constant velocity) -- exercising this selection is what compound_create_modulation_route's source='Velocity' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.VOICE_INDEX",
+      "label": "Voice Index",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.VOICE_MOD_1",
+      "label": "Voice Mod 1",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.VOICE_MOD_2",
+      "label": "Voice Mod 2",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MACRO_1",
+      "label": "Macro 1",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MACRO_2",
+      "label": "Macro 2",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MACRO_3",
+      "label": "Macro 3",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MACRO_4",
+      "label": "Macro 4",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MACRO_5",
+      "label": "Macro 5",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MACRO_6",
+      "label": "Macro 6",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MACRO_7",
+      "label": "Macro 7",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MACRO_8",
+      "label": "Macro 8",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.EXPR_X_PAN",
+      "label": "Expr X (Pan)",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.EXPR_Y_TIMBRE",
+      "label": "Expr Y (Timbre)",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.EXPR_Z_PRESS",
+      "label": "Expr Z (Press.)",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.MOD_WHEEL",
+      "label": "Mod Wheel",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value. Backed by a3_modulation_route._SOURCES['ModWheel'] (source_type_id=18, Type 18, zero by default) -- exercising this selection is what compound_create_modulation_route's source='ModWheel' parameter already does; the row itself remains a structural fact, not a scalar/boolean target.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.AFTERTOUCH",
+      "label": "Aftertouch",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.POLY_AFTERTCH",
+      "label": "Poly Aftertch",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.PITCH_BEND",
+      "label": "Pitch Bend",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.FIXED",
+      "label": "Fixed",
+      "bucket": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_source_selection'/value_domain='STRUCTURAL_SELECTION': the frozen definition itself classifies this as an availability declaration (this item exists as a selectable option), not an independently mutable value.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.NOTE",
+      "label": "Retrigger enable: Note",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.OSC_A",
+      "label": "Retrigger enable: OSC A",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.OSC_B",
+      "label": "Retrigger enable: OSC B",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.OSC_C",
+      "label": "Retrigger enable: OSC C",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.SUB",
+      "label": "Retrigger enable: Sub",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.NOISE",
+      "label": "Retrigger enable: Noise",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.ENV_2",
+      "label": "Retrigger enable: Env 2",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.ENV_3",
+      "label": "Retrigger enable: Env 3",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.ENV_4",
+      "label": "Retrigger enable: Env 4",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_1",
+      "label": "Retrigger enable: LFO 1",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_2",
+      "label": "Retrigger enable: LFO 2",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_3",
+      "label": "Retrigger enable: LFO 3",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_4",
+      "label": "Retrigger enable: LFO 4",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_5",
+      "label": "Retrigger enable: LFO 5",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_6",
+      "label": "Retrigger enable: LFO 6",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_7",
+      "label": "Retrigger enable: LFO 7",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_8",
+      "label": "Retrigger enable: LFO 8",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_9",
+      "label": "Retrigger enable: LFO 9",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    },
+    {
+      "semantic_id": "GLOBAL.RETRIGGERS.LFO_10",
+      "label": "Retrigger enable: LFO 10",
+      "bucket": "UNSUPPORTED_NO_EVIDENCE",
+      "evidence": "control_type='boolean': checked against the live VST3 host-parameter list this run -- no '<source> Retrig'-shaped parameter exists (only unrelated 'Arp Retrig Rate' found); no registered COMPOUND compiler for retrigger-enable either. Real user-facing concept, no mechanism evidence yet.",
+      "candidate_binding": null
+    }
+  ]
+}
