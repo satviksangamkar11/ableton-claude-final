@@ -40,6 +40,12 @@
       "bound_this_pass": 4,
       "corrected_unsupported_this_pass": 2,
       "skipped": 0
+    },
+    "v4_lfo_type_direction_population_pass": {
+      "scope": "LFO{1-6}.TYPE and LFO{1-6}.DIRECTION (12 of 30 LFO rows): bind with real DawDreamer round-trip evidence. DIVISION/PRESET/WAVEFORM_GRAPH (18 rows) left honestly unresolved with documented reasoning.",
+      "bound_this_pass": 12,
+      "noted_unsupported_this_pass": 18,
+      "skipped": 0
     }
   },
   "summary": {
@@ -7839,17 +7845,21 @@
       "semantic_id": "LFO1.TYPE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:a5dbb1ee97e37e75",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO0.plainParams.kParamType"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO0.plainParams.kParamType' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
@@ -7898,7 +7908,7 @@
       "semantic_id": "LFO1.DIVISION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -7907,7 +7917,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
         "binding_version": null
       }
     },
@@ -8043,24 +8053,28 @@
       "semantic_id": "LFO1.DIRECTION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:15879efe715cd3de",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO0.plainParams.kParamDirection"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO0.plainParams.kParamDirection' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "LFO1.PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8069,7 +8083,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
         "binding_version": null
       }
     },
@@ -8077,7 +8091,7 @@
       "semantic_id": "LFO1.WAVEFORM_GRAPH",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8086,7 +8100,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
         "binding_version": null
       }
     },
@@ -8119,17 +8133,21 @@
       "semantic_id": "LFO2.TYPE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:6d44da61f3739670",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO1.plainParams.kParamType"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO1.plainParams.kParamType' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
@@ -8178,7 +8196,7 @@
       "semantic_id": "LFO2.DIVISION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8187,7 +8205,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
         "binding_version": null
       }
     },
@@ -8323,24 +8341,28 @@
       "semantic_id": "LFO2.DIRECTION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:79843c97d3d1b013",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO1.plainParams.kParamDirection"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO1.plainParams.kParamDirection' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "LFO2.PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8349,7 +8371,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
         "binding_version": null
       }
     },
@@ -8357,7 +8379,7 @@
       "semantic_id": "LFO2.WAVEFORM_GRAPH",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8366,7 +8388,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
         "binding_version": null
       }
     },
@@ -8399,17 +8421,21 @@
       "semantic_id": "LFO3.TYPE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:ae30297dfdcefff5",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO2.plainParams.kParamType"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO2.plainParams.kParamType' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
@@ -8458,7 +8484,7 @@
       "semantic_id": "LFO3.DIVISION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8467,7 +8493,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
         "binding_version": null
       }
     },
@@ -8603,24 +8629,28 @@
       "semantic_id": "LFO3.DIRECTION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:78e811cd639d016d",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO2.plainParams.kParamDirection"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO2.plainParams.kParamDirection' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "LFO3.PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8629,7 +8659,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
         "binding_version": null
       }
     },
@@ -8637,7 +8667,7 @@
       "semantic_id": "LFO3.WAVEFORM_GRAPH",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8646,7 +8676,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
         "binding_version": null
       }
     },
@@ -8679,17 +8709,21 @@
       "semantic_id": "LFO4.TYPE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:91d2f4e52bd9a500",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO3.plainParams.kParamType"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO3.plainParams.kParamType' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
@@ -8738,7 +8772,7 @@
       "semantic_id": "LFO4.DIVISION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8747,7 +8781,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
         "binding_version": null
       }
     },
@@ -8883,24 +8917,28 @@
       "semantic_id": "LFO4.DIRECTION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:dfb3315101b74edd",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO3.plainParams.kParamDirection"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO3.plainParams.kParamDirection' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "LFO4.PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8909,7 +8947,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
         "binding_version": null
       }
     },
@@ -8917,7 +8955,7 @@
       "semantic_id": "LFO4.WAVEFORM_GRAPH",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -8926,7 +8964,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
         "binding_version": null
       }
     },
@@ -8959,17 +8997,21 @@
       "semantic_id": "LFO5.TYPE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:9e4367c57c74bf42",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO4.plainParams.kParamType"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO4.plainParams.kParamType' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
@@ -9018,7 +9060,7 @@
       "semantic_id": "LFO5.DIVISION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -9027,7 +9069,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
         "binding_version": null
       }
     },
@@ -9163,24 +9205,28 @@
       "semantic_id": "LFO5.DIRECTION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:c5da875640f37557",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO4.plainParams.kParamDirection"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO4.plainParams.kParamDirection' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "LFO5.PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -9189,7 +9235,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
         "binding_version": null
       }
     },
@@ -9197,7 +9243,7 @@
       "semantic_id": "LFO5.WAVEFORM_GRAPH",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -9206,7 +9252,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
         "binding_version": null
       }
     },
@@ -9239,17 +9285,21 @@
       "semantic_id": "LFO6.TYPE",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:31f45a3673697769",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO5.plainParams.kParamType"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO5.plainParams.kParamType' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
@@ -9298,7 +9348,7 @@
       "semantic_id": "LFO6.DIVISION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -9307,7 +9357,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass",
         "binding_version": null
       }
     },
@@ -9443,24 +9493,28 @@
       "semantic_id": "LFO6.DIRECTION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding derived NOT_YET_DERIVED->LIVE_VERIFIED (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:d52ae5ae78981a5f",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO5.plainParams.kParamDirection"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO V4 population: body_path='LFO5.plainParams.kParamDirection' confirmed present in real .SerumPreset evidence (745-file library scan). serum2/reconciliation/test_lfo_type_direction_real_roundtrip.py: mutated through execute_mutation_request_with_authority (BODY_STATE dispatch), loaded into a REAL Serum instance via DawDreamer, Serum's own save_state() re-read and decoded, exact value match confirmed for both an already-active LFO slot and a cold/unused slot -- the same DawDreamer live-Serum evidence standard used for every other BODY_STATE_FIELD binding in this registry (e.g. LFO.TEMPO_SYNC/TRIPLET/DOTTED).",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "LFO6.PRESET",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -9469,7 +9523,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding",
         "binding_version": null
       }
     },
@@ -9477,7 +9531,7 @@
       "semantic_id": "LFO6.WAVEFORM_GRAPH",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: binding attempt recorded, remains NOT_YET_DERIVED -- confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
@@ -9486,7 +9540,7 @@
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted",
         "binding_version": null
       }
     },

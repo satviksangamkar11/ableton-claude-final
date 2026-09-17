@@ -1,0 +1,37 @@
+# LFO TYPE/DIRECTION V4 Population Pass Report
+
+## Bound (real DawDreamer/Serum round-trip evidence)
+
+- `LFO1.TYPE` -> `LFO0.plainParams.kParamType` (capability_id=`BODY_STATE_FIELD:a5dbb1ee97e37e75`)
+- `LFO1.DIRECTION` -> `LFO0.plainParams.kParamDirection` (capability_id=`BODY_STATE_FIELD:15879efe715cd3de`)
+- `LFO2.TYPE` -> `LFO1.plainParams.kParamType` (capability_id=`BODY_STATE_FIELD:6d44da61f3739670`)
+- `LFO2.DIRECTION` -> `LFO1.plainParams.kParamDirection` (capability_id=`BODY_STATE_FIELD:79843c97d3d1b013`)
+- `LFO3.TYPE` -> `LFO2.plainParams.kParamType` (capability_id=`BODY_STATE_FIELD:ae30297dfdcefff5`)
+- `LFO3.DIRECTION` -> `LFO2.plainParams.kParamDirection` (capability_id=`BODY_STATE_FIELD:78e811cd639d016d`)
+- `LFO4.TYPE` -> `LFO3.plainParams.kParamType` (capability_id=`BODY_STATE_FIELD:91d2f4e52bd9a500`)
+- `LFO4.DIRECTION` -> `LFO3.plainParams.kParamDirection` (capability_id=`BODY_STATE_FIELD:dfb3315101b74edd`)
+- `LFO5.TYPE` -> `LFO4.plainParams.kParamType` (capability_id=`BODY_STATE_FIELD:9e4367c57c74bf42`)
+- `LFO5.DIRECTION` -> `LFO4.plainParams.kParamDirection` (capability_id=`BODY_STATE_FIELD:c5da875640f37557`)
+- `LFO6.TYPE` -> `LFO5.plainParams.kParamType` (capability_id=`BODY_STATE_FIELD:31f45a3673697769`)
+- `LFO6.DIRECTION` -> `LFO5.plainParams.kParamDirection` (capability_id=`BODY_STATE_FIELD:d52ae5ae78981a5f`)
+
+## Left unresolved, with documented evidence gap
+
+- `LFO1.DIVISION`: no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass
+- `LFO1.PRESET`: curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding
+- `LFO1.WAVEFORM_GRAPH`: confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted
+- `LFO2.DIVISION`: no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass
+- `LFO2.PRESET`: curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding
+- `LFO2.WAVEFORM_GRAPH`: confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted
+- `LFO3.DIVISION`: no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass
+- `LFO3.PRESET`: curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding
+- `LFO3.WAVEFORM_GRAPH`: confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted
+- `LFO4.DIVISION`: no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass
+- `LFO4.PRESET`: curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding
+- `LFO4.WAVEFORM_GRAPH`: confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted
+- `LFO5.DIVISION`: no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass
+- `LFO5.PRESET`: curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding
+- `LFO5.WAVEFORM_GRAPH`: confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted
+- `LFO6.DIVISION`: no real preset in the 745-file local library has a non-default kParamBeatSync, and a direct real-Serum write of kParamBeatSync=1.0 collapses to the presence-preserving default sentinel (same finding already documented on LFO.TEMPO_SYNC) -- no division field has ever been observed materializing; requires live UI toggle+observe, out of scope for this automated pass
+- `LFO6.PRESET`: curveDisplayName confirmed via real round-trip test to survive serum2.codec's OWN .SerumPreset file format round trip but NOT the DawDreamer live-Serum round trip (collapses to None even with zero mutation) -- binding it as ordinary BODY_STATE_FIELD would misrepresent its evidence tier against this registry's DawDreamer standard; needs an explicit architecture decision on file-format-only body fields before binding
+- `LFO6.WAVEFORM_GRAPH`: confirmed structural curveData (curveVals/numPoints/xVals/yVals) -- a complex nested object, not a scalar/enum field; deferred per explicit instruction, not attempted
