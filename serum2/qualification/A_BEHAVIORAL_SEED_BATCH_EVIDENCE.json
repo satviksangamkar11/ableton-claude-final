@@ -1,0 +1,798 @@
+{
+  "batch": "12-Control Behavioral Seed Set",
+  "timestamp": "2026-09-17T21:21:57.441375+00:00",
+  "filter_cutoff_pilot": "serum2/qualification/A_FILTER_CUTOFF_PILOT_EVIDENCE.json",
+  "targets_attempted": 13,
+  "chain_valid_count": 5,
+  "summary": [
+    {
+      "semantic_id": "Filter1.Resonance",
+      "experiment_id": "filter1_reso_pilot_001",
+      "chain_valid": false,
+      "status": "NO_OBSERVED_EFFECT",
+      "baseline_metric": -60.77821033973422,
+      "mutated_metric": -60.687607444338944,
+      "delta": 0.09060289539527844,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "none",
+      "exercise_qualification_valid": false,
+      "scope": "single_run_non_reusable",
+      "notes": "Low cutoff (0.15) makes resonance peak audible. High reso -> self-osc peak adds energy."
+    },
+    {
+      "semantic_id": "Filter2.Cutoff",
+      "experiment_id": "filter2_cutoff_pilot_001",
+      "chain_valid": false,
+      "status": "NO_OBSERVED_EFFECT",
+      "baseline_metric": 4378.134622380464,
+      "mutated_metric": 4378.134622380464,
+      "delta": 0.0,
+      "metric": "spectral_centroid_hz",
+      "unit": "Hz",
+      "observed_direction": "none",
+      "exercise_qualification_valid": false,
+      "scope": "single_run_non_reusable",
+      "notes": "Filter 2 must be active. Treatment=0.9 passes much more high-frequency content."
+    },
+    {
+      "semantic_id": "OSC1.Level",
+      "experiment_id": "osc1_level_pilot_001",
+      "chain_valid": true,
+      "status": "CAUSAL_VERIFIED",
+      "baseline_metric": -39.139778668735595,
+      "mutated_metric": -15.057379015617096,
+      "delta": 24.0823996531185,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "increase",
+      "exercise_qualification_valid": true,
+      "scope": "single_run_non_reusable",
+      "notes": "OSC A always active. 0.25->1.0 is a large amplitude change."
+    },
+    {
+      "semantic_id": "OSC1.Detune",
+      "experiment_id": "osc1_fine_pilot_001",
+      "chain_valid": false,
+      "status": "NO_OBSERVED_EFFECT",
+      "baseline_metric": 4378.134622380464,
+      "mutated_metric": 4378.134622380464,
+      "delta": 0.0,
+      "metric": "spectral_centroid_hz",
+      "unit": "Hz",
+      "observed_direction": "none",
+      "exercise_qualification_valid": false,
+      "scope": "single_run_non_reusable",
+      "notes": "A Fine (index 25). Treatment=1.0 shifts OSC A up 100 cents. All harmonics shift up."
+    },
+    {
+      "semantic_id": "OSC2.Detune",
+      "experiment_id": "osc2_fine_pilot_001",
+      "chain_valid": false,
+      "status": "NO_OBSERVED_EFFECT",
+      "baseline_metric": 4378.1345253080235,
+      "mutated_metric": 4378.1345253080235,
+      "delta": 0.0,
+      "metric": "spectral_centroid_hz",
+      "unit": "Hz",
+      "observed_direction": "none",
+      "exercise_qualification_valid": false,
+      "scope": "single_run_non_reusable",
+      "notes": "B Fine (index 80). OSC B must be enabled. Treatment=1.0 shifts up 100 cents."
+    },
+    {
+      "semantic_id": "Env1.Attack",
+      "experiment_id": "env1_attack_pilot_001",
+      "chain_valid": true,
+      "status": "CAUSAL_VERIFIED",
+      "baseline_metric": -20.054929131203785,
+      "mutated_metric": -22.265975891750372,
+      "delta": -2.211046760546587,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "decrease",
+      "exercise_qualification_valid": true,
+      "scope": "single_run_non_reusable",
+      "notes": "Env0 = Env1 in UI (0-indexed). Slow attack=0.9 reduces energy in 2s render window."
+    },
+    {
+      "semantic_id": "Env1.Release",
+      "experiment_id": "env1_release_pilot_001",
+      "chain_valid": false,
+      "status": "NO_OBSERVED_EFFECT",
+      "baseline_metric": -20.054929131203785,
+      "mutated_metric": -19.723855161930942,
+      "delta": 0.33107396927284327,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "none",
+      "exercise_qualification_valid": false,
+      "scope": "single_run_non_reusable",
+      "notes": "Long release makes sound persist 1.5s after note-off in 2s render."
+    },
+    {
+      "semantic_id": "LFO1.Rate",
+      "experiment_id": "lfo1_rate_pilot_001",
+      "chain_valid": false,
+      "status": "NO_OBSERVED_EFFECT",
+      "baseline_metric": -20.054929131203785,
+      "mutated_metric": -20.054929131203785,
+      "delta": 0.0,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "none",
+      "exercise_qualification_valid": false,
+      "scope": "single_run_non_reusable",
+      "notes": "Without a modulation target, LFO rate has no audible effect. Expected NO_OBSERVED_EFFECT \u2014 valid finding: needs modulation assignment context."
+    },
+    {
+      "semantic_id": "Filter1.Drive",
+      "experiment_id": "filter1_drive_pilot_001",
+      "chain_valid": false,
+      "status": "NO_OBSERVED_EFFECT",
+      "baseline_metric": -23.653763650437888,
+      "mutated_metric": -23.343661266191546,
+      "delta": 0.31010238424634196,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "none",
+      "exercise_qualification_valid": false,
+      "scope": "single_run_non_reusable",
+      "notes": "Filter drive adds saturation. Filter must be on. High drive adds energy/harmonics."
+    },
+    {
+      "semantic_id": "OSC2.Level",
+      "experiment_id": "osc2_level_pilot_001",
+      "chain_valid": true,
+      "status": "CAUSAL_VERIFIED",
+      "baseline_metric": -20.054929131203785,
+      "mutated_metric": -11.20819568410333,
+      "delta": 8.846733447100455,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "increase",
+      "exercise_qualification_valid": true,
+      "scope": "single_run_non_reusable",
+      "notes": "OSC B must be enabled. 0.0->1.0 level is a full amplitude change."
+    },
+    {
+      "semantic_id": "OSC3.Level",
+      "experiment_id": "osc3_level_pilot_001",
+      "chain_valid": true,
+      "status": "CAUSAL_VERIFIED",
+      "baseline_metric": -20.054929131203785,
+      "mutated_metric": -11.20819568410333,
+      "delta": 8.846733447100455,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "increase",
+      "exercise_qualification_valid": true,
+      "scope": "single_run_non_reusable",
+      "notes": "OSC C must be enabled (defaults OFF, same as OSC B). 0.0->1.0 level is a full amplitude change."
+    },
+    {
+      "semantic_id": "Env2.Attack",
+      "experiment_id": "env2_attack_pilot_001",
+      "chain_valid": false,
+      "status": "NO_OBSERVED_EFFECT",
+      "baseline_metric": -20.054929131203785,
+      "mutated_metric": -20.054929131203785,
+      "delta": 0.0,
+      "metric": "overall_rms_db",
+      "unit": "dB",
+      "observed_direction": "none",
+      "exercise_qualification_valid": false,
+      "scope": "single_run_non_reusable",
+      "notes": "Env1 = Env2 in UI (0-indexed), mirrors Env0/Env1.Attack. Slow attack=0.9 reduces energy in 2s render window."
+    },
+    {
+      "semantic_id": "FXEQ.Freq1",
+      "experiment_id": "fxeq_freq1_pilot_001",
+      "chain_valid": true,
+      "status": "CAUSAL_VERIFIED",
+      "baseline_metric": 4100.284241793023,
+      "mutated_metric": 11723.211228189322,
+      "delta": 7622.926986396299,
+      "metric": "spectral_centroid_hz",
+      "unit": "Hz",
+      "observed_direction": "increase",
+      "exercise_qualification_valid": true,
+      "scope": "single_run_non_reusable",
+      "notes": "Altar preset FXRack0 injected (FX[0]=FXEQ, Freq1 baseline=56.06 Hz). Treatment=8000 Hz. EQ shelving/peaking at very different frequency."
+    }
+  ],
+  "full_results": [
+    {
+      "semantic_id": "Filter1.Resonance",
+      "exercise_qualification": {
+        "target_semantic_id": "Filter1.Resonance",
+        "target_cbor_path": "VoiceFilter0.plainParams.kParamReso",
+        "frozen_context": {
+          "Filter 1 On": 1.0,
+          "Filter 1 Freq": 0.15
+        },
+        "mutation_value": 0.9,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -60.77821033973422,
+          "treatment": -60.687607444338944,
+          "delta": 0.09060289539527844,
+          "expected_direction": "increase",
+          "observed_direction": "none",
+          "threshold": null,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "filter1_reso_pilot_001",
+        "is_valid": false
+      },
+      "behavior_result_raw": {
+        "status": "NO_OBSERVED_EFFECT",
+        "reason": "No effect: baseline=-60.8 dB, mutated=-60.7 dB (|delta|<threshold)",
+        "baseline_metric": -60.77821033973422,
+        "mutated_metric": -60.687607444338944,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "increase",
+        "observed_direction": "none",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 0.09060289539527844,
+        "experiment_id": "filter1_reso_pilot_001",
+        "target_path": "VoiceFilter0.plainParams.kParamReso"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": false,
+        "exercise_qualification_valid": false
+      }
+    },
+    {
+      "semantic_id": "Filter2.Cutoff",
+      "exercise_qualification": {
+        "target_semantic_id": "Filter2.Cutoff",
+        "target_cbor_path": "VoiceFilter1.plainParams.kParamFreq",
+        "frozen_context": {
+          "Filter 2 On": 1.0
+        },
+        "mutation_value": 0.9,
+        "causal_measurement": {
+          "metric": "spectral_centroid_hz",
+          "baseline": 4378.134622380464,
+          "treatment": 4378.134622380464,
+          "delta": 0.0,
+          "expected_direction": "increase",
+          "observed_direction": "none",
+          "threshold": null,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "filter2_cutoff_pilot_001",
+        "is_valid": false
+      },
+      "behavior_result_raw": {
+        "status": "NO_OBSERVED_EFFECT",
+        "reason": "No effect: baseline=4378.1 Hz, mutated=4378.1 Hz (|delta|<threshold)",
+        "baseline_metric": 4378.134622380464,
+        "mutated_metric": 4378.134622380464,
+        "metric_name": "spectral_centroid_hz",
+        "expected_direction": "increase",
+        "observed_direction": "none",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 0.0,
+        "experiment_id": "filter2_cutoff_pilot_001",
+        "target_path": "VoiceFilter1.plainParams.kParamFreq"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": false,
+        "exercise_qualification_valid": false
+      }
+    },
+    {
+      "semantic_id": "OSC1.Level",
+      "exercise_qualification": {
+        "target_semantic_id": "OSC1.Level",
+        "target_cbor_path": "host_param:A Level",
+        "frozen_context": {
+          "_baseline_A Level": 0.25,
+          "_mutated_A Level": 1.0
+        },
+        "mutation_value": 1.0,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -39.139778668735595,
+          "treatment": -15.057379015617096,
+          "delta": 24.0823996531185,
+          "expected_direction": "increase",
+          "observed_direction": "increase",
+          "threshold": null,
+          "status": "EFFECT_OBSERVED"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "osc1_level_pilot_001",
+        "is_valid": true
+      },
+      "behavior_result_raw": {
+        "status": "CAUSAL_VERIFIED",
+        "reason": "Effect: baseline=-39.1 dB, mutated=-15.1 dB (delta=+24.1 dB, dir=increase)",
+        "baseline_metric": -39.139778668735595,
+        "mutated_metric": -15.057379015617096,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "increase",
+        "observed_direction": "increase",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 24.0823996531185,
+        "experiment_id": "osc1_level_pilot_001",
+        "target_path": "A Level"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": true,
+        "exercise_qualification_valid": true
+      }
+    },
+    {
+      "semantic_id": "OSC1.Detune",
+      "exercise_qualification": {
+        "target_semantic_id": "OSC1.Detune",
+        "target_cbor_path": "VoiceOsc0.plainParams.kParamFine",
+        "frozen_context": {},
+        "mutation_value": 1.0,
+        "causal_measurement": {
+          "metric": "spectral_centroid_hz",
+          "baseline": 4378.134622380464,
+          "treatment": 4378.134622380464,
+          "delta": 0.0,
+          "expected_direction": "increase",
+          "observed_direction": "none",
+          "threshold": null,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "osc1_fine_pilot_001",
+        "is_valid": false
+      },
+      "behavior_result_raw": {
+        "status": "NO_OBSERVED_EFFECT",
+        "reason": "No effect: baseline=4378.1 Hz, mutated=4378.1 Hz (|delta|<threshold)",
+        "baseline_metric": 4378.134622380464,
+        "mutated_metric": 4378.134622380464,
+        "metric_name": "spectral_centroid_hz",
+        "expected_direction": "increase",
+        "observed_direction": "none",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 0.0,
+        "experiment_id": "osc1_fine_pilot_001",
+        "target_path": "VoiceOsc0.plainParams.kParamFine"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": false,
+        "exercise_qualification_valid": false
+      }
+    },
+    {
+      "semantic_id": "OSC2.Detune",
+      "exercise_qualification": {
+        "target_semantic_id": "OSC2.Detune",
+        "target_cbor_path": "VoiceOsc1.plainParams.kParamFine",
+        "frozen_context": {
+          "B Enable": 1.0
+        },
+        "mutation_value": 1.0,
+        "causal_measurement": {
+          "metric": "spectral_centroid_hz",
+          "baseline": 4378.1345253080235,
+          "treatment": 4378.1345253080235,
+          "delta": 0.0,
+          "expected_direction": "increase",
+          "observed_direction": "none",
+          "threshold": null,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "osc2_fine_pilot_001",
+        "is_valid": false
+      },
+      "behavior_result_raw": {
+        "status": "NO_OBSERVED_EFFECT",
+        "reason": "No effect: baseline=4378.1 Hz, mutated=4378.1 Hz (|delta|<threshold)",
+        "baseline_metric": 4378.1345253080235,
+        "mutated_metric": 4378.1345253080235,
+        "metric_name": "spectral_centroid_hz",
+        "expected_direction": "increase",
+        "observed_direction": "none",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 0.0,
+        "experiment_id": "osc2_fine_pilot_001",
+        "target_path": "VoiceOsc1.plainParams.kParamFine"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": false,
+        "exercise_qualification_valid": false
+      }
+    },
+    {
+      "semantic_id": "Env1.Attack",
+      "exercise_qualification": {
+        "target_semantic_id": "Env1.Attack",
+        "target_cbor_path": "Env0.plainParams.kParamAttack",
+        "frozen_context": {},
+        "mutation_value": 0.9,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -22.265975891750372,
+          "delta": -2.211046760546587,
+          "expected_direction": "decrease",
+          "observed_direction": "decrease",
+          "threshold": null,
+          "status": "EFFECT_OBSERVED"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "env1_attack_pilot_001",
+        "is_valid": true
+      },
+      "behavior_result_raw": {
+        "status": "CAUSAL_VERIFIED",
+        "reason": "Effect: baseline=-20.1 dB, mutated=-22.3 dB (delta=-2.2 dB, dir=decrease)",
+        "baseline_metric": -20.054929131203785,
+        "mutated_metric": -22.265975891750372,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "decrease",
+        "observed_direction": "decrease",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": -2.211046760546587,
+        "experiment_id": "env1_attack_pilot_001",
+        "target_path": "Env0.plainParams.kParamAttack"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": true,
+        "exercise_qualification_valid": true
+      }
+    },
+    {
+      "semantic_id": "Env1.Release",
+      "exercise_qualification": {
+        "target_semantic_id": "Env1.Release",
+        "target_cbor_path": "Env0.plainParams.kParamRelease",
+        "frozen_context": {},
+        "mutation_value": 0.9,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -19.723855161930942,
+          "delta": 0.33107396927284327,
+          "expected_direction": "increase",
+          "observed_direction": "none",
+          "threshold": null,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "env1_release_pilot_001",
+        "is_valid": false
+      },
+      "behavior_result_raw": {
+        "status": "NO_OBSERVED_EFFECT",
+        "reason": "No effect: baseline=-20.1 dB, mutated=-19.7 dB (|delta|<threshold)",
+        "baseline_metric": -20.054929131203785,
+        "mutated_metric": -19.723855161930942,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "increase",
+        "observed_direction": "none",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 0.33107396927284327,
+        "experiment_id": "env1_release_pilot_001",
+        "target_path": "Env0.plainParams.kParamRelease"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": false,
+        "exercise_qualification_valid": false
+      }
+    },
+    {
+      "semantic_id": "LFO1.Rate",
+      "exercise_qualification": {
+        "target_semantic_id": "LFO1.Rate",
+        "target_cbor_path": "LFO0.plainParams.kParamRate",
+        "frozen_context": {},
+        "mutation_value": 0.9,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -20.054929131203785,
+          "delta": 0.0,
+          "expected_direction": "change",
+          "observed_direction": "none",
+          "threshold": null,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "lfo1_rate_pilot_001",
+        "is_valid": false
+      },
+      "behavior_result_raw": {
+        "status": "NO_OBSERVED_EFFECT",
+        "reason": "No effect: baseline=-20.1 dB, mutated=-20.1 dB (|delta|<threshold)",
+        "baseline_metric": -20.054929131203785,
+        "mutated_metric": -20.054929131203785,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "change",
+        "observed_direction": "none",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 0.0,
+        "experiment_id": "lfo1_rate_pilot_001",
+        "target_path": "LFO0.plainParams.kParamRate"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": false,
+        "exercise_qualification_valid": false
+      }
+    },
+    {
+      "semantic_id": "Filter1.Drive",
+      "exercise_qualification": {
+        "target_semantic_id": "Filter1.Drive",
+        "target_cbor_path": "VoiceFilter0.plainParams.kParamDrive",
+        "frozen_context": {
+          "Filter 1 On": 1.0
+        },
+        "mutation_value": 0.9,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -23.653763650437888,
+          "treatment": -23.343661266191546,
+          "delta": 0.31010238424634196,
+          "expected_direction": "increase",
+          "observed_direction": "none",
+          "threshold": null,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "filter1_drive_pilot_001",
+        "is_valid": false
+      },
+      "behavior_result_raw": {
+        "status": "NO_OBSERVED_EFFECT",
+        "reason": "No effect: baseline=-23.7 dB, mutated=-23.3 dB (|delta|<threshold)",
+        "baseline_metric": -23.653763650437888,
+        "mutated_metric": -23.343661266191546,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "increase",
+        "observed_direction": "none",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 0.31010238424634196,
+        "experiment_id": "filter1_drive_pilot_001",
+        "target_path": "VoiceFilter0.plainParams.kParamDrive"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": false,
+        "exercise_qualification_valid": false
+      }
+    },
+    {
+      "semantic_id": "OSC2.Level",
+      "exercise_qualification": {
+        "target_semantic_id": "OSC2.Level",
+        "target_cbor_path": "host_param:B Level",
+        "frozen_context": {
+          "B Enable": 1.0,
+          "_baseline_B Level": 0.0,
+          "_mutated_B Level": 1.0
+        },
+        "mutation_value": 1.0,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -11.20819568410333,
+          "delta": 8.846733447100455,
+          "expected_direction": "increase",
+          "observed_direction": "increase",
+          "threshold": null,
+          "status": "EFFECT_OBSERVED"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "osc2_level_pilot_001",
+        "is_valid": true
+      },
+      "behavior_result_raw": {
+        "status": "CAUSAL_VERIFIED",
+        "reason": "Effect: baseline=-20.1 dB, mutated=-11.2 dB (delta=+8.8 dB, dir=increase)",
+        "baseline_metric": -20.054929131203785,
+        "mutated_metric": -11.20819568410333,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "increase",
+        "observed_direction": "increase",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 8.846733447100455,
+        "experiment_id": "osc2_level_pilot_001",
+        "target_path": "B Level"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": true,
+        "exercise_qualification_valid": true
+      }
+    },
+    {
+      "semantic_id": "OSC3.Level",
+      "exercise_qualification": {
+        "target_semantic_id": "OSC3.Level",
+        "target_cbor_path": "host_param:C Level",
+        "frozen_context": {
+          "C Enable": 1.0,
+          "_baseline_C Level": 0.0,
+          "_mutated_C Level": 1.0
+        },
+        "mutation_value": 1.0,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -11.20819568410333,
+          "delta": 8.846733447100455,
+          "expected_direction": "increase",
+          "observed_direction": "increase",
+          "threshold": null,
+          "status": "EFFECT_OBSERVED"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "osc3_level_pilot_001",
+        "is_valid": true
+      },
+      "behavior_result_raw": {
+        "status": "CAUSAL_VERIFIED",
+        "reason": "Effect: baseline=-20.1 dB, mutated=-11.2 dB (delta=+8.8 dB, dir=increase)",
+        "baseline_metric": -20.054929131203785,
+        "mutated_metric": -11.20819568410333,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "increase",
+        "observed_direction": "increase",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 8.846733447100455,
+        "experiment_id": "osc3_level_pilot_001",
+        "target_path": "C Level"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": true,
+        "exercise_qualification_valid": true
+      }
+    },
+    {
+      "semantic_id": "Env2.Attack",
+      "exercise_qualification": {
+        "target_semantic_id": "Env2.Attack",
+        "target_cbor_path": "Env1.plainParams.kParamAttack",
+        "frozen_context": {},
+        "mutation_value": 0.9,
+        "causal_measurement": {
+          "metric": "overall_rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -20.054929131203785,
+          "delta": 0.0,
+          "expected_direction": "decrease",
+          "observed_direction": "none",
+          "threshold": null,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "env2_attack_pilot_001",
+        "is_valid": false
+      },
+      "behavior_result_raw": {
+        "status": "NO_OBSERVED_EFFECT",
+        "reason": "No effect: baseline=-20.1 dB, mutated=-20.1 dB (|delta|<threshold)",
+        "baseline_metric": -20.054929131203785,
+        "mutated_metric": -20.054929131203785,
+        "metric_name": "overall_rms_db",
+        "expected_direction": "decrease",
+        "observed_direction": "none",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 0.0,
+        "experiment_id": "env2_attack_pilot_001",
+        "target_path": "Env1.plainParams.kParamAttack"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": false,
+        "exercise_qualification_valid": false
+      }
+    },
+    {
+      "semantic_id": "FXEQ.Freq1",
+      "exercise_qualification": {
+        "target_semantic_id": "FXEQ.Freq1",
+        "target_cbor_path": "FXRack0.FX.0.FXEQ.plainParams.kParamFreq1",
+        "frozen_context": {},
+        "mutation_value": 8000.0,
+        "causal_measurement": {
+          "metric": "spectral_centroid_hz",
+          "baseline": 4100.284241793023,
+          "treatment": 11723.211228189322,
+          "delta": 7622.926986396299,
+          "expected_direction": "change",
+          "observed_direction": "increase",
+          "threshold": null,
+          "status": "EFFECT_OBSERVED"
+        },
+        "isolation_level": "single_field",
+        "scope": "single_run_non_reusable",
+        "experiment_id": "fxeq_freq1_pilot_001",
+        "is_valid": true
+      },
+      "behavior_result_raw": {
+        "status": "CAUSAL_VERIFIED",
+        "reason": "Effect: baseline=4100.3 Hz, mutated=11723.2 Hz (delta=+7622.9 Hz, dir=increase)",
+        "baseline_metric": 4100.284241793023,
+        "mutated_metric": 11723.211228189322,
+        "metric_name": "spectral_centroid_hz",
+        "expected_direction": "change",
+        "observed_direction": "increase",
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "delta": 7622.926986396299,
+        "experiment_id": "fxeq_freq1_pilot_001",
+        "target_path": "FXRack0.FX.0.FXEQ.plainParams.kParamFreq1"
+      },
+      "acceptance": {
+        "baseline_rendered": true,
+        "mutated_rendered": true,
+        "single_field_isolation": true,
+        "effect_observed": true,
+        "exercise_qualification_valid": true
+      }
+    }
+  ]
+}

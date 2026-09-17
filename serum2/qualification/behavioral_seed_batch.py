@@ -248,6 +248,38 @@ TARGETS: List[TargetDef] = [
         notes="OSC B must be enabled. 0.0->1.0 level is a full amplitude change.",
     ),
 
+    # 12. OSC3.Level (mirrors OSC2.Level pattern: "C Enable"/"C Level" mirror "B Enable"/"B Level")
+    TargetDef(
+        semantic_id="OSC3.Level",
+        experiment_id="osc3_level_pilot_001",
+        cbor_path=None,
+        host_param_name="C Level",
+        mutation_value=None,
+        baseline_host_val=0.0,
+        mutated_host_val=1.0,
+        exercise_context=[("C Enable", 1.0)],
+        metric="overall_rms_db",
+        expected_direction="increase",
+        effect_threshold=1.0,
+        notes="OSC C must be enabled (defaults OFF, same as OSC B). 0.0->1.0 level is a full amplitude change.",
+    ),
+
+    # 13. Env2.Attack (mirrors Env1.Attack pattern: Env1 body index = Env2 in UI, 0-indexed)
+    TargetDef(
+        semantic_id="Env2.Attack",
+        experiment_id="env2_attack_pilot_001",
+        cbor_path="Env1.plainParams.kParamAttack",
+        host_param_name=None,
+        mutation_value=0.9,
+        baseline_host_val=None,
+        mutated_host_val=None,
+        exercise_context=[],
+        metric="overall_rms_db",
+        expected_direction="decrease",
+        effect_threshold=0.5,
+        notes="Env1 = Env2 in UI (0-indexed), mirrors Env0/Env1.Attack. Slow attack=0.9 reduces energy in 2s render window.",
+    ),
+
     # 11. FXEQ.Freq1
     # Uses Altar preset FXRack0 (has FXEQ at FX[0], Freq1=56.06 Hz).
     # Treatment: push Freq1 to 8000 Hz. Large frequency shift changes spectral balance.
