@@ -62,6 +62,12 @@ def _spectral_harmonic_distortion(audio: np.ndarray) -> float:
     return spectral_harmonic_distortion_ratio(audio)
 
 
+def _tail_rms_db(audio: np.ndarray) -> float:
+    """Tail RMS (post-note-off energy)."""
+    from serum2.evidence.measure import tail_rms_db
+    return tail_rms_db(audio)
+
+
 def _compute_metric(audio: np.ndarray, metric_name: str) -> float:
     """Compute the named metric on audio."""
     if metric_name == "overall_rms_db":
@@ -72,6 +78,8 @@ def _compute_metric(audio: np.ndarray, metric_name: str) -> float:
         return _spectral_resonance_peak_db(audio)
     elif metric_name == "spectral_harmonic_distortion_ratio":
         return _spectral_harmonic_distortion(audio)
+    elif metric_name == "tail_rms_db":
+        return _tail_rms_db(audio)
     else:
         raise ValueError("Unknown metric: {}".format(metric_name))
 
