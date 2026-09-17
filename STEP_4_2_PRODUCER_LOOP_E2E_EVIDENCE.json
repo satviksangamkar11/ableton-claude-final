@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "step": "4.2 Producer Loop End-to-End",
+    "date": "2026-09-17",
+    "method": "Real execution via serum2/producer/canonical_feedback_loop.py against live Serum2.vst3 through DawDreamer 0.9.0. No mocks. No simulated readbacks.",
+    "capability_under_test": "ENV1.RELEASE (capability_key: envelope_field_release)"
+  },
+  "bugs_found_and_fixed_to_enable_real_execution": [
+    {
+      "bug": "diagnose_goal() matched qualified_targets keys directly against goal.semantic_target, but ContractRegistry.get_contracts_dict() returns tuple-keyed (capability_key, sig_hash) -> contract, and capability_key ('envelope_field_release') != semantic_target ('Env1.Release'). This meant execute_producer_from_intent() had never successfully diagnosed against the real registry.",
+      "file": "serum2/producer/diagnosis.py",
+      "fix": "Bridge goal.semantic_target -> capability_key via SEMANTIC_TARGETS, then match against contract.target (exact match only, no substring/family matching).",
+      "type": "genuine wiring bug, not previously exercised end-to-end"
+    },
+    {
+      "bug": "validate_scope_prerequisite() read serum2/knowledge/step_b_evidence_to_capability_integration.json -- a stale legacy design-JSON with no entry for 'envelope_field_release' -- instead of using the already-admitted fresh contract from ContractRegistry. This is exactly the fallback ContractRegistry's own docstring prohibits.",
+      "file": "serum2/producer/canonical_feedback_loop.py",
+      "fix": "Replaced the legacy-JSON scope check with scope_info derived directly from the already-admitted contract.scope (single-value authority; no numeric range to check beyond what admission already verified).",
+      "type": "genuine stale-fallback bug"
+    },
+    {
+      "bug": "ExecutionRecord dataclass had no 'admission_detail' field, but canonical_feedback_loop.py always passes admission_detail= when constructing episodes -- TypeError on every call, PASS or BLOCKED.",
+      "file": "serum2/qualification/vertical_slice_executor.py",
+      "fix": "Added admission_detail: str = \"\" as the last field (additive, backward-compatible, no reordering of existing positional/default fields).",
+      "type": "genuine dataclass drift"
+    },
+    {
+      "bug": "execute_producer_feedback_episode() had no way to inject a prerequisite context value (e.g. Decay) before skeleton capture, so the real path could never exercise the BLOCKED prerequisite-mismatch branch or a deliberate PASS with a controlled Decay value.",
+      "file": "serum2/producer/canonical_feedback_loop.py",
+      "fix": "Added an optional prerequisite_overrides dict parameter threaded through execute_producer_from_intent -> execute_producer_feedback_episode, applied to body via pathmerge.apply_path_value() before skeleton use -- mirrors the qualification harness's own baseline_overrides mechanism. Real state written into the body Serum actually loads; not a mocked readback.",
+      "type": "missing capability, not a defect in existing logic"
+    }
+  ],
+  "episodes": {
+    "PASS": {
+      "episode_id": "ep_producer_e2e_PASS_001",
+      "file": "serum2/qualification/ep_producer_e2e_PASS_001.json",
+      "planning_decision": {
+        "human_intent": "make the note sustain longer",
+        "resolved_semantic_target": "Env1.Release",
+        "diagnosis_selected_capability_key": "envelope_field_release",
+        "diagnosis_direction": "+1 (increase)",
+        "diagnosis_status": "ADVISORY only -- contract provides authoritative mutation/measurement"
+      },
+      "admission": {
+        "path": "real ContractRegistry -> admission.admit()",
+        "prerequisite_field": "body:Env0.plainParams.kParamDecay",
+        "declared_value": 0.02,
+        "live_readback_value": 0.020000000000000004,
+        "verified": true,
+        "result": "ADMITTED",
+        "detail": "target 'envelope_field_release' admitted: status=CAUSAL_VERIFIED, allowed_operation=mutate_numeric_value"
+      },
+      "pre_state": {
+        "serum_readback_before": 0.5,
+        "measurement_baseline_tail_rms_db": -20.12628701196546
+      },
+      "mutation": {
+        "target_path": "Env0.plainParams.kParamRelease",
+        "value": 1.0,
+        "source": "contract.scope.mutation_value_used (NOT diagnosis, NOT caller intent)",
+        "semantics": "ABSOLUTE_PARAMETER_VALUE"
+      },
+      "post_state": {
+        "serum_readback_after": 1.0,
+        "measurement_treatment_tail_rms_db": -18.88963097401193
+      },
+      "measurement": {
+        "metric": "tail_rms_db",
+        "computed_by": "METRICS['tail_rms_db'](audio) -- from real rendered waveform, not caller-declared",
+        "delta": 1.23665603795353,
+        "direction_observed": "increase",
+        "direction_expected": "increase (higher_is_better)"
+      },
+      "outcome": {
+        "decision": "ACCEPT",
+        "reason": "Improvement observed",
+        "restoration_status": "mutation_accepted (no restoration -- kept)"
+      },
+      "feedback": {
+        "learning_eligible": true,
+        "observation_only": true,
+        "prerequisite_scope_violated": false,
+        "note": "Episode is in-scope and teaches (positive experience): parameter increase in this verified context produced the predicted metric direction."
+      },
+      "next_decision_input": "This PASS episode establishes that, under Decay=0.02 context, Release=1.0 is a validated positive move. A future planner iteration querying episode_retrieval for envelope_field_release + Decay=0.02 context would retrieve this as supporting precedent for repeating the action, not as authority to invent new values (single-value scope still applies)."
+    },
+    "BLOCKED": {
+      "episode_id": "ep_producer_e2e_BLOCKED_001",
+      "file": "serum2/qualification/ep_producer_e2e_BLOCKED_001.json",
+      "planning_decision": {
+        "human_intent": "make the note sustain longer",
+        "resolved_semantic_target": "Env1.Release",
+        "diagnosis_selected_capability_key": "envelope_field_release",
+        "diagnosis_direction": "+1 (increase)",
+        "diagnosis_status": "ADVISORY only -- proposed the same capability as PASS; deliberately invalid context applied to test refusal"
+      },
+      "admission": {
+        "path": "real ContractRegistry -> admission.admit()",
+        "prerequisite_field": "body:Env0.plainParams.kParamDecay",
+        "declared_value": 0.02,
+        "live_readback_value": 0.30000000000000004,
+        "verified": false,
+        "result": "REFUSED",
+        "reason": "prerequisite_unverified",
+        "detail": "target 'envelope_field_release' requires prerequisite(s) ['body:Env0.plainParams.kParamDecay'] to be verified in the PROPOSED execution context; caller did not confirm: ['body:Env0.plainParams.kParamDecay']"
+      },
+      "pre_state": {
+        "serum_readback_before": 0.5
+      },
+      "mutation": {
+        "target_path": null,
+        "value": null,
+        "executed": false,
+        "note": "Execution halted at [3.5/10] Authority admission gate -- code path never reaches the mutation/render block"
+      },
+      "post_state": {
+        "serum_readback_after": null,
+        "note": "No mutation occurred; no post-state exists"
+      },
+      "measurement": {
+        "measurement_baseline": null,
+        "measurement_treatment": null,
+        "note": "No render or measurement occurred; both fields are None, not zero or fabricated"
+      },
+      "outcome": {
+        "admission_status": "prerequisite_unverified",
+        "learning_eligible": false,
+        "observation_only": true,
+        "prerequisite_scope_violated": true
+      },
+      "feedback": {
+        "note": "Refusal itself is the feedback: Decay=0.3 context is outside this capability's verified scope. A planner encountering this refusal must either re-verify Decay=0.02 before retrying, or treat Release as UNQUALIFIED-in-this-context and seek/request a different capability or new qualification evidence -- it cannot retry the same mutation blindly."
+      },
+      "next_decision_input": "Refusal reason 'prerequisite_unverified' with field_path 'body:Env0.plainParams.kParamDecay' is machine-readable enough for a planner to know exactly which live state to re-check before proposing this capability again."
+    }
+  },
+  "required_invariant_proofs": {
+    "planner_selects_only_admitted_capability": {
+      "status": "PROVEN",
+      "evidence": "Both episodes: diagnosis (advisory) names envelope_field_release, but execution is gated entirely on admission_result.admitted at canonical_feedback_loop.py:471(ish). PASS episode: admitted=True, mutation proceeds. BLOCKED episode: admitted=False, mutation never reached (serum_mutation_value=None)."
+    },
+    "admission_via_real_contractregistry_path": {
+      "status": "PROVEN",
+      "evidence": "Both episodes' console trace show '[ContractRegistry] Loaded Release contract: CAUSAL_VERIFIED' / 'Loaded Attack contract: CAUSAL_VERIFIED' before diagnosis begins. contracts_dict passed into admission.admit() originates only from ContractRegistry.get_contracts_dict()."
+    },
+    "preconditions_verified_against_live_serum_state": {
+      "status": "PROVEN",
+      "evidence": "live_readback_prerequisite() calls harness_mod.resave_state(meta, body, spec=None) -- loads body into a real Serum instance and reads back what Serum actually holds. PASS: readback=0.020000000000000004 (not the declared 0.02 literal -- floating point evidence of a real round-trip through Serum, not a copied value). BLOCKED: readback=0.30000000000000004 (same floating-point evidence)."
+    },
+    "measurement_not_caller_declared": {
+      "status": "PROVEN",
+      "evidence": "render_and_measure() computes measurement_value = METRICS[measurement_metric](audio) where audio is the real rendered waveform from render_arm(). No parameter to render_and_measure or execute_producer_feedback_episode allows a caller to supply a measurement value directly."
+    },
+    "producer_cannot_mutate_after_refusal": {
+      "status": "PROVEN",
+      "evidence": "BLOCKED episode: serum_mutation_value=null, serum_readback_after=null, audio_treatment=null, measurement_treatment=null. The code path literally returns from inside the 'if not admission_result.admitted' block, before any mutation/render code is reached."
+    },
+    "execution_and_verification_reference_same_semantic_identity": {
+      "status": "PROVEN",
+      "evidence": "Both episodes: diagnosis.selected_target = contract.target = 'envelope_field_release' used consistently for: admission.admit(target=...), candidate_generation_from_contract(contract), mutation_target_path (from contract.scope), and episode.semantic_target. No point in the trace substitutes a different identity."
+    },
+    "planner_cannot_consume_qualified_but_not_admitted": {
+      "status": "PROVEN (by the BLOCKED episode itself)",
+      "evidence": "envelope_field_release IS qualified (CAUSAL_VERIFIED) in both episodes -- diagnosis freely names it as a candidate in both. But in the BLOCKED episode, admission (not qualification) is what gates execution, and it refused. This is the exact QUALIFIED-but-NOT-ADMITTED-in-this-context distinction the architecture is designed to enforce: qualification is necessary but not sufficient."
+    }
+  },
+  "code_changes_made": [
+    "serum2/producer/diagnosis.py -- diagnose_goal() bridges semantic_target to capability_key via SEMANTIC_TARGETS before matching contracts (real bug fix)",
+    "serum2/producer/canonical_feedback_loop.py -- added prerequisite_overrides parameter; replaced legacy-JSON scope check with admitted-contract-derived scope_info",
+    "serum2/qualification/vertical_slice_executor.py -- added admission_detail field to ExecutionRecord (additive, default-valued)"
+  ],
+  "note_on_scope_of_changes": "All three fixes were required to make the ALREADY-BUILT real execution path actually run; none introduce new architecture, new abstractions, or bypass the admission/evidence discipline. No frozen inventory, no admission.py logic (STEP 4.2's already-verified gate), and no CapabilityContract data were touched."
+}

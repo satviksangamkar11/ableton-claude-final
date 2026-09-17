@@ -1,0 +1,83 @@
+{
+  "episode_id": "ep_producer_e2e_PASS_001",
+  "timestamp": "2026-09-17T07:41:38.765398Z",
+  "human_intent": "make the note sustain longer",
+  "candidate_operation": {
+    "target": "envelope_field_release",
+    "operation": null,
+    "source_hypothesis_id": null,
+    "source_knowledge_item_id": null,
+    "source_confidence": 0.9
+  },
+  "semantic_target": "envelope_field_release",
+  "admission_status": "ADMITTED",
+  "admission_reason": "ADMITTED",
+  "serum_readback_before": 0.5,
+  "serum_mutation_value": 1.0,
+  "serum_readback_after": 1.0,
+  "audio_baseline": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.9999773242630385,
+    "valid": true
+  },
+  "audio_treatment": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.9999773242630385,
+    "valid": true
+  },
+  "measurement_metric": "tail_rms_db",
+  "measurement_baseline": -20.12628701196546,
+  "measurement_treatment": -18.88963097401193,
+  "measurement_delta": 1.23665603795353,
+  "restoration_value": 0.5,
+  "restoration_readback": 1.0,
+  "notes": "Canonical producer feedback loop with real authority admission gate (4.Q.4-C integration)",
+  "learning_eligible": true,
+  "observation_only": true,
+  "prerequisite_scope_violated": false,
+  "admission_detail": "target 'envelope_field_release' admitted: status=CAUSAL_VERIFIED, allowed_operation=mutate_numeric_value",
+  "diagnosis": {
+    "goal": {
+      "intent": "make the note sustain longer",
+      "semantic_target": "Env1.Release",
+      "measurement_metric": "tail_rms_db",
+      "metric_direction": "higher"
+    },
+    "current_state": {
+      "serum_readback": 0.5,
+      "measurement_value": -20.12628701196546,
+      "audio_peak": 0.28331682085990906,
+      "audio_valid": true
+    },
+    "candidate_targets": [
+      "envelope_field_release"
+    ],
+    "selected_target": "envelope_field_release",
+    "mutation_direction": 1,
+    "mutation_magnitude": 0.05,
+    "reason": "Selected envelope_field_release to make the note sustain longer",
+    "confidence": 0.9
+  },
+  "decision": {
+    "accepted": true,
+    "reason": "Improvement observed",
+    "baseline_measurement": -20.12628701196546,
+    "treatment_measurement": -18.88963097401193,
+    "delta": 1.23665603795353,
+    "metric_direction": "higher"
+  },
+  "restoration_status": "mutation_accepted",
+  "scope_info": {
+    "limitation": [
+      "Tested only with Release parameter = 1.0 (absolute value); generalization to other Release values not established",
+      "Tested only with Decay parameter = 0.02 (baseline_overrides context); generalization to other Decay contexts not established",
+      "Single-field isolated mutation (N=1 witness); multi-field interactions not tested"
+    ],
+    "scope_min": null,
+    "scope_max": null,
+    "baseline": 0.5,
+    "source": "admitted_contract.scope (fresh ContractRegistry, not legacy JSON)",
+    "tested_context_only": true,
+    "mutation_value_used": 1.0
+  }
+}

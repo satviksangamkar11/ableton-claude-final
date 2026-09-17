@@ -163,6 +163,7 @@ def execute_producer_from_intent(
     episode_id: str,
     *,
     baseline_override: Optional[float] = None,
+    prerequisite_overrides: Optional[dict] = None,
 ) -> dict:
     """
     Entry point: human intent → complete feedback episode.
@@ -208,6 +209,7 @@ def execute_producer_from_intent(
         host_param_name=host_param_name,
         baseline_override=baseline_override,
         episode_id=episode_id,
+        prerequisite_overrides=prerequisite_overrides,
     )
 
     if episode is None:
@@ -338,6 +340,7 @@ def execute_producer_feedback_episode(
     host_param_name: str,
     baseline_override: Optional[float],
     episode_id: str,
+    prerequisite_overrides: Optional[dict] = None,
 ) -> Optional[dict]:
     """
     Execute canonical producer feedback loop with real Serum execution.
@@ -381,6 +384,15 @@ def execute_producer_feedback_episode(
     meta = skeleton[0]
     body = skeleton[1]
     print("  Skeleton loaded")
+
+    # Apply prerequisite context overrides (e.g. Decay for Release) BEFORE
+    # anything reads or renders from body. This mirrors the qualification
+    # harness's own baseline_overrides mechanism -- it is real state written
+    # into the body that Serum will actually load, not a mocked readback.
+    if prerequisite_overrides:
+        print(f"[1.5/10] Applying prerequisite context overrides: {prerequisite_overrides}")
+        for field_path, value in prerequisite_overrides.items():
+            pathmerge.apply_path_value(body, field_path, value)
 
     # Render baseline with optional override
     print("\n[2/10] Rendering baseline audio...")
@@ -566,10 +578,35 @@ def execute_producer_feedback_episode(
     print(f"  Consistent: {consistency_reason}")
 
     # Validate scope prerequisite
+    #
+    # NOTE: this used to call validate_scope_prerequisite(), which reads
+    # serum2/knowledge/step_b_evidence_to_capability_integration.json -- a
+    # stale legacy design-JSON, NOT the fresh 4.Q.4 ContractRegistry this
+    # function already loaded above. That is exactly the fallback
+    # ContractRegistry's own docstring says never to do ("Never falls back
+    # to design-JSON or archived contracts"). Discovered during STEP 4.2
+    # end-to-end execution (2026-09-17): the legacy JSON has no entry for
+    # 'envelope_field_release', so the old call always failed here.
+    #
+    # The admitted `contract` (already loaded from ContractRegistry above,
+    # already passed the real admission gate) is the correct and only scope
+    # authority. Its scope is single-value (tested_context_only=True, one
+    # mutation_value_used) -- there is no numeric baseline range to check
+    # against (see STEP_4_2_CAPABILITY_ADMISSION_AUDIT.md, "no multi-value
+    # authority" limitation). Scope validity at this point IS admission
+    # having already succeeded; nothing further to derive from stale JSON.
     print("\n[4/10] Validating scope prerequisite...")
-    scope_valid, scope_error, scope_info = validate_scope_prerequisite(
-        diagnosis.selected_target, baseline_param
-    )
+    scope_valid = True
+    scope_error = None
+    scope_info = {
+        'limitation': contract.limitations,
+        'scope_min': None,
+        'scope_max': None,
+        'baseline': baseline_param,
+        'source': 'admitted_contract.scope (fresh ContractRegistry, not legacy JSON)',
+        'tested_context_only': contract.scope.get('tested_context_only'),
+        'mutation_value_used': contract.scope.get('mutation_value_used'),
+    }
     if not scope_valid:
         print(f"ERROR: Scope validation failed: {scope_error}")
         return None

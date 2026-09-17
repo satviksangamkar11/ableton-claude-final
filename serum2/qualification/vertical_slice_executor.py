@@ -38,6 +38,7 @@ class ExecutionRecord:
     learning_eligible: bool = True  # True if suitable for learning loop, False if observation-only
     observation_only: bool = False  # True if recorded but not for evidence derivation
     prerequisite_scope_violated: bool = False  # True if baseline outside contract scope
+    admission_detail: str = ""  # full human-readable explanation from AdmissionResult.detail
 
     def to_dict(self) -> dict:
         return asdict(self)

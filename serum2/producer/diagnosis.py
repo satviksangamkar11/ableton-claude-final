@@ -110,12 +110,22 @@ def diagnose_goal(
         Diagnosis if possible, None if goal cannot be addressed
     """
     # Find candidates: targets that match the goal + are qualified + in-scope
-    candidates = []
+    #
+    # qualified_targets is keyed by (capability_key, condition_signature_hash)
+    # tuples (see ContractRegistry.get_contracts_dict()), not by semantic_target
+    # strings ("Env1.Release"). goal.semantic_target IS a semantic_target
+    # string. The two must be bridged through SEMANTIC_TARGETS.capability_key,
+    # matching against contract.target (which is a capability_key), never by
+    # substring/family matching (15.4.7 scope guard applies here too).
+    from serum2.compiler.targets import SEMANTIC_TARGETS
 
-    for target_name, contract in qualified_targets.items():
-        # Check if target matches goal
-        if target_name == goal.semantic_target:
-            candidates.append(target_name)
+    target_ref = SEMANTIC_TARGETS.get(goal.semantic_target)
+    expected_capability_key = target_ref.capability_key if target_ref else None
+
+    candidates = []
+    for _key, contract in qualified_targets.items():
+        if expected_capability_key is not None and contract.target == expected_capability_key:
+            candidates.append(contract.target)
 
     if not candidates:
         return None

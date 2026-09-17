@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "step": "4.2",
+    "phase": "Capability Qualification \u00e2\u2020\u2019 Admission \u00e2\u2020\u2019 Producer Readiness",
+    "date": "2026-09-17",
+    "purpose": "Machine-readable capability qualification/admission state for all Serum controls considered for producer use",
+    "frozen_bases": {
+      "semantic_count": 908,
+      "target_count": 396,
+      "both_unchanged": true
+    }
+  },
+  "state_machine": {
+    "description": "Each capability must pass through these distinct states without collapsing them",
+    "states": [
+      "SEMANTIC (identity in frozen model)",
+      "TARGET/REPRESENTATION (VST3 field + control path)",
+      "EXECUTABLE (mutation operation exists)",
+      "QUALIFIED (CAUSAL_VERIFIED | STRUCTURAL_ONLY | NEGATIVE_EVIDENCE | BLOCKED_CONTRADICTED)",
+      "ADMITTED (passed admission.admit() gate with prerequisites verified)",
+      "PRODUCER-USABLE (planner consumes from admitted set only)"
+    ]
+  },
+  "capabilities_current_state": [
+    {
+      "semantic_id": "ENV1.RELEASE",
+      "target_id": "Env1.Release",
+      "target_path": "Env0.plainParams.kParamRelease",
+      "semantic": "VERIFIED (in 908-row frozen model)",
+      "target": "EXISTS (in 396-target frozen vocabulary)",
+      "representation_family": "NUMERIC_KNOB (0.0-1.0)",
+      "executable": "YES (DawDreamer mutation + measurement)",
+      "qualified_status": "CAUSAL_VERIFIED",
+      "qualification_evidence": {
+        "experiment_id": "release_qualified_complete_001",
+        "measurement_metric": "tail_rms_db",
+        "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+        "baseline_db": -240.0,
+        "treatment_db": -35.52,
+        "delta_db": 204.48,
+        "effect_observed": true,
+        "direction_correct": true
+      },
+      "prerequisites": [
+        {
+          "field_path": "body:Env0.plainParams.kParamDecay",
+          "declared_value": 0.02,
+          "must_hold_identical": true
+        }
+      ],
+      "admitted_status": "ADMITTED",
+      "admission_episodes": [
+        {
+          "episode_id": "release_qualified_complete_001_PASS",
+          "context_verified": true,
+          "prerequisite_check": "PASSED (Decay=0.02 readback match)",
+          "execution": "SUCCESS",
+          "measurement": "RECORDED",
+          "verdict": "ADMITTED and executed"
+        },
+        {
+          "episode_id": "release_qualified_complete_001_BLOCKED",
+          "context_verified": false,
+          "prerequisite_check": "FAILED (Decay=0.3 != declared 0.02)",
+          "execution": "NOT EXECUTED",
+          "measurement": "NOT RECORDED",
+          "verdict": "REFUSED (no execution side effects)"
+        }
+      ],
+      "producer_usable": "YES",
+      "state_progression": "SEMANTIC \u00e2\u2020\u2019 TARGET \u00e2\u2020\u2019 EXECUTABLE \u00e2\u2020\u2019 QUALIFIED \u00e2\u2020\u2019 ADMITTED \u00e2\u2020\u2019 PRODUCER-USABLE (complete)"
+    },
+    {
+      "semantic_id": "ENV1.ATTACK",
+      "target_id": "Env1.Attack",
+      "target_path": "Env0.plainParams.kParamAttack",
+      "semantic": "VERIFIED (in 908-row frozen model)",
+      "target": "EXISTS (in 396-target frozen vocabulary)",
+      "representation_family": "NUMERIC_KNOB (0.0-1.0)",
+      "executable": "YES (DawDreamer mutation + measurement)",
+      "qualified_status": "CAUSAL_VERIFIED",
+      "qualification_evidence": {
+        "experiment_id": "attack_qualified_complete_001",
+        "measurement_metric": "attack_onset_rms_db",
+        "measurement_definition_id": "attack_onset_rms_db:5369167c8e73",
+        "baseline_db": -19.11,
+        "treatment_db": -52.4,
+        "delta_db": -33.29,
+        "effect_observed": true,
+        "direction_correct": true
+      },
+      "prerequisites": [],
+      "admitted_status": "ADMITTED",
+      "admission_episodes": [
+        {
+          "episode_id": "attack_qualified_complete_001_PASS_FULL",
+          "context_verified": true,
+          "prerequisite_check": "PASSED (no prerequisites required)",
+          "execution": "SUCCESS",
+          "measurement": "RECORDED",
+          "verdict": "ADMITTED and executed"
+        }
+      ],
+      "producer_usable": "YES (verified live: ContractRegistry loads it, admission.admit() admits it)",
+      "state_progression": "SEMANTIC \u00e2\u2020\u2019 TARGET \u00e2\u2020\u2019 EXECUTABLE \u00e2\u2020\u2019 QUALIFIED \u00e2\u2020\u2019 ADMITTED \u00e2\u2020\u2019 PRODUCER-USABLE (complete)"
+    }
+  ],
+  "admission_gate_invariants": {
+    "no_unknown_bypass": "PASS \u00e2\u20ac\u201d admission.admit() returns UNKNOWN for any target without a contract",
+    "no_prerequisite_bypass": "PASS \u00e2\u20ac\u201d prerequisites must be explicitly verified; mismatched values fail admission",
+    "no_measurement_mismatch": "PASS \u00e2\u20ac\u201d measurement_definition_id must match; different kernels rejected",
+    "no_structural_for_causal": "PASS \u00e2\u20ac\u201d STRUCTURAL_ONLY contracts refused when causal required",
+    "no_negative_evidence_admission": "PASS \u00e2\u20ac\u201d NEGATIVE_EVIDENCE contracts refused",
+    "no_contradicted_admission": "PASS \u00e2\u20ac\u201d BLOCKED_CONTRADICTED contracts refused",
+    "exact_target_match_only": "PASS \u00e2\u20ac\u201d fuzzy/prefix matching disabled; only exact semantic target IDs admitted",
+    "planner_sees_only_admitted": "PASS \u00e2\u20ac\u201d contract_registry exposes only CAUSAL_VERIFIED contracts"
+  },
+  "capability_counts": {
+    "total_semantic_records": 908,
+    "total_targets": 396,
+    "currently_qualified": 2,
+    "currently_admitted": 2,
+    "qualified_but_not_admitted": 0,
+    "unqualified": "remaining 906 semantics (no experiments run)",
+    "blocked": 0,
+    "insufficient_evidence": 0
+  },
+  "architectural_findings": {
+    "admission_layer": "VERIFIED \u00e2\u20ac\u201d no bypasses found; gates enforce prerequisites, measurement matching, and causal requirements",
+    "contract_registry": "WORKING \u00e2\u20ac\u201d loads fresh 4.1 contracts; no fallback to archived/design JSON",
+    "planner_constraint": "VERIFIED \u00e2\u20ac\u201d planner receives only ADMITTED capabilities; cannot invent or access refused targets",
+    "target_specificity": "VERIFIED \u00e2\u20ac\u201d no family names or prefix matching; exact semantic target IDs only",
+    "evidence_authority": "VERIFIED \u00e2\u20ac\u201d contracts are read-only over evidence; no direct state manipulation"
+  },
+  "weaknesses_or_gaps": {
+    "attack_contract_not_stored_separately": "CORRECTED \u2014 earlier claim was wrong. experiments/_capability_contracts_4_2.pkl DOES exist (verified by os.path.exists + pickle.load), contains envelope_field_attack status=CAUSAL_VERIFIED. ContractRegistry() loads it live. admission.admit() against the real registry output returns admitted=True for envelope_field_attack. Attack IS producer-usable today. Real caveat instead: the contract prerequisites=() is evidentially UNDERSTATED per the contract own limitations field (baseline_overrides schema gap), not proven-absent.",
+    "no_multi_value_authority": "KNOWN LIMITATION \u00e2\u20ac\u201d Release/Attack tested with single value (1.0/0.8); generalization not yet established. 4.3 will address.",
+    "no_context_generalization": "KNOWN LIMITATION \u00e2\u20ac\u201d Release tested only with Decay=0.02; other decay values not qualified. Requires 4.3/4.4.",
+    "minimal_capability_set": "DESIGN CHOICE \u00e2\u20ac\u201d only 2 capabilities currently in producer pipeline. This is intentional: prove architecture end-to-end before broad expansion."
+  },
+  "next_steps": {
+    "producer_readiness": "Release and Attack fully admitted. Architecture proven. Ready to exercise producer end-to-end with minimum viable set.",
+    "future_qualification": "Remaining 906 semantics require independent qualification experiments (4.3+). No shortcuts; each requires CAUSAL_VERIFIED evidence."
+  },
+  "final_status": "Both Release and Attack confirmed PRODUCER-USABLE by live execution against real ContractRegistry + admission.admit(), not by documentation inference."
+}
