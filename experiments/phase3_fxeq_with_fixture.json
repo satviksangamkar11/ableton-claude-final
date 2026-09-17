@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-09-18T05:20:14.410889",
+  "test": "phase3_fxeq_with_fixture",
+  "description": "Fresh Phase 3 execution of 3 FXEQ targets using established corpus fixture",
+  "fixture": "experiments/_corpus_cache.pkl (bodies[4] with FXEQ)",
+  "total": 3,
+  "verified": 3,
+  "results": [
+    {
+      "target": "FXEQ.Freq1",
+      "semantic_target": "FXEQ.Freq1",
+      "internal": "fx_field_eq_freq1",
+      "mutation_type": "BODY_STATE",
+      "body_path": "FXRack0.FX.1.FXEQ.plainParams.kParamFreq1",
+      "fixture": "corpus_cache.pkl[4]",
+      "baseline": 639.8384480408016,
+      "requested_mutation": 15000.0,
+      "observed": 15000.0,
+      "restored": 639.8384480408016,
+      "execution_verified": true,
+      "error": null
+    },
+    {
+      "target": "FXEQ.Gain2",
+      "semantic_target": "FXEQ.Gain2",
+      "internal": "fx_field_eq_kParamGain2",
+      "mutation_type": "BODY_STATE",
+      "body_path": "FXRack0.FX.1.FXEQ.plainParams.kParamGain2",
+      "fixture": "corpus_cache.pkl[4]",
+      "baseline": 5.079348564147949,
+      "requested_mutation": -20.0,
+      "observed": -20.0,
+      "restored": 5.079348564147949,
+      "execution_verified": true,
+      "error": null
+    },
+    {
+      "target": "FXEQ.Reso2",
+      "semantic_target": "FXEQ.Reso2",
+      "internal": "fx_field_eq_kParamReso2",
+      "mutation_type": "BODY_STATE",
+      "body_path": "FXRack0.FX.1.FXEQ.plainParams.kParamReso2",
+      "fixture": "corpus_cache.pkl[4]",
+      "baseline": 39.28320109844208,
+      "requested_mutation": 90.0,
+      "observed": 90.0,
+      "restored": 39.28320109844208,
+      "execution_verified": true,
+      "error": null
+    }
+  ]
+}
