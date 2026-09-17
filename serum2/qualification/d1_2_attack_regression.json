@@ -1,0 +1,84 @@
+{
+  "episode_id": "d1_2_attack_regression",
+  "timestamp": "2026-09-17T13:54:44.568511Z",
+  "human_intent": "make the note attack slower",
+  "candidate_operation": {
+    "target": "envelope_field_attack",
+    "operation": null,
+    "source_hypothesis_id": null,
+    "source_knowledge_item_id": null,
+    "source_confidence": 0.9
+  },
+  "semantic_target": "envelope_field_attack",
+  "admission_status": "ADMITTED",
+  "admission_reason": "ADMITTED",
+  "serum_readback_before": 0.5,
+  "serum_mutation_value": 0.8,
+  "serum_readback_after": 0.8,
+  "audio_baseline": {
+    "peak": 0.28331682085990906,
+    "nonzero_fraction": 0.7662358276643991,
+    "valid": true
+  },
+  "audio_treatment": {
+    "peak": 0.03995569050312042,
+    "nonzero_fraction": 0.7604308390022676,
+    "valid": true
+  },
+  "measurement_metric": "rms_db",
+  "measurement_baseline": -22.59958938864637,
+  "measurement_treatment": -74.7504527735681,
+  "measurement_delta": -52.150863384921735,
+  "restoration_value": 0.5,
+  "restoration_readback": 0.5,
+  "notes": "Canonical producer feedback loop with real authority admission gate (4.Q.4-C integration)",
+  "learning_eligible": true,
+  "observation_only": true,
+  "prerequisite_scope_violated": false,
+  "admission_detail": "target 'envelope_field_attack' admitted: status=CAUSAL_VERIFIED, allowed_operation=mutate_numeric_value",
+  "diagnosis": {
+    "goal": {
+      "intent": "make the note attack slower",
+      "semantic_target": "Env1.Attack",
+      "measurement_metric": "rms_db",
+      "metric_direction": "higher"
+    },
+    "current_state": {
+      "serum_readback": 0.5,
+      "measurement_value": -22.59958938864637,
+      "audio_peak": 0.28331682085990906,
+      "audio_valid": true
+    },
+    "candidate_targets": [
+      "envelope_field_attack"
+    ],
+    "selected_target": "envelope_field_attack",
+    "mutation_direction": 1,
+    "mutation_magnitude": 0.05,
+    "reason": "Selected envelope_field_attack to make the note attack slower",
+    "confidence": 0.9
+  },
+  "decision": {
+    "accepted": false,
+    "reason": "No improvement",
+    "baseline_measurement": -22.59958938864637,
+    "treatment_measurement": -74.7504527735681,
+    "delta": -52.150863384921735,
+    "metric_direction": "higher"
+  },
+  "restoration_status": "baseline_restored",
+  "scope_info": {
+    "limitation": [
+      "baseline_overrides not captured in this EvidenceRecord's schema (predates this field being added) -- shared-context prerequisites for this contract are UNDERSTATED, not absent",
+      "Tested only with Attack parameter = 0.8 (absolute value); generalization to other Attack values not established",
+      "No baseline_overrides context tested; generalization across contexts not tested",
+      "Single-field isolated mutation (N=1 witness); multi-field interactions not tested"
+    ],
+    "scope_min": null,
+    "scope_max": null,
+    "baseline": 0.5,
+    "source": "admitted_contract.scope (fresh ContractRegistry, not legacy JSON)",
+    "tested_context_only": true,
+    "mutation_value_used": 0.8
+  }
+}
