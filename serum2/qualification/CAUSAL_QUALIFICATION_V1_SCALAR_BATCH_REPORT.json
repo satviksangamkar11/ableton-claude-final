@@ -1,0 +1,170 @@
+{
+  "batch": "scalar_amplitude_cutoff_envelope",
+  "total_experiments": 7,
+  "verified_count": 0,
+  "failed_count": 7,
+  "blocked_count": 0,
+  "verified_ids": [],
+  "failed_ids": [
+    "OSC1.LEVEL",
+    "OSC2.LEVEL",
+    "OSC3.LEVEL",
+    "FILTER1.CUTOFF",
+    "FILTER2.CUTOFF",
+    "ENV1.ATTACK",
+    "ENV2.ATTACK"
+  ],
+  "blocked_ids": [],
+  "detailed_results": [
+    {
+      "success": true,
+      "semantic_id": "OSC1.LEVEL",
+      "cbor_path": "Oscillator0.plainParams.kParamLevel",
+      "baseline_value": 0.5,
+      "treatment_value": 1.0,
+      "measurements": [
+        {
+          "name": "rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -20.054929131203785,
+          "delta": 0.0,
+          "threshold": 2.0,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        {
+          "name": "tail_rms_db",
+          "baseline": -20.71649517114178,
+          "treatment": -20.71649517114178,
+          "delta": 0.0,
+          "threshold": 1.0,
+          "status": "NO_OBSERVED_EFFECT"
+        }
+      ],
+      "causal_status": "CAUSAL_FAILED"
+    },
+    {
+      "success": true,
+      "semantic_id": "OSC2.LEVEL",
+      "cbor_path": "Oscillator1.plainParams.kParamLevel",
+      "baseline_value": 0.5,
+      "treatment_value": 1.0,
+      "measurements": [
+        {
+          "name": "rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -20.054929131203785,
+          "delta": 0.0,
+          "threshold": 2.0,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        {
+          "name": "tail_rms_db",
+          "baseline": -20.71649517114178,
+          "treatment": -20.71649517114178,
+          "delta": 0.0,
+          "threshold": 1.0,
+          "status": "NO_OBSERVED_EFFECT"
+        }
+      ],
+      "causal_status": "CAUSAL_FAILED"
+    },
+    {
+      "success": true,
+      "semantic_id": "OSC3.LEVEL",
+      "cbor_path": "Oscillator2.plainParams.kParamLevel",
+      "baseline_value": 0.5,
+      "treatment_value": 1.0,
+      "measurements": [
+        {
+          "name": "rms_db",
+          "baseline": -20.054929131203785,
+          "treatment": -20.054929131203785,
+          "delta": 0.0,
+          "threshold": 2.0,
+          "status": "NO_OBSERVED_EFFECT"
+        },
+        {
+          "name": "tail_rms_db",
+          "baseline": -20.71649517114178,
+          "treatment": -20.71649517114178,
+          "delta": 0.0,
+          "threshold": 1.0,
+          "status": "NO_OBSERVED_EFFECT"
+        }
+      ],
+      "causal_status": "CAUSAL_FAILED"
+    },
+    {
+      "success": true,
+      "semantic_id": "FILTER1.CUTOFF",
+      "cbor_path": "VoiceFilter0.plainParams.kParamCutoff",
+      "baseline_value": 50.0,
+      "treatment_value": 120.0,
+      "measurements": [
+        {
+          "name": "spectral_centroid_hz",
+          "baseline": 4378.134622380464,
+          "treatment": 4378.134622380464,
+          "delta": 0.0,
+          "threshold": 200.0,
+          "status": "NO_OBSERVED_EFFECT"
+        }
+      ],
+      "causal_status": "CAUSAL_FAILED"
+    },
+    {
+      "success": true,
+      "semantic_id": "FILTER2.CUTOFF",
+      "cbor_path": "VoiceFilter1.plainParams.kParamCutoff",
+      "baseline_value": 50.0,
+      "treatment_value": 120.0,
+      "measurements": [
+        {
+          "name": "spectral_centroid_hz",
+          "baseline": 4378.134622380464,
+          "treatment": 4378.134622380464,
+          "delta": 0.0,
+          "threshold": 200.0,
+          "status": "NO_OBSERVED_EFFECT"
+        }
+      ],
+      "causal_status": "CAUSAL_FAILED"
+    },
+    {
+      "success": true,
+      "semantic_id": "ENV1.ATTACK",
+      "cbor_path": "VoiceEnv0.plainParams.kParamAttackTime",
+      "baseline_value": 0.01,
+      "treatment_value": 0.5,
+      "measurements": [
+        {
+          "name": "attack_onset_rms_db",
+          "baseline": -19.113398409784892,
+          "treatment": -19.113398409784892,
+          "delta": 0.0,
+          "threshold": 1.5,
+          "status": "NO_OBSERVED_EFFECT"
+        }
+      ],
+      "causal_status": "CAUSAL_FAILED"
+    },
+    {
+      "success": true,
+      "semantic_id": "ENV2.ATTACK",
+      "cbor_path": "VoiceEnv1.plainParams.kParamAttackTime",
+      "baseline_value": 0.01,
+      "treatment_value": 0.5,
+      "measurements": [
+        {
+          "name": "attack_onset_rms_db",
+          "baseline": -19.113398409784892,
+          "treatment": -19.113398409784892,
+          "delta": 0.0,
+          "threshold": 1.5,
+          "status": "NO_OBSERVED_EFFECT"
+        }
+      ],
+      "causal_status": "CAUSAL_FAILED"
+    }
+  ]
+}
