@@ -30,6 +30,38 @@ The frozen 396-target vocabulary tags all 96 FX_PARAMETER targets as `parameter_
 - `FX.HYPER.UNISON` -> `FXHyper.Unison`: HOST_PARAMETER -> **BODY_STATE_FIELD** (capability_id=`BODY_STATE_FIELD:56be42b535780777`)
 - `FX.HYPER.DETUNE` -> `FXHyper.Detune`: HOST_PARAMETER -> **BODY_STATE_FIELD** (capability_id=`BODY_STATE_FIELD:01e16d4bc51b9d8c`)
 
+## UI Truth Gate (V3 Pass 2 -- post-BOUND verification, all 11 rows)
+
+**Invariant preserved:** BOUND != CAUSAL_VERIFIED != UI_VERIFIED. UI_VERIFIED is a *stronger* evidence tier than anything else in this file: not a code-level CBOR/path/pathmerge check, but a real Serum GUI running inside Ableton, mutated through the same authority path (`execute_mutation_request_with_authority`), and inspected visually via Serum's own "Double-click params: TYPE VALUE" numeric readout. Protocol per capability: read BEFORE in the live UI -> authority mutation -> read UI_AFTER in the live UI -> save via Serum's own "Save Preset As..." -> load a different preset (state-disruption step) -> reload the test preset -> read RELOADED_UI in the live UI. A row is UI_VERIFIED only if UI_AFTER and RELOADED_UI both equal the requested value.
+
+All 11 BOUND rows above were run through this protocol this session.
+
+| Capability | BEFORE | REQUESTED | UI_AFTER | RELOADED_UI | STATUS |
+|---|---|---|---|---|---|
+| FX.DISTORTION.DRIVE | 25 | 75.0 | 75 | 75 | UI_VERIFIED |
+| FX.DELAY.FEEDBACK | 40 | 50.0 | 50 | 50 | UI_VERIFIED |
+| FX.COMPRESSOR.RATIO | 4.0 | 5.5 | 5.5 | 5.5 | UI_VERIFIED |
+| FX.COMPRESSOR.ATTACK | 90.1 | 50.0 | 50.0 | 50.0 | UI_VERIFIED |
+| FX.COMPRESSOR.RELEASE | 90.1 | 500.0 | 500.0 | 500.0 | UI_VERIFIED |
+| FX.BODE.RANGE | 22 | 50.0 | 50 | 50 | UI_VERIFIED |
+| FX.PHASER.FEEDBACK | 80 | 0.0 | 0 | 0 | UI_VERIFIED |
+| FX.PHASER.PHASE | 180 | 90.0 | 90 | 90 | UI_VERIFIED (see finding below) |
+| FX.HYPER.RATE | 4.0 | 9.0 | 9.0 | 9.0 | UI_VERIFIED |
+| FX.HYPER.UNISON | 4 | 7 | 7 | 7 | UI_VERIFIED |
+| FX.HYPER.DETUNE | 25 | 75.0 | 75 | 75 | UI_VERIFIED |
+
+**Result: 11/11 UI_VERIFIED, 0 mismatches.**
+
+### Finding: FX.PHASER.PHASE resolver defect caught and fixed by the UI Truth Gate
+
+The gate first caught a real defect: mutating `FXPhaser.plainParams.kParamPhase` (the original binding) round-tripped correctly at the CBOR/code level -- the exact same class of false-positive already known for Convolve -- but the real Serum "PHASE" knob never moved (BEFORE=180, requested 90 then 350, UI_AFTER=180 both times). This is invisible to every check in this file above the UI Truth Gate, because the mechanism check only proves the byte round-trips through `codec`/`pathmerge`, not that Serum's real DSP reads that key.
+
+Forensic root-cause (per the exact protocol: manual UI edit -> Serum's own save -> diff): with the real Phaser module loaded, the Phase knob was set to 90 by hand in Serum (not through any authority code path), saved with Serum's own "Save Preset As...", and the resulting `.SerumPreset` was diffed against the prior state. Result: `kParamPhase` was **not present at all** in Serum's own output (silently dropped -- Serum ignores unrecognized `plainParams` keys rather than erroring), and `kParamWidth=90.0` was present instead. The UI label "Phase" and the real persisted field `kParamWidth` do not match -- a legacy internal naming mismatch.
+
+`fx_resolver.py`'s `("Phaser", "Phase")` catalog entry now points at `kParamWidth` (see resolver source comment for the evidence trail). Re-run through the full authority-mutation path with the fix in place: UI_AFTER=90, RELOADED_UI=90, matching requested. A permanent regression guard (`test_phaser_phase_real_roundtrip_and_kparamphase_regression_guard` in `serum2/evidence/test_v3_fx_parameter_real_roundtrip.py`) proves both directions against real Serum: `kParamWidth` round-trips, and `kParamPhase` (the old binding) still silently does not.
+
+**Why `capability_id` did not change:** `FX.PHASER.PHASE`'s `capability_id` (`BODY_STATE_FIELD:91067f82eb1a2f45`) is unchanged by this fix and was NOT regenerated with a new value. Per the frozen canonicalization rule (`serum2/coverage/canonicalize.py::canonicalize_fx_parameter`), an FX_PARAMETER capability's identity is `(effect, parameter)` only -- e.g. "the capability to control Phaser's Phase" -- deliberately excluding the underlying state-path/field-name, exactly as rack/slot index is excluded. The actual `kParamWidth` vs `kParamPhase` field name is resolver *mechanism*, resolved dynamically at request time by `fx_resolver.py`, not part of what identifies the capability. The registry was re-run through `serum2_execution_coverage_registry_v3_builder.py` this session and produced a byte-identical `SERUM2_EXECUTION_COVERAGE_REGISTRY_V3.json`/`.md` -- confirming the fix is correctly scoped to the mechanism layer and required no registry-identity change.
+
 ## Skipped (with reason)
 
 - `FX.CHORUS.RATE`: effect 'Chorus' FX-type-key not confirmed against real Serum output (no matching preset evidence found this session) -- refusing to bind on an unverified key

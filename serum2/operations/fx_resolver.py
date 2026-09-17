@@ -270,8 +270,15 @@ _FX_PARAMETERS: Dict[Tuple[str, str], Tuple[str, str, Optional[float], Optional[
         -100.0,
         100.0,
     ),
+    # UI label is "Phase" but Serum's real persisted key is kParamWidth --
+    # confirmed via forensic manual-UI-edit diff this session: setting the
+    # Phase knob to 90 in real Serum and inspecting Serum's own saved
+    # .SerumPreset output showed kParamWidth=90.0, with no kParamPhase key
+    # present at all (Serum silently drops unrecognized keys on save/load,
+    # so the old kParamPhase binding here was a false positive that never
+    # actually reached the real Phase control).
     ("Phaser", "Phase"): (
-        "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamPhase",
+        "FXRack{R}.FX.{N}.FXPhaser.plainParams.kParamWidth",
         "float",
         0.0,
         360.0,
