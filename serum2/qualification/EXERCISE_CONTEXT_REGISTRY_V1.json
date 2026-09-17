@@ -724,6 +724,37 @@
       "evidence_files": [],
       "status": "BLOCKED",
       "blocking_reason": "Delta +0.31 dB << 0.5 dB threshold. Drive saturation effect is real (adds harmonics/energy) but manifests as +0.31 dB in overall RMS. 0.5 dB threshold designed for broad dynamics (OSC Level +24 dB) is not appropriate for subtle saturation effects. Not FAILED; threshold mismatch."
+    },
+    {
+      "capability_id": "OSC2.Detune",
+      "family": "OSCILLATOR",
+      "exercise_context": [
+        [
+          "B Enable",
+          1.0
+        ]
+      ],
+      "fixture_source": "serum2/qualification/fixtures/osc2_active.py::OSC2_ACTIVE",
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "VoiceOsc1.plainParams.kParamFine",
+        "baseline_value": null,
+        "treatment_value": 1.0
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "increase",
+        "threshold": 50.0
+      },
+      "observed_result": {
+        "baseline": 4378.1,
+        "treatment": 4378.1,
+        "delta": 0.0,
+        "unit": "Hz"
+      },
+      "evidence_files": [],
+      "status": "FAILED",
+      "failure_reason": "Zero delta (baseline = treatment = 4378.1 Hz). kParamFine mutation has no audible effect, even with B Enable exercise context (proven from OSC2.Level). Pattern matches OSC1.Detune (also zero delta). Suggests CBOR body-level Fine parameters are not exercised or not effective (shadowed by UI parameter priority). Host-param Level controls proven; body-level Fine controls FAILED."
     }
   ]
 }
