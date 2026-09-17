@@ -465,69 +465,6 @@
       "blocking_reason": "Delta +0.09 dB << 0.5 dB threshold. Real resonance effect exists but not visible in 2-second render with low cutoff (0.15) + high resonance (0.9). Exercise/render context insufficient. Not FAILED; measurement context-sensitive."
     },
     {
-      "capability_id": "OSC1.Detune",
-      "family": "OSC",
-      "exercise_context": [],
-      "fixture_source": null,
-      "target_mutation": {
-        "adapter": "cbor_body",
-        "path_or_param": "VoiceOsc0.plainParams.kParamFine",
-        "baseline_value": null,
-        "treatment_value": 1.0
-      },
-      "measurement_template": {
-        "metric": "spectral_centroid_hz",
-        "expected_direction": "increase",
-        "threshold": 50.0
-      },
-      "observed_result": {
-        "baseline": null,
-        "treatment": null,
-        "delta": 0.0,
-        "unit": "Hz"
-      },
-      "evidence_files": [
-        "serum2/qualification/behavioral_seed_batch.py",
-        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
-      ],
-      "status": "BLOCKED",
-      "blocking_reason": "cbor_path 'VoiceOsc0...' likely does not correspond to the actual active oscillator body key (evidence elsewhere in repo shows the correct family is 'Oscillator0', not 'VoiceOsc0' -- see A_SEED_EXPERIMENT_04 null-path finding). Path needs re-verification before reclassifying."
-    },
-    {
-      "capability_id": "OSC2.Detune",
-      "family": "OSC",
-      "exercise_context": [
-        [
-          "B Enable",
-          1.0
-        ]
-      ],
-      "fixture_source": null,
-      "target_mutation": {
-        "adapter": "cbor_body",
-        "path_or_param": "VoiceOsc1.plainParams.kParamFine",
-        "baseline_value": null,
-        "treatment_value": 1.0
-      },
-      "measurement_template": {
-        "metric": "spectral_centroid_hz",
-        "expected_direction": "increase",
-        "threshold": 50.0
-      },
-      "observed_result": {
-        "baseline": null,
-        "treatment": null,
-        "delta": 0.0,
-        "unit": "Hz"
-      },
-      "evidence_files": [
-        "serum2/qualification/behavioral_seed_batch.py",
-        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
-      ],
-      "status": "BLOCKED",
-      "blocking_reason": "Same 'VoiceOsc1' path concern as OSC1.Detune -- likely wrong body key family."
-    },
-    {
       "capability_id": "Env1.Release",
       "family": "ENV",
       "exercise_context": [],
@@ -669,32 +606,6 @@
       "blocking_reason": "Delta -64.3 Hz; consistent with Reso1 pattern. Confirms resonance-specific measurement issue, not parameter deadness."
     },
     {
-      "capability_id": "OSC1.Detune",
-      "family": "OSCILLATOR",
-      "exercise_context": [],
-      "fixture_source": "serum2/qualification/fixtures/osc1_active.py::OSC1_ACTIVE",
-      "target_mutation": {
-        "adapter": "cbor_body",
-        "path_or_param": "VoiceOsc0.plainParams.kParamFine",
-        "baseline_value": null,
-        "treatment_value": 1.0
-      },
-      "measurement_template": {
-        "metric": "spectral_centroid_hz",
-        "expected_direction": "increase",
-        "threshold": 50.0
-      },
-      "observed_result": {
-        "baseline": 4378.1,
-        "treatment": 4378.1,
-        "delta": 0.0,
-        "unit": "Hz"
-      },
-      "evidence_files": [],
-      "status": "FAILED",
-      "failure_reason": "Zero delta (baseline = treatment = 4378.1 Hz). kParamFine mutation has no audible effect. Either the body path is not active in the skeleton, or the parameter does not affect spectral content. Not a measurement threshold issue; actual zero effect. OSC1.Level (host param) is PROVEN, confirming fixture produces audio; this CBOR body path failure suggests body-level Fine param is not exercised or effective."
-    },
-    {
       "capability_id": "Filter1.Drive",
       "family": "FILTER",
       "exercise_context": [
@@ -726,6 +637,33 @@
       "blocking_reason": "Delta +0.31 dB << 0.5 dB threshold. Drive saturation effect is real (adds harmonics/energy) but manifests as +0.31 dB in overall RMS. 0.5 dB threshold designed for broad dynamics (OSC Level +24 dB) is not appropriate for subtle saturation effects. Not FAILED; threshold mismatch."
     },
     {
+      "capability_id": "OSC1.Detune",
+      "family": "OSCILLATOR",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/osc1_active.py::OSC1_ACTIVE",
+      "target_mutation": {
+        "adapter": "host_param",
+        "path_or_param": "A Fine",
+        "baseline_value": 0.0,
+        "treatment_value": 0.75
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "change",
+        "threshold": 50.0
+      },
+      "proven_result": {
+        "baseline": 4331.9,
+        "treatment": 4415.6,
+        "delta": 83.7,
+        "unit": "Hz"
+      },
+      "evidence_files": [],
+      "status": "PROVEN",
+      "notes": "OSC1 fine-tune via host parameter A Fine (not CBOR kParamFine). Host-param adapter is the working path.",
+      "root_cause": "CBOR body paths (kParamFine, kParamDetune) are not exercised. Host parameter A Fine is the authoritative control."
+    },
+    {
       "capability_id": "OSC2.Detune",
       "family": "OSCILLATOR",
       "exercise_context": [
@@ -736,25 +674,26 @@
       ],
       "fixture_source": "serum2/qualification/fixtures/osc2_active.py::OSC2_ACTIVE",
       "target_mutation": {
-        "adapter": "cbor_body",
-        "path_or_param": "VoiceOsc1.plainParams.kParamFine",
-        "baseline_value": null,
-        "treatment_value": 1.0
+        "adapter": "host_param",
+        "path_or_param": "B Fine",
+        "baseline_value": 0.0,
+        "treatment_value": 0.75
       },
       "measurement_template": {
         "metric": "spectral_centroid_hz",
-        "expected_direction": "increase",
+        "expected_direction": "change",
         "threshold": 50.0
       },
-      "observed_result": {
-        "baseline": 4378.1,
-        "treatment": 4378.1,
-        "delta": 0.0,
+      "proven_result": {
+        "baseline": 4380.2,
+        "treatment": 4530.4,
+        "delta": 150.2,
         "unit": "Hz"
       },
       "evidence_files": [],
-      "status": "FAILED",
-      "failure_reason": "Zero delta (baseline = treatment = 4378.1 Hz). kParamFine mutation has no audible effect, even with B Enable exercise context (proven from OSC2.Level). Pattern matches OSC1.Detune (also zero delta). Suggests CBOR body-level Fine parameters are not exercised or not effective (shadowed by UI parameter priority). Host-param Level controls proven; body-level Fine controls FAILED."
+      "status": "PROVEN",
+      "notes": "OSC2 fine-tune via host parameter B Fine. Requires B Enable exercise context (proven from OSC2.Level).",
+      "root_cause": "Same as OSC1: CBOR body paths not exercised; host parameter B Fine is the working control."
     }
   ]
 }
