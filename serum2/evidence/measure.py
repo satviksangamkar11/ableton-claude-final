@@ -2,6 +2,7 @@
 import numpy as np
 
 from serum2.behavior.measurement.pitch import fundamental_frequency_hz
+from serum2.evidence.kernels.attack_onset_rms_db import kernel as _attack_onset_rms_db_kernel
 
 SR = 44100
 
@@ -32,10 +33,18 @@ def rms_db(audio, stimulus=None):
     return 20 * np.log10(float(np.sqrt(np.mean(x ** 2)) + 1e-12))
 
 
+def attack_onset_rms_db(audio, stimulus=None):
+    """Adapter over the archived qualification-evidence kernel (unchanged,
+    not reimplemented) so this metric name resolves identically here and in
+    serum2.evidence.harness/measurement, which load the same kernel file."""
+    return float(_attack_onset_rms_db_kernel(audio, sample_rate=SR))
+
+
 METRICS = {
     "spectral_centroid_hz": spectral_centroid_hz,
     "tail_rms_db": tail_rms_db,
     "rms_db": rms_db,
+    "attack_onset_rms_db": attack_onset_rms_db,
     # Pitch measurement — harmonic summation; robust when overtones > fundamental.
     # Returns F0 in Hz.  Pair with pitch_shift_semitones (derived dimension).
     "fundamental_frequency_hz": fundamental_frequency_hz,
