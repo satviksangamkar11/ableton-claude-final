@@ -8,6 +8,23 @@ FXRack{R}.FX.{N}.FX{Type}.plainParams.kParam{Name}
 Example paths (from forensic analysis):
 - FXRack0.FX.2.FXDistortion.plainParams.kParamDrive
 - FXRack0.FX.N.FXEQ.plainParams.kParamFreq1
+
+CORRECTION (V3 population pass, this session): four FX{Type} keys were
+WRONG, found by cross-checking against real archive/golden_presets/*.SerumPreset
+output (Serum's `type` integer field is authoritative at load time, not
+whichever dict key sits next to it -- a mismatched key is silently
+discarded, discovered the hard way during a real Serum round-trip test).
+Fixed:
+  FXCompressor -> FXComp     (Compressor, type=5)
+  FXBODE       -> FXBode     (Bode, type=10, was wrong casing)
+  FXConvolve   -> FXConv     (Convolve, type=11)
+  FXHyper      -> FXHyperD   (Hyper, type=9)
+Confirmed CORRECT (unchanged, verified against the same real presets):
+  FXDistortion (type=0), FXDelay (type=4), FXEQ (type=7), FXPhaser (type=2),
+  FXReverb (type=6).
+STILL UNCONFIRMED (no real preset evidence found for these; NOT verified
+either correct or wrong -- do not trust without independent verification):
+  Chorus, FilterFX, Flanger, Utility.
 """
 
 from __future__ import annotations
@@ -138,25 +155,25 @@ _FX_PARAMETERS: Dict[Tuple[str, str], Tuple[str, str, Optional[float], Optional[
 
     # Compressor (placeholder)
     ("Compressor", "Threshold"): (
-        "FXRack{R}.FX.{N}.FXCompressor.plainParams.kParamThreshold",
+        "FXRack{R}.FX.{N}.FXComp.plainParams.kParamThreshold",
         "float",
         -60.0,
         0.0,
     ),
     ("Compressor", "Ratio"): (
-        "FXRack{R}.FX.{N}.FXCompressor.plainParams.kParamRatio",
+        "FXRack{R}.FX.{N}.FXComp.plainParams.kParamRatio",
         "float",
         1.0,
         10.0,
     ),
     ("Compressor", "Attack"): (
-        "FXRack{R}.FX.{N}.FXCompressor.plainParams.kParamAttack",
+        "FXRack{R}.FX.{N}.FXComp.plainParams.kParamAttack",
         "float",
         0.0,
         100.0,
     ),
     ("Compressor", "Release"): (
-        "FXRack{R}.FX.{N}.FXCompressor.plainParams.kParamRelease",
+        "FXRack{R}.FX.{N}.FXComp.plainParams.kParamRelease",
         "float",
         0.0,
         1000.0,
@@ -184,25 +201,25 @@ _FX_PARAMETERS: Dict[Tuple[str, str], Tuple[str, str, Optional[float], Optional[
 
     # BODE (Frequency Shifter)
     ("BODE", "Frequency"): (
-        "FXRack{R}.FX.{N}.FXBODE.plainParams.kParamFrequency",
+        "FXRack{R}.FX.{N}.FXBode.plainParams.kParamFrequency",
         "float",
         0.0,
         10000.0,
     ),
     ("BODE", "Range"): (
-        "FXRack{R}.FX.{N}.FXBODE.plainParams.kParamRange",
+        "FXRack{R}.FX.{N}.FXBode.plainParams.kParamRange",
         "float",
         0.0,
         100.0,
     ),
     ("BODE", "Direction"): (
-        "FXRack{R}.FX.{N}.FXBODE.plainParams.kParamDirection",
+        "FXRack{R}.FX.{N}.FXBode.plainParams.kParamDirection",
         "int",
         0,
         1,
     ),
     ("BODE", "Mix"): (
-        "FXRack{R}.FX.{N}.FXBODE.plainParams.kParamMix",
+        "FXRack{R}.FX.{N}.FXBode.plainParams.kParamMix",
         "float",
         0.0,
         100.0,
@@ -294,37 +311,37 @@ _FX_PARAMETERS: Dict[Tuple[str, str], Tuple[str, str, Optional[float], Optional[
 
     # Convolve (Convolution Reverb)
     ("Convolve", "IR"): (
-        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamIR",
+        "FXRack{R}.FX.{N}.FXConv.plainParams.kParamIR",
         "string",
         None,
         None,
     ),
     ("Convolve", "IRGain"): (
-        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamIRGain",
+        "FXRack{R}.FX.{N}.FXConv.plainParams.kParamIRGain",
         "float",
         -100.0,
         100.0,
     ),
     ("Convolve", "Attack"): (
-        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamAttack",
+        "FXRack{R}.FX.{N}.FXConv.plainParams.kParamAttack",
         "float",
         0.0,
         1000.0,
     ),
     ("Convolve", "Decay"): (
-        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamDecay",
+        "FXRack{R}.FX.{N}.FXConv.plainParams.kParamDecay",
         "float",
         0.0,
         10000.0,
     ),
     ("Convolve", "Damping"): (
-        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamDamping",
+        "FXRack{R}.FX.{N}.FXConv.plainParams.kParamDamping",
         "float",
         0.0,
         100.0,
     ),
     ("Convolve", "Mix"): (
-        "FXRack{R}.FX.{N}.FXConvolve.plainParams.kParamMix",
+        "FXRack{R}.FX.{N}.FXConv.plainParams.kParamMix",
         "float",
         0.0,
         100.0,
@@ -332,25 +349,25 @@ _FX_PARAMETERS: Dict[Tuple[str, str], Tuple[str, str, Optional[float], Optional[
 
     # Hyper (Dimension)
     ("Hyper", "Rate"): (
-        "FXRack{R}.FX.{N}.FXHyper.plainParams.kParamRate",
+        "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamRate",
         "float",
         0.1,
         10.0,
     ),
     ("Hyper", "Unison"): (
-        "FXRack{R}.FX.{N}.FXHyper.plainParams.kParamUnison",
+        "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamUnison",
         "int",
         1,
         7,
     ),
     ("Hyper", "Detune"): (
-        "FXRack{R}.FX.{N}.FXHyper.plainParams.kParamDetune",
+        "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamDetune",
         "float",
         0.0,
         100.0,
     ),
     ("Hyper", "Mix"): (
-        "FXRack{R}.FX.{N}.FXHyper.plainParams.kParamMix",
+        "FXRack{R}.FX.{N}.FXHyperD.plainParams.kParamMix",
         "float",
         0.0,
         100.0,

@@ -83,6 +83,25 @@ def canonicalize_body_state(path: str) -> Dict[str, Any]:
     return binding
 
 
+def canonicalize_fx_parameter(effect: str, parameter: str) -> Dict[str, Any]:
+    """FX-parameter identity: (effect, parameter) only. rack_index and
+    slot_index are deliberately EXCLUDED -- they are where the user has
+    currently placed the effect (runtime payload, supplied at request time
+    via resolver_parameters to the fx_set_parameter resolver, exactly like
+    STATE's other resolver-backed bindings), not part of what capability
+    this is. "FXEQ.Freq1" is one capability regardless of which rack/slot
+    the EQ instance currently occupies.
+    """
+    binding = {
+        "binding_schema_version": BINDING_SCHEMA_VERSION,
+        "binding_type": BindingType.FX_PARAMETER.value,
+        "effect": effect,
+        "parameter": parameter,
+    }
+    _reject_non_canonical(binding)
+    return binding
+
+
 def canonicalize_matrix_route(source: Dict[str, str], destination: Dict[str, str],
                                 slot_index: Optional[int] = None) -> Dict[str, Any]:
     """source/destination endpoint fields explicitly named; slot_index

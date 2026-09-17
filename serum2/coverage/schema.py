@@ -67,6 +67,11 @@ FAMILY_TO_PRIMITIVE: Dict[ExecutionFamily, MutationPrimitive] = {
 class BindingType(str, Enum):
     HOST_PARAMETER = "HOST_PARAMETER"
     BODY_STATE = "BODY_STATE"
+    FX_PARAMETER = "FX_PARAMETER"       # BODY_STATE sub-kind: identity is
+                                         # (effect, parameter); rack/slot is
+                                         # runtime placement (request payload,
+                                         # via the fx_set_parameter resolver),
+                                         # never part of capability identity
     MATRIX_ROUTE = "MATRIX_ROUTE"
     TOPOLOGY = "TOPOLOGY"
     RESOURCE = "RESOURCE"
