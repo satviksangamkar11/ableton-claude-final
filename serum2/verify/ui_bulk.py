@@ -73,6 +73,38 @@ class UIClassification:
     UI_TEXT_UNREADABLE = "UI_TEXT_UNREADABLE"
     NO_DETERMINISTIC_UI_PROXY = "NO_DETERMINISTIC_UI_PROXY"
     FORENSIC_REQUIRED = "FORENSIC_REQUIRED"
+    UI_TEXT_VERIFIED_WITH_PREREQUISITE = "UI_TEXT_VERIFIED_WITH_PREREQUISITE"
+    UI_TEXT_VERIFIED_RAW_VALUE_ONLY = "UI_TEXT_VERIFIED_RAW_VALUE_ONLY"
+
+
+# Real-evidence dispositions for the 5 cases found by the first full run
+# (evidence/ui_bulk/final, this session) -- not guessed, each individually
+# confirmed:
+#
+#   A/B/C Warp: the bare skeleton fixture leaves "{X} Warp Mode" at its
+#   default (0 = "No Warp Type"), under which "{X} Warp"'s display is
+#   inert by design. Confirmed directly: setting "A Warp Mode" to 0.3
+#   ("Hard Clip") makes "A Warp" correctly display "75" for probe=0.75.
+#   A genuine prerequisite-context requirement, not a binding defect --
+#   same class of fact as admission.py's prerequisite verification, just
+#   discovered for a HOST_PARAMETER's displayed text rather than its
+#   mutability.
+#
+#   A WT Pos: raw parameter value round-trips exactly (0.75 == 0.75,
+#   confirmed directly via get_parameter(), independent of display text).
+#   Only the wavetable-frame-relative formatted text differs between two
+#   independently-created default instances (192 vs 7) -- a cosmetic,
+#   context-dependent display artifact, not a persistence failure of the
+#   capability itself.
+PREREQUISITE_GATED_HOST_PARAMS = {
+    "A Warp": ("A Warp Mode", 0.3),
+    "A Warp 2": ("A Warp 2 Mode", 0.3),
+    "B Warp": ("B Warp Mode", 0.3),
+    "B Warp 2": ("B Warp 2 Mode", 0.3),
+    "C Warp": ("C Warp Mode", 0.3),
+    "C Warp 2": ("C Warp 2 Mode", 0.3),
+}
+RAW_VALUE_ONLY_HOST_PARAMS = {"A WT Pos", "B WT Pos", "C WT Pos"}
 
 
 def _engine():
@@ -126,6 +158,23 @@ def run_host_parameter_ui_batch(entries: List[dict]) -> Dict[str, dict]:
 
         engine, synth = _engine()
         idx = meta["index"]
+
+        # Evidence-backed prerequisite: some controls' displayed text is
+        # inert until a linked mode parameter is set away from its
+        # default (confirmed for A/B/C Warp{,2} this session). Set it
+        # BEFORE reading before_text so before/after are both taken under
+        # the same, meaningful context.
+        prereq = PREREQUISITE_GATED_HOST_PARAMS.get(name)
+        if prereq:
+            prereq_name, prereq_value = prereq
+            prereq_idx = probe_params[prereq_name]["index"]
+            prereq_contract = _make_contract(prereq_name)
+            prereq_request = MutationRequest(target="T", mutation_type=MutationType.HOST_PARAMETER,
+                                              value=prereq_value, host_parameter_name=prereq_name)
+            execute_mutation_request_with_authority(request=prereq_request, body={},
+                                                      contracts={("T", ""): prereq_contract}, synth=synth)
+            _settle(engine, synth)
+
         before_text = synth.get_parameters_description()[idx]["text"]
         contract = _make_contract(name)
         request = MutationRequest(target="T", mutation_type=MutationType.HOST_PARAMETER, value=probe,
@@ -137,6 +186,7 @@ def run_host_parameter_ui_batch(entries: List[dict]) -> Dict[str, dict]:
             continue
         _settle(engine, synth)
         after_text = synth.get_parameters_description()[idx]["currentValText"]
+        after_raw = synth.get_parameter(idx)
 
         fd, tmp = tempfile.mkstemp(suffix=".bin"); os.close(fd)
         synth.save_state(tmp)
@@ -144,11 +194,27 @@ def run_host_parameter_ui_batch(entries: List[dict]) -> Dict[str, dict]:
         synth2.load_state(tmp)
         os.remove(tmp)
         reloaded_text = synth2.get_parameters_description()[idx]["currentValText"]
+        reloaded_raw = synth2.get_parameter(idx)
 
         record = {"before_text": before_text, "ui_after_text": after_text,
-                  "ui_reloaded_text": reloaded_text, "probe": probe}
-        if after_text != before_text and after_text == reloaded_text:
-            record["classification"] = UIClassification.UI_TEXT_VERIFIED
+                  "ui_reloaded_text": reloaded_text, "probe": probe,
+                  "prerequisite_set": prereq is not None}
+
+        if name in RAW_VALUE_ONLY_HOST_PARAMS:
+            # Evidence-backed exception: the raw value is what the capability
+            # actually controls and persists; its formatted text depends on
+            # ambient wavetable-frame context this fixture doesn't pin, so
+            # text equality isn't the right success criterion here.
+            if abs(after_raw - probe) < 1e-4 and abs(reloaded_raw - probe) < 1e-4:
+                record["classification"] = UIClassification.UI_TEXT_VERIFIED_RAW_VALUE_ONLY
+                record["detail"] = (f"raw value round-trips exactly ({probe}); formatted display text is "
+                                     f"wavetable-frame-context-dependent and not compared (see disposition note)")
+            else:
+                record["classification"] = UIClassification.FORENSIC_REQUIRED
+                record["detail"] = f"raw value did not round-trip: after={after_raw}, reloaded={reloaded_raw}"
+        elif after_text != before_text and after_text == reloaded_text:
+            record["classification"] = (UIClassification.UI_TEXT_VERIFIED_WITH_PREREQUISITE if prereq
+                                         else UIClassification.UI_TEXT_VERIFIED)
         elif after_text == before_text:
             record["classification"] = UIClassification.FORENSIC_REQUIRED
             record["detail"] = (f"displayed text did not change: before={before_text!r}, after={after_text!r} "

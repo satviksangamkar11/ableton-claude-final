@@ -1,0 +1,418 @@
+{
+  "total": 51,
+  "counts": {
+    "NEEDS_ACTION_EXECUTION_MECHANISM": 41,
+    "PROVEN_NOT_USER_CONTROL": 3,
+    "NEEDS_STRING_METADATA_MECHANISM": 7
+  },
+  "rows": [
+    {
+      "semantic_id": "MACRO.SYS.KNOB_CONTEXT_MENU",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "Right-click context menu on a Macro Value knob",
+      "control_type": "context_menu",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='context_menu': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "FX.SYS.MODULE_PARAM_CONTEXT_MENU",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "Per-parameter (knob) context menu within FX modules",
+      "control_type": "menu",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "ARP.SLOT.PLAY_BUTTON",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "Per-slot play/launch triangle button (1 of 12)",
+      "control_type": "launch_button",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='launch_button': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "ARP.SLOT.CONTEXT_MENU",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "Per-slot right-click context menu",
+      "control_type": "menu",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "ARP.SLOT.SUMMARY_DISPLAY",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "Per-slot summary display (shows current Shape+Rate, e.g. 'Up 1/16')",
+      "control_type": "display",
+      "disposition": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='display': non-interactive display or structural constant, not a mutable value."
+    },
+    {
+      "semantic_id": "ARP.SLOT.COUNT",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "12 arp slots per bank (structural fact)",
+      "control_type": "structural_fact",
+      "disposition": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_fact': non-interactive display or structural constant, not a mutable value."
+    },
+    {
+      "semantic_id": "ARP.SLOT.MIDI_KEYBOARD_LAUNCH",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "MIDI-note-triggered slot launch (per official docs: 'pressing a corresponding key launches that arp')",
+      "control_type": "midi_trigger",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='midi_trigger': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "CLIP.SLOT.PLAY_BUTTON",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "Per-slot play/launch button (1 of 12)",
+      "control_type": "launch_button",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='launch_button': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "CLIP.SLOT.CONTEXT_MENU",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "Per-slot right-click context menu",
+      "control_type": "menu",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "CLIP.SLOT.COUNT",
+      "family": "STRUCTURAL_OPERATION",
+      "label": "12 clip slots per bank (structural fact)",
+      "control_type": "structural_fact",
+      "disposition": "PROVEN_NOT_USER_CONTROL",
+      "evidence": "control_type='structural_fact': non-interactive display or structural constant, not a mutable value."
+    },
+    {
+      "semantic_id": "BROWSER.TOGGLE",
+      "family": "RESOURCE_OPERATION",
+      "label": "Browser toggle -- opens/closes the Presets Browser panel",
+      "control_type": "button",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='button': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.SEARCH.FIELD",
+      "family": "RESOURCE_OPERATION",
+      "label": "Search -- filters the preset list by name/word",
+      "control_type": "text_field",
+      "disposition": "NEEDS_STRING_METADATA_MECHANISM",
+      "evidence": "control_type='text_field': real, editable free-text metadata -- a genuine user action, but a STRING-value edit, not a numeric SCALAR/STATE parameter. No string-mutation mechanism exists in this codebase (execute_mutation_request_with_authority's MutationType variants are all numeric); needs its own resolver/mechanism, not the existing bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.SEARCH.CLEAR",
+      "family": "RESOURCE_OPERATION",
+      "label": "Search clear ('x') -- clears the search field and restores the unfiltered list",
+      "control_type": "button",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='button': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.SHOW_IN_FOLDER",
+      "family": "RESOURCE_OPERATION",
+      "label": "Show Preset in folder",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.LOAD_RANDOM_PRESET",
+      "family": "RESOURCE_OPERATION",
+      "label": "Load Random Preset",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.HYBRIDIZE",
+      "family": "RESOURCE_OPERATION",
+      "label": "Hybridize -- generates a new preset by combining random existing presets",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.HYBRIDIZE_FAVORING_SELECTED",
+      "family": "RESOURCE_OPERATION",
+      "label": "Hybridize Favoring Selected Preset",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.DELETE_PRESETS",
+      "family": "RESOURCE_OPERATION",
+      "label": "Delete Preset(s)",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.RENAME_MOVE_PRESET",
+      "family": "RESOURCE_OPERATION",
+      "label": "Rename / Move Preset",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.AUTO_PLAY_PREVIEWS",
+      "family": "RESOURCE_OPERATION",
+      "label": "Auto-Play Previews -- automatically plays a preset's preview clip when it is selected/loaded",
+      "control_type": "toggle",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='toggle': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.PREVIEW_FALLBACK_CLIP",
+      "family": "RESOURCE_OPERATION",
+      "label": "Preview Fallback Clip -- selects which bundled MIDI clip plays as the preview when a preset has no custom preview clip of its own",
+      "control_type": "submenu_select",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='submenu_select': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.RESCAN_DATABASE",
+      "family": "RESOURCE_OPERATION",
+      "label": "Rescan Database -- re-indexes the preset database for changes on disk",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.MENU.ERASE_REBUILD_DATABASE",
+      "family": "RESOURCE_OPERATION",
+      "label": "Erase and Rebuild Database -- discards and fully regenerates the preset database",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.FOLDERS.TREE",
+      "family": "RESOURCE_OPERATION",
+      "label": "Folders -- hierarchical tree navigation of preset locations (Local > Factory/User > category subfolders)",
+      "control_type": "tree",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='tree': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.FOLDERS.CREATE_EXPORT_PACK",
+      "family": "RESOURCE_OPERATION",
+      "label": "Create and Export Pack... -- packages a folder's presets into a distributable pack",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.TOGGLE",
+      "family": "RESOURCE_OPERATION",
+      "label": "CATEGORIES / TAGS tab toggle -- switches the lower-left panel between the Categories list and the Tags list",
+      "control_type": "tab_toggle",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='tab_toggle': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.CATEGORY_LIST",
+      "family": "RESOURCE_OPERATION",
+      "label": "Categories list -- clickable category filter chips",
+      "control_type": "multi_select_list",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='multi_select_list': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.TAG_LIST",
+      "family": "RESOURCE_OPERATION",
+      "label": "Tags list -- clickable tag filter chips, combine (AND) with folder/category selection",
+      "control_type": "multi_select_list",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='multi_select_list': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.RATING_FILTER",
+      "family": "RESOURCE_OPERATION",
+      "label": "Ratings Filter -- shows only presets at or above a chosen minimum star rating",
+      "control_type": "dropdown",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='dropdown': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.COLUMNS",
+      "family": "RESOURCE_OPERATION",
+      "label": "Preset list columns -- NAME (sortable), LOCATION, CATEGORY, DATE MODIFIED, RATING",
+      "control_type": "table",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='table': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.ROW_SELECT_LOAD",
+      "family": "RESOURCE_OPERATION",
+      "label": "Preset row click -- loads the clicked preset into Serum's active engine state immediately",
+      "control_type": "action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.ROW_CONTEXT_MENU",
+      "family": "RESOURCE_OPERATION",
+      "label": "Preset row right-click menu -- Show in folder / Delete / Rename-Move",
+      "control_type": "context_menu",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='context_menu': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.RATING_STARS",
+      "family": "RESOURCE_OPERATION",
+      "label": "Per-row rating stars -- inline 1-5 star rating assignment for each preset",
+      "control_type": "star_rating",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='star_rating': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.PRESET_NAME",
+      "family": "RESOURCE_OPERATION",
+      "label": "Preset Name -- the currently-selected preset's name, shown in the metadata panel",
+      "control_type": "text_field",
+      "disposition": "NEEDS_STRING_METADATA_MECHANISM",
+      "evidence": "control_type='text_field': real, editable free-text metadata -- a genuine user action, but a STRING-value edit, not a numeric SCALAR/STATE parameter. No string-mutation mechanism exists in this codebase (execute_mutation_request_with_authority's MutationType variants are all numeric); needs its own resolver/mechanism, not the existing bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.AUTHOR",
+      "family": "RESOURCE_OPERATION",
+      "label": "Author -- the currently-selected preset's author/artist field",
+      "control_type": "text_field",
+      "disposition": "NEEDS_STRING_METADATA_MECHANISM",
+      "evidence": "control_type='text_field': real, editable free-text metadata -- a genuine user action, but a STRING-value edit, not a numeric SCALAR/STATE parameter. No string-mutation mechanism exists in this codebase (execute_mutation_request_with_authority's MutationType variants are all numeric); needs its own resolver/mechanism, not the existing bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.CATEGORY",
+      "family": "RESOURCE_OPERATION",
+      "label": "Category -- the currently-selected preset's assigned category",
+      "control_type": "text_field",
+      "disposition": "NEEDS_STRING_METADATA_MECHANISM",
+      "evidence": "control_type='text_field': real, editable free-text metadata -- a genuine user action, but a STRING-value edit, not a numeric SCALAR/STATE parameter. No string-mutation mechanism exists in this codebase (execute_mutation_request_with_authority's MutationType variants are all numeric); needs its own resolver/mechanism, not the existing bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.DESCRIPTION",
+      "family": "RESOURCE_OPERATION",
+      "label": "Description -- a free-text description of the currently-selected preset",
+      "control_type": "text_field",
+      "disposition": "NEEDS_STRING_METADATA_MECHANISM",
+      "evidence": "control_type='text_field': real, editable free-text metadata -- a genuine user action, but a STRING-value edit, not a numeric SCALAR/STATE parameter. No string-mutation mechanism exists in this codebase (execute_mutation_request_with_authority's MutationType variants are all numeric); needs its own resolver/mechanism, not the existing bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.NOTES",
+      "family": "RESOURCE_OPERATION",
+      "label": "Notes -- a free-text notes area for the currently-selected preset",
+      "control_type": "text_area",
+      "disposition": "NEEDS_STRING_METADATA_MECHANISM",
+      "evidence": "control_type='text_area': real, editable free-text metadata -- a genuine user action, but a STRING-value edit, not a numeric SCALAR/STATE parameter. No string-mutation mechanism exists in this codebase (execute_mutation_request_with_authority's MutationType variants are all numeric); needs its own resolver/mechanism, not the existing bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.TAGS_PANEL",
+      "family": "RESOURCE_OPERATION",
+      "label": "Tags panel -- per-preset tag pills with add/remove editing",
+      "control_type": "tag_editor",
+      "disposition": "NEEDS_STRING_METADATA_MECHANISM",
+      "evidence": "control_type='tag_editor': real, editable free-text metadata -- a genuine user action, but a STRING-value edit, not a numeric SCALAR/STATE parameter. No string-mutation mechanism exists in this codebase (execute_mutation_request_with_authority's MutationType variants are all numeric); needs its own resolver/mechanism, not the existing bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.PREV_NEXT",
+      "family": "RESOURCE_OPERATION",
+      "label": "Preset prev/next arrows -- steps to the adjacent preset in the current list order",
+      "control_type": "button_pair",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='button_pair': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.PRESET_DROPDOWN",
+      "family": "RESOURCE_OPERATION",
+      "label": "Preset name dropdown (top toolbar) -- a compact cascading Factory/User > category > preset menu",
+      "control_type": "cascading_menu",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='cascading_menu': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.SAVE_ICON",
+      "family": "RESOURCE_OPERATION",
+      "label": "Save preset icon (disk icon, top toolbar)",
+      "control_type": "button",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='button': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.PACKS.IMPORT",
+      "family": "RESOURCE_OPERATION",
+      "label": "Import Preset Pack... -- installs a downloaded/received pack file into the local library",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "BROWSER.PACKS.GET_PACKS",
+      "family": "RESOURCE_OPERATION",
+      "label": "Get Preset Packs... -- opens a source (likely a web store/page) for acquiring additional preset packs",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.LOAD_PRESET",
+      "family": "RESOURCE_OPERATION",
+      "label": "Load Preset... -- opens a native OS file-open dialog to load a preset file directly",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.REVERT_TO_SAVED",
+      "family": "RESOURCE_OPERATION",
+      "label": "Revert to Saved -- discards in-session edits and reloads the current preset's last-saved state",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.SAVE_AS_DEFAULT_PRESET",
+      "family": "RESOURCE_OPERATION",
+      "label": "Save as Default Preset -- sets the current preset as the patch Serum loads on a fresh instance / Init Preset",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.INIT_PRESET",
+      "family": "RESOURCE_OPERATION",
+      "label": "Init Preset -- resets the current instance to the default/blank patch",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.OPEN_PRESETS_FOLDER",
+      "family": "RESOURCE_OPERATION",
+      "label": "Open Serum 2 Presets Folder -- opens the local presets directory in the OS file manager",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.RESCAN_FOLDERS_ON_DISK",
+      "family": "RESOURCE_OPERATION",
+      "label": "Rescan Folders on Disk",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.LOAD_TUNING",
+      "family": "RESOURCE_OPERATION",
+      "label": "Load Tuning (.tun)... -- loads a microtonal tuning file",
+      "control_type": "menu_action",
+      "disposition": "NEEDS_ACTION_EXECUTION_MECHANISM",
+      "evidence": "control_type='menu_action': a genuine one-shot user action (button/menu/context-menu/file dialog/OS-level operation), not a value to mutate at all. No action-execution architecture exists in this codebase (osc_load_wavetable/osc_load_sample are the only RESOURCE compilers, scoped to oscillator resources, not preset/browser/file-system actions). Needs its own mechanism (e.g. driven UI clicks or a file-system/host API), not the numeric bulk verifier."
+    }
+  ]
+}

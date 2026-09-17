@@ -107,6 +107,29 @@ def test_lfo0_dotted_sparse_pruned_at_default_regression_guard():
           f"while sibling kParamTriplets={triplets} stayed materialized")
 
 
+def test_lfo0_beatsync_capability_id_matches_registry():
+    binding = canonicalize_body_state("LFO0.plainParams.kParamBeatSync")
+    cap_id = compute_capability_id("BODY_STATE_FIELD", binding)
+    assert cap_id == "BODY_STATE_FIELD:cae5fd974a19fe44", cap_id
+
+
+def test_lfo0_beatsync_real_roundtrip():
+    """kParamBeatSync default is 1.0 (BPM-synced) -- the inverse of
+    Dotted/Triplets' default (0.0) -- found via the manual BPM/HZ toggle
+    UI check -> Serum-own-save -> CBOR diff (HZ mode produced an explicit
+    kParamBeatSync=0.0 alongside the existing Dotted/Triplets keys)."""
+    meta, skel = bridge.capture_v8_skeleton(VST3)
+    body = copy.deepcopy(skel)
+    _mutate(body, "LFO0.plainParams.kParamDotted", 1.0)
+    _mutate(body, "LFO0.plainParams.kParamBeatSync", 0.0)
+    _, resaved = _rt(meta, body)
+    beatsync = pathmerge.read_path_value(resaved, "LFO0.plainParams.kParamBeatSync")
+    dotted = pathmerge.read_path_value(resaved, "LFO0.plainParams.kParamDotted")
+    assert beatsync == 0.0, f"kParamBeatSync=0.0 did not round-trip: {beatsync}"
+    assert dotted == 1.0, f"sibling kParamDotted should stay 1.0: {dotted}"
+    print(f"[PASS] LFO0: kParamBeatSync={beatsync} (Hz mode), sibling kParamDotted={dotted}")
+
+
 if __name__ == "__main__":
     test_lfo0_dotted_capability_id_matches_registry()
     print("[PASS] test_lfo0_dotted_capability_id_matches_registry")
@@ -114,4 +137,7 @@ if __name__ == "__main__":
     print("[PASS] test_lfo0_triplets_capability_id_matches_registry")
     test_lfo0_dotted_and_triplets_real_roundtrip()
     test_lfo0_dotted_sparse_pruned_at_default_regression_guard()
-    print("\nALL LFO DOTTED/TRIPLET REAL-SERUM ROUND-TRIP TESTS PASSED")
+    test_lfo0_beatsync_capability_id_matches_registry()
+    print("[PASS] test_lfo0_beatsync_capability_id_matches_registry")
+    test_lfo0_beatsync_real_roundtrip()
+    print("\nALL LFO DOTTED/TRIPLET/BEATSYNC REAL-SERUM ROUND-TRIP TESTS PASSED")

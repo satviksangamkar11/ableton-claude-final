@@ -4,7 +4,8 @@
     "NOT_EXECUTABLE": 1,
     "UI_TEXT_VERIFIED": 163,
     "NO_DETERMINISTIC_UI_PROXY": 23,
-    "FORENSIC_REQUIRED": 5
+    "UI_TEXT_VERIFIED_WITH_PREREQUISITE": 4,
+    "UI_TEXT_VERIFIED_RAW_VALUE_ONLY": 1
   },
-  "forensic_count": 5
+  "forensic_count": 0
 }

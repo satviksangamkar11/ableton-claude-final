@@ -2522,7 +2522,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXBODE.Range' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('BODE', 'Range')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -2724,7 +2725,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXCompressor.Ratio' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Compressor', 'Ratio')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -2747,7 +2749,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXCompressor.Attack' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Compressor', 'Attack')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -2770,7 +2773,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXCompressor.Release' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Compressor', 'Release')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -3080,7 +3084,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXDelay.Feedback' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Delay', 'Feedback')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -3184,7 +3189,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXDistortion.Drive' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Distortion', 'Drive')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -3526,7 +3532,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXHyper.Rate' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Hyper', 'Rate')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -3549,7 +3556,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXHyper.Unison' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Hyper', 'Unison')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -3572,7 +3580,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXHyper.Detune' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Hyper', 'Detune')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -3675,7 +3684,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXPhaser.Feedback' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Phaser', 'Feedback')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -3698,7 +3708,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "V3 population: target_id='FXPhaser.Phase' exact 1:1 semantic match; resolver=fx_set_parameter (fx_resolver.py's REAL, actually-wired catalog entry ('Phaser', 'Phase')); verified by an ACTUAL dispatch through execute_mutation_request_with_authority (not just catalog presence -- an earlier draft trusted a disconnected catalog, fx_resolver_complete.py, and would have produced 19 non-dispatchable bindings; caught by this same real-dispatch check before shipping); frozen vocabulary's parameter_kind=VST3_HOST_FIELD for this target overridden to BODY_STATE_FIELD -- verified against the live VST3 parameter list (no host parameter exists for this effect/parameter combination).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -7843,14 +7854,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:cae5fd974a19fe44",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO0.plainParams.kParamBeatSync"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass (continued): real-Serum-in-Ableton manual UI toggle of the BPM/HZ sync-mode button on the LFO2 panel (CBOR LFO1) -> Serum-own-save -> CBOR diff. Switching to HZ mode produced plainParams gaining kParamBeatSync=0.0 alongside the existing kParamDotted/kParamTriplets. Default (BPM-synced) confirmed separately: setting kParamBeatSync=1.0 alone collapses to the presence-preserving default sentinel (same class as Dotted/Triplets at their own defaults), while 0.0 persists as an explicit key -- consistent, evidence-backed boolean field. No live HOST_PARAMETER exists for this (checked: no Sync-named parameter). Generalized across all 6 LFOs matching the established per-LFO field pattern.",
+        "binding_version": "1"
       }
     },
     {
@@ -7888,7 +7903,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -7909,7 +7925,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -8117,14 +8134,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:a258512245ac70fb",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO1.plainParams.kParamBeatSync"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass (continued): real-Serum-in-Ableton manual UI toggle of the BPM/HZ sync-mode button on the LFO2 panel (CBOR LFO1) -> Serum-own-save -> CBOR diff. Switching to HZ mode produced plainParams gaining kParamBeatSync=0.0 alongside the existing kParamDotted/kParamTriplets. Default (BPM-synced) confirmed separately: setting kParamBeatSync=1.0 alone collapses to the presence-preserving default sentinel (same class as Dotted/Triplets at their own defaults), while 0.0 persists as an explicit key -- consistent, evidence-backed boolean field. No live HOST_PARAMETER exists for this (checked: no Sync-named parameter). Generalized across all 6 LFOs matching the established per-LFO field pattern.",
+        "binding_version": "1"
       }
     },
     {
@@ -8162,7 +8183,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -8183,7 +8205,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -8391,14 +8414,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:c16f843e6038931f",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO2.plainParams.kParamBeatSync"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass (continued): real-Serum-in-Ableton manual UI toggle of the BPM/HZ sync-mode button on the LFO2 panel (CBOR LFO1) -> Serum-own-save -> CBOR diff. Switching to HZ mode produced plainParams gaining kParamBeatSync=0.0 alongside the existing kParamDotted/kParamTriplets. Default (BPM-synced) confirmed separately: setting kParamBeatSync=1.0 alone collapses to the presence-preserving default sentinel (same class as Dotted/Triplets at their own defaults), while 0.0 persists as an explicit key -- consistent, evidence-backed boolean field. No live HOST_PARAMETER exists for this (checked: no Sync-named parameter). Generalized across all 6 LFOs matching the established per-LFO field pattern.",
+        "binding_version": "1"
       }
     },
     {
@@ -8436,7 +8463,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -8457,7 +8485,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -8665,14 +8694,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:f09a7c2fa1175d5b",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO3.plainParams.kParamBeatSync"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass (continued): real-Serum-in-Ableton manual UI toggle of the BPM/HZ sync-mode button on the LFO2 panel (CBOR LFO1) -> Serum-own-save -> CBOR diff. Switching to HZ mode produced plainParams gaining kParamBeatSync=0.0 alongside the existing kParamDotted/kParamTriplets. Default (BPM-synced) confirmed separately: setting kParamBeatSync=1.0 alone collapses to the presence-preserving default sentinel (same class as Dotted/Triplets at their own defaults), while 0.0 persists as an explicit key -- consistent, evidence-backed boolean field. No live HOST_PARAMETER exists for this (checked: no Sync-named parameter). Generalized across all 6 LFOs matching the established per-LFO field pattern.",
+        "binding_version": "1"
       }
     },
     {
@@ -8710,7 +8743,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -8731,7 +8765,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -8939,14 +8974,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:a776b44f2f513252",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO4.plainParams.kParamBeatSync"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass (continued): real-Serum-in-Ableton manual UI toggle of the BPM/HZ sync-mode button on the LFO2 panel (CBOR LFO1) -> Serum-own-save -> CBOR diff. Switching to HZ mode produced plainParams gaining kParamBeatSync=0.0 alongside the existing kParamDotted/kParamTriplets. Default (BPM-synced) confirmed separately: setting kParamBeatSync=1.0 alone collapses to the presence-preserving default sentinel (same class as Dotted/Triplets at their own defaults), while 0.0 persists as an explicit key -- consistent, evidence-backed boolean field. No live HOST_PARAMETER exists for this (checked: no Sync-named parameter). Generalized across all 6 LFOs matching the established per-LFO field pattern.",
+        "binding_version": "1"
       }
     },
     {
@@ -8984,7 +9023,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -9005,7 +9045,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -9213,14 +9254,18 @@
       "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
       "resolution_reason": "Phase D execution_class='BODY_STATE_FIELD' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
+        "capability_id": "BODY_STATE_FIELD:f93ce6604a76d167",
         "execution_family": "BODY_STATE_FIELD",
         "mutation_type": "STATE",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "BODY_STATE",
+          "path": "LFO5.plainParams.kParamBeatSync"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "LFO reconciliation pass (continued): real-Serum-in-Ableton manual UI toggle of the BPM/HZ sync-mode button on the LFO2 panel (CBOR LFO1) -> Serum-own-save -> CBOR diff. Switching to HZ mode produced plainParams gaining kParamBeatSync=0.0 alongside the existing kParamDotted/kParamTriplets. Default (BPM-synced) confirmed separately: setting kParamBeatSync=1.0 alone collapses to the presence-preserving default sentinel (same class as Dotted/Triplets at their own defaults), while 0.0 persists as an explicit key -- consistent, evidence-backed boolean field. No live HOST_PARAMETER exists for this (checked: no Sync-named parameter). Generalized across all 6 LFOs matching the established per-LFO field pattern.",
+        "binding_version": "1"
       }
     },
     {
@@ -9258,7 +9303,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {
@@ -9279,7 +9325,8 @@
         },
         "binding_status": "LIVE_VERIFIED",
         "binding_provenance": "LFO reconciliation pass: real-Serum-in-Ableton manual UI toggle -> Serum-own-save -> CBOR diff (same forensic method that found kParamWidth for Phaser/Phase). LFO2 panel (CBOR LFO1) TRIP/DOT toggle buttons clicked; Serum's own saved output showed plainParams={\"kParamDotted\": 1.0, \"kParamTriplets\": 1.0} where none existed before (was \"default\" sentinel). No live HOST_PARAMETER exists for either field (checked this session: no \"Sync\"/\"Trip\"/\"Dott\" parameter names in the live VST3 list) -- CBOR body-state is the real mechanism, direct dotted-path body_path binding (no custom resolver needed, unlike FX_PARAMETER). Generalized across all 6 LFOs (LFO0-LFO5 CBOR = LFO1-LFO6 UI) since the field name pattern is structurally identical per-LFO (same as the already-proven Rate/Delay/Rise/Smooth/Phase HOST_PARAMETER pattern); machine-verified for LFO0 directly via real Serum round-trip, not yet UI-verified for LFO indices other than the one clicked (LFO1/UI-LFO2).",
-        "binding_version": "1"
+        "binding_version": "1",
+        "ui_verification": "ACTUAL_UI_VERIFIED"
       }
     },
     {

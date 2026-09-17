@@ -1,0 +1,14 @@
+{
+  "protocol": "one Serum session, bulk fixture (all 6 LFOs mutated via authority path before load), sequential visual check per LFO tab, one save, different-preset load, reload, re-check",
+  "fixture": "- Init - LFO_DOT_TRIP_BULK_TEST.SerumPreset (built via serum2.evidence.mutation_executor_extended, all 6 LFOs kParamDotted=1.0 kParamTriplets=1.0)",
+  "disruption_preset": "BA - 303 Punchier",
+  "results": [
+    {"lfo_ui_index": 1, "cbor_index": 0, "dotted_capability_id": "BODY_STATE_FIELD:b15467af8508a265", "triplet_capability_id": "BODY_STATE_FIELD:e80065f698dc353e", "ui_after": "TRIP+DOT both lit", "reloaded_ui": "TRIP+DOT both lit", "status": "UI_VERIFIED"},
+    {"lfo_ui_index": 2, "cbor_index": 1, "dotted_capability_id": "BODY_STATE_FIELD:5385879d0f671cb3", "triplet_capability_id": "BODY_STATE_FIELD:38d8a573e00e385f", "ui_after": "TRIP+DOT both lit", "reloaded_ui": "TRIP+DOT both lit", "status": "UI_VERIFIED"},
+    {"lfo_ui_index": 3, "cbor_index": 2, "dotted_capability_id": "BODY_STATE_FIELD:c3a77b53b00874e8", "triplet_capability_id": "BODY_STATE_FIELD:2ed61f45c0ea14bb", "ui_after": "TRIP+DOT both lit", "reloaded_ui": "TRIP+DOT both lit", "status": "UI_VERIFIED"},
+    {"lfo_ui_index": 4, "cbor_index": 3, "dotted_capability_id": "BODY_STATE_FIELD:382bcce5e2b6dedd", "triplet_capability_id": "BODY_STATE_FIELD:f7d7acbbbfbe5c39", "ui_after": "TRIP+DOT both lit", "reloaded_ui": "TRIP+DOT both lit", "status": "UI_VERIFIED"},
+    {"lfo_ui_index": 5, "cbor_index": 4, "dotted_capability_id": "BODY_STATE_FIELD:a1f66acecda97919", "triplet_capability_id": "BODY_STATE_FIELD:f5c90d4ed6a8a055", "ui_after": "TRIP+DOT both lit", "reloaded_ui": "TRIP+DOT both lit", "status": "UI_VERIFIED"},
+    {"lfo_ui_index": 6, "cbor_index": 5, "dotted_capability_id": "BODY_STATE_FIELD:17b700a9156547c5", "triplet_capability_id": "BODY_STATE_FIELD:4e1afe973585422f", "ui_after": "TRIP+DOT both lit", "reloaded_ui": "TRIP+DOT both lit", "status": "UI_VERIFIED"}
+  ],
+  "note": "11 FX BODY_STATE_FIELD bindings (Distortion/Drive, Delay/Feedback, Compressor/{Ratio,Attack,Release}, Bode/Range, Phaser/{Feedback,Phase}, Hyper/{Rate,Unison,Detune}) already carry real ACTUAL UI_VERIFIED evidence from the earlier V3 Pass 2 UI Truth Gate session in this same conversation; bindings unchanged since, reused rather than repeated."
+}
