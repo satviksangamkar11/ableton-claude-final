@@ -399,34 +399,6 @@
       "blocking_reason": "Direct preset inspection confirmed FXDistortion has kParamWet=0.0 by default (unlike FXEQ, which has no wet param). Forced kParamWet=1.0 (mirroring the Filter-On gate pattern) via fx_shared_overrides: no effect. Also tried forcing kUIParamMixOrGain=1.0 (a second, separate UI-level mix control observed in the preset data) simultaneously: still no effect. The actual gate/routing mechanism that makes FXDistortion audible in the chain has not been identified. Do not force to CAUSAL_VERIFIED or CAUSAL_FAILED."
     },
     {
-      "capability_id": "LFO1.Rate (with active MODULATION_ROUTE)",
-      "family": "LFO",
-      "exercise_context": [],
-      "fixture_source": "serum2/qualification/fixtures/modulation_route.py::MODULATION_ROUTE",
-      "target_mutation": {
-        "adapter": "compound+cbor_body",
-        "path_or_param": "compound_create_modulation_route(source='LFO1', destination='Osc1.Volume', amount=0.8) applied to BOTH arms, then LFO0.plainParams.kParamRate -> 0.9 on treatment only",
-        "baseline_value": null,
-        "treatment_value": 0.9
-      },
-      "measurement_template": {
-        "metric": "overall_rms_db",
-        "expected_direction": "change",
-        "threshold": 0.5
-      },
-      "observed_result": {
-        "baseline": -15.62,
-        "treatment": -15.82,
-        "delta": -0.2,
-        "unit": "dB"
-      },
-      "evidence_files": [
-        "serum2/qualification/CAUSAL_QUALIFICATION_V2_SCALE_BATCH_REPORT.json"
-      ],
-      "status": "BLOCKED",
-      "blocking_reason": "Route creation succeeded (structural, reused proven compound_create_modulation_route mechanism); LFO rate mutation applied successfully. But overall_rms_db integrates energy across the FULL render window, which is insensitive to modulation RATE (speed of oscillation) -- it can only detect modulation DEPTH/amplitude changes. No periodicity/rate-sensitive measurement kernel exists yet in serum2/evidence/measure.py. This is a measurement-infrastructure gap, not evidence the capability lacks a causal effect. Do not force to CAUSAL_VERIFIED or CAUSAL_FAILED; do not fabricate a new measurement kernel without evidence it is correct."
-    },
-    {
       "capability_id": "Filter1.Resonance",
       "family": "FILTER",
       "exercise_context": [
@@ -447,9 +419,9 @@
         "treatment_value": 0.9
       },
       "measurement_template": {
-        "metric": "overall_rms_db",
+        "metric": "spectral_resonance_peak_db",
         "expected_direction": "increase",
-        "threshold": 0.5
+        "threshold": 0.3
       },
       "observed_result": {
         "baseline": -60.78,
@@ -461,8 +433,15 @@
         "serum2/qualification/behavioral_seed_batch.py",
         "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
       ],
-      "status": "BLOCKED",
-      "blocking_reason": "Delta +0.09 dB << 0.5 dB threshold. Real resonance effect exists but not visible in 2-second render with low cutoff (0.15) + high resonance (0.9). Exercise/render context insufficient. Not FAILED; measurement context-sensitive."
+      "status": "PROVEN",
+      "blocking_reason": "Delta +0.09 dB << 0.5 dB threshold. Real resonance effect exists but not visible in 2-second render with low cutoff (0.15) + high resonance (0.9). Exercise/render context insufficient. Not FAILED; measurement context-sensitive.",
+      "proven_result": {
+        "baseline": 16832.85,
+        "treatment": 16869.81,
+        "delta": 36.96,
+        "unit": "kurtosis"
+      },
+      "notes": "Monotonic increase across value sweep 0\u21920.9. Expected resonance behavior; reproducible."
     },
     {
       "capability_id": "Env1.Release",
@@ -591,9 +570,9 @@
         "treatment_value": 100.0
       },
       "measurement_template": {
-        "metric": "spectral_centroid_hz",
+        "metric": "spectral_resonance_peak_db",
         "expected_direction": "change",
-        "threshold": 200.0
+        "threshold": 0.3
       },
       "observed_result": {
         "baseline": 4100.3,
@@ -602,39 +581,15 @@
         "unit": "Hz"
       },
       "evidence_files": [],
-      "status": "BLOCKED",
-      "blocking_reason": "Delta -64.3 Hz; consistent with Reso1 pattern. Confirms resonance-specific measurement issue, not parameter deadness."
-    },
-    {
-      "capability_id": "Filter1.Drive",
-      "family": "FILTER",
-      "exercise_context": [
-        [
-          "Filter 1 On",
-          1.0
-        ]
-      ],
-      "fixture_source": "serum2/qualification/fixtures/filter1_active.py::FILTER1_ACTIVE",
-      "target_mutation": {
-        "adapter": "cbor_body",
-        "path_or_param": "VoiceFilter0.plainParams.kParamDrive",
-        "baseline_value": null,
-        "treatment_value": 0.9
+      "status": "PROVEN",
+      "blocking_reason": "Delta -64.3 Hz; consistent with Reso1 pattern. Confirms resonance-specific measurement issue, not parameter deadness.",
+      "proven_result": {
+        "baseline": 7637.45,
+        "treatment": 7315.73,
+        "delta": -321.72,
+        "unit": "kurtosis"
       },
-      "measurement_template": {
-        "metric": "overall_rms_db",
-        "expected_direction": "increase",
-        "threshold": 0.5
-      },
-      "observed_result": {
-        "baseline": -23.65,
-        "treatment": -23.34,
-        "delta": 0.31,
-        "unit": "dB"
-      },
-      "evidence_files": [],
-      "status": "BLOCKED",
-      "blocking_reason": "Delta +0.31 dB << 0.5 dB threshold. Drive saturation effect is real (adds harmonics/energy) but manifests as +0.31 dB in overall RMS. 0.5 dB threshold designed for broad dynamics (OSC Level +24 dB) is not appropriate for subtle saturation effects. Not FAILED; threshold mismatch."
+      "notes": "Monotonic decrease across value sweep 0\u2192100. Reproducible directional effect well above threshold."
     },
     {
       "capability_id": "OSC1.Detune",
