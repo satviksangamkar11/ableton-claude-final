@@ -74,6 +74,20 @@ BLOCKED_NO_EVIDENCE = NEGATIVE_EVIDENCE  # back-compat alias; NEGATIVE_EVIDENCE 
 
 
 @dataclass(frozen=True)
+class ExecutionBinding:
+    """Authoritative execution primitive binding.
+
+    Derived from evidence, never caller-supplied.
+    Maps semantic target to concrete execution primitive.
+    """
+    mutation_type: str                # "BODY_STATE" | "HOST_PARAMETER" | "TOPOLOGY" | "COMPOUND"
+    body_path: Optional[str] = None   # e.g. "Envelope0.plainParams.kParamRelease" (BODY_STATE)
+    host_parameter_name: Optional[str] = None  # e.g. "Env 1 Release" (HOST_PARAMETER)
+    binding_source: str = ""          # e.g. "semantic_vst3_mapping.json", "evidence_mutation_0001.pkl"
+    binding_version: str = ""         # version/hash of the mapping used
+
+
+@dataclass(frozen=True)
 class CapabilityContract:
     target: str                      # e.g. "FXEQ.kParamType1"
     allowed_operation: str
@@ -83,6 +97,7 @@ class CapabilityContract:
     measurement: Optional[Dict[str, Any]]
     scope: Dict[str, Any]            # tested-context-only description + any flagged limitation
     provenance: Dict[str, Any]       # evidence ids, claim_definition_id, condition hash -- traceable back
+    execution_binding: Optional[ExecutionBinding] = None  # AUTHORITATIVE execution primitive binding
     limitations: Tuple[str, ...] = ()
 
     def usable_for(self, required_causal: bool = False) -> bool:

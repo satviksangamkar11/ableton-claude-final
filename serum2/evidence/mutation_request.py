@@ -34,11 +34,14 @@ class MutationRequest:
     value: Any                          # The requested value
 
     # BODY_STATE mutation path
+    # ASSERTION ONLY: Cross-check against contract.execution_binding.body_path
+    # Contract is authoritative source of truth, not caller
     body_path: Optional[str] = None     # e.g., "Envelope0.plainParams.kParamRelease"
 
     # HOST_PARAMETER mutation target
-    # This MUST match the authoritative binding from the contract.
-    # Executor validates it; caller does not choose it.
+    # ASSERTION ONLY: Cross-check against contract.execution_binding.host_parameter_name
+    # Contract is authoritative source of truth; caller assertion for verification only
+    # Executor will REFUSE if mismatch between request.host_parameter_name and contract binding
     host_parameter_name: Optional[str] = None  # e.g., "Env 1 Release"
 
     # Authority requirements

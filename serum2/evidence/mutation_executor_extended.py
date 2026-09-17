@@ -146,9 +146,38 @@ def _execute_body_state_mutation(
     contract: cc.CapabilityContract,
     admission_result: admission.AdmissionResult,
 ) -> MutationAuthorityProof:
-    """Execute BODY_STATE mutation via pathmerge."""
+    """Execute BODY_STATE mutation via pathmerge.
 
-    mutation_target_path = request.body_path or contract.scope.get("mutation_target_path")
+    CRITICAL: Resolve binding from contract.execution_binding, not caller.
+    Caller-supplied body_path is assertion-only (cross-check, not authority).
+    """
+
+    # AUTHORITATIVE BINDING: contract.execution_binding
+    if not contract.execution_binding or contract.execution_binding.mutation_type != MutationType.BODY_STATE.value:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            body_path=request.body_path,
+            admission_result=admission_result,
+            executed=False,
+            detail="No BODY_STATE execution binding in contract",
+        )
+
+    mutation_target_path = contract.execution_binding.body_path
+
+    # Cross-check caller assertion if supplied
+    if request.body_path and request.body_path != mutation_target_path:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            body_path=request.body_path,
+            admission_result=admission_result,
+            executed=False,
+            detail=f"Body path mismatch: requested {request.body_path}, contract authorizes {mutation_target_path}",
+        )
+
     if not mutation_target_path:
         return MutationAuthorityProof(
             target=request.target,
@@ -163,10 +192,11 @@ def _execute_body_state_mutation(
     baseline_value = pathmerge.read_path_value(body, mutation_target_path)
 
     try:
-        # Execute mutation
+        # Execute mutation (always count as 1 invocation, regardless of state change)
         pathmerge.apply_path_value(body, mutation_target_path, request.value)
+        actual_call_count = 1  # We called apply_path_value() exactly once
 
-        # Verify change
+        # Verify change (independent from invocation count)
         post_value = pathmerge.read_path_value(body, mutation_target_path)
         changed = (post_value != baseline_value)
 
@@ -180,7 +210,7 @@ def _execute_body_state_mutation(
             admission_result=admission_result,
             executed=True,
             mutation_succeeded=changed,
-            pathmerge_call_count=1 if changed else 0,
+            pathmerge_call_count=actual_call_count,  # Always 1 when admission approved
         )
 
     except Exception as e:
@@ -203,14 +233,23 @@ def _execute_host_parameter_mutation(
 ) -> MutationAuthorityProof:
     """Execute HOST_PARAMETER mutation via synth.set_parameter().
 
-    CRITICAL: Validate authoritative host-parameter binding.
-    The contract, not the caller, determines which parameter gets mutated.
+    CRITICAL: Resolve binding from contract.execution_binding, not caller.
+    Caller-supplied host_parameter_name is assertion-only (cross-check, not authority).
     """
 
-    host_param_name = request.host_parameter_name
-    if not host_param_name:
-        # Try to extract from contract
-        host_param_name = contract.scope.get("host_parameter_name") if contract.scope else None
+    # AUTHORITATIVE BINDING: contract.execution_binding
+    if not contract.execution_binding or contract.execution_binding.mutation_type != MutationType.HOST_PARAMETER.value:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            host_parameter_name=request.host_parameter_name,
+            admission_result=admission_result,
+            executed=False,
+            detail="No HOST_PARAMETER execution binding in contract",
+        )
+
+    host_param_name = contract.execution_binding.host_parameter_name
 
     if not host_param_name:
         return MutationAuthorityProof(
@@ -220,22 +259,19 @@ def _execute_host_parameter_mutation(
             host_parameter_name=request.host_parameter_name,
             admission_result=admission_result,
             executed=False,
-            detail="No host_parameter_name in request or contract",
+            detail="Contract execution_binding has no host_parameter_name",
         )
 
-    # AUTHORITATIVE BINDING VALIDATION
-    # Verify that the semantic target → contract → host parameter chain is valid
-    expected_host_param = contract.scope.get("host_parameter_name") if contract.scope else None
-    if expected_host_param and host_param_name != expected_host_param:
-        # Caller tried to mutate a different parameter than what the contract authorizes
+    # Cross-check caller assertion if supplied
+    if request.host_parameter_name and request.host_parameter_name != host_param_name:
         return MutationAuthorityProof(
             target=request.target,
             mutation_type=request.mutation_type,
             requested_value=request.value,
-            host_parameter_name=host_param_name,
+            host_parameter_name=request.host_parameter_name,
             admission_result=admission_result,
             executed=False,
-            detail=f"Host parameter mismatch: requested {host_param_name}, contract authorizes {expected_host_param}",
+            detail=f"Host parameter mismatch: requested {request.host_parameter_name}, contract authorizes {host_param_name}",
         )
 
     try:
@@ -259,10 +295,11 @@ def _execute_host_parameter_mutation(
         # Capture baseline
         baseline_value = synth.get_parameter(param_idx)
 
-        # Execute mutation
+        # Execute mutation (always count as 1 invocation, regardless of state change)
         synth.set_parameter(param_idx, float(request.value))
+        actual_call_count = 1  # We called set_parameter() exactly once
 
-        # Verify change
+        # Verify change (independent from invocation count)
         post_value = synth.get_parameter(param_idx)
         changed = (post_value != baseline_value)
 
@@ -276,7 +313,7 @@ def _execute_host_parameter_mutation(
             admission_result=admission_result,
             executed=True,
             mutation_succeeded=changed,
-            set_parameter_call_count=1 if changed else 0,
+            set_parameter_call_count=actual_call_count,  # Always 1 when admission approved
         )
 
     except Exception as e:
