@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "phase": "E-0 Authority Bypass Audit",
+    "date": "2026-09-17",
+    "objective": "Verify that all mutation paths are authority-gated and no mutation can occur without admission checks"
+  },
+  "authority_model": {
+    "requirement": "UNQUALIFIED semantics cannot mutate Serum; only ADMITTED capabilities can execute",
+    "enforcement_point": "serum2/evidence/admission.py::admit() must return ADMITTED before any mutation",
+    "refusal_mechanism": "admission returns one of: REFUSED_UNKNOWN, REFUSED_NEGATIVE_EVIDENCE, REFUSED_UNSUPPORTED, REFUSED_CONTRADICTED, REFUSED_PREREQUISITE_UNVERIFIED, REFUSED_MEASUREMENT_MISMATCH, REFUSED_SCOPE_EXPANSION"
+  },
+  "audit_findings": {
+    "pathmerge_apply_calls": {
+      "count": 88,
+      "files_affected": [
+        "serum2/operations/scalar_operations.py",
+        "serum2/operations/compound_operations.py",
+        "serum2/operations/resource_model.py",
+        "serum2/tests/*"
+      ],
+      "concern": "apply_path_value() executes state mutations. Must verify ALL non-test calls go through admission gate",
+      "audit_status": "REQUIRES_VERIFICATION"
+    },
+    "set_parameter_calls": {
+      "count": 78,
+      "files_affected": [
+        "serum2/operations/scalar_operations.py",
+        "serum2/operations/compound_operations.py",
+        "serum2/tests/*"
+      ],
+      "concern": "set_parameter() may bypass state-path admission if used directly on targets",
+      "audit_status": "REQUIRES_VERIFICATION"
+    },
+    "phase_9b_structural_paths": {
+      "location": "serum2/operations/scalar_operations.py:29-200+",
+      "concern": "PHASE_9B_STRUCTURAL_PATHS contains hardcoded capability_key → path mappings. If used to bypass SEMANTIC_TARGETS lookup, this is an authority bypass vector",
+      "finding": "Verify that these paths are ONLY used after admission checks, not as direct fallbacks",
+      "audit_status": "REQUIRES_VERIFICATION"
+    },
+    "direct_target_compilation": {
+      "concern": "If producer/compiler accepts a target name (e.g., 'ENV1.Attack') and compiles it directly via target-path without going through CapabilityContract admission, this bypasses authority",
+      "audit_status": "REQUIRES_CODE_INSPECTION"
+    }
+  },
+  "required_verification_tests": {
+    "test_1_unqualified_refused": {
+      "description": "Attempt to mutate a semantic with no CapabilityContract; verify REFUSED_UNKNOWN",
+      "status": "PENDING"
+    },
+    "test_2_qualified_but_not_admitted": {
+      "description": "Attempt to mutate a semantic with a contract but wrong status (STRUCTURAL_ONLY, NEGATIVE_EVIDENCE); verify REFUSED",
+      "status": "PENDING"
+    },
+    "test_3_prerequisite_unverified": {
+      "description": "Attempt to mutate a semantic where prerequisites are not met; verify REFUSED_PREREQUISITE_UNVERIFIED",
+      "status": "PENDING"
+    },
+    "test_4_measurement_mismatch": {
+      "description": "Attempt to mutate with wrong measurement definition ID; verify REFUSED_MEASUREMENT_MISMATCH",
+      "status": "PENDING"
+    },
+    "test_5_unknown_target": {
+      "description": "Attempt to compile/mutate a target not in SEMANTIC_TARGETS and with no contract; verify REFUSED_UNKNOWN",
+      "status": "PENDING"
+    }
+  },
+  "authority_gating_checklist": {
+    "admission_gate_on_all_mutations": {
+      "required": true,
+      "verified": false,
+      "note": "Every call to pathmerge.apply_path_value() in production (non-test) code must be preceded by admission.admit() check"
+    },
+    "no_fallback_without_contract": {
+      "required": true,
+      "verified": false,
+      "note": "PHASE_9B_STRUCTURAL_PATHS must never be used as a fallback when contract lookup fails"
+    },
+    "exact_target_matching": {
+      "required": true,
+      "verified": false,
+      "note": "No fuzzy matching on targets; admission.admit() enforces exact match only"
+    },
+    "prerequisite_verification_mandatory": {
+      "required": true,
+      "verified": false,
+      "note": "If contract.prerequisites is non-empty, admission.admit() must verify each prerequisite independently"
+    },
+    "measurement_definition_matching": {
+      "required": true,
+      "verified": false,
+      "note": "If measurement_definition_id is provided, it must exactly match contract.measurement_definition_id"
+    }
+  },
+  "bypass_vulnerability_assessment": {
+    "pathmerge_direct_call": {
+      "vulnerability": "Could a caller directly import and call pathmerge.apply_path_value() without going through admission?",
+      "severity": "CRITICAL",
+      "mitigation": "Verify that pathmerge is not exported from public module; admission gate is the only public entry point",
+      "status": "REQUIRES_VERIFICATION"
+    },
+    "phase_9b_structural_paths_fallback": {
+      "vulnerability": "Could scalar_operations.py use PHASE_9B_STRUCTURAL_PATHS as fallback when target not found in contracts?",
+      "severity": "HIGH",
+      "mitigation": "Inspect scalar_operations.py compiler; confirm it does NOT fall back to PHASE_9B_STRUCTURAL_PATHS without admission",
+      "status": "REQUIRES_VERIFICATION"
+    },
+    "target_only_compilation": {
+      "vulnerability": "Could the compiler accept a semantic target name and compile it directly without checking CapabilityContract?",
+      "severity": "HIGH",
+      "mitigation": "Inspect producer loop and compiler; confirm all semantic targets route through admission.admit()",
+      "status": "REQUIRES_VERIFICATION"
+    },
+    "test_code_patterns": {
+      "vulnerability": "Are test files using pathmerge directly without admission? (This is OK for tests, but makes audit harder)",
+      "severity": "LOW",
+      "mitigation": "Audit test files separately; only production (non-test) code matters for this gate",
+      "status": "DEFERRED"
+    }
+  },
+  "gate_verdict": "BLOCKED — Authority bypass vulnerabilities must be verified/eliminated before Phase E-1 proceeds"
+}

@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "phase": "E-0 Execution Surface Conformance",
+    "date": "2026-09-17",
+    "total_blockers": 7,
+    "verdict": "PHASE E-1 BLOCKED until blockers resolved"
+  },
+  "blockers": [
+    {
+      "id": "BLOCKER_UI_ACTION_EXECUTOR",
+      "family": "All 12 UI_ACTION families (235 semantics)",
+      "file_path": "serum2/operations/*.py (TBD)",
+      "current_implementation": "MISSING — no UI_ACTION executor identified",
+      "evidence": "Phase D classified as UI_ACTION; control path marks as UI_ACTION; execution mechanism is 'ui_control_action' but actual executor (Ableton MCP, direct UI action, VST3 parameter, context menu) is UNKNOWN",
+      "failure_mode": "Cannot execute UI_ACTION operations; no readback mechanism; no rollback mechanism",
+      "required_fix": "Identify/implement UI_ACTION executor. Determine for each UI_ACTION family whether it: (1) maps to Ableton MCP command, (2) is a direct UI/editor action, (3) is a VST3 parameter, (4) is a context menu operation, (5) is a resource operation",
+      "qualification_impact": "BLOCKS all 235 UI_ACTION member verifications; prevents Phase E-1 from proceeding",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "BLOCKER_UNKNOWN_EXECUTION_INVESTIGATION",
+      "family": "UNKNOWN_EXECUTION (160 semantics)",
+      "file_path": "serum2/operations/*.py (TBD)",
+      "current_implementation": "No classification — 160 semantics marked UNKNOWN_EXECUTION",
+      "evidence": "Phase C disposed as TARGET_REQUIRED; Phase D reclassified as UNKNOWN_EXECUTION pending investigation",
+      "failure_mode": "Cannot determine execution mechanism for any of 160 semantics; no executor identified; no readback/rollback paths",
+      "required_fix": "Investigate each UNKNOWN_EXECUTION semantic. Determine: (1) Is it a HOST_PARAMETER with missing target? (2) Is it a UI_ACTION? (3) Is it a BODY_STATE_FIELD? (4) Is it a RESOURCE operation? (5) Is it genuinely UNKNOWN (unavailable, unsupported, or requires different mechanism)?",
+      "qualification_impact": "BLOCKS all 160 investigation tests; prevents Phase E-3 from proceeding",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "BLOCKER_BODY_STATE_CONDITIONALITY",
+      "family": "BODY_STATE_FIELD_FILTER (40 members), BODY_STATE_FIELD_LFO (48 members)",
+      "file_path": "serum2/operations/scalar_operations.py (state variant, TBD)",
+      "current_implementation": "Identified as STATE operation kind; executor is scalar_operations.py; but conditionality mechanism UNVERIFIED",
+      "evidence": "Control path marks as BODY_STATE_FIELD; classified as conditional on parent state (Filter Type, LFO mode); but actual implementation must verify: (1) Field is readable when condition matches, (2) Field is absent/null when condition does not match, (3) Mutation + readback works only when condition is true",
+      "failure_mode": "Cannot verify that conditional state fields are actually accessible; may attempt to mutate fields that do not exist in current state context",
+      "required_fix": "Verify scalar_operations.py state variant actually checks parent condition before reading/writing conditional fields. Test that: (1) Filter Type = X enables access to Filter.Type-specific params, (2) LFO Mode = X enables access to LFO.Mode-specific params, (3) Attempted access outside condition returns null/error",
+      "qualification_impact": "BLOCKS all 88 BODY_STATE_FIELD member verifications; prevents Phase E-1 from proceeding for this family",
+      "severity": "HIGH"
+    },
+    {
+      "id": "BLOCKER_AUTHORITY_BYPASS_VERIFICATION",
+      "family": "ALL families",
+      "file_path": "serum2/operations/*.py, serum2/producer/*.py, serum2/evidence/admission.py",
+      "current_implementation": "admission.admit() exists; PHASE_9B_STRUCTURAL_PATHS exists; pathmerge.apply_path_value() exists; but gating coverage UNVERIFIED",
+      "evidence": "88 pathmerge calls, 78 set_parameter calls found in codebase; unclear whether all non-test mutation paths route through admission gate",
+      "failure_mode": "Risk of UNQUALIFIED semantics mutating Serum if any mutation path bypasses admission gate",
+      "required_fix": "Audit all pathmerge.apply_path_value() and set_parameter() calls in production (non-test) code. Verify: (1) Every mutation is preceded by admission.admit() check, (2) PHASE_9B_STRUCTURAL_PATHS is never used as fallback for unknown targets, (3) No direct target-name compilation without admission check",
+      "qualification_impact": "BLOCKS entire Phase E-1 member verification until authority gating is proven complete",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "BLOCKER_RESOURCE_OPERATION_EXECUTOR",
+      "family": "RESOURCE_OPERATION (41 semantics)",
+      "file_path": "serum2/operations/resource_resolver.py",
+      "current_implementation": "resource_resolver.py and resource_model.py exist; but actual executor (how resource is loaded into Serum) UNKNOWN",
+      "evidence": "BROWSER section semantics (preset/sample load); classified as RESOURCE; but flow is unclear: (1) Does it call Ableton MCP to load? (2) Does it mutate Serum state directly? (3) How is resource path resolved? (4) How is persistence verified?",
+      "failure_mode": "Cannot execute resource operations; unclear readback/verification path",
+      "required_fix": "Verify resource_resolver flow: (1) Resource path resolution mechanism, (2) Actual loading mechanism (Ableton MCP or direct pathmerge), (3) Readback verification (how to confirm resource is loaded), (4) Rollback mechanism (restore original resource)",
+      "qualification_impact": "BLOCKS all 41 RESOURCE_OPERATION member verifications",
+      "severity": "HIGH"
+    },
+    {
+      "id": "BLOCKER_STRUCTURAL_OPERATION_SEPARATION",
+      "family": "STRUCTURAL_OPERATION (10 semantics)",
+      "file_path": "serum2/operations/fx_structural_operations.py",
+      "current_implementation": "fx_structural_operations.py exists; but separation from COMPILER-ONLY proofs UNCLEAR",
+      "evidence": "STRUCTURAL_OPERATION marked as TOPOLOGY kind; but unclear whether: (1) Actual topology change happens in Serum vs only in compiler model, (2) Readback verifies real Serum topology vs inferred state",
+      "failure_mode": "Structural operations may be compiler-only without actual Serum state verification",
+      "required_fix": "Verify fx_structural_operations.py ACTUALLY mutates Serum topology and readback verifies the change in Serum state (not just compiler model)",
+      "qualification_impact": "BLOCKS all 10 STRUCTURAL_OPERATION member verifications",
+      "severity": "MEDIUM"
+    },
+    {
+      "id": "BLOCKER_REGRESSION_TEST_EXECUTION",
+      "family": "ALL families (as validation gate)",
+      "file_path": "serum2/operations/test_*.py (all)",
+      "current_implementation": "Regression test suites exist for scalar, compound, FX, resource, oscillator operations",
+      "evidence": "Test files exist but have NOT been run in E-0 audit context to verify current implementation state",
+      "failure_mode": "Regressions in existing code could mask bugs in execution surfaces",
+      "required_fix": "Run complete regression test suite. All tests must PASS before Phase E-1 begins",
+      "qualification_impact": "BLOCKS Phase E-1 until regression suite passes",
+      "severity": "HIGH"
+    }
+  ],
+  "resolution_path": {
+    "step_1": "Resolve BLOCKER_AUTHORITY_BYPASS_VERIFICATION (critical for all other work)",
+    "step_2": "Resolve BLOCKER_UI_ACTION_EXECUTOR (12 UI_ACTION families, 235 semantics)",
+    "step_3": "Resolve BLOCKER_UNKNOWN_EXECUTION_INVESTIGATION (160 semantics)",
+    "step_4": "Resolve BLOCKER_BODY_STATE_CONDITIONALITY (88 semantics)",
+    "step_5": "Resolve BLOCKER_RESOURCE_OPERATION_EXECUTOR (41 semantics)",
+    "step_6": "Resolve BLOCKER_STRUCTURAL_OPERATION_SEPARATION (10 semantics)",
+    "step_7": "Resolve BLOCKER_REGRESSION_TEST_EXECUTION (validation gate for all)",
+    "then": "Re-run E-0 audit; if all PASS, proceed to Phase E-1"
+  },
+  "gate_status": "BLOCKED"
+}
