@@ -1,0 +1,672 @@
+{
+  "registry_version": "1.1",
+  "purpose": "Authoritative, persistent source of truth for proven Serum causal-qualification exercise contexts. Future runs MUST read this registry instead of rediscovering contexts.",
+  "execution_coverage_frozen_at": "d512575",
+  "do_not_modify": "This registry records causal QUALIFICATION evidence (a separate concern from the frozen V4 execution-coverage registry). It does not alter or reopen V4.",
+  "schema": {
+    "capability_id": "semantic identifier",
+    "family": "instrument family (OSC, FILTER, ENV, FX, LFO)",
+    "exercise_context": "list of [host_param_name, value] applied via set_parameter() to BOTH baseline and treatment arms before rendering (shared gate/activation state, NOT the mutation itself)",
+    "fixture_source": "python module/function that reproduces this exact state",
+    "target_mutation": {
+      "adapter": "cbor_body | host_param",
+      "path_or_param": "exact CBOR path or VST3 host parameter name",
+      "baseline_value": "value used for baseline arm (null = skeleton default)",
+      "treatment_value": "value used for treatment arm"
+    },
+    "measurement_template": {
+      "metric": "measurement kernel name from serum2/evidence/measure.py",
+      "expected_direction": "increase | decrease | change",
+      "threshold": "minimum |delta| to count as effect"
+    },
+    "evidence_files": "list of repo-relative paths containing the raw evidence",
+    "status": "PROVEN | BLOCKED | UNRESOLVED"
+  },
+  "entries": [
+    {
+      "capability_id": "Filter1.Cutoff",
+      "family": "FILTER",
+      "exercise_context": [
+        [
+          "Filter 1 On",
+          1.0
+        ]
+      ],
+      "fixture_source": "serum2/qualification/fixtures/filter1_active.py::FILTER1_ACTIVE",
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "VoiceFilter0.plainParams.kParamFreq",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "increase",
+        "threshold": 200.0
+      },
+      "proven_result": {
+        "baseline": 463.09,
+        "treatment": 3147.43,
+        "delta": 2684.34,
+        "unit": "Hz"
+      },
+      "evidence_files": [
+        "serum2/qualification/filter_cutoff_pilot.py",
+        "serum2/qualification/A_FILTER_CUTOFF_PILOT_EVIDENCE.json",
+        "serum2/qualification/test_causal_mutation_instrumentation_v2.py"
+      ],
+      "status": "PROVEN"
+    },
+    {
+      "capability_id": "OSC1.Level",
+      "family": "OSC",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/osc1_active.py::OSC1_ACTIVE",
+      "target_mutation": {
+        "adapter": "host_param",
+        "path_or_param": "A Level",
+        "baseline_value": 0.25,
+        "treatment_value": 1.0
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "increase",
+        "threshold": 1.0
+      },
+      "proven_result": {
+        "baseline": -20.1,
+        "treatment": 3.9,
+        "delta": 24.0,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
+      ],
+      "status": "PROVEN",
+      "notes": "OSC A always active by default ('A Enable'=1.0); no gate needed."
+    },
+    {
+      "capability_id": "OSC2.Level",
+      "family": "OSC",
+      "exercise_context": [
+        [
+          "B Enable",
+          1.0
+        ]
+      ],
+      "fixture_source": "serum2/qualification/fixtures/osc2_active.py::OSC2_ACTIVE",
+      "target_mutation": {
+        "adapter": "host_param",
+        "path_or_param": "B Level",
+        "baseline_value": 0.0,
+        "treatment_value": 1.0
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "increase",
+        "threshold": 1.0
+      },
+      "proven_result": {
+        "baseline": -20.1,
+        "treatment": -11.2,
+        "delta": 8.8,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json",
+        "serum2/qualification/CAUSAL_QUALIFICATION_V1_PENDING_RESOLUTION_REPORT.json"
+      ],
+      "status": "PROVEN",
+      "notes": "OSC B defaults OFF ('B Enable'=0.0); gate required."
+    },
+    {
+      "capability_id": "OSC3.Level",
+      "family": "OSC",
+      "exercise_context": [
+        [
+          "C Enable",
+          1.0
+        ]
+      ],
+      "fixture_source": "serum2/qualification/fixtures/osc3_active.py::OSC3_ACTIVE",
+      "target_mutation": {
+        "adapter": "host_param",
+        "path_or_param": "C Level",
+        "baseline_value": 0.0,
+        "treatment_value": 1.0
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "increase",
+        "threshold": 1.0
+      },
+      "proven_result": {
+        "baseline": -20.1,
+        "treatment": -11.2,
+        "delta": 8.8,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json",
+        "serum2/qualification/CAUSAL_QUALIFICATION_V1_PENDING_RESOLUTION_REPORT.json"
+      ],
+      "status": "PROVEN",
+      "notes": "OSC C defaults OFF ('C Enable'=0.0); gate required. Verified via direct VST3 parameter inspection that 'C Enable'/'C Level' (idx 130/131) structurally mirror 'B Enable'/'B Level' (idx 75/76)."
+    },
+    {
+      "capability_id": "Env1.Attack",
+      "family": "ENV",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/env1.py::ENV1",
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "Env0.plainParams.kParamAttack",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "decrease",
+        "threshold": 0.5
+      },
+      "proven_result": {
+        "baseline": -20.1,
+        "treatment": -22.3,
+        "delta": -2.2,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json",
+        "serum2/qualification/attack_qualified_complete_001_PASS_FULL.json"
+      ],
+      "status": "PROVEN",
+      "notes": "Env0 = Env1 in Serum UI (0-indexed). No prerequisites (per attack_qualified_complete_001_PASS_FULL.json)."
+    },
+    {
+      "capability_id": "FXEQ.Freq1",
+      "family": "FX",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/fx_eq.py::FX_EQ",
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "FXRack0.FX.0.FXEQ.plainParams.kParamFreq1",
+        "baseline_value": null,
+        "treatment_value": 8000.0
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "change",
+        "threshold": 200.0
+      },
+      "proven_result": {
+        "baseline": 4100.3,
+        "treatment": 11723.2,
+        "delta": 7622.9,
+        "unit": "Hz"
+      },
+      "fx_preset_injection": {
+        "preset_path": "C:\\Users\\Satvik\\Documents\\Xfer\\Serum 2 Presets\\Presets\\Factory\\Arp\\ARP - Altar.SerumPreset",
+        "injected_key": "FXRack0",
+        "mechanism": "behavioral_seed_batch.py::_load_fx_skeleton -- deep-copies base skeleton, overwrites body['FXRack0'] with the preset's FXRack0 so both arms share identical FX chain context"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
+      ],
+      "status": "PROVEN",
+      "notes": "FXEQ has no wet/dry gate in plainParams (always fully active when present in chain); no exercise context needed beyond the FX injection itself."
+    },
+    {
+      "capability_id": "Filter2.Cutoff",
+      "family": "FILTER",
+      "exercise_context": [
+        [
+          "Filter 2 On",
+          1.0
+        ]
+      ],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "VoiceFilter1.plainParams.kParamFreq",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "increase",
+        "threshold": 200.0
+      },
+      "observed_result": {
+        "baseline": 4378.13,
+        "treatment": 4378.13,
+        "delta": 0.0,
+        "unit": "Hz"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/test_filter2_pilot_mechanism.py",
+        "serum2/qualification/FILTER_P1_RESOLUTION.md",
+        "serum2/qualification/CAUSAL_QUALIFICATION_V1_PENDING_RESOLUTION_REPORT.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "'Filter 2 On'=1.0 gate confirmed applied (host param before=0.0, after=1.0), mutation applied, render succeeds -- but no spectral change observed. FILTER_P1_RESOLUTION.md (direct Serum UI inspection) confirms Filter 2 shows NO visible filter response curve even when nominally 'on', meaning an additional routing/mode parameter (candidates: 'A>Filter Balance', 'Filter Route'/serial-parallel mode) gates whether audio actually passes through Filter 2. That parameter has not yet been identified. Do not force this to CAUSAL_VERIFIED or CAUSAL_FAILED."
+    },
+    {
+      "capability_id": "Env2.Attack",
+      "family": "ENV",
+      "exercise_context": [],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "Env1.plainParams.kParamAttack",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "decrease",
+        "threshold": 0.5
+      },
+      "observed_result": {
+        "baseline": -20.1,
+        "treatment": -20.1,
+        "delta": 0.0,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/CAUSAL_QUALIFICATION_V1_PENDING_RESOLUTION_REPORT.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Mutation applied and rendered successfully (mirrors proven Env1.Attack/Env0 path exactly), but no RMS change observed. Env1 (second envelope, UI 'Env 2') is not routed to amplitude or any audible destination in the default skeleton state. No modulation-routing exercise context has been identified/tried yet. Do not force this to CAUSAL_VERIFIED or CAUSAL_FAILED."
+    },
+    {
+      "capability_id": "FXEQ.Gain2",
+      "family": "FX",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/fx_eq.py::FX_EQ",
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "FXRack0.FX.0.FXEQ.plainParams.kParamGain2",
+        "baseline_value": null,
+        "treatment_value": 15.0
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "increase",
+        "threshold": 1.0
+      },
+      "proven_result": {
+        "baseline": -14.8,
+        "treatment": -10.8,
+        "delta": 4.0,
+        "unit": "dB"
+      },
+      "fx_preset_injection": {
+        "preset_path": "C:\\Users\\Satvik\\Documents\\Xfer\\Serum 2 Presets\\Presets\\Factory\\Arp\\ARP - Altar.SerumPreset",
+        "injected_key": "FXRack0",
+        "mechanism": "same as FXEQ.Freq1 -- reuses fx_eq.py fixture unmodified"
+      },
+      "evidence_files": [
+        "serum2/qualification/CAUSAL_QUALIFICATION_V2_SCALE_BATCH_REPORT.json"
+      ],
+      "status": "PROVEN",
+      "notes": "Second parameter of the already-proven FXEQ module (baseline=-1.47 dB gain). No new exercise context needed -- confirms FXEQ requires no wet/dry gate for any of its plainParams."
+    },
+    {
+      "capability_id": "FXEQ.Reso1",
+      "family": "FX",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/fx_eq.py::FX_EQ",
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "FXRack0.FX.0.FXEQ.plainParams.kParamReso1",
+        "baseline_value": null,
+        "treatment_value": 100.0
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "change",
+        "threshold": 200.0
+      },
+      "observed_result": {
+        "baseline": 4100.3,
+        "treatment": 4029.7,
+        "delta": -70.6,
+        "unit": "Hz"
+      },
+      "evidence_files": [
+        "serum2/qualification/CAUSAL_QUALIFICATION_V2_SCALE_BATCH_REPORT.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Delta -70.6 Hz (real, non-zero effect) below 200 Hz threshold designed for Freq1. Resonance/Q parameters have narrower spectral signature than frequency parameters. Not FAILED; needs resonance-specific measurement kernel or threshold calibration."
+    },
+    {
+      "capability_id": "FXDistortion.Drive",
+      "family": "FX",
+      "exercise_context": [],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "FXRack0.FX.1.FXDistortion.plainParams.kParamDrive",
+        "baseline_value": null,
+        "treatment_value": 1.0
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "increase",
+        "threshold": 0.5
+      },
+      "observed_result": {
+        "baseline": -14.8,
+        "treatment": -14.8,
+        "delta": 0.0,
+        "unit": "dB"
+      },
+      "attempted_shared_overrides": [
+        {
+          "paths": [
+            [
+              "FXRack0.FX.1.FXDistortion.plainParams.kParamWet",
+              1.0
+            ]
+          ],
+          "result": "NO_OBSERVED_EFFECT"
+        },
+        {
+          "paths": [
+            [
+              "FXRack0.FX.1.FXDistortion.plainParams.kParamWet",
+              1.0
+            ],
+            [
+              "FXRack0.FX.1.kUIParamMixOrGain",
+              1.0
+            ]
+          ],
+          "result": "NO_OBSERVED_EFFECT"
+        }
+      ],
+      "evidence_files": [
+        "serum2/qualification/CAUSAL_QUALIFICATION_V2_SCALE_BATCH_REPORT.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Direct preset inspection confirmed FXDistortion has kParamWet=0.0 by default (unlike FXEQ, which has no wet param). Forced kParamWet=1.0 (mirroring the Filter-On gate pattern) via fx_shared_overrides: no effect. Also tried forcing kUIParamMixOrGain=1.0 (a second, separate UI-level mix control observed in the preset data) simultaneously: still no effect. The actual gate/routing mechanism that makes FXDistortion audible in the chain has not been identified. Do not force to CAUSAL_VERIFIED or CAUSAL_FAILED."
+    },
+    {
+      "capability_id": "LFO1.Rate (with active MODULATION_ROUTE)",
+      "family": "LFO",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/modulation_route.py::MODULATION_ROUTE",
+      "target_mutation": {
+        "adapter": "compound+cbor_body",
+        "path_or_param": "compound_create_modulation_route(source='LFO1', destination='Osc1.Volume', amount=0.8) applied to BOTH arms, then LFO0.plainParams.kParamRate -> 0.9 on treatment only",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "change",
+        "threshold": 0.5
+      },
+      "observed_result": {
+        "baseline": -15.62,
+        "treatment": -15.82,
+        "delta": -0.2,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/CAUSAL_QUALIFICATION_V2_SCALE_BATCH_REPORT.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Route creation succeeded (structural, reused proven compound_create_modulation_route mechanism); LFO rate mutation applied successfully. But overall_rms_db integrates energy across the FULL render window, which is insensitive to modulation RATE (speed of oscillation) -- it can only detect modulation DEPTH/amplitude changes. No periodicity/rate-sensitive measurement kernel exists yet in serum2/evidence/measure.py. This is a measurement-infrastructure gap, not evidence the capability lacks a causal effect. Do not force to CAUSAL_VERIFIED or CAUSAL_FAILED; do not fabricate a new measurement kernel without evidence it is correct."
+    },
+    {
+      "capability_id": "Filter1.Resonance",
+      "family": "FILTER",
+      "exercise_context": [
+        [
+          "Filter 1 On",
+          1.0
+        ],
+        [
+          "Filter 1 Freq",
+          0.15
+        ]
+      ],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "VoiceFilter0.plainParams.kParamReso",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "increase",
+        "threshold": 0.5
+      },
+      "observed_result": {
+        "baseline": -60.78,
+        "treatment": -60.69,
+        "delta": 0.09,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Delta +0.09 dB << 0.5 dB threshold. Real resonance effect exists but not visible in 2-second render with low cutoff (0.15) + high resonance (0.9). Exercise/render context insufficient. Not FAILED; measurement context-sensitive."
+    },
+    {
+      "capability_id": "OSC1.Detune",
+      "family": "OSC",
+      "exercise_context": [],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "VoiceOsc0.plainParams.kParamFine",
+        "baseline_value": null,
+        "treatment_value": 1.0
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "increase",
+        "threshold": 50.0
+      },
+      "observed_result": {
+        "baseline": null,
+        "treatment": null,
+        "delta": 0.0,
+        "unit": "Hz"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "cbor_path 'VoiceOsc0...' likely does not correspond to the actual active oscillator body key (evidence elsewhere in repo shows the correct family is 'Oscillator0', not 'VoiceOsc0' -- see A_SEED_EXPERIMENT_04 null-path finding). Path needs re-verification before reclassifying."
+    },
+    {
+      "capability_id": "OSC2.Detune",
+      "family": "OSC",
+      "exercise_context": [
+        [
+          "B Enable",
+          1.0
+        ]
+      ],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "VoiceOsc1.plainParams.kParamFine",
+        "baseline_value": null,
+        "treatment_value": 1.0
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "increase",
+        "threshold": 50.0
+      },
+      "observed_result": {
+        "baseline": null,
+        "treatment": null,
+        "delta": 0.0,
+        "unit": "Hz"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Same 'VoiceOsc1' path concern as OSC1.Detune -- likely wrong body key family."
+    },
+    {
+      "capability_id": "Env1.Release",
+      "family": "ENV",
+      "exercise_context": [],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "Env0.plainParams.kParamRelease",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "increase",
+        "threshold": 0.5
+      },
+      "observed_result": {
+        "baseline": -20.1,
+        "treatment": -19.7,
+        "delta": 0.3,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Below threshold (0.3 dB observed vs 0.5 dB required). Direction correct (increase) but magnitude insufficient with a 0.4-beat note in a 2.0s render window -- likely needs a shorter note / longer render tail to expose sustained release energy, not a wrong mechanism. Requires stimulus-timing adjustment, not forced classification."
+    },
+    {
+      "capability_id": "Filter1.Drive",
+      "family": "FILTER",
+      "exercise_context": [
+        [
+          "Filter 1 On",
+          1.0
+        ]
+      ],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "VoiceFilter0.plainParams.kParamDrive",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "increase",
+        "threshold": 0.5
+      },
+      "observed_result": {
+        "baseline": -23.7,
+        "treatment": -23.3,
+        "delta": 0.3,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Below threshold (0.3 dB observed vs 0.5 dB required), correct direction. Same class as Env1.Release -- close to threshold, plausible measurement-window issue, not a mechanism failure."
+    },
+    {
+      "capability_id": "LFO1.Rate",
+      "family": "LFO",
+      "exercise_context": [],
+      "fixture_source": null,
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "LFO0.plainParams.kParamRate",
+        "baseline_value": null,
+        "treatment_value": 0.9
+      },
+      "measurement_template": {
+        "metric": "overall_rms_db",
+        "expected_direction": "change",
+        "threshold": 0.5
+      },
+      "observed_result": {
+        "baseline": -20.1,
+        "treatment": -20.1,
+        "delta": 0.0,
+        "unit": "dB"
+      },
+      "evidence_files": [
+        "serum2/qualification/behavioral_seed_batch.py",
+        "serum2/qualification/A_BEHAVIORAL_SEED_BATCH_EVIDENCE.json"
+      ],
+      "status": "BLOCKED",
+      "blocking_reason": "Expected finding, documented in source: LFO rate has no audible effect without an active modulation-route destination. Requires a MODULATION_ROUTE fixture (LFO1 -> an audible destination) before Rate can be causally tested. See modulation-route entries below."
+    },
+    {
+      "capability_id": "MODULATION_ROUTE.LFO_TO_BUS_STRUCTURAL",
+      "family": "LFO",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/modulation_route.py::create_lfo_route",
+      "target_mutation": {
+        "adapter": "compound",
+        "path_or_param": "compound_create_modulation_route(source='LFO1', destination='LFO3.Rate'|'Macro5', amount=0.5-0.6)",
+        "baseline_value": null,
+        "treatment_value": null
+      },
+      "measurement_template": {
+        "metric": "STRUCTURAL_STATE_ONLY -- ModSlot destModuleTypeString/destModuleID/destModuleParamID readback via real Serum round-trip",
+        "expected_direction": "n/a",
+        "threshold": null
+      },
+      "evidence_files": [
+        "serum2/qualification/a3_modulation_route.py",
+        "serum2/reconciliation/test_matrix_lfo_bus_destination_real_roundtrip.py"
+      ],
+      "status": "PROVEN",
+      "notes": "STRUCTURAL proof only: proves the route is created and persists through a real Serum round-trip (ModSlot fields match). Does NOT constitute a causal AUDIO proof -- no render/measurement step exists yet for this route. Required as the prerequisite fixture for any LFO1.Rate (or other LFO) causal audio test: apply this route creation to the skeleton BEFORE rendering baseline/treatment for the LFO parameter under test."
+    },
+    {
+      "capability_id": "FXEQ.Reso2",
+      "family": "FX",
+      "exercise_context": [],
+      "fixture_source": "serum2/qualification/fixtures/fx_eq.py::FX_EQ",
+      "target_mutation": {
+        "adapter": "cbor_body",
+        "path_or_param": "FXRack0.FX.0.FXEQ.plainParams.kParamReso2",
+        "baseline_value": null,
+        "treatment_value": 100.0
+      },
+      "measurement_template": {
+        "metric": "spectral_centroid_hz",
+        "expected_direction": "change",
+        "threshold": 200.0
+      },
+      "observed_result": {
+        "baseline": 4100.3,
+        "treatment": 4035.9,
+        "delta": -64.3,
+        "unit": "Hz"
+      },
+      "evidence_files": [],
+      "status": "BLOCKED",
+      "blocking_reason": "Delta -64.3 Hz; consistent with Reso1 pattern. Confirms resonance-specific measurement issue, not parameter deadness."
+    }
+  ]
+}
