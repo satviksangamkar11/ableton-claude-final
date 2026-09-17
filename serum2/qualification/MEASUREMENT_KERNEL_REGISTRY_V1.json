@@ -1,0 +1,245 @@
+{
+  "registry_version": "1.0",
+  "description": "Measurement kernel registry for causal qualification. Each kernel describes a measurement strategy appropriate for a specific parameter class (amplitude, spectral, resonance, envelope, distortion, etc.) with pass criteria tuned to that class's behavioral signature.",
+  "kernels": [
+    {
+      "kernel_id": "amplitude_broad",
+      "name": "Broad Amplitude (RMS)",
+      "function": "serum2.evidence.measure.rms_db",
+      "alias": "overall_rms_db",
+      "applicable_families": ["OSCILLATOR.LEVEL", "FILTER.GAIN", "MASTER.VOLUME"],
+      "measurement_principle": "Measures total energy of rendered audio via RMS in dB. Appropriate for parameters that add or remove significant energy (e.g., OSC Level +24 dB, Gain +10 dB, Dry->Wet mix).",
+      "render_duration_seconds": 2.0,
+      "stimulus": {
+        "note": 60,
+        "velocity": 100,
+        "duration_beats": 0.5,
+        "render_tail_beats": 1.5
+      },
+      "pass_criteria": {
+        "threshold_db": 0.5,
+        "note": "Designed for broad dynamics. Sensitive to parameter classes with >0.5 dB visible effect. Sub-0.5 dB effects are NOT FALSE NEGATIVES here; they indicate measurement mismatch."
+      },
+      "proven_capabilities": [
+        "OSC1.Level (+24.1 dB)",
+        "OSC2.Level (+8.8 dB)",
+        "OSC3.Level (+8.8 dB)",
+        "FXEQ.Gain2 (+4.0 dB)",
+        "Env1.Attack (-2.2 dB decay via slow attack)"
+      ],
+      "blocked_or_failed_capabilities": [
+        "Env1.Release (+0.33 dB, threshold mismatch)",
+        "Filter1.Drive (+0.31 dB, threshold mismatch)"
+      ],
+      "evidence_source": "behavioral_seed_batch.py, a3_behavior_harness.py"
+    },
+    {
+      "kernel_id": "amplitude_envelope_release",
+      "name": "Envelope Release/Tail (RMS, tail window)",
+      "function": "serum2.evidence.measure.tail_rms_db",
+      "applicable_families": ["ENVELOPE.RELEASE"],
+      "measurement_principle": "Isolates energy remaining after the dry note has decayed (typically >0.6s into render). Specifically designed to measure release/tail effects where energy extends beyond the attack+sustain+decay phases.",
+      "render_duration_seconds": 2.0,
+      "tail_window_seconds": [0.6, 2.0],
+      "stimulus": {
+        "note": 60,
+        "velocity": 100,
+        "duration_beats": 0.5,
+        "render_tail_beats": 1.5,
+        "tail_start_seconds": 0.6
+      },
+      "pass_criteria": {
+        "threshold_db": 1.0,
+        "note": "Release tail accumulates energy over 1.4 seconds post-note-off. Expected effect: 1-3 dB increase for long release. Threshold set higher than broad RMS to account for tail-specific dynamics."
+      },
+      "blocked_capabilities": [
+        "Env1.Release (+0.33 dB overall RMS, not measured via tail window)"
+      ],
+      "notes": "Env1.Release tested with broad RMS (0.5 dB threshold) instead of tail_rms_db kernel. Re-test using proper tail window to validate.",
+      "evidence_source": "serum2/evidence/kernels/tail_rms_db.py"
+    },
+    {
+      "kernel_id": "spectral_frequency_broad",
+      "name": "Broad Spectral Frequency (Centroid Hz)",
+      "function": "serum2.evidence.measure.spectral_centroid_hz",
+      "applicable_families": ["FILTER.CUTOFF", "OSCILLATOR.DETUNE", "FXEQ.FREQUENCY"],
+      "measurement_principle": "FFT-based spectral centroid. Measures the weighted-average frequency of the spectrum. Appropriate for broad frequency shifts (>50 Hz) where all harmonics shift together (cutoff, detune, EQ frequency). Robust to pitch/timbre changes.",
+      "render_duration_seconds": 2.0,
+      "stimulus": {
+        "note": 60,
+        "velocity": 100,
+        "duration_beats": 0.5,
+        "render_tail_beats": 1.5
+      },
+      "pass_criteria": {
+        "threshold_hz": 200.0,
+        "note": "Designed for broad frequency shifts (Filter1.Cutoff +2684 Hz, FXEQ.Freq1 +7622 Hz). Sub-200 Hz shifts indicate measurement mismatch or parameter ineffectiveness."
+      },
+      "proven_capabilities": [
+        "Filter1.Cutoff (+2684.3 Hz)",
+        "FXEQ.Freq1 (+7622.9 Hz)"
+      ],
+      "blocked_capabilities": [
+        "OSC1.Detune (0.0 Hz, parameter not exercised)",
+        "OSC2.Detune (0.0 Hz, parameter not exercised)"
+      ],
+      "evidence_source": "serum2/evidence/measure.py, behavioral_seed_batch.py"
+    },
+    {
+      "kernel_id": "spectral_resonance_peak",
+      "name": "Resonance/Q Local Peak (Spectral peak power at cutoff freq)",
+      "function": "not yet implemented",
+      "applicable_families": ["FILTER.RESONANCE", "FXEQ.RESONANCE"],
+      "measurement_principle": "Measures spectral peak power in a narrow band around the filter cutoff frequency. Unlike broad centroid, resonance/Q effects sharpen the spectrum locally; a high-Q peak at 1000 Hz barely shifts the centroid but significantly raises power in that band.",
+      "render_duration_seconds": 2.0,
+      "stimulus": {
+        "note": 60,
+        "velocity": 100,
+        "duration_beats": 0.5,
+        "render_tail_beats": 1.5
+      },
+      "pass_criteria": {
+        "threshold_db": 2.0,
+        "note": "Expected effect for resonance: 2-6 dB power increase at cutoff. Threshold tuned to resonance signature, not broad amplitude."
+      },
+      "blocked_capabilities": [
+        "FXEQ.Reso1 (-70.6 Hz centroid shift, spectral peak not measured)",
+        "FXEQ.Reso2 (-64.3 Hz centroid shift, spectral peak not measured)",
+        "Filter1.Resonance (+0.09 dB broad RMS, resonance peak not measured)"
+      ],
+      "notes": "Resonance parameters show real, measurable effects (shifted centroid, audio is audibly different) but applied thresholds are for broad frequency shifts, not local peaks. Needs dedicated resonance-specific kernel.",
+      "status": "KERNEL_NOT_YET_IMPLEMENTED"
+    },
+    {
+      "kernel_id": "spectral_harmonic_distortion",
+      "name": "Harmonic Distortion (THD or spectral energy in harmonics)",
+      "function": "not yet implemented",
+      "applicable_families": ["FILTER.DRIVE", "FXEQ.DRIVE"],
+      "measurement_principle": "Measures harmonic energy added by saturation/distortion. Approaches: (1) THD (harmonic power / fundamental power), (2) spectral shift in harmonic bands, (3) RMS increase in >5 kHz band.",
+      "render_duration_seconds": 2.0,
+      "stimulus": {
+        "note": 60,
+        "velocity": 100,
+        "duration_beats": 0.5,
+        "render_tail_beats": 1.5
+      },
+      "pass_criteria": {
+        "threshold": "domain-specific (THD %, spectral power dB, or harmonic band energy)",
+        "note": "Drive/saturation effects are typically sub-0.5 dB in broad RMS (fundamental + harmonics all together) but much larger in THD or harmonic-band-specific measures."
+      },
+      "blocked_capabilities": [
+        "Filter1.Drive (+0.31 dB broad RMS, saturation/harmonic effect not isolated)"
+      ],
+      "notes": "Filter1.Drive shows real effect (audio audibly distorted) but broad RMS threshold is inappropriate for distortion, which adds harmonics (power spread across spectrum) rather than shifting all energy uniformly.",
+      "status": "KERNEL_NOT_YET_IMPLEMENTED"
+    },
+    {
+      "kernel_id": "modulation_rate_periodicity",
+      "name": "Modulation Rate / Periodicity (Hz)",
+      "function": "serum2.evidence.kernels.modulation_frequency_hz.kernel",
+      "applicable_families": ["LFO.RATE", "OSCILLATOR.RATE"],
+      "measurement_principle": "Detects periodic modulation via windowed RMS envelope analysis, detrending, and FFT. Separates genuine oscillation from the note's natural ADSR shape. Requires active modulation target to be audible.",
+      "render_duration_seconds": 2.0,
+      "stimulus": {
+        "note": 60,
+        "velocity": 100,
+        "duration_beats": 0.5,
+        "render_tail_beats": 1.5
+      },
+      "pass_criteria": {
+        "threshold_hz": 0.5,
+        "note": "Detects if a genuine modulation frequency is present. Returns 0.0 Hz if no confident periodic signal detected (noise, non-periodic, or missing modulation target)."
+      },
+      "unproven_capabilities": [
+        "LFO1.Rate (needs active modulation target to be exercised)"
+      ],
+      "notes": "LFO rate requires a modulation destination (e.g., OSC volume, filter cutoff) to produce audible effect. Without target, rate change is not observable.",
+      "evidence_source": "serum2/evidence/kernels/modulation_frequency_hz.py"
+    },
+    {
+      "kernel_id": "envelope_attack_onset",
+      "name": "Attack Onset RMS (dB in attack window)",
+      "function": "serum2.evidence.measure.attack_onset_rms_db",
+      "alias": "attack_onset_rms_db",
+      "applicable_families": ["ENVELOPE.ATTACK"],
+      "measurement_principle": "Measures RMS energy in the attack onset window (typically first 50-100 ms). Slow attack = less energy in onset, fast attack = more energy in onset (energy concentrated early in render window).",
+      "render_duration_seconds": 2.0,
+      "stimulus": {
+        "note": 60,
+        "velocity": 100,
+        "duration_beats": 0.5,
+        "render_tail_beats": 1.5
+      },
+      "pass_criteria": {
+        "threshold_db": 1.0,
+        "note": "Attack measurement isolates onset energy. Slow attack (high param value) => lower onset RMS => negative delta."
+      },
+      "proven_capabilities": [
+        "Env1.Attack (-2.2 dB onset RMS decrease with slow attack)"
+      ],
+      "evidence_source": "serum2/evidence/kernels/attack_onset_rms_db.py"
+    }
+  ],
+  "blocked_and_failed_summary": {
+    "CAUSAL_BLOCKED": {
+      "count": 5,
+      "capabilities": [
+        {
+          "id": "FXEQ.Reso1",
+          "evidence": "Delta -70.6 Hz (real effect, below 200 Hz threshold)",
+          "assigned_kernel": "spectral_resonance_peak",
+          "reason": "Spectral centroid shift occurs but resonance peak measurement missing; threshold designed for broad frequency shifts inappropriate for resonance/Q behavior"
+        },
+        {
+          "id": "FXEQ.Reso2",
+          "evidence": "Delta -64.3 Hz (consistent pattern)",
+          "assigned_kernel": "spectral_resonance_peak",
+          "reason": "Same measurement mismatch as Reso1"
+        },
+        {
+          "id": "Filter1.Resonance",
+          "evidence": "Delta +0.09 dB (real effect, below 0.5 dB threshold)",
+          "assigned_kernel": "spectral_resonance_peak",
+          "reason": "Resonance effect audible but sub-threshold in broad RMS; needs resonance-specific kernel or longer render window to accumulate self-oscillation energy"
+        },
+        {
+          "id": "Env1.Release",
+          "evidence": "Delta +0.33 dB (real effect, below 0.5 dB threshold)",
+          "assigned_kernel": "amplitude_envelope_release",
+          "reason": "Tested with broad RMS instead of tail window; re-test using tail_rms_db kernel designed for release measurements"
+        },
+        {
+          "id": "Filter1.Drive",
+          "evidence": "Delta +0.31 dB (real effect, below 0.5 dB threshold)",
+          "assigned_kernel": "spectral_harmonic_distortion",
+          "reason": "Saturation adds harmonics (spreads energy across spectrum) not captured by broad RMS; needs harmonic-specific or THD measurement"
+        }
+      ]
+    },
+    "CAUSAL_FAILED": {
+      "count": 2,
+      "capabilities": [
+        {
+          "id": "OSC1.Detune",
+          "evidence": "Zero delta, kParamFine reads as None in skeleton",
+          "root_cause": "Body-level kParamFine parameter not exercised; only host-param (UI) controls are effective",
+          "diagnostic": "OSC1.Level (host_param) is PROVEN; OSC1.Detune (body path kParamFine) is zero delta. VoiceOsc paths read None from skeleton. Parameter unavailable at CBOR body level or shadowed by host control."
+        },
+        {
+          "id": "OSC2.Detune",
+          "evidence": "Zero delta, matches OSC1.Detune pattern",
+          "root_cause": "Body-level kParamFine parameter not exercised (same as OSC1)",
+          "diagnostic": "Consistent with OSC1; suggests CBOR body Fine parameters (kParamFine) are not effective for any oscillator"
+        }
+      ]
+    }
+  },
+  "next_actions": [
+    "Implement spectral_resonance_peak kernel (local frequency-domain peak power in narrow band around cutoff)",
+    "Implement spectral_harmonic_distortion kernel (THD or harmonic energy measurement)",
+    "Re-test Env1.Release using amplitude_envelope_release (tail_rms_db) kernel instead of broad RMS",
+    "Investigate OSC detune: confirm kParamFine is not authoritative; determine if kParamDetune or alternate path exists and works",
+    "Do NOT run OSC3.Detune until OSC1/2 body-path issue is resolved",
+    "Do NOT run LFO1.Rate until active modulation target context is established and modulation_frequency_hz kernel is validated"
+  ]
+}
