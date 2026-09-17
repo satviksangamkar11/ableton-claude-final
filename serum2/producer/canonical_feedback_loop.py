@@ -24,6 +24,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from serum2 import bridge, pathmerge
 from serum2.evidence.measure import METRICS
 from serum2.evidence import epoch as epoch_mod, admission as admission_mod
+from serum2.evidence.mutation_executor_extended import execute_mutation_request_with_authority
+from serum2.evidence.mutation_request import MutationRequest, MutationType
 from serum2.qualification.vertical_slice_executor import ExecutionRecord
 from serum2.qualification.execute_vertical_slice import (
     is_valid_signal,
@@ -335,6 +337,87 @@ def render_and_measure(
     return audio, float(measurement_value), validity
 
 
+def render_and_measure_with_authorized_mutation(
+    meta: dict,
+    body: dict,
+    target: str,
+    mutation_request: MutationRequest,
+    contracts_dict: dict,
+    measurement_metric: str,
+) -> Optional[Tuple[np.ndarray, float, dict]]:
+    """
+    Render treatment with AUTHORIZED MUTATION via executor.
+
+    All mutations must pass through execute_mutation_request_with_authority().
+    If admission refuses, returns None (zero mutation).
+    If admitted, renders audio from the already-mutated synth.
+
+    Args:
+        meta: skeleton metadata
+        body: skeleton body (will be mutated for BODY_STATE)
+        target: semantic target (for diagnosis)
+        mutation_request: MutationRequest with target, type, value
+        contracts_dict: contract registry
+        measurement_metric: metric to measure
+
+    Returns:
+        (audio, measurement, validity) if admitted, None if refused
+    """
+    try:
+        # Create fresh synth for treatment
+        fd, tmp = tempfile.mkstemp(suffix=".bin")
+        os.close(fd)
+
+        bridge.write_state_file(tmp, meta, body)
+
+        engine = daw.RenderEngine(SR, BLOCK)
+        synth = engine.make_plugin_processor("serum", VST3)
+
+        try:
+            synth.load_state(tmp)
+        finally:
+            if os.path.exists(tmp):
+                os.remove(tmp)
+
+        # GATE: Execute mutation through authority boundary
+        proof = execute_mutation_request_with_authority(
+            request=mutation_request,
+            body=body,
+            contracts=contracts_dict,
+            synth=synth,
+        )
+
+        if not proof.executed or not proof.admission_result.admitted:
+            # Refused: zero mutation occurred
+            return None
+
+        # Admitted: synth is already mutated (if HOST_PARAMETER)
+        # Render audio from mutated synth
+        # Use empty extra_host_context since mutation already applied
+        params = synth.get_parameters_description()
+        by_name = {p["name"]: p["index"] for p in params}
+
+        # Render from the synth (already mutated by executor)
+        midi_notes = [(0, 60, 100, 0, 0.5)]
+        audio = synth.render(midi_notes, SR)
+
+        if audio is None or len(audio) == 0:
+            return None
+
+        validity = is_valid_signal(audio)
+        if not validity['valid']:
+            return None
+
+        if measurement_metric not in METRICS:
+            return None
+
+        measurement_value = METRICS[measurement_metric](audio)
+        return audio, float(measurement_value), validity
+
+    except Exception as e:
+        return None
+
+
 def execute_producer_feedback_episode(
     goal: ProducerGoal,
     host_param_name: str,
@@ -619,13 +702,54 @@ def execute_producer_feedback_episode(
     print(f"  Mutation {baseline_param} -> {mutation_value}: AUTHORIZED by contract")
 
     # Render treatment (ONE mutation only)
+    # NOTE: mutation MUST go through execute_mutation_request_with_authority()
     # NOTE: using contract-derived measurement_metric, not goal.measurement_metric
-    print("\n[6/10] Rendering treatment (ONE mutation only)...")
+    print("\n[6/10] Rendering treatment (ONE mutation only, AUTHORIZED)...")
+
+    # Construct MutationRequest for executor authorization
+    mutation_request = MutationRequest(
+        target=goal.semantic_target,
+        mutation_type=MutationType.HOST_PARAMETER,  # Producer uses HOST_PARAMETER for now
+        value=float(mutation_value),
+        host_parameter_name=host_param_name,  # Assertion only (contract is authority)
+        contract_id=contract.target if hasattr(contract, 'target') else None,
+    )
+
     try:
-        treatment_override = (host_param_name, mutation_value)
-        audio_treatment, measurement_treatment, treatment_validity = render_and_measure(
-            meta, body, measurement_metric, baseline_override_param=treatment_override
+        # CRITICAL: Render treatment through authorized mutation path
+        # If admission refuses -> returns None (zero set_parameter calls)
+        # If admitted -> executor calls synth.set_parameter() exactly once
+        result = render_and_measure_with_authorized_mutation(
+            meta=meta,
+            body=body,
+            target=goal.semantic_target,
+            mutation_request=mutation_request,
+            contracts_dict=contracts_dict,
+            measurement_metric=measurement_metric,
         )
+
+        if result is None:
+            # Admission refused treatment mutation
+            print(f"  BLOCKED: admission refused treatment mutation")
+            return {
+                'goal': goal.to_dict(),
+                'target_capability': contract.target,
+                'episode_id': episode_id,
+                'status': 'ADMISSION_REFUSED',
+                'serum_mutation_value': None,
+                'audio_treatment': None,
+                'measurement_treatment': None,
+                'decision': ProducerDecision(
+                    accepted=False,
+                    reason="Admission refused treatment mutation",
+                    baseline_measurement=measurement_baseline,
+                    treatment_measurement=None,
+                    delta=None,
+                    metric_direction=goal.metric_direction,
+                ).to_dict(),
+            }
+
+        audio_treatment, measurement_treatment, treatment_validity = result
         print(f"  Treatment {measurement_metric}: {measurement_treatment:.2f}")
         print(f"  Valid: {treatment_validity['valid']}")
     except Exception as e:
