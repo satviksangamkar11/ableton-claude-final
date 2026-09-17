@@ -80,9 +80,11 @@ class ExecutionBinding:
     Derived from evidence, never caller-supplied.
     Maps semantic target to concrete execution primitive.
     """
-    mutation_type: str                # "BODY_STATE" | "HOST_PARAMETER" | "TOPOLOGY" | "COMPOUND"
+    mutation_type: str                # "BODY_STATE" | "HOST_PARAMETER" | "TOPOLOGY" | "COMPOUND" | "META_STRING"
     body_path: Optional[str] = None   # e.g. "Envelope0.plainParams.kParamRelease" (BODY_STATE)
     host_parameter_name: Optional[str] = None  # e.g. "Env 1 Release" (HOST_PARAMETER)
+    meta_path: Optional[str] = None   # e.g. "presetName" (META_STRING) -- a top-level key in
+                                       # the .SerumPreset file's JSON meta dict, not a CBOR body path
     binding_source: str = ""          # e.g. "semantic_vst3_mapping.json", "evidence_mutation_0001.pkl"
     binding_version: str = ""         # version/hash of the mapping used
 

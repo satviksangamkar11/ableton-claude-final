@@ -136,6 +136,20 @@ def canonicalize_topology(owner: Dict[str, str], action: str,
     return binding
 
 
+def canonicalize_meta_string(meta_key: str) -> Dict[str, Any]:
+    """.SerumPreset meta-dict field identity: the key itself
+    (e.g. "presetName"). No rack/slot/effect placement concept applies --
+    a meta field is a single top-level key in the preset file's JSON meta
+    dict, not a CBOR body path."""
+    binding = {
+        "binding_schema_version": BINDING_SCHEMA_VERSION,
+        "binding_type": BindingType.META_STRING.value,
+        "meta_key": meta_key,
+    }
+    _reject_non_canonical(binding)
+    return binding
+
+
 def canonicalize_resource(owner: str, resource_kind: str) -> Dict[str, Any]:
     """The actual resource path/hash/name is mutation payload, never identity
     -- that is exactly what prevents every wavetable from becoming a

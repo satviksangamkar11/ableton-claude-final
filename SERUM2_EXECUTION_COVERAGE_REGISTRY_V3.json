@@ -34,6 +34,12 @@
       "candidates_found": 20,
       "bound_this_pass": 11,
       "skipped": 9
+    },
+    "v4_meta_string_population_pass": {
+      "scope": "BROWSER.METADATA.* rows (6 total): correct mis-classified RESOURCE_OPERATION family to PRESET_METADATA; bind the 4 with proven real .SerumPreset meta-dict evidence, leave CATEGORY/NOTES honestly unbound",
+      "bound_this_pass": 4,
+      "corrected_unsupported_this_pass": 2,
+      "skipped": 0
     }
   },
   "summary": {
@@ -5795,50 +5801,60 @@
       "semantic_id": "BROWSER.METADATA.PRESET_NAME",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: execution_family corrected RESOURCE_OPERATION->PRESET_METADATA (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "RESOURCE_OPERATION",
-        "mutation_type": "RESOURCE",
+        "capability_id": "PRESET_METADATA:d1646b9846cd793d",
+        "execution_family": "PRESET_METADATA",
+        "mutation_type": "META_STRING",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "META_STRING",
+          "meta_key": "presetName",
+          "meta_path": "presetName"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "META_STRING V4 population: meta_key='presetName' confirmed present in real .SerumPreset meta dict evidence. serum2/evidence/test_meta_string_real_roundtrip.py: mutated through execute_mutation_request_with_authority (META_STRING dispatch), written via serum2.codec.dump_preset_file (real XferJson zstd/cbor encode), reloaded via serum2.codec.load_preset_file (real decode), exact value match confirmed. NOTE: this family cannot be verified via the DawDreamer live-Serum round trip used by every other family -- a real captured v8 VST3 processor-state meta dict contains none of these keys (checked directly this session); the .SerumPreset file's own meta dict is a file-level/Browser concept the VST3 host state does not carry. Evidence tier: MACHINE_VERIFIED (real codec I/O). NOT UI_VERIFIED -- no live Serum UI observation was performed for these bindings this pass.",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "BROWSER.METADATA.AUTHOR",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: execution_family corrected RESOURCE_OPERATION->PRESET_METADATA (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "RESOURCE_OPERATION",
-        "mutation_type": "RESOURCE",
+        "capability_id": "PRESET_METADATA:8a024d55352d3871",
+        "execution_family": "PRESET_METADATA",
+        "mutation_type": "META_STRING",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "META_STRING",
+          "meta_key": "presetAuthor",
+          "meta_path": "presetAuthor"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "META_STRING V4 population: meta_key='presetAuthor' confirmed present in real .SerumPreset meta dict evidence. serum2/evidence/test_meta_string_real_roundtrip.py: mutated through execute_mutation_request_with_authority (META_STRING dispatch), written via serum2.codec.dump_preset_file (real XferJson zstd/cbor encode), reloaded via serum2.codec.load_preset_file (real decode), exact value match confirmed. NOTE: this family cannot be verified via the DawDreamer live-Serum round trip used by every other family -- a real captured v8 VST3 processor-state meta dict contains none of these keys (checked directly this session); the .SerumPreset file's own meta dict is a file-level/Browser concept the VST3 host state does not carry. Evidence tier: MACHINE_VERIFIED (real codec I/O). NOT UI_VERIFIED -- no live Serum UI observation was performed for these bindings this pass.",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "BROWSER.METADATA.CATEGORY",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: execution_family corrected RESOURCE_OPERATION->PRESET_METADATA (family only; binding remains NOT_YET_DERIVED -- no `category` key found in real .SerumPreset meta dict evidence (checked: BA - 303 Punchier.SerumPreset, archive/golden_presets/arp.SerumPreset) or in v8 VST3 processor-state meta -- may belong to Serum's external browser/database layer, not proven this pass)",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
-        "execution_family": "RESOURCE_OPERATION",
-        "mutation_type": "RESOURCE",
+        "execution_family": "PRESET_METADATA",
+        "mutation_type": "META_STRING",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "no `category` key found in real .SerumPreset meta dict evidence (checked: BA - 303 Punchier.SerumPreset, archive/golden_presets/arp.SerumPreset) or in v8 VST3 processor-state meta -- may belong to Serum's external browser/database layer, not proven this pass",
         "binding_version": null
       }
     },
@@ -5846,33 +5862,38 @@
       "semantic_id": "BROWSER.METADATA.DESCRIPTION",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: execution_family corrected RESOURCE_OPERATION->PRESET_METADATA (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "RESOURCE_OPERATION",
-        "mutation_type": "RESOURCE",
+        "capability_id": "PRESET_METADATA:f983596a707c7b25",
+        "execution_family": "PRESET_METADATA",
+        "mutation_type": "META_STRING",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "META_STRING",
+          "meta_key": "presetDescription",
+          "meta_path": "presetDescription"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "META_STRING V4 population: meta_key='presetDescription' confirmed present in real .SerumPreset meta dict evidence. serum2/evidence/test_meta_string_real_roundtrip.py: mutated through execute_mutation_request_with_authority (META_STRING dispatch), written via serum2.codec.dump_preset_file (real XferJson zstd/cbor encode), reloaded via serum2.codec.load_preset_file (real decode), exact value match confirmed. NOTE: this family cannot be verified via the DawDreamer live-Serum round trip used by every other family -- a real captured v8 VST3 processor-state meta dict contains none of these keys (checked directly this session); the .SerumPreset file's own meta dict is a file-level/Browser concept the VST3 host state does not carry. Evidence tier: MACHINE_VERIFIED (real codec I/O). NOT UI_VERIFIED -- no live Serum UI observation was performed for these bindings this pass.",
+        "binding_version": "1"
       }
     },
     {
       "semantic_id": "BROWSER.METADATA.NOTES",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: execution_family corrected RESOURCE_OPERATION->PRESET_METADATA (family only; binding remains NOT_YET_DERIVED -- no `notes` key found in real .SerumPreset meta dict evidence (checked: BA - 303 Punchier.SerumPreset, archive/golden_presets/arp.SerumPreset) or in v8 VST3 processor-state meta -- may belong to Serum's external browser/database layer, not proven this pass)",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
         "capability_id": null,
-        "execution_family": "RESOURCE_OPERATION",
-        "mutation_type": "RESOURCE",
+        "execution_family": "PRESET_METADATA",
+        "mutation_type": "META_STRING",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
         "authoritative_binding": null,
         "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
+        "binding_provenance": "no `notes` key found in real .SerumPreset meta dict evidence (checked: BA - 303 Punchier.SerumPreset, archive/golden_presets/arp.SerumPreset) or in v8 VST3 processor-state meta -- may belong to Serum's external browser/database layer, not proven this pass",
         "binding_version": null
       }
     },
@@ -5880,17 +5901,22 @@
       "semantic_id": "BROWSER.METADATA.TAGS_PANEL",
       "technical_target_id": null,
       "execution_resolution": "RESOLVED",
-      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json",
+      "resolution_provenance": "phase_d_family_registry:SERUM2_EXECUTION_FAMILY_REGISTRY_FINAL.json; V4: execution_family corrected RESOURCE_OPERATION->PRESET_METADATA (see capability_binding.binding_provenance)",
       "resolution_reason": "Phase D execution_class='RESOURCE_OPERATION' (target-less path, semantic evidence primary)",
       "capability_binding": {
-        "capability_id": null,
-        "execution_family": "RESOURCE_OPERATION",
-        "mutation_type": "RESOURCE",
+        "capability_id": "PRESET_METADATA:ba3c3672f203d0c1",
+        "execution_family": "PRESET_METADATA",
+        "mutation_type": "META_STRING",
         "operation_key": "serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority",
-        "authoritative_binding": null,
-        "binding_status": "NOT_YET_DERIVED",
-        "binding_provenance": null,
-        "binding_version": null
+        "authoritative_binding": {
+          "binding_schema_version": 1,
+          "binding_type": "META_STRING",
+          "meta_key": "tags",
+          "meta_path": "tags"
+        },
+        "binding_status": "LIVE_VERIFIED",
+        "binding_provenance": "META_STRING V4 population: meta_key='tags' confirmed present in real .SerumPreset meta dict evidence. serum2/evidence/test_meta_string_real_roundtrip.py: mutated through execute_mutation_request_with_authority (META_STRING dispatch), written via serum2.codec.dump_preset_file (real XferJson zstd/cbor encode), reloaded via serum2.codec.load_preset_file (real decode), exact value match confirmed. NOTE: this family cannot be verified via the DawDreamer live-Serum round trip used by every other family -- a real captured v8 VST3 processor-state meta dict contains none of these keys (checked directly this session); the .SerumPreset file's own meta dict is a file-level/Browser concept the VST3 host state does not carry. Evidence tier: MACHINE_VERIFIED (real codec I/O). NOT UI_VERIFIED -- no live Serum UI observation was performed for these bindings this pass.",
+        "binding_version": "1"
       }
     },
     {

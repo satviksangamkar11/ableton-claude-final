@@ -112,6 +112,7 @@ GENERIC_EXECUTORS: Dict[str, Optional[str]] = {
     MutationPrimitive.COMPOUND.value: AUTHORITY_GATED_EXECUTOR,
     MutationPrimitive.TOPOLOGY.value: AUTHORITY_GATED_EXECUTOR,
     MutationPrimitive.RESOURCE.value: AUTHORITY_GATED_EXECUTOR,
+    MutationPrimitive.META_STRING.value: AUTHORITY_GATED_EXECUTOR,
 }
 
 NOT_IMPLEMENTED_REASON: Dict[str, str] = {}

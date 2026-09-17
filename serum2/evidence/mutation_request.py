@@ -17,6 +17,7 @@ class MutationType(str, Enum):
     TOPOLOGY = "TOPOLOGY"               # FX/module enable/disable/reorder
     COMPOUND = "COMPOUND"               # Multi-target coordinated mutation
     RESOURCE = "RESOURCE"               # Resource resolution + mutation (wavetable/sample load)
+    META_STRING = "META_STRING"         # .SerumPreset meta-dict field (presetName/presetAuthor/presetDescription/tags)
 
 
 @dataclass(frozen=True)
@@ -44,6 +45,10 @@ class MutationRequest:
     # Contract is authoritative source of truth; caller assertion for verification only
     # Executor will REFUSE if mismatch between request.host_parameter_name and contract binding
     host_parameter_name: Optional[str] = None  # e.g., "Env 1 Release"
+
+    # META_STRING mutation target
+    # ASSERTION ONLY: Cross-check against contract.execution_binding.meta_path
+    meta_path: Optional[str] = None     # e.g., "presetName"
 
     # BODY_STATE resolver payload (used only when
     # contract.execution_binding.resolver_operation_id is set). This is
@@ -100,6 +105,11 @@ class MutationAuthorityProof:
     host_parameter_name: Optional[str] = None
     host_baseline_value: Optional[Any] = None
     host_post_value: Optional[Any] = None
+
+    # Execution record (META_STRING)
+    meta_path: Optional[str] = None
+    meta_baseline_value: Optional[Any] = None
+    meta_post_value: Optional[Any] = None
 
     # Execution metrics
     executed: bool = False              # Mutation was attempted

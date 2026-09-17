@@ -41,6 +41,19 @@ class ExecutionFamily(str, Enum):
     MATRIX_ROUTE = "MATRIX_ROUTE"
     RESOURCE_OPERATION = "RESOURCE_OPERATION"
     STRUCTURAL_OPERATION = "STRUCTURAL_OPERATION"
+    PRESET_METADATA = "PRESET_METADATA"          # .SerumPreset meta-dict string fields
+                                                  # (presetName/presetAuthor/presetDescription/
+                                                  # tags) -- a FILE-level control route, distinct
+                                                  # from BODY_STATE_FIELD (CBOR body) and
+                                                  # HOST_PARAMETER (VST3 processor state): the
+                                                  # v8 VST3 processor-state meta dict was checked
+                                                  # directly this session and does NOT contain
+                                                  # any of these keys (only fileType/hash/product/
+                                                  # productVersion/url/vendor/version), so this
+                                                  # family cannot be verified via the DawDreamer
+                                                  # live-Serum round trip used by every other
+                                                  # family -- only via serum2.codec's own
+                                                  # .SerumPreset encode/decode round trip.
 
 
 # ---------------------------------------------------------------------------
@@ -52,6 +65,7 @@ class MutationPrimitive(str, Enum):
     COMPOUND = "COMPOUND"
     TOPOLOGY = "TOPOLOGY"
     RESOURCE = "RESOURCE"
+    META_STRING = "META_STRING"
 
 
 # Family -> primitive is a fixed, frozen mapping (not per-row data).
@@ -61,6 +75,7 @@ FAMILY_TO_PRIMITIVE: Dict[ExecutionFamily, MutationPrimitive] = {
     ExecutionFamily.MATRIX_ROUTE: MutationPrimitive.COMPOUND,
     ExecutionFamily.STRUCTURAL_OPERATION: MutationPrimitive.TOPOLOGY,
     ExecutionFamily.RESOURCE_OPERATION: MutationPrimitive.RESOURCE,
+    ExecutionFamily.PRESET_METADATA: MutationPrimitive.META_STRING,
 }
 
 
@@ -75,6 +90,11 @@ class BindingType(str, Enum):
     MATRIX_ROUTE = "MATRIX_ROUTE"
     TOPOLOGY = "TOPOLOGY"
     RESOURCE = "RESOURCE"
+    META_STRING = "META_STRING"         # identity is the meta-dict key
+                                         # itself (e.g. "presetName") --
+                                         # there is no rack/slot/effect
+                                         # placement concept for a preset-
+                                         # file-level string field
 
 
 class BindingStatus(str, Enum):

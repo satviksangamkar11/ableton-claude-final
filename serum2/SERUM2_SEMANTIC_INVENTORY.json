@@ -4,7 +4,7 @@
     "created": "2026-09-14",
     "last_modified": "2026-09-16",
     "phase_1_reconciliation_date": "2026-09-16",
-    "phase_1_changes": "MPE_OWNERSHIP_RECONCILIATION resolved via direct toggle test (live vs. default confirmed distinct). New control added: GLOBAL.PREFERENCES.MPE_EXPR_Y_ACTS_BI_DIRECTIONAL. Deferred queue updated: MPE deferral CLOSED, MACRO.SYS.RENAME_MECHANISM and BROWSER_RESCAN_OWNERSHIP confirmed as legitimate P2 non-blockers."
+    "phase_1_changes": "MPE_OWNERSHIP_RECONCILIATION resolved via direct toggle test (live vs. default confirmed distinct). New control added: GLOBAL.PREFERENCES.MPE_EXPR_Y_ACTS_BI_DIRECTIONAL. Deferred queue updated: MPE deferral CLOSED, MACRO.SYS.RENAME_MECHANISM and BROWSER_RESCAN_OWNERSHIP confirmed as legitimate P2 non-blockers.",
     "sections_complete": [
       "MACRO",
       "OSC",

@@ -18,6 +18,7 @@ def execute_mutation_request_with_authority(
     body: Dict[str, Any],
     contracts: Dict[Tuple[str, str], cc.CapabilityContract],
     synth: Optional[Any] = None,  # Instrumented synth for HOST_PARAMETER mutations
+    meta: Optional[Dict[str, Any]] = None,  # .SerumPreset meta dict for META_STRING mutations
 ) -> MutationAuthorityProof:
     """
     THE UNIFIED MUTATION CHOKE POINT.
@@ -117,6 +118,18 @@ def execute_mutation_request_with_authority(
 
     elif request.mutation_type == MutationType.RESOURCE:
         return _execute_resource_mutation(request, body, contract, admission_result)
+
+    elif request.mutation_type == MutationType.META_STRING:
+        if meta is None:
+            return MutationAuthorityProof(
+                target=request.target,
+                mutation_type=request.mutation_type,
+                requested_value=request.value,
+                admission_result=admission_result,
+                executed=False,
+                detail="META_STRING requires a meta dict",
+            )
+        return _execute_meta_string_mutation(request, meta, contract, admission_result)
 
     else:
         return MutationAuthorityProof(
@@ -526,6 +539,86 @@ def _dispatch_resolver_operation(
             executed=False,
             pathmerge_call_count=call_count,
             detail=f"pathmerge error applying resolver mutation: {str(e)}",
+        )
+
+
+def _execute_meta_string_mutation(
+    request: MutationRequest,
+    meta: Dict[str, Any],
+    contract: cc.CapabilityContract,
+    admission_result: admission.AdmissionResult,
+) -> MutationAuthorityProof:
+    """Execute META_STRING mutation directly on the .SerumPreset meta dict.
+
+    CRITICAL: Resolve the key from contract.execution_binding.meta_path, not
+    caller. Caller-supplied request.meta_path is assertion-only.
+
+    meta is a flat top-level dict (no CBOR body path grammar applies) --
+    plain dict assignment, not pathmerge.
+    """
+
+    if not contract.execution_binding or contract.execution_binding.mutation_type != MutationType.META_STRING.value:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            meta_path=request.meta_path,
+            admission_result=admission_result,
+            executed=False,
+            detail="No META_STRING execution binding in contract",
+        )
+
+    meta_key = contract.execution_binding.meta_path
+
+    if request.meta_path and request.meta_path != meta_key:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            meta_path=request.meta_path,
+            admission_result=admission_result,
+            executed=False,
+            detail=f"Meta path mismatch: requested {request.meta_path}, contract authorizes {meta_key}",
+        )
+
+    if not meta_key:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            meta_path=request.meta_path,
+            admission_result=admission_result,
+            executed=False,
+            detail="META_STRING execution binding has no meta_path",
+        )
+
+    try:
+        baseline_value = meta.get(meta_key)
+        meta[meta_key] = request.value
+        post_value = meta.get(meta_key)
+        changed = (post_value != baseline_value)
+
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            meta_path=meta_key,
+            meta_baseline_value=baseline_value,
+            meta_post_value=post_value,
+            admission_result=admission_result,
+            executed=True,
+            mutation_succeeded=changed,
+        )
+
+    except Exception as e:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            meta_path=meta_key,
+            admission_result=admission_result,
+            executed=False,
+            detail=f"meta dict assignment error: {str(e)}",
         )
 
 
