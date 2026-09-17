@@ -33,6 +33,7 @@ from serum2.qualification.a3_behavior_observation import (
 _DEFAULT_EFFECT_THRESHOLD_DB = 0.5    # dB for rms-based metrics
 _DEFAULT_EFFECT_THRESHOLD_HZ = 100.0  # Hz for spectral centroid
 _DEFAULT_EFFECT_THRESHOLD_RESONANCE_KURTOSIS = 0.3  # Kurtosis delta for resonance/Q detection (dimensionless)
+_DEFAULT_EFFECT_THRESHOLD_THD = 0.05  # THD ratio delta for drive/saturation detection
 
 
 def _rms_db(audio: np.ndarray) -> float:
@@ -55,6 +56,12 @@ def _spectral_resonance_peak_db(audio: np.ndarray) -> float:
     return spectral_resonance_peak_db(audio)
 
 
+def _spectral_harmonic_distortion(audio: np.ndarray) -> float:
+    """Spectral harmonic distortion (THD ratio)."""
+    from serum2.evidence.measure import spectral_harmonic_distortion_ratio
+    return spectral_harmonic_distortion_ratio(audio)
+
+
 def _compute_metric(audio: np.ndarray, metric_name: str) -> float:
     """Compute the named metric on audio."""
     if metric_name == "overall_rms_db":
@@ -63,6 +70,8 @@ def _compute_metric(audio: np.ndarray, metric_name: str) -> float:
         return _spectral_centroid_hz(audio)
     elif metric_name == "spectral_resonance_peak_db":
         return _spectral_resonance_peak_db(audio)
+    elif metric_name == "spectral_harmonic_distortion_ratio":
+        return _spectral_harmonic_distortion(audio)
     else:
         raise ValueError("Unknown metric: {}".format(metric_name))
 
@@ -136,6 +145,8 @@ def run_behavior_test(
             effect_threshold = _DEFAULT_EFFECT_THRESHOLD_HZ
         elif metric_name == "spectral_resonance_peak_db":
             effect_threshold = _DEFAULT_EFFECT_THRESHOLD_RESONANCE_KURTOSIS
+        elif metric_name == "spectral_harmonic_distortion_ratio":
+            effect_threshold = _DEFAULT_EFFECT_THRESHOLD_THD
         else:
             effect_threshold = _DEFAULT_EFFECT_THRESHOLD_DB
 

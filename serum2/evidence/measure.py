@@ -4,6 +4,7 @@ import numpy as np
 from serum2.behavior.measurement.pitch import fundamental_frequency_hz
 from serum2.evidence.kernels.attack_onset_rms_db import kernel as _attack_onset_rms_db_kernel
 from serum2.evidence.kernels.spectral_resonance_peak import kernel as _spectral_resonance_peak_kernel
+from serum2.evidence.kernels.spectral_harmonic_distortion import kernel as _spectral_harmonic_distortion_kernel
 
 SR = 44100
 
@@ -48,12 +49,19 @@ def spectral_resonance_peak_db(audio, stimulus=None):
     return float(_spectral_resonance_peak_kernel(audio, sample_rate=SR))
 
 
+def spectral_harmonic_distortion_ratio(audio, stimulus=None):
+    """Adapter over spectral_harmonic_distortion kernel.
+    Measures total harmonic distortion (THD) ratio."""
+    return float(_spectral_harmonic_distortion_kernel(audio, sample_rate=SR))
+
+
 METRICS = {
     "spectral_centroid_hz": spectral_centroid_hz,
     "tail_rms_db": tail_rms_db,
     "rms_db": rms_db,
     "attack_onset_rms_db": attack_onset_rms_db,
     "spectral_resonance_peak_db": spectral_resonance_peak_db,
+    "spectral_harmonic_distortion_ratio": spectral_harmonic_distortion_ratio,
     # Pitch measurement — harmonic summation; robust when overtones > fundamental.
     # Returns F0 in Hz.  Pair with pitch_shift_semitones (derived dimension).
     "fundamental_frequency_hz": fundamental_frequency_hz,
