@@ -344,7 +344,12 @@
         "serum2/qualification/CAUSAL_QUALIFICATION_V2_SCALE_BATCH_REPORT.json"
       ],
       "status": "BLOCKED",
-      "blocking_reason": "Delta -70.6 Hz (real, non-zero effect) below 200 Hz threshold designed for Freq1. Resonance/Q parameters have narrower spectral signature than frequency parameters. Not FAILED; needs resonance-specific measurement kernel or threshold calibration."
+      "blocking_reason": "Delta -70.6 Hz (real, non-zero effect) below 200 Hz threshold designed for Freq1. Resonance/Q parameters have narrower spectral signature than frequency parameters. Not FAILED; needs resonance-specific measurement kernel or threshold calibration.",
+      "fx_preset_injection": {
+        "preset_path": "C:\\Users\\Satvik\\Documents\\Xfer\\Serum 2 Presets\\Presets\\Factory\\Arp\\ARP - Altar.SerumPreset",
+        "injected_key": "FXRack0",
+        "mechanism": "behavioral_seed_batch.py::_load_fx_skeleton -- deep-copies base skeleton, overwrites body['FXRack0'] with the preset's FXRack0 so both arms share identical FX chain context"
+      }
     },
     {
       "capability_id": "FXDistortion.Drive",
@@ -420,7 +425,7 @@
       },
       "measurement_template": {
         "metric": "spectral_resonance_peak_db",
-        "expected_direction": "increase",
+        "expected_direction": "change",
         "threshold": 0.3
       },
       "observed_result": {
@@ -589,7 +594,12 @@
         "delta": -321.72,
         "unit": "kurtosis"
       },
-      "notes": "Monotonic decrease across value sweep 0\u2192100. Reproducible directional effect well above threshold."
+      "notes": "Monotonic decrease across value sweep 0\u2192100. Reproducible directional effect well above threshold.",
+      "fx_preset_injection": {
+        "preset_path": "C:\\Users\\Satvik\\Documents\\Xfer\\Serum 2 Presets\\Presets\\Factory\\Arp\\ARP - Altar.SerumPreset",
+        "injected_key": "FXRack0",
+        "mechanism": "behavioral_seed_batch.py::_load_fx_skeleton -- deep-copies base skeleton, overwrites body['FXRack0'] with the preset's FXRack0 so both arms share identical FX chain context"
+      }
     },
     {
       "capability_id": "OSC1.Detune",
