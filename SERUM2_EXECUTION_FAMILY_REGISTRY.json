@@ -1,0 +1,268 @@
+{
+  "metadata": {
+    "phase": "C — Execution Family Registry",
+    "date": "2026-09-17",
+    "frozen_semantics": 908,
+    "frozen_targets": 396,
+    "purpose": "Organize 908 semantic records into execution families for minimum-deep-experiment qualification strategy",
+    "approach": "family-first, not row-first"
+  },
+  "execution_families": [
+    {
+      "family_id": "HOST_PARAMETER_SCALAR",
+      "family_type": "SCALAR_VST3_PARAMETER",
+      "count": 238,
+      "sections": ["OSC", "ENV", "FILTER", "LFO", "MACRO"],
+      "description": "Numeric scalar parameters mappable to VST3 host parameters or Serum body fields",
+      "members_by_section": {
+        "OSC": 120,
+        "ENV": 32,
+        "FILTER": 12,
+        "LFO": 30,
+        "MACRO": 44
+      },
+      "representation": {
+        "family_kind": "NUMERIC_SCALAR",
+        "value_type": "float | int",
+        "range_type": "normalized [0.0-1.0] or domain-specific",
+        "serialization": "VST3 parameter value or Serum state field"
+      },
+      "qualification_strategy": "REPRESENTATIVE_DEEP_EXPERIMENT",
+      "representative_deep_experiments": [
+        "ENV1.RELEASE (DONE — CAUSAL_VERIFIED)",
+        "OSC1.LEVEL (TODO — should replicate Release pattern)",
+        "FILTER1.CUTOFF (TODO — verify body-state mutation)"
+      ],
+      "lightweight_member_verification": "For each family member: (1) resolve target, (2) attempt mutation, (3) readback, (4) type check, (5) range validation",
+      "known_exceptions": [
+        "FILTER type-specific parameters (BODY_STATE_FIELD, not plain scalar)",
+        "MACRO.SYS parameters (some RESOURCE_OPERATION, not scalar)"
+      ],
+      "qualification_status": "PARTIAL (Release proven, others awaiting representative verification)",
+      "evidence_refs": [
+        "serum2/qualification/ep_producer_e2e_PASS_001.json",
+        "experiments/_env_release_qualified_complete_001.pkl"
+      ]
+    },
+    {
+      "family_id": "BODY_STATE_FIELD_CONDITIONAL",
+      "family_type": "STATE_FIELD_DEPENDENT_ON_MODE",
+      "count": 88,
+      "sections": ["FILTER", "LFO"],
+      "description": "Parameters whose existence/meaning depends on a parent state (filter type, LFO mode, etc.)",
+      "members_by_section": {
+        "FILTER": 40,
+        "LFO": 48
+      },
+      "representation": {
+        "family_kind": "CONDITIONAL_STATE_SCALAR",
+        "conditional_on": "parent state (e.g., filter_type, lfo_mode)",
+        "serialization": "Serum state body field; requires parent state to be meaningful"
+      },
+      "qualification_strategy": "FAMILY_REPRESENTATIVE_BY_CONDITION",
+      "representative_deep_experiments": [
+        "FILTER1.TYPE_SPECIFIC.FREQ2 (TODO — Filter type 1 representative)",
+        "FILTER1.TYPE_SPECIFIC.FAT (TODO — Filter type 1 representative)",
+        "LFO1.SHAPE_SPECIFIC.UNISON (TODO — LFO mode representative)"
+      ],
+      "lightweight_member_verification": "For each condition (filter type, LFO mode): verify readback with parent state set correctly. Omit readback validation if parent state differs.",
+      "known_exceptions": [],
+      "qualification_status": "NOT_STARTED",
+      "evidence_refs": []
+    },
+    {
+      "family_id": "MATRIX_ROUTE_ASSIGNMENT",
+      "family_type": "MATRIX_MODULATION_ROUTING",
+      "count": 104,
+      "sections": ["MATRIX", "ENV", "GLOBAL"],
+      "description": "Matrix row assignments: source/destination/amount/routing state",
+      "members_by_section": {
+        "MATRIX": 70,
+        "ENV": 4,
+        "GLOBAL": 19
+      },
+      "representation": {
+        "family_kind": "ROUTING_ASSIGNMENT",
+        "components": ["source_id", "destination_id", "amount", "polarity", "curve", "enable_state"],
+        "serialization": "Serum matrix state + body fields"
+      },
+      "qualification_strategy": "FAMILY_REPRESENTATIVE",
+      "representative_deep_experiments": [
+        "MATRIX.ROW1.SOURCE (TODO — verify source assignment readback)",
+        "MATRIX.ROW1.DESTINATION (TODO — verify destination assignment readback)",
+        "MATRIX.ROW1.AMOUNT (TODO — verify amount scalar readback)"
+      ],
+      "lightweight_member_verification": "Row similarity: all 16 matrix rows use same routing logic. Verify one row (source, destination, amount), apply to remaining 15 rows.",
+      "known_exceptions": [],
+      "qualification_status": "PARTIAL_ESTABLISHED (status: ESTABLISHED in control path matrix)",
+      "evidence_refs": []
+    },
+    {
+      "family_id": "UI_ACTION_TOGGLE_BUTTON",
+      "family_type": "UI_ACTION",
+      "count": 198,
+      "sections": ["ARP", "CLIP", "MACRO", "GLOBAL_KEYBOARD", "FILTER", "FX", "VOICE"],
+      "description": "UI-only actions: toggles, buttons, mode selections without direct readback",
+      "members_by_section": {
+        "ARP": 26,
+        "CLIP": 21,
+        "MACRO": 21,
+        "GLOBAL_KEYBOARD": 13,
+        "FILTER": 14,
+        "FX": 52,
+        "VOICE": 3
+      },
+      "representation": {
+        "family_kind": "UI_ACTION",
+        "action_types": ["toggle", "button", "mode_select", "mode_switch", "enable/disable", "preset_operation", "context_menu"],
+        "serialization": "Live UI state, no direct Serum readback",
+        "readback_strategy": "Implicit (assumes UI action succeeds unless exception noted)"
+      },
+      "qualification_strategy": "LIGHTWEIGHT_SECTION_VERIFICATION",
+      "representative_deep_experiments": [
+        "MACRO.01.NAME (TODO — toggle name editor, verify UI state changes)",
+        "ARP.PATTERN.SYNCED (TODO — toggle ARP sync, verify pattern state)"
+      ],
+      "lightweight_member_verification": "Per section: (1) attempt UI action in Live, (2) observe UI state change, (3) record success/exception. No deep measurement required.",
+      "known_exceptions": [
+        "Some FX UI actions may trigger preset loading (RESOURCE_OPERATION)",
+        "Some CLIP actions may fail if clip not selected"
+      ],
+      "qualification_status": "CANDIDATE (requires light UI verification)",
+      "evidence_refs": []
+    },
+    {
+      "family_id": "RESOURCE_OPERATION_BROWSER",
+      "family_type": "RESOURCE_LOADING",
+      "count": 41,
+      "sections": ["BROWSER"],
+      "description": "Browser operations: preset loading, sample loading, resource navigation, metadata",
+      "members_by_section": {
+        "BROWSER": 41
+      },
+      "representation": {
+        "family_kind": "RESOURCE_OPERATION",
+        "operations": ["load_preset", "load_sample", "navigate_folder", "search", "get_metadata"],
+        "serialization": "Serum preset/sample state, not a scalar parameter"
+      },
+      "qualification_strategy": "NO_DEEP_EXPERIMENT",
+      "representative_deep_experiments": [],
+      "lightweight_member_verification": "Browser operations are user-facing UI actions. Verify: (1) preset loads via Live browser, (2) state persists in Serum, (3) no crashes. No measurement required.",
+      "known_exceptions": [],
+      "qualification_status": "ESTABLISHED (pure UI navigation, no deep control needed)",
+      "evidence_refs": []
+    },
+    {
+      "family_id": "SHARED_PHYSICAL_PARAMETER_MULTI_SEMANTIC",
+      "family_type": "SHARED_PARAMETER_MULTI_SEMANTIC",
+      "count": 46,
+      "sections": ["MIXER", "GLOBAL_KEYBOARD", "VOICE"],
+      "description": "One VST3 parameter or state field represents multiple semantic controls",
+      "members_by_section": {
+        "MIXER": 39,
+        "GLOBAL_KEYBOARD": 4,
+        "VOICE": 2
+      },
+      "representation": {
+        "family_kind": "MULTI_SEMANTIC_SHARED",
+        "pattern": "One physical parameter maps to multiple user-facing semantic controls",
+        "example": "SUB.Enable controls both MIXER.SUB.ENABLE and MIXER.SUB.PAN (Enable state affects Pan meaning)"
+      },
+      "qualification_strategy": "BATCH_REPRESENTATIVE",
+      "representative_deep_experiments": [
+        "MIXER.SUB.ENABLE (TODO — verify enable state readback)",
+        "MIXER.SEND1.ENABLE (TODO — verify send enable readback)"
+      ],
+      "lightweight_member_verification": "Same physical parameter: verify representative, apply to all other semantics sharing it.",
+      "known_exceptions": [],
+      "qualification_status": "PARTIAL_ESTABLISHED (status: ESTABLISHED in control path matrix)",
+      "evidence_refs": []
+    },
+    {
+      "family_id": "STRUCTURAL_OPERATION_CONTEXT_MENU",
+      "family_type": "STRUCTURAL_OPERATION",
+      "count": 10,
+      "sections": ["ARP", "MACRO", "FX"],
+      "description": "Structural operations: add/remove modules, reorder, bypass, context menus",
+      "members_by_section": {
+        "ARP": 5,
+        "MACRO": 3,
+        "FX": 2
+      },
+      "representation": {
+        "family_kind": "STRUCTURAL_OPERATION",
+        "operations": ["add_module", "remove_module", "reorder", "context_menu", "bypass"],
+        "serialization": "Serum topology state, not a scalar"
+      },
+      "qualification_strategy": "UI_VERIFICATION_ONLY",
+      "representative_deep_experiments": [],
+      "lightweight_member_verification": "Per operation type: (1) attempt operation in Live, (2) observe topology change, (3) verify Serum state reflects change.",
+      "known_exceptions": [],
+      "qualification_status": "ESTABLISHED (pure UI structural actions)",
+      "evidence_refs": []
+    },
+    {
+      "family_id": "MULTI_TARGET_LINKED_CONTROL",
+      "family_type": "MULTI_TARGET",
+      "count": 2,
+      "sections": ["MIXER"],
+      "description": "One semantic control operates multiple targets simultaneously (e.g., graphic EQ filter cutoff affects both Filter 1 and 2)",
+      "members_by_section": {
+        "MIXER": 2
+      },
+      "representation": {
+        "family_kind": "MULTI_TARGET",
+        "pattern": "One semantic_id maps to multiple target_ids",
+        "example": "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE → ['Filter1.Cutoff', 'Filter1.Resonance']"
+      },
+      "qualification_strategy": "DIRECT_TARGET_VERIFICATION",
+      "representative_deep_experiments": [
+        "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE (TODO — mutate both targets, verify both readback)"
+      ],
+      "lightweight_member_verification": "Same logic applies to other mixer multi-target: verify one, apply pattern.",
+      "known_exceptions": [],
+      "qualification_status": "PARTIAL_ESTABLISHED (status: ESTABLISHED in control path matrix)",
+      "evidence_refs": []
+    },
+    {
+      "family_id": "UNKNOWN_GAP_CLUSTER",
+      "family_type": "UNRESOLVED",
+      "count": 169,
+      "sections": ["FX", "GLOBAL", "ARP", "MACRO", "VOICE", "MATRIX"],
+      "description": "Semantics with unresolved execution paths; requires investigation",
+      "members_by_section": {
+        "FX": 83,
+        "GLOBAL": 28,
+        "ARP": 16,
+        "MACRO": 17,
+        "VOICE": 2,
+        "MATRIX": 3
+      },
+      "representation": {
+        "family_kind": "UNKNOWN",
+        "pattern": "No clear target, operation, or execution mechanism identified yet"
+      },
+      "qualification_strategy": "SYSTEMATIC_INVESTIGATION",
+      "representative_deep_experiments": [
+        "Sample FX semantic (e.g., FX.DISTORTION.ENABLED) — determine if scalar param or UI action",
+        "Sample GLOBAL semantic (e.g., GLOBAL.MASTER_TUNING) — determine execution mechanism"
+      ],
+      "lightweight_member_verification": "Categorize each UNKNOWN by inspection + light UI check. Escalate to deep experiment only if ambiguous.",
+      "known_exceptions": [],
+      "qualification_status": "NOT_STARTED",
+      "evidence_refs": []
+    }
+  ],
+  "summary": {
+    "total_semantics": 908,
+    "total_families": 9,
+    "families_by_readiness": {
+      "FULLY_ESTABLISHED": ["RESOURCE_OPERATION_BROWSER", "STRUCTURAL_OPERATION_CONTEXT_MENU"],
+      "PARTIAL_ESTABLISHED": ["HOST_PARAMETER_SCALAR", "MATRIX_ROUTE_ASSIGNMENT", "SHARED_PHYSICAL_PARAMETER_MULTI_SEMANTIC", "MULTI_TARGET_LINKED_CONTROL"],
+      "CANDIDATE": ["UI_ACTION_TOGGLE_BUTTON"],
+      "NOT_STARTED": ["BODY_STATE_FIELD_CONDITIONAL", "UNKNOWN_GAP_CLUSTER"]
+    },
+    "estimated_deep_experiments_required": "12-20 representatives across all families",
+    "estimated_lightweight_verifications": "600+ member verifications (most by category, not individual)"
+  }
+}
