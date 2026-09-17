@@ -6,11 +6,13 @@ Source of truth for which contracts are available to the producer.
 Maps semantic targets to their CAUSAL_VERIFIED contracts.
 Never falls back to design-JSON or archived contracts.
 """
+import json
 import pickle
+import dataclasses
 from typing import Optional, Dict, Tuple
 from pathlib import Path
 
-from serum2.evidence.capability_contract import CapabilityContract
+from serum2.evidence.capability_contract import CapabilityContract, ExecutionBinding
 
 
 class ContractRegistry:
@@ -21,11 +23,54 @@ class ContractRegistry:
     - _capability_contracts_4_2.pkl (Attack)
 
     Never consults design-JSON or archived stores.
+
+    D.1.2: Attaches ExecutionBinding to loaded contracts, derived from the
+    authoritative semantic_vst3_mapping.json (the same source
+    resolve_host_param_name() already uses). This does NOT edit the pickled
+    evidence artifacts; it augments the in-memory contract object at load
+    time via dataclasses.replace(), since CapabilityContract is frozen.
     """
 
     def __init__(self):
         self.contracts = {}
+        self._host_param_mapping = self._load_host_param_mapping()
         self._load_fresh_contracts()
+
+    def _load_host_param_mapping(self) -> Dict[str, str]:
+        """Load the authoritative capability_key -> host parameter name mapping.
+
+        Same source used by canonical_feedback_loop.resolve_host_param_name().
+        """
+        mapping_path = Path(__file__).parent.parent / "qualification" / "semantic_vst3_mapping.json"
+        try:
+            with open(mapping_path) as f:
+                data = json.load(f)
+            return data.get("mappings", {})
+        except FileNotFoundError:
+            print(f"[ContractRegistry] Warning: mapping not found: {mapping_path}")
+            return {}
+
+    def _attach_execution_binding(self, contract: CapabilityContract) -> CapabilityContract:
+        """Derive and attach the authoritative ExecutionBinding for a contract.
+
+        contract.target IS the capability_key (e.g. 'envelope_field_release').
+        Binding source is semantic_vst3_mapping.json -- the same authoritative,
+        runtime-verified mapping the producer already trusts. If no mapping
+        entry exists, the contract is returned unchanged (execution_binding
+        stays None) and the executor will correctly refuse it.
+        """
+        host_param_name = self._host_param_mapping.get(contract.target)
+        if host_param_name is None:
+            return contract
+
+        binding = ExecutionBinding(
+            mutation_type="HOST_PARAMETER",
+            body_path=None,
+            host_parameter_name=host_param_name,
+            binding_source="semantic_vst3_mapping.json",
+            binding_version=str(1),
+        )
+        return dataclasses.replace(contract, execution_binding=binding)
 
     def _load_fresh_contracts(self):
         """Load fresh contracts from 4.Q.4 qualification pickle stores."""
@@ -39,6 +84,7 @@ class ContractRegistry:
                     store_4_1 = pickle.load(f)
                     for (claim_id, sig_hash), contract in store_4_1.items():
                         if contract.target == 'envelope_field_release':
+                            contract = self._attach_execution_binding(contract)
                             self.contracts['envelope_field_release'] = contract
                             print(f"[ContractRegistry] Loaded Release contract: {contract.status}")
             except Exception as e:
@@ -54,6 +100,7 @@ class ContractRegistry:
                     store_4_2 = pickle.load(f)
                     for (claim_id, sig_hash), contract in store_4_2.items():
                         if contract.target == 'envelope_field_attack':
+                            contract = self._attach_execution_binding(contract)
                             self.contracts['envelope_field_attack'] = contract
                             print(f"[ContractRegistry] Loaded Attack contract: {contract.status}")
             except Exception as e:
