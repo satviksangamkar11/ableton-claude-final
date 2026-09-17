@@ -1,8 +1,8 @@
 {
-  "total": 106,
+  "total": 105,
   "counts": {
-    "UNSUPPORTED_NO_EVIDENCE": 50,
-    "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM": 4,
+    "UNSUPPORTED_NO_EVIDENCE": 40,
+    "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM": 13,
     "PROVEN_NOT_USER_CONTROL": 52
   },
   "rows": [
@@ -44,113 +44,143 @@
     {
       "semantic_id": "MATRIX.LFO_BUS.01",
       "label": "LFO Bus 1",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 5 real, corpus-evidenced per-parameter destination(s) for LFO1 (moduleID=0): ['LFO1.Delay', 'LFO1.Phase', 'LFO1.Rate', 'LFO1.Rise', 'LFO1.Smooth']. Exercising this bus is what compound_create_modulation_route's destination='LFO1.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO1.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.02",
       "label": "LFO Bus 2",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 5 real, corpus-evidenced per-parameter destination(s) for LFO2 (moduleID=1): ['LFO2.Delay', 'LFO2.Phase', 'LFO2.Rate', 'LFO2.Rise', 'LFO2.Smooth']. Exercising this bus is what compound_create_modulation_route's destination='LFO2.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO2.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.03",
       "label": "LFO Bus 3",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 5 real, corpus-evidenced per-parameter destination(s) for LFO3 (moduleID=2): ['LFO3.Delay', 'LFO3.Phase', 'LFO3.Rate', 'LFO3.Rise', 'LFO3.Smooth']. Exercising this bus is what compound_create_modulation_route's destination='LFO3.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO3.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.04",
       "label": "LFO Bus 4",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 5 real, corpus-evidenced per-parameter destination(s) for LFO4 (moduleID=3): ['LFO4.Delay', 'LFO4.Phase', 'LFO4.Rate', 'LFO4.Rise', 'LFO4.Smooth']. Exercising this bus is what compound_create_modulation_route's destination='LFO4.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO4.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.05",
       "label": "LFO Bus 5",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 1 real, corpus-evidenced per-parameter destination(s) for LFO5 (moduleID=4): ['LFO5.Rate']. Exercising this bus is what compound_create_modulation_route's destination='LFO5.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO5.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.06",
       "label": "LFO Bus 6",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 1 real, corpus-evidenced per-parameter destination(s) for LFO6 (moduleID=5): ['LFO6.Rate']. Exercising this bus is what compound_create_modulation_route's destination='LFO6.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO6.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.07",
       "label": "LFO Bus 7",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 1 real, corpus-evidenced per-parameter destination(s) for LFO7 (moduleID=6): ['LFO7.Rate']. Exercising this bus is what compound_create_modulation_route's destination='LFO7.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO7.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.08",
       "label": "LFO Bus 8",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 1 real, corpus-evidenced per-parameter destination(s) for LFO8 (moduleID=7): ['LFO8.Rate']. Exercising this bus is what compound_create_modulation_route's destination='LFO8.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO8.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.09",
       "label": "LFO Bus 9",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 2 real, corpus-evidenced per-parameter destination(s) for LFO9 (moduleID=8): ['LFO9.Rate', 'LFO9.Rise']. Exercising this bus is what compound_create_modulation_route's destination='LFO9.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO9.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.10",
       "label": "LFO Bus 10",
-      "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
-      "candidate_binding": null
+      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS now has 1 real, corpus-evidenced per-parameter destination(s) for LFO10 (moduleID=9): ['LFO10.Rate']. Exercising this bus is what compound_create_modulation_route's destination='LFO10.Rate' parameter already does (real DawDreamer/Serum round-trip proven, see test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's already-classified param submenu), not an independently mutable value.",
+      "candidate_binding": {
+        "binding_type": "COMPOUND_DESTINATION_AVAILABLE",
+        "sample_destination": "LFO10.Rate"
+      }
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.11",
       "label": "LFO Bus 11",
       "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS has zero real, corpus-evidenced entries for LFO11 (moduleID=10) across a 745-file scan of the local Serum 2 Presets library -- no real preset routes anything into this LFO slot.",
       "candidate_binding": null
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.12",
       "label": "LFO Bus 12",
       "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS has zero real, corpus-evidenced entries for LFO12 (moduleID=11) across a 745-file scan of the local Serum 2 Presets library -- no real preset routes anything into this LFO slot.",
       "candidate_binding": null
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.13",
       "label": "LFO Bus 13",
       "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS has zero real, corpus-evidenced entries for LFO13 (moduleID=12) across a 745-file scan of the local Serum 2 Presets library -- no real preset routes anything into this LFO slot.",
       "candidate_binding": null
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.14",
       "label": "LFO Bus 14",
       "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS has zero real, corpus-evidenced entries for LFO14 (moduleID=13) across a 745-file scan of the local Serum 2 Presets library -- no real preset routes anything into this LFO slot.",
       "candidate_binding": null
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.15",
       "label": "LFO Bus 15",
       "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS has zero real, corpus-evidenced entries for LFO15 (moduleID=14) across a 745-file scan of the local Serum 2 Presets library -- no real preset routes anything into this LFO slot.",
       "candidate_binding": null
     },
     {
       "semantic_id": "MATRIX.LFO_BUS.16",
       "label": "LFO Bus 16",
       "bucket": "UNSUPPORTED_NO_EVIDENCE",
-      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 LFO-destination-param combinations) -- no evidence for a bus-level (module-only, parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.",
+      "evidence": "control_type='destination_target': a3_modulation_route._DESTINATIONS has zero real, corpus-evidenced entries for LFO16 (moduleID=15) across a 745-file scan of the local Serum 2 Presets library -- no real preset routes anything into this LFO slot.",
       "candidate_binding": null
     },
     {
@@ -215,16 +245,6 @@
       "bucket": "PROVEN_NOT_USER_CONTROL",
       "evidence": "control_type='structural_policy': describes internal duplicate-route ALLOW rules, not a settable value.",
       "candidate_binding": null
-    },
-    {
-      "semantic_id": "MATRIX.OUT",
-      "label": "OUTPUT -- scale the final modulation output (per-row final-output scale slider)",
-      "bucket": "EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
-      "evidence": "control_type='slider', label 'scale the final modulation output (per-row final-output scale slider)' -- matches the live VST3 host-parameter list's 'Mod N Out' (checked this run: 64 Mod-slot Amount/Out pairs present, e.g. 'Mod 1 Out'..'Mod 64 Out'). HOST_PARAMETER mechanism, not compiler_create_modulation_route.",
-      "candidate_binding": {
-        "binding_type": "HOST_PARAMETER",
-        "parameter_name": "Mod 1 Out"
-      }
     },
     {
       "semantic_id": "MATRIX.OUT_INDICATOR",

@@ -152,15 +152,53 @@ _DESTINATIONS: dict[str, ModulationDestination] = {
     "Env2.Decay":        ModulationDestination("Env2.Decay",        "Env",         "kParamDecay",   2, 1),
     "Env2.Sustain":      ModulationDestination("Env2.Sustain",      "Env",         "kParamSustain", 3, 1),
     "Env2.Release":      ModulationDestination("Env2.Release",      "Env",         "kParamRelease", 4, 1),
-    # LFO modulation (LFO1=0, LFO2=1, ...)
-    "LFO1.Rate":         ModulationDestination("LFO1.Rate",         "LFO",         "kParamRate",    0, 0),
-    "LFO2.Rate":         ModulationDestination("LFO2.Rate",         "LFO",         "kParamRate",    0, 1),
-    "LFO1.Smooth":       ModulationDestination("LFO1.Smooth",       "LFO",         "kParamSmooth",  1, 0),
-    # Macros (Macro1=0, Macro2=1, ...)
+    # LFO modulation (LFO1=0, LFO2=1, ..., LFO10=9). paramID mapping
+    # (kParamRate=0, kParamSmooth=1, kParamRise=2, kParamDelay=3,
+    # kParamPhase=4) and each (paramName, moduleID) combo below confirmed by
+    # scanning all 745 real .SerumPreset files in the local Serum 2 Presets
+    # library for real ModSlot.destModuleTypeString=='LFO' entries -- these
+    # are Serum's OWN serialized destModuleParamName/destModuleParamID
+    # strings/ints, not inferred (see LFO_TYPE_DIRECTION_V4_POPULATION and
+    # MATRIX_ROUTE_LFO_BUS_V4_POPULATION reports for the full scan method).
+    # LFO11-16 (moduleID 10-15) have ZERO occurrences in the corpus --
+    # deliberately NOT added; no evidence they exist as real destinations.
+    "LFO1.Rate":         ModulationDestination("LFO1.Rate",         "LFO", "kParamRate",   0, 0),
+    "LFO1.Smooth":       ModulationDestination("LFO1.Smooth",       "LFO", "kParamSmooth", 1, 0),
+    "LFO1.Rise":         ModulationDestination("LFO1.Rise",         "LFO", "kParamRise",   2, 0),
+    "LFO1.Delay":        ModulationDestination("LFO1.Delay",        "LFO", "kParamDelay",  3, 0),
+    "LFO1.Phase":        ModulationDestination("LFO1.Phase",        "LFO", "kParamPhase",  4, 0),
+    "LFO2.Rate":         ModulationDestination("LFO2.Rate",         "LFO", "kParamRate",   0, 1),
+    "LFO2.Smooth":       ModulationDestination("LFO2.Smooth",       "LFO", "kParamSmooth", 1, 1),
+    "LFO2.Rise":         ModulationDestination("LFO2.Rise",         "LFO", "kParamRise",   2, 1),
+    "LFO2.Delay":        ModulationDestination("LFO2.Delay",        "LFO", "kParamDelay",  3, 1),
+    "LFO2.Phase":        ModulationDestination("LFO2.Phase",        "LFO", "kParamPhase",  4, 1),
+    "LFO3.Rate":         ModulationDestination("LFO3.Rate",         "LFO", "kParamRate",   0, 2),
+    "LFO3.Smooth":       ModulationDestination("LFO3.Smooth",       "LFO", "kParamSmooth", 1, 2),
+    "LFO3.Rise":         ModulationDestination("LFO3.Rise",         "LFO", "kParamRise",   2, 2),
+    "LFO3.Delay":        ModulationDestination("LFO3.Delay",        "LFO", "kParamDelay",  3, 2),
+    "LFO3.Phase":        ModulationDestination("LFO3.Phase",        "LFO", "kParamPhase",  4, 2),
+    "LFO4.Rate":         ModulationDestination("LFO4.Rate",         "LFO", "kParamRate",   0, 3),
+    "LFO4.Smooth":       ModulationDestination("LFO4.Smooth",       "LFO", "kParamSmooth", 1, 3),
+    "LFO4.Rise":         ModulationDestination("LFO4.Rise",         "LFO", "kParamRise",   2, 3),
+    "LFO4.Delay":        ModulationDestination("LFO4.Delay",        "LFO", "kParamDelay",  3, 3),
+    "LFO4.Phase":        ModulationDestination("LFO4.Phase",        "LFO", "kParamPhase",  4, 3),
+    "LFO5.Rate":         ModulationDestination("LFO5.Rate",         "LFO", "kParamRate",   0, 4),
+    "LFO6.Rate":         ModulationDestination("LFO6.Rate",         "LFO", "kParamRate",   0, 5),
+    "LFO7.Rate":         ModulationDestination("LFO7.Rate",         "LFO", "kParamRate",   0, 6),
+    "LFO8.Rate":         ModulationDestination("LFO8.Rate",         "LFO", "kParamRate",   0, 7),
+    "LFO9.Rate":         ModulationDestination("LFO9.Rate",         "LFO", "kParamRate",   0, 8),
+    "LFO9.Rise":         ModulationDestination("LFO9.Rise",         "LFO", "kParamRise",   2, 8),
+    "LFO10.Rate":        ModulationDestination("LFO10.Rate",        "LFO", "kParamRate",   0, 9),
+    # Macros (Macro1=0, Macro2=1, ..., Macro8=7). Macro5-8 confirmed by the
+    # same 745-file corpus scan (Macro1-4 were already evidenced).
     "Macro1":            ModulationDestination("Macro1",            "Macro",       "kParamValue",   0, 0),
     "Macro2":            ModulationDestination("Macro2",            "Macro",       "kParamValue",   0, 1),
     "Macro3":            ModulationDestination("Macro3",            "Macro",       "kParamValue",   0, 2),
     "Macro4":            ModulationDestination("Macro4",            "Macro",       "kParamValue",   0, 3),
+    "Macro5":            ModulationDestination("Macro5",            "Macro",       "kParamValue",   0, 4),
+    "Macro6":            ModulationDestination("Macro6",            "Macro",       "kParamValue",   0, 5),
+    "Macro7":            ModulationDestination("Macro7",            "Macro",       "kParamValue",   0, 6),
+    "Macro8":            ModulationDestination("Macro8",            "Macro",       "kParamValue",   0, 7),
 }
 
 

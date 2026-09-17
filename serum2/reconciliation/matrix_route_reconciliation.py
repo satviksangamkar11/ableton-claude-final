@@ -26,6 +26,9 @@ import dawdreamer as daw
 from serum2.evidence import epoch as epoch_mod
 from serum2.qualification.a3_modulation_route import _SOURCES, _DESTINATIONS
 
+# MATRIX.LFO_BUS.NN -> which LFO number (1-16) it names.
+_LFO_BUS_NUMBER = {f"MATRIX.LFO_BUS.{n:02d}": n for n in range(1, 17)}
+
 REPO_ROOT = Path(__file__).parent.parent.parent
 REGISTRY_PATH = REPO_ROOT / "SERUM2_EXECUTION_COVERAGE_REGISTRY_V3.json"
 SEMANTIC_PATH = REPO_ROOT / "serum2" / "reconciliation" / "SERUM2_SEMANTIC_NORMALIZED.json"
@@ -120,13 +123,28 @@ def classify(semantic_id, sem, host_params):
                 f"a3_modulation_route._SOURCES ({sorted(_SOURCES.keys())}) -- real user-facing concept, "
                 f"no authoritative source_type_id evidence yet.", None)
 
-    # ---- MATRIX.LFO_BUS.NN: no matching destination-module-level entry in _DESTINATIONS ----
-    if semantic_id.startswith("MATRIX.LFO_BUS."):
+    # ---- MATRIX.LFO_BUS.NN: dynamically checked against the REAL, evidence-backed
+    # a3_modulation_route._DESTINATIONS table (745-file corpus scan, V4 pass) ----
+    if semantic_id in _LFO_BUS_NUMBER:
+        bus_n = _LFO_BUS_NUMBER[semantic_id]
+        module_id = bus_n - 1
+        matching = [name for name, d in _DESTINATIONS.items()
+                    if d.dest_module_type_string == "LFO" and d.dest_module_id == module_id]
+        if matching:
+            return ("EXISTING_EXECUTABLE_DIFFERENT_MECHANISM",
+                    f"control_type='destination_target': a3_modulation_route._DESTINATIONS now has "
+                    f"{len(matching)} real, corpus-evidenced per-parameter destination(s) for LFO{bus_n} "
+                    f"(moduleID={module_id}): {sorted(matching)}. Exercising this bus is what "
+                    f"compound_create_modulation_route's destination={matching[0]!r} parameter already does "
+                    f"(real DawDreamer/Serum round-trip proven, see "
+                    f"test_matrix_lfo_bus_destination_real_roundtrip.py) -- the row itself remains a "
+                    f"bus-level menu-selection fact (paired with MATRIX.DESTINATION.LFO_N_CONDITIONAL's "
+                    f"already-classified param submenu), not an independently mutable value.",
+                    {"binding_type": "COMPOUND_DESTINATION_AVAILABLE", "sample_destination": matching[0]})
         return ("UNSUPPORTED_NO_EVIDENCE",
-                "control_type='destination_target': a3_modulation_route._DESTINATIONS only has evidenced "
-                "per-parameter entries for LFO1.Rate/LFO2.Rate/LFO1.Smooth (3 of a possible 16x5=80 "
-                "LFO-destination-param combinations) -- no evidence for a bus-level (module-only, "
-                "parameter-unspecified) destination target, and no evidence at all for LFO buses 3-16.", None)
+                f"control_type='destination_target': a3_modulation_route._DESTINATIONS has zero real, "
+                f"corpus-evidenced entries for LFO{bus_n} (moduleID={module_id}) across a 745-file scan of "
+                f"the local Serum 2 Presets library -- no real preset routes anything into this LFO slot.", None)
 
     # ---- GLOBAL.RETRIGGERS.*: boolean, checked against live host-param list (no match) ----
     if semantic_id.startswith("GLOBAL.RETRIGGERS."):
