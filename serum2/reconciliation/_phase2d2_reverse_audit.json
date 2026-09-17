@@ -1,0 +1,1455 @@
+[
+  {
+    "target_id": "FXEQ.Freq1",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Freq2",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Reso1",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Reso2",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Gain1",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Gain2",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.LevelOut",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.Drive",
+    "semantic_ids": [
+      "FX.DISTORTION.DRIVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Enable",
+    "semantic_ids": [
+      "MIXER.SUB.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Octave",
+    "semantic_ids": [
+      "SUB_OSC.OCTAVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Volume",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "SUB.Level",
+    "semantic_ids": [
+      "SUB_OSC.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Pan",
+    "semantic_ids": [
+      "SUB_OSC.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.BUS1Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "SUB.BUS2Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "SUB.Route",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "SUB.Detune",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "SUB.Warp",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Enable",
+    "semantic_ids": [
+      "MIXER.OSC_A.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.Octave",
+    "semantic_ids": [
+      "OSC1.OCTAVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.Volume",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Level",
+    "semantic_ids": [
+      "MIXER.OSC_A.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.Pan",
+    "semantic_ids": [
+      "MIXER.OSC_A.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.BUS1Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.BUS2Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Route",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Detune",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Wavetable",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Warp",
+    "semantic_ids": [
+      "OSC1.WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Octave",
+    "semantic_ids": [
+      "OSC2.OCTAVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Volume",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC2.Level",
+    "semantic_ids": [
+      "MIXER.OSC_B.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Pan",
+    "semantic_ids": [
+      "MIXER.OSC_B.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.BUS1Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC2.BUS2Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC2.Route",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC2.Detune",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC2.Warp",
+    "semantic_ids": [
+      "OSC2.WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Octave",
+    "semantic_ids": [
+      "OSC3.OCTAVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Volume",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC3.Level",
+    "semantic_ids": [
+      "MIXER.OSC_C.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Pan",
+    "semantic_ids": [
+      "MIXER.OSC_C.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.BUS1Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC3.BUS2Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC3.Route",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC3.Detune",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC3.Warp",
+    "semantic_ids": [
+      "OSC3.WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.Volume",
+    "semantic_ids": [
+      "MIXER.NOISE.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.Level",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.Pan",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.BUS1Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.BUS2Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.Route",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.Warp",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.Type",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Filter.Resonance",
+    "semantic_ids": [
+      "FILTER1.RESONANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Type",
+    "semantic_ids": [
+      "FILTER1.TYPE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER1.BUS1Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER1.BUS2Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER1.Route",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER2.BUS1Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER2.BUS2Send",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER2.Route",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER1.Level",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER1.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER2.Level",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FILTER2.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "BUS1.Level",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "BUS2.Level",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Env1.Attack",
+    "semantic_ids": [
+      "ENV1.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env1.Decay",
+    "semantic_ids": [
+      "ENV1.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env1.Release",
+    "semantic_ids": [
+      "ENV1.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env1.Sustain",
+    "semantic_ids": [
+      "ENV1.SUSTAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Cutoff",
+    "semantic_ids": [
+      "FILTER1.CUTOFF"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Drive",
+    "semantic_ids": [
+      "FILTER1.DRIVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Q",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Filter2.Cutoff",
+    "semantic_ids": [
+      "FILTER2.CUTOFF"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter2.Resonance",
+    "semantic_ids": [
+      "FILTER2.RESONANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter2.Type",
+    "semantic_ids": [
+      "FILTER2.TYPE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter2.Drive",
+    "semantic_ids": [
+      "FILTER2.DRIVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter2.Q",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Env2.Attack",
+    "semantic_ids": [
+      "ENV2.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env2.Decay",
+    "semantic_ids": [
+      "ENV2.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env2.Sustain",
+    "semantic_ids": [
+      "ENV2.SUSTAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env2.Release",
+    "semantic_ids": [
+      "ENV2.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env3.Attack",
+    "semantic_ids": [
+      "ENV3.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env3.Decay",
+    "semantic_ids": [
+      "ENV3.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env3.Sustain",
+    "semantic_ids": [
+      "ENV3.SUSTAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env3.Release",
+    "semantic_ids": [
+      "ENV3.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env4.Attack",
+    "semantic_ids": [
+      "ENV4.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env4.Decay",
+    "semantic_ids": [
+      "ENV4.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env4.Sustain",
+    "semantic_ids": [
+      "ENV4.SUSTAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env4.Release",
+    "semantic_ids": [
+      "ENV4.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.MasterVolume",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Transpose",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Tuning",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Quality",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Swing",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Scale",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Key",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Portamento",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Glide",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Mono",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Voicing",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.VelocityCurve",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO0.Rate",
+    "semantic_ids": [
+      "LFO1.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO0.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO0.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO0.Phase",
+    "semantic_ids": [
+      "LFO1.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO0.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO1.Rate",
+    "semantic_ids": [
+      "LFO2.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO1.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO1.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO1.Phase",
+    "semantic_ids": [
+      "LFO2.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO1.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO2.Rate",
+    "semantic_ids": [
+      "LFO3.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO2.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO2.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO2.Phase",
+    "semantic_ids": [
+      "LFO3.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO2.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO3.Rate",
+    "semantic_ids": [
+      "LFO4.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO3.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO3.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO3.Phase",
+    "semantic_ids": [
+      "LFO4.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO3.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO4.Rate",
+    "semantic_ids": [
+      "LFO5.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO4.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO4.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO4.Phase",
+    "semantic_ids": [
+      "LFO5.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO4.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO5.Rate",
+    "semantic_ids": [
+      "LFO6.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO5.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO5.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO5.Phase",
+    "semantic_ids": [
+      "LFO6.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO5.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Rate",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Phase",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Rate",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Phase",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Rate",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Phase",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Rate",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Shape",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Phase",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.Tone",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.LevelOut",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.Time",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.Feedback",
+    "semantic_ids": [
+      "FX.DELAY.FEEDBACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXDelay.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXReverb.Time",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXReverb.Damping",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXReverb.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXCompressor.Threshold",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXCompressor.Ratio",
+    "semantic_ids": [
+      "FX.COMPRESSOR.RATIO"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXCompressor.Attack",
+    "semantic_ids": [
+      "FX.COMPRESSOR.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXCompressor.Release",
+    "semantic_ids": [
+      "FX.COMPRESSOR.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXChorus.Rate",
+    "semantic_ids": [
+      "FX.CHORUS.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXChorus.Depth",
+    "semantic_ids": [
+      "FX.CHORUS.DEPTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXChorus.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.Frequency",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.Range",
+    "semantic_ids": [
+      "FX.BODE.RANGE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXBODE.Direction",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFlanger.Rate",
+    "semantic_ids": [
+      "FX.FLANGER.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFlanger.Depth",
+    "semantic_ids": [
+      "FX.FLANGER.DEPTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFlanger.Feedback",
+    "semantic_ids": [
+      "FX.FLANGER.FEEDBACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFlanger.Phase",
+    "semantic_ids": [
+      "FX.FLANGER.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFlanger.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXPhaser.Frequency",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXPhaser.Feedback",
+    "semantic_ids": [
+      "FX.PHASER.FEEDBACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXPhaser.Phase",
+    "semantic_ids": [
+      "FX.PHASER.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXPhaser.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.Gain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.Phase",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.Mono",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.IR",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.IRGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.Attack",
+    "semantic_ids": [
+      "FX.CONVOLVE.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXConvolve.Decay",
+    "semantic_ids": [
+      "FX.CONVOLVE.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXConvolve.Damping",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXHyper.Rate",
+    "semantic_ids": [
+      "FX.HYPER.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXHyper.Unison",
+    "semantic_ids": [
+      "FX.HYPER.UNISON"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXHyper.Detune",
+    "semantic_ids": [
+      "FX.HYPER.DETUNE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXHyper.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Type",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Cutoff",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Resonance",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Drive",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Mix",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "ModRoute.Curve",
+    "semantic_ids": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ModRoute.Bipolar",
+    "semantic_ids": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ModRoute.AuxSource",
+    "semantic_ids": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ModRoute.Bypass",
+    "semantic_ids": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ModRoute.MacroDepth",
+    "semantic_ids": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Enable",
+    "semantic_ids": [
+      "MIXER.OSC_B.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Enable",
+    "semantic_ids": [
+      "MIXER.OSC_C.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Enable",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Filter2.Enable",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.PitchTracking",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.Fine",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "ARP.Enable",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.Shift",
+    "semantic_ids": [
+      "FX.BODE.SHIFT"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXBODE.LevelOut",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXChorus.Feedback",
+    "semantic_ids": [
+      "FX.CHORUS.FEEDBACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXChorus.Phase",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXChorus.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXCompressor.Gain",
+    "semantic_ids": [
+      "FX.COMPRESSOR.GAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXCompressor.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.IRPath",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.Mode",
+    "semantic_ids": [
+      "FX.DELAY.MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXDelay.TimeL",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.TimeR",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.OffsetL",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.OffsetR",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.BW",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.Mode",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.Freq",
+    "semantic_ids": [
+      "FX.DISTORTION.FREQ"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXDistortion.LPHP",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.PrePost",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.BW",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Type1",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Type2",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilter.Type",
+    "semantic_ids": [
+      "FX.FILTER.TYPE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFilter.Cutoff",
+    "semantic_ids": [
+      "FX.FILTER.CUTOFF"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFilter.Resonance",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilter.Drive",
+    "semantic_ids": [
+      "FX.FILTER.DRIVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFilter.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFlanger.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXHyper.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXHyper.Retrigger",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXPhaser.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXReverb.Size",
+    "semantic_ids": [
+      "FX.REVERB.SIZE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXReverb.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXSplitter.BandCount",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXSplitter.Crossover1",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXSplitter.Crossover2",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXSplitter.Crossover3",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.MixOrGain",
+    "semantic_ids": [],
+    "classification": "ORPHAN_TECHNICAL"
+  }
+]

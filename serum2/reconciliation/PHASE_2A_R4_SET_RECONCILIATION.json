@@ -1,0 +1,96 @@
+{
+  "A_count": 516,
+  "B_new_records_count": 188,
+  "A_intersect_B_count": 0,
+  "union_count": 704,
+  "excluded_as_duplicate_count": 14,
+  "excluded_as_duplicate": [
+    {
+      "candidate_id": "FILTER1.PAN",
+      "duplicates_existing_id": "MIXER.FILTER1.PAN",
+      "reason": "Existing MIXER record explicitly cross-references FILTER.1.*/FILTER.2.* as same physical parameter (dual UI surface, single semantic identity per established inventory convention)."
+    },
+    {
+      "candidate_id": "FILTER1.MIX",
+      "duplicates_existing_id": "MIXER.FILTER1.WET",
+      "reason": "Existing MIXER record explicitly cross-references FILTER.1.*/FILTER.2.* as same physical parameter (dual UI surface, single semantic identity per established inventory convention)."
+    },
+    {
+      "candidate_id": "FILTER1.LEVEL",
+      "duplicates_existing_id": "MIXER.FILTER1.LEVEL",
+      "reason": "Existing MIXER record explicitly cross-references FILTER.1.*/FILTER.2.* as same physical parameter (dual UI surface, single semantic identity per established inventory convention)."
+    },
+    {
+      "candidate_id": "FILTER1.ENABLE",
+      "duplicates_existing_id": "MIXER.FILTER1.ENABLE",
+      "reason": "Existing MIXER record explicitly cross-references FILTER.1.*/FILTER.2.* as same physical enable toggle."
+    },
+    {
+      "candidate_id": "FILTER2.PAN",
+      "duplicates_existing_id": "MIXER.FILTER2.PAN",
+      "reason": "Existing MIXER record explicitly cross-references FILTER.1.*/FILTER.2.* as same physical parameter (dual UI surface, single semantic identity per established inventory convention)."
+    },
+    {
+      "candidate_id": "FILTER2.MIX",
+      "duplicates_existing_id": "MIXER.FILTER2.WET",
+      "reason": "Existing MIXER record explicitly cross-references FILTER.1.*/FILTER.2.* as same physical parameter (dual UI surface, single semantic identity per established inventory convention)."
+    },
+    {
+      "candidate_id": "FILTER2.LEVEL",
+      "duplicates_existing_id": "MIXER.FILTER2.LEVEL",
+      "reason": "Existing MIXER record explicitly cross-references FILTER.1.*/FILTER.2.* as same physical parameter (dual UI surface, single semantic identity per established inventory convention)."
+    },
+    {
+      "candidate_id": "FILTER2.ENABLE",
+      "duplicates_existing_id": "MIXER.FILTER2.ENABLE",
+      "reason": "Existing MIXER record explicitly cross-references FILTER.1.*/FILTER.2.* as same physical enable toggle."
+    },
+    {
+      "candidate_id": "FILTER1.BUS1SEND",
+      "duplicates_existing_id": "MIXER.FILTER1.BUS1",
+      "reason": "existing_routing_targets explicitly noted in ledger as 'FILTER-triggered, MIX-owned destination semantics'; MIXER record is the physical control."
+    },
+    {
+      "candidate_id": "FILTER1.BUS2SEND",
+      "duplicates_existing_id": "MIXER.FILTER1.BUS2",
+      "reason": "existing_routing_targets explicitly noted in ledger as 'FILTER-triggered, MIX-owned destination semantics'; MIXER record is the physical control."
+    },
+    {
+      "candidate_id": "FILTER1.ROUTE",
+      "duplicates_existing_id": "MIXER.FILTER1.ROUTING",
+      "reason": "existing_routing_targets explicitly noted in ledger as 'FILTER-triggered, MIX-owned destination semantics'; MIXER record is the physical control."
+    },
+    {
+      "candidate_id": "FILTER2.BUS1SEND",
+      "duplicates_existing_id": "MIXER.FILTER2.BUS1",
+      "reason": "existing_routing_targets explicitly noted in ledger as 'FILTER-triggered, MIX-owned destination semantics'; MIXER record is the physical control."
+    },
+    {
+      "candidate_id": "FILTER2.BUS2SEND",
+      "duplicates_existing_id": "MIXER.FILTER2.BUS2",
+      "reason": "existing_routing_targets explicitly noted in ledger as 'FILTER-triggered, MIX-owned destination semantics'; MIXER record is the physical control."
+    },
+    {
+      "candidate_id": "FILTER2.ROUTE",
+      "duplicates_existing_id": "MIXER.FILTER2.ROUTING",
+      "reason": "existing_routing_targets explicitly noted in ledger as 'FILTER-triggered, MIX-owned destination semantics'; MIXER record is the physical control."
+    }
+  ],
+  "excluded_by_design_generic_actions": {
+    "items": [
+      "Reset Control",
+      "MIDI Learn",
+      "Lock Parameter",
+      "Mod Source",
+      "Bypass Modulator",
+      "Remove [All] Modulator(s)"
+    ],
+    "would_be_count_if_included": 12,
+    "reason": "Generic per-knob UI mechanism (Reset Control, MIDI Learn, Lock Parameter, Mod Source, Bypass Modulator, Remove Modulator) -- not itemized as distinct semantic_id anywhere else in the inventory (verified: zero sections itemize these per-control). Excluding maintains schema consistency."
+  },
+  "B_by_section": {
+    "FILTER": 62,
+    "ENV": 36,
+    "LFO": 90
+  }
+}

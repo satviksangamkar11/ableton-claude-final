@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "title": "Serum 2.0.21 Target Reconciliation Matrix",
+    "version": "1.0.0-PHASE-2-RECONCILIATION",
+    "created": "2026-09-16",
+    "purpose": "Bidirectional mapping between frozen semantic records and actual controllable targets",
+    "inventory_source": "SERUM2_SEMANTIC_INVENTORY.json v1.2.0-CROSS-SYSTEM-RECONCILIATION-PHASE-1",
+    "targets_source": "serum2/compiler/targets.py SEMANTIC_TARGETS",
+    "phase": "Phase 2: Target Reconciliation (Extract → Normalize → Reconcile → Gap Analysis → Families)",
+    "discipline": "No UI probing. Reconciliation only using frozen Phase 1 evidence and existing target definitions."
+  },
+  "reconciliation_schema": {
+    "semantic_id": "Frozen semantic identifier from inventory (e.g., OSC1.ENABLE, FILTER1.CUTOFF, ENV1.ATTACK)",
+    "target_ids": "Array of existing targets that implement this semantic (may be empty if no target exists yet)",
+    "mapping_class": "EXACT (1:1), ONE_TO_MANY (semantic maps to multiple targets), MANY_TO_ONE (multiple semantics share target), NO_TARGET (semantic has no target), UNKNOWN (ambiguous)",
+    "target_source": "VST3_PARAMETER, UI_ACTION, STRUCTURAL_OPERATION, RESOURCE_OPERATION, MATRIX_ROUTE, OTHER",
+    "representation_family": "Behavioral grouping (e.g., all BOOLEAN read/write/persist share family; all ENUM variants in another family)",
+    "operation_status": "IMPLEMENTED (full semantic→target→operation coverage), DISCOVERED_NOT_IMPLEMENTED (target exists, operation missing), UNPROVEN (no behavioral evidence), NOT_APPLICABLE (structural only, not runtime-controllable)",
+    "evidence_refs": "References to Phase 1 closure ledgers where this semantic was verified",
+    "status": "VERIFIED (exact mapping confirmed), AMBIGUOUS (multiple possibilities), ORPHAN (target with no semantic), INCOMPLETE (partial mapping)",
+    "notes": "Disposition, conflicts, or reconciliation decisions"
+  },
+  "summary_metrics": {
+    "total_semantic_records_frozen": "559+ (from FINAL_STATUS_RECONCILIATION_AND_G1_G10_HONEST.md)",
+    "total_semantic_records_verified": "528+",
+    "total_semantic_records_proven_not_user_control": "24+",
+    "total_semantic_records_unverified_candidate": "4",
+    "existing_targets_in_project": "130+ from targets.py",
+    "bidirectional_mappings_target_to_semantic": "To be calculated",
+    "orphan_targets_no_semantic": "To be calculated",
+    "representation_families_provisional": "To be derived from behavior, not VST3 naming"
+  },
+  "reconciliation_rows_sample": [
+    {
+      "semantic_id": "OSC1.ENABLE",
+      "section": "OSC",
+      "module": "OSC1",
+      "label": "Enable",
+      "target_ids": ["OSC1.Enable"],
+      "mapping_class": "EXACT",
+      "target_source": "VST3_PARAMETER",
+      "representation_family": "BOOLEAN_READ_WRITE_PERSIST",
+      "operation_status": "IMPLEMENTED",
+      "evidence_refs": ["OSC_closure_ledger / phase_1_discovery_2026_09_14"],
+      "status": "VERIFIED",
+      "notes": "Direct 1:1 mapping. Semantic Enable observed in UI, target defined in targets.py"
+    },
+    {
+      "semantic_id": "FILTER1.CUTOFF",
+      "section": "FILTER",
+      "module": "FILTER1",
+      "label": "Cutoff",
+      "target_ids": ["Filter.Cutoff"],
+      "mapping_class": "MANY_TO_ONE",
+      "target_source": "VST3_PARAMETER",
+      "representation_family": "SCALAR_READ_WRITE_PERSIST_RANGE",
+      "operation_status": "IMPLEMENTED",
+      "evidence_refs": ["filter_closure_ledger / phase_1_discovery_2026_09_15"],
+      "status": "AMBIGUOUS",
+      "notes": "CONFLICT: Same target 'Filter.Cutoff' used for both FILTER1 and FILTER2. Targets.py uses generic 'Filter.Cutoff', targets.py ALSO has 'Filter2.Cutoff'. Requires disambiguation: is 'Filter.Cutoff' actually FILTER1-specific or is it a shared capability key?"
+    },
+    {
+      "semantic_id": "ENV1.HOLD",
+      "section": "ENV",
+      "module": "ENV1",
+      "label": "Hold",
+      "target_ids": [],
+      "mapping_class": "NO_TARGET",
+      "target_source": "VST3_PARAMETER",
+      "representation_family": "SCALAR_READ_WRITE_PERSIST_TIME",
+      "operation_status": "DISCOVERED_NOT_IMPLEMENTED",
+      "evidence_refs": ["env_closure_ledger / phase_1_discovery_2026_09_15"],
+      "status": "VERIFIED",
+      "notes": "Semantic ENV1.Hold confirmed in UI (Hold time for envelope), but NO corresponding target in targets.py. Gap identified. Target GAP: Env1.Hold and Env2-4.Hold all missing."
+    },
+    {
+      "semantic_id": "MATRIX.ROUTING.SIGNAL_BALANCE",
+      "section": "MATRIX",
+      "module": "ROUTING",
+      "label": "Signal Balance (Modulation Route)",
+      "target_ids": ["ModRoute.Curve", "ModRoute.Bipolar", "ModRoute.AuxSource"],
+      "mapping_class": "ONE_TO_MANY",
+      "target_source": "MATRIX_ROUTE",
+      "representation_family": "ROUTE_CONFIGURATION",
+      "operation_status": "IMPLEMENTED",
+      "evidence_refs": ["matrix_closure_ledger / phase_1_discovery_2026_09_15"],
+      "status": "VERIFIED",
+      "notes": "MATRIX routing configuration. One semantic (the concept of a modulation route) maps to multiple targets (Curve, Bipolar, AuxSource, etc., representing different route properties)."
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LOAD",
+      "section": "BROWSER",
+      "module": "BROWSER",
+      "label": "Preset Load (Single-Click)",
+      "target_ids": [],
+      "mapping_class": "NO_TARGET",
+      "target_source": "RESOURCE_OPERATION",
+      "representation_family": "RESOURCE_LOAD",
+      "operation_status": "DISCOVERED_NOT_IMPLEMENTED",
+      "evidence_refs": ["browser_closure_ledger / phase_1_discovery_2026_09_16"],
+      "status": "VERIFIED",
+      "notes": "Semantic: clicking a preset row loads it into Serum's engine state (atomic operation). No target in current targets.py; this is a structural/resource operation, not a parameter mutation."
+    }
+  ],
+  "phase_2_next_steps": [
+    "PHASE 2 Complete: Extract frozen semantic vocabulary from SERUM2_SEMANTIC_INVENTORY.json (all 559+ records with full metadata)",
+    "Extract existing target vocabulary from serum2/compiler/targets.py and other project sources",
+    "Normalize both vocabularies into canonical forms (remove VST3 indices, establish semantic_id ↔ target_id bijection)",
+    "Build complete bidirectional reconciliation matrix (all rows, not just sample)",
+    "Phase 3: Analyze gaps (orphan targets, semantics with no targets, ambiguous mappings)",
+    "Phase 4: Derive representation families from behavioral properties, NOT VST3 naming",
+    "Phase 5: Select minimum set of deep experiments per family to prove operation semantics before implementation"
+  ],
+  "critical_constraints": {
+    "no_ui_probing": "Phase 2 is reconciliation only. No Serum UI discovery or re-verification.",
+    "frozen_inventory_authority": "SERUM2_SEMANTIC_INVENTORY.json is the sole authority for what semantics exist.",
+    "existing_targets_authority": "serum2/compiler/targets.py is the sole authority for what targets are currently defined.",
+    "no_assumptions": "Do not assume VST3 parameter count matches semantic control count.",
+    "bidirectional_validation": "Must catch gaps in both directions: semantics with no targets AND orphan targets with no semantic.",
+    "family_derivation_from_behavior": "Representation families must be derived from read/write/persistence/automation behavior, NOT from VST3 naming conventions."
+  }
+}

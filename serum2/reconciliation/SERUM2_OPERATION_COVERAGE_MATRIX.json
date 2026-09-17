@@ -1,0 +1,4020 @@
+{
+  "metadata": {
+    "purpose": "Phase 2D.6C: operation coverage for the 264 target-established semantics.",
+    "total_rows": 264,
+    "representation_counts": {
+      "HOST_PARAMETER_SCALAR": 209,
+      "HOST_PARAMETER_ENUM": 3,
+      "MATRIX_ROUTE": 1,
+      "SHARED_PHYSICAL_PARAMETER": 46,
+      "MULTI_TARGET": 2,
+      "STRUCTURAL_OPERATION": 3
+    },
+    "rows_with_existing_evidence": 14
+  },
+  "rows": [
+    {
+      "semantic_id": "NOISE_OSC.LEVEL",
+      "target_id": "NOISE.Level",
+      "all_target_ids": [
+        "NOISE.Level"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "NOISE_OSC.PAN",
+      "target_id": "NOISE.Pan",
+      "all_target_ids": [
+        "NOISE.Pan"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "NOISE_OSC.PITCH",
+      "target_id": "NOISE_OSC.PITCH",
+      "all_target_ids": [
+        "NOISE_OSC.PITCH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "NOISE_OSC.FINE",
+      "target_id": "NOISE.Fine",
+      "all_target_ids": [
+        "NOISE.Fine"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "NOISE_OSC.PHASE",
+      "target_id": "NOISE_OSC.PHASE",
+      "all_target_ids": [
+        "NOISE_OSC.PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "NOISE_OSC.RAND_PHASE",
+      "target_id": "NOISE_OSC.RAND_PHASE",
+      "all_target_ids": [
+        "NOISE_OSC.RAND_PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "SUB_OSC.LEVEL",
+      "target_id": "SUB.Level",
+      "all_target_ids": [
+        "SUB.Level"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "SUB_OSC.PAN",
+      "target_id": "SUB.Pan",
+      "all_target_ids": [
+        "SUB.Pan"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "SUB_OSC.OCTAVE",
+      "target_id": "SUB.Octave",
+      "all_target_ids": [
+        "SUB.Octave"
+      ],
+      "representation": "HOST_PARAMETER_ENUM",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "SUB_OSC.COARSE_PITCH",
+      "target_id": "SUB_OSC.COARSE_PITCH",
+      "all_target_ids": [
+        "SUB_OSC.COARSE_PITCH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "SUB_OSC.PHASE",
+      "target_id": "SUB_OSC.PHASE",
+      "all_target_ids": [
+        "SUB_OSC.PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MATRIX.ROUTING.SIGNAL_BALANCE",
+      "target_id": "ModRoute.AuxSource",
+      "all_target_ids": [
+        "ModRoute.AuxSource",
+        "ModRoute.MacroDepth",
+        "ModRoute.Curve",
+        "ModRoute.Bipolar",
+        "ModRoute.Bypass"
+      ],
+      "representation": "MATRIX_ROUTE",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.SUB.ENABLE",
+      "target_id": "SUB.Enable",
+      "all_target_ids": [
+        "SUB.Enable"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.SUB.ROUTING",
+      "target_id": "SUB.Route",
+      "all_target_ids": [
+        "SUB.Route"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.SUB.BUS1",
+      "target_id": "SUB.BUS1Send",
+      "all_target_ids": [
+        "SUB.BUS1Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.SUB.BUS2",
+      "target_id": "SUB.BUS2Send",
+      "all_target_ids": [
+        "SUB.BUS2Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.ENABLE",
+      "target_id": "OSC1.Enable",
+      "all_target_ids": [
+        "OSC1.Enable"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.ROUTING",
+      "target_id": "OSC1.Route",
+      "all_target_ids": [
+        "OSC1.Route"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.BUS1",
+      "target_id": "OSC1.BUS1Send",
+      "all_target_ids": [
+        "OSC1.BUS1Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.BUS2",
+      "target_id": "OSC1.BUS2Send",
+      "all_target_ids": [
+        "OSC1.BUS2Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.PAN",
+      "target_id": "OSC1.Pan",
+      "all_target_ids": [
+        "OSC1.Pan"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.LEVEL",
+      "target_id": "OSC1.Level",
+      "all_target_ids": [
+        "OSC1.Level"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_04_seed_osc1_level_001_EVIDENCE.json",
+        "DIAG_03_diag_osc1_level_corrected_001.json"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.ENABLE",
+      "target_id": "OSC2.Enable",
+      "all_target_ids": [
+        "OSC2.Enable"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.ROUTING",
+      "target_id": "OSC2.Route",
+      "all_target_ids": [
+        "OSC2.Route"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.BUS1",
+      "target_id": "OSC2.BUS1Send",
+      "all_target_ids": [
+        "OSC2.BUS1Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.BUS2",
+      "target_id": "OSC2.BUS2Send",
+      "all_target_ids": [
+        "OSC2.BUS2Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.PAN",
+      "target_id": "OSC2.Pan",
+      "all_target_ids": [
+        "OSC2.Pan"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.LEVEL",
+      "target_id": "OSC2.Level",
+      "all_target_ids": [
+        "OSC2.Level"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.ENABLE",
+      "target_id": "OSC3.Enable",
+      "all_target_ids": [
+        "OSC3.Enable"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.ROUTING",
+      "target_id": "OSC3.Route",
+      "all_target_ids": [
+        "OSC3.Route"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.BUS1",
+      "target_id": "OSC3.BUS1Send",
+      "all_target_ids": [
+        "OSC3.BUS1Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.BUS2",
+      "target_id": "OSC3.BUS2Send",
+      "all_target_ids": [
+        "OSC3.BUS2Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.PAN",
+      "target_id": "OSC3.Pan",
+      "all_target_ids": [
+        "OSC3.Pan"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.LEVEL",
+      "target_id": "OSC3.Level",
+      "all_target_ids": [
+        "OSC3.Level"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.NOISE.ENABLE",
+      "target_id": "NOISE.Volume",
+      "all_target_ids": [
+        "NOISE.Volume"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.NOISE.ROUTING",
+      "target_id": "NOISE.Route",
+      "all_target_ids": [
+        "NOISE.Route"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.NOISE.BUS1",
+      "target_id": "NOISE.BUS1Send",
+      "all_target_ids": [
+        "NOISE.BUS1Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.NOISE.BUS2",
+      "target_id": "NOISE.BUS2Send",
+      "all_target_ids": [
+        "NOISE.BUS2Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.ENABLE",
+      "target_id": "Filter.Enable",
+      "all_target_ids": [
+        "Filter.Enable"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.ROUTING",
+      "target_id": "FILTER1.Route",
+      "all_target_ids": [
+        "FILTER1.Route"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.BUS1",
+      "target_id": "FILTER1.BUS1Send",
+      "all_target_ids": [
+        "FILTER1.BUS1Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.BUS2",
+      "target_id": "FILTER1.BUS2Send",
+      "all_target_ids": [
+        "FILTER1.BUS2Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.WET",
+      "target_id": "FILTER1.Mix",
+      "all_target_ids": [
+        "FILTER1.Mix"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.LEVEL",
+      "target_id": "FILTER1.Level",
+      "all_target_ids": [
+        "FILTER1.Level"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.ENABLE",
+      "target_id": "Filter2.Enable",
+      "all_target_ids": [
+        "Filter2.Enable"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.ROUTING",
+      "target_id": "FILTER2.Route",
+      "all_target_ids": [
+        "FILTER2.Route"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.BUS1",
+      "target_id": "FILTER2.BUS1Send",
+      "all_target_ids": [
+        "FILTER2.BUS1Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.BUS2",
+      "target_id": "FILTER2.BUS2Send",
+      "all_target_ids": [
+        "FILTER2.BUS2Send"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.WET",
+      "target_id": "FILTER2.Mix",
+      "all_target_ids": [
+        "FILTER2.Mix"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.LEVEL",
+      "target_id": "FILTER2.Level",
+      "all_target_ids": [
+        "FILTER2.Level"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.BUS1.LEVEL",
+      "target_id": "BUS1.Level",
+      "all_target_ids": [
+        "BUS1.Level"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.BUS2.LEVEL",
+      "target_id": "BUS2.Level",
+      "all_target_ids": [
+        "BUS2.Level"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.MAIN.LEVEL",
+      "target_id": "Global.MasterVolume",
+      "all_target_ids": [
+        "Global.MasterVolume"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+      "target_id": "Filter2.Cutoff",
+      "all_target_ids": [
+        "Filter2.Cutoff",
+        "Filter2.Resonance"
+      ],
+      "representation": "MULTI_TARGET",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_03_seed_filter2_cutoff_001_EVIDENCE.json",
+        "DIAG_02_diag_filter2_cutoff_corrected_001.json"
+      ]
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+      "target_id": "Filter2.Cutoff",
+      "all_target_ids": [
+        "Filter2.Cutoff",
+        "Filter2.Resonance"
+      ],
+      "representation": "MULTI_TARGET",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_03_seed_filter2_cutoff_001_EVIDENCE.json",
+        "DIAG_02_diag_filter2_cutoff_corrected_001.json"
+      ]
+    },
+    {
+      "semantic_id": "FX.BODE.SHIFT",
+      "target_id": "FXBODE.Shift",
+      "all_target_ids": [
+        "FXBODE.Shift"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.BODE.RANGE",
+      "target_id": "FXBODE.Range",
+      "all_target_ids": [
+        "FXBODE.Range"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.CHORUS.RATE",
+      "target_id": "FXChorus.Rate",
+      "all_target_ids": [
+        "FXChorus.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.CHORUS.DEPTH",
+      "target_id": "FXChorus.Depth",
+      "all_target_ids": [
+        "FXChorus.Depth"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.CHORUS.FEEDBACK",
+      "target_id": "FXChorus.Feedback",
+      "all_target_ids": [
+        "FXChorus.Feedback"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.RATIO",
+      "target_id": "FXCompressor.Ratio",
+      "all_target_ids": [
+        "FXCompressor.Ratio"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.ATTACK",
+      "target_id": "FXCompressor.Attack",
+      "all_target_ids": [
+        "FXCompressor.Attack"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.RELEASE",
+      "target_id": "FXCompressor.Release",
+      "all_target_ids": [
+        "FXCompressor.Release"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.GAIN",
+      "target_id": "FXCompressor.Gain",
+      "all_target_ids": [
+        "FXCompressor.Gain"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.ATTACK",
+      "target_id": "FXConvolve.Attack",
+      "all_target_ids": [
+        "FXConvolve.Attack"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.DECAY",
+      "target_id": "FXConvolve.Decay",
+      "all_target_ids": [
+        "FXConvolve.Decay"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.DELAY.MODE",
+      "target_id": "FXDelay.Mode",
+      "all_target_ids": [
+        "FXDelay.Mode"
+      ],
+      "representation": "STRUCTURAL_OPERATION",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "NOT_APPLICABLE",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.DELAY.FEEDBACK",
+      "target_id": "FXDelay.Feedback",
+      "all_target_ids": [
+        "FXDelay.Feedback"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.DISTORTION.FREQ",
+      "target_id": "FXDistortion.Freq",
+      "all_target_ids": [
+        "FXDistortion.Freq"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.DISTORTION.DRIVE",
+      "target_id": "FXDistortion.Drive",
+      "all_target_ids": [
+        "FXDistortion.Drive"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.FILTER.TYPE",
+      "target_id": "FXFilter.Type",
+      "all_target_ids": [
+        "FXFilter.Type"
+      ],
+      "representation": "STRUCTURAL_OPERATION",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "NOT_APPLICABLE",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.FILTER.CUTOFF",
+      "target_id": "FXFilter.Cutoff",
+      "all_target_ids": [
+        "FXFilter.Cutoff"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.FILTER.DRIVE",
+      "target_id": "FXFilter.Drive",
+      "all_target_ids": [
+        "FXFilter.Drive"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.FLANGER.RATE",
+      "target_id": "FXFlanger.Rate",
+      "all_target_ids": [
+        "FXFlanger.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.FLANGER.DEPTH",
+      "target_id": "FXFlanger.Depth",
+      "all_target_ids": [
+        "FXFlanger.Depth"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.FLANGER.FEEDBACK",
+      "target_id": "FXFlanger.Feedback",
+      "all_target_ids": [
+        "FXFlanger.Feedback"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.FLANGER.PHASE",
+      "target_id": "FXFlanger.Phase",
+      "all_target_ids": [
+        "FXFlanger.Phase"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.HYPER.RATE",
+      "target_id": "FXHyper.Rate",
+      "all_target_ids": [
+        "FXHyper.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.HYPER.UNISON",
+      "target_id": "FXHyper.Unison",
+      "all_target_ids": [
+        "FXHyper.Unison"
+      ],
+      "representation": "STRUCTURAL_OPERATION",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "NOT_APPLICABLE",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.HYPER.DETUNE",
+      "target_id": "FXHyper.Detune",
+      "all_target_ids": [
+        "FXHyper.Detune"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.PHASER.FEEDBACK",
+      "target_id": "FXPhaser.Feedback",
+      "all_target_ids": [
+        "FXPhaser.Feedback"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.PHASER.PHASE",
+      "target_id": "FXPhaser.Phase",
+      "all_target_ids": [
+        "FXPhaser.Phase"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FX.REVERB.SIZE",
+      "target_id": "FXReverb.Size",
+      "all_target_ids": [
+        "FXReverb.Size"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "KEYBOARD.TRANSPOSE",
+      "target_id": "Global.Transpose",
+      "all_target_ids": [
+        "Global.Transpose"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "KEYBOARD.KEY",
+      "target_id": "Global.Key",
+      "all_target_ids": [
+        "Global.Key"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "KEYBOARD.SCALE",
+      "target_id": "Global.Scale",
+      "all_target_ids": [
+        "Global.Scale"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "KEYBOARD.SWING",
+      "target_id": "Global.Swing",
+      "all_target_ids": [
+        "Global.Swing"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_TIME",
+      "target_id": "Global.Portamento",
+      "all_target_ids": [
+        "Global.Portamento"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "VOICE.VOICING.MONO",
+      "target_id": "Global.Mono",
+      "all_target_ids": [
+        "Global.Mono"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "GLOBAL.TUNING.GLOBAL_TUNING",
+      "target_id": "Global.Tuning",
+      "all_target_ids": [
+        "Global.Tuning"
+      ],
+      "representation": "SHARED_PHYSICAL_PARAMETER",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FILTER1.CUTOFF",
+      "target_id": "Filter.Cutoff",
+      "all_target_ids": [
+        "Filter.Cutoff"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "VERIFIED",
+      "evidence_refs": [
+        "A_FILTER_CUTOFF_REVISED_EVIDENCE.json"
+      ]
+    },
+    {
+      "semantic_id": "FILTER1.RESONANCE",
+      "target_id": "Filter.Resonance",
+      "all_target_ids": [
+        "Filter.Resonance"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "VERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_02_seed_filter1_resonance_001_EVIDENCE.json",
+        "DIAG_01_diag_filter1_resonance_corrected_001.json"
+      ]
+    },
+    {
+      "semantic_id": "FILTER1.DRIVE",
+      "target_id": "Filter.Drive",
+      "all_target_ids": [
+        "Filter.Drive"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_11_seed_filter1_drive_001_EVIDENCE.json",
+        "DIAG_07_diag_filter1_drive_corrected_001.json"
+      ]
+    },
+    {
+      "semantic_id": "FILTER1.TYPE",
+      "target_id": "Filter.Type",
+      "all_target_ids": [
+        "Filter.Type"
+      ],
+      "representation": "HOST_PARAMETER_ENUM",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FILTER2.CUTOFF",
+      "target_id": "Filter2.Cutoff",
+      "all_target_ids": [
+        "Filter2.Cutoff"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_03_seed_filter2_cutoff_001_EVIDENCE.json",
+        "DIAG_02_diag_filter2_cutoff_corrected_001.json"
+      ]
+    },
+    {
+      "semantic_id": "FILTER2.RESONANCE",
+      "target_id": "Filter2.Resonance",
+      "all_target_ids": [
+        "Filter2.Resonance"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FILTER2.DRIVE",
+      "target_id": "Filter2.Drive",
+      "all_target_ids": [
+        "Filter2.Drive"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FILTER2.TYPE",
+      "target_id": "Filter2.Type",
+      "all_target_ids": [
+        "Filter2.Type"
+      ],
+      "representation": "HOST_PARAMETER_ENUM",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV1.ATTACK",
+      "target_id": "Env1.Attack",
+      "all_target_ids": [
+        "Env1.Attack"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_07_seed_env1_attack_001_EVIDENCE.json",
+        "DIAG_05_diag_env1_attack_corrected_001.json"
+      ]
+    },
+    {
+      "semantic_id": "ENV1.DECAY",
+      "target_id": "Env1.Decay",
+      "all_target_ids": [
+        "Env1.Decay"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV1.SUSTAIN",
+      "target_id": "Env1.Sustain",
+      "all_target_ids": [
+        "Env1.Sustain"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV1.RELEASE",
+      "target_id": "Env1.Release",
+      "all_target_ids": [
+        "Env1.Release"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_08_seed_env1_release_001_EVIDENCE.json",
+        "DIAG_06_diag_env1_release_corrected_001.json"
+      ]
+    },
+    {
+      "semantic_id": "ENV2.ATTACK",
+      "target_id": "Env2.Attack",
+      "all_target_ids": [
+        "Env2.Attack"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV2.DECAY",
+      "target_id": "Env2.Decay",
+      "all_target_ids": [
+        "Env2.Decay"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV2.SUSTAIN",
+      "target_id": "Env2.Sustain",
+      "all_target_ids": [
+        "Env2.Sustain"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV2.RELEASE",
+      "target_id": "Env2.Release",
+      "all_target_ids": [
+        "Env2.Release"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV3.ATTACK",
+      "target_id": "Env3.Attack",
+      "all_target_ids": [
+        "Env3.Attack"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV3.DECAY",
+      "target_id": "Env3.Decay",
+      "all_target_ids": [
+        "Env3.Decay"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV3.SUSTAIN",
+      "target_id": "Env3.Sustain",
+      "all_target_ids": [
+        "Env3.Sustain"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV3.RELEASE",
+      "target_id": "Env3.Release",
+      "all_target_ids": [
+        "Env3.Release"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV4.ATTACK",
+      "target_id": "Env4.Attack",
+      "all_target_ids": [
+        "Env4.Attack"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV4.DECAY",
+      "target_id": "Env4.Decay",
+      "all_target_ids": [
+        "Env4.Decay"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV4.SUSTAIN",
+      "target_id": "Env4.Sustain",
+      "all_target_ids": [
+        "Env4.Sustain"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV4.RELEASE",
+      "target_id": "Env4.Release",
+      "all_target_ids": [
+        "Env4.Release"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO1.RATE",
+      "target_id": "LFO0.Rate",
+      "all_target_ids": [
+        "LFO0.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO1.RISE",
+      "target_id": "LFO1.RISE",
+      "all_target_ids": [
+        "LFO1.RISE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO1.DELAY",
+      "target_id": "LFO1.DELAY",
+      "all_target_ids": [
+        "LFO1.DELAY"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO1.SMOOTH",
+      "target_id": "LFO1.SMOOTH",
+      "all_target_ids": [
+        "LFO1.SMOOTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO1.PHASE",
+      "target_id": "LFO0.Phase",
+      "all_target_ids": [
+        "LFO0.Phase"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO2.RATE",
+      "target_id": "LFO1.Rate",
+      "all_target_ids": [
+        "LFO1.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "A_SEED_EXPERIMENT_09_seed_lfo1_rate_no_destination_001_EVIDENCE.json",
+        "A_SEED_EXPERIMENT_10_seed_lfo1_rate_filter_modulation_001_EVIDENCE.json"
+      ]
+    },
+    {
+      "semantic_id": "LFO2.RISE",
+      "target_id": "LFO2.RISE",
+      "all_target_ids": [
+        "LFO2.RISE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO2.DELAY",
+      "target_id": "LFO2.DELAY",
+      "all_target_ids": [
+        "LFO2.DELAY"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO2.SMOOTH",
+      "target_id": "LFO2.SMOOTH",
+      "all_target_ids": [
+        "LFO2.SMOOTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO2.PHASE",
+      "target_id": "LFO1.Phase",
+      "all_target_ids": [
+        "LFO1.Phase"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO3.RATE",
+      "target_id": "LFO2.Rate",
+      "all_target_ids": [
+        "LFO2.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO3.RISE",
+      "target_id": "LFO3.RISE",
+      "all_target_ids": [
+        "LFO3.RISE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO3.DELAY",
+      "target_id": "LFO3.DELAY",
+      "all_target_ids": [
+        "LFO3.DELAY"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO3.SMOOTH",
+      "target_id": "LFO3.SMOOTH",
+      "all_target_ids": [
+        "LFO3.SMOOTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO3.PHASE",
+      "target_id": "LFO2.Phase",
+      "all_target_ids": [
+        "LFO2.Phase"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO4.RATE",
+      "target_id": "LFO3.Rate",
+      "all_target_ids": [
+        "LFO3.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO4.RISE",
+      "target_id": "LFO4.RISE",
+      "all_target_ids": [
+        "LFO4.RISE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO4.DELAY",
+      "target_id": "LFO4.DELAY",
+      "all_target_ids": [
+        "LFO4.DELAY"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO4.SMOOTH",
+      "target_id": "LFO4.SMOOTH",
+      "all_target_ids": [
+        "LFO4.SMOOTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO4.PHASE",
+      "target_id": "LFO3.Phase",
+      "all_target_ids": [
+        "LFO3.Phase"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO5.RATE",
+      "target_id": "LFO4.Rate",
+      "all_target_ids": [
+        "LFO4.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO5.RISE",
+      "target_id": "LFO5.RISE",
+      "all_target_ids": [
+        "LFO5.RISE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO5.DELAY",
+      "target_id": "LFO5.DELAY",
+      "all_target_ids": [
+        "LFO5.DELAY"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO5.SMOOTH",
+      "target_id": "LFO5.SMOOTH",
+      "all_target_ids": [
+        "LFO5.SMOOTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO5.PHASE",
+      "target_id": "LFO4.Phase",
+      "all_target_ids": [
+        "LFO4.Phase"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO6.RATE",
+      "target_id": "LFO5.Rate",
+      "all_target_ids": [
+        "LFO5.Rate"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO6.RISE",
+      "target_id": "LFO6.RISE",
+      "all_target_ids": [
+        "LFO6.RISE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO6.DELAY",
+      "target_id": "LFO6.DELAY",
+      "all_target_ids": [
+        "LFO6.DELAY"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO6.SMOOTH",
+      "target_id": "LFO6.SMOOTH",
+      "all_target_ids": [
+        "LFO6.SMOOTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "LFO6.PHASE",
+      "target_id": "LFO5.Phase",
+      "all_target_ids": [
+        "LFO5.Phase"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.OCTAVE",
+      "target_id": "OSC1.Octave",
+      "all_target_ids": [
+        "OSC1.Octave"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.SEMI",
+      "target_id": "OSC1.SEMI",
+      "all_target_ids": [
+        "OSC1.SEMI"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.FINE",
+      "target_id": "OSC1.FINE",
+      "all_target_ids": [
+        "OSC1.FINE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.COARSE_PITCH",
+      "target_id": "OSC1.COARSE_PITCH",
+      "all_target_ids": [
+        "OSC1.COARSE_PITCH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.START",
+      "target_id": "OSC1.START",
+      "all_target_ids": [
+        "OSC1.START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.END",
+      "target_id": "OSC1.END",
+      "all_target_ids": [
+        "OSC1.END"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.SCAN_RATE",
+      "target_id": "OSC1.SCAN_RATE",
+      "all_target_ids": [
+        "OSC1.SCAN_RATE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.SCAN_BPM_RATE",
+      "target_id": "OSC1.SCAN_BPM_RATE",
+      "all_target_ids": [
+        "OSC1.SCAN_BPM_RATE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.POSITION",
+      "target_id": "OSC1.POSITION",
+      "all_target_ids": [
+        "OSC1.POSITION"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.LOOP_START",
+      "target_id": "OSC1.LOOP_START",
+      "all_target_ids": [
+        "OSC1.LOOP_START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.LOOP_END",
+      "target_id": "OSC1.LOOP_END",
+      "all_target_ids": [
+        "OSC1.LOOP_END"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.LOOP_X-FADE",
+      "target_id": "OSC1.LOOP_X-FADE",
+      "all_target_ids": [
+        "OSC1.LOOP_X-FADE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.LOOP_MODE",
+      "target_id": "OSC1.LOOP_MODE",
+      "all_target_ids": [
+        "OSC1.LOOP_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.SINGLE_SLICE",
+      "target_id": "OSC1.SINGLE_SLICE",
+      "all_target_ids": [
+        "OSC1.SINGLE_SLICE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNISON",
+      "target_id": "OSC1.UNISON",
+      "all_target_ids": [
+        "OSC1.UNISON"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_STACK",
+      "target_id": "OSC1.UNI_STACK",
+      "all_target_ids": [
+        "OSC1.UNI_STACK"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_DETUNE",
+      "target_id": "OSC1.UNI_DETUNE",
+      "all_target_ids": [
+        "OSC1.UNI_DETUNE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_BLEND",
+      "target_id": "OSC1.UNI_BLEND",
+      "all_target_ids": [
+        "OSC1.UNI_BLEND"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_WIDTH",
+      "target_id": "OSC1.UNI_WIDTH",
+      "all_target_ids": [
+        "OSC1.UNI_WIDTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_SPAN",
+      "target_id": "OSC1.UNI_SPAN",
+      "all_target_ids": [
+        "OSC1.UNI_SPAN"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_RAND_START",
+      "target_id": "OSC1.UNI_RAND_START",
+      "all_target_ids": [
+        "OSC1.UNI_RAND_START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_WARP",
+      "target_id": "OSC1.UNI_WARP",
+      "all_target_ids": [
+        "OSC1.UNI_WARP"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_WARP_2",
+      "target_id": "OSC1.UNI_WARP_2",
+      "all_target_ids": [
+        "OSC1.UNI_WARP_2"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.WARP",
+      "target_id": "OSC1.Warp",
+      "all_target_ids": [
+        "OSC1.Warp"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.WARP_VAR",
+      "target_id": "OSC1.WARP_VAR",
+      "all_target_ids": [
+        "OSC1.WARP_VAR"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.WARP_MODE",
+      "target_id": "OSC1.WARP_MODE",
+      "all_target_ids": [
+        "OSC1.WARP_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.WARP_2",
+      "target_id": "OSC1.WARP_2",
+      "all_target_ids": [
+        "OSC1.WARP_2"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.WARP_2_VAR",
+      "target_id": "OSC1.WARP_2_VAR",
+      "all_target_ids": [
+        "OSC1.WARP_2_VAR"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.WARP_2_MODE",
+      "target_id": "OSC1.WARP_2_MODE",
+      "all_target_ids": [
+        "OSC1.WARP_2_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.WT_POS",
+      "target_id": "OSC1.WT_POS",
+      "all_target_ids": [
+        "OSC1.WT_POS"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.UNI_WT_POS",
+      "target_id": "OSC1.UNI_WT_POS",
+      "all_target_ids": [
+        "OSC1.UNI_WT_POS"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.PHASE",
+      "target_id": "OSC1.PHASE",
+      "all_target_ids": [
+        "OSC1.PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC1.RAND_PHASE",
+      "target_id": "OSC1.RAND_PHASE",
+      "all_target_ids": [
+        "OSC1.RAND_PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.OCTAVE",
+      "target_id": "OSC2.Octave",
+      "all_target_ids": [
+        "OSC2.Octave"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.SEMI",
+      "target_id": "OSC2.SEMI",
+      "all_target_ids": [
+        "OSC2.SEMI"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.FINE",
+      "target_id": "OSC2.FINE",
+      "all_target_ids": [
+        "OSC2.FINE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.COARSE_PITCH",
+      "target_id": "OSC2.COARSE_PITCH",
+      "all_target_ids": [
+        "OSC2.COARSE_PITCH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.START",
+      "target_id": "OSC2.START",
+      "all_target_ids": [
+        "OSC2.START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.END",
+      "target_id": "OSC2.END",
+      "all_target_ids": [
+        "OSC2.END"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.SCAN_RATE",
+      "target_id": "OSC2.SCAN_RATE",
+      "all_target_ids": [
+        "OSC2.SCAN_RATE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.SCAN_BPM_RATE",
+      "target_id": "OSC2.SCAN_BPM_RATE",
+      "all_target_ids": [
+        "OSC2.SCAN_BPM_RATE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.POSITION",
+      "target_id": "OSC2.POSITION",
+      "all_target_ids": [
+        "OSC2.POSITION"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.LOOP_START",
+      "target_id": "OSC2.LOOP_START",
+      "all_target_ids": [
+        "OSC2.LOOP_START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.LOOP_END",
+      "target_id": "OSC2.LOOP_END",
+      "all_target_ids": [
+        "OSC2.LOOP_END"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.LOOP_X-FADE",
+      "target_id": "OSC2.LOOP_X-FADE",
+      "all_target_ids": [
+        "OSC2.LOOP_X-FADE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.LOOP_MODE",
+      "target_id": "OSC2.LOOP_MODE",
+      "all_target_ids": [
+        "OSC2.LOOP_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.SINGLE_SLICE",
+      "target_id": "OSC2.SINGLE_SLICE",
+      "all_target_ids": [
+        "OSC2.SINGLE_SLICE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNISON",
+      "target_id": "OSC2.UNISON",
+      "all_target_ids": [
+        "OSC2.UNISON"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_STACK",
+      "target_id": "OSC2.UNI_STACK",
+      "all_target_ids": [
+        "OSC2.UNI_STACK"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_DETUNE",
+      "target_id": "OSC2.UNI_DETUNE",
+      "all_target_ids": [
+        "OSC2.UNI_DETUNE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_BLEND",
+      "target_id": "OSC2.UNI_BLEND",
+      "all_target_ids": [
+        "OSC2.UNI_BLEND"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_WIDTH",
+      "target_id": "OSC2.UNI_WIDTH",
+      "all_target_ids": [
+        "OSC2.UNI_WIDTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_SPAN",
+      "target_id": "OSC2.UNI_SPAN",
+      "all_target_ids": [
+        "OSC2.UNI_SPAN"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_RAND_START",
+      "target_id": "OSC2.UNI_RAND_START",
+      "all_target_ids": [
+        "OSC2.UNI_RAND_START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_WARP",
+      "target_id": "OSC2.UNI_WARP",
+      "all_target_ids": [
+        "OSC2.UNI_WARP"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_WARP_2",
+      "target_id": "OSC2.UNI_WARP_2",
+      "all_target_ids": [
+        "OSC2.UNI_WARP_2"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.WARP",
+      "target_id": "OSC2.Warp",
+      "all_target_ids": [
+        "OSC2.Warp"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.WARP_VAR",
+      "target_id": "OSC2.WARP_VAR",
+      "all_target_ids": [
+        "OSC2.WARP_VAR"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.WARP_MODE",
+      "target_id": "OSC2.WARP_MODE",
+      "all_target_ids": [
+        "OSC2.WARP_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.WARP_2",
+      "target_id": "OSC2.WARP_2",
+      "all_target_ids": [
+        "OSC2.WARP_2"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.WARP_2_VAR",
+      "target_id": "OSC2.WARP_2_VAR",
+      "all_target_ids": [
+        "OSC2.WARP_2_VAR"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.WARP_2_MODE",
+      "target_id": "OSC2.WARP_2_MODE",
+      "all_target_ids": [
+        "OSC2.WARP_2_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.WT_POS",
+      "target_id": "OSC2.WT_POS",
+      "all_target_ids": [
+        "OSC2.WT_POS"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.UNI_WT_POS",
+      "target_id": "OSC2.UNI_WT_POS",
+      "all_target_ids": [
+        "OSC2.UNI_WT_POS"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.PHASE",
+      "target_id": "OSC2.PHASE",
+      "all_target_ids": [
+        "OSC2.PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC2.RAND_PHASE",
+      "target_id": "OSC2.RAND_PHASE",
+      "all_target_ids": [
+        "OSC2.RAND_PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.OCTAVE",
+      "target_id": "OSC3.Octave",
+      "all_target_ids": [
+        "OSC3.Octave"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.SEMI",
+      "target_id": "OSC3.SEMI",
+      "all_target_ids": [
+        "OSC3.SEMI"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.FINE",
+      "target_id": "OSC3.FINE",
+      "all_target_ids": [
+        "OSC3.FINE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.COARSE_PITCH",
+      "target_id": "OSC3.COARSE_PITCH",
+      "all_target_ids": [
+        "OSC3.COARSE_PITCH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.START",
+      "target_id": "OSC3.START",
+      "all_target_ids": [
+        "OSC3.START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.END",
+      "target_id": "OSC3.END",
+      "all_target_ids": [
+        "OSC3.END"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.SCAN_RATE",
+      "target_id": "OSC3.SCAN_RATE",
+      "all_target_ids": [
+        "OSC3.SCAN_RATE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.SCAN_BPM_RATE",
+      "target_id": "OSC3.SCAN_BPM_RATE",
+      "all_target_ids": [
+        "OSC3.SCAN_BPM_RATE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.POSITION",
+      "target_id": "OSC3.POSITION",
+      "all_target_ids": [
+        "OSC3.POSITION"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.LOOP_START",
+      "target_id": "OSC3.LOOP_START",
+      "all_target_ids": [
+        "OSC3.LOOP_START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.LOOP_END",
+      "target_id": "OSC3.LOOP_END",
+      "all_target_ids": [
+        "OSC3.LOOP_END"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.LOOP_X-FADE",
+      "target_id": "OSC3.LOOP_X-FADE",
+      "all_target_ids": [
+        "OSC3.LOOP_X-FADE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.LOOP_MODE",
+      "target_id": "OSC3.LOOP_MODE",
+      "all_target_ids": [
+        "OSC3.LOOP_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.SINGLE_SLICE",
+      "target_id": "OSC3.SINGLE_SLICE",
+      "all_target_ids": [
+        "OSC3.SINGLE_SLICE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNISON",
+      "target_id": "OSC3.UNISON",
+      "all_target_ids": [
+        "OSC3.UNISON"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_STACK",
+      "target_id": "OSC3.UNI_STACK",
+      "all_target_ids": [
+        "OSC3.UNI_STACK"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_DETUNE",
+      "target_id": "OSC3.UNI_DETUNE",
+      "all_target_ids": [
+        "OSC3.UNI_DETUNE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_BLEND",
+      "target_id": "OSC3.UNI_BLEND",
+      "all_target_ids": [
+        "OSC3.UNI_BLEND"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_WIDTH",
+      "target_id": "OSC3.UNI_WIDTH",
+      "all_target_ids": [
+        "OSC3.UNI_WIDTH"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_SPAN",
+      "target_id": "OSC3.UNI_SPAN",
+      "all_target_ids": [
+        "OSC3.UNI_SPAN"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_RAND_START",
+      "target_id": "OSC3.UNI_RAND_START",
+      "all_target_ids": [
+        "OSC3.UNI_RAND_START"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_WARP",
+      "target_id": "OSC3.UNI_WARP",
+      "all_target_ids": [
+        "OSC3.UNI_WARP"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_WARP_2",
+      "target_id": "OSC3.UNI_WARP_2",
+      "all_target_ids": [
+        "OSC3.UNI_WARP_2"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.WARP",
+      "target_id": "OSC3.Warp",
+      "all_target_ids": [
+        "OSC3.Warp"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.WARP_VAR",
+      "target_id": "OSC3.WARP_VAR",
+      "all_target_ids": [
+        "OSC3.WARP_VAR"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.WARP_MODE",
+      "target_id": "OSC3.WARP_MODE",
+      "all_target_ids": [
+        "OSC3.WARP_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.WARP_2",
+      "target_id": "OSC3.WARP_2",
+      "all_target_ids": [
+        "OSC3.WARP_2"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.WARP_2_VAR",
+      "target_id": "OSC3.WARP_2_VAR",
+      "all_target_ids": [
+        "OSC3.WARP_2_VAR"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.WARP_2_MODE",
+      "target_id": "OSC3.WARP_2_MODE",
+      "all_target_ids": [
+        "OSC3.WARP_2_MODE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.WT_POS",
+      "target_id": "OSC3.WT_POS",
+      "all_target_ids": [
+        "OSC3.WT_POS"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.UNI_WT_POS",
+      "target_id": "OSC3.UNI_WT_POS",
+      "all_target_ids": [
+        "OSC3.UNI_WT_POS"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.PHASE",
+      "target_id": "OSC3.PHASE",
+      "all_target_ids": [
+        "OSC3.PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "OSC3.RAND_PHASE",
+      "target_id": "OSC3.RAND_PHASE",
+      "all_target_ids": [
+        "OSC3.RAND_PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "SUB_OSC.PITCH_TRACK",
+      "target_id": "SUB_OSC.PITCH_TRACK",
+      "all_target_ids": [
+        "SUB_OSC.PITCH_TRACK"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "VERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "VERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "SUB_OSC.PITCH_TRACK: embedded MUTABLE_RESTORED census evidence (Phase 2A-R.6)"
+      ]
+    },
+    {
+      "semantic_id": "SUB_OSC.SHAPE",
+      "target_id": "SUB_OSC.SHAPE",
+      "all_target_ids": [
+        "SUB_OSC.SHAPE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "VERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "VERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "SUB_OSC.SHAPE: embedded MUTABLE_RESTORED census evidence (Phase 2A-R.6)"
+      ]
+    },
+    {
+      "semantic_id": "SUB_OSC.CONT_PHASE",
+      "target_id": "SUB_OSC.CONT_PHASE",
+      "all_target_ids": [
+        "SUB_OSC.CONT_PHASE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "VERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "VERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "SUB_OSC.CONT_PHASE: embedded MUTABLE_RESTORED census evidence (Phase 2A-R.6)"
+      ]
+    },
+    {
+      "semantic_id": "NOISE_OSC.PITCH_TRACK",
+      "target_id": "NOISE_OSC.PITCH_TRACK",
+      "all_target_ids": [
+        "NOISE_OSC.PITCH_TRACK"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "VERIFIED",
+      "write_status": "VERIFIED",
+      "restore_status": "VERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": [
+        "NOISE_OSC.PITCH_TRACK: embedded MUTABLE_RESTORED census evidence (Phase 2A-R.6)"
+      ]
+    },
+    {
+      "semantic_id": "FILTER1.VAR",
+      "target_id": "FILTER1.VAR",
+      "all_target_ids": [
+        "FILTER1.VAR"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FILTER1.STEREO",
+      "target_id": "FILTER1.STEREO",
+      "all_target_ids": [
+        "FILTER1.STEREO"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FILTER2.VAR",
+      "target_id": "FILTER2.VAR",
+      "all_target_ids": [
+        "FILTER2.VAR"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "FILTER2.STEREO",
+      "target_id": "FILTER2.STEREO",
+      "all_target_ids": [
+        "FILTER2.STEREO"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV1.ATK_CURVE",
+      "target_id": "ENV1.ATK_CURVE",
+      "all_target_ids": [
+        "ENV1.ATK_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV1.DEC_CURVE",
+      "target_id": "ENV1.DEC_CURVE",
+      "all_target_ids": [
+        "ENV1.DEC_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV1.REL_CURVE",
+      "target_id": "ENV1.REL_CURVE",
+      "all_target_ids": [
+        "ENV1.REL_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV2.ATK_CURVE",
+      "target_id": "ENV2.ATK_CURVE",
+      "all_target_ids": [
+        "ENV2.ATK_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV2.DEC_CURVE",
+      "target_id": "ENV2.DEC_CURVE",
+      "all_target_ids": [
+        "ENV2.DEC_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV2.REL_CURVE",
+      "target_id": "ENV2.REL_CURVE",
+      "all_target_ids": [
+        "ENV2.REL_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV3.ATK_CURVE",
+      "target_id": "ENV3.ATK_CURVE",
+      "all_target_ids": [
+        "ENV3.ATK_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV3.DEC_CURVE",
+      "target_id": "ENV3.DEC_CURVE",
+      "all_target_ids": [
+        "ENV3.DEC_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV3.REL_CURVE",
+      "target_id": "ENV3.REL_CURVE",
+      "all_target_ids": [
+        "ENV3.REL_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV4.ATK_CURVE",
+      "target_id": "ENV4.ATK_CURVE",
+      "all_target_ids": [
+        "ENV4.ATK_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV4.DEC_CURVE",
+      "target_id": "ENV4.DEC_CURVE",
+      "all_target_ids": [
+        "ENV4.DEC_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "ENV4.REL_CURVE",
+      "target_id": "ENV4.REL_CURVE",
+      "all_target_ids": [
+        "ENV4.REL_CURVE"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.OFFSET",
+      "target_id": "CLIP.SETTINGS.OFFSET",
+      "all_target_ids": [
+        "CLIP.SETTINGS.OFFSET"
+      ],
+      "representation": "HOST_PARAMETER_SCALAR",
+      "read_status": "UNVERIFIED",
+      "write_status": "UNVERIFIED",
+      "restore_status": "UNVERIFIED",
+      "persistence_status": "UNVERIFIED",
+      "automation_status": "UNVERIFIED",
+      "causal_status": "UNVERIFIED",
+      "evidence_refs": []
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "determinations": [
+    {
+      "candidate": "OSC1.ENABLE",
+      "mixer_equiv": "MIXER.OSC_A.ENABLE",
+      "candidate_vst3_name": "A Enable",
+      "mixer_tooltip_name": "A Enable",
+      "match": "EXACT",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES"
+    },
+    {
+      "candidate": "OSC1.LEVEL",
+      "mixer_equiv": "MIXER.OSC_A.LEVEL",
+      "candidate_vst3_name": "A Level",
+      "mixer_tooltip_name": "A Level",
+      "match": "EXACT",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES"
+    },
+    {
+      "candidate": "OSC1.PAN",
+      "mixer_equiv": "MIXER.OSC_A.PAN",
+      "candidate_vst3_name": "A Pan",
+      "mixer_tooltip_name": "A Pan",
+      "match": "EXACT",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES"
+    },
+    {
+      "candidate": "OSC2.ENABLE",
+      "mixer_equiv": "MIXER.OSC_B.ENABLE",
+      "candidate_vst3_name": "B Enable",
+      "mixer_tooltip_name": "A Enable (generalized to siblings via identical layout)",
+      "match": "STRUCTURAL (same pattern, B-instance not individually right-clicked per source notes)",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES (via structural generalization, same as A-instance evidence)"
+    },
+    {
+      "candidate": "OSC2.LEVEL",
+      "mixer_equiv": "MIXER.OSC_B.LEVEL",
+      "candidate_vst3_name": "B Level",
+      "mixer_tooltip_name": "generalized from A Level",
+      "match": "STRUCTURAL",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES (via structural generalization, same as A-instance evidence)"
+    },
+    {
+      "candidate": "OSC2.PAN",
+      "mixer_equiv": "MIXER.OSC_B.PAN",
+      "candidate_vst3_name": "B Pan",
+      "mixer_tooltip_name": "generalized from A Pan",
+      "match": "STRUCTURAL",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES (via structural generalization, same as A-instance evidence)"
+    },
+    {
+      "candidate": "OSC3.ENABLE",
+      "mixer_equiv": "MIXER.OSC_C.ENABLE",
+      "candidate_vst3_name": "C Enable",
+      "mixer_tooltip_name": "generalized from A Enable",
+      "match": "STRUCTURAL",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES (via structural generalization, same as A-instance evidence)"
+    },
+    {
+      "candidate": "OSC3.LEVEL",
+      "mixer_equiv": "MIXER.OSC_C.LEVEL",
+      "candidate_vst3_name": "C Level",
+      "mixer_tooltip_name": "generalized from A Level",
+      "match": "STRUCTURAL",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES (via structural generalization, same as A-instance evidence)"
+    },
+    {
+      "candidate": "OSC3.PAN",
+      "mixer_equiv": "MIXER.OSC_C.PAN",
+      "candidate_vst3_name": "C Pan",
+      "mixer_tooltip_name": "generalized from A Pan",
+      "match": "STRUCTURAL",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES (via structural generalization, same as A-instance evidence)"
+    },
+    {
+      "candidate": "SUB_OSC.ENABLE",
+      "mixer_equiv": "MIXER.SUB.ENABLE",
+      "candidate_vst3_name": "Sub Enable",
+      "mixer_tooltip_name": "Sub Osc Enable",
+      "match": "NEAR-EXACT (tooltip has extra 'Osc' word, same field per census idx193)",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES (via structural generalization, same as A-instance evidence)"
+    },
+    {
+      "candidate": "NOISE_OSC.ENABLE",
+      "mixer_equiv": "MIXER.NOISE.ENABLE",
+      "candidate_vst3_name": "Noise Enable",
+      "mixer_tooltip_name": "Noise Enable",
+      "match": "EXACT",
+      "candidate_present_in_inventory": true,
+      "mixer_present_in_inventory": true,
+      "verdict": "ONE_SEMANTIC_MULTIPLE_UI_SURFACES"
+    }
+  ],
+  "retracted_ids": [
+    "NOISE_OSC.ENABLE",
+    "OSC1.ENABLE",
+    "OSC1.LEVEL",
+    "OSC1.PAN",
+    "OSC2.ENABLE",
+    "OSC2.LEVEL",
+    "OSC2.PAN",
+    "OSC3.ENABLE",
+    "OSC3.LEVEL",
+    "OSC3.PAN",
+    "SUB_OSC.ENABLE"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "metadata": {
+    "phase": "STEP 4.1 Authority Substrate Proof",
+    "date": "2026-09-17",
+    "controlled_change_type": "POST_FREEZE_MAPPING_RECONCILIATION",
+    "base_freeze_commit": "4673086",
+    "frozen_inventory_version": "1.3.0-CROSS-SYSTEM-RECONCILIATION-PHASE-2-COMPLETE",
+    "frozen_semantic_count": 908,
+    "frozen_target_count": 396,
+    "purpose": "Establish semantic→target mappings for capabilities proven executable in STEP 4.1, without altering the frozen semantic identity inventory."
+  },
+
+  "invariant_constraints": {
+    "frozen_semantic_count": "MUST remain 908",
+    "frozen_target_count": "MUST remain 396",
+    "no_new_semantic_ids": "ENFORCED",
+    "no_semantic_modifications": "ENFORCED (existing records untouched)",
+    "no_target_modifications": "ENFORCED (existing records untouched)",
+    "only_mapping_updates_permitted": true
+  },
+
+  "proposed_mappings": [
+    {
+      "semantic_id": "ENV1.ATTACK",
+      "semantic_status_in_frozen_model": "VERIFIED",
+      "target_id": "Env1.Attack",
+      "target_status_in_frozen_model": "mapping_status=None, evidence_type=None",
+
+      "evidence_chain": {
+        "semantic_existence": "VERIFIED in frozen model (ENV1.ATTACK, section=ENV, status=VERIFIED)",
+        "target_existence": "EXISTS in frozen vocabulary (Env1.Attack target in 396-target set)",
+        "semantic_target_registration": "VERIFIED in serum2/compiler/targets.py ('Env1.Attack' → 'envelope_field_attack')",
+        "control_path": {
+          "ui_location": "Envelope 1, Attack knob",
+          "vst3_field": "Env0.plainParams.kParamAttack",
+          "evidence": "LIVE_MUTATION (STEP 4.1 qualification experiment)"
+        },
+        "causal_verification": {
+          "experiment": "attack_qualified_complete_001",
+          "measurement_metric": "attack_onset_rms_db",
+          "status": "EFFECT_OBSERVED",
+          "direction": "decrease (as expected for shorter attack)",
+          "evidence_strength": "SINGLE_FIELD_ISOLATED_MUTATION (N=1)"
+        },
+        "execution_verification": {
+          "execution_pathway": "generic production pathway (no target-specific code)",
+          "admission_status": "ADMITTED (no prerequisites)",
+          "mutation_executed": true,
+          "measurement_recorded": true,
+          "evidence_files": [
+            "experiments/_env_attack_qualified_complete_001.pkl",
+            "serum2/qualification/attack_qualified_complete_001_PASS_FULL.json"
+          ]
+        }
+      },
+
+      "mapping_determination": "SUFFICIENT",
+      "rationale": "The demonstrated execution, live control path, and causal measurement establish ENV1.ATTACK ↔ Env1.Attack correspondence. The control path (Env0.plainParams.kParamAttack) is proven via live mutation, and the semantic target registration is verified in targets.py. No contradictory evidence exists.",
+
+      "proposed_mapping_status": "MAPPED_CONTROL_PATH_ESTABLISHED",
+      "proposed_evidence_type": "STEP_4_1_EXECUTION_CAUSAL_VERIFIED",
+
+      "limitations_on_this_mapping": [
+        "Single tested value (0.8); generalization to other values not established",
+        "Single stimulus condition; generalization to other contexts not tested",
+        "N=1 witness; multi-field interactions not tested",
+        "No prerequisite context requirements (unlike Release)"
+      ],
+
+      "update_record": {
+        "action": "UPDATE post-freeze reconciliation",
+        "target_to_update": "Env1.Attack in frozen vocabulary",
+        "fields_to_update": {
+          "mapping_status": "MAPPED_CONTROL_PATH_ESTABLISHED",
+          "evidence_type": "STEP_4_1_EXECUTION_CAUSAL_VERIFIED",
+          "evidence_summary": "Live mutation and causal measurement in STEP 4.1 authority substrate proof",
+          "step_4_1_evidence_record": "attack_qualified_complete_001"
+        }
+      }
+    }
+  ],
+
+  "frozen_inventory_integrity_check": {
+    "semantic_count_before": 908,
+    "semantic_count_after": "MUST be 908 (no change)",
+    "target_count_before": 396,
+    "target_count_after": "MUST be 396 (no change)",
+    "new_semantic_ids_introduced": 0,
+    "modified_semantic_records": 0,
+    "modified_target_records": 1,
+    "verdict": "INTEGRITY MAINTAINED"
+  },
+
+  "implementation_note": "This record documents the POST-FREEZE mapping update but does NOT modify the frozen inventory JSON files. The frozen SERUM2_SEMANTIC_NORMALIZED.json and SERUM2_TARGET_NORMALIZED_V4.json remain unchanged. To apply this mapping update officially, a separate controlled versioning step (not done here) would be required."
+}

@@ -1,0 +1,118 @@
+{
+  "episode_id": "attack_qualified_complete_001_PASS_FULL",
+  "timestamp": "2026-09-12T13:10:42.678966+00:00",
+  "evidence_experiment_id": "attack_qualified_complete_001",
+  "human_intent": "make the note attack faster",
+  "semantic_target": "Env1.Attack",
+  "semantic_target_id": "envelope_field_attack",
+  "admission_status": "ADMITTED",
+  "admission_reason": "target_causal_verified_no_prerequisites",
+  "admission_detail": "target 'envelope_field_attack' admitted: status=CAUSAL_VERIFIED, allowed_operation=mutate_numeric_value, no prerequisites required",
+  "context_verification": {
+    "prerequisites": [],
+    "verification_passed": true,
+    "note": "Attack has no prerequisites (unlike Release which requires Decay=0.02)"
+  },
+  "contract_store": "_capability_contracts_4_1.pkl",
+  "contract_status": "CAUSAL_VERIFIED",
+  "execution_blocked": false,
+  "candidate_generation": [
+    {
+      "target": "envelope_field_attack",
+      "mutation_target_path": "Env0.plainParams.kParamAttack",
+      "mutation_value": 0.8,
+      "mutation_value_semantics": "ABSOLUTE_PARAMETER_VALUE",
+      "rationale": "authority-tested value from independent qualification experiment",
+      "source": "fresh_evidence_record"
+    }
+  ],
+  "selected_candidate": {
+    "target": "envelope_field_attack",
+    "mutation_target_path": "Env0.plainParams.kParamAttack",
+    "mutation_value": 0.8,
+    "mutation_value_semantics": "ABSOLUTE_PARAMETER_VALUE",
+    "rationale": "authority-tested value from independent qualification experiment",
+    "source": "fresh_evidence_record"
+  },
+  "serum_readback_before": null,
+  "serum_readback_after": 0.8,
+  "audio_baseline": {
+    "peak": 0.28331682085990906,
+    "valid": true,
+    "stimulus": {
+      "note": 60,
+      "note_length_beats": 0.4,
+      "render_seconds": 2.0,
+      "tail_start_seconds": 0.6,
+      "velocity": 110
+    }
+  },
+  "audio_treatment": {
+    "peak": 0.28331682085990906,
+    "valid": true,
+    "stimulus": {
+      "note": 60,
+      "note_length_beats": 0.4,
+      "render_seconds": 2.0,
+      "tail_start_seconds": 0.6,
+      "velocity": 110
+    }
+  },
+  "measurement_metric": "attack_onset_rms_db",
+  "measurement_definition_id": "attack_onset_rms_db:5369167c8e73",
+  "measurement_baseline": -19.113398409784892,
+  "measurement_treatment": -52.40013736442808,
+  "measurement_delta": -33.28673895464319,
+  "measurement_expected_direction": "decrease",
+  "measurement_observed_direction": "decrease",
+  "measurement_status": "EFFECT_OBSERVED",
+  "measurement_threshold": 0.5,
+  "decision": {
+    "accepted": true,
+    "reason": "measured effect consistent with authority-tested direction (shorter attack = quieter onset)"
+  },
+  "runtime_verifications": {
+    "verified": true,
+    "failures": [],
+    "observations": []
+  },
+  "state_observation": {
+    "status": "PASS",
+    "matches_intent": true,
+    "top_level_ok": true,
+    "fine_grained_ok": true,
+    "diff_keys": ["Env0"],
+    "intended_targets": ["Env0.plainParams.kParamAttack"],
+    "control_hash": "fe45bdd8c3518d45",
+    "treatment_hash": "9fa493dd3615af0b"
+  },
+  "load_observation": {
+    "status": "PASS",
+    "ok": true,
+    "control_error": null,
+    "treatment_error": null
+  },
+  "persistence_observation": {
+    "status": "PASS",
+    "checked": true,
+    "exact_match": true,
+    "detail": {
+      "Env0.plainParams.kParamAttack": true
+    }
+  },
+  "integrity": {
+    "synthetic": false,
+    "contradictions": [],
+    "reverify_required": false
+  },
+  "qualification_evidence": {
+    "experiment_id": "attack_qualified_complete_001",
+    "experiment_condition_signature": "12dc2f522836863e",
+    "measurement_condition_signature": "cbd8ed22bfefcbb6",
+    "evidence_record_file": "experiments/_env_attack_qualified_complete_001.pkl",
+    "isolation_level": "single_field",
+    "claim_subject": "Env1.Attack",
+    "claim_predicate": "reduces"
+  },
+  "notes": "4.1 authority substrate FULL demonstration for Attack: independent qualification experiment (matching Release's standard), fresh evidence record, CAUSAL_VERIFIED contract, live Serum execution via generic production pathway, all verification gates passed, effect measured and validated."
+}

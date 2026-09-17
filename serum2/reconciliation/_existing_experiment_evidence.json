@@ -1,0 +1,246 @@
+[
+  {
+    "file": "A_FILTER_CUTOFF_PILOT_EVIDENCE.json",
+    "semantic_target": null,
+    "cbor_path": null,
+    "host_param_name": null,
+    "operation": null,
+    "isolation_level": null,
+    "measurement_statuses": [],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_FILTER_CUTOFF_REVISED_EVIDENCE.json",
+    "semantic_target": "Filter1.Cutoff",
+    "cbor_path": "VoiceFilter0.plainParams.kParamFreq",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "EFFECT_OBSERVED",
+      "EFFECT_OBSERVED"
+    ],
+    "any_effect_observed": true
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_02_seed_filter1_resonance_001_EVIDENCE.json",
+    "semantic_target": "Filter1.Resonance",
+    "cbor_path": "VoiceFilter0.plainParams.kParamReso",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_03_seed_filter2_cutoff_001_EVIDENCE.json",
+    "semantic_target": "Filter2.Cutoff",
+    "cbor_path": "VoiceFilter1.plainParams.kParamFreq",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_04_seed_osc1_level_001_EVIDENCE.json",
+    "semantic_target": "OSC1.Level",
+    "cbor_path": "VoiceOsc0.plainParams.kParamLevel",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_05_seed_osc1_detune_001_EVIDENCE.json",
+    "semantic_target": "OSC1.Detune",
+    "cbor_path": "VoiceOsc0.plainParams.kParamDetune",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_06_seed_osc2_detune_001_EVIDENCE.json",
+    "semantic_target": "OSC2.Detune",
+    "cbor_path": "VoiceOsc1.plainParams.kParamDetune",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_07_seed_env1_attack_001_EVIDENCE.json",
+    "semantic_target": "Env1.Attack",
+    "cbor_path": "VoiceEnv0.plainParams.kParamAttackTime",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_08_seed_env1_release_001_EVIDENCE.json",
+    "semantic_target": "Env1.Release",
+    "cbor_path": "VoiceEnv0.plainParams.kParamReleaseTime",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_09_seed_lfo1_rate_no_destination_001_EVIDENCE.json",
+    "semantic_target": "LFO1.Rate",
+    "cbor_path": "VoiceModulation0.plainParams.kParamRate",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_10_seed_lfo1_rate_filter_modulation_001_EVIDENCE.json",
+    "semantic_target": "LFO1.Rate",
+    "cbor_path": "VoiceModulation0.plainParams.kParamRate",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NOT_RUN",
+      "NOT_RUN"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "A_SEED_EXPERIMENT_11_seed_filter1_drive_001_EVIDENCE.json",
+    "semantic_target": "Filter1.Drive",
+    "cbor_path": "VoiceFilter0.plainParams.kParamDrive",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "DIAG_01_diag_filter1_resonance_corrected_001.json",
+    "semantic_target": "Filter1.Resonance",
+    "cbor_path": "VoiceFilter0.plainParams.kParamReso",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "EFFECT_OBSERVED"
+    ],
+    "any_effect_observed": true
+  },
+  {
+    "file": "DIAG_02_diag_filter2_cutoff_corrected_001.json",
+    "semantic_target": "Filter2.Cutoff",
+    "cbor_path": "VoiceFilter1.plainParams.kParamFreq",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "DIAG_03_diag_osc1_level_corrected_001.json",
+    "semantic_target": "OSC1.Level",
+    "cbor_path": "VoiceOsc0.plainParams.kParamLevel",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "DIAG_04_diag_osc1_detune_corrected_001.json",
+    "semantic_target": "OSC1.Detune",
+    "cbor_path": "VoiceOsc0.plainParams.kParamDetune",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "DIAG_05_diag_env1_attack_corrected_001.json",
+    "semantic_target": "Env1.Attack",
+    "cbor_path": "VoiceEnv0.plainParams.kParamAttackTime",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "DIAG_06_diag_env1_release_corrected_001.json",
+    "semantic_target": "Env1.Release",
+    "cbor_path": "VoiceEnv0.plainParams.kParamReleaseTime",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  },
+  {
+    "file": "DIAG_07_diag_filter1_drive_corrected_001.json",
+    "semantic_target": "Filter1.Drive",
+    "cbor_path": "VoiceFilter0.plainParams.kParamDrive",
+    "host_param_name": null,
+    "operation": "SET_PARAMETER",
+    "isolation_level": "single_field",
+    "measurement_statuses": [
+      "NO_OBSERVED_EFFECT",
+      "NO_OBSERVED_EFFECT"
+    ],
+    "any_effect_observed": false
+  }
+]

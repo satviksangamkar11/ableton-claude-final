@@ -1,0 +1,219 @@
+{
+  "path": "serum2/SERUM2_SEMANTIC_INVENTORY.json",
+  "commits": [
+    {
+      "commit": "ed665540c741eb01d1bc31f3160366d71ec8e29b",
+      "short": "ed66554",
+      "parent": "ef27750544547251042c8ae5e632212b4fdc6264",
+      "date": "2026-09-15 01:55:45 +0530",
+      "message": "STEP 21 OSC CLOSURE",
+      "parse_status": "PASS",
+      "version": "0.1.0-OSC",
+      "record_count": 48,
+      "unique_semantic_ids": 48,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 43,
+        "PROVEN_NOT_USER_CONTROL": 4,
+        "UNVERIFIED_CANDIDATE": 1
+      }
+    },
+    {
+      "commit": "638c3158eb116f26e8cbc780628d83690cd5995f",
+      "short": "638c315",
+      "parent": "a6859e94ba62b357d4b450e9fece17ab1a5cd297",
+      "date": "2026-09-15 02:15:31 +0530",
+      "message": "OSC CLOSURE: semantic-target reconciliation",
+      "parse_status": "PASS",
+      "version": "0.1.0-OSC",
+      "record_count": 48,
+      "unique_semantic_ids": 48,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 43,
+        "PROVEN_NOT_USER_CONTROL": 4,
+        "UNVERIFIED_CANDIDATE": 1
+      }
+    },
+    {
+      "commit": "dc707b63a3bb717e21157db3878739dc7c0c3a40",
+      "short": "dc707b6",
+      "parent": "6192e972be083c7251daa104c499073842ab6e17",
+      "date": "2026-09-15 09:47:36 +0530",
+      "message": "FILTER SECTION CLOSED*",
+      "parse_status": "PASS",
+      "version": "0.1.0-FILTER",
+      "record_count": 48,
+      "unique_semantic_ids": 48,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 43,
+        "PROVEN_NOT_USER_CONTROL": 4,
+        "UNVERIFIED_CANDIDATE": 1
+      }
+    },
+    {
+      "commit": "838884306b86cfaacf07875c36a735570ca038e2",
+      "short": "8388843",
+      "parent": "159504fe6b3a936c921a4bd32898823aae6e4ad8",
+      "date": "2026-09-15 10:51:43 +0530",
+      "message": "ENV SECTION CLOSED*",
+      "parse_status": "PASS",
+      "version": "0.1.0-ENV",
+      "record_count": 48,
+      "unique_semantic_ids": 48,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 43,
+        "PROVEN_NOT_USER_CONTROL": 4,
+        "UNVERIFIED_CANDIDATE": 1
+      }
+    },
+    {
+      "commit": "7c2edeae8349aa9a30851752a68458c51f2f4b0e",
+      "short": "7c2edea",
+      "parent": "838884306b86cfaacf07875c36a735570ca038e2",
+      "date": "2026-09-15 10:54:32 +0530",
+      "message": "ENV closure clarify",
+      "parse_status": "PASS",
+      "version": "0.1.0-ENV",
+      "record_count": 48,
+      "unique_semantic_ids": 48,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 43,
+        "PROVEN_NOT_USER_CONTROL": 4,
+        "UNVERIFIED_CANDIDATE": 1
+      }
+    },
+    {
+      "commit": "315f09271ef51be81dd2e541753be7d5044c72d3",
+      "short": "315f092",
+      "parent": "7c2edeae8349aa9a30851752a68458c51f2f4b0e",
+      "date": "2026-09-15 11:16:38 +0530",
+      "message": "LFO SECTION CLOSED*",
+      "parse_status": "PASS",
+      "version": "0.1.0-LFO",
+      "record_count": 48,
+      "unique_semantic_ids": 48,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 43,
+        "PROVEN_NOT_USER_CONTROL": 4,
+        "UNVERIFIED_CANDIDATE": 1
+      }
+    },
+    {
+      "commit": "411ff3cc27476a028e1d073dbc37745bde4261a8",
+      "short": "411ff3c",
+      "parent": "315f09271ef51be81dd2e541753be7d5044c72d3",
+      "date": "2026-09-15 11:17:24 +0530",
+      "message": "MATRIX marked IN_PROGRESS",
+      "parse_status": "PASS",
+      "version": "0.1.0-LFO",
+      "record_count": 48,
+      "unique_semantic_ids": 48,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 43,
+        "PROVEN_NOT_USER_CONTROL": 4,
+        "UNVERIFIED_CANDIDATE": 1
+      }
+    },
+    {
+      "commit": "986d470fc687ad7e853fe53c24cd51f07e3fe8ac",
+      "short": "986d470",
+      "parent": "20be43551233c93a276ca85e8e9b32206364db94",
+      "date": "2026-09-16 12:57:47 +0530",
+      "message": "KEYBOARD/PERFORMANCE closed",
+      "parse_status": "PASS",
+      "version": "0.8.0-KEYBOARD-CLOSED",
+      "record_count": 438,
+      "unique_semantic_ids": 438,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 417,
+        "PROVEN_NOT_USER_CONTROL": 15,
+        "UNVERIFIED_CANDIDATE": 6
+      }
+    },
+    {
+      "commit": "f9a8155db443bda14e364a0d32b9d3bffa61ce4c",
+      "short": "f9a8155",
+      "parent": "986d470fc687ad7e853fe53c24cd51f07e3fe8ac",
+      "date": "2026-09-16 13:55:32 +0530",
+      "message": "VOICE section closed",
+      "parse_status": "PASS",
+      "version": "0.9.0-VOICE-CLOSED",
+      "record_count": 443,
+      "unique_semantic_ids": 443,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 421,
+        "PROVEN_NOT_USER_CONTROL": 16,
+        "UNVERIFIED_CANDIDATE": 6
+      }
+    },
+    {
+      "commit": "1cfcb741a5865726751325d3cb6543f8c00e73ed",
+      "short": "1cfcb74",
+      "parent": "f9a8155db443bda14e364a0d32b9d3bffa61ce4c",
+      "date": "2026-09-16 14:26:31 +0530",
+      "message": "GLOBAL section closed",
+      "parse_status": "PASS",
+      "version": "1.0.0-GLOBAL-CLOSED",
+      "record_count": 474,
+      "unique_semantic_ids": 474,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 451,
+        "PROVEN_NOT_USER_CONTROL": 17,
+        "UNVERIFIED_CANDIDATE": 6
+      }
+    },
+    {
+      "commit": "3716ee538fafb10c8e9f84de0e6e0d109a295acb",
+      "short": "3716ee5",
+      "parent": "1cfcb741a5865726751325d3cb6543f8c00e73ed",
+      "date": "2026-09-16 14:33:59 +0530",
+      "message": "GLOBAL closure correction",
+      "parse_status": "PASS",
+      "version": "1.0.0-GLOBAL-CLOSED",
+      "record_count": 474,
+      "unique_semantic_ids": 474,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 451,
+        "PROVEN_NOT_USER_CONTROL": 17,
+        "UNVERIFIED_CANDIDATE": 6
+      }
+    },
+    {
+      "commit": "86dfde7de210d3e1e19326431cfdc7e96947a0db",
+      "short": "86dfde7",
+      "parent": "3716ee538fafb10c8e9f84de0e6e0d109a295acb",
+      "date": "2026-09-16 15:03:13 +0530",
+      "message": "BROWSER/RESOURCES closed",
+      "parse_status": "PASS",
+      "version": "1.1.0-BROWSER-CLOSED",
+      "record_count": 515,
+      "unique_semantic_ids": 515,
+      "duplicate_ids": 0,
+      "status_counts": {
+        "VERIFIED": 492,
+        "PROVEN_NOT_USER_CONTROL": 17,
+        "UNVERIFIED_CANDIDATE": 6
+      }
+    },
+    {
+      "commit": "79d74aea101461108b9a4a03dd51dfe7531551a1",
+      "short": "79d74ae",
+      "parent": "86dfde7de210d3e1e19326431cfdc7e96947a0db",
+      "date": "2026-09-16 15:43:55 +0530",
+      "message": "Phase2-3 Complete Cross-System+G1-G10 [CORRUPTED]",
+      "parse_status": "FAIL",
+      "parse_error": "Expecting ',' delimiter: line 8 column 5 (char 538)",
+      "record_count": null
+    }
+  ]
+}

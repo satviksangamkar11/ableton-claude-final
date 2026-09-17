@@ -1,0 +1,4157 @@
+{
+  "total_unique_semantic_ids_ever_seen": 519,
+  "ledger": [
+    {
+      "semantic_id": "ARP.GLOBAL.BANK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.GLOBAL.EDIT_ALL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.GLOBAL.LAUNCH_QUANT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.MIDI_OUT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.BPM_HZ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.DOT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.ACCENT_ROW",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.ADD_LANE_MENU",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.LENGTH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.PATTERN_SELECT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.PITCH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.RANGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.STEP_GRID",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.STEP_MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.STRUM_ROW",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.TIME",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.VELOCITY_LANE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.VEL_RAND_LANE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDITOR.WRAP",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.EDIT_TOGGLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.RATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.SHAPE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.SHAPE_PATTERN_MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PATTERN.TRIP",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PLAYBACK.CHANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PLAYBACK.CHANCE_PRE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PLAYBACK.GATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PLAYBACK.LATCH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PLAYBACK.OFFSET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PLAYBACK.REPEATS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.PLAYBACK.THRU",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.RETRIGGER.FIRST",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.RETRIGGER.LAUNCH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.RETRIGGER.NOTE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.RETRIGGER.RATE_ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.RETRIGGER.RATE_VALUE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.SLOT.CONTEXT_MENU",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.SLOT.COUNT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.SLOT.MIDI_KEYBOARD_LAUNCH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.SLOT.PLAY_BUTTON",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.SLOT.SUMMARY_DISPLAY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.TRANSPOSE.RANGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.TRANSPOSE.SHAPE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.TRANSPOSE.SHIFT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.VELOCITY.DECAY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.VELOCITY.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.VELOCITY.RETRIG",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "ARP.VELOCITY.TARGET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.CATEGORY_LIST",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.RATING_FILTER",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.TAG_LIST",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.CATEGORIES_TAGS.TOGGLE",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.FOLDERS.CREATE_EXPORT_PACK",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.FOLDERS.TREE",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.AUTO_PLAY_PREVIEWS",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.DELETE_PRESETS",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.ERASE_REBUILD_DATABASE",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.HYBRIDIZE",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.HYBRIDIZE_FAVORING_SELECTED",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.LOAD_RANDOM_PRESET",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.PREVIEW_FALLBACK_CLIP",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.RENAME_MOVE_PRESET",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.RESCAN_DATABASE",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.MENU.SHOW_IN_FOLDER",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.AUTHOR",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.CATEGORY",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.DESCRIPTION",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.NOTES",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.PRESET_NAME",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.METADATA.TAGS_PANEL",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.PRESET_DROPDOWN",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.PREV_NEXT",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.NAVIGATION.SAVE_ICON",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.PACKS.GET_PACKS",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.PACKS.IMPORT",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.COLUMNS",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.RATING_STARS",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.ROW_CONTEXT_MENU",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.PRESET_LIST.ROW_SELECT_LOAD",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.SEARCH.CLEAR",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.SEARCH.FIELD",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "BROWSER.TOGGLE",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "CLIP.EDITOR.HEAR_SELECTED",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.EDITOR.NOTE_GRID",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.EDITOR.VELOCITY_LANE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.GLOBAL.BANK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.GLOBAL.EDIT_ALL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.GLOBAL.SHOW_MACROS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.GLOBAL.TRIGGER_MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.METRONOME",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.MIDI_OUT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.RECORD",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.RECORD_MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.CLIP_SELECT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.KB_SPAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.LAUNCH_QUANT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.LENGTH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.NOTE_GATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.RATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.RATE_BPM_HZ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.RATE_DOT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.RATE_TRIP",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.RETRIG",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.TIME",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.TRANS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SETTINGS.VELO_TRIG",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SLOT.CONTEXT_MENU",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SLOT.COUNT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "CLIP.SLOT.PLAY_BUTTON",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.BALANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.BLUR",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.BPM",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.DELAY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.DIR",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.FEED",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.MONO_INPUT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.RANGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.SHIFT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.SHIFT_RETRIG",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.BODE.WIDTH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.BPM",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.DELAY1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.DELAY2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.DEPTH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.FEEDBACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.FILTER_CUTOFF",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.FILTER_MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.RATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CHORUS.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.ATTACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.BAND_GRAPHIC",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.BAND_H",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.BAND_L",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.BAND_M",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.BELOW",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.GAIN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.RATIO",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.RELEASE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.THRESH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.X_HIGH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.COMPRESSOR.X_LOW",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.ATTACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.BPM",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.DAMP",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.DECAY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.IR_BROWSER",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.IR_GAIN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.IR_NEXT_PREV",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.LOAD_IR_EXTERNAL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.MIN_PHASE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.PRE_DLY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.SIZE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.TONE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.CONVOLVE.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.BPM",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.FEEDBACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.FILTER_GRAPH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.FREQ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.HIGH_QUALITY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.LINK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.MODE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.Q",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.TIME_L",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.TIME_R",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DELAY.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DIMENSION.SIZE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DIMENSION.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.DRIVE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.FILTER_GRAPH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.FILTER_POSITION",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.FREQ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.Q",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.TYPE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.WAVEFORM_PREVIEW",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.XSHAPER_A",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.XSHAPER_B",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.DISTORTION.XSHAPER_EDIT_PENCIL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.GRAPH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.LEFT_FREQ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.LEFT_GAIN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.LEFT_Q",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.LEFT_TYPE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.RIGHT_FREQ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.RIGHT_GAIN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.RIGHT_Q",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.EQUALIZER.RIGHT_TYPE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.CUTOFF",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.DRIVE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.FAT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.GRAPH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.KEY_TRACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.RES",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.TYPE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FILTER.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FLANGER.BPM",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FLANGER.DEPTH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FLANGER.FEEDBACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FLANGER.NO_SEPARATE_DELAY_KNOB",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FLANGER.PHASE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FLANGER.RATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.FLANGER.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.HYPER.DETUNE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.HYPER.RATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.HYPER.RETRIG",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.HYPER.UNISON",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.HYPER.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.HYPER_DIMENSION.STRUCTURE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.BPM",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.DEPTH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.DEPTH2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.FEEDBACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.FREQ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.PHASE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.POLES",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.RATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.PHASER.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.CHORUS_MOD",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.DAMP_PLATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.DAMP_VINTAGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.DECAY_HALL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.DIFFUSION_NITROUS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.DIFF_A_VINTAGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.DIFF_B_VINTAGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.ER_SIZE_VINTAGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.FEEDBACK_NITROUS_BASIN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.HI_CUT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.LO_CUT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.MODE_NITROUS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.PRE_DLY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.SIZE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.SPIN_HALL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.TYPE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.REVERB.WIDTH_PLATE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.HIGHS_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.HIGHS_RACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.HIGHS_SELECT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.LOWS_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.LOWS_RACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.LOWS_SELECT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.SPLIT_FREQ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.STRUCTURE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LH.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.HIGHS_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.HIGHS_RACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.LOWS_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.LOWS_RACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.MIDS_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.MIDS_RACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.SPLIT_FREQ_LOW_MID",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.SPLIT_FREQ_MID_HIGH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.STRUCTURE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_LMH.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_MS.MID_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_MS.MID_RACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_MS.SIDE_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_MS.SIDE_RACK",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_MS.STRUCTURE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SPLITTER_MS.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SYS.ADD_FX_MENU",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SYS.MODULE_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SYS.MODULE_CONTEXT_MENU",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SYS.MODULE_LIST_PANEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SYS.MODULE_PARAM_CONTEXT_MENU",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SYS.RACKS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SYS.RACK_PRESET_BROWSER",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.SYS.REORDER",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.FREQ",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.HPF",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.LPF",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.MONO_BASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.POLARITY_INV_L",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.POLARITY_INV_R",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "FX.UTILITY.WIDTH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "GLOBAL.INFO.BUILD_DATE_DISPLAY",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.DEFAULT_WAVEFORM_VIEW",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.DOUBLE_CLICK_PARAMS",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.HELP_TOOLTIPS",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.KEYBOARD_SHORTCUTS",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.MOUSE_WHEEL_PARAM_CONTROL",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.MPE_EXPR_Y_ACTS_BI_DIRECTIONAL",
+      "first_seen_commit": "79d74ae(reconstructed)",
+      "last_modified_commit": "79d74ae(reconstructed)",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 1
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.MPE_PITCH_BEND_MAPS_TO_EXPR_X",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "79d74ae(reconstructed)",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.PREFERENCES.PARAM_VALUE_TOOLTIPS",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.QUALITY.DISABLE_SMOOTHING",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.QUALITY.OVERSAMPLING",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.QUALITY.OVERSAMPLING_LOCK",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.QUALITY.S1_COMPATIBILITY",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.TUNING.GLOBAL_TUNING",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.TUNING.LOCK",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.TUNING.TUN_FILE",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.PRESET_FIELD",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.CUTOFF",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.DETUNE",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.ENVS",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.PAN",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.ENVS",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.LFOS",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.LFOS_RATE_TOGGLE",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.CUTOFF",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.DETUNE",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.ENVS",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.MOD1",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.MOD2",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.PAN",
+      "first_seen_commit": "1cfcb74",
+      "last_modified_commit": "1cfcb74",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 4
+    },
+    {
+      "semantic_id": "KEYBOARD.ALWAYS_SCALED",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": false,
+      "status_at_freeze": null,
+      "commit_count_seen": 1
+    },
+    {
+      "semantic_id": "KEYBOARD.KEY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.MAIN_KEYBOARD",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.MOD_WHEEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.MOD_WHEEL.SOURCE_INDICATOR",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "UNVERIFIED_CANDIDATE",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.MPE.BEND_RANGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "UNVERIFIED_CANDIDATE",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.MPE.ENABLED",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.MPE.XYZ_TO_MACROS123",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "UNVERIFIED_CANDIDATE",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.MPE.YZ_TO_MACROS12",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "UNVERIFIED_CANDIDATE",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.MPE.Y_TO_MODWHEEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "3716ee5",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "UNVERIFIED_CANDIDATE",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.OSC_MAPPING.ARP_ROW_FOLD",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.OSC_MAPPING.ARP_ROW_KEY_RANGE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.OSC_MAPPING.ARP_ROW_WARP",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.OSC_MAPPING.EDITOR",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.OSC_MAPPING.RESET_ALL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.OSC_MAPPING.VEL_TAB",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.PITCH_BEND",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.PITCH_BEND.BEND_DOWN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.PITCH_BEND.BEND_UP",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.PORTA_CURVE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": false,
+      "status_at_freeze": null,
+      "commit_count_seen": 1
+    },
+    {
+      "semantic_id": "KEYBOARD.PORTA_TIME",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": false,
+      "status_at_freeze": null,
+      "commit_count_seen": 1
+    },
+    {
+      "semantic_id": "KEYBOARD.SCALE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.SWING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "KEYBOARD.TRANSPOSE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MACRO.01.NAME",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.01.VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.02.NAME",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.02.VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.03.NAME",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.03.VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.04.NAME",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.04.VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.05.NAME",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.05.VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.06.NAME",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.06.VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.07.NAME",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.07.VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.08.NAME",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.08.VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.ADD_REMOVE_SLOT",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.APPLY_AND_DELETE_MACRO",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.ASSIGN_DRAG",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.ASSIGN_MATRIX_SOURCE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_CURVE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_INVERT",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_OUTPUT",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.AUX_SOURCE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.BIPOLAR_UNIPOLAR",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.BROWSER_VIEW_ACCESS",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.CENTER_TOGGLE_MODIFIER",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.CLIP_VIEW_ACCESS",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.COPY_PASTE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.DELETE_ROUTE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.FX_EXPANDED_NOT_ASSIGNABLE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.INIT_MODULE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.KNOB_CONTEXT_MENU",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.LOCK_PARAMETER",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.MACRO_DEPTH_RECONCILE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.MACRO_SPECIFIC_PRESET",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.MULTI_ASSIGN_ONE_MACRO",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.MULTI_MACRO_SUMMED_DEST",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.OUTPUT_MONITOR",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.RANGE_DIRECTION_DRAG",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.RENAME_MECHANISM",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "UNVERIFIED_CANDIDATE",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.RESET_VALUE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.RISE_FALL_SMOOTH",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.ROUTE_AMOUNT",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.SOURCE_CURVE",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.TEMP_BYPASS",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.UNASSIGN_RIGHTCLICK",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MACRO.SYS.VALUE_AS_MOD_DESTINATION",
+      "first_seen_commit": "ed66554",
+      "last_modified_commit": "ed66554",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 13
+    },
+    {
+      "semantic_id": "MATRIX.DESTINATION.LFO_N_CONDITIONAL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.01",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.02",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.03",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.04",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.05",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.06",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.07",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.08",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.09",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.10",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.11",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.12",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.13",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.14",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.15",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.LFO_BUS.16",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.MOD",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.OUT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.OUT_INDICATOR",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.ROUTING.SIGNAL_BALANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.FILTER_1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.FILTER_2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.NOISE_OSC",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.OSC_A",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.OSC_B",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.OSC_C",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SOURCE.SUB_OSC",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.APPLY_AND_DELETE_MACROS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.CREATE_VELO_AMP_ASSIGNMENT",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.CREATE_VIBRATO",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.DUPLICATE_ROUTE_POLICY",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.DYNAMIC_VISUALIZATION",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.EXPANDED_VIEW",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.LOCK_MATRIX",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.MAX_ROUTES",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.MENU",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.SORT_BY_DESTINATION",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MATRIX.SYS.SORT_BY_SOURCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.BUS1.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.BUS1.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.BUS1.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.BUS2.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.BUS2.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.BUS2.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.DIRECT.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.BUS1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.BUS2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.ENV1_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER1.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.BUS1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.BUS2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.ENV1_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.FILTER2.WET",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.MAIN.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.NOISE.BUS1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.NOISE.BUS2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.NOISE.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.NOISE.ENV1_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.NOISE.FILTER_BALANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.NOISE.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.NOISE.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.NOISE.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.BUS1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.BUS2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.ENV1_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.FILTER_BALANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_A.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.BUS1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.BUS2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.ENV1_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.FILTER_BALANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_B.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.BUS1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.BUS2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.ENV1_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.FILTER_BALANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.OSC_C.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.SUB.BUS1",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.SUB.BUS2",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.SUB.ENABLE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.SUB.ENV1_BYPASS",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.SUB.FILTER_BALANCE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.SUB.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.SUB.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "MIXER.SUB.ROUTING",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "NOISE_OSC.FINE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "NOISE_OSC.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "NOISE_OSC.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "NOISE_OSC.PHASE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "NOISE_OSC.PITCH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "NOISE_OSC.RAND_PHASE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "SUB_OSC.COARSE_PITCH",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "SUB_OSC.LEVEL",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "SUB_OSC.OCTAVE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "SUB_OSC.PAN",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "SUB_OSC.PHASE",
+      "first_seen_commit": "986d470",
+      "last_modified_commit": "986d470",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 6
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.INIT_PRESET",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.LOAD_PRESET",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.LOAD_TUNING",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.OPEN_PRESETS_FOLDER",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.RESCAN_FOLDERS_ON_DISK",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.REVERT_TO_SAVED",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "TOPMENU.RESOURCE.SAVE_AS_DEFAULT_PRESET",
+      "first_seen_commit": "86dfde7",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 2
+    },
+    {
+      "semantic_id": "VOICE.VOICING.LEGATO",
+      "first_seen_commit": "f9a8155",
+      "last_modified_commit": "f9a8155",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 5
+    },
+    {
+      "semantic_id": "VOICE.VOICING.MONO",
+      "first_seen_commit": "f9a8155",
+      "last_modified_commit": "f9a8155",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 5
+    },
+    {
+      "semantic_id": "VOICE.VOICING.POLY",
+      "first_seen_commit": "f9a8155",
+      "last_modified_commit": "f9a8155",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 5
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_ALWAYS",
+      "first_seen_commit": "f9a8155",
+      "last_modified_commit": "f9a8155",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 5
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_CURVE",
+      "first_seen_commit": "f9a8155",
+      "last_modified_commit": "f9a8155",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 5
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_SCALED",
+      "first_seen_commit": "f9a8155",
+      "last_modified_commit": "f9a8155",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 5
+    },
+    {
+      "semantic_id": "VOICE.VOICING.PORTA_TIME",
+      "first_seen_commit": "f9a8155",
+      "last_modified_commit": "f9a8155",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "VERIFIED",
+      "commit_count_seen": 5
+    },
+    {
+      "semantic_id": "VOICE.VOICING.VOICE_COUNT_DISPLAY",
+      "first_seen_commit": "f9a8155",
+      "last_modified_commit": "86dfde7",
+      "present_at_freeze_boundary_79d74ae_reconstructed": true,
+      "status_at_freeze": "PROVEN_NOT_USER_CONTROL",
+      "commit_count_seen": 5
+    }
+  ]
+}

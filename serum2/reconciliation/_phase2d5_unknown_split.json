@@ -1,0 +1,2636 @@
+[
+  {
+    "semantic_id": "MACRO.01.VALUE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.source_list', 'MACRO.SYS.ASSIGN_DRAG', 'MACRO.SYS.CLIP_VIEW_ACCESS', 'MACRO.SYS.BROWSER_VIEW_ACCESS']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.02.VALUE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.source_list', 'MACRO.SYS.AUX_SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.03.VALUE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.source_list']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.04.VALUE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.source_list']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.05.VALUE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.source_list', 'MACRO.SYS.SOURCE_CURVE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.06.VALUE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.source_list']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.07.VALUE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.source_list']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.08.VALUE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.source_list']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.ASSIGN_MATRIX_SOURCE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MACRO.SYS.MULTI_ASSIGN_ONE_MACRO",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MACRO.SYS.OUTPUT_MONITOR']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.MULTI_MACRO_SUMMED_DEST",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MACRO.SYS.OUTPUT_MONITOR', 'MACRO.SYS.AUX_SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.ROUTE_AMOUNT",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MACRO.SYS.MACRO_DEPTH_RECONCILE', 'MACRO.SYS.AUX_SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.MACRO_DEPTH_RECONCILE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MACRO.SYS.ROUTE_AMOUNT', 'MACRO.SYS.AUX_SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.AUX_SOURCE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MACRO.SYS.AUX_INVERT",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MACRO.SYS.AUX_CURVE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MACRO.SYS.AUX_OUTPUT",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MACRO.SYS.AUX_SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.BIPOLAR_UNIPOLAR",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MACRO.SYS.OUTPUT_MONITOR",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MACRO.SYS.MULTI_MACRO_SUMMED_DEST']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.CENTER_TOGGLE_MODIFIER",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MACRO.SYS.ASSIGN_DRAG']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.RANGE_DIRECTION_DRAG",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MACRO.SYS.ROUTE_AMOUNT', 'MACRO.SYS.BIPOLAR_UNIPOLAR']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.CLIP_VIEW_ACCESS",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['CLIP.note_editor.macro_settings (pending Step 8 CLIP sweep)']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.BROWSER_VIEW_ACCESS",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['BROWSER (pending Step 12 sweep)']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MACRO.SYS.FX_EXPANDED_NOT_ASSIGNABLE",
+    "section": "MACRO",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX (pending Step 6 sweep)']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "NOISE_OSC.LEVEL",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "NOISE_OSC.PAN",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "NOISE_OSC.PITCH",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "NOISE_OSC.FINE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "NOISE_OSC.PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "NOISE_OSC.RAND_PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "SUB_OSC.COARSE_PITCH",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "SUB_OSC.PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MATRIX.OUT",
+    "section": "MATRIX",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MATRIX.OUT_INDICATOR",
+    "section": "MATRIX",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MATRIX.MOD",
+    "section": "MATRIX",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "MIXER.SUB.FILTER_BALANCE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.ROUTING.SIGNAL_BALANCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MIXER.SUB.PAN",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.SUB.LEVEL",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.OSC_A.FILTER_BALANCE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.ROUTING.SIGNAL_BALANCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MIXER.OSC_B.FILTER_BALANCE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.ROUTING.SIGNAL_BALANCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MIXER.OSC_C.FILTER_BALANCE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.ROUTING.SIGNAL_BALANCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MIXER.NOISE.FILTER_BALANCE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.ROUTING.SIGNAL_BALANCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MIXER.NOISE.PAN",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.NOISE.LEVEL",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.FILTER1.PAN",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.FILTER2.PAN",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.BUS1.LEVEL",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.BUS1.ENABLE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.BUS2.LEVEL",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.BUS2.ENABLE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "MIXER.DIRECT.LEVEL",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MIXER.MAIN.LEVEL']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FILTER.1.*']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+    "section": "MIXER",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FILTER.2.*']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.BODE.DIR",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.BODE.WIDTH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.BODE.DELAY",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.BODE.BPM']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.BODE.FEED",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.BODE.BALANCE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.BODE.BLUR",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.BODE.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.CHORUS.DELAY1",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.CHORUS.DELAY2",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.CHORUS.FILTER_CUTOFF",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.CHORUS.FILTER_MODE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.CHORUS.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.THRESH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.X_LOW",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.BELOW",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.X_HIGH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.BAND_H",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.BAND_M",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.BAND_L",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.BAND_GRAPHIC",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.COMPRESSOR.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.CONVOLVE.SIZE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.CONVOLVE.TONE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.CONVOLVE.PRE_DLY",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.CONVOLVE.BPM']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.CONVOLVE.DAMP",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.CONVOLVE.IR_GAIN",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.CONVOLVE.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.DELAY.TIME_L",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.DELAY.LINK']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.DELAY.TIME_R",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.DELAY.LINK']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.DELAY.FILTER_GRAPH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.DELAY.FREQ', 'FX.DELAY.Q']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.DELAY.FREQ",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.DELAY.FILTER_GRAPH']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.DELAY.Q",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.DELAY.FILTER_GRAPH']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.DELAY.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.DISTORTION.FILTER_GRAPH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.DISTORTION.Q",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.DISTORTION.WAVEFORM_PREVIEW",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.DISTORTION.XSHAPER_A', 'FX.DISTORTION.XSHAPER_B']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.DISTORTION.XSHAPER_EDIT_PENCIL",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.DISTORTION.XSHAPER_A', 'FX.DISTORTION.XSHAPER_B']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.DISTORTION.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.EQUALIZER.LEFT_FREQ",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.EQUALIZER.LEFT_Q",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.EQUALIZER.LEFT_GAIN",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.EQUALIZER.LEFT_TYPE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.EQUALIZER.RIGHT_FREQ",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.EQUALIZER.RIGHT_Q",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.EQUALIZER.RIGHT_GAIN",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.EQUALIZER.RIGHT_TYPE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.EQUALIZER.GRAPH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.EQUALIZER.LEFT_TYPE', 'FX.EQUALIZER.RIGHT_TYPE', 'FX.EQUALIZER.LEFT_FREQ', 'FX.EQUALIZER.RIGHT_FREQ']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.EQUALIZER.LEVEL",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.FILTER.RES",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.FILTER.FAT",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.FILTER.PAN",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.FILTER.GRAPH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.FILTER.CUTOFF', 'FX.FILTER.RES']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.FILTER.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.FLANGER.NO_SEPARATE_DELAY_KNOB",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.FLANGER.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.HYPER_DIMENSION.STRUCTURE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.HYPER.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.DIMENSION.SIZE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.DIMENSION.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.PHASER.RATE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.PHASER.BPM']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.PHASER.DEPTH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.PHASER.DEPTH2",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.PHASER.FREQ",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.PHASER.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.LO_CUT",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.HI_CUT",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.PRE_DLY",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.WIDTH_PLATE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.DAMP_PLATE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.DECAY_HALL",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.SPIN_HALL",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.ER_SIZE_VINTAGE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.DAMP_VINTAGE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.DIFF_A_VINTAGE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.DIFF_B_VINTAGE",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.FEEDBACK_NITROUS_BASIN",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.DIFFUSION_NITROUS",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.CHORUS_MOD",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.REVERB.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.UTILITY.LPF",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.UTILITY.HPF",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.UTILITY.FREQ",
+    "section": "FX",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['FX.UTILITY.MONO_BASS']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FX.UTILITY.WIDTH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.UTILITY.PAN",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.UTILITY.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.SPLITTER_LH.SPLIT_FREQ",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.SPLITTER_LH.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.SPLITTER_LMH.SPLIT_FREQ_LOW_MID",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.SPLITTER_LMH.SPLIT_FREQ_MID_HIGH",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.SPLITTER_LMH.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "FX.SPLITTER_MS.WET",
+    "section": "FX",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PATTERN.EDITOR.LENGTH",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PATTERN.EDITOR.TIME",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PATTERN.EDITOR.PITCH",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PATTERN.EDITOR.RANGE",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PATTERN.EDITOR.ACCENT_ROW",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PATTERN.EDITOR.STRUM_ROW",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.GLOBAL.LAUNCH_QUANT",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PATTERN.RATE",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['ARP.PATTERN.BPM_HZ', 'ARP.PATTERN.TRIP', 'ARP.PATTERN.DOT']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "ARP.TRANSPOSE.SHIFT",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.TRANSPOSE.RANGE",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['ARP.TRANSPOSE.SHIFT']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "ARP.PLAYBACK.OFFSET",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PLAYBACK.REPEATS",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PLAYBACK.GATE",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "ARP.PLAYBACK.CHANCE",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['ARP.PLAYBACK.CHANCE_PRE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "ARP.RETRIGGER.RATE_VALUE",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['ARP.RETRIGGER.RATE_ENABLE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "ARP.VELOCITY.DECAY",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['ARP.VELOCITY.TARGET']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "ARP.VELOCITY.TARGET",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['ARP.VELOCITY.DECAY']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "KEYBOARD.PITCH_BEND",
+    "section": "GLOBAL_KEYBOARD",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['KEYBOARD.PITCH_BEND.BEND_UP', 'KEYBOARD.PITCH_BEND.BEND_DOWN', 'MATRIX.SOURCE (Pitch Bend leaf item)']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "KEYBOARD.PITCH_BEND.BEND_UP",
+    "section": "GLOBAL_KEYBOARD",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "KEYBOARD.PITCH_BEND.BEND_DOWN",
+    "section": "GLOBAL_KEYBOARD",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['KEYBOARD.PITCH_BEND', 'KEYBOARD.PITCH_BEND.BEND_UP']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "KEYBOARD.MOD_WHEEL",
+    "section": "GLOBAL_KEYBOARD",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['KEYBOARD.MOD_WHEEL.SOURCE_INDICATOR', 'MATRIX.SOURCE (Mod Wheel leaf item)']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "CLIP.SETTINGS.LENGTH",
+    "section": "CLIP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "CLIP.SETTINGS.TRANS",
+    "section": "CLIP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "CLIP.SETTINGS.RATE",
+    "section": "CLIP",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['CLIP.SETTINGS.RATE_BPM_HZ', 'CLIP.SETTINGS.RATE_TRIP', 'CLIP.SETTINGS.RATE_DOT']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "CLIP.SETTINGS.LAUNCH_QUANT",
+    "section": "CLIP",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "VOICE.VOICING.PORTA_CURVE",
+    "section": "VOICE",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "VOICE.VOICING.POLY",
+    "section": "VOICE",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['VOICE.VOICING.MONO', 'VOICE.VOICING.VOICE_COUNT_DISPLAY']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "VOICE.VOICING.VOICE_COUNT_DISPLAY",
+    "section": "VOICE",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['VOICE.VOICING.POLY', 'VOICE.VOICING.MONO']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.QUALITY.OVERSAMPLING",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.QUALITY.OVERSAMPLING_LOCK', 'GLOBAL.QUALITY.S1_COMPATIBILITY']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.QUALITY.OVERSAMPLING_LOCK",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.QUALITY.OVERSAMPLING']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.QUALITY.S1_COMPATIBILITY",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "GLOBAL.QUALITY.DISABLE_SMOOTHING",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "GLOBAL.TUNING.LOCK",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.TUNING.GLOBAL_TUNING']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.RANDOM.PAN', 'GLOBAL.VOICE_CONTROL.SEQ.PAN']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.PAN",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.SEQ.PAN']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.DETUNE",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.SEQ.DETUNE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.CUTOFF",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.SEQ.CUTOFF']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.RANDOM.ENVS",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.SEQ.ENVS']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.PAN",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.RANDOM.PAN']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.DETUNE",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.RANDOM.DETUNE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.CUTOFF",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.RANDOM.CUTOFF']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.ENVS",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.RANDOM.ENVS']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.MOD1",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.SEQ.MOD2']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SEQ.MOD2",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.OSC_SCOPE', 'GLOBAL.VOICE_CONTROL.SEQ.MOD1']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.ENVS",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.SCALING.LFOS']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.LFOS",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.SCALING.ENVS', 'GLOBAL.VOICE_CONTROL.SCALING.LFOS_RATE_TOGGLE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.VOICE_CONTROL.SCALING.LFOS_RATE_TOGGLE",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.VOICE_CONTROL.SCALING.LFOS']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.HELP_TOOLTIPS",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.PARAM_VALUE_TOOLTIPS",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.DOUBLE_CLICK_PARAMS",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.KEYBOARD_SHORTCUTS",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.MOUSE_WHEEL_PARAM_CONTROL",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['VOICE.VOICING.POLY']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.DEFAULT_WAVEFORM_VIEW",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['KEYBOARD.MPE.BEND_RANGE', 'KEYBOARD.MPE.ENABLED', 'KEYBOARD.MPE.XYZ_TO_MACROS123', 'KEYBOARD.MPE.YZ_TO_MACROS12', 'KEYBOARD.MPE.Y_TO_MODWHEEL']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.MPE_PITCH_BEND_MAPS_TO_EXPR_X",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT', 'KEYBOARD.MPE.BEND_RANGE', 'KEYBOARD.MPE.ENABLED', 'KEYBOARD.MPE.XYZ_TO_MACROS123', 'KEYBOARD.MPE.YZ_TO_MACROS12', 'KEYBOARD.MPE.Y_TO_MODWHEEL']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "GLOBAL.INFO.BUILD_DATE_DISPLAY",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-TRUE",
+    "evidence": "No representation-path evidence of any kind found in the semantic's own source records."
+  },
+  {
+    "semantic_id": "GLOBAL.PREFERENCES.MPE_EXPR_Y_ACTS_BI_DIRECTIONAL",
+    "section": "GLOBAL",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT', 'GLOBAL.PREFERENCES.MPE_PITCH_BEND_MAPS_TO_EXPR_X', 'KEYBOARD.MPE.ENABLED']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.FAT",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.FREQ2",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.MORPH",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.SMOOTH",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.LPFREQ",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.HPFREQ",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.HLWIDTH",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.GAINDB",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.DAMP",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.FORMANT",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.COMBFREQ",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.SCREAMAMT",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.SPREAD",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.STAGES",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.PAIN",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.BOEUF",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.THRU",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.WIDTH",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.FREQ2COMB",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER1.TYPE_SPECIFIC.MIXALT",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.FAT",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.FREQ2",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.MORPH",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.SMOOTH",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.LPFREQ",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.HPFREQ",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.HLWIDTH",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.GAINDB",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.DAMP",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.FORMANT",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.COMBFREQ",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.SCREAMAMT",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.SPREAD",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.STAGES",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.PAIN",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.BOEUF",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.THRU",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.WIDTH",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.FREQ2COMB",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "FILTER2.TYPE_SPECIFIC.MIXALT",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "ENV1.HOLD",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "ENV1.SOURCE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "ENV2.HOLD",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "ENV2.SOURCE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "ENV3.HOLD",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "ENV3.SOURCE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "ENV4.HOLD",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-BODY",
+    "evidence": "Itemized from an aggregate closure-ledger description (structural evidence of existence) without independent VST3 host-parameter confirmation -- plausibly a body-state-only field."
+  },
+  {
+    "semantic_id": "ENV4.SOURCE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-OWNERSHIP",
+    "evidence": "Has cross_references (['MATRIX.SOURCE']) suggesting shared/cross-section ownership not yet resolved."
+  },
+  {
+    "semantic_id": "LFO1.TYPE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.TEMPO_SYNC",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.DIVISION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.TRIPLET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.DOTTED",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.RISE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.DELAY",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.SMOOTH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.DIRECTION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.PRESET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.WAVEFORM_GRAPH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO1.SOURCE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.TYPE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.TEMPO_SYNC",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.DIVISION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.TRIPLET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.DOTTED",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.RISE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.DELAY",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.SMOOTH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.DIRECTION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.PRESET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.WAVEFORM_GRAPH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO2.SOURCE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.TYPE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.TEMPO_SYNC",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.DIVISION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.TRIPLET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.DOTTED",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.RISE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.DELAY",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.SMOOTH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.DIRECTION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.PRESET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.WAVEFORM_GRAPH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO3.SOURCE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.TYPE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.TEMPO_SYNC",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.DIVISION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.TRIPLET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.DOTTED",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.RISE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.DELAY",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.SMOOTH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.DIRECTION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.PRESET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.WAVEFORM_GRAPH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO4.SOURCE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.TYPE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.TEMPO_SYNC",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.DIVISION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.TRIPLET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.DOTTED",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.RISE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.DELAY",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.SMOOTH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.DIRECTION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.PRESET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.WAVEFORM_GRAPH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO5.SOURCE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.TYPE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.TEMPO_SYNC",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.DIVISION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.TRIPLET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.DOTTED",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.RISE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.DELAY",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.SMOOTH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.DIRECTION",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.PRESET",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.WAVEFORM_GRAPH",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "LFO6.SOURCE",
+    "section": "LFO",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "OSC1.SEMI",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.FINE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.RATIO",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.HZ_OFFSET",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.COARSE_PITCH",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.END",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.SCAN_RATE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.SCAN_BPM_RATE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.POSITION",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.LOOP_START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.LOOP_END",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.LOOP_X-FADE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.LOOP_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.SINGLE_SLICE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNISON",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_STACK",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_DETUNE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_BLEND",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_WIDTH",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_SPAN",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_RAND_START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_WARP",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_WARP_2",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.WARP_VAR",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.WARP_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.WARP_2",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.WARP_2_VAR",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.WARP_2_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.WT_POS",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.UNI_WT_POS",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC1.RAND_PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.SEMI",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.FINE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.RATIO",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.HZ_OFFSET",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.COARSE_PITCH",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.END",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.SCAN_RATE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.SCAN_BPM_RATE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.POSITION",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.LOOP_START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.LOOP_END",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.LOOP_X-FADE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.LOOP_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.SINGLE_SLICE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNISON",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_STACK",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_DETUNE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_BLEND",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_WIDTH",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_SPAN",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_RAND_START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_WARP",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_WARP_2",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.WARP_VAR",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.WARP_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.WARP_2",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.WARP_2_VAR",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.WARP_2_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.WT_POS",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.UNI_WT_POS",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC2.RAND_PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.SEMI",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.FINE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.RATIO",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.HZ_OFFSET",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.COARSE_PITCH",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.END",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.SCAN_RATE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.SCAN_BPM_RATE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.POSITION",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.LOOP_START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.LOOP_END",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.LOOP_X-FADE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.LOOP_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.SINGLE_SLICE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNISON",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_STACK",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_DETUNE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_BLEND",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_WIDTH",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_SPAN",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_RAND_START",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_WARP",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_WARP_2",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.WARP_VAR",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.WARP_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.WARP_2",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.WARP_2_VAR",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.WARP_2_MODE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.WT_POS",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.UNI_WT_POS",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "OSC3.RAND_PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "SUB_OSC.PITCH_TRACK",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "SUB_OSC.SHAPE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "SUB_OSC.CONT_PHASE",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "NOISE_OSC.PITCH_TRACK",
+    "section": "OSC",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  },
+  {
+    "semantic_id": "FILTER1.VAR",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "FILTER1.STEREO",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "FILTER2.VAR",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "FILTER2.STEREO",
+    "section": "FILTER",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV1.ATK_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV1.DEC_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV1.REL_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV2.ATK_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV2.DEC_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV2.REL_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV3.ATK_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV3.DEC_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV3.REL_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV4.ATK_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV4.DEC_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ENV4.REL_CURVE",
+    "section": "ENV",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "ARP.PATTERN.EDITOR.WRAP_PHANTOM_NOTE",
+    "section": "ARP",
+    "sub_class": "UNKNOWN-MATRIX",
+    "evidence": "Cross-referenced to a MATRIX source/destination concept but the semantic's own representation path is not independently established."
+  },
+  {
+    "semantic_id": "CLIP.SETTINGS.OFFSET",
+    "section": "CLIP",
+    "sub_class": "UNKNOWN-HOST",
+    "evidence": "Semantic's own source evidence cites direct VST3 host-parameter backing (Phase 2A-R.5/R.6 census-based itemization), but no targets.py entry exists for this field. This is a target-vocabulary gap, not a representation-path unknown."
+  }
+]

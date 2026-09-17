@@ -1,0 +1,64 @@
+{
+  "contract_id": "attack_qualified_complete_001_extracted",
+  "date_extracted": "2026-09-17",
+  "source": "experiments/_env_attack_qualified_complete_001.pkl (evidence record), inferred contract structure",
+  "note": "Attack contract was NOT stored separately in experiments/_capability_contracts_4_1.pkl (which contains only Release). This documentation reconstructs the contract from the evidence record using the same schema as the Release contract.",
+
+  "contract": {
+    "target": "envelope_field_attack",
+    "semantic_id": "Env1.Attack",
+    "control_path": {
+      "ui_location": "Envelope 1, Attack knob",
+      "target_field": "Env0.plainParams.kParamAttack",
+      "representation": "NUMERIC_KNOB",
+      "range": [0.0, 1.0]
+    },
+    "allowed_operation": "mutate_numeric_value",
+    "status": "CAUSAL_VERIFIED",
+
+    "verified": {
+      "load": "PASS",
+      "persistence": "PASS",
+      "causal": "EFFECT_OBSERVED"
+    },
+
+    "measurement": {
+      "metric": "attack_onset_rms_db",
+      "target_field": "Env0.plainParams.kParamAttack",
+      "baseline": -19.113398409784892,
+      "treatment": -52.40013736442808,
+      "delta": -33.28673895464319,
+      "expected_direction": "decrease",
+      "observed_direction": "decrease",
+      "threshold": 0.5,
+      "status": "EFFECT_OBSERVED",
+      "measurement_definition_id": "attack_onset_rms_db:5369167c8e73"
+    },
+
+    "scope": {
+      "tested_context_only": true,
+      "condition_signature_hash": "12dc2f522836863e",
+      "mutation_target_path": "Env0.plainParams.kParamAttack",
+      "mutation_value_used": 0.8,
+      "mutation_value_semantics": "ABSOLUTE_PARAMETER_VALUE"
+    },
+
+    "prerequisites": [],
+    "note_on_prerequisites": "Attack has no prerequisites (unlike Release which requires Decay=0.02). Qualification experiment was run with empty prerequisites list; no context constraints."
+
+    "limitations": [
+      "Tested only with Attack parameter = 0.8 (absolute value); generalization to other Attack values not established",
+      "Tested only with standard stimulus conditions (note=C3, velocity=110, render=2.0s, tail_start=0.6s); generalization to other stimuli not tested",
+      "Single-field isolated mutation (N=1 witness); multi-field interactions not tested"
+    ],
+
+    "provenance": {
+      "claim_definition_id": "Env1.Attack:CAUSAL_VERIFIED",
+      "condition_signature_hash": "12dc2f522836863e",
+      "supporting_evidence": ["attack_qualified_complete_001"],
+      "witness_experiment_id": "attack_qualified_complete_001",
+      "experiment_date": "2026-09-12",
+      "evidence_record_file": "experiments/_env_attack_qualified_complete_001.pkl"
+    }
+  }
+}

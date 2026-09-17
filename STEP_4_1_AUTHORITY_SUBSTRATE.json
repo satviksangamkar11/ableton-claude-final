@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "step": "4.1",
+    "phase": "Authority Substrate Proof",
+    "date": "2026-09-17",
+    "semantic_freeze_commit": "4673086",
+    "semantic_inventory_version": "908-records",
+    "target_vocabulary_version": "396-targets",
+    "description": "Traceability chain verification: frozen semantic IDs → evidence → control paths → targets → execution → measurement → qualification state → admission state",
+    "status": "FUNCTIONAL_ACCEPTANCE_PASS"
+  },
+  "gap_closure_summary": {
+    "gap_1_attack_episode_completeness": {
+      "status": "CLOSED",
+      "action": "Reconstructed full Attack episode from evidence record",
+      "deliverable": "serum2/qualification/attack_qualified_complete_001_PASS_FULL.json",
+      "includes": ["prerequisites", "context_verification", "measurement_definition_id", "observed_outcome", "evidence_references", "admission_decision", "mutation_result"],
+      "preserved": "existing successful generic-pathway result"
+    },
+    "gap_2_attack_contract_documentation": {
+      "status": "CLOSED",
+      "action": "Extracted and documented Attack contract from evidence record",
+      "deliverable": "STEP_4_1_ATTACK_CONTRACT_EXTRACTED.json",
+      "note": "Attack contract not stored separately in _capability_contracts_4_1.pkl; reconstructed from evidence record using Release schema",
+      "documents": ["semantic_id", "target", "control_path", "prerequisites", "measurement", "qualification_state", "admission_state", "evidence_refs"]
+    },
+    "gap_3_semantic_target_reconciliation": {
+      "status": "DOCUMENTED",
+      "action": "Established mapping through post-freeze reconciliation record",
+      "deliverable": "serum2/reconciliation/STEP_4_1_POST_FREEZE_SEMANTIC_TARGET_MAPPING_UPDATE.json",
+      "determination": "SUFFICIENT (live control path, causal measurement, no contradictions)",
+      "proposed_update": "Env1.Attack: mapping_status=MAPPED_CONTROL_PATH_ESTABLISHED, evidence_type=STEP_4_1_EXECUTION_CAUSAL_VERIFIED",
+      "note": "Frozen semantic/target inventories remain unmodified; this is a controlled post-freeze update record"
+    }
+  },
+  "capabilities": [
+    {
+      "semantic_id": "ENV1.RELEASE",
+      "semantic_target_id": "envelope_field_release",
+      "section": "ENV",
+      "status_in_frozen_model": "VERIFIED",
+      "state_invariant": "CURRENT and fully documented",
+      "evidence_records": {
+        "qualification_experiment": "release_qualified_complete_001",
+        "evidence_record_file": "experiments/_env_release_qualified_complete_001.pkl",
+        "contract_file": "experiments/_capability_contracts_4_1.pkl",
+        "contract_key": "('envelope_field_release:138d5527', '2ad6168671cfac32')"
+      },
+      "qualification": {
+        "status": "CAUSAL_VERIFIED",
+        "measurement_metric": "tail_rms_db",
+        "measurement_definition_id": "tail_rms_db:c6a68e551ef9",
+        "baseline_db": -240.0,
+        "treatment_db": -35.52,
+        "delta_db": 204.48,
+        "effect_status": "EFFECT_OBSERVED"
+      },
+      "episodes": [
+        {
+          "episode_id": "release_qualified_complete_001_PASS",
+          "admission_status": "ADMITTED",
+          "execution_status": "SUCCESS"
+        },
+        {
+          "episode_id": "release_qualified_complete_001_BLOCKED",
+          "admission_status": "REFUSED",
+          "execution_status": "BLOCKED"
+        }
+      ]
+    },
+    {
+      "semantic_id": "ENV1.ATTACK",
+      "semantic_target_id": "envelope_field_attack",
+      "section": "ENV",
+      "status_in_frozen_model": "VERIFIED",
+      "state_invariant": "CURRENT and now fully documented (gaps closed)",
+      "evidence_records": {
+        "qualification_experiment": "attack_qualified_complete_001",
+        "evidence_record_file": "experiments/_env_attack_qualified_complete_001.pkl",
+        "contract_extracted_file": "STEP_4_1_ATTACK_CONTRACT_EXTRACTED.json"
+      },
+      "qualification": {
+        "status": "CAUSAL_VERIFIED",
+        "measurement_metric": "attack_onset_rms_db",
+        "measurement_definition_id": "attack_onset_rms_db:5369167c8e73",
+        "baseline_db": -19.11,
+        "treatment_db": -52.40,
+        "delta_db": -33.29,
+        "effect_status": "EFFECT_OBSERVED"
+      },
+      "episodes": [
+        {
+          "episode_id": "attack_qualified_complete_001_PASS_FULL",
+          "admission_status": "ADMITTED",
+          "execution_status": "SUCCESS",
+          "file": "serum2/qualification/attack_qualified_complete_001_PASS_FULL.json"
+        }
+      ]
+    }
+  ],
+  "invariant_checks": {
+    "semantic_count": {
+      "before": 908,
+      "after": 908,
+      "status": "PASS"
+    },
+    "target_count": {
+      "before": 396,
+      "after": 396,
+      "status": "PASS"
+    },
+    "no_new_semantic_ids": {
+      "status": "PASS"
+    },
+    "no_frozen_inventory_modifications": {
+      "status": "PASS",
+      "note": "All closed gaps documented in separate files; frozen inventories unmodified"
+    },
+    "all_evidence_references_resolve": {
+      "status": "PASS",
+      "evidence_files": 6
+    }
+  },
+  "final_verdict": {
+    "functional_acceptance": "PASS",
+    "authority_audit": "PASS",
+    "all_three_gaps": "RESOLVED_OR_FORMALLY_DISPOSITIONED",
+    "ready_for_producer_loop": true
+  }
+}

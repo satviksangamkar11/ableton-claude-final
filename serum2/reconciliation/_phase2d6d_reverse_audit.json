@@ -1,0 +1,2526 @@
+[
+  {
+    "target_id": "FXEQ.Freq1",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Freq2",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Reso1",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Reso2",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Gain1",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Gain2",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.LevelOut",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.Drive",
+    "semantic_owners": [
+      "FX.DISTORTION.DRIVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Enable",
+    "semantic_owners": [
+      "MIXER.SUB.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Octave",
+    "semantic_owners": [
+      "SUB_OSC.OCTAVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Volume",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "SUB.Level",
+    "semantic_owners": [
+      "SUB_OSC.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Pan",
+    "semantic_owners": [
+      "SUB_OSC.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.BUS1Send",
+    "semantic_owners": [
+      "MIXER.SUB.BUS1"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.BUS2Send",
+    "semantic_owners": [
+      "MIXER.SUB.BUS2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Route",
+    "semantic_owners": [
+      "MIXER.SUB.ROUTING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB.Detune",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "SUB.Warp",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Enable",
+    "semantic_owners": [
+      "MIXER.OSC_A.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.Octave",
+    "semantic_owners": [
+      "OSC1.OCTAVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.Volume",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Level",
+    "semantic_owners": [
+      "MIXER.OSC_A.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.Pan",
+    "semantic_owners": [
+      "MIXER.OSC_A.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.BUS1Send",
+    "semantic_owners": [
+      "MIXER.OSC_A.BUS1"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.BUS2Send",
+    "semantic_owners": [
+      "MIXER.OSC_A.BUS2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.Route",
+    "semantic_owners": [
+      "MIXER.OSC_A.ROUTING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.Detune",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Wavetable",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.Warp",
+    "semantic_owners": [
+      "OSC1.WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Octave",
+    "semantic_owners": [
+      "OSC2.OCTAVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Volume",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC2.Level",
+    "semantic_owners": [
+      "MIXER.OSC_B.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Pan",
+    "semantic_owners": [
+      "MIXER.OSC_B.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.BUS1Send",
+    "semantic_owners": [
+      "MIXER.OSC_B.BUS1"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.BUS2Send",
+    "semantic_owners": [
+      "MIXER.OSC_B.BUS2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Route",
+    "semantic_owners": [
+      "MIXER.OSC_B.ROUTING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Detune",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC2.Warp",
+    "semantic_owners": [
+      "OSC2.WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Octave",
+    "semantic_owners": [
+      "OSC3.OCTAVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Volume",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC3.Level",
+    "semantic_owners": [
+      "MIXER.OSC_C.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Pan",
+    "semantic_owners": [
+      "MIXER.OSC_C.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.BUS1Send",
+    "semantic_owners": [
+      "MIXER.OSC_C.BUS1"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.BUS2Send",
+    "semantic_owners": [
+      "MIXER.OSC_C.BUS2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Route",
+    "semantic_owners": [
+      "MIXER.OSC_C.ROUTING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Detune",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC3.Warp",
+    "semantic_owners": [
+      "OSC3.WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.Volume",
+    "semantic_owners": [
+      "MIXER.NOISE.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.Level",
+    "semantic_owners": [
+      "NOISE_OSC.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.Pan",
+    "semantic_owners": [
+      "NOISE_OSC.PAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.BUS1Send",
+    "semantic_owners": [
+      "MIXER.NOISE.BUS1"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.BUS2Send",
+    "semantic_owners": [
+      "MIXER.NOISE.BUS2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.Route",
+    "semantic_owners": [
+      "MIXER.NOISE.ROUTING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE.Warp",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.Type",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Filter.Resonance",
+    "semantic_owners": [
+      "FILTER1.RESONANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Type",
+    "semantic_owners": [
+      "FILTER1.TYPE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER1.BUS1Send",
+    "semantic_owners": [
+      "MIXER.FILTER1.BUS1"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER1.BUS2Send",
+    "semantic_owners": [
+      "MIXER.FILTER1.BUS2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER1.Route",
+    "semantic_owners": [
+      "MIXER.FILTER1.ROUTING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER2.BUS1Send",
+    "semantic_owners": [
+      "MIXER.FILTER2.BUS1"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER2.BUS2Send",
+    "semantic_owners": [
+      "MIXER.FILTER2.BUS2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER2.Route",
+    "semantic_owners": [
+      "MIXER.FILTER2.ROUTING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER1.Level",
+    "semantic_owners": [
+      "MIXER.FILTER1.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER1.Mix",
+    "semantic_owners": [
+      "MIXER.FILTER1.WET"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER2.Level",
+    "semantic_owners": [
+      "MIXER.FILTER2.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER2.Mix",
+    "semantic_owners": [
+      "MIXER.FILTER2.WET"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "BUS1.Level",
+    "semantic_owners": [
+      "MIXER.BUS1.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "BUS2.Level",
+    "semantic_owners": [
+      "MIXER.BUS2.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env1.Attack",
+    "semantic_owners": [
+      "ENV1.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env1.Decay",
+    "semantic_owners": [
+      "ENV1.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env1.Release",
+    "semantic_owners": [
+      "ENV1.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env1.Sustain",
+    "semantic_owners": [
+      "ENV1.SUSTAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Cutoff",
+    "semantic_owners": [
+      "FILTER1.CUTOFF"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Drive",
+    "semantic_owners": [
+      "FILTER1.DRIVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Q",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Filter2.Cutoff",
+    "semantic_owners": [
+      "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+      "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+      "FILTER2.CUTOFF"
+    ],
+    "classification": "MANY_TO_ONE"
+  },
+  {
+    "target_id": "Filter2.Resonance",
+    "semantic_owners": [
+      "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+      "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+      "FILTER2.RESONANCE"
+    ],
+    "classification": "MANY_TO_ONE"
+  },
+  {
+    "target_id": "Filter2.Type",
+    "semantic_owners": [
+      "FILTER2.TYPE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter2.Drive",
+    "semantic_owners": [
+      "FILTER2.DRIVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter2.Q",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Env2.Attack",
+    "semantic_owners": [
+      "ENV2.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env2.Decay",
+    "semantic_owners": [
+      "ENV2.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env2.Sustain",
+    "semantic_owners": [
+      "ENV2.SUSTAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env2.Release",
+    "semantic_owners": [
+      "ENV2.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env3.Attack",
+    "semantic_owners": [
+      "ENV3.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env3.Decay",
+    "semantic_owners": [
+      "ENV3.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env3.Sustain",
+    "semantic_owners": [
+      "ENV3.SUSTAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env3.Release",
+    "semantic_owners": [
+      "ENV3.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env4.Attack",
+    "semantic_owners": [
+      "ENV4.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env4.Decay",
+    "semantic_owners": [
+      "ENV4.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env4.Sustain",
+    "semantic_owners": [
+      "ENV4.SUSTAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Env4.Release",
+    "semantic_owners": [
+      "ENV4.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.MasterVolume",
+    "semantic_owners": [
+      "MIXER.MAIN.LEVEL"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.Transpose",
+    "semantic_owners": [
+      "KEYBOARD.TRANSPOSE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.Tuning",
+    "semantic_owners": [
+      "GLOBAL.TUNING.GLOBAL_TUNING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.Quality",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Swing",
+    "semantic_owners": [
+      "KEYBOARD.SWING"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.Scale",
+    "semantic_owners": [
+      "KEYBOARD.SCALE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.Key",
+    "semantic_owners": [
+      "KEYBOARD.KEY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.Portamento",
+    "semantic_owners": [
+      "VOICE.VOICING.PORTA_TIME"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.Glide",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.Mono",
+    "semantic_owners": [
+      "VOICE.VOICING.MONO"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.Voicing",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "Global.VelocityCurve",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO0.Rate",
+    "semantic_owners": [
+      "LFO1.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO0.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO0.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO0.Phase",
+    "semantic_owners": [
+      "LFO1.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO0.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO1.Rate",
+    "semantic_owners": [
+      "LFO2.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO1.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO1.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO1.Phase",
+    "semantic_owners": [
+      "LFO2.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO1.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO2.Rate",
+    "semantic_owners": [
+      "LFO3.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO2.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO2.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO2.Phase",
+    "semantic_owners": [
+      "LFO3.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO2.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO3.Rate",
+    "semantic_owners": [
+      "LFO4.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO3.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO3.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO3.Phase",
+    "semantic_owners": [
+      "LFO4.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO3.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO4.Rate",
+    "semantic_owners": [
+      "LFO5.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO4.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO4.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO4.Phase",
+    "semantic_owners": [
+      "LFO5.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO4.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO5.Rate",
+    "semantic_owners": [
+      "LFO6.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO5.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO5.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO5.Phase",
+    "semantic_owners": [
+      "LFO6.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO5.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Rate",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Phase",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO6.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Rate",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Phase",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO7.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Rate",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Phase",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO8.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Rate",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Shape",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Phase",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "LFO9.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.Tone",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.LevelOut",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.Time",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.Feedback",
+    "semantic_owners": [
+      "FX.DELAY.FEEDBACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXDelay.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXReverb.Time",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXReverb.Damping",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXReverb.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXCompressor.Threshold",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXCompressor.Ratio",
+    "semantic_owners": [
+      "FX.COMPRESSOR.RATIO"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXCompressor.Attack",
+    "semantic_owners": [
+      "FX.COMPRESSOR.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXCompressor.Release",
+    "semantic_owners": [
+      "FX.COMPRESSOR.RELEASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXChorus.Rate",
+    "semantic_owners": [
+      "FX.CHORUS.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXChorus.Depth",
+    "semantic_owners": [
+      "FX.CHORUS.DEPTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXChorus.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.Frequency",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.Range",
+    "semantic_owners": [
+      "FX.BODE.RANGE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXBODE.Direction",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFlanger.Rate",
+    "semantic_owners": [
+      "FX.FLANGER.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFlanger.Depth",
+    "semantic_owners": [
+      "FX.FLANGER.DEPTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFlanger.Feedback",
+    "semantic_owners": [
+      "FX.FLANGER.FEEDBACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFlanger.Phase",
+    "semantic_owners": [
+      "FX.FLANGER.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFlanger.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXPhaser.Frequency",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXPhaser.Feedback",
+    "semantic_owners": [
+      "FX.PHASER.FEEDBACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXPhaser.Phase",
+    "semantic_owners": [
+      "FX.PHASER.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXPhaser.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.Gain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.Phase",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.Mono",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.IR",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.IRGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.Attack",
+    "semantic_owners": [
+      "FX.CONVOLVE.ATTACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXConvolve.Decay",
+    "semantic_owners": [
+      "FX.CONVOLVE.DECAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXConvolve.Damping",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXHyper.Rate",
+    "semantic_owners": [
+      "FX.HYPER.RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXHyper.Unison",
+    "semantic_owners": [
+      "FX.HYPER.UNISON"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXHyper.Detune",
+    "semantic_owners": [
+      "FX.HYPER.DETUNE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXHyper.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Type",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Cutoff",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Resonance",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Drive",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilterFX.Mix",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "ModRoute.Curve",
+    "semantic_owners": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ModRoute.Bipolar",
+    "semantic_owners": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ModRoute.AuxSource",
+    "semantic_owners": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ModRoute.Bypass",
+    "semantic_owners": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ModRoute.MacroDepth",
+    "semantic_owners": [
+      "MATRIX.ROUTING.SIGNAL_BALANCE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.Enable",
+    "semantic_owners": [
+      "MIXER.OSC_B.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.Enable",
+    "semantic_owners": [
+      "MIXER.OSC_C.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter.Enable",
+    "semantic_owners": [
+      "MIXER.FILTER1.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Filter2.Enable",
+    "semantic_owners": [
+      "MIXER.FILTER2.ENABLE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "Global.PitchTracking",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "NOISE.Fine",
+    "semantic_owners": [
+      "NOISE_OSC.FINE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ARP.Enable",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.Shift",
+    "semantic_owners": [
+      "FX.BODE.SHIFT"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXBODE.LevelOut",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXBODE.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXChorus.Feedback",
+    "semantic_owners": [
+      "FX.CHORUS.FEEDBACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXChorus.Phase",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXChorus.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXCompressor.Gain",
+    "semantic_owners": [
+      "FX.COMPRESSOR.GAIN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXCompressor.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXConvolve.IRPath",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.Mode",
+    "semantic_owners": [
+      "FX.DELAY.MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXDelay.TimeL",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.TimeR",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.OffsetL",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.OffsetR",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDelay.BW",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.Mode",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.Freq",
+    "semantic_owners": [
+      "FX.DISTORTION.FREQ"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXDistortion.LPHP",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.PrePost",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXDistortion.BW",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Type1",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXEQ.Type2",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilter.Type",
+    "semantic_owners": [
+      "FX.FILTER.TYPE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFilter.Cutoff",
+    "semantic_owners": [
+      "FX.FILTER.CUTOFF"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFilter.Resonance",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFilter.Drive",
+    "semantic_owners": [
+      "FX.FILTER.DRIVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXFilter.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXFlanger.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXHyper.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXHyper.Retrigger",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXPhaser.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXReverb.Size",
+    "semantic_owners": [
+      "FX.REVERB.SIZE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FXReverb.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXSplitter.BandCount",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXSplitter.Crossover1",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXSplitter.Crossover2",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXSplitter.Crossover3",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "FXUtility.MixOrGain",
+    "semantic_owners": [],
+    "classification": "ORPHAN_TECHNICAL"
+  },
+  {
+    "target_id": "OSC1.SEMI",
+    "semantic_owners": [
+      "OSC1.SEMI"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.FINE",
+    "semantic_owners": [
+      "OSC1.FINE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.COARSE_PITCH",
+    "semantic_owners": [
+      "OSC1.COARSE_PITCH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.START",
+    "semantic_owners": [
+      "OSC1.START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.END",
+    "semantic_owners": [
+      "OSC1.END"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.SCAN_RATE",
+    "semantic_owners": [
+      "OSC1.SCAN_RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.SCAN_BPM_RATE",
+    "semantic_owners": [
+      "OSC1.SCAN_BPM_RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.POSITION",
+    "semantic_owners": [
+      "OSC1.POSITION"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.LOOP_START",
+    "semantic_owners": [
+      "OSC1.LOOP_START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.LOOP_END",
+    "semantic_owners": [
+      "OSC1.LOOP_END"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.LOOP_X-FADE",
+    "semantic_owners": [
+      "OSC1.LOOP_X-FADE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.LOOP_MODE",
+    "semantic_owners": [
+      "OSC1.LOOP_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.SINGLE_SLICE",
+    "semantic_owners": [
+      "OSC1.SINGLE_SLICE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNISON",
+    "semantic_owners": [
+      "OSC1.UNISON"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_STACK",
+    "semantic_owners": [
+      "OSC1.UNI_STACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_DETUNE",
+    "semantic_owners": [
+      "OSC1.UNI_DETUNE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_BLEND",
+    "semantic_owners": [
+      "OSC1.UNI_BLEND"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_WIDTH",
+    "semantic_owners": [
+      "OSC1.UNI_WIDTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_SPAN",
+    "semantic_owners": [
+      "OSC1.UNI_SPAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_RAND_START",
+    "semantic_owners": [
+      "OSC1.UNI_RAND_START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_WARP",
+    "semantic_owners": [
+      "OSC1.UNI_WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_WARP_2",
+    "semantic_owners": [
+      "OSC1.UNI_WARP_2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.WARP_VAR",
+    "semantic_owners": [
+      "OSC1.WARP_VAR"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.WARP_MODE",
+    "semantic_owners": [
+      "OSC1.WARP_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.WARP_2",
+    "semantic_owners": [
+      "OSC1.WARP_2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.WARP_2_VAR",
+    "semantic_owners": [
+      "OSC1.WARP_2_VAR"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.WARP_2_MODE",
+    "semantic_owners": [
+      "OSC1.WARP_2_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.WT_POS",
+    "semantic_owners": [
+      "OSC1.WT_POS"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.UNI_WT_POS",
+    "semantic_owners": [
+      "OSC1.UNI_WT_POS"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.PHASE",
+    "semantic_owners": [
+      "OSC1.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC1.RAND_PHASE",
+    "semantic_owners": [
+      "OSC1.RAND_PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.SEMI",
+    "semantic_owners": [
+      "OSC2.SEMI"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.FINE",
+    "semantic_owners": [
+      "OSC2.FINE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.COARSE_PITCH",
+    "semantic_owners": [
+      "OSC2.COARSE_PITCH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.START",
+    "semantic_owners": [
+      "OSC2.START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.END",
+    "semantic_owners": [
+      "OSC2.END"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.SCAN_RATE",
+    "semantic_owners": [
+      "OSC2.SCAN_RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.SCAN_BPM_RATE",
+    "semantic_owners": [
+      "OSC2.SCAN_BPM_RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.POSITION",
+    "semantic_owners": [
+      "OSC2.POSITION"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.LOOP_START",
+    "semantic_owners": [
+      "OSC2.LOOP_START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.LOOP_END",
+    "semantic_owners": [
+      "OSC2.LOOP_END"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.LOOP_X-FADE",
+    "semantic_owners": [
+      "OSC2.LOOP_X-FADE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.LOOP_MODE",
+    "semantic_owners": [
+      "OSC2.LOOP_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.SINGLE_SLICE",
+    "semantic_owners": [
+      "OSC2.SINGLE_SLICE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNISON",
+    "semantic_owners": [
+      "OSC2.UNISON"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_STACK",
+    "semantic_owners": [
+      "OSC2.UNI_STACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_DETUNE",
+    "semantic_owners": [
+      "OSC2.UNI_DETUNE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_BLEND",
+    "semantic_owners": [
+      "OSC2.UNI_BLEND"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_WIDTH",
+    "semantic_owners": [
+      "OSC2.UNI_WIDTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_SPAN",
+    "semantic_owners": [
+      "OSC2.UNI_SPAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_RAND_START",
+    "semantic_owners": [
+      "OSC2.UNI_RAND_START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_WARP",
+    "semantic_owners": [
+      "OSC2.UNI_WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_WARP_2",
+    "semantic_owners": [
+      "OSC2.UNI_WARP_2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.WARP_VAR",
+    "semantic_owners": [
+      "OSC2.WARP_VAR"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.WARP_MODE",
+    "semantic_owners": [
+      "OSC2.WARP_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.WARP_2",
+    "semantic_owners": [
+      "OSC2.WARP_2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.WARP_2_VAR",
+    "semantic_owners": [
+      "OSC2.WARP_2_VAR"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.WARP_2_MODE",
+    "semantic_owners": [
+      "OSC2.WARP_2_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.WT_POS",
+    "semantic_owners": [
+      "OSC2.WT_POS"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.UNI_WT_POS",
+    "semantic_owners": [
+      "OSC2.UNI_WT_POS"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.PHASE",
+    "semantic_owners": [
+      "OSC2.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC2.RAND_PHASE",
+    "semantic_owners": [
+      "OSC2.RAND_PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.SEMI",
+    "semantic_owners": [
+      "OSC3.SEMI"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.FINE",
+    "semantic_owners": [
+      "OSC3.FINE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.COARSE_PITCH",
+    "semantic_owners": [
+      "OSC3.COARSE_PITCH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.START",
+    "semantic_owners": [
+      "OSC3.START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.END",
+    "semantic_owners": [
+      "OSC3.END"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.SCAN_RATE",
+    "semantic_owners": [
+      "OSC3.SCAN_RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.SCAN_BPM_RATE",
+    "semantic_owners": [
+      "OSC3.SCAN_BPM_RATE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.POSITION",
+    "semantic_owners": [
+      "OSC3.POSITION"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.LOOP_START",
+    "semantic_owners": [
+      "OSC3.LOOP_START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.LOOP_END",
+    "semantic_owners": [
+      "OSC3.LOOP_END"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.LOOP_X-FADE",
+    "semantic_owners": [
+      "OSC3.LOOP_X-FADE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.LOOP_MODE",
+    "semantic_owners": [
+      "OSC3.LOOP_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.SINGLE_SLICE",
+    "semantic_owners": [
+      "OSC3.SINGLE_SLICE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNISON",
+    "semantic_owners": [
+      "OSC3.UNISON"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_STACK",
+    "semantic_owners": [
+      "OSC3.UNI_STACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_DETUNE",
+    "semantic_owners": [
+      "OSC3.UNI_DETUNE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_BLEND",
+    "semantic_owners": [
+      "OSC3.UNI_BLEND"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_WIDTH",
+    "semantic_owners": [
+      "OSC3.UNI_WIDTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_SPAN",
+    "semantic_owners": [
+      "OSC3.UNI_SPAN"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_RAND_START",
+    "semantic_owners": [
+      "OSC3.UNI_RAND_START"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_WARP",
+    "semantic_owners": [
+      "OSC3.UNI_WARP"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_WARP_2",
+    "semantic_owners": [
+      "OSC3.UNI_WARP_2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.WARP_VAR",
+    "semantic_owners": [
+      "OSC3.WARP_VAR"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.WARP_MODE",
+    "semantic_owners": [
+      "OSC3.WARP_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.WARP_2",
+    "semantic_owners": [
+      "OSC3.WARP_2"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.WARP_2_VAR",
+    "semantic_owners": [
+      "OSC3.WARP_2_VAR"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.WARP_2_MODE",
+    "semantic_owners": [
+      "OSC3.WARP_2_MODE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.WT_POS",
+    "semantic_owners": [
+      "OSC3.WT_POS"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.UNI_WT_POS",
+    "semantic_owners": [
+      "OSC3.UNI_WT_POS"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.PHASE",
+    "semantic_owners": [
+      "OSC3.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "OSC3.RAND_PHASE",
+    "semantic_owners": [
+      "OSC3.RAND_PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB_OSC.PITCH_TRACK",
+    "semantic_owners": [
+      "SUB_OSC.PITCH_TRACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB_OSC.SHAPE",
+    "semantic_owners": [
+      "SUB_OSC.SHAPE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB_OSC.CONT_PHASE",
+    "semantic_owners": [
+      "SUB_OSC.CONT_PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE_OSC.PITCH_TRACK",
+    "semantic_owners": [
+      "NOISE_OSC.PITCH_TRACK"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "CLIP.SETTINGS.OFFSET",
+    "semantic_owners": [
+      "CLIP.SETTINGS.OFFSET"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER1.VAR",
+    "semantic_owners": [
+      "FILTER1.VAR"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER1.STEREO",
+    "semantic_owners": [
+      "FILTER1.STEREO"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER2.VAR",
+    "semantic_owners": [
+      "FILTER2.VAR"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "FILTER2.STEREO",
+    "semantic_owners": [
+      "FILTER2.STEREO"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV1.ATK_CURVE",
+    "semantic_owners": [
+      "ENV1.ATK_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV1.DEC_CURVE",
+    "semantic_owners": [
+      "ENV1.DEC_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV1.REL_CURVE",
+    "semantic_owners": [
+      "ENV1.REL_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV2.ATK_CURVE",
+    "semantic_owners": [
+      "ENV2.ATK_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV2.DEC_CURVE",
+    "semantic_owners": [
+      "ENV2.DEC_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV2.REL_CURVE",
+    "semantic_owners": [
+      "ENV2.REL_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV3.ATK_CURVE",
+    "semantic_owners": [
+      "ENV3.ATK_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV3.DEC_CURVE",
+    "semantic_owners": [
+      "ENV3.DEC_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV3.REL_CURVE",
+    "semantic_owners": [
+      "ENV3.REL_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV4.ATK_CURVE",
+    "semantic_owners": [
+      "ENV4.ATK_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV4.DEC_CURVE",
+    "semantic_owners": [
+      "ENV4.DEC_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV4.REL_CURVE",
+    "semantic_owners": [
+      "ENV4.REL_CURVE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO1.RISE",
+    "semantic_owners": [
+      "LFO1.RISE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO1.SMOOTH",
+    "semantic_owners": [
+      "LFO1.SMOOTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO1.DELAY",
+    "semantic_owners": [
+      "LFO1.DELAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO2.RISE",
+    "semantic_owners": [
+      "LFO2.RISE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO2.SMOOTH",
+    "semantic_owners": [
+      "LFO2.SMOOTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO2.DELAY",
+    "semantic_owners": [
+      "LFO2.DELAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO3.RISE",
+    "semantic_owners": [
+      "LFO3.RISE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO3.SMOOTH",
+    "semantic_owners": [
+      "LFO3.SMOOTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO3.DELAY",
+    "semantic_owners": [
+      "LFO3.DELAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO4.RISE",
+    "semantic_owners": [
+      "LFO4.RISE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO4.SMOOTH",
+    "semantic_owners": [
+      "LFO4.SMOOTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO4.DELAY",
+    "semantic_owners": [
+      "LFO4.DELAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO5.RISE",
+    "semantic_owners": [
+      "LFO5.RISE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO5.SMOOTH",
+    "semantic_owners": [
+      "LFO5.SMOOTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO5.DELAY",
+    "semantic_owners": [
+      "LFO5.DELAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO6.RISE",
+    "semantic_owners": [
+      "LFO6.RISE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO6.SMOOTH",
+    "semantic_owners": [
+      "LFO6.SMOOTH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "LFO6.DELAY",
+    "semantic_owners": [
+      "LFO6.DELAY"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE_OSC.PITCH",
+    "semantic_owners": [
+      "NOISE_OSC.PITCH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE_OSC.PHASE",
+    "semantic_owners": [
+      "NOISE_OSC.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "NOISE_OSC.RAND_PHASE",
+    "semantic_owners": [
+      "NOISE_OSC.RAND_PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB_OSC.COARSE_PITCH",
+    "semantic_owners": [
+      "SUB_OSC.COARSE_PITCH"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "SUB_OSC.PHASE",
+    "semantic_owners": [
+      "SUB_OSC.PHASE"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV1.HOLD",
+    "semantic_owners": [
+      "ENV1.HOLD"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV2.HOLD",
+    "semantic_owners": [
+      "ENV2.HOLD"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV3.HOLD",
+    "semantic_owners": [
+      "ENV3.HOLD"
+    ],
+    "classification": "MAPPED"
+  },
+  {
+    "target_id": "ENV4.HOLD",
+    "semantic_owners": [
+      "ENV4.HOLD"
+    ],
+    "classification": "MAPPED"
+  }
+]

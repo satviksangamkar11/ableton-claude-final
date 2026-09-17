@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "purpose": "Canonical, evidence-backed alias registry for Phase 2D.2 mechanical reconciliation closure. Every entry must cite its evidence source -- lexical similarity alone is not sufficient grounds for an alias.",
+    "created": "2026-09-16"
+  },
+  "namespace_aliases": [
+    {
+      "semantic_namespace": "FILTER1",
+      "target_namespace": "Filter",
+      "evidence": "Phase 2A-R.4: targets.py declares 'Filter.Cutoff/Resonance/Drive/Type/Enable/Q' (no '1' suffix) alongside explicit 'Filter2.*' -- confirmed as the implicit FILTER1 alias by process of elimination and by the FILTER closure ledger's own common_controls list matching these exact field names."
+    },
+    {
+      "semantic_namespace": "FILTER2",
+      "target_namespace": "Filter2",
+      "evidence": "Direct explicit numbered form in targets.py, no alias needed beyond case normalization."
+    },
+    {
+      "semantic_namespace": "ENV{n}",
+      "target_namespace": "Env{n}",
+      "evidence": "Case-normalized 1-based direct match, confirmed working in Phase 2D first pass (Env1.Attack etc.)."
+    },
+    {
+      "semantic_namespace": "LFO{n}",
+      "target_namespace": "LFO{n-1}",
+      "evidence": "CONFIRMED via bridge.capture_v8_skeleton (live DawDreamer query, Phase 2D first pass): body-state has exactly LFO0-LFO9 (10 objects), matching Serum's 10 UI-facing LFOs. 0-based target indexing confirmed. Same-number candidate tested and found to be a false positive (produced spurious ONE_TO_MANY on every LFO field) -- explicitly excluded, not merely deprioritized."
+    },
+    {
+      "semantic_namespace": "OSC{n}",
+      "target_namespace": "OSC{n}",
+      "evidence": "Case-normalized direct match, same numbering (both use OSC1/2/3, no off-by-one -- unlike LFO)."
+    },
+    {
+      "semantic_namespace": "SUB_OSC",
+      "target_namespace": "SUB",
+      "evidence": "Direct structural alias, module-name normalization only."
+    },
+    {
+      "semantic_namespace": "NOISE_OSC",
+      "target_namespace": "NOISE",
+      "evidence": "Direct structural alias, module-name normalization only."
+    },
+    {
+      "semantic_namespace": "FX.EQUALIZER",
+      "target_namespace": "FXEQ",
+      "evidence": "Confirmed via direct inspection of targets.py: FXEQ.Freq1/Freq2/Reso1/Reso2/Gain1/Gain2/LevelOut/Type1/Type2 exist and match FX.EQUALIZER's own field set from the FX closure ledger (10 EQUALIZER-scoped controls documented). No other FX.* semantic namespace exists that these targets could plausibly belong to."
+    },
+    {
+      "semantic_namespace": "FX.{MODULE}",
+      "target_namespace": "FX{Module}",
+      "evidence": "General pattern confirmed working for Bode/Chorus/Compressor/Convolve/Delay/Distortion/Filter/Flanger/Hyper/Phaser/Reverb/Splitter/Utility in Phase 2D first pass -- direct concatenation, case-normalized field name."
+    },
+    {
+      "semantic_namespace": "GLOBAL",
+      "target_namespace": "Global",
+      "evidence": "Case-only alias. targets.py declares 'Global.MasterVolume/Transpose/Tuning/Quality/Swing/Scale/Key/Portamento/Glide/Mono/Voicing/VelocityCurve/PitchTracking' -- direct field-name match to several GLOBAL.* semantics once case is normalized."
+    },
+    {
+      "semantic_namespace": "MATRIX.ROUTING.SIGNAL_BALANCE",
+      "target_namespace": "ModRoute",
+      "evidence": "Phase 2D first pass: genuine one-to-many. Single routing concept (a modulation route's configuration) exposes multiple targetable sub-fields (Curve/Bipolar/AuxSource/MacroDepth/Bypass) that were never claimed to be a single scalar target."
+    }
+  ],
+  "ownership_aliases": [
+    {
+      "description": "Phase 2A-R.7 established that certain OSC/SUB/NOISE-panel Enable/Level/Pan candidates are the SAME physical VST3 parameter as pre-existing MIXER channel-strip records, evidenced by matching internal VST3 field names (e.g. MIXER.OSC_A.ENABLE's own right-click tooltip reads 'A Enable', matching the VST3 census field name exactly). The panel-side candidate records were retracted (not duplicated). This registry entry restores the target-side linkage WITHOUT resurrecting the retracted semantic_id -- the target now correctly points at the SURVIVING canonical semantic.",
+      "mappings": [
+        {"semantic_id": "MIXER.OSC_A.ENABLE", "target_id": "OSC1.Enable", "ui_surface": ["OSC_PANEL", "MIXER_CHANNEL_STRIP"], "evidence": "R.7: internal VST3 field name 'A Enable' matches exactly, EXACT evidence class"},
+        {"semantic_id": "MIXER.OSC_B.ENABLE", "target_id": "OSC2.Enable", "ui_surface": ["OSC_PANEL", "MIXER_CHANNEL_STRIP"], "evidence": "R.7: STRUCTURAL evidence class (generalized from OSC_A's directly-verified layout)"},
+        {"semantic_id": "MIXER.OSC_C.ENABLE", "target_id": "OSC3.Enable", "ui_surface": ["OSC_PANEL", "MIXER_CHANNEL_STRIP"], "evidence": "R.7: STRUCTURAL evidence class"},
+        {"semantic_id": "MIXER.SUB.ENABLE", "target_id": "SUB.Enable", "ui_surface": ["OSC_PANEL", "MIXER_CHANNEL_STRIP"], "evidence": "R.7: NEAR-EXACT (tooltip 'Sub Osc Enable' vs census 'Sub Enable', same VST3 idx193)"},
+        {"semantic_id": "MIXER.NOISE.ENABLE", "target_id": "NOISE.Volume", "ui_surface": ["OSC_PANEL", "MIXER_CHANNEL_STRIP"], "evidence": "NOTE: targets.py has no 'NOISE.Enable' target -- only 'NOISE.Volume' exists. This mapping is NOT established; left for 2D.4 human review, NOT auto-aliased here despite the R.7 Enable finding, since the target vocabulary itself lacks a NOISE.Enable entry."}
+      ],
+      "note": "MIXER.OSC_A/B/C.LEVEL <-> OSC{n}.Level and MIXER.OSC_A/B/C.PAN <-> OSC{n}.Pan follow the identical R.7 evidence pattern (same tooltip-name-matching logic) and are included via the general OSC{n} namespace alias rule above once MIXER module names are cross-walked to OSC{n} numbering (OSC_A=OSC1, OSC_B=OSC2, OSC_C=OSC3, established via MATRIX.SOURCE.OSC_A/B/C and MIXER.OSC_A/B/C naming co-occurring throughout this reconciliation)."
+    }
+  ],
+  "bus_send_ownership_aliases": [
+    {
+      "description": "MIXER.{X}.BUS1/BUS2 records explicitly cross-reference the corresponding Matrix destination and their notes state 'Exact physical control underlying the Matrix destination X>BUS1/BUS2' -- direct textual evidence, not lexical guessing. MIXER.{X}.ROUTING extended to Route by the FILTER closure ledger's own explicit grouping of BUS1Send/BUS2Send/Route as one 'existing_routing_targets' package (MIX-owned destination semantics).",
+      "cross_walk": {"OSC_A": "OSC1", "OSC_B": "OSC2", "OSC_C": "OSC3", "SUB": "SUB", "NOISE": "NOISE", "FILTER1": "FILTER1", "FILTER2": "FILTER2"},
+      "field_map": {"BUS1": "BUS1Send", "BUS2": "BUS2Send", "ROUTING": "Route"},
+      "evidence": "21 mappings, all verified to exist as real targets. BUS1/BUS2: direct cross_reference text. ROUTING/Route: extended via FILTER closure ledger's explicit BUS1Send+BUS2Send+Route grouping statement."
+    }
+  ],
+  "global_cross_section_ownership_aliases": [
+    {
+      "description": "targets.py's 'Global.*' namespace bundles fields the semantic inventory correctly distributed across three sections (GLOBAL, GLOBAL_KEYBOARD, VOICE) based on actual UI panel location -- an established project pattern (see VOICE section's own PORTA_TIME re-homing history).",
+      "confirmed_via_direct_evidence": [
+        {"target_id": "Global.MasterVolume", "semantic_id": "MIXER.MAIN.LEVEL", "evidence": "R.9 MATRIX 'Global' destination family ('Amp') + GLOBAL closure text: 'Master Volume... already correctly owned by MIXER.MAIN.LEVEL, confirmed via inventory cross-check'"},
+        {"target_id": "Global.Transpose", "semantic_id": "KEYBOARD.TRANSPOSE", "evidence": "R.9 MATRIX 'Global' destination family, direct citation"},
+        {"target_id": "Global.Tuning", "semantic_id": "GLOBAL.TUNING.GLOBAL_TUNING", "evidence": "R.9 MATRIX 'Global' destination family ('Main Tuning'), direct citation"},
+        {"target_id": "Global.Swing", "semantic_id": "KEYBOARD.SWING", "evidence": "R.9 MATRIX 'Global' destination family, direct citation"},
+        {"target_id": "Global.Portamento", "semantic_id": "VOICE.VOICING.PORTA_TIME", "evidence": "R.9 MATRIX 'Global' destination family ('Porta Time'), direct citation"}
+      ],
+      "confirmed_via_structural_pattern": [
+        {"target_id": "Global.Scale", "semantic_id": "KEYBOARD.SCALE", "evidence": "Same GLOBAL_KEYBOARD ownership pattern as Transpose/Swing (both directly confirmed above, same target-family neighbors), weaker than direct citation but consistent with an established, repeatedly-confirmed convention"},
+        {"target_id": "Global.Key", "semantic_id": "KEYBOARD.KEY", "evidence": "Same pattern as Scale"},
+        {"target_id": "Global.Mono", "semantic_id": "VOICE.VOICING.MONO", "evidence": "Same VOICE ownership pattern as Portamento (directly confirmed above)"}
+      ],
+      "left_unresolved": [
+        {"target_id": "Global.Quality", "reason": "Ambiguous which of GLOBAL.QUALITY.{OVERSAMPLING,OVERSAMPLING_LOCK,S1_COMPATIBILITY,DISABLE_SMOOTHING} it refers to -- 4 candidates, no disambiguating evidence"},
+        {"target_id": "Global.Glide", "reason": "No 'Glide' field name found anywhere in VOICE.VOICING.* (only PORTA_TIME/PORTA_CURVE/PORTA_ALWAYS/PORTA_SCALED) or elsewhere"},
+        {"target_id": "Global.Voicing", "reason": "Ambiguous between VOICE.VOICING.MONO/POLY or another concept -- no disambiguating evidence"},
+        {"target_id": "Global.VelocityCurve", "reason": "Matches an EXISTING, EXPLICITLY UNRESOLVED project hypothesis (VOICE closure notes: 'very likely a mislabeling of VOICE.VOICING.PORTA_CURVE... NOT ruled out') -- consistent with that prior disposition, left UNKNOWN here too, not newly resolved"},
+        {"target_id": "Global.PitchTracking", "reason": "No corroborating evidence found in this pass"}
+      ]
+    }
+  ],
+  "filter_dual_surface_aliases": [
+    {
+      "description": "Phase 2A-R.4 established (via explicit MIXER cross_reference text) that FILTER's Level/Mix/Enable are the same physical parameter as MIXER.FILTER{n}.LEVEL/.WET/.ENABLE. targets.py separately exposes these under FILTER1.Level/FILTER1.Mix (distinct from the Filter.Cutoff-family targets, capability_key voicefilter0_plain_param_*) and Filter.Enable/Filter2.Enable.",
+      "mappings": [
+        {"semantic_id": "MIXER.FILTER1.LEVEL", "target_id": "FILTER1.Level", "evidence": "R.4: explicit cross_reference FILTER.1.*, 'likely the same physical parameter'"},
+        {"semantic_id": "MIXER.FILTER1.WET", "target_id": "FILTER1.Mix", "evidence": "R.4: explicit cross_reference, 'Cross-references the Wet parameter'"},
+        {"semantic_id": "MIXER.FILTER2.LEVEL", "target_id": "FILTER2.Level", "evidence": "R.4: same pattern as FILTER1"},
+        {"semantic_id": "MIXER.FILTER2.WET", "target_id": "FILTER2.Mix", "evidence": "R.4: same pattern as FILTER1"},
+        {"semantic_id": "MIXER.FILTER1.ENABLE", "target_id": "Filter.Enable", "evidence": "R.4: explicit cross_reference FILTER.1.*"},
+        {"semantic_id": "MIXER.FILTER2.ENABLE", "target_id": "Filter2.Enable", "evidence": "R.4: same pattern"}
+      ]
+    }
+  ],
+  "explicitly_not_aliased": [
+    {
+      "case": "MACRO.* (48 semantic records: MACRO.0{n}.VALUE, .NAME, and related)",
+      "reason": "targets.py contains only 'ModRoute.MacroDepth' in the Macro-adjacent namespace, which is a routing-depth concept (how much a macro modulates its assigned destination), NOT the macro's own dial/value control. No evidence establishes these are the same target. Per the governing rule, this stays UNKNOWN, not NO_TARGET, until positive confirmation (e.g. checking Global0.plainParams or similar for a macro-value field) is performed.",
+      "status": "UNRESOLVED -- flagged for 2D.4 human/evidence review"
+    },
+    {
+      "case": "MIXER.NOISE.ENABLE -> NOISE.Enable",
+      "reason": "targets.py has no 'NOISE.Enable' entry (only 'NOISE.Volume', 'NOISE.Level', 'NOISE.Pan', 'NOISE.BUS1Send', 'NOISE.BUS2Send', 'NOISE.Route', 'NOISE.Warp', 'NOISE.Type', 'NOISE.Fine'). Aliasing MIXER.NOISE.ENABLE to a nonexistent target would fabricate a mapping. Left UNKNOWN.",
+      "status": "UNRESOLVED -- targets.py itself lacks this target; not a matcher gap, a genuine target-vocabulary gap"
+    }
+  ]
+}

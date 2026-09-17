@@ -1,0 +1,114 @@
+{
+  "verified_existing": [
+    {
+      "vst3_field": "Sub Level",
+      "index": 194,
+      "maps_to": "SUB_OSC.LEVEL",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Sub Pan",
+      "index": 195,
+      "maps_to": "SUB_OSC.PAN",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Sub Octave",
+      "index": 196,
+      "maps_to": "SUB_OSC.OCTAVE",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Sub Coarse Pitch",
+      "index": 197,
+      "maps_to": "SUB_OSC.COARSE_PITCH",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Sub Phase",
+      "index": 200,
+      "maps_to": "SUB_OSC.PHASE",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Sub Osc>Filter Balance",
+      "index": 460,
+      "maps_to": "MIXER.SUB.FILTER_BALANCE",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Sub Osc>BUS1",
+      "index": 461,
+      "maps_to": "MIXER.SUB.BUS1",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Sub Osc>BUS2",
+      "index": 462,
+      "maps_to": "MIXER.SUB.BUS2",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise Level",
+      "index": 186,
+      "maps_to": "NOISE_OSC.LEVEL",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise Pan",
+      "index": 187,
+      "maps_to": "NOISE_OSC.PAN",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise Pitch",
+      "index": 189,
+      "maps_to": "NOISE_OSC.PITCH",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise Fine",
+      "index": 190,
+      "maps_to": "NOISE_OSC.FINE",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise Phase",
+      "index": 191,
+      "maps_to": "NOISE_OSC.PHASE",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise Rand Phase",
+      "index": 192,
+      "maps_to": "NOISE_OSC.RAND_PHASE",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise>Filter Balance",
+      "index": 457,
+      "maps_to": "MIXER.NOISE.FILTER_BALANCE",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise>BUS1",
+      "index": 458,
+      "maps_to": "MIXER.NOISE.BUS1",
+      "confirmed_present_in_A": true
+    },
+    {
+      "vst3_field": "Noise>BUS2",
+      "index": 459,
+      "maps_to": "MIXER.NOISE.BUS2",
+      "confirmed_present_in_A": true
+    }
+  ],
+  "new_records": [
+    "SUB_OSC.ENABLE",
+    "SUB_OSC.PITCH_TRACK",
+    "SUB_OSC.SHAPE",
+    "SUB_OSC.CONT_PHASE",
+    "NOISE_OSC.ENABLE",
+    "NOISE_OSC.PITCH_TRACK"
+  ]
+}

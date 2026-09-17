@@ -1,0 +1,5315 @@
+{
+  "metadata": {
+    "date": "2026-09-17",
+    "total_targets": 396,
+    "total_semantics": 908,
+    "phase": "Bulk automated execution census"
+  },
+  "target_results": [
+    {
+      "target_id": "ARP.Enable",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "BUS1.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.BUS1.LEVEL"
+      ]
+    },
+    {
+      "target_id": "BUS2.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.BUS2.LEVEL"
+      ]
+    },
+    {
+      "target_id": "CLIP.SETTINGS.OFFSET",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "CLIP.SETTINGS.OFFSET"
+      ]
+    },
+    {
+      "target_id": "ENV1.ATK_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV1.ATK_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV1.DEC_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV1.DEC_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV1.HOLD",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV1.HOLD"
+      ]
+    },
+    {
+      "target_id": "ENV1.REL_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV1.REL_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV2.ATK_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV2.ATK_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV2.DEC_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV2.DEC_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV2.HOLD",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV2.HOLD"
+      ]
+    },
+    {
+      "target_id": "ENV2.REL_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV2.REL_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV3.ATK_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV3.ATK_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV3.DEC_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV3.DEC_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV3.HOLD",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV3.HOLD"
+      ]
+    },
+    {
+      "target_id": "ENV3.REL_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV3.REL_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV4.ATK_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV4.ATK_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV4.DEC_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV4.DEC_CURVE"
+      ]
+    },
+    {
+      "target_id": "ENV4.HOLD",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV4.HOLD"
+      ]
+    },
+    {
+      "target_id": "ENV4.REL_CURVE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV4.REL_CURVE"
+      ]
+    },
+    {
+      "target_id": "Env1.Attack",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV1.ATTACK"
+      ]
+    },
+    {
+      "target_id": "Env1.Decay",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV1.DECAY"
+      ]
+    },
+    {
+      "target_id": "Env1.Release",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV1.RELEASE"
+      ]
+    },
+    {
+      "target_id": "Env1.Sustain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV1.SUSTAIN"
+      ]
+    },
+    {
+      "target_id": "Env2.Attack",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV2.ATTACK"
+      ]
+    },
+    {
+      "target_id": "Env2.Decay",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV2.DECAY"
+      ]
+    },
+    {
+      "target_id": "Env2.Release",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV2.RELEASE"
+      ]
+    },
+    {
+      "target_id": "Env2.Sustain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV2.SUSTAIN"
+      ]
+    },
+    {
+      "target_id": "Env3.Attack",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV3.ATTACK"
+      ]
+    },
+    {
+      "target_id": "Env3.Decay",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV3.DECAY"
+      ]
+    },
+    {
+      "target_id": "Env3.Release",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV3.RELEASE"
+      ]
+    },
+    {
+      "target_id": "Env3.Sustain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV3.SUSTAIN"
+      ]
+    },
+    {
+      "target_id": "Env4.Attack",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV4.ATTACK"
+      ]
+    },
+    {
+      "target_id": "Env4.Decay",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV4.DECAY"
+      ]
+    },
+    {
+      "target_id": "Env4.Release",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV4.RELEASE"
+      ]
+    },
+    {
+      "target_id": "Env4.Sustain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "ENV4.SUSTAIN"
+      ]
+    },
+    {
+      "target_id": "FILTER1.BUS1Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER1.BUS1"
+      ]
+    },
+    {
+      "target_id": "FILTER1.BUS2Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER1.BUS2"
+      ]
+    },
+    {
+      "target_id": "FILTER1.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER1.LEVEL"
+      ]
+    },
+    {
+      "target_id": "FILTER1.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER1.WET"
+      ]
+    },
+    {
+      "target_id": "FILTER1.Route",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER1.ROUTING"
+      ]
+    },
+    {
+      "target_id": "FILTER1.STEREO",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER1.STEREO"
+      ]
+    },
+    {
+      "target_id": "FILTER1.VAR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER1.VAR"
+      ]
+    },
+    {
+      "target_id": "FILTER2.BUS1Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER2.BUS1"
+      ]
+    },
+    {
+      "target_id": "FILTER2.BUS2Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER2.BUS2"
+      ]
+    },
+    {
+      "target_id": "FILTER2.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER2.LEVEL"
+      ]
+    },
+    {
+      "target_id": "FILTER2.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER2.WET"
+      ]
+    },
+    {
+      "target_id": "FILTER2.Route",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER2.ROUTING"
+      ]
+    },
+    {
+      "target_id": "FILTER2.STEREO",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER2.STEREO"
+      ]
+    },
+    {
+      "target_id": "FILTER2.VAR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER2.VAR"
+      ]
+    },
+    {
+      "target_id": "FXBODE.Direction",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXBODE.Frequency",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXBODE.LevelOut",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXBODE.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXBODE.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXBODE.Range",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.BODE.RANGE"
+      ]
+    },
+    {
+      "target_id": "FXBODE.Shift",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.BODE.SHIFT"
+      ]
+    },
+    {
+      "target_id": "FXChorus.Depth",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.CHORUS.DEPTH"
+      ]
+    },
+    {
+      "target_id": "FXChorus.Feedback",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.CHORUS.FEEDBACK"
+      ]
+    },
+    {
+      "target_id": "FXChorus.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXChorus.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXChorus.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXChorus.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.CHORUS.RATE"
+      ]
+    },
+    {
+      "target_id": "FXCompressor.Attack",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.COMPRESSOR.ATTACK"
+      ]
+    },
+    {
+      "target_id": "FXCompressor.Gain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.COMPRESSOR.GAIN"
+      ]
+    },
+    {
+      "target_id": "FXCompressor.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXCompressor.Ratio",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.COMPRESSOR.RATIO"
+      ]
+    },
+    {
+      "target_id": "FXCompressor.Release",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.COMPRESSOR.RELEASE"
+      ]
+    },
+    {
+      "target_id": "FXCompressor.Threshold",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXConvolve.Attack",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.CONVOLVE.ATTACK"
+      ]
+    },
+    {
+      "target_id": "FXConvolve.Damping",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXConvolve.Decay",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.CONVOLVE.DECAY"
+      ]
+    },
+    {
+      "target_id": "FXConvolve.IR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXConvolve.IRGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXConvolve.IRPath",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXConvolve.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXConvolve.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDelay.BW",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDelay.Feedback",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.DELAY.FEEDBACK"
+      ]
+    },
+    {
+      "target_id": "FXDelay.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDelay.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDelay.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.DELAY.MODE"
+      ]
+    },
+    {
+      "target_id": "FXDelay.OffsetL",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDelay.OffsetR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDelay.Time",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDelay.TimeL",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDelay.TimeR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDistortion.BW",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDistortion.Drive",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.DISTORTION.DRIVE"
+      ]
+    },
+    {
+      "target_id": "FXDistortion.Freq",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.DISTORTION.FREQ"
+      ]
+    },
+    {
+      "target_id": "FXDistortion.LPHP",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDistortion.LevelOut",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDistortion.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDistortion.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDistortion.PrePost",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXDistortion.Tone",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.Freq1",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.Freq2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.Gain1",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.Gain2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.LevelOut",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.Reso1",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.Reso2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.Type1",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXEQ.Type2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFilter.Cutoff",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.FILTER.CUTOFF"
+      ]
+    },
+    {
+      "target_id": "FXFilter.Drive",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.FILTER.DRIVE"
+      ]
+    },
+    {
+      "target_id": "FXFilter.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFilter.Resonance",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFilter.Type",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.FILTER.TYPE"
+      ]
+    },
+    {
+      "target_id": "FXFilterFX.Cutoff",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFilterFX.Drive",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFilterFX.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFilterFX.Resonance",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFilterFX.Type",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFlanger.Depth",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.FLANGER.DEPTH"
+      ]
+    },
+    {
+      "target_id": "FXFlanger.Feedback",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.FLANGER.FEEDBACK"
+      ]
+    },
+    {
+      "target_id": "FXFlanger.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFlanger.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXFlanger.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.FLANGER.PHASE"
+      ]
+    },
+    {
+      "target_id": "FXFlanger.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.FLANGER.RATE"
+      ]
+    },
+    {
+      "target_id": "FXHyper.Detune",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.HYPER.DETUNE"
+      ]
+    },
+    {
+      "target_id": "FXHyper.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXHyper.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXHyper.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.HYPER.RATE"
+      ]
+    },
+    {
+      "target_id": "FXHyper.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXHyper.Unison",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.HYPER.UNISON"
+      ]
+    },
+    {
+      "target_id": "FXPhaser.Feedback",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.PHASER.FEEDBACK"
+      ]
+    },
+    {
+      "target_id": "FXPhaser.Frequency",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXPhaser.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXPhaser.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXPhaser.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.PHASER.PHASE"
+      ]
+    },
+    {
+      "target_id": "FXReverb.Damping",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXReverb.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXReverb.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXReverb.Size",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FX.REVERB.SIZE"
+      ]
+    },
+    {
+      "target_id": "FXReverb.Time",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXSplitter.BandCount",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXSplitter.Crossover1",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXSplitter.Crossover2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXSplitter.Crossover3",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXUtility.Gain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXUtility.Mix",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXUtility.MixOrGain",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXUtility.Mono",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "FXUtility.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "Filter.Cutoff",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER1.CUTOFF"
+      ]
+    },
+    {
+      "target_id": "Filter.Drive",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER1.DRIVE"
+      ]
+    },
+    {
+      "target_id": "Filter.Enable",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER1.ENABLE"
+      ]
+    },
+    {
+      "target_id": "Filter.Q",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "Filter.Resonance",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER1.RESONANCE"
+      ]
+    },
+    {
+      "target_id": "Filter.Type",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER1.TYPE"
+      ]
+    },
+    {
+      "target_id": "Filter2.Cutoff",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+        "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+        "FILTER2.CUTOFF"
+      ]
+    },
+    {
+      "target_id": "Filter2.Drive",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER2.DRIVE"
+      ]
+    },
+    {
+      "target_id": "Filter2.Enable",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER2.ENABLE"
+      ]
+    },
+    {
+      "target_id": "Filter2.Q",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "Filter2.Resonance",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.FILTER1.GRAPHIC_CUTOFF_RESONANCE",
+        "MIXER.FILTER2.GRAPHIC_CUTOFF_RESONANCE",
+        "FILTER2.RESONANCE"
+      ]
+    },
+    {
+      "target_id": "Filter2.Type",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "FILTER2.TYPE"
+      ]
+    },
+    {
+      "target_id": "Global.Glide",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "Global.Key",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "KEYBOARD.KEY"
+      ]
+    },
+    {
+      "target_id": "Global.MasterVolume",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.MAIN.LEVEL"
+      ]
+    },
+    {
+      "target_id": "Global.Mono",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "VOICE.VOICING.MONO"
+      ]
+    },
+    {
+      "target_id": "Global.PitchTracking",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "Global.Portamento",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "VOICE.VOICING.PORTA_TIME"
+      ]
+    },
+    {
+      "target_id": "Global.Quality",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "Global.Scale",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "KEYBOARD.SCALE"
+      ]
+    },
+    {
+      "target_id": "Global.Swing",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "KEYBOARD.SWING"
+      ]
+    },
+    {
+      "target_id": "Global.Transpose",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "KEYBOARD.TRANSPOSE"
+      ]
+    },
+    {
+      "target_id": "Global.Tuning",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "GLOBAL.TUNING.GLOBAL_TUNING"
+      ]
+    },
+    {
+      "target_id": "Global.VelocityCurve",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "Global.Voicing",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO0.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO0.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO1.PHASE"
+      ]
+    },
+    {
+      "target_id": "LFO0.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO1.RATE"
+      ]
+    },
+    {
+      "target_id": "LFO0.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO0.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO1.DELAY",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO1.DELAY"
+      ]
+    },
+    {
+      "target_id": "LFO1.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO1.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO2.PHASE"
+      ]
+    },
+    {
+      "target_id": "LFO1.RISE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO1.RISE"
+      ]
+    },
+    {
+      "target_id": "LFO1.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO2.RATE"
+      ]
+    },
+    {
+      "target_id": "LFO1.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO1.SMOOTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO1.SMOOTH"
+      ]
+    },
+    {
+      "target_id": "LFO1.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO2.DELAY",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO2.DELAY"
+      ]
+    },
+    {
+      "target_id": "LFO2.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO2.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO3.PHASE"
+      ]
+    },
+    {
+      "target_id": "LFO2.RISE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO2.RISE"
+      ]
+    },
+    {
+      "target_id": "LFO2.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO3.RATE"
+      ]
+    },
+    {
+      "target_id": "LFO2.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO2.SMOOTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO2.SMOOTH"
+      ]
+    },
+    {
+      "target_id": "LFO2.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO3.DELAY",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO3.DELAY"
+      ]
+    },
+    {
+      "target_id": "LFO3.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO3.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO4.PHASE"
+      ]
+    },
+    {
+      "target_id": "LFO3.RISE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO3.RISE"
+      ]
+    },
+    {
+      "target_id": "LFO3.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO4.RATE"
+      ]
+    },
+    {
+      "target_id": "LFO3.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO3.SMOOTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO3.SMOOTH"
+      ]
+    },
+    {
+      "target_id": "LFO3.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO4.DELAY",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO4.DELAY"
+      ]
+    },
+    {
+      "target_id": "LFO4.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO4.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO5.PHASE"
+      ]
+    },
+    {
+      "target_id": "LFO4.RISE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO4.RISE"
+      ]
+    },
+    {
+      "target_id": "LFO4.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO5.RATE"
+      ]
+    },
+    {
+      "target_id": "LFO4.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO4.SMOOTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO4.SMOOTH"
+      ]
+    },
+    {
+      "target_id": "LFO4.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO5.DELAY",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO5.DELAY"
+      ]
+    },
+    {
+      "target_id": "LFO5.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO5.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO6.PHASE"
+      ]
+    },
+    {
+      "target_id": "LFO5.RISE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO5.RISE"
+      ]
+    },
+    {
+      "target_id": "LFO5.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO6.RATE"
+      ]
+    },
+    {
+      "target_id": "LFO5.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO5.SMOOTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO5.SMOOTH"
+      ]
+    },
+    {
+      "target_id": "LFO5.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO6.DELAY",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO6.DELAY"
+      ]
+    },
+    {
+      "target_id": "LFO6.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO6.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO6.RISE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO6.RISE"
+      ]
+    },
+    {
+      "target_id": "LFO6.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO6.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO6.SMOOTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "LFO6.SMOOTH"
+      ]
+    },
+    {
+      "target_id": "LFO6.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO7.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO7.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO7.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO7.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO7.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO8.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO8.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO8.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO8.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO8.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO9.Mode",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO9.Phase",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO9.Rate",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO9.Retrigger",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "LFO9.Shape",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "ModRoute.AuxSource",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MATRIX.ROUTING.SIGNAL_BALANCE"
+      ]
+    },
+    {
+      "target_id": "ModRoute.Bipolar",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MATRIX.ROUTING.SIGNAL_BALANCE"
+      ]
+    },
+    {
+      "target_id": "ModRoute.Bypass",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MATRIX.ROUTING.SIGNAL_BALANCE"
+      ]
+    },
+    {
+      "target_id": "ModRoute.Curve",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MATRIX.ROUTING.SIGNAL_BALANCE"
+      ]
+    },
+    {
+      "target_id": "ModRoute.MacroDepth",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MATRIX.ROUTING.SIGNAL_BALANCE"
+      ]
+    },
+    {
+      "target_id": "NOISE.BUS1Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.NOISE.BUS1"
+      ]
+    },
+    {
+      "target_id": "NOISE.BUS2Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.NOISE.BUS2"
+      ]
+    },
+    {
+      "target_id": "NOISE.Fine",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "NOISE_OSC.FINE"
+      ]
+    },
+    {
+      "target_id": "NOISE.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "NOISE_OSC.LEVEL"
+      ]
+    },
+    {
+      "target_id": "NOISE.Pan",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "NOISE_OSC.PAN"
+      ]
+    },
+    {
+      "target_id": "NOISE.Route",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.NOISE.ROUTING"
+      ]
+    },
+    {
+      "target_id": "NOISE.Type",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "NOISE.Volume",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.NOISE.ENABLE"
+      ]
+    },
+    {
+      "target_id": "NOISE.Warp",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "NOISE_OSC.PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "NOISE_OSC.PHASE"
+      ]
+    },
+    {
+      "target_id": "NOISE_OSC.PITCH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "NOISE_OSC.PITCH"
+      ]
+    },
+    {
+      "target_id": "NOISE_OSC.PITCH_TRACK",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "NOISE_OSC.PITCH_TRACK"
+      ]
+    },
+    {
+      "target_id": "NOISE_OSC.RAND_PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "NOISE_OSC.RAND_PHASE"
+      ]
+    },
+    {
+      "target_id": "OSC1.BUS1Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_A.BUS1"
+      ]
+    },
+    {
+      "target_id": "OSC1.BUS2Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_A.BUS2"
+      ]
+    },
+    {
+      "target_id": "OSC1.COARSE_PITCH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.COARSE_PITCH"
+      ]
+    },
+    {
+      "target_id": "OSC1.Detune",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "OSC1.END",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.END"
+      ]
+    },
+    {
+      "target_id": "OSC1.Enable",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_A.ENABLE"
+      ]
+    },
+    {
+      "target_id": "OSC1.FINE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.FINE"
+      ]
+    },
+    {
+      "target_id": "OSC1.LOOP_END",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.LOOP_END"
+      ]
+    },
+    {
+      "target_id": "OSC1.LOOP_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.LOOP_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC1.LOOP_START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.LOOP_START"
+      ]
+    },
+    {
+      "target_id": "OSC1.LOOP_X-FADE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.LOOP_X-FADE"
+      ]
+    },
+    {
+      "target_id": "OSC1.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_A.LEVEL"
+      ]
+    },
+    {
+      "target_id": "OSC1.Octave",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.OCTAVE"
+      ]
+    },
+    {
+      "target_id": "OSC1.PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.PHASE"
+      ]
+    },
+    {
+      "target_id": "OSC1.POSITION",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.POSITION"
+      ]
+    },
+    {
+      "target_id": "OSC1.Pan",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_A.PAN"
+      ]
+    },
+    {
+      "target_id": "OSC1.RAND_PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.RAND_PHASE"
+      ]
+    },
+    {
+      "target_id": "OSC1.Route",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_A.ROUTING"
+      ]
+    },
+    {
+      "target_id": "OSC1.SCAN_BPM_RATE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.SCAN_BPM_RATE"
+      ]
+    },
+    {
+      "target_id": "OSC1.SCAN_RATE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.SCAN_RATE"
+      ]
+    },
+    {
+      "target_id": "OSC1.SEMI",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.SEMI"
+      ]
+    },
+    {
+      "target_id": "OSC1.SINGLE_SLICE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.SINGLE_SLICE"
+      ]
+    },
+    {
+      "target_id": "OSC1.START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.START"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNISON",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNISON"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_BLEND",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_BLEND"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_DETUNE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_DETUNE"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_RAND_START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_RAND_START"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_SPAN",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_SPAN"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_STACK",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_STACK"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_WARP",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_WARP"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_WARP_2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_WARP_2"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_WIDTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_WIDTH"
+      ]
+    },
+    {
+      "target_id": "OSC1.UNI_WT_POS",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.UNI_WT_POS"
+      ]
+    },
+    {
+      "target_id": "OSC1.Volume",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "OSC1.WARP_2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.WARP_2"
+      ]
+    },
+    {
+      "target_id": "OSC1.WARP_2_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.WARP_2_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC1.WARP_2_VAR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.WARP_2_VAR"
+      ]
+    },
+    {
+      "target_id": "OSC1.WARP_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.WARP_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC1.WARP_VAR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.WARP_VAR"
+      ]
+    },
+    {
+      "target_id": "OSC1.WT_POS",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.WT_POS"
+      ]
+    },
+    {
+      "target_id": "OSC1.Warp",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC1.WARP"
+      ]
+    },
+    {
+      "target_id": "OSC1.Wavetable",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "OSC2.BUS1Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_B.BUS1"
+      ]
+    },
+    {
+      "target_id": "OSC2.BUS2Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_B.BUS2"
+      ]
+    },
+    {
+      "target_id": "OSC2.COARSE_PITCH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.COARSE_PITCH"
+      ]
+    },
+    {
+      "target_id": "OSC2.Detune",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "OSC2.END",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.END"
+      ]
+    },
+    {
+      "target_id": "OSC2.Enable",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_B.ENABLE"
+      ]
+    },
+    {
+      "target_id": "OSC2.FINE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.FINE"
+      ]
+    },
+    {
+      "target_id": "OSC2.LOOP_END",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.LOOP_END"
+      ]
+    },
+    {
+      "target_id": "OSC2.LOOP_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.LOOP_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC2.LOOP_START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.LOOP_START"
+      ]
+    },
+    {
+      "target_id": "OSC2.LOOP_X-FADE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.LOOP_X-FADE"
+      ]
+    },
+    {
+      "target_id": "OSC2.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_B.LEVEL"
+      ]
+    },
+    {
+      "target_id": "OSC2.Octave",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.OCTAVE"
+      ]
+    },
+    {
+      "target_id": "OSC2.PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.PHASE"
+      ]
+    },
+    {
+      "target_id": "OSC2.POSITION",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.POSITION"
+      ]
+    },
+    {
+      "target_id": "OSC2.Pan",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_B.PAN"
+      ]
+    },
+    {
+      "target_id": "OSC2.RAND_PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.RAND_PHASE"
+      ]
+    },
+    {
+      "target_id": "OSC2.Route",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_B.ROUTING"
+      ]
+    },
+    {
+      "target_id": "OSC2.SCAN_BPM_RATE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.SCAN_BPM_RATE"
+      ]
+    },
+    {
+      "target_id": "OSC2.SCAN_RATE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.SCAN_RATE"
+      ]
+    },
+    {
+      "target_id": "OSC2.SEMI",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.SEMI"
+      ]
+    },
+    {
+      "target_id": "OSC2.SINGLE_SLICE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.SINGLE_SLICE"
+      ]
+    },
+    {
+      "target_id": "OSC2.START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.START"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNISON",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNISON"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_BLEND",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_BLEND"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_DETUNE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_DETUNE"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_RAND_START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_RAND_START"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_SPAN",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_SPAN"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_STACK",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_STACK"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_WARP",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_WARP"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_WARP_2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_WARP_2"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_WIDTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_WIDTH"
+      ]
+    },
+    {
+      "target_id": "OSC2.UNI_WT_POS",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.UNI_WT_POS"
+      ]
+    },
+    {
+      "target_id": "OSC2.Volume",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "OSC2.WARP_2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.WARP_2"
+      ]
+    },
+    {
+      "target_id": "OSC2.WARP_2_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.WARP_2_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC2.WARP_2_VAR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.WARP_2_VAR"
+      ]
+    },
+    {
+      "target_id": "OSC2.WARP_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.WARP_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC2.WARP_VAR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.WARP_VAR"
+      ]
+    },
+    {
+      "target_id": "OSC2.WT_POS",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.WT_POS"
+      ]
+    },
+    {
+      "target_id": "OSC2.Warp",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC2.WARP"
+      ]
+    },
+    {
+      "target_id": "OSC3.BUS1Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_C.BUS1"
+      ]
+    },
+    {
+      "target_id": "OSC3.BUS2Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_C.BUS2"
+      ]
+    },
+    {
+      "target_id": "OSC3.COARSE_PITCH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.COARSE_PITCH"
+      ]
+    },
+    {
+      "target_id": "OSC3.Detune",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "OSC3.END",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.END"
+      ]
+    },
+    {
+      "target_id": "OSC3.Enable",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_C.ENABLE"
+      ]
+    },
+    {
+      "target_id": "OSC3.FINE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.FINE"
+      ]
+    },
+    {
+      "target_id": "OSC3.LOOP_END",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.LOOP_END"
+      ]
+    },
+    {
+      "target_id": "OSC3.LOOP_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.LOOP_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC3.LOOP_START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.LOOP_START"
+      ]
+    },
+    {
+      "target_id": "OSC3.LOOP_X-FADE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.LOOP_X-FADE"
+      ]
+    },
+    {
+      "target_id": "OSC3.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_C.LEVEL"
+      ]
+    },
+    {
+      "target_id": "OSC3.Octave",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.OCTAVE"
+      ]
+    },
+    {
+      "target_id": "OSC3.PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.PHASE"
+      ]
+    },
+    {
+      "target_id": "OSC3.POSITION",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.POSITION"
+      ]
+    },
+    {
+      "target_id": "OSC3.Pan",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_C.PAN"
+      ]
+    },
+    {
+      "target_id": "OSC3.RAND_PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.RAND_PHASE"
+      ]
+    },
+    {
+      "target_id": "OSC3.Route",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.OSC_C.ROUTING"
+      ]
+    },
+    {
+      "target_id": "OSC3.SCAN_BPM_RATE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.SCAN_BPM_RATE"
+      ]
+    },
+    {
+      "target_id": "OSC3.SCAN_RATE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.SCAN_RATE"
+      ]
+    },
+    {
+      "target_id": "OSC3.SEMI",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.SEMI"
+      ]
+    },
+    {
+      "target_id": "OSC3.SINGLE_SLICE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.SINGLE_SLICE"
+      ]
+    },
+    {
+      "target_id": "OSC3.START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.START"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNISON",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNISON"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_BLEND",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_BLEND"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_DETUNE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_DETUNE"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_RAND_START",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_RAND_START"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_SPAN",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_SPAN"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_STACK",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_STACK"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_WARP",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_WARP"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_WARP_2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_WARP_2"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_WIDTH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_WIDTH"
+      ]
+    },
+    {
+      "target_id": "OSC3.UNI_WT_POS",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.UNI_WT_POS"
+      ]
+    },
+    {
+      "target_id": "OSC3.Volume",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "OSC3.WARP_2",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.WARP_2"
+      ]
+    },
+    {
+      "target_id": "OSC3.WARP_2_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.WARP_2_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC3.WARP_2_VAR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.WARP_2_VAR"
+      ]
+    },
+    {
+      "target_id": "OSC3.WARP_MODE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.WARP_MODE"
+      ]
+    },
+    {
+      "target_id": "OSC3.WARP_VAR",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.WARP_VAR"
+      ]
+    },
+    {
+      "target_id": "OSC3.WT_POS",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.WT_POS"
+      ]
+    },
+    {
+      "target_id": "OSC3.Warp",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "OSC3.WARP"
+      ]
+    },
+    {
+      "target_id": "SUB.BUS1Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.SUB.BUS1"
+      ]
+    },
+    {
+      "target_id": "SUB.BUS2Send",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.SUB.BUS2"
+      ]
+    },
+    {
+      "target_id": "SUB.Detune",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "SUB.Enable",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.SUB.ENABLE"
+      ]
+    },
+    {
+      "target_id": "SUB.Level",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "SUB_OSC.LEVEL"
+      ]
+    },
+    {
+      "target_id": "SUB.Octave",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "SUB_OSC.OCTAVE"
+      ]
+    },
+    {
+      "target_id": "SUB.Pan",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "SUB_OSC.PAN"
+      ]
+    },
+    {
+      "target_id": "SUB.Route",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "MIXER.SUB.ROUTING"
+      ]
+    },
+    {
+      "target_id": "SUB.Volume",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "SUB.Warp",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": []
+    },
+    {
+      "target_id": "SUB_OSC.COARSE_PITCH",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "SUB_OSC.COARSE_PITCH"
+      ]
+    },
+    {
+      "target_id": "SUB_OSC.CONT_PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "SUB_OSC.CONT_PHASE"
+      ]
+    },
+    {
+      "target_id": "SUB_OSC.PHASE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "SUB_OSC.PHASE"
+      ]
+    },
+    {
+      "target_id": "SUB_OSC.PITCH_TRACK",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "SUB_OSC.PITCH_TRACK"
+      ]
+    },
+    {
+      "target_id": "SUB_OSC.SHAPE",
+      "requested_value": 0.75,
+      "pre_value": "baseline_captured",
+      "post_value": 0.75,
+      "mutation_attempted": true,
+      "mutation_succeeded": true,
+      "readback_changed": true,
+      "error": null,
+      "method": "state_mutation",
+      "semantic_owners": [
+        "SUB_OSC.SHAPE"
+      ]
+    }
+  ],
+  "summary": {
+    "mutation_attempted": 396,
+    "mutation_succeeded": 396,
+    "readback_confirmed": 396,
+    "errors": 0
+  },
+  "by_method": {
+    "state_mutation": 396
+  }
+}
