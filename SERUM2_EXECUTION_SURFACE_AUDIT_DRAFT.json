@@ -1,0 +1,357 @@
+{
+  "metadata": {
+    "phase": "E-0 Execution Surface Conformance",
+    "date": "2026-09-17",
+    "total_semantics": 908,
+    "total_families": 19
+  },
+  "family_audit": {
+    "BODY_STATE_FIELD_FILTER": {
+      "member_count": 40,
+      "execution_class": "BODY_STATE_FIELD",
+      "experiment_required": true,
+      "mechanism": "conditional_state_mutation",
+      "target_or_op": "body_state_field",
+      "status": "UNKNOWN"
+    },
+    "BODY_STATE_FIELD_LFO": {
+      "member_count": 48,
+      "execution_class": "BODY_STATE_FIELD",
+      "experiment_required": true,
+      "mechanism": "conditional_state_mutation",
+      "target_or_op": "body_state_field",
+      "status": "UNKNOWN"
+    },
+    "MATRIX_ROUTE": {
+      "member_count": 106,
+      "execution_class": "MATRIX_ROUTE",
+      "experiment_required": false,
+      "mechanism": "matrix_routing_assignment",
+      "target_or_op": "matrix_routing",
+      "status": "UNKNOWN"
+    },
+    "RESOURCE_OPERATION": {
+      "member_count": 41,
+      "execution_class": "RESOURCE_OPERATION",
+      "experiment_required": false,
+      "mechanism": "browser_or_resource_load",
+      "target_or_op": "resource_operation",
+      "status": "UNKNOWN"
+    },
+    "STRUCTURAL_OPERATION": {
+      "member_count": 10,
+      "execution_class": "STRUCTURAL_OPERATION",
+      "experiment_required": false,
+      "mechanism": "ui_structural_edit",
+      "target_or_op": "structural_operation",
+      "status": "UNKNOWN"
+    },
+    "TARGET_BACKED_CENSUS_VERIFIED": {
+      "member_count": 268,
+      "execution_class": "HOST_PARAMETER",
+      "experiment_required": false,
+      "mechanism": "VST3_parameter_or_state_path",
+      "target_or_op": "CLIP.SETTINGS.OFFSET",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_ARP": {
+      "member_count": 42,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_CLIP": {
+      "member_count": 25,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_ENV": {
+      "member_count": 12,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_FILTER": {
+      "member_count": 14,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_FX": {
+      "member_count": 52,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_GLOBAL_KEYBOARD": {
+      "member_count": 13,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_LFO": {
+      "member_count": 6,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_MACRO": {
+      "member_count": 38,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_MATRIX": {
+      "member_count": 6,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_MIXER": {
+      "member_count": 9,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_OSC": {
+      "member_count": 15,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UI_ACTION_VOICE": {
+      "member_count": 3,
+      "execution_class": "UI_ACTION",
+      "experiment_required": true,
+      "mechanism": "ui_control_action",
+      "target_or_op": "ui_operation",
+      "status": "UNKNOWN"
+    },
+    "UNKNOWN_EXECUTION": {
+      "member_count": 160,
+      "execution_class": "UNKNOWN_EXECUTION",
+      "experiment_required": true,
+      "mechanism": "investigation_required",
+      "target_or_op": "unknown",
+      "status": "UNKNOWN"
+    }
+  },
+  "unknown_execution": {
+    "total": 160,
+    "by_section": {
+      "ARP": [
+        "ARP.GLOBAL.BANK",
+        "ARP.PATTERN.EDITOR.ACCENT_ROW",
+        "ARP.PATTERN.EDITOR.STRUM_ROW"
+      ],
+      "CLIP": [
+        "CLIP.GLOBAL.BANK"
+      ],
+      "FX": [
+        "FX.BODE.BALANCE",
+        "FX.BODE.BLUR",
+        "FX.BODE.DELAY",
+        "FX.BODE.DIR",
+        "FX.BODE.FEED",
+        "FX.BODE.WET",
+        "FX.BODE.WIDTH",
+        "FX.CHORUS.DELAY1",
+        "FX.CHORUS.DELAY2",
+        "FX.CHORUS.FILTER_CUTOFF",
+        "FX.CHORUS.WET",
+        "FX.COMPRESSOR.BAND_GRAPHIC",
+        "FX.COMPRESSOR.BAND_H",
+        "FX.COMPRESSOR.BAND_L",
+        "FX.COMPRESSOR.BAND_M",
+        "FX.COMPRESSOR.BELOW",
+        "FX.COMPRESSOR.THRESH",
+        "FX.COMPRESSOR.WET",
+        "FX.COMPRESSOR.X_HIGH",
+        "FX.COMPRESSOR.X_LOW",
+        "FX.CONVOLVE.DAMP",
+        "FX.CONVOLVE.IR_BROWSER",
+        "FX.CONVOLVE.IR_GAIN",
+        "FX.CONVOLVE.LOAD_IR_EXTERNAL",
+        "FX.CONVOLVE.PRE_DLY",
+        "FX.CONVOLVE.SIZE",
+        "FX.CONVOLVE.TONE",
+        "FX.CONVOLVE.WET",
+        "FX.DELAY.FILTER_GRAPH",
+        "FX.DELAY.FREQ",
+        "FX.DELAY.Q",
+        "FX.DELAY.TIME_L",
+        "FX.DELAY.TIME_R",
+        "FX.DELAY.WET",
+        "FX.DIMENSION.SIZE",
+        "FX.DIMENSION.WET",
+        "FX.DISTORTION.FILTER_GRAPH",
+        "FX.DISTORTION.Q",
+        "FX.DISTORTION.WAVEFORM_PREVIEW",
+        "FX.DISTORTION.WET",
+        "FX.DISTORTION.XSHAPER_EDIT_PENCIL",
+        "FX.EQUALIZER.GRAPH",
+        "FX.EQUALIZER.LEFT_FREQ",
+        "FX.EQUALIZER.LEFT_GAIN",
+        "FX.EQUALIZER.LEFT_Q",
+        "FX.EQUALIZER.LEVEL",
+        "FX.EQUALIZER.RIGHT_FREQ",
+        "FX.EQUALIZER.RIGHT_GAIN",
+        "FX.EQUALIZER.RIGHT_Q",
+        "FX.FILTER.FAT",
+        "FX.FILTER.GRAPH",
+        "FX.FILTER.PAN",
+        "FX.FILTER.RES",
+        "FX.FILTER.WET",
+        "FX.FLANGER.NO_SEPARATE_DELAY_KNOB",
+        "FX.FLANGER.WET",
+        "FX.HYPER.WET",
+        "FX.HYPER_DIMENSION.STRUCTURE",
+        "FX.PHASER.DEPTH",
+        "FX.PHASER.DEPTH2",
+        "FX.PHASER.FREQ",
+        "FX.PHASER.RATE",
+        "FX.PHASER.WET",
+        "FX.REVERB.CHORUS_MOD",
+        "FX.REVERB.DAMP_PLATE",
+        "FX.REVERB.DAMP_VINTAGE",
+        "FX.REVERB.DECAY_HALL",
+        "FX.REVERB.DIFFUSION_NITROUS",
+        "FX.REVERB.DIFF_A_VINTAGE",
+        "FX.REVERB.DIFF_B_VINTAGE",
+        "FX.REVERB.ER_SIZE_VINTAGE",
+        "FX.REVERB.FEEDBACK_NITROUS_BASIN",
+        "FX.REVERB.HI_CUT",
+        "FX.REVERB.LO_CUT",
+        "FX.REVERB.PRE_DLY",
+        "FX.REVERB.SPIN_HALL",
+        "FX.REVERB.WET",
+        "FX.REVERB.WIDTH_PLATE",
+        "FX.SPLITTER_LH.SPLIT_FREQ",
+        "FX.SPLITTER_LH.WET",
+        "FX.SPLITTER_LMH.SPLIT_FREQ_LOW_MID",
+        "FX.SPLITTER_LMH.SPLIT_FREQ_MID_HIGH",
+        "FX.SPLITTER_LMH.WET",
+        "FX.SPLITTER_MS.WET",
+        "FX.SYS.MODULE_CONTEXT_MENU",
+        "FX.SYS.RACK_PRESET_BROWSER",
+        "FX.UTILITY.FREQ",
+        "FX.UTILITY.HPF",
+        "FX.UTILITY.LPF",
+        "FX.UTILITY.PAN",
+        "FX.UTILITY.WET",
+        "FX.UTILITY.WIDTH"
+      ],
+      "GLOBAL": [
+        "GLOBAL.INFO.BUILD_DATE_DISPLAY",
+        "GLOBAL.PREFERENCES.DEFAULT_WAVEFORM_VIEW",
+        "GLOBAL.PREFERENCES.DOUBLE_CLICK_PARAMS",
+        "GLOBAL.PREFERENCES.HELP_TOOLTIPS",
+        "GLOBAL.PREFERENCES.KEYBOARD_SHORTCUTS",
+        "GLOBAL.PREFERENCES.MOUSE_WHEEL_PARAM_CONTROL",
+        "GLOBAL.PREFERENCES.MPE_ENABLED_BY_DEFAULT",
+        "GLOBAL.PREFERENCES.MPE_EXPR_Y_ACTS_BI_DIRECTIONAL",
+        "GLOBAL.PREFERENCES.MPE_PITCH_BEND_MAPS_TO_EXPR_X",
+        "GLOBAL.PREFERENCES.PARAM_VALUE_TOOLTIPS",
+        "GLOBAL.QUALITY.DISABLE_SMOOTHING",
+        "GLOBAL.QUALITY.OVERSAMPLING",
+        "GLOBAL.QUALITY.OVERSAMPLING_LOCK",
+        "GLOBAL.QUALITY.S1_COMPATIBILITY",
+        "GLOBAL.TUNING.LOCK",
+        "GLOBAL.TUNING.TUN_FILE",
+        "GLOBAL.VOICE_CONTROL.OSC_SCOPE",
+        "GLOBAL.VOICE_CONTROL.PRESET_FIELD",
+        "GLOBAL.VOICE_CONTROL.RANDOM.CUTOFF",
+        "GLOBAL.VOICE_CONTROL.RANDOM.DETUNE",
+        "GLOBAL.VOICE_CONTROL.RANDOM.ENVS",
+        "GLOBAL.VOICE_CONTROL.RANDOM.PAN",
+        "GLOBAL.VOICE_CONTROL.SCALING.ENVS",
+        "GLOBAL.VOICE_CONTROL.SCALING.LFOS",
+        "GLOBAL.VOICE_CONTROL.SCALING.LFOS_RATE_TOGGLE",
+        "GLOBAL.VOICE_CONTROL.SEQ.CUTOFF",
+        "GLOBAL.VOICE_CONTROL.SEQ.DETUNE",
+        "GLOBAL.VOICE_CONTROL.SEQ.ENVS",
+        "GLOBAL.VOICE_CONTROL.SEQ.MOD1",
+        "GLOBAL.VOICE_CONTROL.SEQ.MOD2",
+        "GLOBAL.VOICE_CONTROL.SEQ.PAN"
+      ],
+      "GLOBAL_KEYBOARD": [
+        "KEYBOARD.MOD_WHEEL",
+        "KEYBOARD.PITCH_BEND",
+        "KEYBOARD.PITCH_BEND.BEND_DOWN",
+        "KEYBOARD.PITCH_BEND.BEND_UP"
+      ],
+      "MACRO": [
+        "MACRO.SYS.FX_EXPANDED_NOT_ASSIGNABLE",
+        "MACRO.SYS.MACRO_DEPTH_RECONCILE",
+        "MACRO.SYS.MACRO_SPECIFIC_PRESET",
+        "MACRO.SYS.SOURCE_CURVE"
+      ],
+      "MATRIX": [
+        "MATRIX.SYS.CREATE_VIBRATO",
+        "MATRIX.SYS.DYNAMIC_VISUALIZATION"
+      ],
+      "MIXER": [
+        "MIXER.BUS1.ENABLE",
+        "MIXER.BUS2.ENABLE",
+        "MIXER.DIRECT.LEVEL",
+        "MIXER.FILTER1.PAN",
+        "MIXER.FILTER2.PAN",
+        "MIXER.NOISE.FILTER_BALANCE",
+        "MIXER.NOISE.LEVEL",
+        "MIXER.NOISE.PAN",
+        "MIXER.OSC_A.FILTER_BALANCE",
+        "MIXER.OSC_B.FILTER_BALANCE",
+        "MIXER.OSC_C.FILTER_BALANCE",
+        "MIXER.SUB.FILTER_BALANCE",
+        "MIXER.SUB.LEVEL",
+        "MIXER.SUB.PAN"
+      ],
+      "OSC": [
+        "OSC1.HZ_OFFSET",
+        "OSC1.RATIO",
+        "OSC2.HZ_OFFSET",
+        "OSC2.RATIO",
+        "OSC3.HZ_OFFSET",
+        "OSC3.RATIO"
+      ],
+      "VOICE": [
+        "VOICE.VOICING.POLY",
+        "VOICE.VOICING.PORTA_CURVE",
+        "VOICE.VOICING.VOICE_COUNT_DISPLAY"
+      ]
+    }
+  },
+  "implementation_status": {
+    "scalar_operations": "FOUND",
+    "compound_operations": "FOUND",
+    "resource_model": "FOUND",
+    "resource_resolver": "FOUND",
+    "fx_structural_operations": "FOUND",
+    "admission_gate": "FOUND",
+    "producer_loop": "FOUND"
+  },
+  "blocked_items": []
+}
