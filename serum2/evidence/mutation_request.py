@@ -54,21 +54,16 @@ class MutationRequest:
     contract_id: Optional[str] = None
 
     def validate_for_type(self) -> tuple[bool, Optional[str]]:
-        """Validate that required fields are present for the mutation type."""
-        if self.mutation_type == MutationType.BODY_STATE:
-            if not self.body_path:
-                return False, "BODY_STATE requires body_path"
+        """Validate request structure.
 
-        elif self.mutation_type == MutationType.HOST_PARAMETER:
-            if not self.host_parameter_name:
-                return False, "HOST_PARAMETER requires host_parameter_name"
+        NOTE: body_path and host_parameter_name are ASSERTIONS ONLY, not required.
+        Contract.execution_binding provides the authoritative binding.
+        Caller assertion is optional; executor will cross-check if supplied.
 
-        elif self.mutation_type == MutationType.TOPOLOGY:
-            return False, "TOPOLOGY mutations not yet implemented"
-
-        elif self.mutation_type == MutationType.COMPOUND:
-            return False, "COMPOUND mutations not yet implemented"
-
+        TOPOLOGY and COMPOUND pass validation and are refused at executor dispatch.
+        """
+        # All mutation types are structurally valid at this layer.
+        # Executor dispatch handles type-specific refusals (TOPOLOGY/COMPOUND not yet implemented).
         return True, None
 
 
@@ -99,6 +94,9 @@ class MutationAuthorityProof:
     mutation_succeeded: bool = False    # Value changed as requested
     set_parameter_call_count: int = 0   # Number of synth.set_parameter() calls
     pathmerge_call_count: int = 0       # Number of pathmerge.apply_path_value() calls
+
+    # Failure detail
+    detail: Optional[str] = None        # Error message if execution failed
 
     def is_refused(self) -> bool:
         """True if admission refused this mutation."""
