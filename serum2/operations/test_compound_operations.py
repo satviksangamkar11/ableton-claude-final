@@ -15,14 +15,21 @@ class TestModulationRouteOperations:
     """Test modulation route creation/deletion."""
 
     def test_create_modulation_route_compilation(self):
-        """Test compiling create_modulation_route to mutation."""
+        """Test compiling create_modulation_route to mutation.
+
+        Uses real source/destination names resolved via the empirically-
+        derived a3_modulation_route tables (LFO1->Filter1.Cutoff is the
+        Step 20 audio-causality-proven pair, 1996x centroid std ratio) --
+        this replaced the previous hard-coded-to-VoiceFilter placeholder,
+        so mutation.value now reflects the ACTUAL requested destination.
+        """
         operation = SerumOperation(
             operation_id="compound_create_modulation_route",
             semantic_name="Create Modulation Route",
             kind=OperationKind.COMPOUND,
             parameters=[
-                OperationParameter("source_id", 2, True),
-                OperationParameter("destination_param", "Filter.Cutoff", True),
+                OperationParameter("source", "LFO1", True),
+                OperationParameter("destination", "Filter1.Cutoff", True),
                 OperationParameter("amount", 0.5, True),
             ],
         )
@@ -36,7 +43,10 @@ class TestModulationRouteOperations:
         mutation = result.compiled_mutations[0]
         assert mutation.target_path.startswith("ModSlot"), "Should target a ModSlot"
         assert isinstance(mutation.value, dict), "Should be dict replacement (route struct)"
-        assert mutation.value.get("source") == [2, 0], "Source should match"
+        assert mutation.value.get("source") == [6, 0], "LFO1 source_type_id is 6"
+        assert mutation.value.get("destModuleTypeString") == "VoiceFilter"
+        assert mutation.value.get("destModuleParamName") == "kParamFreq"
+        assert mutation.value.get("destModuleID") == 0, "Filter1 = destModuleID 0"
 
     def test_delete_modulation_route_by_index(self):
         """Test deleting route by explicit index."""
@@ -58,13 +68,13 @@ class TestModulationRouteOperations:
         assert result.compiled_mutations[0].value == "default"
 
     def test_create_route_missing_source(self):
-        """Test error handling for missing source_id."""
+        """Test error handling for missing source."""
         operation = SerumOperation(
             operation_id="compound_create_modulation_route",
             semantic_name="Create Modulation Route",
             kind=OperationKind.COMPOUND,
             parameters=[
-                OperationParameter("destination_param", "Filter.Cutoff", True),
+                OperationParameter("destination", "Filter1.Cutoff", True),
                 OperationParameter("amount", 0.5, True),
             ],
         )
@@ -73,7 +83,47 @@ class TestModulationRouteOperations:
         result = compile_operation(operation, ctx)
 
         assert not result.success
-        assert result.compilation_error == "MISSING_SOURCE_ID"
+        assert result.compilation_error == "MISSING_SOURCE"
+
+    def test_create_route_destination_is_not_always_filter(self):
+        """Regression guard for the fixed defect: destination must reflect
+        what was actually requested, not always VoiceFilter/kParamFreq."""
+        operation = SerumOperation(
+            operation_id="compound_create_modulation_route",
+            semantic_name="Create Modulation Route",
+            kind=OperationKind.COMPOUND,
+            parameters=[
+                OperationParameter("source", "Env1", True),
+                OperationParameter("destination", "Osc1.Volume", True),
+                OperationParameter("amount", 0.3, True),
+            ],
+        )
+        ctx = OperationContext(body={})
+        result = compile_operation(operation, ctx)
+
+        assert result.success, f"Compilation failed: {result.error_detail}"
+        mutation = result.compiled_mutations[0]
+        assert mutation.value.get("destModuleTypeString") == "Oscillator", (
+            "must NOT be hard-coded to VoiceFilter"
+        )
+        assert mutation.value.get("destModuleParamName") == "kParamVolume"
+        assert mutation.value.get("source") == [2, 0], "Env1 source_type_id is 2"
+
+    def test_create_route_unknown_destination_refused(self):
+        operation = SerumOperation(
+            operation_id="compound_create_modulation_route",
+            semantic_name="Create Modulation Route",
+            kind=OperationKind.COMPOUND,
+            parameters=[
+                OperationParameter("source", "LFO1", True),
+                OperationParameter("destination", "NotARealDestination", True),
+                OperationParameter("amount", 0.5, True),
+            ],
+        )
+        ctx = OperationContext(body={})
+        result = compile_operation(operation, ctx)
+        assert not result.success
+        assert result.compilation_error == "UNKNOWN_DESTINATION"
 
 
 class TestMacroOperations:

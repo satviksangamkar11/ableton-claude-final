@@ -1,6 +1,6 @@
 {
   "episode_id": "d1_2_release_regression",
-  "timestamp": "2026-09-17T14:29:53.168675Z",
+  "timestamp": "2026-09-17T14:39:00.192525Z",
   "human_intent": "make the note sustain longer",
   "candidate_operation": {
     "target": "envelope_field_release",

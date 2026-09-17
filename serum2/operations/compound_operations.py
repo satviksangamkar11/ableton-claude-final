@@ -27,6 +27,10 @@ from .model import (
     OperationResult,
 )
 from serum2.evidence.spec import Mutation
+from serum2.qualification.a3_modulation_route import get_source, get_destination
+from serum2.qualification.a3_modulation_adapter import (
+    write_modulation, find_empty_slot, read_all_slots,
+)
 
 
 def compiler_create_modulation_route(
@@ -36,64 +40,75 @@ def compiler_create_modulation_route(
     """Compile create_modulation_route() to Mutation[].
 
     Parameters:
-      - source_id (int): LFO source ID (0-9) or other modulation source
-      - destination_param (str): semantic target (e.g., "Filter.Cutoff")
-      - amount (float): modulation amount (0.0-1.0)
-      - modslot_index (int, optional): which ModSlot to use (0-63); if not specified, find free slot
+      - source (str): modulation source name, e.g. "LFO1", "Env1" (see
+        serum2.qualification.a3_modulation_route.list_sources())
+      - destination (str): modulation destination name, e.g. "Filter1.Cutoff"
+        (see serum2.qualification.a3_modulation_route.list_destinations())
+      - amount (float): modulation amount, normalized [-1.0, +1.0]
+      - modslot_index (int, optional): which ModSlot to use (0-63); if not
+        specified, find free slot
+
+    Destination/source resolution uses the empirically-derived tables in
+    serum2.qualification.a3_modulation_route (Step 20: audio-causality-proven
+    for LFO1->Filter1.Cutoff at 1996x centroid std ratio; other entries
+    pattern-extrapolated or corpus-inferred, each labeled with its own
+    evidence strength in that module). This replaces the previous
+    hard-coded VoiceFilter/kParamFreq placeholder -- every route now
+    resolves to its actual requested destination, not always the filter.
 
     Returns:
       OperationResult with single Mutation(ModSlot{N}, route_struct)
     """
-    # Extract parameters
     params_dict = {p.name: p.value for p in operation.parameters}
 
-    source_id = params_dict.get("source_id")
-    dest_param = params_dict.get("destination_param")
+    source = params_dict.get("source")
+    destination = params_dict.get("destination")
     amount = params_dict.get("amount", 1.0)
     modslot_index = params_dict.get("modslot_index")
 
-    if source_id is None:
+    if source is None:
         return OperationResult(
             operation_id=operation.operation_id,
             success=False,
-            compilation_error="MISSING_SOURCE_ID",
-            error_detail="create_modulation_route requires source_id parameter",
+            compilation_error="MISSING_SOURCE",
+            error_detail="create_modulation_route requires source parameter",
         )
 
-    if dest_param is None:
+    if destination is None:
         return OperationResult(
             operation_id=operation.operation_id,
             success=False,
             compilation_error="MISSING_DESTINATION",
-            error_detail="create_modulation_route requires destination_param parameter",
+            error_detail="create_modulation_route requires destination parameter",
         )
 
-    # Find free ModSlot if index not specified
-    if modslot_index is None:
-        modslot_index = _find_free_modslot(ctx.body)
-        if modslot_index is None:
-            return OperationResult(
-                operation_id=operation.operation_id,
-                success=False,
-                compilation_error="NO_FREE_MODSLOT",
-                error_detail="All ModSlot0-63 are occupied; cannot create new route",
-            )
+    try:
+        new_body, entry = write_modulation(
+            ctx.body, source=str(source), destination=str(destination),
+            amount=float(amount), slot_index=modslot_index,
+        )
+    except ValueError as e:
+        msg = str(e)
+        if "Unknown modulation source" in msg:
+            error_code = "UNKNOWN_SOURCE"
+        elif "Unknown modulation destination" in msg:
+            error_code = "UNKNOWN_DESTINATION"
+        elif "occupied" in msg:
+            error_code = "NO_FREE_MODSLOT"
+        elif "slot_index must be" in msg:
+            error_code = "INVALID_MODSLOT"
+        else:
+            error_code = "INVALID_ROUTE"
+        return OperationResult(
+            operation_id=operation.operation_id,
+            success=False,
+            compilation_error=error_code,
+            error_detail=msg,
+        )
 
-    # Build the route struct (based on forensic analysis schema)
-    # This is a real route structure from Serum presets
-    route_struct = {
-        "destModuleID": 0,  # TODO: resolve from dest_param semantic target
-        "destModuleParamID": 3,  # TODO: resolve from dest_param
-        "destModuleParamName": "kParamFreq",  # TODO: resolve from dest_param
-        "destModuleTypeString": "VoiceFilter",  # TODO: resolve from dest_param
-        "plainParams": {"kParamAmount": float(amount)},
-        "source": [int(source_id), 0],
-    }
-
-    # Create mutation: set entire ModSlot dict
     mutation = Mutation(
-        target_path=f"ModSlot{modslot_index}",
-        value=route_struct,
+        target_path=entry.slot_key,
+        value=new_body[entry.slot_key],
         provenance=f"SerumOperation.{operation.operation_id}",
     )
 
@@ -101,8 +116,11 @@ def compiler_create_modulation_route(
         operation_id=operation.operation_id,
         success=True,
         compiled_mutations=[mutation],
-        mutation_description=f"Modulation route: LFO{source_id} → {dest_param} at ModSlot{modslot_index}",
-        notes=f"TODO: resolve destination parameter IDs from semantic target '{dest_param}'",
+        mutation_description=f"Modulation route: {source} -> {destination} "
+                              f"at ModSlot{entry.slot_index} (amount={amount})",
+        notes=f"Resolved via a3_modulation_route: "
+              f"dest_module={entry.destination.dest_module_type_string} "
+              f"param={entry.destination.dest_module_param_name}",
     )
 
 
@@ -126,24 +144,24 @@ def compiler_delete_modulation_route(
 
     if modslot_index is None:
         # Try to find the slot by source + destination
-        source_id = params_dict.get("source_id")
-        dest_param = params_dict.get("destination_param")
+        source = params_dict.get("source")
+        destination = params_dict.get("destination")
 
-        if source_id is None or dest_param is None:
+        if source is None or destination is None:
             return OperationResult(
                 operation_id=operation.operation_id,
                 success=False,
                 compilation_error="MISSING_PARAMETERS",
-                error_detail="delete_modulation_route requires either modslot_index OR (source_id + destination_param)",
+                error_detail="delete_modulation_route requires either modslot_index OR (source + destination)",
             )
 
-        modslot_index = _find_modslot_by_route(ctx.body, source_id, dest_param)
+        modslot_index = _find_modslot_by_route(ctx.body, source, destination)
         if modslot_index is None:
             return OperationResult(
                 operation_id=operation.operation_id,
                 success=False,
                 compilation_error="ROUTE_NOT_FOUND",
-                error_detail=f"No modulation route found: LFO{source_id} → {dest_param}",
+                error_detail=f"No modulation route found: {source} -> {destination}",
             )
 
     # Create mutation: set ModSlot to "default" (sparse sentinel)
@@ -285,16 +303,15 @@ def _find_free_modslot(body: Dict[str, Any]) -> Optional[int]:
 
 def _find_modslot_by_route(
     body: Dict[str, Any],
-    source_id: int,
-    dest_param: str,
+    source: str,
+    destination: str,
 ) -> Optional[int]:
-    """Find ModSlot that routes from source_id to dest_param.
-
-    This is a placeholder; full implementation would resolve dest_param
-    to module/param IDs and search through all ModSlots.
-    """
-    # TODO: resolve dest_param semantic target to destModuleID/destModuleParamID
-    # then search ModSlot0-63 for a route matching both source and destination
+    """Find the ModSlot index that routes from source to destination, using
+    the same a3_modulation_route/adapter resolution as compiler_create_
+    modulation_route (was previously always None -- unresolved TODO)."""
+    for entry in read_all_slots(body):
+        if entry.source_name == source and entry.destination_name == destination:
+            return entry.slot_index
     return None
 
 

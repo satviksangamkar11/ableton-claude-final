@@ -148,13 +148,14 @@ def test_generic_executors_importable():
     status = verify_generic_executors()
     assert status["SCALAR"].startswith("VERIFIED_IMPORTABLE")
     assert status["STATE"].startswith("VERIFIED_IMPORTABLE")
-    assert status["SCALAR"] == status["STATE"], (
-        "SCALAR and STATE must share the same authority-gated entry point"
+    assert status["COMPOUND"].startswith("VERIFIED_IMPORTABLE")
+    assert status["SCALAR"] == status["STATE"] == status["COMPOUND"], (
+        "SCALAR, STATE, and COMPOUND must share the same authority-gated entry point"
     )
-    for prim in ("COMPOUND", "TOPOLOGY", "RESOURCE"):
+    for prim in ("TOPOLOGY", "RESOURCE"):
         assert status[prim].startswith("NOT_AUTHORITY_INTEGRATED")
-    print("[PASS] generic executor registry: SCALAR+STATE share the authority-gated "
-          "executor; COMPOUND/TOPOLOGY/RESOURCE honestly NOT_AUTHORITY_INTEGRATED")
+    print("[PASS] generic executor registry: SCALAR+STATE+COMPOUND share the "
+          "authority-gated executor; TOPOLOGY/RESOURCE honestly NOT_AUTHORITY_INTEGRATED")
 
 
 if __name__ == "__main__":

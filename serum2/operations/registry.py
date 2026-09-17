@@ -162,12 +162,17 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         semantic_name="Create Modulation Route",
         kind=OperationKind.COMPOUND,
         parameters=[
-            OperationParameter("source_id", None, True, "LFO or modulation source ID"),
-            OperationParameter("destination_param", None, True, "Destination semantic target"),
-            OperationParameter("amount", None, True, "Modulation amount (0.0-1.0)"),
+            OperationParameter("source", None, True,
+                                "Modulation source name, e.g. 'LFO1', 'Env1' "
+                                "(see a3_modulation_route.list_sources())"),
+            OperationParameter("destination", None, True,
+                                "Modulation destination name, e.g. 'Filter1.Cutoff' "
+                                "(see a3_modulation_route.list_destinations())"),
+            OperationParameter("amount", None, True, "Modulation amount, normalized [-1.0, +1.0]"),
             OperationParameter("modslot_index", None, False, "ModSlot index (0-63); auto if not specified"),
         ],
-        description="Create a new modulation route from source to destination",
+        description="Create a new modulation route from source to destination "
+                     "(destination resolved via empirically-derived a3_modulation_route tables)",
     ))
     registry.register_compiler("compound_create_modulation_route", compiler_create_modulation_route)
 
@@ -178,8 +183,8 @@ def _populate_builtin_operations(registry: OperationRegistry) -> None:
         kind=OperationKind.COMPOUND,
         parameters=[
             OperationParameter("modslot_index", None, False, "ModSlot index (0-63) to delete"),
-            OperationParameter("source_id", None, False, "LFO source ID (if searching by route)"),
-            OperationParameter("destination_param", None, False, "Destination (if searching by route)"),
+            OperationParameter("source", None, False, "Source name (if searching by route)"),
+            OperationParameter("destination", None, False, "Destination name (if searching by route)"),
         ],
         description="Delete an existing modulation route",
     ))

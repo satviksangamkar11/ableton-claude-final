@@ -639,8 +639,12 @@ class TestExecutorIntegration:
 
         print("[PASS] TOPOLOGY -> not implemented")
 
-    def test_compound_not_implemented(self):
-        """COMPOUND -> explicit refusal."""
+    def test_compound_without_binding_refused(self):
+        """COMPOUND with no execution_binding on the contract -> refused,
+        zero mutation. (COMPOUND dispatch itself is now implemented -- see
+        test_compound_resolver_integration.py for the full resolver-backed
+        adversarial suite; this test only proves the missing-binding case
+        specifically, which is what this contract fixture represents.)"""
         body = self.setup_test_body()
         synth = InstrumentedSynth()
 
@@ -666,9 +670,9 @@ class TestExecutorIntegration:
 
         assert not proof.executed, "Should not execute"
         assert proof.set_parameter_call_count == 0, "Zero calls"
-        assert "not yet implemented" in (proof.detail or "").lower()
+        assert "No COMPOUND execution binding in contract" in (proof.detail or "")
 
-        print("[PASS] COMPOUND -> not implemented")
+        print("[PASS] COMPOUND without execution_binding -> refused -> zero mutation")
 
 
 if __name__ == "__main__":
@@ -692,7 +696,7 @@ if __name__ == "__main__":
     test.test_body_state_correct_assertion_admitted()
     test.test_body_state_same_value_still_counts_invocation()
     test.test_topology_not_implemented()
-    test.test_compound_not_implemented()
+    test.test_compound_without_binding_refused()
 
     print("\n" + "="*80)
     print("ALL EXECUTOR INTEGRATION TESTS PASSED")
@@ -703,4 +707,6 @@ if __name__ == "__main__":
     print("  -> Wrong assertion causes refusal")
     print("  -> Invocation count independent from state_changed")
     print("  -> Authoritative binding from contract.execution_binding only")
-    print("  -> TOPOLOGY/COMPOUND remain explicit non-executing")
+    print("  -> TOPOLOGY remains explicit non-executing; COMPOUND is now resolver-backed "
+          "(see test_compound_resolver_integration.py) -- this suite only covers the "
+          "missing-execution-binding refusal case for it")

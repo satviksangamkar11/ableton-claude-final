@@ -120,14 +120,7 @@ def execute_mutation_request_with_authority(
         )
 
     elif request.mutation_type == MutationType.COMPOUND:
-        return MutationAuthorityProof(
-            target=request.target,
-            mutation_type=request.mutation_type,
-            requested_value=request.value,
-            admission_result=admission_result,
-            executed=False,
-            detail="COMPOUND mutations not yet implemented",
-        )
+        return _execute_compound_mutation(request, body, contract, admission_result)
 
     else:
         return MutationAuthorityProof(
@@ -253,11 +246,72 @@ def _execute_body_state_mutation_via_resolver(
     own compilation validates them and REFUSES (zero mutation) on any
     range/lookup failure.
     """
-    from serum2.operations.registry import get_registry
-    from serum2.operations.model import SerumOperation, OperationParameter, OperationContext, OperationKind
+    from serum2.operations.model import OperationKind
+    return _dispatch_resolver_operation(
+        request, body, contract.execution_binding.resolver_operation_id,
+        admission_result, OperationKind.STATE,
+    )
 
-    operation_id = contract.execution_binding.resolver_operation_id
-    compiler_fn = get_registry().get_compiler(operation_id)
+
+def _execute_compound_mutation(
+    request: MutationRequest,
+    body: Dict[str, Any],
+    contract: cc.CapabilityContract,
+    admission_result: admission.AdmissionResult,
+) -> MutationAuthorityProof:
+    """Execute COMPOUND mutation (e.g. MATRIX_ROUTE) via a registered
+    OperationRegistry compiler -- the generic compound dispatcher.
+
+    Same authority shape as STATE's resolver path: resolver_operation_id is
+    authoritative (from the contract's execution_binding), never chosen by
+    the caller; resolver_parameters are payload only (source/destination/
+    amount/modslot_index); dispatched strictly after admission.
+    """
+    from serum2.operations.model import OperationKind
+
+    if not contract.execution_binding or contract.execution_binding.mutation_type != MutationType.COMPOUND.value:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            admission_result=admission_result,
+            executed=False,
+            detail="No COMPOUND execution binding in contract",
+        )
+
+    if not contract.execution_binding.resolver_operation_id:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            admission_result=admission_result,
+            executed=False,
+            detail="COMPOUND execution binding has no resolver_operation_id",
+        )
+
+    return _dispatch_resolver_operation(
+        request, body, contract.execution_binding.resolver_operation_id,
+        admission_result, OperationKind.COMPOUND,
+    )
+
+
+def _dispatch_resolver_operation(
+    request: MutationRequest,
+    body: Dict[str, Any],
+    operation_id: Optional[str],
+    admission_result: admission.AdmissionResult,
+    operation_kind,
+) -> MutationAuthorityProof:
+    """Shared OperationRegistry dispatch: build a SerumOperation from the
+    request's resolver_parameters, invoke the named compiler, and apply
+    every compiled Mutation via pathmerge with a real (not inferred)
+    invocation count. Used by both the STATE resolver path and the
+    COMPOUND generic dispatcher -- one implementation, two authority-gated
+    callers, never called from anywhere else."""
+    from serum2.operations.registry import get_registry
+    from serum2.operations.model import SerumOperation, OperationParameter, OperationContext
+
+    compiler_fn = get_registry().get_compiler(operation_id) if operation_id else None
 
     if compiler_fn is None:
         return MutationAuthorityProof(
@@ -276,7 +330,7 @@ def _execute_body_state_mutation_via_resolver(
     operation = SerumOperation(
         operation_id=operation_id,
         semantic_name=request.target,
-        kind=OperationKind.STATE,
+        kind=operation_kind,
         parameters=op_parameters,
         semantic_target=request.target,
     )
@@ -296,7 +350,8 @@ def _execute_body_state_mutation_via_resolver(
 
     if not result.success:
         # REFUSED: resolver's own validation rejected the payload
-        # (e.g. VALUE_BELOW_MIN, UNKNOWN_FX_PARAMETER). Zero mutation.
+        # (e.g. VALUE_BELOW_MIN, UNKNOWN_FX_PARAMETER, UNKNOWN_DESTINATION).
+        # Zero mutation.
         return MutationAuthorityProof(
             target=request.target,
             mutation_type=request.mutation_type,
