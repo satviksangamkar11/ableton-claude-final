@@ -1,0 +1,94 @@
+{
+  "task": "Scale causal qualification using the Exercise Context Registry, after golden-regression verification",
+  "golden_regression": {
+    "targets": 7,
+    "passed": 7,
+    "results": [
+      {"capability_id": "Filter1.Cutoff", "status": "CAUSAL_VERIFIED", "delta": 2684.3, "unit": "Hz"},
+      {"capability_id": "OSC1.Level", "status": "CAUSAL_VERIFIED", "delta": 24.1, "unit": "dB"},
+      {"capability_id": "OSC2.Level", "status": "CAUSAL_VERIFIED", "delta": 8.8, "unit": "dB"},
+      {"capability_id": "OSC3.Level", "status": "CAUSAL_VERIFIED", "delta": 8.8, "unit": "dB"},
+      {"capability_id": "Env1.Attack", "status": "CAUSAL_VERIFIED", "delta": -2.2, "unit": "dB"},
+      {"capability_id": "FXEQ.Freq1", "status": "CAUSAL_VERIFIED", "delta": 7622.9, "unit": "Hz"},
+      {"capability_id": "FXEQ.Gain2", "status": "CAUSAL_VERIFIED", "delta": 4.0, "unit": "dB", "note": "added this pass, included retroactively in golden set"}
+    ]
+  },
+  "new_scale_attempts": [
+    {
+      "capability_id": "FXEQ.Gain2",
+      "fixture": "fx_eq.py::FX_EQ (reused unmodified)",
+      "exercise_context": [],
+      "target_mutation": "FXRack0.FX.0.FXEQ.plainParams.kParamGain2: -1.47 -> 15.0",
+      "baseline": -14.8,
+      "treatment": -10.8,
+      "delta": 4.0,
+      "unit": "dB",
+      "expected_direction": "increase",
+      "observed_direction": "increase",
+      "classification": "CAUSAL_VERIFIED",
+      "evidence": "Second parameter of the already-PROVEN FXEQ module; confirms FXEQ family needs no exercise context for any plainParam."
+    },
+    {
+      "capability_id": "FXEQ.Reso1",
+      "fixture": "fx_eq.py::FX_EQ (reused unmodified)",
+      "exercise_context": [],
+      "target_mutation": "FXRack0.FX.0.FXEQ.plainParams.kParamReso1: 40.26 -> 100.0",
+      "baseline": 4100.3,
+      "treatment": 4029.7,
+      "delta": -70.6,
+      "unit": "Hz",
+      "expected_direction": "change",
+      "observed_direction": "change (below threshold)",
+      "classification": "CAUSAL_BLOCKED",
+      "evidence": "Small real effect observed but below the 200 Hz threshold used for Freq1. Not zero -- plausibly a genuine but weak spectral-centroid signature for a Q/resonance parameter on this metric. Needs a resonance-appropriate metric or larger mutation delta; not classified FAILED."
+    },
+    {
+      "capability_id": "FXDistortion.Drive",
+      "fixture": "new attempted (not persisted as a fixture -- BLOCKED)",
+      "exercise_context": "attempted: kParamWet=1.0, then kParamWet=1.0 + kUIParamMixOrGain=1.0",
+      "target_mutation": "FXRack0.FX.1.FXDistortion.plainParams.kParamDrive: 0.0 -> 1.0",
+      "baseline": -14.8,
+      "treatment": -14.8,
+      "delta": 0.0,
+      "unit": "dB",
+      "expected_direction": "increase",
+      "observed_direction": "none",
+      "classification": "CAUSAL_BLOCKED",
+      "evidence": "Two exercise-context hypotheses tested and rejected. Gate mechanism not yet identified."
+    },
+    {
+      "capability_id": "LFO1.Rate (with active MODULATION_ROUTE)",
+      "fixture": "modulation_route.py::MODULATION_ROUTE (structural route, reused proven resolver) + LFO0.plainParams.kParamRate mutation",
+      "exercise_context": "compound_create_modulation_route(source='LFO1', destination='Osc1.Volume', amount=0.8) applied to both arms",
+      "target_mutation": "LFO0.plainParams.kParamRate: default -> 0.9",
+      "baseline": -15.62,
+      "treatment": -15.82,
+      "delta": -0.20,
+      "unit": "dB",
+      "expected_direction": "change",
+      "observed_direction": "change (below threshold, and metric-type mismatch)",
+      "classification": "CAUSAL_BLOCKED",
+      "evidence": "Route creation + rate mutation both succeed structurally. overall_rms_db cannot detect a RATE (periodicity) change, only depth/amplitude -- this is a measurement-kernel gap (no periodicity-sensitive kernel exists in serum2/evidence/measure.py), not evidence the capability is inert. Do not fabricate a new kernel without independent verification it measures rate correctly."
+    }
+  ],
+  "counts_this_pass": {
+    "new_CAUSAL_VERIFIED": 1,
+    "new_CAUSAL_FAILED": 0,
+    "new_CAUSAL_BLOCKED": 3,
+    "new_CAUSAL_AMBIGUOUS": 0
+  },
+  "running_totals": {
+    "CAUSAL_VERIFIED": 7,
+    "CAUSAL_VERIFIED_targets": ["Filter1.Cutoff", "OSC1.Level", "OSC2.Level", "OSC3.Level", "Env1.Attack", "FXEQ.Freq1", "FXEQ.Gain2"],
+    "CAUSAL_BLOCKED": 5,
+    "CAUSAL_BLOCKED_targets": ["Filter2.Cutoff", "Env2.Attack", "FXEQ.Reso1", "FXDistortion.Drive", "LFO1.Rate"],
+    "CAUSAL_FAILED": 0,
+    "CAUSAL_AMBIGUOUS": 0,
+    "structural_only_PROVEN": ["MODULATION_ROUTE.LFO_TO_BUS_STRUCTURAL"]
+  },
+  "next_batch_candidates": [
+    "FXReverb / FXDelay scalar parameters (same body-level wet-gate investigation needed as FXDistortion -- defer until that gate is found, OR try a parameter that does not depend on wet mix, e.g. kParamSize/kParamFreq if pre/post routing differs)",
+    "Build a periodicity/oscillation-depth measurement kernel (rate-sensitive) to unblock LFO1.Rate -- requires new evidence-backed kernel design, not a forced classification",
+    "Filter1.Resonance re-verification with the documented a3_exercise_contexts.py low-cutoff/high-resonance recipe (expected +2.74 dB) using the exact resolver parameters, since the current run did not reproduce that expectation"
+  ]
+}

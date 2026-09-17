@@ -60,6 +60,9 @@ class TargetDef:
     effect_threshold: Optional[float]
     notes: str = ""
     fx_preset_path: Optional[str] = None  # if set, load this preset's FXRack0 into skeleton
+    fx_shared_overrides: Optional[List[Tuple[str, Any]]] = None  # cbor_path overrides applied
+        # to BOTH arms after FX injection, via pathmerge -- for FX effects with a body-level
+        # (not host-param) wet/gate field, e.g. FXDistortion.kParamWet defaults 0.0
 
 
 ALTAR_PRESET = r"C:\Users\Satvik\Documents\Xfer\Serum 2 Presets\Presets\Factory\Arp\ARP - Altar.SerumPreset"
@@ -101,23 +104,11 @@ TARGETS: List[TargetDef] = [
         notes="Filter 2 must be active. Treatment=0.9 passes much more high-frequency content.",
     ),
 
-    # 3. OSC1.Level
-    # Direct level control: 0.25 baseline -> 1.0 treatment. Always active, no context needed.
-    # Metric: RMS increases with higher level.
-    TargetDef(
-        semantic_id="OSC1.Level",
-        experiment_id="osc1_level_pilot_001",
-        cbor_path=None,
-        host_param_name="A Level",
-        mutation_value=None,
-        baseline_host_val=0.25,
-        mutated_host_val=1.0,
-        exercise_context=[],
-        metric="overall_rms_db",
-        expected_direction="increase",
-        effect_threshold=1.0,
-        notes="OSC A always active. 0.25->1.0 is a large amplitude change.",
-    ),
+    # NOTE: OSC1.Level, Env1.Attack, OSC2.Level, OSC3.Level, FXEQ.Freq1 are
+    # PROVEN (CAUSAL_VERIFIED) and are now sourced from
+    # EXERCISE_CONTEXT_REGISTRY_V1.json via load_targets_from_registry()
+    # below, instead of being duplicated here. See TARGETS composition at
+    # the bottom of this section.
 
     # 4. OSC1.Fine (OSC1 pitch detune via fine tune)
     # Fine pitch shift of OSC A. Raising fine tune to 1.0 = +100 cents = +1 semitone.
@@ -153,25 +144,6 @@ TARGETS: List[TargetDef] = [
         expected_direction="increase",
         effect_threshold=50.0,
         notes="B Fine (index 80). OSC B must be enabled. Treatment=1.0 shifts up 100 cents.",
-    ),
-
-    # 6. Env1.Attack
-    # Slow attack (0.9) means the sound takes a long time to reach peak volume.
-    # In a 2s render, slow attack => less total energy than instant attack.
-    # Metric: RMS. Baseline = default (fast attack), treatment = 0.9 (very slow).
-    TargetDef(
-        semantic_id="Env1.Attack",
-        experiment_id="env1_attack_pilot_001",
-        cbor_path="Env0.plainParams.kParamAttack",
-        host_param_name=None,
-        mutation_value=0.9,
-        baseline_host_val=None,
-        mutated_host_val=None,
-        exercise_context=[],
-        metric="overall_rms_db",
-        expected_direction="decrease",
-        effect_threshold=0.5,
-        notes="Env0 = Env1 in UI (0-indexed). Slow attack=0.9 reduces energy in 2s render window.",
     ),
 
     # 7. Env1.Release
@@ -232,38 +204,6 @@ TARGETS: List[TargetDef] = [
         notes="Filter drive adds saturation. Filter must be on. High drive adds energy/harmonics.",
     ),
 
-    # 10. OSC2.Level
-    TargetDef(
-        semantic_id="OSC2.Level",
-        experiment_id="osc2_level_pilot_001",
-        cbor_path=None,
-        host_param_name="B Level",
-        mutation_value=None,
-        baseline_host_val=0.0,
-        mutated_host_val=1.0,
-        exercise_context=[("B Enable", 1.0)],
-        metric="overall_rms_db",
-        expected_direction="increase",
-        effect_threshold=1.0,
-        notes="OSC B must be enabled. 0.0->1.0 level is a full amplitude change.",
-    ),
-
-    # 12. OSC3.Level (mirrors OSC2.Level pattern: "C Enable"/"C Level" mirror "B Enable"/"B Level")
-    TargetDef(
-        semantic_id="OSC3.Level",
-        experiment_id="osc3_level_pilot_001",
-        cbor_path=None,
-        host_param_name="C Level",
-        mutation_value=None,
-        baseline_host_val=0.0,
-        mutated_host_val=1.0,
-        exercise_context=[("C Enable", 1.0)],
-        metric="overall_rms_db",
-        expected_direction="increase",
-        effect_threshold=1.0,
-        notes="OSC C must be enabled (defaults OFF, same as OSC B). 0.0->1.0 level is a full amplitude change.",
-    ),
-
     # 13. Env2.Attack (mirrors Env1.Attack pattern: Env1 body index = Env2 in UI, 0-indexed)
     TargetDef(
         semantic_id="Env2.Attack",
@@ -280,27 +220,122 @@ TARGETS: List[TargetDef] = [
         notes="Env1 = Env2 in UI (0-indexed), mirrors Env0/Env1.Attack. Slow attack=0.9 reduces energy in 2s render window.",
     ),
 
-    # 11. FXEQ.Freq1
-    # Uses Altar preset FXRack0 (has FXEQ at FX[0], Freq1=56.06 Hz).
-    # Treatment: push Freq1 to 8000 Hz. Large frequency shift changes spectral balance.
-    # Both arms share the same FXRack0 (pre-injected into skeleton).
-    TargetDef(
-        semantic_id="FXEQ.Freq1",
-        experiment_id="fxeq_freq1_pilot_001",
-        cbor_path="FXRack0.FX.0.FXEQ.plainParams.kParamFreq1",
-        host_param_name=None,
-        mutation_value=8000.0,
-        baseline_host_val=None,
-        mutated_host_val=None,
-        exercise_context=[],
-        metric="spectral_centroid_hz",
-        expected_direction="change",
-        effect_threshold=200.0,
-        notes="Altar preset FXRack0 injected (FX[0]=FXEQ, Freq1 baseline=56.06 Hz). "
-              "Treatment=8000 Hz. EQ shelving/peaking at very different frequency.",
-        fx_preset_path=ALTAR_PRESET,
-    ),
 ]
+
+
+# ---------------------------------------------------------------------------
+# Registry-driven targets (PROVEN entries -- single source of truth)
+# ---------------------------------------------------------------------------
+
+REGISTRY_PATH = os.path.join(os.path.dirname(__file__), "EXERCISE_CONTEXT_REGISTRY_V1.json")
+
+
+def load_targets_from_registry(status: str = "PROVEN") -> List[TargetDef]:
+    """Build TargetDef list from EXERCISE_CONTEXT_REGISTRY_V1.json entries
+    matching the given status. This is the authoritative source for
+    already-proven capabilities -- do not hard-code them a second time here.
+    """
+    with open(REGISTRY_PATH, "r", encoding="utf-8") as f:
+        registry = json.load(f)
+
+    targets: List[TargetDef] = []
+    for entry in registry["entries"]:
+        if entry.get("status") != status:
+            continue
+        mut = entry.get("target_mutation")
+        if mut is None:
+            continue  # structural-only entries (e.g. MODULATION_ROUTE) have no render-based TargetDef
+
+        adapter = mut["adapter"]
+        if adapter == "compound":
+            continue  # structural-only; not a render-based TargetDef
+
+        exercise_context = [tuple(pair) for pair in entry.get("exercise_context", [])]
+        fx_preset_path = None
+        if entry.get("fx_preset_injection"):
+            fx_preset_path = entry["fx_preset_injection"]["preset_path"]
+
+        if adapter == "host_param":
+            targets.append(TargetDef(
+                semantic_id=entry["capability_id"],
+                experiment_id=entry["capability_id"].lower().replace(".", "_") + "_registry",
+                cbor_path=None,
+                host_param_name=mut["path_or_param"],
+                mutation_value=None,
+                baseline_host_val=mut["baseline_value"],
+                mutated_host_val=mut["treatment_value"],
+                exercise_context=exercise_context,
+                metric=entry["measurement_template"]["metric"],
+                expected_direction=entry["measurement_template"]["expected_direction"],
+                effect_threshold=entry["measurement_template"]["threshold"],
+                notes="[registry:{}] {}".format(entry["status"], entry.get("notes", "")),
+                fx_preset_path=fx_preset_path,
+            ))
+        else:  # cbor_body
+            targets.append(TargetDef(
+                semantic_id=entry["capability_id"],
+                experiment_id=entry["capability_id"].lower().replace(".", "_") + "_registry",
+                cbor_path=mut["path_or_param"],
+                host_param_name=None,
+                mutation_value=mut["treatment_value"],
+                baseline_host_val=None,
+                mutated_host_val=None,
+                exercise_context=exercise_context,
+                metric=entry["measurement_template"]["metric"],
+                expected_direction=entry["measurement_template"]["expected_direction"],
+                effect_threshold=entry["measurement_template"]["threshold"],
+                notes="[registry:{}] {}".format(entry["status"], entry.get("notes", "")),
+                fx_preset_path=fx_preset_path,
+            ))
+    return targets
+
+
+# Final TARGETS = registry-sourced PROVEN targets + still-exploratory/BLOCKED
+# hard-coded targets above (kept hard-coded because they are not yet
+# promoted to PROVEN and must not be silently treated as reusable truth).
+TARGETS: List[TargetDef] = load_targets_from_registry("PROVEN") + TARGETS
+
+
+def run_golden_regression(verbose: bool = True) -> Tuple[bool, List[dict]]:
+    """Run every registry PROVEN target and confirm it remains CAUSAL_VERIFIED.
+
+    Returns (all_passed, results). Must be run -- and must pass -- before any
+    new capability is scaled from the registry-driven pattern.
+    """
+    import gc
+
+    golden_targets = load_targets_from_registry("PROVEN")
+    if verbose:
+        print("\n" + "=" * 70)
+        print("GOLDEN REGRESSION -- {} registry PROVEN targets".format(len(golden_targets)))
+        print("=" * 70)
+
+    results = []
+    all_passed = True
+    for i, t in enumerate(golden_targets):
+        gc.collect()
+        if verbose:
+            print("\n[{}/{}] {}".format(i + 1, len(golden_targets), t.semantic_id))
+        skeleton = bridge.capture_v8_skeleton(epoch_mod.SERUM_VST3)
+        r = run_one(t, skeleton, verbose=verbose)
+        results.append(r)
+        status = r["behavior_result"].get("status")
+        if status != "CAUSAL_VERIFIED":
+            all_passed = False
+            if verbose:
+                print("  *** GOLDEN REGRESSION FAILURE: {} status={} (expected CAUSAL_VERIFIED)".format(
+                    t.semantic_id, status))
+        del skeleton
+        gc.collect()
+
+    if verbose:
+        print("\n" + "-" * 70)
+        print("Golden regression: {}/{} PASSED".format(
+            sum(1 for r in results if r["behavior_result"].get("status") == "CAUSAL_VERIFIED"),
+            len(golden_targets)))
+        print("=" * 70)
+
+    return all_passed, results
 
 
 # ---------------------------------------------------------------------------
@@ -330,13 +365,22 @@ def _build_spec(t: TargetDef) -> ExperimentSpec:
     )
 
 
-def _load_fx_skeleton(base_skeleton: tuple, preset_path: str) -> tuple:
-    """Inject FXRack0 from a preset into the base skeleton. Returns modified skeleton."""
-    from serum2 import codec
+def _load_fx_skeleton(base_skeleton: tuple, preset_path: str,
+                       shared_overrides: Optional[List[Tuple[str, Any]]] = None) -> tuple:
+    """Inject FXRack0 from a preset into the base skeleton. Returns modified skeleton.
+
+    shared_overrides: optional list of (cbor_path, value) applied via pathmerge
+    AFTER injection, to BOTH arms identically (e.g. forcing an FX slot's
+    kParamWet gate on, mirroring the host-param exercise_context mechanism
+    for FX fields that have no host parameter).
+    """
+    from serum2 import codec, pathmerge
     _, preset_body = codec.load_preset_file(preset_path)
     meta = copy.deepcopy(base_skeleton[0])
     body = copy.deepcopy(base_skeleton[1])
     body["FXRack0"] = copy.deepcopy(preset_body["FXRack0"])
+    for path, value in (shared_overrides or []):
+        pathmerge.apply_path_value(body, path, value)
     return (meta, body)
 
 
@@ -353,9 +397,11 @@ def run_one(t: TargetDef, skeleton: tuple, verbose: bool = True) -> dict:
     # Possibly inject FX preset body
     active_skeleton = skeleton
     if t.fx_preset_path:
-        active_skeleton = _load_fx_skeleton(skeleton, t.fx_preset_path)
+        active_skeleton = _load_fx_skeleton(skeleton, t.fx_preset_path, t.fx_shared_overrides)
         if verbose:
             print("  fx_preset: {}".format(os.path.basename(t.fx_preset_path)))
+            if t.fx_shared_overrides:
+                print("  fx_shared_overrides: {}".format(t.fx_shared_overrides))
 
     spec = _build_spec(t)
 
