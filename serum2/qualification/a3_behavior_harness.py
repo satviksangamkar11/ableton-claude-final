@@ -32,6 +32,7 @@ from serum2.qualification.a3_behavior_observation import (
 # Minimum delta to count as "observed effect" (per-metric defaults)
 _DEFAULT_EFFECT_THRESHOLD_DB = 0.5    # dB for rms-based metrics
 _DEFAULT_EFFECT_THRESHOLD_HZ = 100.0  # Hz for spectral centroid
+_DEFAULT_EFFECT_THRESHOLD_RESONANCE_KURTOSIS = 0.3  # Kurtosis delta for resonance/Q detection (dimensionless)
 
 
 def _rms_db(audio: np.ndarray) -> float:
@@ -48,12 +49,20 @@ def _spectral_centroid_hz(audio: np.ndarray, sr: int = 44100) -> float:
     return spectral_centroid_hz(audio)
 
 
+def _spectral_resonance_peak_db(audio: np.ndarray) -> float:
+    """Spectral resonance peak power in dB."""
+    from serum2.evidence.measure import spectral_resonance_peak_db
+    return spectral_resonance_peak_db(audio)
+
+
 def _compute_metric(audio: np.ndarray, metric_name: str) -> float:
     """Compute the named metric on audio."""
     if metric_name == "overall_rms_db":
         return _rms_db(audio)
     elif metric_name == "spectral_centroid_hz":
         return _spectral_centroid_hz(audio)
+    elif metric_name == "spectral_resonance_peak_db":
+        return _spectral_resonance_peak_db(audio)
     else:
         raise ValueError("Unknown metric: {}".format(metric_name))
 
@@ -125,6 +134,8 @@ def run_behavior_test(
     if effect_threshold is None:
         if metric_name == "spectral_centroid_hz":
             effect_threshold = _DEFAULT_EFFECT_THRESHOLD_HZ
+        elif metric_name == "spectral_resonance_peak_db":
+            effect_threshold = _DEFAULT_EFFECT_THRESHOLD_RESONANCE_KURTOSIS
         else:
             effect_threshold = _DEFAULT_EFFECT_THRESHOLD_DB
 
