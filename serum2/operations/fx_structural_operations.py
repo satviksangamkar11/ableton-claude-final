@@ -98,6 +98,7 @@ class FXStructuralCompiler:
     def add_effect(
         self,
         operation: SerumOperation,
+        ctx: OperationContext,
         bus: Bus,
         slot_index: int,
         effect_structure: Dict[str, Any],
@@ -105,12 +106,30 @@ class FXStructuralCompiler:
         """Add a new effect to a bus at a specific slot.
 
         Uses array_insert to insert effect_structure at slot_index.
-        Subsequent elements shift up.
+        Subsequent elements shift up. slot_index must be within
+        [0, len(current_array)] (insert-at-end is valid; anything past that
+        is not a real position pathmerge's array_insert can honor).
         """
+        if slot_index is None or effect_structure is None:
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="MISSING_PARAMETERS",
+                error_detail="add_effect requires slot_index and effect_structure",
+            )
         location = FXSlotLocation(bus, slot_index)
         fx_array_path = location.fx_array_path
 
-        # Encode array insertion operation
+        current_array = ctx.body.get(location.rack_path, {}).get("FX", [])
+        if slot_index < 0 or slot_index > len(current_array):
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="INVALID_SLOT",
+                error_detail=f"slot_index {slot_index} out of range for insert "
+                              f"(rack has {len(current_array)} FX, valid range 0-{len(current_array)})",
+            )
+
         mutation = Mutation(
             target_path=fx_array_path,
             value={"__array_op__": "insert", "index": slot_index, "element": effect_structure},
@@ -127,18 +146,37 @@ class FXStructuralCompiler:
     def replace_effect(
         self,
         operation: SerumOperation,
+        ctx: OperationContext,
         bus: Bus,
         slot_index: int,
         new_effect_structure: Dict[str, Any],
     ) -> OperationResult:
         """Replace effect at slot with different effect type.
 
-        Uses array_replace_element to swap effect at slot_index.
+        Direct path mutation to replace the entire FX element. slot_index
+        must address an EXISTING slot (unlike add, which permits the
+        one-past-the-end insert position).
         """
+        if slot_index is None or new_effect_structure is None:
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="MISSING_PARAMETERS",
+                error_detail="replace_effect requires slot_index and effect_structure",
+            )
         location = FXSlotLocation(bus, slot_index)
         slot_path = location.slot_path
 
-        # Direct path mutation to replace entire FX element
+        current_array = ctx.body.get(location.rack_path, {}).get("FX", [])
+        if slot_index < 0 or slot_index >= len(current_array):
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="INVALID_SLOT",
+                error_detail=f"slot_index {slot_index} does not address an existing FX "
+                              f"(rack has {len(current_array)} FX, valid range 0-{len(current_array) - 1})",
+            )
+
         mutation = Mutation(
             target_path=slot_path,
             value=new_effect_structure,
@@ -155,18 +193,36 @@ class FXStructuralCompiler:
     def remove_effect(
         self,
         operation: SerumOperation,
+        ctx: OperationContext,
         bus: Bus,
         slot_index: int,
     ) -> OperationResult:
         """Remove (delete) an effect from a rack at a specific slot.
 
         Uses array_remove to remove the element at slot_index.
-        Subsequent elements shift down. Array topology changes.
+        Subsequent elements shift down. Array topology changes. slot_index
+        must address an existing slot.
         """
+        if slot_index is None:
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="MISSING_PARAMETERS",
+                error_detail="remove_effect requires slot_index",
+            )
         location = FXSlotLocation(bus, slot_index)
         fx_array_path = location.fx_array_path
 
-        # Encode array removal operation
+        current_array = ctx.body.get(location.rack_path, {}).get("FX", [])
+        if slot_index < 0 or slot_index >= len(current_array):
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="INVALID_SLOT",
+                error_detail=f"slot_index {slot_index} does not address an existing FX "
+                              f"(rack has {len(current_array)} FX, valid range 0-{len(current_array) - 1})",
+            )
+
         mutation = Mutation(
             target_path=fx_array_path,
             value={"__array_op__": "remove", "index": slot_index},
@@ -209,6 +265,7 @@ class FXStructuralCompiler:
     def bypass_effect(
         self,
         operation: SerumOperation,
+        ctx: OperationContext,
         bus: Bus,
         slot_index: int,
     ) -> OperationResult:
@@ -221,19 +278,43 @@ class FXStructuralCompiler:
         BYPASSED: FXRack0.FX[i].<FXType>.plainParams = {"kParamEnable": 0.0}
 
         Confirmed on Distortion (type=0) and Delay (type=4).
+
+        The FX-type key (FXDistortion, FXDelay, etc.) is resolved from
+        ctx.body at compile time -- NOT a "*" wildcard path segment, which
+        pathmerge.apply_path_value has no resolver for and would write a
+        literal "*" key. This mirrors bypass_bus()'s already-correct
+        per-slot resolution via _resolve_fx_type_key().
         """
+        if slot_index is None:
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="MISSING_PARAMETERS",
+                error_detail="bypass_effect requires slot_index",
+            )
         location = FXSlotLocation(bus, slot_index)
-        slot_path = location.slot_path
+        rack_path = location.rack_path
+        fx_array = ctx.body.get(rack_path, {}).get("FX", [])
 
-        # Read current slot to get FX type name (FXDistortion, FXDelay, etc.)
-        # The plainParams path is: FXRack<N>.FX.<slot_index>.<FXType>.plainParams
-        # We need to construct the path dynamically based on the current state
-        # For now, we'll use a path expression that works generically:
-        # FXRack<N>.FX.<slot_index>.<first_key_that_starts_with_FX>.plainParams
+        if slot_index < 0 or slot_index >= len(fx_array):
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="INVALID_SLOT",
+                error_detail=f"slot_index {slot_index} does not address an existing FX "
+                              f"(rack has {len(fx_array)} FX, valid range 0-{len(fx_array) - 1})",
+            )
 
-        # Create mutation for plainParams field
-        # The path will be applied at execution time when the full state is known
-        plainparams_path = f"{slot_path}.*.plainParams"  # * = first FX-prefixed key
+        fx_type_key = _resolve_fx_type_key(fx_array[slot_index])
+        if fx_type_key is None:
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="EMPTY_SLOT",
+                error_detail=f"slot {slot_index} in {rack_path} has no FX-type key to bypass",
+            )
+
+        plainparams_path = f"{location.slot_path}.{fx_type_key}.plainParams"
 
         mutation = Mutation(
             target_path=plainparams_path,
@@ -245,12 +326,13 @@ class FXStructuralCompiler:
             operation_id=operation.operation_id,
             success=True,
             compiled_mutations=[mutation],
-            mutation_description=f"FX bypass: Bypass effect at {location.rack_path}[{slot_index}]",
+            mutation_description=f"FX bypass: Bypass effect at {rack_path}[{slot_index}]",
         )
 
     def unbypass_effect(
         self,
         operation: SerumOperation,
+        ctx: OperationContext,
         bus: Bus,
         slot_index: int,
     ) -> OperationResult:
@@ -262,12 +344,39 @@ class FXStructuralCompiler:
         BYPASSED: FXRack0.FX[i].<FXType>.plainParams = {"kParamEnable": 0.0}
         ACTIVE: FXRack0.FX[i].<FXType>.plainParams = "default"
 
-        Confirmed on Distortion (type=0) and Delay (type=4).
+        Confirmed on Distortion (type=0) and Delay (type=4). Same concrete
+        FX-type-key resolution as bypass_effect() above -- no wildcard.
         """
+        if slot_index is None:
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="MISSING_PARAMETERS",
+                error_detail="unbypass_effect requires slot_index",
+            )
         location = FXSlotLocation(bus, slot_index)
-        slot_path = location.slot_path
+        rack_path = location.rack_path
+        fx_array = ctx.body.get(rack_path, {}).get("FX", [])
 
-        plainparams_path = f"{slot_path}.*.plainParams"  # * = first FX-prefixed key
+        if slot_index < 0 or slot_index >= len(fx_array):
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="INVALID_SLOT",
+                error_detail=f"slot_index {slot_index} does not address an existing FX "
+                              f"(rack has {len(fx_array)} FX, valid range 0-{len(fx_array) - 1})",
+            )
+
+        fx_type_key = _resolve_fx_type_key(fx_array[slot_index])
+        if fx_type_key is None:
+            return OperationResult(
+                operation_id=operation.operation_id,
+                success=False,
+                compilation_error="EMPTY_SLOT",
+                error_detail=f"slot {slot_index} in {rack_path} has no FX-type key to unbypass",
+            )
+
+        plainparams_path = f"{location.slot_path}.{fx_type_key}.plainParams"
 
         mutation = Mutation(
             target_path=plainparams_path,
@@ -279,7 +388,7 @@ class FXStructuralCompiler:
             operation_id=operation.operation_id,
             success=True,
             compiled_mutations=[mutation],
-            mutation_description=f"FX unbypass: Unbypass effect at {location.rack_path}[{slot_index}]",
+            mutation_description=f"FX unbypass: Unbypass effect at {rack_path}[{slot_index}]",
         )
 
     def bypass_bus(
@@ -389,6 +498,22 @@ def _resolve_fx_type_key(fx_entry: Dict[str, Any]) -> Optional[str]:
     return None
 
 
+# Explicit allowlist of PROVEN topology operation_ids safe for authority
+# integration. REORDER and MOVE_BETWEEN_BUSES are deliberately absent --
+# they have no compiler methods and are never registered above, so this is
+# not just documentation, it is what actually can and cannot be dispatched.
+# Defined here (not derived from the registry at call time) so the
+# authority executor has one explicit, auditable list to check against,
+# independent of whatever else might get registered into OperationRegistry
+# in the future for unrelated reasons.
+PROVEN_TOPOLOGY_OPERATION_IDS = frozenset(
+    f"fx_struct_{op}_{bus.name}"
+    for op in ("add", "remove", "replace", "clear_rack", "bypass", "unbypass",
+               "bypass_bus", "unbypass_bus")
+    for bus in (Bus.MAIN, Bus.BUS1, Bus.BUS2)
+)
+
+
 def build_fx_structural_operations(registry: OperationRegistry) -> None:
     """Register FX structural operations.
 
@@ -416,6 +541,63 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
     REMOVE (Step 19): Distinct from BYPASS; removes FX entirely, changes array topology.
     """
     compiler = FXStructuralCompiler()
+
+    # Register ADD operations for each bus (compiler method existed but was
+    # never wired into the registry -- fixed as part of TOPOLOGY authority
+    # integration audit).
+    for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
+        bus_name = bus.name
+        operation_id = f"fx_struct_add_{bus_name}"
+
+        registry.register(OperationDefinition(
+            operation_id=operation_id,
+            semantic_name=f"Add FX {bus_name}",
+            kind=OperationKind.TOPOLOGY,
+            parameters=[
+                OperationParameter("slot_index", None, True, "Insert position (0-len(FX))"),
+                OperationParameter("effect_structure", None, True, "Full FX entry dict to insert"),
+            ],
+            description=f"Insert a new effect into {bus_name} FX rack",
+        ))
+
+        def make_add_compiler(target_bus: Bus) -> callable:
+            def add_compiler(operation: SerumOperation, ctx: OperationContext) -> OperationResult:
+                params = {p.name: p.value for p in operation.parameters}
+                return compiler.add_effect(
+                    operation, ctx, target_bus,
+                    params.get("slot_index"), params.get("effect_structure"),
+                )
+            return add_compiler
+
+        registry.register_compiler(operation_id, make_add_compiler(bus))
+
+    # Register REPLACE operations for each bus (compiler method existed but
+    # was never wired into the registry -- same fix as ADD).
+    for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
+        bus_name = bus.name
+        operation_id = f"fx_struct_replace_{bus_name}"
+
+        registry.register(OperationDefinition(
+            operation_id=operation_id,
+            semantic_name=f"Replace FX {bus_name}",
+            kind=OperationKind.TOPOLOGY,
+            parameters=[
+                OperationParameter("slot_index", None, True, "Existing slot to replace"),
+                OperationParameter("effect_structure", None, True, "Full FX entry dict to substitute"),
+            ],
+            description=f"Replace an existing effect in {bus_name} FX rack",
+        ))
+
+        def make_replace_compiler(target_bus: Bus) -> callable:
+            def replace_compiler(operation: SerumOperation, ctx: OperationContext) -> OperationResult:
+                params = {p.name: p.value for p in operation.parameters}
+                return compiler.replace_effect(
+                    operation, ctx, target_bus,
+                    params.get("slot_index"), params.get("effect_structure"),
+                )
+            return replace_compiler
+
+        registry.register_compiler(operation_id, make_replace_compiler(bus))
 
     # Register REMOVE operations for each bus (PROVEN - Step 19)
     for bus in [Bus.MAIN, Bus.BUS1, Bus.BUS2]:
@@ -448,7 +630,7 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
                 operation: SerumOperation, ctx: OperationContext
             ) -> OperationResult:
                 slot_idx = operation.parameters[0].value if operation.parameters else 0
-                return compiler.remove_effect(operation, target_bus, slot_idx)
+                return compiler.remove_effect(operation, ctx, target_bus, slot_idx)
 
             return remove_compiler
 
@@ -514,7 +696,7 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
                 operation: SerumOperation, ctx: OperationContext
             ) -> OperationResult:
                 slot_idx = operation.parameters[0].value if operation.parameters else 0
-                return compiler.bypass_effect(operation, target_bus, slot_idx)
+                return compiler.bypass_effect(operation, ctx, target_bus, slot_idx)
 
             return bypass_compiler
 
@@ -551,7 +733,7 @@ def build_fx_structural_operations(registry: OperationRegistry) -> None:
                 operation: SerumOperation, ctx: OperationContext
             ) -> OperationResult:
                 slot_idx = operation.parameters[0].value if operation.parameters else 0
-                return compiler.unbypass_effect(operation, target_bus, slot_idx)
+                return compiler.unbypass_effect(operation, ctx, target_bus, slot_idx)
 
             return unbypass_compiler
 

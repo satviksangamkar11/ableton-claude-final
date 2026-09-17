@@ -39,9 +39,23 @@ on every run, not just asserted once.
             integration, per explicit instruction not to carry a known
             defect forward behind the new authority boundary; now uses
             the empirically-derived a3_modulation_route tables)
-  TOPOLOGY: NOT yet integrated -- FXStructuralCompiler (class-based
-            registry dispatch, fx_structural_operations.py) still
-            unreachable from admission. Same bypass risk as COMPOUND was.
+  TOPOLOGY: integrated, PROVEN OPERATIONS ONLY -- not the whole
+            FXStructuralOperation enum. An explicit allowlist
+            (PROVEN_TOPOLOGY_OPERATION_IDS) permits ADD/REMOVE/REPLACE/
+            CLEAR_RACK/BYPASS/UNBYPASS (+ bus-level bypass/unbypass); it
+            deliberately excludes REORDER and MOVE_BETWEEN_BUSES, which
+            have no compiler at all. ALSO fixed as part of integration: the
+            bypass_effect()/unbypass_effect() "*" wildcard path segment
+            (pathmerge has no resolver for it -- would have written a
+            literal "*" key) now resolves the concrete FX-type key from
+            live state, mirroring the already-correct bypass_bus() pattern.
+            ADD/REPLACE compiler methods existed but were never registered
+            in the OperationRegistry at all -- registered as part of this
+            integration. Every mechanism class (ADD, REMOVE, REPLACE,
+            CLEAR_RACK, BYPASS) proven against real Serum/DawDreamer, not
+            just unit-level compilation; BYPASS additionally proven to
+            produce a genuine audible difference (RMS delta), not just a
+            state-field change.
   RESOURCE: NOT yet integrated -- osc_load_wavetable/osc_load_sample
             compilers still unreachable from admission. ResourceResolver
             validates resource identity but is not itself a mutation
@@ -60,24 +74,19 @@ AUTHORITY_GATED_EXECUTOR = (
 
 # mutation_type -> dotted "module.function" path, or None if no
 # AUTHORITY-GATED generic dispatcher exists yet. Values here are the ONLY
-# valid operation_key values (V2-3). SCALAR, STATE, and COMPOUND share the
-# same entry point deliberately: it is one generic executor that dispatches
-# internally on MutationRequest.mutation_type, not a per-primitive function.
+# valid operation_key values (V2-3). SCALAR, STATE, COMPOUND, and TOPOLOGY
+# share the same entry point deliberately: it is one generic executor that
+# dispatches internally on MutationRequest.mutation_type, not a
+# per-primitive function.
 GENERIC_EXECUTORS: Dict[str, Optional[str]] = {
     MutationPrimitive.SCALAR.value: AUTHORITY_GATED_EXECUTOR,
     MutationPrimitive.STATE.value: AUTHORITY_GATED_EXECUTOR,
     MutationPrimitive.COMPOUND.value: AUTHORITY_GATED_EXECUTOR,
-    MutationPrimitive.TOPOLOGY.value: None,
+    MutationPrimitive.TOPOLOGY.value: AUTHORITY_GATED_EXECUTOR,
     MutationPrimitive.RESOURCE.value: None,
 }
 
 NOT_IMPLEMENTED_REASON: Dict[str, str] = {
-    MutationPrimitive.TOPOLOGY.value:
-        "execute_mutation_request_with_authority() explicitly refuses "
-        "TOPOLOGY today ('not yet implemented'). A separate, "
-        "NOT-authority-integrated FXStructuralCompiler exists "
-        "(fx_structural_operations.py) registered into the same "
-        "disconnected OperationRegistry -- same class of bypass risk STATE and COMPOUND already closed.",
     MutationPrimitive.RESOURCE.value:
         "execute_mutation_request_with_authority() has no RESOURCE case at "
         "all yet. osc_load_wavetable/osc_load_sample compilers exist in the "

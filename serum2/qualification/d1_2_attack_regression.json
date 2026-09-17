@@ -1,6 +1,6 @@
 {
   "episode_id": "d1_2_attack_regression",
-  "timestamp": "2026-09-17T14:39:00.924321Z",
+  "timestamp": "2026-09-17T15:15:11.359437Z",
   "human_intent": "make the note attack slower",
   "candidate_operation": {
     "target": "envelope_field_attack",

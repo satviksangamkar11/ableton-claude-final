@@ -608,8 +608,12 @@ class TestExecutorIntegration:
         finally:
             pm_counter.uninstall()
 
-    def test_topology_not_implemented(self):
-        """TOPOLOGY -> explicit refusal."""
+    def test_topology_without_binding_refused(self):
+        """TOPOLOGY with no execution_binding on the contract -> refused,
+        zero mutation. (TOPOLOGY dispatch itself is now implemented for
+        proven operations -- see test_topology_resolver_integration.py and
+        test_topology_real_serum_roundtrip.py for the full adversarial and
+        real-Serum suites; this test only proves the missing-binding case.)"""
         body = self.setup_test_body()
         synth = InstrumentedSynth()
 
@@ -635,9 +639,9 @@ class TestExecutorIntegration:
 
         assert not proof.executed, "Should not execute"
         assert proof.set_parameter_call_count == 0, "Zero calls"
-        assert "not yet implemented" in (proof.detail or "").lower()
+        assert "No TOPOLOGY execution binding in contract" in (proof.detail or "")
 
-        print("[PASS] TOPOLOGY -> not implemented")
+        print("[PASS] TOPOLOGY without execution_binding -> refused -> zero mutation")
 
     def test_compound_without_binding_refused(self):
         """COMPOUND with no execution_binding on the contract -> refused,
@@ -695,7 +699,7 @@ if __name__ == "__main__":
     test.test_body_state_no_assertion_admitted()
     test.test_body_state_correct_assertion_admitted()
     test.test_body_state_same_value_still_counts_invocation()
-    test.test_topology_not_implemented()
+    test.test_topology_without_binding_refused()
     test.test_compound_without_binding_refused()
 
     print("\n" + "="*80)
@@ -707,6 +711,6 @@ if __name__ == "__main__":
     print("  -> Wrong assertion causes refusal")
     print("  -> Invocation count independent from state_changed")
     print("  -> Authoritative binding from contract.execution_binding only")
-    print("  -> TOPOLOGY remains explicit non-executing; COMPOUND is now resolver-backed "
-          "(see test_compound_resolver_integration.py) -- this suite only covers the "
-          "missing-execution-binding refusal case for it")
+    print("  -> COMPOUND and TOPOLOGY are now resolver-backed (see "
+          "test_compound_resolver_integration.py / test_topology_resolver_integration.py) "
+          "-- this suite only covers the missing-execution-binding refusal case for each")

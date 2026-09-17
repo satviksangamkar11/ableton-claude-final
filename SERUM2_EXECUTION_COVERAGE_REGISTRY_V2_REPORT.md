@@ -60,7 +60,7 @@
 - **SCALAR**: VERIFIED_IMPORTABLE: serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority
 - **STATE**: VERIFIED_IMPORTABLE: serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority
 - **COMPOUND**: VERIFIED_IMPORTABLE: serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority
-- **TOPOLOGY**: NOT_AUTHORITY_INTEGRATED: execute_mutation_request_with_authority() explicitly refuses TOPOLOGY today ('not yet implemented'). A separate, NOT-authority-integrated FXStructuralCompiler exists (fx_structural_operations.py) registered into the same disconnected OperationRegistry -- same class of bypass risk STATE and COMPOUND already closed.
+- **TOPOLOGY**: VERIFIED_IMPORTABLE: serum2.evidence.mutation_executor_extended.execute_mutation_request_with_authority
 - **RESOURCE**: NOT_AUTHORITY_INTEGRATED: execute_mutation_request_with_authority() has no RESOURCE case at all yet. osc_load_wavetable/osc_load_sample compilers exist in the disconnected OperationRegistry (same class of bypass risk STATE and COMPOUND already closed); ResourceResolver (resource_resolver.py) validates resource identity but is not itself a mutation executor.
 
 **Architectural finding from this build:** a separate, pre-D.1.x `OperationRegistry` (serum2/operations/registry.py) already has real, registered compilers for STATE/COMPOUND/RESOURCE/TOPOLOGY operations (fx_set_parameter, create_modulation_route, load_wavetable, FX structural ops, etc.), but `get_registry()` is called from nowhere in producer/evidence/compiler -- it is disconnected from the admission-gated authority chain entirely. This is flagged for explicit decision (integrate under the D.1.2 authority pattern, or deprecate), not resolved here.

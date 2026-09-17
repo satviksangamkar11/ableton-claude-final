@@ -110,14 +110,7 @@ def execute_mutation_request_with_authority(
         return _execute_host_parameter_mutation(request, synth, contract, admission_result)
 
     elif request.mutation_type == MutationType.TOPOLOGY:
-        return MutationAuthorityProof(
-            target=request.target,
-            mutation_type=request.mutation_type,
-            requested_value=request.value,
-            admission_result=admission_result,
-            executed=False,
-            detail="TOPOLOGY mutations not yet implemented",
-        )
+        return _execute_topology_mutation(request, body, contract, admission_result)
 
     elif request.mutation_type == MutationType.COMPOUND:
         return _execute_compound_mutation(request, body, contract, admission_result)
@@ -250,6 +243,64 @@ def _execute_body_state_mutation_via_resolver(
     return _dispatch_resolver_operation(
         request, body, contract.execution_binding.resolver_operation_id,
         admission_result, OperationKind.STATE,
+    )
+
+
+def _execute_topology_mutation(
+    request: MutationRequest,
+    body: Dict[str, Any],
+    contract: cc.CapabilityContract,
+    admission_result: admission.AdmissionResult,
+) -> MutationAuthorityProof:
+    """Execute TOPOLOGY mutation via a registered OperationRegistry compiler.
+
+    NOT the whole FXStructuralOperation enum: only operation_ids in
+    fx_structural_operations.PROVEN_TOPOLOGY_OPERATION_IDS may be
+    dispatched (ADD/REMOVE/REPLACE/CLEAR_RACK/BYPASS/UNBYPASS + their
+    bus-level bypass/unbypass variants). REORDER and MOVE_BETWEEN_BUSES
+    have no compiler and are absent from that allowlist -- checked
+    explicitly here, not merely by the absence of a registered compiler,
+    so a future accidental registration under those names still can't be
+    dispatched through this path without a deliberate allowlist change.
+    """
+    from serum2.operations.model import OperationKind
+    from serum2.operations.fx_structural_operations import PROVEN_TOPOLOGY_OPERATION_IDS
+
+    if not contract.execution_binding or contract.execution_binding.mutation_type != MutationType.TOPOLOGY.value:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            admission_result=admission_result,
+            executed=False,
+            detail="No TOPOLOGY execution binding in contract",
+        )
+
+    operation_id = contract.execution_binding.resolver_operation_id
+    if not operation_id:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            admission_result=admission_result,
+            executed=False,
+            detail="TOPOLOGY execution binding has no resolver_operation_id",
+        )
+
+    if operation_id not in PROVEN_TOPOLOGY_OPERATION_IDS:
+        return MutationAuthorityProof(
+            target=request.target,
+            mutation_type=request.mutation_type,
+            requested_value=request.value,
+            admission_result=admission_result,
+            executed=False,
+            detail=f"resolver_operation_id={operation_id!r} is not in "
+                   f"PROVEN_TOPOLOGY_OPERATION_IDS (REORDER/MOVE_BETWEEN_BUSES "
+                   f"and any other unproven operation are refused, not dispatched)",
+        )
+
+    return _dispatch_resolver_operation(
+        request, body, operation_id, admission_result, OperationKind.TOPOLOGY,
     )
 
 
