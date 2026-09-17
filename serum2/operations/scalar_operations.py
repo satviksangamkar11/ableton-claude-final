@@ -314,11 +314,18 @@ def build_scalar_operations_from_targets(
                                 error_detail=f"Contract for {tgt_name} has no mutation_target_path",
                             )
                     else:
-                        # No contract; check Phase 9B structural paths mapping
-                        mutation_path = PHASE_9B_STRUCTURAL_PATHS.get(tgt_ref.capability_key)
-                        if not mutation_path:
-                            # Fallback: use the semantic target name (will fail if path is invalid)
-                            mutation_path = tgt_name
+                        # No contract found - REFUSE compilation (authority gate)
+                        # PHASE_9B_STRUCTURAL_PATHS and target_name fallbacks are NOT permitted
+                        # as they bypass the admission gate.
+                        # A semantic target without an admitted CapabilityContract is UNKNOWN.
+                        return OperationResult(
+                            operation_id=operation.operation_id,
+                            success=False,
+                            compilation_error="REFUSED_UNKNOWN",
+                            error_detail=f"No CapabilityContract found for {tgt_name}. "
+                                         f"Cannot compile scalar mutation without admitted authority. "
+                                         f"See serum2/evidence/admission.py for contract requirements.",
+                        )
 
                     # Create the mutation
                     mutation = Mutation(
