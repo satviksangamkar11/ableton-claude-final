@@ -31,6 +31,34 @@
       "evidence_source": "FXEQ-KPARAMRESO2 (original CAUSAL_VERIFIED experiment)",
       "semantic_target": "FXEQ.Reso2",
       "unit": "resonance"
+    },
+    "fx_field_eq_kParamFreq2": {
+      "mutation_type": "BODY_STATE",
+      "body_path": "FXRack0.FX.1.FXEQ.plainParams.kParamFreq2",
+      "evidence_source": "Phase 4A closure: same corpus fixture (bodies[4]) confirmed to contain this field; contract CAUSAL_VERIFIED, no prerequisites",
+      "semantic_target": "FXEQ.Freq2",
+      "unit": "Hz"
+    },
+    "fx_field_eq_kParamGain1": {
+      "mutation_type": "BODY_STATE",
+      "body_path": "FXRack0.FX.1.FXEQ.plainParams.kParamGain1",
+      "evidence_source": "Phase 4A closure: same corpus fixture (bodies[4]) confirmed to contain this field; contract CAUSAL_VERIFIED, no prerequisites",
+      "semantic_target": "FXEQ.Gain1",
+      "unit": "dB"
+    },
+    "fx_field_eq_kParamReso1": {
+      "mutation_type": "BODY_STATE",
+      "body_path": "FXRack0.FX.1.FXEQ.plainParams.kParamReso1",
+      "evidence_source": "Phase 4A closure: same corpus fixture (bodies[4]) confirmed to contain this field; contract CAUSAL_VERIFIED, no prerequisites",
+      "semantic_target": "FXEQ.Reso1",
+      "unit": "resonance"
+    },
+    "fx_field_eq_kParamType2": {
+      "mutation_type": "BODY_STATE",
+      "body_path": "FXRack0.FX.1.FXEQ.plainParams.kParamType2",
+      "evidence_source": "Phase 4A closure: same corpus fixture (bodies[4]) confirmed to contain this field; contract CAUSAL_VERIFIED, no prerequisites",
+      "semantic_target": "FXEQ.Type2",
+      "unit": "enum"
     }
   }
 }
